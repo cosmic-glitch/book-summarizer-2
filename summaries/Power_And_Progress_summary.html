@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Power and Progress — Chapter Summaries</title>
+  <style>
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      max-width: 780px;
+      margin: 40px auto;
+      padding: 0 20px;
+      line-height: 1.7;
+      color: #222;
+      background: #fafafa;
+    }
+    h1 {
+      font-size: 1.8em;
+      border-bottom: 2px solid #333;
+      padding-bottom: 10px;
+      margin-bottom: 5px;
+    }
+    .subtitle {
+      font-size: 1.1em;
+      color: #444;
+      margin: 2px 0 0 0;
+      font-style: italic;
+    }
+    .author {
+      font-style: italic;
+      color: #777;
+      font-size: 0.95em;
+      margin-bottom: 40px;
+    }
+    h2 {
+      font-size: 1.3em;
+      margin-top: 48px;
+      color: #1a1a1a;
+      border-left: 4px solid #555;
+      padding-left: 12px;
+    }
+    p {
+      margin-bottom: 14px;
+      text-align: justify;
+    }
+    details.counter {
+      background: #f0ece4;
+      border-left: 4px solid #b8860b;
+      padding: 14px 18px;
+      margin: 20px 0 28px 0;
+      border-radius: 0 6px 6px 0;
+    }
+    details.counter summary {
+      font-weight: bold;
+      font-size: 0.95em;
+      color: #8b6914;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    details.counter summary::-webkit-details-marker {
+      display: none;
+    }
+    details.counter summary::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    details.counter[open] summary::before {
+      transform: rotate(90deg);
+    }
+    details.counter p {
+      margin-top: 12px;
+      margin-bottom: 10px;
+      color: #3a3a3a;
+    }
+    details.counter p:last-child {
+      margin-bottom: 0;
+    }
+    .quiz-wrapper {
+      margin-top: 48px;
+      background: #f5f5f0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 16px 20px;
+    }
+    .quiz-toggle {
+      font-weight: bold;
+      font-size: 1.05em;
+      cursor: pointer;
+      color: #2a5a2a;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .quiz-toggle::-webkit-details-marker { display: none; }
+    .quiz-toggle::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    .quiz-wrapper[open] .quiz-toggle::before {
+      transform: rotate(90deg);
+    }
+    .q-block {
+      margin: 24px 0;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    .q-block:last-of-type { border-bottom: none; }
+    .q-label {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .q-block label {
+      display: block;
+      padding: 6px 10px;
+      margin: 4px 0;
+      border-radius: 4px;
+      cursor: pointer;
+      line-height: 1.5;
+    }
+    .q-block label:hover { background: #e8e8e0; }
+    #score-btn {
+      display: block;
+      margin: 28px auto 0;
+      padding: 12px 32px;
+      font-family: Georgia, serif;
+      font-size: 1em;
+      background: #2a5a2a;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #score-btn:hover { background: #1e441e; }
+    #quiz-result {
+      margin-top: 24px;
+      padding: 18px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    #score-text {
+      font-size: 1.15em;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .review-item {
+      margin-bottom: 14px;
+      padding: 10px 12px;
+      border-radius: 4px;
+    }
+    .review-item.correct { background: #e6f4e6; }
+    .review-item.wrong { background: #fce8e8; }
+    .review-item .ri-q { font-weight: bold; margin-bottom: 4px; }
+    .review-item .ri-detail { font-size: 0.93em; color: #444; }
+  </style>
+</head>
+<body>
+
+<h1>Power and Progress</h1>
+<p class="subtitle">Our Thousand-Year Struggle Over Technology and Prosperity</p>
+<p class="author">Daron Acemoglu and Simon Johnson</p>
+
+<h2>Prologue: What Is Progress?</h2>
+
+<p>The authors open by challenging the dominant narrative that technological progress automatically generates shared prosperity. Drawing on the example of Jeremy Bentham's <b>panopticon</b>&mdash;a surveillance device originally conceived as a factory, not a prison&mdash;they argue that new technologies have always served the interests of those who control them. From textile factories employing children fourteen hours a day to the cotton gin intensifying American slavery, the authors present a catalogue of innovations that enriched elites while impoverishing or coercing workers.</p>
+
+<p>Despite these grim precedents, the authors acknowledge that people today <i>are</i> far better off than their ancestors. The critical insight, however, is that this prosperity was <b>not automatic</b>. It emerged only when workers and citizens organized, challenged elite-dominated technology choices, and forced more equitable sharing of gains. Electoral competition, trade unions, and protective legislation redirected technological trajectories toward increasing worker productivity rather than merely substituting machinery for labor or intensifying surveillance.</p>
+
+<p>The prologue establishes the book's central thesis: the direction of technology is a <b>choice</b>, not an inexorable force. Today's digital revolution and artificial intelligence are repeating old patterns&mdash;enriching a small group of entrepreneurs while leaving most workers behind. The authors argue that a new, more inclusive vision of technology can emerge only if the basis of social power changes, requiring the rise of counterarguments and organizations willing to challenge the conventional wisdom of Silicon Valley.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The authors' framing of technology as primarily a tool of elite domination can be seen as overly reductive. Economic historian <b>Joel Mokyr</b> has argued that the "culture of growth" in Enlightenment Europe was genuinely driven by a broad desire to improve human welfare, not solely elite self-interest. Moreover, the book's catalogue of harms from technology omits cases where innovations rapidly and broadly improved welfare&mdash;such as the Green Revolution in agriculture, which prevented hundreds of millions from starvation in the developing world during the 1960s and 1970s, even if it also created new inequalities.</p>
+</details>
+
+<h2>Chapter 1: Control over Technology</h2>
+
+<p>The authors develop their theoretical framework by examining the <b>productivity bandwagon</b>&mdash;the widely held belief that new technologies that increase productivity will automatically raise wages for all workers. They argue this bandwagon operates only under specific conditions and frequently fails. The key distinction is between <b>average productivity</b> (total output divided by workers) and <b>marginal productivity</b> (the additional contribution of one more worker). Technologies focused on automation raise the former while potentially reducing the latter, because they displace workers rather than making them more valuable.</p>
+
+<p>The chapter identifies three reasons why even genuine productivity gains may not translate into higher wages: <b>coercive labor relations</b> (as in slavery or serfdom), <b>lack of employer competition</b> for workers, and <b>weak worker bargaining power</b> in wage negotiations. The authors introduce the concept of <b>"so-so automation"</b>&mdash;technologies like self-checkout kiosks that automate tasks with only minimal productivity gains, eliminating jobs without creating sufficient new demand elsewhere in the economy.</p>
+
+<p>The chapter further introduces the idea of a <b>vision oligarchy</b>&mdash;a small coterie of tech leaders with similar backgrounds, worldviews, and blind spots who monopolize social power over technology's direction. The authors argue these modern oligarchs, from Google's Sundar Pichai to DeepMind's Demis Hassabis, mesmerize journalists, politicians, and academics with claims that AI will transform everything for the better. The chapter concludes with the book's roadmap, outlining how subsequent chapters will trace the struggle over technology's direction from medieval agriculture through the current AI revolution.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The concept of the productivity bandwagon's failure is well-established, but some economists, notably <b>David Autor</b> (himself a frequent collaborator of Acemoglu), have shown that automation has historically been accompanied by the creation of entirely new occupations and industries that were impossible to predict in advance. The authors' framework may underweight the <b>long-run adaptive capacity</b> of market economies to generate new forms of work. Additionally, characterizing tech leaders as a "vision oligarchy" risks conflating genuine ideological commitment with cynical self-interest&mdash;many tech entrepreneurs may sincerely believe in their products' benefits, even if the authors find their confidence misplaced.</p>
+</details>
+
+<h2>Chapter 2: Canal Vision</h2>
+
+<p>This chapter uses Ferdinand de Lesseps's canal-building career as an extended parable about how <b>powerful visions can succeed spectacularly and then fail catastrophically</b>. Lesseps's successful construction of the Suez Canal (completed 1869) was rooted in three tenets: techno-optimism, belief in private capital, and European-centered blinders that rendered the fate of Egyptian workers irrelevant. The canal was built using <b>corv&eacute;e labor</b>&mdash;forced Egyptian peasants working under brutal conditions for wages far below market rate&mdash;until British diplomatic pressure ended the practice.</p>
+
+<p>When Lesseps brought the same vision to Panama, the results were disastrous. He insisted on a sea-level canal without locks, massively underestimated the excavation required (the actual amount needed was roughly five times his initial estimate), and fatally ignored the risks of tropical disease. Over eight years, more than <b>twenty thousand workers died</b>, mostly from malaria and yellow fever, and one billion francs of investor money was lost. Lesseps refused to adapt his plans despite mounting evidence of failure, a casualty of the very confidence that had made him successful at Suez.</p>
+
+<p>The Americans who later completed the Panama Canal (1904&ndash;1914) succeeded largely because, freed from Lesseps's rigid vision, they were willing to <b>adapt to evidence</b>. They abandoned the sea-level design in favor of locks, brought mosquito-elimination techniques from Cuba, and reorganized logistics along the lines of American railroad construction. The chapter's lesson is that visions are necessary for technological progress but become <b>traps</b> when they prevent course correction in the face of contrary evidence.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>While the Lesseps story powerfully illustrates the danger of rigid visions, it may overstate the degree to which the Panama failure was about vision versus <b>specific engineering miscalculations</b>. Historian <b>David McCullough</b> emphasizes that the French failure also owed much to corruption, financial mismanagement, and the fact that the germ theory of disease was not yet widely accepted. The analogy to modern tech leaders may be somewhat strained: unlike Lesseps, who ignored clear evidence of failure, contemporary tech companies frequently pivot their strategies in response to market signals, even if they remain committed to broader automation goals.</p>
+</details>
+
+<h2>Chapter 3: Power to Persuade</h2>
+
+<p>The authors develop their theory of <b>persuasion power</b> as the most important form of social power in modern societies. Using examples ranging from Napoleon's escape from Elba to Wall Street's influence during the 2007&ndash;2008 financial crisis, they argue that social power comes not primarily from coercion or wealth but from the ability to convince others. Persuasion power has two dimensions: <b>the power of ideas</b> (some ideas spread because they are compelling and self-replicating) and <b>agenda setting</b> (whoever frames the debate and determines which options are considered has formidable power to shape outcomes).</p>
+
+<p>The chapter draws on psychological research to show how deeply humans are wired to imitate and follow high-status individuals. Experiments with children show that they <b>overimitate</b> adult behavior even when they recognize certain actions as unnecessary&mdash;a tendency rooted in respect for perceived expertise. This instinct makes agenda-setting power particularly dangerous: if you can set the agenda, you acquire status, and status makes you more persuasive, creating a self-reinforcing cycle.</p>
+
+<p>A lengthy examination of the failure of Reconstruction after the American Civil War illustrates how <b>lack of agenda-setting power</b> can be devastating. Although Black Americans gained formal political rights, they were never truly at the table where key decisions were made. When political calculations shifted, everything given could be and was taken away. The chapter concludes that democratic institutions, with their cacophonous diversity of voices, provide the best bulwark against narrow, selfish visions&mdash;not because democracy always produces good decisions, but because it makes it harder for any single viewpoint to monopolize choices about technology and society.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The authors' emphasis on persuasion power, while illuminating, may understate the continued importance of <b>material economic power</b> in shaping political outcomes. Political scientist <b>Martin Gilens</b> has shown that US policy outcomes correlate strongly with the preferences of wealthy elites, regardless of public opinion&mdash;suggesting that raw economic leverage matters at least as much as persuasion. Additionally, the argument that democracy's strength lies in cacophonous voices faces the challenge that democratic deliberation can also produce <b>polarization and gridlock</b>, as contemporary American politics illustrates.</p>
+</details>
+
+<h2>Chapter 4: Cultivating Misery</h2>
+
+<p>The authors trace the <b>social bias of agricultural technology</b> across millennia, from the Neolithic Revolution through medieval England, the American South, Soviet Russia, and eighteenth-century British enclosures. In medieval England, waterwheels and windmills roughly doubled agricultural yields between 1000 and 1300, yet peasant living standards <i>declined</i>. The surplus was captured by a small elite&mdash;nobility and church&mdash;who spent it on cathedrals, monasteries, and luxuries. Feudal lords monopolized mills and banned home milling, ensuring that productivity gains flowed upward.</p>
+
+<p>The chapter demolishes the <b>Malthusian explanation</b> for persistent poverty, arguing that it was not population growth but elite extraction that kept peasants poor. Evidence from ancient Greece, the Roman Republic, and various non-European civilizations shows extended periods of per-capita growth without Malthusian collapse. The authors present the cotton gin as another example of technology intensifying exploitation: Eli Whitney's invention massively expanded cotton production but also <b>deepened and spread slavery</b> across the American South, with the enslaved population growing from 558,000 in 1780 to 3.2 million in 1850.</p>
+
+<p>Soviet collectivization provides a twentieth-century parallel. Stalin's drive to mechanize agriculture using American-style tractors and harvesters produced a modest 10 percent increase in total output between 1928 and 1940 but caused <b>4 to 9 million excess deaths</b>. The chapter's overarching argument is that technology does not inevitably trickle down: when elites control the direction of innovation and workers lack political voice, productivity gains consistently accrue to those at the top, often at devastating cost to everyone else.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The chapter's sweeping narrative connecting Neolithic agriculture to Soviet collectivization risks obscuring crucial differences between these episodes. Historian <b>Robert Allen</b> has argued that medieval English peasants' declining living standards owed more to population pressure on fixed land than to elite extraction alone. Similarly, the claim that the Malthusian trap is entirely a myth has been challenged by economic historian <b>Gregory Clark</b>, who finds evidence for Malthusian dynamics operating in pre-industrial England alongside elite extraction. The two mechanisms are not mutually exclusive, and dismissing Malthus entirely may sacrifice nuance for rhetorical force.</p>
+</details>
+
+<h2>Chapter 5: A Middling Sort of Revolution</h2>
+
+<p>The authors reinterpret the British Industrial Revolution as the product of a <b>new vision</b> developed by an emerging entrepreneurial middle class&mdash;the "middling sort" of people&mdash;rather than the inevitable result of scientific knowledge, geography, natural resources, or any single economic factor. Through the story of George Stephenson, an illiterate coal miner's son who became the father of the railway, they show how practical men with no formal education but boundless ambition transformed British industry. Of 226 founders of large industrial enterprises, only two came from the peerage.</p>
+
+<p>The chapter systematically examines and rejects common explanations for why Britain industrialized first. Geography, coal, high wages, financial innovation, religious culture, and government policy all contributed but none was decisive or unique to Britain. The <b>critical difference</b> was institutional: centuries of social change&mdash;from Magna Carta through the English Civil War and the Glorious Revolution of 1688&mdash;had gradually loosened the feudal hierarchy enough that ambitious men of modest origins could dream of rising through technological innovation. The Levellers' demands for universal suffrage during the Civil War, though rejected, illustrated how far English political thought had evolved from the medieval society of orders.</p>
+
+<p>Crucially, however, this was a <b>revolution within the system</b>, not against it. The rising middle class aspired to join the upper crust, not overthrow it. They adopted the aristocracy's condescending view of the poor and saw no contradiction between their own advancement and the impoverishment of workers. This would have profound consequences for the first phase of industrialization, as the next chapter reveals.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The chapter's dismissal of <b>coal and energy</b> as decisive factors has been forcefully challenged by economic historian <b>E. A. Wrigley</b>, who argues that the transition from an organic to a mineral-based energy economy was <i>the</i> defining feature of British industrialization. Similarly, <b>Robert Allen</b>'s "high wage economy" thesis holds that Britain's uniquely high wages relative to energy costs created powerful incentives to substitute machinery for labor&mdash;a structural explanation that the authors may too quickly dismiss. The institutional story they tell is compelling but perhaps not as uniquely explanatory as they suggest.</p>
+</details>
+
+<h2>Chapter 6: Casualties of Progress</h2>
+
+<p>The chapter documents the devastating human costs of the first phase of British industrialization. Drawing on the 1842 Royal Commission report on children's employment, the authors present testimony from children as young as six working underground in coal mines for fourteen hours a day. Despite spectacular productivity gains&mdash;spinning machines increased output 400-fold&mdash;real wages for most workers <b>stagnated or declined</b> for roughly a century after 1750. Working hours increased from about 2,760 per year in 1750 to 3,366 by 1830, while factory discipline replaced artisanal autonomy with military-style regimentation.</p>
+
+<p>The chapter explains this through the book's framework: the first phase of industrialization was dominated by <b>pure automation</b> (replacing skilled weavers with machines) without sufficient creation of new tasks for workers. Combined with workers' lack of political power and coercive labor laws&mdash;the Statute of Labourers of 1351 was not repealed until 1863&mdash;this meant the productivity bandwagon had no passengers. Pollution, overcrowding, and infectious disease ravaged industrial cities, with death rates rising sharply and tuberculosis killing 60,000 per year at its peak.</p>
+
+<p>However, the second half of the nineteenth century brought a dramatic reversal. Railways and new manufacturing technologies created <b>new tasks and opportunities</b> for workers, while American innovations (interchangeable parts, the systems approach) raised worker marginal productivity. Critically, countervailing powers emerged: the <b>Chartist movement</b>, trade unions, and expanding suffrage gave workers political voice. From 1840 to 1900, real wages rose 123 percent while output per worker rose 90 percent. The chapter also documents how British industrialization devastated India through forced deindustrialization, using railways as instruments of control rather than development.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The timing and magnitude of the "pause" in real wage growth during early industrialization remains debated. Economic historian <b>Robert Allen</b> finds a more modest stagnation than some earlier estimates, while <b>Jane Humphries</b> has argued that women's and children's wages actually improved in some respects during early industrialization, complicating the picture of unmitigated suffering. The authors' sharp distinction between a "bad" first phase (automation) and a "good" second phase (new tasks) may also be somewhat schematic; railways, for instance, displaced thousands of coach workers even as they created new occupations.</p>
+</details>
+
+<h2>Chapter 7: The Contested Path</h2>
+
+<p>The authors examine how the most spectacular period of shared prosperity in Western history&mdash;the three decades following World War II&mdash;was built on two pillars: a <b>direction of technology</b> that created new tasks alongside automation, and an <b>institutional framework</b> that bolstered countervailing powers from workers and government regulation. The chapter traces these pillars back to the early twentieth century, through the development of mass production, electrification, and the American systems approach.</p>
+
+<p>Electricity proved to be a transformative <b>general-purpose technology</b> that reorganized factories, enabled new products, and created vast numbers of new tasks. The Ford Motor Company's assembly line simultaneously automated some work and introduced dozens of new design, technical, and clerical tasks. Henry Ford's famous five-dollar day in 1914 demonstrated that sharing productivity gains with workers could reduce turnover and increase commitment. The <b>Wagner Act</b> of 1935 and the rise of industrial unions further ensured that workers could bargain for their share of profits.</p>
+
+<p>In the postwar decades, automation continued rapidly but was counterbalanced by technologies creating new opportunities. The UAW's negotiations with GM over numerically controlled machinery set a precedent that workers had rights to new tasks created by automation. US GDP per capita grew at unprecedented rates, and crucially, this growth was <b>broadly shared</b>&mdash;low- and high-education workers both saw roughly 3 percent annual wage growth. European nations achieved similar results through the Marshall Plan, welfare states inspired by the Beveridge Report, and their own versions of labor-management cooperation. The chapter notes, however, that women, minorities, and the developing world were largely excluded from this prosperity.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The postwar golden age is sometimes romanticized in retrospect. Economist <b>Tyler Cowen</b> has argued in <i>The Great Stagnation</i> that much of postwar growth reflected the harvesting of "low-hanging fruit"&mdash;cheap fossil fuels, underutilized land, and technologies developed during wartime&mdash;rather than a replicable institutional model. Furthermore, the institutional framework the authors celebrate was partly sustained by <b>Cold War pressures</b>: American elites accepted unions and welfare states partly to inoculate against communism, a motivation that evaporated after 1989. The authors' framework may underweight these contingent geopolitical factors.</p>
+</details>
+
+<h2>Chapter 8: Digital Damage</h2>
+
+<p>The chapter traces how digital technologies became the <b>graveyard of shared prosperity</b> after 1980. Despite the early hacker ethic of decentralization and freedom&mdash;embodied by MIT's Tech Square coders and Grace Hopper's push for open computing&mdash;the tech industry pivoted toward automation, surveillance, and corporate control. US median real wages, which grew above 2.5 percent annually from 1949 to 1973, slowed to just 0.45 percent after 1980. Men without college degrees saw their real wages <i>decline</i> by 0.45 percent per year. The share of the richest 1 percent in national income rose from 10 percent in 1980 to 19 percent by 2019.</p>
+
+<p>The authors identify a confluence of institutional and technological changes. The <b>Friedman doctrine</b>&mdash;Milton Friedman's 1970 argument that the sole social responsibility of business is to maximize profits&mdash;gave executives a mandate to cut labor costs and stop sharing productivity gains. Combined with Michael Jensen's advocacy for stock-option compensation, this produced the "shareholder value revolution." Business-school-trained managers implemented these ideas directly: research shows they share zero percent of value-added increases with workers, compared to 20 percent for managers without MBAs.</p>
+
+<p>Simultaneously, the direction of digital technology shifted decisively toward <b>automation without countervailing creation of new tasks</b>. Industrial robots, software, and offshoring eliminated middle-class occupations&mdash;from 52 percent of US workers in the 1970s to 33 percent by 2018. The authors introduce the concept of a <b>"digital utopia"</b> in which top-down software design automates and controls labor, enriching tech companies and their shareholders while devastating communities across the industrial heartland. Deaths of despair&mdash;from drugs, alcohol, and suicide&mdash;rose in affected regions, and US life expectancy actually declined for several consecutive years.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The chapter's emphasis on technology as the primary driver of inequality has been challenged by those who point to <b>policy choices</b> as equally or more important. Economists <b>Thomas Piketty</b> and <b>Emmanuel Saez</b> emphasize the role of top-bracket tax cuts, financial deregulation, and the erosion of minimum wages&mdash;factors that could have been reversed without changing technology's direction. Furthermore, the claim that automation accounts for three-quarters of inequality growth relies on specific modeling assumptions that other researchers, such as <b>Lawrence Mishel</b> of the Economic Policy Institute, have questioned, arguing that declining unionization and policy failures deserve more weight.</p>
+</details>
+
+<h2>Chapter 9: Artificial Struggle</h2>
+
+<p>The authors challenge the prevailing narrative that AI will inevitably benefit everyone. They introduce the distinction between <b>machine intelligence</b>&mdash;the quest to build autonomous systems that replicate or surpass human capabilities&mdash;and <b>machine usefulness</b>&mdash;how useful machines are to human objectives. The current AI paradigm, inherited from Alan Turing's "imitation game," fixates on human parity and autonomy, driving massive data collection and automation at the expense of technologies that could complement and empower workers.</p>
+
+<p>The chapter traces the history of AI through its cycles of hype and disappointment&mdash;the Dartmouth conference of 1956, Herbert Simon's prediction that machines would replicate all human work within twenty years, Marvin Minsky's failed 1970 prophecy of general intelligence&mdash;and argues that modern "narrow AI" based on deep learning and massive data sets represents a fundamentally different approach but one still trapped in the <b>automation paradigm</b>. Evidence shows that firms investing in AI reduce overall hiring substantially, with the burden falling disproportionately on less-educated workers already disadvantaged by earlier waves of digital automation.</p>
+
+<p>The authors argue for redirecting AI toward <b>machine usefulness</b>: GPS, pocket calculators, and computer-assisted design are not "intelligent" by most definitions but are tremendously useful to humans. They advocate for technologies that complement worker capabilities rather than replace them, create new productive tasks, provide better information for human decision making, and build platforms connecting people with different skills. The chapter also warns that AI-driven automation in advanced economies threatens to <b>export job destruction</b> to the developing world by making it profitable to reshore production using robots rather than cheap overseas labor.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The authors' distinction between machine intelligence and machine usefulness, while conceptually helpful, may create a false dichotomy. Many of the most useful AI applications&mdash;such as <b>AlphaFold</b>'s protein structure predictions, which have revolutionized biology&mdash;emerged precisely from pursuing machine intelligence in narrow domains. The path from intelligence research to useful applications is often unpredictable. Additionally, the claim that AI brings "only limited benefits" in most human tasks may already be outdated given rapid advances in large language models since the book's publication, which have demonstrated substantial productivity gains for writers, programmers, and knowledge workers.</p>
+</details>
+
+<h2>Chapter 10: Democracy Breaks</h2>
+
+<p>The chapter examines how digital technologies and AI have become <b>weapons against democracy</b>, both in authoritarian regimes and democratic societies. In China, the government spends an estimated $6.6 billion annually on monitoring and censoring online content, deploying facial-recognition cameras, a national social credit system, and AI-powered surveillance particularly targeting Uighur Muslims in Xinjiang. Major Chinese tech companies&mdash;Huawei, SenseTime, CloudWalk&mdash;have cooperated in developing these tools, which are now exported to fifty other countries.</p>
+
+<p>The authors trace how early optimism about the internet's democratizing potential&mdash;exemplified by the Philippine text-message protests of 2001 and the Arab Spring&mdash;gave way to a reality in which digital tools <b>systematically favor authoritarian control</b>. A fascinating experiment with Chinese university students revealed that most had so thoroughly internalized government propaganda that they had no interest in accessing foreign media even when offered free VPN access. The authors describe this as Aldous Huxley's <i>Brave New World</i> rather than George Orwell's <i>1984</i>: a society where censorship is no longer necessary because citizens no longer want to read alternative viewpoints.</p>
+
+<p>In democratic countries, the damage takes different forms. Social media platforms, driven by <b>advertisement-based business models</b> that maximize engagement through outrage and controversy, have become hotbeds of misinformation and political polarization. Facebook's 2018 algorithm change to prioritize posts from friends and family&mdash;decided by Zuckerberg and a handful of executives, without consulting billions of users&mdash;amplified lies and misleading posts. The NSA's illegal mass data collection, the Pegasus spyware used against journalists and opposition figures in democracies like Mexico and India, and Clearview AI's facial-recognition database illustrate a <b>surveillance technology trap</b>: once these tools exist, governments inevitably adopt them to monitor citizens.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The chapter's argument that social media inherently favors authoritarianism has been challenged by researchers who note that the evidence is more mixed. Political scientist <b>Yevgeniy Gorokhovskiy</b> and others have found that social media can still serve as a coordination tool for protests even under sophisticated censorship regimes, as demonstrated by recent movements in Iran and Russia. Furthermore, the claim that engagement-maximizing algorithms inevitably produce polarization has been questioned by <b>Meta's own commissioned research</b> (published in <i>Science</i> in 2023), which found that reducing algorithmic amplification had minimal effects on political attitudes or polarization.</p>
+</details>
+
+<h2>Chapter 11: Redirecting Technology</h2>
+
+<p>The final chapter presents a <b>three-pronged formula</b> for redirecting technology toward shared prosperity, modeled on the Progressive Era's successful challenge to the robber barons. The first prong is <b>altering the narrative</b>: just as muckrakers like Ida Tarbell exposed Standard Oil's predatory practices, society needs new voices to challenge the tech industry's self-serving claims. The public must stop being mesmerized by tech billionaires and start asking whether digital technologies work for or against ordinary people.</p>
+
+<p>The second prong is <b>cultivating countervailing powers</b>. The authors discuss new forms of worker organization, citing the successful Amazon Staten Island warehouse unionization drive as a model for twenty-first-century labor organizing. They also emphasize the importance of civil-society organizations, reformed democratic institutions, and international cooperation. The third prong is <b>specific policy solutions</b>, including redirecting tax incentives away from automation and toward human-complementary technologies, reforming data ownership and digital advertising, strengthening antitrust enforcement against tech monopolies, and supporting diverse innovation strategies.</p>
+
+<p>The chapter draws an extended analogy with the <b>environmental movement's success</b> in redirecting energy technology. Through changing narratives (Rachel Carson, Al Gore), building countervailing powers (Green parties, climate strikes), and implementing specific policies (carbon taxes, renewable energy subsidies, emissions regulations), the cost of solar and wind energy has dropped below fossil fuels. The authors argue the same formula can work for digital technology: carbon taxes found their equivalent in data taxes or digital advertising levies; renewable energy subsidies parallel incentives for worker-complementary AI; and emissions standards map onto regulations against excessive surveillance and automation. The chapter acknowledges that success is far from guaranteed but insists that the progressive tradition shows it is possible.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The authors' policy prescriptions, while admirably specific, face significant implementation challenges they may understate. Tax incentives to discourage automation could simply push companies to offshore production to countries without such policies, potentially worsening the very inequality the authors seek to address. Economist <b>Dani Rodrik</b> has raised similar concerns about the feasibility of national-level technology policy in a globalized economy. Additionally, the analogy with environmental policy may be optimistic: renewable energy succeeded partly because it became <i>cheaper</i> than fossil fuels, creating natural market incentives. Worker-complementary AI may not enjoy a similar cost advantage over automation, making the policy challenge fundamentally harder.</p>
+</details>
+
+<h2 id="quiz-heading">Comprehension Quiz</h2>
+
+<details id="quiz-section" class="quiz-wrapper">
+  <summary class="quiz-toggle">Take the Quiz</summary>
+
+  <form id="quiz-form">
+
+    <div class="q-block">
+      <p class="q-label">1. What do the authors mean by the "productivity bandwagon"?</p>
+      <label><input type="radio" name="q1" value="a"> The idea that automation always leads to mass unemployment</label>
+      <label><input type="radio" name="q1" value="b"> The belief that new technologies increasing productivity will automatically raise wages for all workers</label>
+      <label><input type="radio" name="q1" value="c"> A theory about how workers organize to demand higher pay during periods of technological change</label>
+      <label><input type="radio" name="q1" value="d"> The historical pattern of technologies spreading from rich countries to poor countries</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">2. Why did Lesseps's Panama Canal project fail, according to the authors?</p>
+      <label><input type="radio" name="q2" value="a"> The French lacked sufficient engineering knowledge to build any canal</label>
+      <label><input type="radio" name="q2" value="b"> The British government sabotaged the project diplomatically</label>
+      <label><input type="radio" name="q2" value="c"> Lesseps was trapped by his own vision and refused to adapt to evidence, insisting on a sea-level canal despite impossible conditions</label>
+      <label><input type="radio" name="q2" value="d"> The Colombian government withdrew the concession before construction could be completed</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">3. What are the two dimensions of "persuasion power" identified in the book?</p>
+      <label><input type="radio" name="q3" value="a"> Military force and economic wealth</label>
+      <label><input type="radio" name="q3" value="b"> The power of ideas and agenda setting</label>
+      <label><input type="radio" name="q3" value="c"> Political institutions and cultural norms</label>
+      <label><input type="radio" name="q3" value="d"> Scientific expertise and religious authority</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">4. What happened to English peasants' living standards as medieval agricultural technology (mills, horseshoes, crop rotation) improved?</p>
+      <label><input type="radio" name="q4" value="a"> They improved steadily alongside productivity growth</label>
+      <label><input type="radio" name="q4" value="b"> They remained constant because population growth absorbed all gains</label>
+      <label><input type="radio" name="q4" value="c"> They declined as feudal lords extracted more surplus through intensified coercion</label>
+      <label><input type="radio" name="q4" value="d"> They improved initially but then declined due to the Black Death</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">5. According to the authors, what was the most important factor explaining why Britain industrialized before other countries?</p>
+      <label><input type="radio" name="q5" value="a"> Britain's abundant coal deposits and navigable rivers</label>
+      <label><input type="radio" name="q5" value="b"> The Scientific Revolution and superior British scientific knowledge</label>
+      <label><input type="radio" name="q5" value="c"> Institutional changes that emboldened an entrepreneurial middle class to dream of rising through technology</label>
+      <label><input type="radio" name="q5" value="d"> Britain's powerful navy and colonial empire providing raw materials and markets</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">6. What does the term "so-so automation" refer to?</p>
+      <label><input type="radio" name="q6" value="a"> Automation that works only intermittently due to technical failures</label>
+      <label><input type="radio" name="q6" value="b"> Technologies that automate tasks with only small productivity gains, eliminating jobs without creating sufficient new demand</label>
+      <label><input type="radio" name="q6" value="c"> Early-stage automation that will eventually become highly productive</label>
+      <label><input type="radio" name="q6" value="d"> Automation that replaces workers but maintains their wages through government subsidies</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">7. What changed in the second half of the nineteenth century that allowed wages to start rising alongside productivity in Britain?</p>
+      <label><input type="radio" name="q7" value="a"> The government imposed minimum wage laws across all industries</label>
+      <label><input type="radio" name="q7" value="b"> New technologies (railways, American manufacturing methods) created new tasks for workers, while unions and political reforms gave workers bargaining power</label>
+      <label><input type="radio" name="q7" value="c"> Factory owners voluntarily decided to share profits with workers out of moral conviction</label>
+      <label><input type="radio" name="q7" value="d"> Immigration restrictions created labor shortages that forced wages upward</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">8. What was the "Friedman doctrine" and how did it affect workers?</p>
+      <label><input type="radio" name="q8" value="a"> Milton Friedman's argument that inflation is always a monetary phenomenon, leading to tighter monetary policy</label>
+      <label><input type="radio" name="q8" value="b"> The idea that business's only social responsibility is to maximize profits, which gave executives a mandate to stop sharing productivity gains with workers</label>
+      <label><input type="radio" name="q8" value="c"> A policy framework for deregulating the airline and telecommunications industries</label>
+      <label><input type="radio" name="q8" value="d"> Friedman's argument for universal basic income to compensate workers displaced by technology</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">9. What is the key distinction the authors draw between "machine intelligence" and "machine usefulness"?</p>
+      <label><input type="radio" name="q9" value="a"> Machine intelligence focuses on replicating human capabilities autonomously, while machine usefulness asks how useful machines are to human objectives</label>
+      <label><input type="radio" name="q9" value="b"> Machine intelligence refers to hardware advances, while machine usefulness refers to software applications</label>
+      <label><input type="radio" name="q9" value="c"> Machine intelligence is a theoretical concept, while machine usefulness is a practical engineering standard</label>
+      <label><input type="radio" name="q9" value="d"> Machine intelligence benefits corporations, while machine usefulness benefits consumers</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">10. What did the experiment with Chinese university students and VPN access reveal?</p>
+      <label><input type="radio" name="q10" value="a"> Students actively sought out foreign media as soon as VPN access was available</label>
+      <label><input type="radio" name="q10" value="b"> Most students had no interest in accessing Western news even with free VPN access, having internalized government propaganda</label>
+      <label><input type="radio" name="q10" value="c"> Students used VPNs primarily for entertainment rather than news</label>
+      <label><input type="radio" name="q10" value="d"> The Great Firewall was technically impossible to bypass even with VPNs</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">11. What three-pronged formula do the authors propose for redirecting technology?</p>
+      <label><input type="radio" name="q11" value="a"> Banning automation, nationalizing tech companies, and redistributing wealth</label>
+      <label><input type="radio" name="q11" value="b"> Investing in education, reducing immigration, and lowering corporate taxes</label>
+      <label><input type="radio" name="q11" value="c"> Altering the narrative, building countervailing powers, and developing specific policy solutions</label>
+      <label><input type="radio" name="q11" value="d"> Strengthening patent laws, increasing R&D spending, and expanding free trade</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">12. How do the authors characterize the relationship between automation and inequality since 1980?</p>
+      <label><input type="radio" name="q12" value="a"> Automation reduced inequality by creating high-paying tech jobs</label>
+      <label><input type="radio" name="q12" value="b"> Automation had little effect on inequality compared to globalization</label>
+      <label><input type="radio" name="q12" value="c"> Automation accelerated while creation of new tasks for workers slowed, accounting for a large share of rising inequality</label>
+      <label><input type="radio" name="q12" value="d"> Automation affected only manufacturing workers and had no broader economic impact</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">13. According to the book, why did the postwar decades (1945&ndash;1973) achieve broadly shared prosperity?</p>
+      <label><input type="radio" name="q13" value="a"> Governments imposed strict wage controls that prevented inequality from growing</label>
+      <label><input type="radio" name="q13" value="b"> Technology created new tasks alongside automation, while strong unions and regulation ensured gains were shared with workers</label>
+      <label><input type="radio" name="q13" value="c"> The absence of global trade competition protected domestic workers from displacement</label>
+      <label><input type="radio" name="q13" value="d"> Rapid population growth created labor shortages that naturally pushed wages higher</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">14. What historical movement do the authors draw on as a model for today's needed reforms?</p>
+      <label><input type="radio" name="q14" value="a"> The French Revolution of 1789</label>
+      <label><input type="radio" name="q14" value="b"> The American Progressive movement of the early twentieth century</label>
+      <label><input type="radio" name="q14" value="c"> The British Luddite movement of the 1810s</label>
+      <label><input type="radio" name="q14" value="d"> The Soviet economic planning system of the 1930s</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">15. What effect did Eli Whitney's cotton gin have on slavery in the American South?</p>
+      <label><input type="radio" name="q15" value="a"> It reduced the need for slave labor by mechanizing cotton processing</label>
+      <label><input type="radio" name="q15" value="b"> It had no significant impact on the institution of slavery</label>
+      <label><input type="radio" name="q15" value="c"> It intensified and expanded slavery as cotton cultivation spread across the Deep South</label>
+      <label><input type="radio" name="q15" value="d"> It led directly to the abolition of slavery by making free labor more economical</label>
+    </div>
+
+    <button type="button" id="score-btn" onclick="scoreQuiz()">Score My Answers</button>
+
+    <div id="quiz-result" style="display:none;">
+      <p id="score-text"></p>
+      <div id="answer-review"></div>
+    </div>
+
+  </form>
+</details>
+
+<script>
+(function() {
+  const answers = {
+    q1: { correct: "b", explain: "The productivity bandwagon is the belief that technologies increasing productivity will automatically produce higher wages for all workers, which the authors argue frequently fails." },
+    q2: { correct: "c", explain: "Lesseps was trapped by his vision from Suez, refusing to consider locks or adapt to Panama's mountainous terrain and tropical diseases, leading to catastrophic failure." },
+    q3: { correct: "b", explain: "The authors identify the power of ideas (compelling concepts that self-replicate) and agenda setting (framing debates and determining which options are considered) as the two dimensions." },
+    q4: { correct: "c", explain: "Despite productivity roughly doubling, peasant living standards declined as feudal lords and the church extracted more surplus through intensified labor obligations and monopoly control of mills." },
+    q5: { correct: "c", explain: "The authors argue that centuries of institutional change (Civil War, Glorious Revolution) created conditions where ambitious middle-class men could rise through technological innovation." },
+    q6: { correct: "b", explain: "So-so automation refers to technologies like self-checkout kiosks that automate work with minimal productivity benefits, eliminating jobs without stimulating enough new employment elsewhere." },
+    q7: { correct: "b", explain: "Railways and American manufacturing methods created new tasks for workers while Chartism, trade unions, and suffrage expansion gave workers the bargaining power to claim their share." },
+    q8: { correct: "b", explain: "Friedman argued in 1970 that business's sole social responsibility is maximizing profits, giving executives a mandate to cut labor costs and stop sharing productivity gains with workers." },
+    q9: { correct: "a", explain: "Machine intelligence pursues autonomous systems achieving human parity, while machine usefulness focuses on how useful machines are to people, favoring complementary rather than replacement technologies." },
+    q10: { correct: "b", explain: "Most students had no interest in foreign media even with free VPN access, having internalized propaganda so thoroughly that active censorship was no longer necessary." },
+    q11: { correct: "c", explain: "The authors propose altering the narrative (challenging tech billionaires' claims), building countervailing powers (unions, civil society), and developing specific policy solutions (tax reform, regulation)." },
+    q12: { correct: "c", explain: "After 1980, automation accelerated while creation of new worker tasks slowed dramatically, and this imbalance accounts for a large share of the surge in inequality." },
+    q13: { correct: "b", explain: "The combination of technology creating new tasks alongside automation plus strong unions, regulation, and rent-sharing norms ensured productivity gains were broadly distributed." },
+    q14: { correct: "b", explain: "The authors model their reform proposals on the Progressive Era, when muckrakers changed narratives, activists built countervailing powers, and reformers implemented specific policy solutions." },
+    q15: { correct: "c", explain: "The cotton gin expanded the area suitable for cotton cultivation, causing massive growth in slavery as the enslaved population grew from 558,000 in 1780 to 3.2 million in 1850." }
+  };
+
+  window.scoreQuiz = function() {
+    const form = document.getElementById("quiz-form");
+    let correct = 0;
+    const total = Object.keys(answers).length;
+    let reviewHTML = "";
+
+    for (let i = 1; i <= total; i++) {
+      const key = "q" + i;
+      const selected = form.elements[key] ? form.elements[key].value : "";
+      const isCorrect = selected === answers[key].correct;
+      if (isCorrect) correct++;
+
+      const status = !selected ? "wrong" : (isCorrect ? "correct" : "wrong");
+      const icon = isCorrect ? "\u2705" : "\u274C";
+      const yourAnswer = selected ? selected.toUpperCase() : "No answer";
+      const correctAnswer = answers[key].correct.toUpperCase();
+
+      reviewHTML += '<div class="review-item ' + status + '">';
+      reviewHTML += '<div class="ri-q">' + icon + " Question " + i + "</div>";
+      reviewHTML += '<div class="ri-detail">';
+      if (!isCorrect) {
+        reviewHTML += "Your answer: " + yourAnswer + " &mdash; Correct answer: " + correctAnswer + "<br>";
+      }
+      reviewHTML += answers[key].explain;
+      reviewHTML += "</div></div>";
+    }
+
+    const pct = Math.round((correct / total) * 100);
+    let grade;
+    if (pct === 100) grade = "Perfect score!";
+    else if (pct >= 80) grade = "Great understanding!";
+    else if (pct >= 60) grade = "Good, but review the summaries above for the ones you missed.";
+    else grade = "Consider re-reading the summaries above and trying again.";
+
+    document.getElementById("score-text").textContent = correct + " / " + total + " (" + pct + "%) \u2014 " + grade;
+    document.getElementById("answer-review").innerHTML = reviewHTML;
+    document.getElementById("quiz-result").style.display = "block";
+    document.getElementById("quiz-result").scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+})();
+</script>
+
+</body>
+</html>

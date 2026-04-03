@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why Everyone (Else) Is a Hypocrite — Chapter Summaries</title>
+  <style>
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      max-width: 780px;
+      margin: 40px auto;
+      padding: 0 20px;
+      line-height: 1.7;
+      color: #222;
+      background: #fafafa;
+    }
+    h1 {
+      font-size: 1.8em;
+      border-bottom: 2px solid #333;
+      padding-bottom: 10px;
+      margin-bottom: 5px;
+    }
+    .subtitle {
+      font-size: 1.1em;
+      color: #444;
+      margin: 2px 0 0 0;
+      font-style: italic;
+    }
+    .author {
+      font-style: italic;
+      color: #777;
+      font-size: 0.95em;
+      margin-bottom: 40px;
+    }
+    h2 {
+      font-size: 1.3em;
+      margin-top: 48px;
+      color: #1a1a1a;
+      border-left: 4px solid #555;
+      padding-left: 12px;
+    }
+    p {
+      margin-bottom: 14px;
+      text-align: justify;
+    }
+    details.counter {
+      background: #f0ece4;
+      border-left: 4px solid #b8860b;
+      padding: 14px 18px;
+      margin: 20px 0 28px 0;
+      border-radius: 0 6px 6px 0;
+    }
+    details.counter summary {
+      font-weight: bold;
+      font-size: 0.95em;
+      color: #8b6914;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    details.counter summary::-webkit-details-marker {
+      display: none;
+    }
+    details.counter summary::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    details.counter[open] summary::before {
+      transform: rotate(90deg);
+    }
+    details.counter p {
+      margin-top: 12px;
+      margin-bottom: 10px;
+      color: #3a3a3a;
+    }
+    details.counter p:last-child {
+      margin-bottom: 0;
+    }
+    .quiz-wrapper {
+      margin-top: 48px;
+      background: #f5f5f0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 16px 20px;
+    }
+    .quiz-toggle {
+      font-weight: bold;
+      font-size: 1.05em;
+      cursor: pointer;
+      color: #2a5a2a;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .quiz-toggle::-webkit-details-marker { display: none; }
+    .quiz-toggle::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    .quiz-wrapper[open] .quiz-toggle::before {
+      transform: rotate(90deg);
+    }
+    .q-block {
+      margin: 24px 0;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    .q-block:last-of-type { border-bottom: none; }
+    .q-label {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .q-block label {
+      display: block;
+      padding: 6px 10px;
+      margin: 4px 0;
+      border-radius: 4px;
+      cursor: pointer;
+      line-height: 1.5;
+    }
+    .q-block label:hover { background: #e8e8e0; }
+    #score-btn {
+      display: block;
+      margin: 28px auto 0;
+      padding: 12px 32px;
+      font-family: Georgia, serif;
+      font-size: 1em;
+      background: #2a5a2a;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #score-btn:hover { background: #1e441e; }
+    #quiz-result {
+      margin-top: 24px;
+      padding: 18px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    #score-text {
+      font-size: 1.15em;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .review-item {
+      margin-bottom: 14px;
+      padding: 10px 12px;
+      border-radius: 4px;
+    }
+    .review-item.correct { background: #e6f4e6; }
+    .review-item.wrong { background: #fce8e8; }
+    .review-item .ri-q { font-weight: bold; margin-bottom: 4px; }
+    .review-item .ri-detail { font-size: 0.93em; color: #444; }
+  </style>
+</head>
+<body>
+
+<h1>Why Everyone (Else) Is a Hypocrite</h1>
+<p class="subtitle">Evolution and the Modular Mind</p>
+<p class="author">Robert Kurzban</p>
+
+<h2>Prologue</h2>
+
+<p>The book opens with a vivid contrast between two kinds of games. In the old video game <i>Frogger</i>, the player navigates a frog across traffic&mdash;a contest against <b>Nature</b>, indifferent to the frog's mental states. If the frog is ignorant of oncoming cars, it dies. There is no strategic value to stupidity. But crossing the street in Philadelphia is a fundamentally different kind of game: one played against <i>other people</i>. Here, Kurzban argues, being ignorant, irrational, or strategically unpredictable can actually help. A driver who sees a pedestrian step off the curb without looking may slow down precisely because the pedestrian's apparent obliviousness signals that threatening the pedestrian won't work&mdash;they can't be deterred.</p>
+
+<p>Kurzban frames himself as an <b>evolutionary psychologist</b> fascinated by how the mind was designed by natural selection. He acknowledges that this book won't rehabilitate human nature so much as <i>explain</i> it. His central claim is that much of what makes us wrong, irrational, and hypocritical is a feature, not a bug: we evolved to play sophisticated social games, and our brains are built to exploit the fact that being knowledgeable, correct, or morally consistent is not always advantageous. Being ignorant, wrong, and hypocritical can make you better off&mdash;as long as you're ignorant, wrong, and hypocritical <i>in the right ways</i>.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Kurzban's framing of humans as primarily playing strategic social games risks underweighting the many domains in which accurate beliefs are clearly advantageous regardless of social context&mdash;medicine, engineering, navigation. Critics of <b>evolutionary psychology</b> such as David Buller (<i>Adapting Minds</i>) argue that the field too readily constructs post-hoc adaptive stories for any observed behavior. The claim that "being wrong can help you" is compelling in social contexts, but may be overgeneralized if applied too broadly to cognition as a whole.</p>
+</details>
+
+<h2>Chapter 1: Consistently Inconsistent</h2>
+
+<p>The opening chapter introduces the book's central thesis: the human mind is composed of many distinct <b>modules</b>&mdash;think of them as individual iPhone applications, each operating by its own logic, designed by natural selection to solve specific adaptive problems. Walt Whitman's "I contain multitudes" is not poetic license; it is a literal description of mental architecture. Because different modules are designed to do different things, they don't always work in harmony, which is why humans are <b>massively inconsistent</b> in thought and behavior.</p>
+
+<p>To ground this claim, Kurzban draws on the famous split-brain experiments by <b>Gazzaniga and LeDoux</b>. When the corpus callosum connecting the brain's hemispheres is surgically severed (a procedure once used to control epilepsy), the two hemispheres can no longer share information. In one classic study, a split-brain patient's left hemisphere saw a chicken claw and correctly pointed the right hand to a chicken; the right hemisphere saw a snowy scene and correctly pointed the left hand to a snow shovel. But when asked to explain the two choices, the <b>left hemisphere's verbal system</b>&mdash;the part that talks&mdash;invented a plausible but false story: "you need the shovel to clean up after the chicken." The brain doesn't just hold contradictory information; it confabulates explanations for it.</p>
+
+<p>Optical illusions, blindsight, and other neurological phenomena reinforce the same point: different parts of the brain can simultaneously hold mutually inconsistent representations. This is not a defect to be corrected. It is, Kurzban argues, the <i>normal</i> operating condition of the modular mind&mdash;and it explains why people are conflicted, why they sometimes don't know why they did something, and why they are often hypocritical without realizing it.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The split-brain cases are real, but some researchers caution against using them as a model for the normal brain. The corpus callosotomy creates an <i>artificial</i> disconnection; in intact brains, the hemispheres communicate extensively. <b>Michael Gazzaniga</b> himself has written that the "interpreter" function of the left hemisphere&mdash;the confabulator&mdash;operates to <i>integrate</i> experience into a coherent narrative, suggesting that unity-seeking is also a fundamental feature of the mind. Whether this implies a single "self" or just another module is contested. Additionally, philosophers like <b>Derek Parfit</b> have explored personal identity and bundled-self views without the evolutionary framing, suggesting the modular account is not the only way to arrive at similar conclusions.</p>
+</details>
+
+<h2>Chapter 2: Evolution and the Fragmented Brain</h2>
+
+<p>This chapter develops the concept of a <b>module</b> using Valentino Braitenberg's thought experiments in <i>Vehicles: Experiments in Synthetic Psychology</i>. Braitenberg imagined increasingly complex toy vehicles equipped with sensors connected to motors. A simple vehicle might have a heat sensor wired to move it away from warmth&mdash;giving it a rudimentary "instinct." As more sensors are added with different wiring configurations, the vehicle develops competing drives. Vehicle 3c has sensors for heat, light, oxygen, and organic matter; when it encounters hot organic matter, its heat-avoidance module and its organic-matter-seeking module are in direct conflict.</p>
+
+<p>This thought experiment elegantly illustrates what Kurzban means by modularity: each sensor-motor linkage is a <b>specialized information-processing mechanism</b> with a function. Adding modules increases behavioral sophistication, but also increases the potential for internal conflict. The key insight from evolutionary biology is that natural selection builds up these functional modules incrementally over many generations, each one solving an adaptive problem faced by our ancestors. The human mind is not a general-purpose reasoning engine (as some cognitive scientists claim) but a collection of <b>specialized subroutines</b>, each designed by selection to handle specific types of information and produce specific types of responses.</p>
+
+<p>Kurzban introduces <b>evolutionary psychology</b>'s core commitments: the brain processes information; natural selection shaped its structure; and because selection is slow, humans carry adaptations designed for our hunter-gatherer past, not the modern world. This sets up a key tension throughout the book: a modular mind designed for ancestral environments will sometimes produce behavior that looks bizarre, inconsistent, or self-defeating in modern contexts.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The "massive modularity" thesis&mdash;that the mind is composed of a very large number of specialized modules&mdash;is contested within cognitive science. <b>Jerry Fodor</b>, whose work on modularity Kurzban engages, actually argued for a more limited modularity: peripheral systems (perception, language) are modular, but central systems (reasoning, belief fixation) are not. Fodor's <i>The Mind Doesn't Work That Way</i> is precisely a critique of the evolutionary psychology approach. Critics also note that defining "module" loosely enough to mean any functional process risks making the theory unfalsifiable&mdash;almost any neural process could be called a "module."</p>
+</details>
+
+<h2>Chapter 3: Who Is "I"?</h2>
+
+<p>Kurzban uses Walt Disney World's attraction <b>Cranium Command</b>&mdash;in which a small pilot named Buzzy sits inside a 12-year-old's head and directs his behavior&mdash;to illustrate the central problem with intuitions about selfhood. The attraction is charming but scientifically incoherent: if Buzzy runs Bobby's brain, who runs Buzzy's brain? Positing a "little brain within a big brain" just restates the problem rather than solving it. As philosopher Daniel Dennett argued with his concept of the <b>Cartesian Theater</b>, we all carry a powerful but mistaken intuition that there is "someone" inside watching the show&mdash;a central observer who integrates all inputs and makes decisions. This intuition is wrong.</p>
+
+<p>The chapter examines <b>Benjamin Libet's famous experiments</b> on voluntary movement: subjects told to flick their wrists at a moment of their choosing showed measurable brain activity (the "Readiness Potential") several hundred milliseconds <i>before</i> they reported being aware of the decision to move. The only way this could <i>not</i> be true would be if the very first module in the decision cascade happened to be a conscious one&mdash;an unlikely coincidence. The far more natural interpretation is that many of the modules initiating decisions are nonconscious, and the conscious experience of "deciding" comes later, as information propagates through the system.</p>
+
+<p>Kurzban concludes that there is no privileged "self" among the brain's modules. Consciousness is associated with only some of them, and there is no compelling reason to treat conscious modules as more "you" than nonconscious ones. The idea of a unified self is a compelling fiction, and Dennett's warning that the Cartesian Theater "keeps reasserting itself, in new guises" for scientists and laypeople alike remains apt. Our speech-generating modules produce explanations for behavior that other modules initiated&mdash;and those explanations are often wrong.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Libet's experiments have been widely cited but also widely critiqued. Some researchers, such as <b>Aaron Schurger</b>, have argued that the Readiness Potential reflects stochastic neural fluctuations rather than a deliberate unconscious decision, meaning the experiment may not tell us what Libet thought it did. Others argue that subjects <i>can</i> veto the movement after the RP but before the wrist flick, suggesting that conscious will still plays a meaningful causal role. The broader question of whether "the self" is an illusion remains deeply contested in philosophy of mind; <b>Thomas Metzinger</b> develops a nuanced account of the "phenomenal self-model" that preserves important distinctions Kurzban largely passes over.</p>
+</details>
+
+<h2>Chapter 4: Modular Me</h2>
+
+<p>This chapter introduces one of the book's most important concepts: the <b>press secretary module</b>. Drawing on an episode from <i>The West Wing</i> in which press secretary C.J. Cregg deliberately avoids learning about the President's multiple sclerosis diagnosis&mdash;so she can later honestly deny knowing&mdash;Kurzban argues that some of the mind's modules are designed to communicate with the outside world in a <b>Machiavellian</b> fashion. These modules function best not when they have full information, but when they are strategically kept in the dark. Will Bailey, C.J.'s successor, puts it perfectly: "I do my best work when I'm the least informed person in the room."</p>
+
+<p>The press secretary view challenges our intuition that the conscious "I" is the brain's chief executive. Rather, the modules we experience as "us"&mdash;the ones generating speech, justifying choices, and presenting ourselves to others&mdash;are more like a <b>public relations department</b> than a president. They get selected outputs from other modules and package them for external consumption, without access to the full picture of what's happening internally. Dennett made a similar point, calling this the "PR component" of the mind.</p>
+
+<p>Kurzban illustrates this with psychologist <b>Jonathan Haidt</b>'s "moral dumbfounding" research. Subjects presented with a story about consensual, protected incest between adult siblings almost universally judge it wrong, but when their reasons are systematically dismantled (no risk of inbreeding, kept secret, not repeated, both enjoyed it), they cannot provide a coherent justification. They are left saying only "it's just wrong." The press secretary module doesn't know why the moralistic module condemned the act; it only knows that it did, and must now justify it after the fact.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Haidt's "moral dumbfounding" findings have been influential but also challenged. Some researchers argue that the scenarios are deliberately constructed to <i>prevent</i> justification (every argument is pre-empted), and that in normal contexts people can give coherent reasons for moral judgments. <b>Peter Railton</b> and others in moral philosophy argue that moral intuitions can be systematically refined through reflection, suggesting that the relationship between intuition and reasoning is more bidirectional than Kurzban implies. The claim that the "real you" is merely a press secretary is also philosophically contentious: the narrative-self view (associated with <b>Marya Schechtman</b>) holds that the self is constructed through ongoing narrative integration, not reducible to any single module.</p>
+</details>
+
+<h2>Chapter 5: The Truth Hurts</h2>
+
+<p>Chapter 5 takes on a direct challenge from philosopher <b>Jerry Fodor</b>, who argues that the proper function of cognition is the fixation of <i>true beliefs</i>&mdash;nothing more. Kurzban agrees that truth is often useful: accurate beliefs guide effective action, and false beliefs can be catastrophic (Zulnun Arghun, who believed he was destined to defeat the Uzbeks, held his ground with 150 soldiers against 50,000 and was predictably destroyed). But Kurzban argues that Fodor is <b>deeply wrong</b> about the limits of this claim.</p>
+
+<p>Sometimes, <b>not knowing</b> is strategically advantageous. In Jason Dana's clever economic game, subjects could choose between paying themselves $5 (with $5 going to another player) or $6 (with only $1 going to the other player). Roughly two-thirds chose the generous option when outcomes were clear. But in a modified version where outcomes were hidden behind a button subjects could optionally click, roughly half chose <i>not</i> to click&mdash;preserving their ignorance so they could choose the selfish option ($6) while honestly claiming they didn't know they were harming the other player. Ignorance is used strategically to escape <b>moral accountability</b>.</p>
+
+<p>The chapter expands this to everyday cases: once you see a kidnapper's face, you become a liability; once you know a friend committed a crime, you face an impossible choice under oath; once you know there's a cat trapped in a burning building, you have a new obligation. Kurzban generalizes this into a principle: <b>information creates social payoffs and social costs</b>, and modules designed to gather information were shaped not just by the truth-value of information but by its full social consequences. The mind's information-gathering systems were not designed by a philosopher who only cared about accuracy.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>While Dana's experiments are elegant, their scope is modest&mdash;a laboratory game with small stakes. The inference that the brain has evolved modules specifically designed for strategic ignorance goes considerably beyond what the data show. Alternative explanations exist: people may simply prefer not to confront uncomfortable information (a general avoidance tendency) rather than engaging in sophisticated strategic reasoning. Philosophers in the <b>epistemic virtue</b> tradition (e.g., <b>Linda Zagzebski</b>) argue that the pursuit of truth is a genuine human good that cannot be fully reduced to social payoffs, and that Kurzban's framework systematically undervalues our capacity for genuine intellectual honesty.</p>
+</details>
+
+<h2>Chapter 6: Psychological Propaganda</h2>
+
+<p>Here Kurzban takes up the first of two phenomena labeled "self-deception." He begins by dissolving the traditional philosophical paradox: how can someone <i>simultaneously know and not know</i> the same thing? Without modularity, this seems contradictory. With modularity, it is straightforward&mdash;different modules can hold different, mutually inconsistent representations, and there is no single "belief" to be either held or denied.</p>
+
+<p>The main phenomenon of this chapter is what Kurzban calls being <b>strategically wrong</b>: holding a representation that is inaccurate in a way that confers advantage in social contexts. Psychologist <b>Shelley Taylor</b>'s research on "<b>positive illusions</b>" documented this systematically: 94% of college professors rate themselves as above-average teachers (the <b>Lake Wobegon Effect</b>); people consistently rate themselves as better-than-average drivers&mdash;even those in accidents severe enough to hospitalize them. In one study, subjects identifying their own faces in a lineup of morphed photos consistently selected a more attractive version as theirs.</p>
+
+<p>Kurzban argues the evolutionary logic is simple: if you behave as though you have more skill, attractiveness, or control than you do, you may persuade others to believe this too, leading to real social benefits. The strategically wrong belief is housed in the <b>press secretary module</b> and affects behavior in ways that can convince observers. This is not lying in any conscious sense; it is the design of systems shaped by selection to generate favorable representations. He extends the analysis to scientists who systematically overestimate the novelty of their ideas (because convincing others of novelty confers reputational benefits)&mdash;a point he includes with characteristic self-deprecating humor.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Taylor and Brown's original positive illusions paper has been revisited and partially challenged. <b>Colvin and Block</b> (1994) argued that Taylor and Brown had failed to adequately distinguish between healthy positive illusions and genuine self-knowledge, and that many studies of self-enhancement do not control for actual performance variation. Cross-cultural research (notably by <b>Heine and colleagues</b>) found that self-enhancement is much weaker or absent in East Asian cultures, suggesting the effect may be culturally specific rather than a universal evolved design feature. If positive illusions are culturally variable, their evolutionary explanation becomes harder to sustain in strong form.</p>
+</details>
+
+<h2>Chapter 7: Self-Deception</h2>
+
+<p>The second type of "self-deception" is illustrated through the story of Fred, a terminal cancer patient who simultaneously maintains a belief that he will recover (telling everyone he's going to be fine) and behaves as though he knows he won't (undergoing painful weekly treatments, honoring promises to his sister). Fred seems to hold <b>two mutually contradictory beliefs</b> at once&mdash;and this is precisely the kind of case that has tormented philosophers and psychologists.</p>
+
+<p>Classical theories of self-deception invoke motivation: Fred <i>wants</i> to believe he will survive, so he deceives himself. Kurzban finds this explanation nearly incoherent: without a Buzzy-like homunculus to do the wanting and deceiving, the phrase "motivated to protect the self" has no clear physical referent. More fundamentally, he argues, <b>evolution doesn't care how happy you are</b>. Natural selection acts on reproductive outcomes, not subjective feelings of well-being. Modules designed to produce positive feelings for their own sake would have no selective advantage.</p>
+
+<p>The modular explanation is cleaner: the press secretary module, designed to communicate convincingly with others, may hold and broadcast a <b>strategically optimistic representation</b> (useful for maintaining others' investment and support during illness), while a different module &mdash;one that governs behavior rather than communication&mdash;holds a more accurate representation (which is why Fred gets treatment and makes a cruise deposit). There is no paradox, no Buzzy required. Different modules hold different representations for different functional purposes. The chapter closes by noting that "strategically wrong" beliefs&mdash;the ones useful for persuasion&mdash;tend to be the ones accessible to consciousness, because consciousness is linked to communication with others.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>While modularity does dissolve some versions of the self-deception paradox, critics argue that it may do so at the cost of explanatory depth. <b>Alfred Mele</b>'s careful philosophical work on self-deception distinguishes multiple subtypes and argues that motivational factors&mdash;though difficult to operationalize&mdash;are genuinely implicated in many cases. Simply saying "module A has one belief and module B has another" may explain the architecture without explaining <i>why</i> those particular modules hold those particular representations. The relationship between self-deception and actual adaptive outcomes (do cancer patients who maintain unrealistic optimism live longer?) is empirically contested, with studies showing mixed results.</p>
+</details>
+
+<h2>Chapter 8: Self-Control</h2>
+
+<p>Self-control is reframed using the same modular lens applied to self-deception. Economist Steve Landsburg had identified as one of the "Mysteries of the Universe" the fact that people lock their refrigerator doors at night. Under the <b>Magic 8-Ball model</b> of the mind&mdash;the standard economic assumption that people have stable, unified, ordered preferences&mdash;this is genuinely mysterious: if you don't want to eat the cake, you won't eat it at midnight; if you do want to eat it, locking the door is counterproductive. Either way, the lock is unnecessary.</p>
+
+<p>The mystery dissolves under modularity. The module that's in charge at 8 P.M. (the sated, reflective self that values fitness) and the module in charge at midnight (the hungry, tired self that craves sugar) are not the same module. They have different information, different drives, different outputs. <b>Pre-commitment devices</b> like locked refrigerators are the 8 P.M. module's attempt to constrain the midnight module&mdash;one module binding another. Kurzban extends this analysis to challenge the economic assumption of stable preferences more broadly: Yamagishi's pen choice studies show that preferences for green vs. orange pens reverse depending on whether one is the first or last to choose. Context matters so pervasively that the very notion of a fixed "preference" is questionable.</p>
+
+<p>The chapter also challenges the concept of <b>self-interest</b>. Biology, economics, and psychology all invoke this notion, but the modular view suggests that "the self" doesn't have a single interest. Different modules have different interests. What we call self-interest is really a particular module's interest winning out in competition with other modules. This leads to a richer but more complex picture of human decision-making in which "who is controlling whom" is as murky for self-control as it is for self-deception.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Kurzban's dismissal of unified preferences may be too quick. <b>Behavioral economists</b> like Kahneman and Thaler have developed highly productive frameworks (prospect theory, mental accounting, dual-process models) that acknowledge contextual variability in preferences while still maintaining useful predictive models. The "multiple selves" framing, while intuitive, raises difficult questions about moral responsibility: if the midnight cake-eater is a different "module" from the one that locked the door, in what sense are either accountable? Philosophers of action like <b>Michael Bratman</b> have developed sophisticated accounts of how unified agency can be compatible with internal conflict, without abandoning the notion of a coherent self entirely.</p>
+</details>
+
+<h2>Chapter 9: Morality and Contradictions</h2>
+
+<p>Kurzban opens with a satirical proposal: ban all sex. The argument is impeccable on utilitarian grounds (reduced STIs, more productivity, bipartisan agreement). The obvious objection is that people <i>ought to be free</i> to do as they please when they're not harming others. But here is the puzzle: that same principle&mdash;the liberty principle&mdash;is routinely ignored when people make moral judgments about others. People condemn incest between consenting adults, flag-burning, human cloning, and other "victimless" acts without invoking any coherent principle. <b>Moral condemnation is not derived from principles</b>; it is generated by nonconscious modules whose outputs the press secretary then tries to justify.</p>
+
+<p>Kurzban draws on <b>Marc Hauser</b>'s trolley problem variants to show that people give inconsistent moral verdicts across structurally similar scenarios and often cannot meet even loose standards for justifying those differences. Research from Kurzban's own lab with Peter DeScioli and Skye Gilbert shows a striking pattern with "victimless" crimes: people who judge an act wrong reliably <i>invent</i> a victim post-hoc to justify the pre-existing condemnation. Remove the obvious victim (a scientist clones a human who is never actually alive and never suffers), and subjects simply reassign the victim role ("the scientist somehow is the victim"). <b>Moral judgment precedes, rather than follows, moral reasoning</b>.</p>
+
+<p>The chapter surveys several controversial moral domains&mdash;abortion, drug prohibition, obscenity&mdash;arguing that in each case people apply liberty principles selectively, invoking them when the target behavior is one they want to protect and ignoring them when condemning behavior they find viscerally wrong. This is not random inconsistency; it is the predictable output of modular systems that were <i>not designed</i> to produce coherent principles but rather to generate tactical moral condemnation.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Haidt's social intuitionist model&mdash;which Kurzban broadly endorses&mdash;has been challenged by <b>Joshua Greene</b> and colleagues, who argue that controlled, deliberate reasoning (associated with the prefrontal cortex) does systematically override gut reactions in certain conditions. Greene's dual-process moral psychology suggests that moral reasoning is not merely post-hoc rationalization; it can genuinely revise intuitions over time. Furthermore, the observation that people cannot articulate justifications for their moral views does not necessarily mean those views lack justification&mdash;implicit knowledge often outruns explicit verbal articulation, as Kurzban himself acknowledges elsewhere in the book.</p>
+</details>
+
+<h2>Chapter 10: Morality Is for the Birds</h2>
+
+<p>Kurzban turns to bird biology to sketch an evolutionary account of why people have modules designed to condemn&mdash;and attempt to control&mdash;other people's behavior. The <b>polygyny threshold model</b> describes how female birds choose mates when some males have better territories than others. In a mixed population where some high-quality males attract multiple mates, different birds stand to gain or lose depending on whether polygyny is permitted. Monogamously mated females and low-quality males benefit when polygyny is prohibited; high-quality males and unmated females may not.</p>
+
+<p>Kurzban's key move is to make these birds <b>moralistic</b>: imagine they can condemn and punish rule violations. Selection would favor modules that cause birds to condemn the arrangements that harm their own reproductive interests&mdash;without the birds knowing <i>why</i> they hold those moral positions. These birds might talk about love, family, and "naturalness" of monogamy, while birds on the other side cite individual freedom. Neither set of birds would recognize that their moral intuitions track their fitness interests. Applied to humans: we are those birds.</p>
+
+<p>This framework explains both the <b>content</b> of moral condemnation (it tends to cluster around mating, resources, and status&mdash;domains where evolutionary stakes are highest) and the <b>structure</b> of hypocrisy. Moral rules are only stable when they are perceived as impartial&mdash;binding everyone equally. Hypocrisy undermines impartiality by allowing some individuals to exempt themselves from rules they impose on others. Detected hypocrisy is offensive because it reveals that the moral stick is being wielded as an instrument of coercion rather than a neutral social constraint. The chapter culminates in an explanation of why everyone (<i>else</i>) is a hypocrite: we have modules designed to condemn others and modules designed to advance our own interests&mdash;and there is nothing in the design to make these consistent with each other.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The extension from bird mating models to human moral psychology involves substantial inferential leaps. While fitness-interest-based accounts of moral intuitions are compelling for some domains (especially those involving sexuality and resources), they are harder to sustain for moral intuitions that seem to lack clear fitness correlates&mdash;such as the near-universal condemnation of gratuitous cruelty to strangers. <b>Jonathan Haidt</b>'s more expansive moral foundations theory identifies six moral domains (care, fairness, loyalty, authority, sanctity, liberty), and while some map plausibly onto fitness interests, others do not reduce neatly to reproductive strategy. Additionally, <b>Rawlsian</b> political philosophers would contest whether the impartiality norm Kurzban invokes is best explained evolutionarily rather than rationally.</p>
+</details>
+
+<h2>Epilogue</h2>
+
+<p>The epilogue draws together the book's threads into a normative conclusion. The United States Declaration of Independence, the Pledge of Allegiance, the national anthem: all celebrate liberty. The French put <i>libert&eacute;</i> first in their national motto. Yet an army of modules works constantly to restrict others' behavior&mdash;what drugs they can take, what they can do with their bodies, what kinds of consensual transactions they can engage in. The <b>press secretary modules</b> broadcast liberty while the moralistic modules undermine it at every turn.</p>
+
+<p>Kurzban draws a distinction between two kinds of inconsistency. Inconsistency in <b>perception</b> is harmless and unavoidable: if you see the M&uuml;ller-Lyer lines as unequal even while knowing they are equal, no harm is done. But inconsistency in <b>morality</b> matters: when moral rules are applied to some and not others, they cease to be neutral social constraints and become instruments of inter-group oppression. A rule that everyone agrees to under conditions of impartiality (as in <b>John Rawls</b>'s veil of ignorance) is legitimate; a rule applied selectively by those who benefit from its application is merely coercion dressed up as principle.</p>
+
+<p>The author's closing argument is that awareness of our modular, conflicted nature creates an opportunity. Modules make us flexible; different modules exert more or less control depending on circumstances. Recognizing the conflict between our <b>liberty-proclaiming modules</b> and our <b>moralistic-restriction modules</b> does not make the conflict go away, but it does give us the opportunity to hold ourselves to the principles we claim to hold&mdash;to be, if not less hypocritical in our private psychology, at least more consistent in our public policy.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Kurzban's normative conclusion&mdash;that libertarian consistency should be the standard for policy&mdash;is a substantive political position, not merely a scientific finding. Many political philosophers would contest the idea that liberty is the master principle from which all other moral considerations flow. Communitarian thinkers like <b>Michael Sandel</b> argue that legitimate moral restrictions on behavior can stem from shared values and community commitments that are not reducible to harm prevention. Kurzban's framework tends to treat all moral restrictions as evolutionarily suspect, which may undervalue genuinely justified collective action. His admission that psychology cannot yet explain where moralistic modules come from is an important qualification on the book's ambitious explanatory program.</p>
+</details>
+
+<h2 id="quiz-heading">Comprehension Quiz</h2>
+
+<details id="quiz-section" class="quiz-wrapper">
+  <summary class="quiz-toggle">Take the Quiz</summary>
+
+  <form id="quiz-form">
+
+    <div class="q-block">
+      <p class="q-label">1. What is the key point of the Frogger vs. Philadelphia analogy in the Prologue?</p>
+      <label><input type="radio" name="q1" value="a"> Philadelphia drivers are more dangerous than video game cars</label>
+      <label><input type="radio" name="q1" value="b"> When playing against Nature, ignorance is always harmful; when playing against people, ignorance can be strategically advantageous</label>
+      <label><input type="radio" name="q1" value="c"> Video games accurately simulate real life</label>
+      <label><input type="radio" name="q1" value="d"> The author dislikes living in Philadelphia</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">2. What does the author mean by a "module" throughout the book?</p>
+      <label><input type="radio" name="q2" value="a"> A localized, surgically removable brain region</label>
+      <label><input type="radio" name="q2" value="b"> The emotional, irrational side of the brain</label>
+      <label><input type="radio" name="q2" value="c"> A specialized information-processing mechanism designed by evolution to perform a specific function</label>
+      <label><input type="radio" name="q2" value="d"> A conscious decision-making unit shared by all vertebrates</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">3. In Gazzaniga and LeDoux's split-brain experiments, what did the left hemisphere do when asked to explain why the left hand pointed to a snow shovel?</p>
+      <label><input type="radio" name="q3" value="a"> It accurately reported seeing a snowy scene</label>
+      <label><input type="radio" name="q3" value="b"> It refused to answer</label>
+      <label><input type="radio" name="q3" value="c"> It confabulated a plausible but false explanation (e.g., the shovel is for cleaning up after the chicken)</label>
+      <label><input type="radio" name="q3" value="d"> It correctly identified that the other hemisphere had seen a wintry scene</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">4. What does Braitenberg's Vehicle 3c primarily illustrate about modular systems?</p>
+      <label><input type="radio" name="q4" value="a"> That machines cannot genuinely have preferences</label>
+      <label><input type="radio" name="q4" value="b"> Adding specialized modules increases behavioral sophistication but also creates the potential for internal conflict between competing drives</label>
+      <label><input type="radio" name="q4" value="c"> That biological and artificial machines are fundamentally different</label>
+      <label><input type="radio" name="q4" value="d"> That heat avoidance is more fundamental than oxygen-seeking</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">5. Why is the Disney attraction Cranium Command's "Buzzy the pilot" metaphor scientifically wrong?</p>
+      <label><input type="radio" name="q5" value="a"> Because the brain is too large to contain a pilot</label>
+      <label><input type="radio" name="q5" value="b"> Positing a little brain running a big brain just restates the problem; it requires another pilot to run Buzzy, leading to infinite regress</label>
+      <label><input type="radio" name="q5" value="c"> Because Disney attractions are legally prohibited from making scientific claims</label>
+      <label><input type="radio" name="q5" value="d"> Because twelve-year-olds have underdeveloped prefrontal cortexes</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">6. What did Libet's wrist-movement experiments reveal about consciousness and decision-making?</p>
+      <label><input type="radio" name="q6" value="a"> That conscious intention always precedes brain activity</label>
+      <label><input type="radio" name="q6" value="b"> That free will is scientifically verified</label>
+      <label><input type="radio" name="q6" value="c"> That brain activity precedes subjects' conscious awareness of the decision to move, suggesting the decision-initiating module is nonconscious</label>
+      <label><input type="radio" name="q6" value="d"> That EEG measurements are too imprecise to study decisions</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">7. What is the author's "press secretary" metaphor intended to capture?</p>
+      <label><input type="radio" name="q7" value="a"> The brain region responsible for language production</label>
+      <label><input type="radio" name="q7" value="b"> The module(s) designed to communicate with others, often strategically uninformed of what other modules are doing, functioning as a public relations system</label>
+      <label><input type="radio" name="q7" value="c"> The rational, deliberate decision-making system that overrides emotion</label>
+      <label><input type="radio" name="q7" value="d"> A system for detecting lies in others</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">8. What is Haidt's "moral dumbfounding" and why does Kurzban find it significant?</p>
+      <label><input type="radio" name="q8" value="a"> The tendency to apply moral rules inconsistently across political parties</label>
+      <label><input type="radio" name="q8" value="b"> When people make confident moral condemnations (e.g., about consensual incest) but cannot provide coherent justifications, revealing that moral judgments are generated by nonconscious modules the press secretary cannot access</label>
+      <label><input type="radio" name="q8" value="c"> People's confusion when presented with abstract trolley problems</label>
+      <label><input type="radio" name="q8" value="d"> The phenomenon of forgetting one's own past moral violations</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">9. In Jason Dana's economic game (Chapter 5), why did roughly half of subjects choose NOT to click a button revealing other players' payoffs?</p>
+      <label><input type="radio" name="q9" value="a"> They were indifferent to others' outcomes</label>
+      <label><input type="radio" name="q9" value="b"> The button was confusing</label>
+      <label><input type="radio" name="q9" value="c"> Remaining ignorant allowed them to choose the selfish ($6) option while maintaining plausible deniability about harming the other player</label>
+      <label><input type="radio" name="q9" value="d"> They believed the other player was better off receiving $1</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">10. According to Kurzban, what is a "strategically wrong" belief?</p>
+      <label><input type="radio" name="q10" value="a"> A belief that is immoral</label>
+      <label><input type="radio" name="q10" value="b"> A representation that is inaccurate in a way that, if others believed it too, would confer a social or fitness advantage</label>
+      <label><input type="radio" name="q10" value="c"> A belief that one consciously knows is false but maintains for social reasons</label>
+      <label><input type="radio" name="q10" value="d"> Any belief formed without sufficient evidence</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">11. The "Lake Wobegon Effect" refers to which psychological phenomenon?</p>
+      <label><input type="radio" name="q11" value="a"> The tendency to recall childhood as rosier than it was</label>
+      <label><input type="radio" name="q11" value="b"> People's systematic tendency to rate themselves as above average across many traits and abilities&mdash;a statistical impossibility if everyone did so</label>
+      <label><input type="radio" name="q11" value="c"> A cognitive bias affecting only rural populations</label>
+      <label><input type="radio" name="q11" value="d"> The illusion that one's home town is safer than average</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">12. How does modularity dissolve the philosophical paradox of self-deception (the problem of simultaneously knowing and not knowing something)?</p>
+      <label><input type="radio" name="q12" value="a"> It shows that self-deception is impossible</label>
+      <label><input type="radio" name="q12" value="b"> It shows that the puzzle only arises if we assume one unified mind; with multiple modules, different modules can simply hold different representations without contradiction</label>
+      <label><input type="radio" name="q12" value="c"> It explains that Buzzy resolves the conflict between the two beliefs</label>
+      <label><input type="radio" name="q12" value="d"> The paradox is real and modularity makes it worse</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">13. Kurzban argues that "evolution doesn't care how happy you are." What does this imply about self-deception?</p>
+      <label><input type="radio" name="q13" value="a"> Positive emotions evolved purely for survival</label>
+      <label><input type="radio" name="q13" value="b"> Modules designed to produce false beliefs for the purpose of feeling good would have no selective advantage; the real explanation for strategically positive beliefs must lie in social, not hedonic, benefits</label>
+      <label><input type="radio" name="q13" value="c"> Evolution selects against happiness because it reduces vigilance</label>
+      <label><input type="radio" name="q13" value="d"> Self-deception is adaptive only in clinical populations</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">14. Why would locking a refrigerator door be mysterious under the "Magic 8-Ball" model of unified preferences?</p>
+      <label><input type="radio" name="q14" value="a"> Refrigerators were not invented when economic theories were developed</label>
+      <label><input type="radio" name="q14" value="b"> If a person had stable, unified preferences, the same decision (eat or don't eat the cake) would be reached at any time, making pre-commitment devices pointless</label>
+      <label><input type="radio" name="q14" value="c"> Behavioral economists have proved that locking refrigerators always increases eating</label>
+      <label><input type="radio" name="q14" value="d"> The 8-Ball model predicts people will always eat the cake</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">15. What do Yamagishi's pen color choice experiments demonstrate about preferences?</p>
+      <label><input type="radio" name="q15" value="a"> Japanese people prefer green pens; Americans prefer orange pens</label>
+      <label><input type="radio" name="q15" value="b"> Preferences for the same objects reverse depending on context (e.g., whether one is choosing first or last), showing preferences are not stable properties of a person</label>
+      <label><input type="radio" name="q15" value="c"> People always prefer majority-colored pens</label>
+      <label><input type="radio" name="q15" value="d"> Color preferences are entirely random</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">16. In Kurzban's research on "victimless" offenses (with DeScioli and Gilbert), what did subjects do when they condemned an act but could find no clear victim?</p>
+      <label><input type="radio" name="q16" value="a"> They revised their moral condemnation</label>
+      <label><input type="radio" name="q16" value="b"> They admitted they had no reason for their judgment</label>
+      <label><input type="radio" name="q16" value="c"> They invented or assigned a victim post-hoc (e.g., "society," "humanity," "the clone") to justify the pre-existing condemnation</label>
+      <label><input type="radio" name="q16" value="d"> They refused to participate further in the study</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">17. According to the polygyny threshold model used in Chapter 10, why might monogamously mated female birds develop moral modules favoring enforced monogamy?</p>
+      <label><input type="radio" name="q17" value="a"> They were raised in monogamous nests and learned the preference culturally</label>
+      <label><input type="radio" name="q17" value="b"> Enforced monogamy prevents their mates from acquiring secondary mates who would divert resources away from their offspring, serving the monogamously mated female's fitness interests</label>
+      <label><input type="radio" name="q17" value="c"> Monogamy is genetically programmed in all bird species</label>
+      <label><input type="radio" name="q17" value="d"> They consciously prefer emotional fidelity over reproductive success</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">18. Why does Kurzban argue that hypocrisy is particularly offensive to people from an evolutionary perspective?</p>
+      <label><input type="radio" name="q18" value="a"> Because hypocrites are always consciously aware of their inconsistency</label>
+      <label><input type="radio" name="q18" value="b"> Because religion universally condemns it</label>
+      <label><input type="radio" name="q18" value="c"> Because it undermines the impartiality that makes moral rules acceptable; when rules apply to some but not others, the moral stick becomes an instrument of coercion, which evolved creatures are designed to resist</label>
+      <label><input type="radio" name="q18" value="d"> Because hypocrites tend to have lower status in all human societies</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">19. According to Kurzban, why are politicians perceived as especially hypocritical compared to ordinary people?</p>
+      <label><input type="radio" name="q19" value="a"> Politicians are selected for personality traits that correlate with hypocrisy</label>
+      <label><input type="radio" name="q19" value="b"> Politicians must publicly declare moral positions and are exposed to temptations others never face, so their inconsistencies are observable&mdash;ordinary people are equally hypocritical but rarely caught</label>
+      <label><input type="radio" name="q19" value="c"> Political power corrupts moral reasoning more than other professions</label>
+      <label><input type="radio" name="q19" value="d"> Voters deliberately select hypocrites for office</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">20. What is the author's normative conclusion in the Epilogue about moral consistency?</p>
+      <label><input type="radio" name="q20" value="a"> People should strive to eliminate all inconsistency from their psychology</label>
+      <label><input type="radio" name="q20" value="b"> Psychological inconsistency (e.g., in perception) is unavoidable and harmless, but moral inconsistency in policy matters because selectively applied moral rules enable coercion; moral principles should be applied uniformly</label>
+      <label><input type="radio" name="q20" value="c"> The only solution to hypocrisy is to reduce the number of moral rules</label>
+      <label><input type="radio" name="q20" value="d"> Since hypocrisy is evolutionarily natural, it should be legally protected</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">21. Which of the following best summarizes the book's central thesis?</p>
+      <label><input type="radio" name="q21" value="a"> Humans are fundamentally irrational and there is nothing to be done about it</label>
+      <label><input type="radio" name="q21" value="b"> The mind has a single, unified rational system that is occasionally overwhelmed by emotion</label>
+      <label><input type="radio" name="q21" value="c"> The mind is composed of many specialized modules with different and sometimes conflicting functions; because these modules don't need to be consistent with each other, humans naturally hold contradictory beliefs and behave hypocritically&mdash;not out of moral failure but by design</label>
+      <label><input type="radio" name="q21" value="d"> Evolution has made humans perfectly adapted to modern social environments</label>
+    </div>
+
+    <button type="button" id="score-btn" onclick="scoreQuiz()">Score My Answers</button>
+
+    <div id="quiz-result" style="display:none;">
+      <p id="score-text"></p>
+      <div id="answer-review"></div>
+    </div>
+
+  </form>
+</details>
+
+<script>
+(function() {
+  const answers = {
+    q1:  { correct: "b", explain: "The Frogger/Philadelphia distinction establishes the book's core premise: strategic ignorance and irrationality can pay off in social games against other people, even though they would be fatal playing against indifferent Nature." },
+    q2:  { correct: "c", explain: "Kurzban uses 'module' to mean any specialized information-processing mechanism with a function, analogous to an iPhone app or a computer subroutine — not necessarily localized in the brain." },
+    q3:  { correct: "c", explain: "The left hemisphere's verbal system, unaware that the right hemisphere had seen a wintry scene, invented a plausible but false explanation for the snow shovel — illustrating how the talking part of the brain confabulates rather than accurately reports." },
+    q4:  { correct: "b", explain: "Vehicle 3c demonstrates that adding modules with different drives produces richer behavior but also potential internal conflict — a key foreshadowing of how the modular human mind generates inconsistency." },
+    q5:  { correct: "b", explain: "Any theory requiring a Buzzy inside the brain just pushes the problem back: who pilots Buzzy? A big brain gets smart through many specialized modules, none of which is itself a whole brain." },
+    q6:  { correct: "c", explain: "Libet found brain activity (the Readiness Potential) preceding subjects' reported awareness of deciding to move. The decision-initiating module is nonconscious; consciousness arrives partway through the cascade." },
+    q7:  { correct: "b", explain: "The press secretary metaphor captures the communication/PR modules of the mind, which, like a political press secretary, sometimes work best by remaining uninformed — allowing honest denial and spin without contradiction." },
+    q8:  { correct: "b", explain: "Moral dumbfounding shows that people can hold firm moral condemnations even after every offered justification is dismantled, revealing that the condemnation originated in a nonconscious module the press secretary cannot access." },
+    q9:  { correct: "c", explain: "Remaining ignorant allowed subjects to honestly claim they didn't know their selfish choice harmed the other player — a real-world case of strategic ignorance preserving social image while pursuing self-interest." },
+    q10: { correct: "b", explain: "A strategically wrong belief is one that is inaccurate in a socially advantageous direction — if others believed it too, the believer would be better off. It is housed in the press secretary module and influences behavior in persuasive ways." },
+    q11: { correct: "b", explain: "The Lake Wobegon Effect is the systematic tendency for most people to rate themselves above average (a statistical impossibility), documented across driving ability, teaching, and interpersonal skills." },
+    q12: { correct: "b", explain: "The paradox only arises if we assume a unified mind with one belief-holder. A modular mind has many modules that can hold different representations independently — no single entity is simultaneously knowing and not knowing." },
+    q13: { correct: "b", explain: "Natural selection acts on reproductive success, not subjective happiness. Modules designed to make you feel good for its own sake have no selective advantage; strategic benefits in social interactions are the real explanation for positive illusions." },
+    q14: { correct: "b", explain: "Under the Magic 8-Ball model, a person's stable preferences lead to the same choice at any time. Locking the door implies that different 'selves' at different times make different choices — which is precisely what modularity predicts." },
+    q15: { correct: "b", explain: "Yamagishi found that subjects chose the majority pen color when choosing first but the minority color when choosing last. This context-dependence shows preferences are not fixed properties of a person, undermining the economic assumption of stable preferences." },
+    q16: { correct: "c", explain: "Subjects judged the act first, then searched for a victim post-hoc. When obvious victims were eliminated from the scenario, they assigned the victim role to abstract entities (society, humanity) or even the perpetrator — showing that justification follows condemnation, not the reverse." },
+    q17: { correct: "b", explain: "The polygyny threshold model shows that enforced monogamy is in the reproductive interest of monogamously mated females. Selection would therefore favor moral modules in those birds condemning polygyny, even without the birds understanding why." },
+    q18: { correct: "c", explain: "Morality is only acceptable to evolved creatures when it applies equally to all. When a hypocrite invokes a moral rule against others while exempting themselves, the rule becomes a coercive tool — something all participants in a shared moral system are designed to resist." },
+    q19: { correct: "b", explain: "Politicians must publicly state moral positions and are tempted in ways ordinary people are not. This combination means their inconsistencies become visible and recordable, while ordinary people's equally frequent hypocrisies go unnoticed." },
+    q20: { correct: "b", explain: "Kurzban distinguishes perceptual inconsistency (harmless and unavoidable) from moral inconsistency in policy (harmful, as it enables coercion). His prescription is to hold ourselves to the liberty principle we publicly endorse." },
+    q21: { correct: "c", explain: "The book's central claim is that the modular architecture of the mind — many specialized, evolutionarily designed modules with different and sometimes conflicting functions — is the root cause of human inconsistency, self-deception, and hypocrisy." }
+  };
+
+  window.scoreQuiz = function() {
+    const form = document.getElementById("quiz-form");
+    let correct = 0;
+    const total = Object.keys(answers).length;
+    let reviewHTML = "";
+
+    for (let i = 1; i <= total; i++) {
+      const key = "q" + i;
+      const selected = form.elements[key] ? form.elements[key].value : "";
+      const isCorrect = selected === answers[key].correct;
+      if (isCorrect) correct++;
+
+      const status = !selected ? "wrong" : (isCorrect ? "correct" : "wrong");
+      const icon = isCorrect ? "\u2705" : "\u274C";
+      const yourAnswer = selected ? selected.toUpperCase() : "No answer";
+      const correctAnswer = answers[key].correct.toUpperCase();
+
+      reviewHTML += '<div class="review-item ' + status + '">';
+      reviewHTML += '<div class="ri-q">' + icon + " Question " + i + "</div>";
+      reviewHTML += '<div class="ri-detail">';
+      if (!isCorrect) {
+        reviewHTML += "Your answer: " + yourAnswer + " &mdash; Correct answer: " + correctAnswer + "<br>";
+      }
+      reviewHTML += answers[key].explain;
+      reviewHTML += "</div></div>";
+    }
+
+    const pct = Math.round((correct / total) * 100);
+    let grade;
+    if (pct === 100) grade = "Perfect score!";
+    else if (pct >= 80) grade = "Great understanding!";
+    else if (pct >= 60) grade = "Good, but review the summaries above for the ones you missed.";
+    else grade = "Consider re-reading the summaries above and trying again.";
+
+    document.getElementById("score-text").textContent = correct + " / " + total + " (" + pct + "%) \u2014 " + grade;
+    document.getElementById("answer-review").innerHTML = reviewHTML;
+    document.getElementById("quiz-result").style.display = "block";
+    document.getElementById("quiz-result").scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+})();
+</script>
+
+</body>
+</html>

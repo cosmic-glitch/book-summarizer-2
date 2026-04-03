@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1929 — Chapter Summaries</title>
+  <style>
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      max-width: 780px;
+      margin: 40px auto;
+      padding: 0 20px;
+      line-height: 1.7;
+      color: #222;
+      background: #fafafa;
+    }
+    h1 {
+      font-size: 1.8em;
+      border-bottom: 2px solid #333;
+      padding-bottom: 10px;
+      margin-bottom: 5px;
+    }
+    .subtitle {
+      font-size: 1.1em;
+      color: #444;
+      margin: 2px 0 0 0;
+      font-style: italic;
+    }
+    .author {
+      font-style: italic;
+      color: #777;
+      font-size: 0.95em;
+      margin-bottom: 40px;
+    }
+    h2 {
+      font-size: 1.3em;
+      margin-top: 48px;
+      color: #1a1a1a;
+      border-left: 4px solid #555;
+      padding-left: 12px;
+    }
+    p {
+      margin-bottom: 14px;
+      text-align: justify;
+    }
+    details.counter {
+      background: #f0ece4;
+      border-left: 4px solid #b8860b;
+      padding: 14px 18px;
+      margin: 20px 0 28px 0;
+      border-radius: 0 6px 6px 0;
+    }
+    details.counter summary {
+      font-weight: bold;
+      font-size: 0.95em;
+      color: #8b6914;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    details.counter summary::-webkit-details-marker {
+      display: none;
+    }
+    details.counter summary::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    details.counter[open] summary::before {
+      transform: rotate(90deg);
+    }
+    details.counter p {
+      margin-top: 12px;
+      margin-bottom: 10px;
+      color: #3a3a3a;
+    }
+    details.counter p:last-child {
+      margin-bottom: 0;
+    }
+    .quiz-wrapper {
+      margin-top: 48px;
+      background: #f5f5f0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 16px 20px;
+    }
+    .quiz-toggle {
+      font-weight: bold;
+      font-size: 1.05em;
+      cursor: pointer;
+      color: #2a5a2a;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .quiz-toggle::-webkit-details-marker { display: none; }
+    .quiz-toggle::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    .quiz-wrapper[open] .quiz-toggle::before {
+      transform: rotate(90deg);
+    }
+    .q-block {
+      margin: 24px 0;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    .q-block:last-of-type { border-bottom: none; }
+    .q-label {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .q-block label {
+      display: block;
+      padding: 6px 10px;
+      margin: 4px 0;
+      border-radius: 4px;
+      cursor: pointer;
+      line-height: 1.5;
+    }
+    .q-block label:hover { background: #e8e8e0; }
+    #score-btn {
+      display: block;
+      margin: 28px auto 0;
+      padding: 12px 32px;
+      font-family: Georgia, serif;
+      font-size: 1em;
+      background: #2a5a2a;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #score-btn:hover { background: #1e441e; }
+    #quiz-result {
+      margin-top: 24px;
+      padding: 18px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    #score-text {
+      font-size: 1.15em;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .review-item {
+      margin-bottom: 14px;
+      padding: 10px 12px;
+      border-radius: 4px;
+    }
+    .review-item.correct { background: #e6f4e6; }
+    .review-item.wrong { background: #fce8e8; }
+    .review-item .ri-q { font-weight: bold; margin-bottom: 4px; }
+    .review-item .ri-detail { font-size: 0.93em; color: #444; }
+  </style>
+</head>
+<body>
+
+<h1>1929</h1>
+<p class="subtitle">Inside the Greatest Crash in Wall Street History&mdash;and How It Shattered a Nation</p>
+<p class="author">Andrew Ross Sorkin</p>
+
+<h2>Prologue</h2>
+
+<p>The book opens on the evening of Monday, October 28, 1929, with <b>Charles "Sunshine Charlie" Mitchell</b>, chairman of <b>National City Bank</b>&mdash;the forerunner of Citigroup and the largest bank in the country&mdash;returning to his office at 55 Wall Street after the stock market had suffered a devastating 13 percent drop. Mitchell learns from his head of trading, Hugh Baker, that the bank had inadvertently purchased <b>seventy-one thousand shares of its own stock</b> at a cost of roughly $32 million, far more than it could afford, threatening the stability of the entire institution. The purchase had been intended to prop up National City's share price to preserve a pending merger with the Corn Exchange Bank, but the volume of buying had spiraled out of control in the chaos.</p>
+
+<p>Sorkin uses this dramatic scene to pivot into a sweeping overview of the 1920s, depicting the era as the birth of the <b>modern consumer economy</b>. Americans left farms for cities, bought cars, radios, and appliances on credit, and began investing in stocks on <b>margin</b>&mdash;putting down as little as 10 percent and borrowing the rest. Businessmen became celebrities; their pronouncements were treated as gospel. The author highlights the era's stark <b>wealth inequality</b>, the gulf between urban prosperity and rural decline, and the government's extreme laissez-faire posture under President Calvin Coolidge. A telling anecdote about <b>Groucho Marx</b> losing his savings in the crash encapsulates the collective delusion that gripped the nation.</p>
+
+<p>The prologue establishes the book's central thesis: the through line behind every major financial crisis is <b>debt</b>&mdash;a powerfully optimistic force that draws the wealth of tomorrow into the present. When greed leads people to take too much, panic is the natural reaction. Each generation believes it has learned from history, yet the cycle repeats.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Sorkin's framing of the 1929 crash as primarily a story of <b>debt and collective delusion</b> is compelling but potentially oversimplified. Economic historians like <b>Milton Friedman</b> and <b>Anna Schwartz</b> in <i>A Monetary History of the United States</i> have argued that the crash itself was not the primary cause of the Great Depression&mdash;rather, it was the Federal Reserve's subsequent contraction of the money supply. The prologue's suggestion that manias inevitably recur because of unchanging human nature, while rhetorically powerful, risks understating the role of <b>institutional design</b> and <b>regulatory frameworks</b> in either enabling or constraining speculative excess.</p>
+</details>
+
+<h2>Chapter One: February 1, 1929</h2>
+
+<p>The narrative introduces <b>Thomas Lamont</b>, the distinguished senior partner of <b>J.P. Morgan &amp; Co.</b>, as he boards the luxury liner <i>Aquitania</i> bound for Paris to negotiate <b>German war reparations</b>. Although technically second-in-command to Jack Morgan, Lamont effectively ran the bank, combining diplomatic finesse with financial acumen. The chapter traces his origins from an impoverished minister's son to a Harvard-educated journalist who eventually joined the House of Morgan and witnessed the <b>Panic of 1907</b> firsthand&mdash;an experience that profoundly shaped his worldview.</p>
+
+<p>Aboard the ship, Lamont pursues two ambitious pieces of business. First, he and his partners have sent out invitations to elite clients for shares in <b>Alleghany Corporation</b>, a highly leveraged railroad holding company created by the reclusive <b>Van Sweringen brothers</b> of Cleveland. Morgan partners could buy shares at a secret price of $20 when the public price was $35, and Lamont offered similar discounts to "friends of the firm" including former President Coolidge, Charles Lindbergh, and Bernard Baruch. Second, Lamont begins scheming to merge <b>ITT, RCA, and Western Union</b> into a massive telecommunications monopoly, negotiating with Owen Young and David Sarnoff on the ship.</p>
+
+<p>The chapter establishes how the <b>investment trust</b> craze&mdash;layer upon layer of leverage packaged and repackaged&mdash;had become the latest Wall Street fashion, with investors buying not companies but <b>reputations</b>. Lamont represents a bridge between the old world of J. Pierpont Morgan, when one man could bend markets to his will, and the hard-rushing future of modern finance.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Lamont's offer of discounted Alleghany shares to politicians and public figures&mdash;including a sitting former president&mdash;represents what would today be considered <b>blatant corruption</b>. Sorkin presents these "friends of the firm" arrangements largely through the bankers' own perspective, treating them as routine courtesies. Critics like <b>Ferdinand Pecora</b>, who would later investigate these practices, argued they constituted <b>bribes</b> designed to buy political protection. The distinction between "goodwill" and corruption is one the book sometimes elides.</p>
+</details>
+
+<h2>Chapter Two: February 14, 1929</h2>
+
+<p>Charles Mitchell arrives at the <b>Federal Reserve Bank of New York</b> for a board meeting, having recently been appointed to the board at the urging of the late Fed governor <b>Benjamin Strong</b>. Strong's motives for appointing Mitchell were strategic rather than admiring&mdash;he wanted to <b>muzzle</b> the outspoken banker by binding him to the board's collective decisions. The chapter explains how the <b>Federal Reserve Board in Washington</b> had issued an advisory discouraging banks from lending to support stock speculation, particularly stocks bought on margin, alarming Wall Street.</p>
+
+<p>Sorkin provides an extensive biography of Mitchell, tracing his rise from a $10-a-week factory worker to the head of the nation's largest bank. Mitchell transformed National City into a <b>"Bank for All"</b> by aggressively extending credit to ordinary Americans and advertising banking services like consumer products. He delisted National City from the New York Stock Exchange, forcing investors to buy and sell through the bank's own branches, which allowed him to control the stock's trading. By 1929, National City stock had risen from $785 to nearly $3,000 a share before a stock split.</p>
+
+<p>At the February 14 board meeting, Mitchell argues against raising interest rates, linking human progress to financial innovation. Despite his protests, the New York Fed board votes to request a rate increase from Washington, which <b>Washington rejects</b>, fearing that a one-point hike would slow the real economy without puncturing speculation. Mitchell leaves the boardroom grim-faced, frustrated by the Fed's indecision.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Mitchell's argument that margin lending was no different from consumer credit for cars and refrigerators glossed over a fundamental distinction: <b>consumer goods retain utility regardless of market conditions</b>, while leveraged stock positions can be wiped out overnight. Economists like <b>Hyman Minsky</b> later formalized this insight in his <b>Financial Instability Hypothesis</b>, arguing that the extension of credit for speculative purposes is inherently destabilizing in ways that consumer credit is not.</p>
+</details>
+
+<h2>Chapter Three: February 16, 1929</h2>
+
+<p>On a Saturday afternoon, Mitchell calls <b>William Crapo Durant</b>&mdash;the legendary founder of General Motors turned stock market speculator&mdash;to discuss their shared frustration with the Federal Reserve's crackdown on speculation. Durant, a tiny man with an enormous appetite for risk, had become one of the richest men in America through audacious stock market maneuvers, including organizing <b>investment pools</b> that could collectively control billions in buying power. His favorite gambit was quietly running up stock prices to squeeze short sellers.</p>
+
+<p>The chapter chronicles Durant's remarkable career: founding the Durant-Dort Carriage Company, acquiring Buick, assembling General Motors, being ousted twice, founding Chevrolet as a comeback vehicle, and ultimately turning to full-time stock speculation. By 1929, he spent his days standing at a desk near Columbus Circle, following ticker tape while commanding twenty-six telephones connected to brokers' offices. Mitchell wants Durant to use his connections to warn the incoming president, <b>Herbert Hoover</b>, that the Fed's policies would destroy prosperity.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Sorkin portrays Mitchell and Durant as genuinely believing they were defending American prosperity against government overreach. However, their <b>financial self-interest</b> in maintaining easy credit conditions was enormous. Durant controlled an estimated $1 billion or more in leveraged stock positions; any credit tightening threatened his personal fortune directly. Their framing of the Fed's modest attempts at restraint as an existential threat to the economy can be read as <b>self-serving rationalization</b> dressed in patriotic language.</p>
+</details>
+
+<h2>Chapter Four: March 4, 1929</h2>
+
+<p><b>Herbert Hoover</b> is inaugurated as the thirty-first president on a rainy March day in Washington. Sorkin paints a portrait of a supremely confident engineer-president who had defeated Al Smith in a landslide and enjoyed overwhelming press support. His relationship with outgoing president <b>Calvin Coolidge</b> was notably frosty&mdash;Coolidge privately called Hoover's advice "all of it bad" and had even ordered whiskey when Hoover won the nomination. The two men rode to the Capitol in awkward silence.</p>
+
+<p>The chapter also profiles <b>Andrew Mellon</b>, the wealthy Pittsburgh industrialist whom Hoover retained as Treasury Secretary despite personal dislike. Mellon, hailed as "the greatest Secretary of the Treasury since Alexander Hamilton," had served three presidents and championed tax cuts that particularly benefited capital gains. Though Mellon was no admirer of Wall Street speculators, he believed firmly that Washington had no business interfering in private financial matters.</p>
+
+<p>Hoover's inaugural address, broadcast on radio to an estimated sixty-three million listeners&mdash;the first such broadcast&mdash;was relentlessly optimistic, declaring the nation "bright with hope." Notably, he said <b>not a single word</b> about the runaway stock market or speculation, leaving the question of Wall Street regulation conspicuously unaddressed.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Sorkin suggests Hoover was naive about the dangers of the stock market. However, historical evidence indicates Hoover was <b>privately alarmed</b> about speculation well before the crash and had tried to persuade Coolidge and Mellon to take action as early as 1925. His public silence may have reflected political calculation rather than ignorance&mdash;directly attacking Wall Street would have alienated his own Republican base.</p>
+</details>
+
+<h2>Chapter Five: March 5, 1929</h2>
+
+<p>The day after Hoover's inauguration, legendary trader <b>Jesse Livermore</b>&mdash;the "Boy Plunger"&mdash;summons reporters to his secret penthouse office in the Heckscher Building. The chapter provides a colorful biography of Livermore, who grew up on a Massachusetts farm, learned to read ticker tape at Paine Webber, dominated illegal <b>bucket shops</b>, and made his first fortune by shorting stocks just before the <b>1906 San Francisco earthquake</b>. His friend <b>Bernard Baruch</b>, the towering financier and political operator, is also introduced.</p>
+
+<p>Rather than commenting on stocks, Livermore gives reporters a bullish statement about <b>cotton prices</b>&mdash;a transparent attempt to manipulate the commodity market. But Wall Street is far more interested in his views on stocks. Livermore, a contrarian by nature, had been burned multiple times going bearish during the relentless bull market of the 1920s. On March 25, he finally pulls the trigger on a massive <b>short assault</b>, betting $150 million against the market on maximum margin. The next day stocks fall sharply, and Livermore's traders buy everything back within an hour, netting <b>$8 million in profit</b> in just twenty-eight hours.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Livermore's trading methods&mdash;using insider information, hired agents on the exchange floor, and deliberate market manipulation through coordinated buying and selling&mdash;were legal in the 1920s but would constitute <b>securities fraud</b> under modern law. Sorkin's admiring tone toward Livermore's "instincts" risks romanticizing practices that systematically <b>transferred wealth from ordinary investors to insiders</b>.</p>
+</details>
+
+<h2>Chapter Six: March 26, 1929</h2>
+
+<p>A record-breaking sell-off on March 26 brings the market to the brink of a historic disaster. Call money rates spike from 15 to 20 percent, and the ticker falls hopelessly behind. Mitchell watches the carnage from his office and makes a <b>fateful decision</b>: National City Bank will step into the breach and aggressively lend money to stock investors, directly defying the Federal Reserve Board's warnings against fueling speculation. He secures a quiet assurance from New York Fed governor <b>George Harrison</b> that the Fed will not retaliate.</p>
+
+<p>Mitchell's gambit works brilliantly&mdash;at first. The moment word spreads that he is providing liquidity, the market reverses and starts climbing. He tells reporter Elliott Bell that National City has "an obligation which is paramount to any Federal Reserve warning" to prevent a money market crisis. The quote is "dynamite in a sentence," and it makes Mitchell a Wall Street hero, compared to the legendary J. Pierpont Morgan. But the Federal Reserve in Washington is <b>apoplectic</b>, and Senator <b>Carter Glass</b> is more determined than ever to bring Mitchell down.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Mitchell's intervention can be read two ways: as a <b>courageous act of private-sector leadership</b> that prevented a premature crash, or as a <b>reckless defiance of regulatory authority</b> that prolonged a dangerous bubble for seven more months, ultimately making the October crash far worse. Economist <b>John Kenneth Galbraith</b> in <i>The Great Crash, 1929</i> argued that Mitchell's action "destroyed such force as the Board's policy had" and allowed speculation to resume unchecked.</p>
+</details>
+
+<h2>Chapter Seven: March 29, 1929</h2>
+
+<p>News of Lamont's secret <b>RCA-Western Union-ITT merger</b> leaks to the press, threatening to upend the deal. Meanwhile, <b>Michael Meehan</b>, the official RCA specialist on the Exchange floor, has been orchestrating a brazen <b>stock pool</b> to manipulate RCA's share price. Meehan circulates a "Private and Confidential" document to sixty-eight investors&mdash;including Durant and Walter Chrysler&mdash;explaining that with enough capital, he can move the stock at will. The pool amasses nearly $13 million and uses classic manipulation tactics: <b>"painting the tape"</b> by trading among themselves to create the illusion of momentum.</p>
+
+<p>Over one week, the pool drives RCA from 74 to 109&frac14; before "pulling the plug" and dumping shares on gullible investors attracted by the manufactured rally. The crew nets nearly <b>$5 million in profit</b>. These practices, Sorkin notes, were conducted "in accordance with and subject to the rules and regulations of the New York Stock Exchange"&mdash;they were perfectly legal, and the biggest names on Wall Street participated in them.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The casual legality of stock pools underscores a critical point that the book sometimes underplays: the 1920s market was not a <b>level playing field distorted by a few bad actors</b> but a system whose rules were <b>designed by and for insiders</b>. The subsequent New Deal reforms, including the <b>Securities Exchange Act of 1934</b>, did not simply punish wrongdoers but fundamentally restructured market rules&mdash;a distinction that makes framing the crash as mainly a failure of individual character somewhat misleading.</p>
+</details>
+
+<h2>Chapter Eight: April 5, 1929</h2>
+
+<p><b>Senator Carter Glass</b> of Virginia, hospitalized again with chronic ailments, wages war on Mitchell from his bed at Johns Hopkins. Sorkin provides an extensive biography of Glass&mdash;born in Lynchburg in 1858, raised in the shadow of the Confederacy, a self-educated newspaperman who became the architect of the <b>Federal Reserve System</b> in 1913. Glass's two political passions were <b>segregation</b>&mdash;he fought tirelessly for Jim Crow laws and openly bragged about disenfranchising Black voters&mdash;and <b>banking regulation</b>, where he wielded singular expertise and influence.</p>
+
+<p>Glass views Mitchell's defiance of the Fed as not merely a policy disagreement but as <b>malfeasance</b> and "insubordination." He declares that Mitchell "slapped the board in the face" and should be "properly disciplined." The chapter establishes the bitter personal and ideological conflict between the populist senator and the Wall Street titan that will drive much of the book's political narrative.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Sorkin candidly acknowledges Glass's virulent <b>white supremacism</b> but largely treats it as separate from his banking crusade. Some historians have argued that Glass's hostility to Wall Street was rooted in the same <b>Southern agrarian populism</b> that fueled his racism&mdash;a deep suspicion of Northern financial elites that was intertwined with racial and regional grievances. The question of whether Glass's banking reforms were progressive achievements or products of <b>sectional animus</b> dressed in regulatory language remains debated.</p>
+</details>
+
+<h2>Chapter Nine: April 8, 1929</h2>
+
+<p>Durant undertakes a <b>secret mission to the White House</b> to warn President Hoover about the Federal Reserve's threat to the market. He arrives at the Carlton Hotel in Washington and, without a formal appointment, talks his way into a meeting with the president by showing up at the White House gate during a dinner party. In the meeting, Durant passionately argues that the Fed's credit restrictions will destroy prosperity and presents a poll of 500 business leaders, 97.5 percent of whom oppose the Fed's policies.</p>
+
+<p>Hoover listens politely but remains <b>skeptical</b>, believing stock prices will naturally correct without catastrophe. He tells Durant he prefers to let American institutions govern themselves. Durant's plea ends with a dramatic declaration: "It's up to you now." The meeting accomplishes nothing&mdash;Hoover will neither intervene with the Fed nor publicly address the speculative frenzy.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Durant's poll of business leaders was essentially <b>a survey of people with enormous financial stakes</b> in the continuation of easy credit&mdash;hardly an impartial sample. That 97.5 percent of corporate executives opposed credit restrictions tells us more about their self-interest than about sound monetary policy. Hoover's reluctance to intervene, often portrayed as passivity, may have been the <b>more prudent position</b>&mdash;directly ordering the Fed to ease policy would have compromised central bank independence, a principle that modern economists generally consider essential.</p>
+</details>
+
+<h2>Chapter Ten: April 12, 1929</h2>
+
+<p><b>John Raskob</b>&mdash;financier, GM power broker, and chairman of the Democratic National Committee&mdash;plans an "Anti-Hoover Banquet" at his Carlton House apartment. Sorkin traces Raskob's extraordinary career: from $5-a-week stenographer to Pierre du Pont's right-hand man, to the financial architect behind DuPont's takeover of General Motors. By 1929, Raskob was perhaps the most omnipresent figure in American business and politics, sitting on boards, participating in stock pools, and raising thirteen children.</p>
+
+<p>Despite Al Smith's devastating loss to Hoover, Raskob refuses to step down as DNC chairman. Instead, he plans to <b>professionalize the Democratic Party</b> into a permanent opposition machine, fund it year-round, and quietly orchestrate a <b>covert press campaign</b> to undermine Hoover's image. The chapter reveals Raskob's tangled web of personal, financial, and political relationships&mdash;including his DNC loan from the County Trust Company run by his friend James Riordan, a debt that will have tragic consequences later in the story.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Raskob's plan to use his personal wealth to orchestrate negative media coverage of a sitting president raises questions about the <b>relationship between concentrated wealth and democratic politics</b> that remain relevant today. His vision of a professionally managed, well-funded opposition party was in many ways prophetic&mdash;it anticipated the modern permanent campaign&mdash;but it also represented a <b>plutocratic approach to democracy</b> that Glass and other Democrats rightly found troubling.</p>
+</details>
+
+<h2>Chapter Eleven: April 14, 1929</h2>
+
+<p>Durant takes his battle against the Federal Reserve to the airwaves, purchasing fifteen minutes of <b>CBS radio</b> time to deliver a stinging speech to thirty-five million Americans. He accuses the Fed of "creating a panic" and causing "hundreds of millions of dollars" in losses, praises Mitchell as a patriot, and declares himself a "bull on the United States of America." His speech makes the front page of <i>The New York Times</i>, but in Washington, it is met with contempt. Senators <b>Couzens</b> and <b>Glass</b> dismiss Durant as a selfish speculator, and Glass begins plotting a <b>5 percent tax on short-term stock transfers</b> to penalize speculators.</p>
+
+<p>Five days after his fiery speech, Durant sails to Europe for a six-week vacation, undercutting the urgency of his own message. Meanwhile, Glass and Couzens discuss the pending <b>Smoot-Hawley tariff bill</b>, which Glass considers "economic insanity" and plans to use as a vehicle for his anti-speculation amendment.</p>
+
+<h2>Chapter Twelve: May 7, 1929</h2>
+
+<p>Raskob moves into his walnut-paneled office at 230 Park Avenue and announces his plan to <b>democratize the stock market</b> through a new company called <b>Equities Security Company</b>. The concept would allow ordinary Americans to buy a professionally managed basket of stocks using <b>installment payments and leverage</b>&mdash;essentially an early version of a leveraged mutual fund. "The man who is putting aside something, perhaps to meet an installment payment, is happier and better off than the man who spends his all as he goes," Raskob tells reporters.</p>
+
+<p>Raskob also hires <b>Charley Michelson</b>, a veteran Hearst journalist celebrated for his devastating prose, as the DNC's "publicity director" to orchestrate a smear campaign against Hoover. Michelson's colorful past&mdash;capturing grizzly bears, covering the Spanish-American War, being imprisoned in Havana's Morro Castle&mdash;makes him a perfect fit for the bare-knuckle political combat Raskob envisions.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Raskob's Equities Security Company concept&mdash;leveraged investing for working people through installment plans&mdash;anticipated modern products like <b>index funds</b> and <b>401(k) plans</b>, but with a critical difference: the leverage. His famous remark that being in debt builds character was a <b>deeply irresponsible message</b> to deliver just months before millions of Americans would see their leveraged investments wiped out. The timing reveals either stunning obliviousness or cynical promotion.</p>
+</details>
+
+<h2>Chapter Thirteen: June 4, 1929</h2>
+
+<p>After months of contentious negotiations in Paris, a deal on <b>German war reparations</b> is finally struck. Called the <b>Young Plan</b> after Owen Young, the agreement stretches payments of about $9 billion over fifty-nine years&mdash;an absurd duration that was the only way to make the deal politically palatable. The chapter describes the bitter negotiations with German representative <b>Dr. Hjalmar Schacht</b>, who dramatically stormed out of meetings and made outrageous demands, including the return of German colonies and the Polish Corridor.</p>
+
+<p>The reparations deal represents the apex of <b>American financial diplomacy</b>&mdash;private businessmen acting as de facto diplomats to resolve international crises. Meanwhile, back in the United States, the RCA-ITT-Western Union merger collapses when it becomes clear that Congress will not repeal antitrust laws to permit such a monopoly. Lamont's grand vision of a global telecommunications empire dies quietly.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The Young Plan, far from solving Europe's economic problems, merely <b>kicked the can down the road</b>. Payments were suspended during the Depression, and Adolf Hitler formally repudiated all reparations obligations in 1933. The entire reparations framework, as <b>John Maynard Keynes</b> had argued in <i>The Economic Consequences of the Peace</i> a decade earlier, was economically destructive and politically unsustainable from the start.</p>
+</details>
+
+<h2>Chapter Fourteen: June 29, 1929</h2>
+
+<p>Raskob reveals his latest obsession: the <b>Empire State Building</b>, conceived in part to provide his friend Al Smith with a prestigious job after his election defeat. The chapter details how Raskob's political plotting against Hoover intensifies as Michelson's DNC publicity machine begins feeding anti-Hoover stories to reporters. Raskob's vision of using wealth as a political weapon&mdash;funding a permanent opposition apparatus to ensure Hoover would be a one-term president&mdash;represents a new model of <b>partisan warfare</b> that would have lasting implications for American politics.</p>
+
+<h2>Chapter Fifteen: September 2, 1929</h2>
+
+<p>On Labor Day, astrologer <b>Evangeline Adams</b> declares "The Dow Jones could climb to heaven." The next day, the market hits an <b>all-time high of 381</b>. But economist <b>Roger Babson</b>, who had been warning of a crash for two years, delivers his sharpest warning yet: "Sooner or later a crash is coming which will take in the leading stocks and cause a decline of from 60 to 80 points." The market drops briefly on what becomes known as the <b>"Babson Break"</b> before recovering as mainstream economists and officials dismiss his concerns.</p>
+
+<p>The chapter describes the increasingly surreal atmosphere of late-summer 1929&mdash;an era of astrologers, stock tips from elevator operators, and record trading volumes. Respected figures continue to insist everything is sound, while warning signs multiply beneath the surface of the great boom.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Babson has often been celebrated as the lone voice of reason, but his predictions were based on what he called the <b>"Babson chart"</b>&mdash;a pseudoscientific method involving Newton's laws of action and reaction applied to stock prices. He had been predicting a crash for so long that his eventual correctness was arguably a matter of <b>a stopped clock being right twice a day</b> rather than genuine analytical insight. His self-named college and self-promoting style also invite skepticism about his motives.</p>
+</details>
+
+<h2>Chapter Sixteen: October 2, 1929</h2>
+
+<p>Raskob hosts an intimate lunch for nine wealthy men at his Carlton House apartment, ostensibly to discuss restoring investor confidence as the Dow has fallen 10 percent since Labor Day. Guests include Durant, the Van Sweringen brothers, and&mdash;mysteriously&mdash;an architect named <b>William Lamb</b>. After the discussion, Raskob dramatically unveils a large model of the <b>Empire State Building</b>, declaring it "a monument to the future" and urging his guests to keep buying stocks and talking up the market.</p>
+
+<p>Privately, Raskob has been <b>cutting his own market exposure</b>, suggesting he did not fully believe his own optimistic rhetoric. The chapter captures the tension between public confidence and private doubt that characterized the final weeks before the crash.</p>
+
+<h2>Chapter Seventeen: October 6, 1929</h2>
+
+<p><b>Winston Churchill</b> arrives in New York, hosted by his friend Bernard Baruch, at the end of an eight-week tour of North America. Churchill is overdrawn, owes back taxes, and is desperate to make money. Fascinated by American capitalism, he has been speculating in stocks with a trading volume exceeding &pound;400,000 in a single week, mostly on margin. He visits Hearst's San Simeon estate, tours Hollywood, meets Charlie Chaplin, and opens a brokerage account at E.F. Hutton.</p>
+
+<p>The chapter paints a vivid portrait of American wealth in its final days of exuberance, with Churchill serving as an awed European observer. His first lesson that "the stock market doesn't only go up" comes via telegram while traveling by private train, though the decline quickly reverses, reinforcing his optimism.</p>
+
+<h2>Chapter Eighteen: October 10, 1929</h2>
+
+<p>Lamont hosts a black-tie dinner for British Prime Minister <b>Ramsay MacDonald</b>, displaying his connections to world leaders. Behind the scenes, Lamont and his Morgan partner <b>Leffingwell</b> debate the economy's true state. Leffingwell warns that the "protracted bull market seems to have passed all bounds," but Lamont softens this assessment before sharing it with Hoover, fearing the president might impose new regulations.</p>
+
+<p>On October 15, Yale economist <b>Irving Fisher</b> makes his infamous declaration that "stock prices have reached what looks like a <b>permanently high plateau</b>." That same day, Mitchell returns from Europe insisting the market is in "a healthy condition." Hoover sends an envoy to consult with Lamont, who responds with an eighteen-page letter assuring the president that "corrective action on the part of public authorities or individuals need not at this time be contemplated." The Dow drops 8 percent on October 19, and Livermore publicly declares stocks are at "ridiculously high prices," directly contradicting Fisher.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Fisher's "permanently high plateau" remark is routinely cited as one of the <b>worst predictions in financial history</b>. However, some modern economists, including <b>Ellen McGrattan and Edward Prescott</b>, have argued that stock prices in September 1929 were not wildly overvalued relative to corporate earnings and that the subsequent crash was driven more by <b>policy errors</b>&mdash;particularly the Smoot-Hawley tariff and Federal Reserve tightening&mdash;than by intrinsic overvaluation. Fisher's analysis may have been <b>less absurd than it appears in hindsight</b>.</p>
+</details>
+
+<h2>Chapter Nineteen: October 24, 1929 &mdash; Black Thursday</h2>
+
+<p>Dawn breaks over Wall Street on what will become known as <b>Black Thursday</b>. Thousands of anxious men fill the streets; police wagons arrive in case of trouble. Inside the Exchange, panic selling erupts immediately. Lamont gathers a consortium of bankers&mdash;the <b>"Big Six"</b>&mdash;at 23 Wall Street, where they pledge to pool resources to support the market. Richard Whitney, vice president of the Exchange, strides onto the trading floor and dramatically places a bid of <b>$205 for U.S. Steel</b>, well above the current price, in a theatrical show of confidence that briefly halts the decline.</p>
+
+<p>The bankers' pool stabilizes the market for the afternoon, and the day ends with losses less severe than feared. But the intervention is largely symbolic. Lamont tells reporters with studied understatement that there has been "a little distress selling on the Stock Exchange." The real carnage is yet to come.</p>
+
+<h2>Chapter Twenty: October 27&ndash;29, 1929 &mdash; The Crash</h2>
+
+<p>This pivotal chapter chronicles the three worst days in stock market history. On <b>Monday, October 28</b>, the market drops 13 percent despite the bankers' pool. Mitchell learns that National City has inadvertently bought seventy-one thousand shares of its own stock&mdash;the crisis described in the prologue. The bankers meet at the Exchange and conclude they <b>cannot support the market</b>; all they can do is plug "air pockets" for stocks with no bids at all.</p>
+
+<p>That evening, Mitchell attends <b>Baruch's farewell dinner for Churchill</b>, where he toasts the assembled financiers as "my fellow former millionaires." Churchill describes the Exchange floor as resembling "a slow-motion picture of a disturbed ant heap." The next morning, <b>Tuesday, October 29</b>, Mitchell walks to J.P. Morgan and arranges a personal loan of <b>$12 million</b>&mdash;several times his net worth&mdash;to buy back National City shares and save his bank. In a secret basement meeting beneath the trading floor, Exchange governors debate whether to <b>close the market entirely</b> but decide against it, fearing it would create even worse panic.</p>
+
+<p>Livermore, who has been shorting stocks, returns home to find his wife has moved the family's valuables to the chauffeurs' quarters, assuming they are ruined. He tells her they are fine&mdash;he has made <b>$100 million</b> from the crash. Meanwhile, Churchill witnesses a man jumping from the fifteenth floor of the Sherry-Netherland Hotel but maintains his faith in American resilience, writing that the speculative machine "is not built to prevent crises, but to survive them."</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The bankers' pool is often portrayed as a noble but doomed effort to save the market. Historians like <b>Barrie Wigmore</b> have argued that the pool primarily served to <b>protect the bankers' own positions</b> rather than ordinary investors. By the time the pool stopped supporting prices, the bankers had used the brief rally to reduce their own exposure, while retail investors who believed the worst was over bought at artificially inflated prices and suffered devastating losses when the decline resumed.</p>
+</details>
+
+<h2>Chapter Twenty-One: November 6, 1929</h2>
+
+<p>Lamont is furious with Mitchell, who has <b>reneged on the Corn Exchange Bank merger</b> after assuring Lamont "no less than three times" that the deal would proceed. With National City's stock trading at $250&mdash;far below the $450 needed to make the stock exchange worthwhile for Corn Exchange shareholders&mdash;Mitchell simply cannot afford to fulfill the $217 million cash commitment. Lamont condemns Mitchell's actions as a devastating blow to National City's credibility and to bank mergers generally.</p>
+
+<h2>Chapter Twenty-Two: November 8, 1929</h2>
+
+<p>Raskob rushes to the Greenwich Village home of his friend <b>James Riordan</b>, president of the County Trust Company, who has shot himself. Riordan had been devastated by margin calls and the impossible task of calling in loans from friends. Raskob, Al Smith, and another friend convince the coroner to <b>delay reporting the death</b> until after banking hours to prevent a run on County Trust. Raskob takes over as temporary chairman and arranges a Federal Reserve cash infusion to save the bank.</p>
+
+<p>Meanwhile, Livermore faces <b>death threats</b> from ruined investors who blame him for the crash. He hires a bodyguard and his family lives in a state of siege. After the market falls to 198&mdash;its low point for the year, representing a 50 percent decline from the September high&mdash;Livermore reverses course and publicly declares that stocks have been "driven down too far." But even his endorsement cannot revive the market.</p>
+
+<h2>Chapter Twenty-Three: November 13, 1929</h2>
+
+<p>Treasury Secretary Mellon slips into the White House at dawn for an emergency briefing with Hoover. Mellon's infamous advice: <b>"Liquidate labor, liquidate stocks, liquidate the farmers, liquidate real estate."</b> The downward market, he argues, is necessary medicine that will "purge the rottenness out of the system." Hoover rejects this counsel and reluctantly holds a press conference, declaring that "any lack of confidence in the economic future or the basic strength of business is foolish." He invites business leaders to the White House and urges governors to accelerate public works.</p>
+
+<p>Glass resumes his attack on Mitchell in the Senate, calling him the man "more responsible than all others together for the excesses that have resulted in this disaster." Meanwhile, Durant finally reveals his secret White House meeting to a reporter, hoping to shift blame onto Hoover for ignoring his warnings.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Mellon's "liquidationist" advice is universally condemned today, but some <b>Austrian school economists</b> have argued he was partially correct: government intervention to prop up insolvent institutions merely delayed necessary adjustments. The real debate is not whether liquidation was needed but whether it should have been <b>managed gradually</b> or allowed to occur chaotically. Most modern economists side with <b>Friedman and Schwartz</b> that the Federal Reserve's failure to prevent bank failures was the decisive error.</p>
+</details>
+
+<h2>Chapter Twenty-Four: December 19, 1929</h2>
+
+<p>Mitchell concocts a scheme to reduce his tax bill by <b>selling 18,300 shares of National City stock to his wife, Elizabeth</b>, at a loss, allowing him to offset his income. The transaction is conducted through private letters rather than formal contracts, and Mitchell deliberately avoids notifying J.P. Morgan about the transfer to keep it secret. His wife is reluctant but agrees after Mitchell assures her the stock is undervalued. This apparently routine tax maneuver will later become the centerpiece of <b>criminal charges</b> against Mitchell.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The legality of selling stock to a spouse to claim a tax loss was genuinely <b>ambiguous</b> in 1929. Mitchell's lawyers advised him it was proper, and similar transactions were common among wealthy Americans. The subsequent prosecution was arguably driven more by <b>political anger</b> at bankers than by a clear violation of existing law&mdash;though the ethical dubiousness of the arrangement is hard to dispute.</p>
+</details>
+
+<h2>Chapter Twenty-Five: December 21, 1929</h2>
+
+<p>As Christmas 1929 approaches, New York's social season continues largely undiminished. Shoppers admire window displays at Saks Fifth Avenue while a Salvation Army Santa declares "You don't know conditions among the poor!" Construction proceeds on Raskob's <b>Empire State Building</b> and the <b>Chrysler Building</b>. Some wealthy New Yorkers even take "perverse pleasure" in the comeuppance of friends who had been insufferable about their investment success. Most people believe the crash is a temporary correction, not the beginning of a catastrophe.</p>
+
+<h2>Chapters Twenty-Six through Twenty-Eight: September 1930 &ndash; November 1930</h2>
+
+<p>Part II of the book shifts from the crash itself to its devastating aftermath. The Depression deepens as bank failures multiply across the country and unemployment soars. The <b>Smoot-Hawley Tariff Act</b>, signed by Hoover despite warnings from over a thousand economists, triggers retaliatory tariffs from trading partners and further contracts global trade. Mitchell, Durant, Raskob, and others who had been the era's greatest optimists watch helplessly as their fortunes evaporate and the economy they championed crumbles.</p>
+
+<h2>Chapter Twenty-Nine: February 2, 1931</h2>
+
+<p>The Depression enters its second year with no end in sight. The <b>Hoover administration</b> struggles to respond as bread lines grow and banks continue to fail. The president's faith in voluntary cooperation between business and government proves woefully inadequate against the scale of the economic catastrophe. The political landscape shifts as Americans begin looking for new leadership and more aggressive government intervention.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Hoover's reputation as a do-nothing president is somewhat <b>unfair</b>. He created the Reconstruction Finance Corporation, pushed for public works spending, and took more interventionist action than any previous president during an economic downturn. His failure was not inaction but rather that his <b>actions were insufficient</b> for the scale of the crisis&mdash;and his rhetoric of optimism, much like Mitchell's, eroded public trust when conditions continued to deteriorate.</p>
+</details>
+
+<h2>Chapter Thirty: February 18, 1932</h2>
+
+<p>Hoover forces <b>Andrew Mellon</b> out of the Treasury by appointing him ambassador to Britain, calling him "one of our wisest and most experienced public servants" while privately relieved to be rid of him. <b>Charles Dawes</b> is tapped to head the new <b>Reconstruction Finance Corporation</b>. Glass dismisses Hoover as "densely ignorant, pitifully ignorant on banking questions," while Hoover's new Treasury secretary, Ogden Mills, privately considers Glass overrated as a banking authority.</p>
+
+<p>At the White House, Hoover warns Senate leaders that the United States may have to <b>abandon the gold standard</b> unless immediate action is taken to bolster the banking system. The threat is intended to focus minds, but it also reveals the depth of the crisis.</p>
+
+<h2>Chapter Thirty-One: November 8, 1932</h2>
+
+<p><b>Franklin Delano Roosevelt</b> defeats Hoover in a landslide, winning the presidency with enormous Democratic majorities in both houses of Congress. Surprisingly, polling suggests the decisive issue was not the economy but <b>Prohibition</b>&mdash;83 percent of Americans supported its repeal. The long interregnum between election and inauguration (then stretching to March) creates a dangerous power vacuum as the banking crisis accelerates and Hoover can do little as a lame duck.</p>
+
+<h2>Chapters Thirty-Two through Thirty-Four: February 1933</h2>
+
+<p>The <b>Pecora hearings</b> begin in the Senate, with investigator <b>Ferdinand Pecora</b> grilling Wall Street executives about their practices during the boom. Mitchell is called to testify and, under Pecora's relentless questioning, reveals the details of his stock sale to his wife, his enormous compensation, and National City's dubious practices&mdash;including selling risky foreign bonds to unsuspecting customers despite internal reports warning of their dangers. The testimony devastates Mitchell's reputation and makes him a national symbol of <b>Wall Street greed</b>.</p>
+
+<p>Meanwhile, the banking crisis reaches its climax as governors across the country declare <b>bank holidays</b> to prevent runs. The financial system is on the verge of complete collapse as Roosevelt prepares to take office.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The Pecora hearings, while enormously important in building public support for financial regulation, were also <b>highly theatrical proceedings</b> designed to produce headlines rather than dispassionate analysis. Pecora was a skilled prosecutor who knew how to make witnesses look guilty regardless of the legal merits. Some of the practices he exposed&mdash;like preferred stock allocations to "friends of the firm"&mdash;were genuinely corrupt, but others were <b>standard industry practices</b> that Pecora reframed as criminal through the force of his questioning.</p>
+</details>
+
+<h2>Chapter Thirty-Five: March 3, 1933</h2>
+
+<p>On the eve of Roosevelt's inauguration, the banking system is in <b>total collapse</b>. Governors in state after state have declared bank holidays. Hoover and Roosevelt attempt an awkward transition of power, but cooperation proves impossible given their mutual distrust. The chapter captures the sense of existential crisis that gripped the nation in the final hours of the Hoover presidency.</p>
+
+<h2>Chapter Thirty-Six: March 7, 1933</h2>
+
+<p>Roosevelt takes office and immediately declares a <b>national bank holiday</b>, closing every bank in the country. His first fireside chat explains the banking crisis to ordinary Americans in simple terms, asking them to trust the system when the banks reopen. The combination of decisive action and effective communication begins to restore the public confidence that Hoover could never summon. The <b>New Deal</b> legislative blitz begins.</p>
+
+<h2>Chapter Thirty-Seven: March 21, 1933</h2>
+
+<p>Federal marshals arrive at Mitchell's Fifth Avenue mansion at 9 p.m. and <b>arrest him for tax evasion</b>. The charge centers on his sale of National City stock to his wife in December 1929. Mitchell is booked, arraigned, and released on $10,000 bail. President Roosevelt personally approves the arrest. Mitchell's fall from "Sunshine Charlie," one of the most powerful men in America, to a criminal defendant is swift and devastating.</p>
+
+<h2>Chapter Thirty-Eight: May 16, 1933</h2>
+
+<p>Mitchell's <b>tax evasion trial</b> opens to enormous public interest. Columnist Howard Vincent O'Brien writes, "It is not the trial of a man, but of an era." The prosecution argues that Mitchell's sale of stock to his wife was a <b>sham transaction</b> designed to generate a fraudulent tax loss, since he always intended to buy the shares back. Lamont, meanwhile, continues to defend J.P. Morgan's practices in letters and testimony, insisting that the bank has been an <b>unassailable steward of the national interest</b>.</p>
+
+<h2>Chapters Thirty-Nine through Forty-One: May&ndash;June 1933</h2>
+
+<p>The legislative aftermath of the crash unfolds as Congress passes the <b>Glass-Steagall Act</b>, which separates commercial banking from investment banking&mdash;Carter Glass's greatest legislative achievement and a direct response to the abuses exposed by the Pecora hearings. The <b>Securities Act of 1933</b> is also passed, requiring disclosure of material information in securities offerings. These landmark laws will govern American finance for decades.</p>
+
+<p>Mitchell is <b>acquitted</b> of criminal tax evasion, with the jury accepting that his sale to his wife was a legitimate transaction. But his victory is pyrrhic: his reputation is destroyed, his fortune is gone, and he faces civil tax claims that will take years to resolve. The government subsequently sues him for back taxes and penalties, which he eventually settles.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The <b>Glass-Steagall Act</b>'s effectiveness has been debated for decades. Its supporters argue it created a stable financial system that prevented another 1929-style crash for over sixty years. Critics, including many modern economists, contend that the separation of commercial and investment banking was <b>unnecessarily rigid</b> and that its partial repeal in 1999 (via the Gramm-Leach-Bliley Act) was not a primary cause of the 2008 financial crisis. The truth likely lies somewhere between these positions.</p>
+</details>
+
+<h2>Chapter Forty-Two: June 21, 1933</h2>
+
+<p>The Pecora investigation turns its attention to <b>J.P. Morgan &amp; Co.</b> itself, revealing the "preferred list" of politicians and businessmen who received discounted stock allocations. The hearings expose the <b>symbiotic relationship between Wall Street and political power</b> that had characterized the 1920s. Jack Morgan is photographed with a circus midget on his lap&mdash;a humiliating publicity stunt by a cameraman&mdash;and the image symbolizes the fall of the once-untouchable House of Morgan.</p>
+
+<h2>Epilogue</h2>
+
+<p>The book concludes by tracing the <b>later fates of its principal characters</b>. <b>Richard Whitney</b>, the "Hero of Black Thursday" who became president of the New York Stock Exchange, is revealed to be a <b>swindler and embezzler</b> who has been stealing from clients and institutions for years. His brother George, a Morgan partner, learns of the crimes and confides in Lamont, who arranges for Whitney's quiet resignation. But the scheme unravels, and Whitney is arrested, convicted, and sentenced to <b>Sing Sing prison</b>. The fall of Wall Street's most prominent defender of self-regulation becomes the final nail in the coffin of the old order.</p>
+
+<p><b>Mitchell</b> eventually rebuilds his career at Blenheim &amp; Company and later at Allied Chemical. <b>Lamont</b> continues at J.P. Morgan, defending the firm's legacy until his death. <b>Durant</b> loses everything and ends up running a bowling alley in Flint, Michigan. <b>Livermore</b>, plagued by depression and repeated financial losses, takes his own life in 1940. <b>Glass</b> continues in the Senate, living to see his Glass-Steagall Act become law but also witnessing the rise of the New Deal programs he distrusted. The era that produced unprecedented wealth and celebrity for financiers ultimately destroys most of its protagonists.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The epilogue's narrative of <b>hubris and downfall</b> is dramatically satisfying but risks implying that the crash was primarily a morality tale about individual character flaws. The systemic nature of the crisis&mdash;structural imbalances in the economy, the absence of deposit insurance, the Federal Reserve's monetary policy errors, international trade disruptions&mdash;arguably mattered more than the personal failings of Mitchell, Durant, or Whitney. Financial crises are not simply the sum of individual moral failures but the product of <b>institutional and structural weaknesses</b>.</p>
+</details>
+
+<h2>Afterword</h2>
+
+<p>Sorkin reflects on the <b>parallels between 1929 and the present day</b>, drawing connections between the speculative excesses of the 1920s and contemporary financial manias involving cryptocurrency, artificial intelligence, and other technologies. He argues that the fundamental dynamics of financial crises&mdash;excessive debt, collective delusion, celebrity worship of financiers, and the failure of regulatory institutions&mdash;remain remarkably consistent across nearly a century of history. The lesson of 1929, he suggests, is not that crashes can be prevented but that each generation must decide how to respond when the inevitable reckoning arrives.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>While the parallels Sorkin draws are suggestive, the differences between 1929 and today are significant. Modern financial systems include <b>deposit insurance (FDIC)</b>, central banks with explicit mandates to act as lenders of last resort, circuit breakers on exchanges, and far more extensive disclosure requirements. The 2008 financial crisis, though severe, did not produce a Depression precisely because policymakers <b>applied lessons from 1929</b>. The question is not whether the same catastrophe will recur but whether new forms of systemic risk&mdash;shadow banking, algorithmic trading, sovereign debt&mdash;pose <b>qualitatively different dangers</b> that historical analogies may obscure.</p>
+</details>
+
+
+<h2 id="quiz-heading">Comprehension Quiz</h2>
+
+<details id="quiz-section" class="quiz-wrapper">
+  <summary class="quiz-toggle">Take the Quiz</summary>
+
+  <form id="quiz-form">
+
+    <div class="q-block">
+      <p class="q-label">1. What was Charles Mitchell's nickname, reflecting his relentlessly optimistic personality?</p>
+      <label><input type="radio" name="q1" value="a"> Golden Charlie</label>
+      <label><input type="radio" name="q1" value="b"> Sunshine Charlie</label>
+      <label><input type="radio" name="q1" value="c"> Lucky Charlie</label>
+      <label><input type="radio" name="q1" value="d"> Broadway Charlie</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">2. What was Thomas Lamont's role at J.P. Morgan &amp; Co.?</p>
+      <label><input type="radio" name="q2" value="a"> He was the firm's chairman and public figurehead</label>
+      <label><input type="radio" name="q2" value="b"> He was technically senior partner but rarely involved in operations</label>
+      <label><input type="radio" name="q2" value="c"> He was technically second-in-command but effectively ran the bank</label>
+      <label><input type="radio" name="q2" value="d"> He was the firm's chief legal counsel</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">3. What strategy did Mitchell use to defy the Federal Reserve on March 26, 1929?</p>
+      <label><input type="radio" name="q3" value="a"> He publicly lobbied Congress to abolish the Fed</label>
+      <label><input type="radio" name="q3" value="b"> He announced National City would aggressively lend money to stock investors despite Fed warnings</label>
+      <label><input type="radio" name="q3" value="c"> He organized a consortium of banks to lower interest rates</label>
+      <label><input type="radio" name="q3" value="d"> He threatened to withdraw National City from the Federal Reserve system</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">4. What were Carter Glass's two primary passions as a legislator?</p>
+      <label><input type="radio" name="q4" value="a"> Tariff reform and anti-monopoly enforcement</label>
+      <label><input type="radio" name="q4" value="b"> Banking regulation and segregation</label>
+      <label><input type="radio" name="q4" value="c"> Tax reduction and military preparedness</label>
+      <label><input type="radio" name="q4" value="d"> Foreign policy and Prohibition</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">5. How did Jesse Livermore make $8 million in just 28 hours in March 1929?</p>
+      <label><input type="radio" name="q5" value="a"> He cornered the cotton market using insider information</label>
+      <label><input type="radio" name="q5" value="b"> He bought blue-chip stocks at their lowest point during the March panic</label>
+      <label><input type="radio" name="q5" value="c"> He launched a massive short assault on stocks and bought them back the next day after prices fell</label>
+      <label><input type="radio" name="q5" value="d"> He manipulated RCA stock through an investment pool</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">6. What was the "Young Plan" negotiated in Paris?</p>
+      <label><input type="radio" name="q6" value="a"> A plan to merge RCA, ITT, and Western Union into a telecommunications monopoly</label>
+      <label><input type="radio" name="q6" value="b"> A restructuring of German war reparations payments over fifty-nine years</label>
+      <label><input type="radio" name="q6" value="c"> An international agreement to standardize stock market regulations</label>
+      <label><input type="radio" name="q6" value="d"> A Federal Reserve plan to stabilize European currencies</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">7. What was Michael Meehan's role in the RCA stock manipulation?</p>
+      <label><input type="radio" name="q7" value="a"> He was an outside investor who organized a hostile takeover</label>
+      <label><input type="radio" name="q7" value="b"> He was the official RCA specialist on the Exchange floor who organized a pool to manipulate the stock price</label>
+      <label><input type="radio" name="q7" value="c"> He was a federal investigator who exposed the manipulation</label>
+      <label><input type="radio" name="q7" value="d"> He was RCA's CEO who authorized insider trading</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">8. What did Irving Fisher infamously declare about the stock market in October 1929?</p>
+      <label><input type="radio" name="q8" value="a"> "The market is dangerously overvalued and due for a correction"</label>
+      <label><input type="radio" name="q8" value="b"> "Stock prices have reached what looks like a permanently high plateau"</label>
+      <label><input type="radio" name="q8" value="c"> "The Dow Jones could climb to heaven"</label>
+      <label><input type="radio" name="q8" value="d"> "A crash of 60 to 80 points is coming"</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">9. What dramatic gesture did Richard Whitney make on Black Thursday to try to halt the panic?</p>
+      <label><input type="radio" name="q9" value="a"> He announced the Exchange would close for three days</label>
+      <label><input type="radio" name="q9" value="b"> He placed a bid of $205 for U.S. Steel, well above the current price</label>
+      <label><input type="radio" name="q9" value="c"> He personally guaranteed all margin loans at J.P. Morgan</label>
+      <label><input type="radio" name="q9" value="d"> He gave a radio address urging calm</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">10. How did Mitchell attempt to save National City Bank on October 29, 1929?</p>
+      <label><input type="radio" name="q10" value="a"> He asked the Federal Reserve for an emergency bailout</label>
+      <label><input type="radio" name="q10" value="b"> He personally borrowed $12 million from J.P. Morgan to buy National City shares</label>
+      <label><input type="radio" name="q10" value="c"> He merged the bank with Chase National Bank</label>
+      <label><input type="radio" name="q10" value="d"> He closed all National City branches to prevent a run</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">11. What was Andrew Mellon's advice to Hoover about how to handle the economic crisis?</p>
+      <label><input type="radio" name="q11" value="a"> "We must launch an ambitious public works program immediately"</label>
+      <label><input type="radio" name="q11" value="b"> "Liquidate labor, liquidate stocks, liquidate the farmers, liquidate real estate"</label>
+      <label><input type="radio" name="q11" value="c"> "We must abandon the gold standard to prevent further deflation"</label>
+      <label><input type="radio" name="q11" value="d"> "The government must guarantee all bank deposits"</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">12. What tax scheme led to Mitchell's arrest in March 1933?</p>
+      <label><input type="radio" name="q12" value="a"> He hid income in offshore accounts in the Bahamas</label>
+      <label><input type="radio" name="q12" value="b"> He sold National City shares to his wife to claim a tax loss while intending to buy them back</label>
+      <label><input type="radio" name="q12" value="c"> He falsified National City's corporate earnings reports</label>
+      <label><input type="radio" name="q12" value="d"> He paid personal expenses through the bank's accounts</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">13. What landmark legislation did Carter Glass help pass in response to the crash?</p>
+      <label><input type="radio" name="q13" value="a"> The Smoot-Hawley Tariff Act</label>
+      <label><input type="radio" name="q13" value="b"> The Volstead Act</label>
+      <label><input type="radio" name="q13" value="c"> The Glass-Steagall Act, separating commercial and investment banking</label>
+      <label><input type="radio" name="q13" value="d"> The Federal Reserve Act of 1933</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">14. What was the central thesis of the book about the root cause of financial crises?</p>
+      <label><input type="radio" name="q14" value="a"> Crises are caused by inadequate government regulation</label>
+      <label><input type="radio" name="q14" value="b"> The through line behind every major crisis is excessive debt</label>
+      <label><input type="radio" name="q14" value="c"> Crises are caused by new technologies that disrupt traditional industries</label>
+      <label><input type="radio" name="q14" value="d"> Crises are caused by foreign competition undermining domestic markets</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">15. What happened to Jesse Livermore after making $100 million from the crash?</p>
+      <label><input type="radio" name="q15" value="a"> He retired to a quiet life in Florida</label>
+      <label><input type="radio" name="q15" value="b"> He became a successful banker and government advisor</label>
+      <label><input type="radio" name="q15" value="c"> He was convicted of securities fraud and imprisoned</label>
+      <label><input type="radio" name="q15" value="d"> He suffered repeated financial losses and took his own life in 1940</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">16. What was Richard Whitney's ultimate fate, as revealed in the Epilogue?</p>
+      <label><input type="radio" name="q16" value="a"> He became a respected elder statesman of Wall Street</label>
+      <label><input type="radio" name="q16" value="b"> He was exposed as an embezzler and sent to Sing Sing prison</label>
+      <label><input type="radio" name="q16" value="c"> He moved to Europe to avoid prosecution</label>
+      <label><input type="radio" name="q16" value="d"> He served as the first chairman of the SEC</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">17. According to the book, what surprising issue decided the 1932 presidential election?</p>
+      <label><input type="radio" name="q17" value="a"> The banking crisis and bank failures</label>
+      <label><input type="radio" name="q17" value="b"> Prohibition</label>
+      <label><input type="radio" name="q17" value="c"> The Smoot-Hawley tariff and trade policy</label>
+      <label><input type="radio" name="q17" value="d"> War reparations and foreign policy</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">18. What was William Durant doing at the end of his life after losing his fortune?</p>
+      <label><input type="radio" name="q18" value="a"> Teaching economics at a university</label>
+      <label><input type="radio" name="q18" value="b"> Running a bowling alley in Flint, Michigan</label>
+      <label><input type="radio" name="q18" value="c"> Working as a consultant for General Motors</label>
+      <label><input type="radio" name="q18" value="d"> Living in exile in Paris</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">19. What was John Raskob's vision for the Equities Security Company?</p>
+      <label><input type="radio" name="q19" value="a"> A hedge fund exclusively for wealthy investors</label>
+      <label><input type="radio" name="q19" value="b"> A leveraged investment fund that would allow working people to buy stocks on installment plans</label>
+      <label><input type="radio" name="q19" value="c"> A government-backed insurance program for stock market losses</label>
+      <label><input type="radio" name="q19" value="d"> A bank that would replace the Federal Reserve system</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">20. How did Winston Churchill characterize the American speculative system after witnessing the crash?</p>
+      <label><input type="radio" name="q20" value="a"> "A house of cards destined to collapse under its own weight"</label>
+      <label><input type="radio" name="q20" value="b"> "It is not built to prevent crises, but to survive them"</label>
+      <label><input type="radio" name="q20" value="c"> "The greatest fraud perpetrated on a civilized nation"</label>
+      <label><input type="radio" name="q20" value="d"> "An engine of inequality masquerading as democracy"</label>
+    </div>
+
+    <button type="button" id="score-btn" onclick="scoreQuiz()">Score My Answers</button>
+
+    <div id="quiz-result" style="display:none;">
+      <p id="score-text"></p>
+      <div id="answer-review"></div>
+    </div>
+
+  </form>
+</details>
+
+<script>
+(function() {
+  const answers = {
+    q1: { correct: "b", explain: "Mitchell was known as 'Sunshine Charlie' for his relentless optimism and ability to project confidence even in dire circumstances." },
+    q2: { correct: "c", explain: "Lamont was technically second-in-command to Jack Morgan but everyone knew he effectively ran J.P. Morgan & Co." },
+    q3: { correct: "b", explain: "Mitchell announced that National City would lend money to stock investors as necessary, defying the Fed's warnings against fueling speculation." },
+    q4: { correct: "b", explain: "Glass fought tirelessly for Jim Crow laws and segregation while also being the foremost Congressional expert on banking regulation." },
+    q5: { correct: "c", explain: "Livermore launched a massive short assault, betting $150 million against the market on maximum margin, then bought everything back the next day after prices fell." },
+    q6: { correct: "b", explain: "The Young Plan, named after Owen Young, restructured German war reparations payments of about $9 billion over fifty-nine years." },
+    q7: { correct: "b", explain: "Meehan was the official RCA specialist on the Exchange floor who organized a pool of 68 investors to manipulate the stock price, netting nearly $5 million in profits." },
+    q8: { correct: "b", explain: "Fisher's declaration that stocks had reached 'a permanently high plateau' became one of the worst predictions in financial history." },
+    q9: { correct: "b", explain: "Whitney walked onto the trading floor and placed a dramatic bid of $205 for U.S. Steel, well above the current price, briefly halting the panic." },
+    q10: { correct: "b", explain: "Mitchell personally borrowed $12 million from J.P. Morgan—several times his net worth—to buy National City shares and prevent the bank's collapse." },
+    q11: { correct: "b", explain: "Mellon's infamous advice was to 'liquidate labor, liquidate stocks, liquidate the farmers, liquidate real estate' and let the crisis purge the system." },
+    q12: { correct: "b", explain: "Mitchell sold 18,300 shares of National City stock to his wife at a loss to offset his income for tax purposes, which prosecutors called a sham transaction." },
+    q13: { correct: "c", explain: "The Glass-Steagall Act separated commercial banking from investment banking, becoming Glass's greatest legislative achievement." },
+    q14: { correct: "b", explain: "Sorkin argues that the singular through line behind every major financial crisis is debt—a powerfully optimistic force that draws future wealth into the present." },
+    q15: { correct: "d", explain: "Despite his $100 million windfall from the crash, Livermore suffered repeated financial losses and depression, ultimately taking his own life in 1940." },
+    q16: { correct: "b", explain: "Whitney, once hailed as Wall Street's 'white knight,' was exposed as an embezzler who had been stealing from clients and was sent to Sing Sing prison." },
+    q17: { correct: "b", explain: "Polling showed that 83% of Americans supported repeal of Prohibition, making it the decisive issue over the economy in the 1932 election." },
+    q18: { correct: "b", explain: "Durant, once one of the richest men in America and founder of General Motors, lost everything and ended up running a bowling alley in Flint, Michigan." },
+    q19: { correct: "b", explain: "Raskob envisioned allowing working people to buy stocks through installment plans with leverage—an early concept resembling leveraged mutual funds." },
+    q20: { correct: "b", explain: "Churchill wrote that the American speculative machine 'is not built to prevent crises, but to survive them,' expressing faith in American resilience." }
+  };
+
+  window.scoreQuiz = function() {
+    const form = document.getElementById("quiz-form");
+    let correct = 0;
+    const total = Object.keys(answers).length;
+    let reviewHTML = "";
+
+    for (let i = 1; i <= total; i++) {
+      const key = "q" + i;
+      const selected = form.elements[key] ? form.elements[key].value : "";
+      const isCorrect = selected === answers[key].correct;
+      if (isCorrect) correct++;
+
+      const status = !selected ? "wrong" : (isCorrect ? "correct" : "wrong");
+      const icon = isCorrect ? "\u2705" : "\u274C";
+      const yourAnswer = selected ? selected.toUpperCase() : "No answer";
+      const correctAnswer = answers[key].correct.toUpperCase();
+
+      reviewHTML += '<div class="review-item ' + status + '">';
+      reviewHTML += '<div class="ri-q">' + icon + " Question " + i + "</div>";
+      reviewHTML += '<div class="ri-detail">';
+      if (!isCorrect) {
+        reviewHTML += "Your answer: " + yourAnswer + " &mdash; Correct answer: " + correctAnswer + "<br>";
+      }
+      reviewHTML += answers[key].explain;
+      reviewHTML += "</div></div>";
+    }
+
+    const pct = Math.round((correct / total) * 100);
+    let grade;
+    if (pct === 100) grade = "Perfect score!";
+    else if (pct >= 80) grade = "Great understanding!";
+    else if (pct >= 60) grade = "Good, but review the summaries above for the ones you missed.";
+    else grade = "Consider re-reading the summaries above and trying again.";
+
+    document.getElementById("score-text").textContent = correct + " / " + total + " (" + pct + "%) \u2014 " + grade;
+    document.getElementById("answer-review").innerHTML = reviewHTML;
+    document.getElementById("quiz-result").style.display = "block";
+    document.getElementById("quiz-result").scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+})();
+</script>
+
+</body>
+</html>

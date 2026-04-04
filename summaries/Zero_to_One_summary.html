@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zero to One — Book Summary Pro</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      line-height: 1.7;
+      color: #222;
+      background: #fafafa;
+    }
+    .app-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #2c2c2c;
+      padding: 14px 24px;
+    }
+    .content {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 32px 20px 40px;
+    }
+    .app-nav .app-name {
+      font-size: 1.05em;
+      font-weight: bold;
+      color: #e8e0d0;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+    }
+    .app-nav .app-name:hover {
+      color: #d4a843;
+    }
+    .app-nav .back-link {
+      font-size: 0.9em;
+      color: #999;
+      text-decoration: none;
+    }
+    .app-nav .back-link:hover {
+      color: #d4a843;
+    }
+    h1 {
+      font-size: 1.8em;
+      border-bottom: 2px solid #333;
+      padding-bottom: 10px;
+      margin-bottom: 5px;
+    }
+    .subtitle {
+      font-size: 1.1em;
+      color: #444;
+      margin: 2px 0 0 0;
+      font-style: italic;
+    }
+    .author {
+      font-style: italic;
+      color: #777;
+      font-size: 0.95em;
+      margin-bottom: 40px;
+    }
+    h2 {
+      font-size: 1.3em;
+      margin-top: 48px;
+      color: #1a1a1a;
+      border-left: 4px solid #555;
+      padding-left: 12px;
+    }
+    p {
+      margin-bottom: 14px;
+      text-align: justify;
+    }
+    details.counter {
+      background: #f0ece4;
+      border-left: 4px solid #b8860b;
+      padding: 14px 18px;
+      margin: 20px 0 28px 0;
+      border-radius: 0 6px 6px 0;
+    }
+    details.counter summary {
+      font-weight: bold;
+      font-size: 0.95em;
+      color: #8b6914;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    details.counter summary::-webkit-details-marker {
+      display: none;
+    }
+    details.counter summary::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    details.counter[open] summary::before {
+      transform: rotate(90deg);
+    }
+    details.counter p {
+      margin-top: 12px;
+      margin-bottom: 10px;
+      color: #3a3a3a;
+    }
+    details.counter p:last-child {
+      margin-bottom: 0;
+    }
+    .quiz-wrapper {
+      margin-top: 48px;
+      background: #f5f5f0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 16px 20px;
+    }
+    .quiz-toggle {
+      font-weight: bold;
+      font-size: 1.05em;
+      cursor: pointer;
+      color: #2a5a2a;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .quiz-toggle::-webkit-details-marker { display: none; }
+    .quiz-toggle::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    .quiz-wrapper[open] .quiz-toggle::before {
+      transform: rotate(90deg);
+    }
+    .q-block {
+      margin: 24px 0;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    .q-block:last-of-type { border-bottom: none; }
+    .q-label {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .q-block label {
+      display: block;
+      padding: 6px 10px;
+      margin: 4px 0;
+      border-radius: 4px;
+      cursor: pointer;
+      line-height: 1.5;
+    }
+    .q-block label:hover { background: #e8e8e0; }
+    #score-btn {
+      display: block;
+      margin: 28px auto 0;
+      padding: 12px 32px;
+      font-family: Georgia, serif;
+      font-size: 1em;
+      background: #2a5a2a;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #score-btn:hover { background: #1e441e; }
+    #quiz-result {
+      margin-top: 24px;
+      padding: 18px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    #score-text {
+      font-size: 1.15em;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .review-item {
+      margin-bottom: 14px;
+      padding: 10px 12px;
+      border-radius: 4px;
+    }
+    .review-item.correct { background: #e6f4e6; }
+    .review-item.wrong { background: #fce8e8; }
+    .review-item .ri-q { font-weight: bold; margin-bottom: 4px; }
+    .review-item .ri-detail { font-size: 0.93em; color: #444; }
+  </style>
+</head>
+<body>
+
+<nav class="app-nav">
+  <a href="index.html" class="app-name">Book Summary Pro</a>
+  <a href="index.html" class="back-link">&larr; All Books</a>
+</nav>
+
+<div class="content">
+
+<h1>Zero to One</h1>
+<p class="subtitle">Notes on Startups, or How to Build the Future</p>
+<p class="author">Peter Thiel with Blake Masters</p>
+
+<h2>Preface: Zero to One</h2>
+
+<p>The authors introduce the book's central metaphor: going from <b>0 to 1</b>&mdash;creating something entirely new&mdash;versus going from <b>1 to n</b>&mdash;copying things that already work. Thiel argues that every moment in business happens only once, and copying successful founders like Bill Gates or Mark Zuckerberg means you aren't truly learning from them. The act of creation is singular.</p>
+
+<p>The book originated from a Stanford course Thiel taught in 2012, where student Blake Masters took detailed notes that went viral online. Thiel contends that American companies will fail if they don't invest in creating new things, since today's "best practices" lead to dead ends. The most powerful pattern he has observed is that <b>successful people find value in unexpected places by thinking from first principles</b> rather than following formulas.</p>
+
+<h2>Chapter 1: The Challenge of the Future</h2>
+
+<p>Thiel opens with his favorite interview question: <b>"What important truth do very few people agree with you on?"</b> He argues that good answers take the form of contrarian truths&mdash;beliefs that oppose popular consensus. This question matters because the future will be a time when the world looks different from today, and contrarian thinking is the closest we can come to seeing what's ahead.</p>
+
+<p>The chapter distinguishes between two kinds of progress. <b>Horizontal progress</b> (going from 1 to n) means copying things that work&mdash;globalization. <b>Vertical progress</b> (going from 0 to 1) means doing new things&mdash;technology. Thiel's own contrarian answer is that most people believe the future will be defined by globalization, but technology matters more. Without new technology, spreading old ways of creating wealth globally will lead to environmental catastrophe, not prosperity.</p>
+
+<p>The chapter concludes with Thiel's case for <b>startups as the engines of innovation</b>. Large bureaucracies move slowly, and lone geniuses can't build industries. A startup is "the largest group of people you can convince of a plan to build a different future," and its greatest strength is the space to think new thoughts.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Thiel's sharp dichotomy between globalization and technology oversimplifies their relationship. Economists like <b>Daron Acemoglu</b> have argued that technology diffusion <i>through</i> globalization has been one of the most powerful drivers of progress in developing nations. China's economic miracle involved not just copying but significant <b>adaptive innovation</b>&mdash;modifying Western technologies for local conditions.</p>
+  <p>The claim that startups are uniquely positioned for innovation also faces challenges. Research by <b>Ashish Arora</b> and others shows that large corporations like Bell Labs, Xerox PARC, and modern pharmaceutical companies have historically produced many breakthrough innovations, often because they can fund long-term basic research that startups cannot afford.</p>
+</details>
+
+<h2>Chapter 2: Party Like It's 1999</h2>
+
+<p>Thiel provides a detailed history of the <b>dot-com bubble</b> to contextualize the lessons that still dominate startup thinking. He argues that the mania of 1998&ndash;2000 must be understood against a backdrop of global crises: the East Asian financial collapse, Russia's default, and Europe's struggling euro. Silicon Valley's exuberance was partly rational because the internet seemed like the only thing that was working.</p>
+
+<p>The chapter recounts PayPal's own experience during the bubble&mdash;paying users $10 to sign up, raising $100 million just before the crash&mdash;and then examines the <b>four dogmatic lessons</b> the startup world extracted from the bust: (1) make incremental advances, (2) stay lean and flexible, (3) improve on competitors, and (4) focus on product over sales. Thiel argues that <b>the opposite principles are probably more correct</b>: boldness beats triviality, a bad plan beats no plan, competitive markets destroy profits, and sales matters as much as product.</p>
+
+<p>The key insight is that the crash represented both a peak of insanity <i>and</i> a peak of clarity&mdash;people were right to believe we needed new technology, even if too few startups were delivering it. Thiel urges entrepreneurs to think for themselves rather than dogmatically following or rejecting crowd wisdom.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Thiel's dismissal of the lean startup methodology has been challenged by <b>Eric Ries</b> and <b>Steve Blank</b>, whose frameworks have demonstrably helped startups reduce waste and find product-market fit faster. The lean approach doesn't necessarily mean having no plan&mdash;it means <b>validating assumptions quickly</b> before committing massive resources to an unproven direction.</p>
+  <p>Additionally, Thiel's framing involves survivorship bias: PayPal survived the crash <i>because</i> it raised money at the peak, but hundreds of similarly "bold" companies that also raised money during the mania simply vanished. The lesson of incrementalism may be overly cautious, but it emerged from real and devastating losses.</p>
+</details>
+
+<h2>Chapter 3: All Happy Companies Are Different</h2>
+
+<p>This chapter presents Thiel's most provocative business thesis: <b>capitalism and competition are opposites</b>. Under perfect competition, all profits get competed away. The only way to create and capture lasting value is to build a <b>monopoly</b>&mdash;a company so good at what it does that no other firm offers a close substitute. Thiel contrasts the airline industry (massive scale, razor-thin margins) with Google (smaller revenue, enormous profits) to illustrate the difference.</p>
+
+<p>Thiel reveals a crucial dynamic: both monopolists and competitors lie about their market position. <b>Monopolists</b> like Google disguise their dominance by framing their market as the union of many large markets (search + mobile + cars + wearables). <b>Non-monopolists</b> exaggerate their uniqueness by defining their market as the intersection of tiny niches ("British food restaurant in Palo Alto"). The reality of business is far more binary than it appears&mdash;companies are either near-monopolies or trapped in cutthroat competition.</p>
+
+<p>The chapter argues that <b>creative monopolies</b> are good for society because they drive innovation, unlike static monopolies that merely collect rents. The history of progress is a history of better monopolies replacing incumbents&mdash;Microsoft replacing IBM, mobile computing challenging Microsoft. Thiel closes by inverting Tolstoy: "All happy companies are different: each one earns a monopoly by solving a unique problem. All failed companies are the same: they failed to escape competition."</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Thiel's benign view of monopoly has been contested by antitrust scholars like <b>Lina Khan</b> and <b>Tim Wu</b>, who argue that tech monopolies can stifle innovation by acquiring potential competitors, creating barriers to entry, and leveraging dominance in one market to control adjacent ones. Google's own antitrust cases in the EU and US suggest that even "creative" monopolies can engage in anti-competitive behavior.</p>
+  <p>The airline industry comparison also oversimplifies: airlines operate in a heavily regulated environment with enormous capital requirements and labor costs that structurally limit margins, regardless of competitive dynamics. Profitability differences between industries often reflect <b>structural factors</b> beyond just competition intensity.</p>
+</details>
+
+<h2>Chapter 4: The Ideology of Competition</h2>
+
+<p>Thiel argues that competition is not merely an economic phenomenon but an <b>ideology</b> that pervades our entire society, from the educational system to the business world. Schools teach students to compete on standardized measures, and the tournament intensifies through higher education, where ambitious students fight over conventional careers like consulting and investment banking rather than pursuing genuinely original paths.</p>
+
+<p>Drawing on personal experience, Thiel recounts how he nearly became a Supreme Court clerk&mdash;the ultimate competitive prize in law&mdash;but missing out freed him to co-found PayPal. He frames competition through the lens of <b>Shakespeare versus Marx</b>: Marx said people fight because they are different, but Shakespeare showed that combatants fight precisely because they are alike. In business, this Shakespearean dynamic plays out in rivalries like Microsoft vs. Google, where two similar companies destroy value competing while Apple overtakes them both.</p>
+
+<p>The chapter provides vivid examples of destructive competition&mdash;the copycat mobile card readers, Oracle vs. Informix's billboard wars, and PayPal vs. X.com's all-out conflict (which they resolved through a 50-50 merger). Thiel's prescription: if you can recognize <b>competition as a destructive force</b> rather than a sign of value, you're already thinking more clearly than most.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>While Thiel's critique of mindless competition is well-taken, economists like <b>Michael Porter</b> have argued that competitive pressure is a primary driver of productivity improvements and consumer welfare. The European Commission's emphasis on maintaining competitive markets has historically served consumers well by keeping prices low and quality high.</p>
+  <p>Thiel's personal narrative also involves considerable hindsight bias. His Supreme Court clerkship rejection happened to lead to PayPal, but for most people, losing a prestigious opportunity leads to less exciting alternatives, not billion-dollar companies. The advice to avoid competition works primarily for those with the resources and talent to create monopolies.</p>
+</details>
+
+<h2>Chapter 5: Last Mover Advantage</h2>
+
+<p>Thiel argues that a monopoly is only valuable if it can <b>endure into the future</b>. A company's value today is the sum of all the money it will make in the future, discounted to present worth. This is why Twitter was valued higher than the New York Times despite losing money&mdash;investors expected Twitter to generate monopoly profits for decades, while newspapers' monopoly days were over. For tech companies, most value comes 10 to 15 years in the future.</p>
+
+<p>The chapter identifies <b>four characteristics of durable monopolies</b>: <b>proprietary technology</b> (must be 10x better than substitutes to create a real advantage), <b>network effects</b> (product becomes more valuable as more people use it, but must work for the very first users), <b>economies of scale</b> (fixed costs spread over greater sales, especially powerful for software), and <b>branding</b> (powerful but dangerous to pursue without substance).</p>
+
+<p>Thiel then outlines the strategy for <b>building a monopoly</b>: start with a very small market you can dominate (PayPal focused on eBay PowerSellers), then expand deliberately into adjacent markets (Amazon went from books to CDs to everything). He warns against "disruption" as a self-defeating framing and argues that what really matters is being the <b>last mover</b>&mdash;making the last great development in a market and enjoying decades of monopoly profits.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The "10x better" rule is useful as a heuristic but difficult to apply in practice. Many successful products&mdash;including Slack, Dropbox, and Instagram&mdash;succeeded not through radical technological superiority but through <b>superior design, timing, and distribution</b>. The threshold for competitive advantage varies enormously by market.</p>
+  <p>Thiel's critique of "disruption" also somewhat mischaracterizes <b>Clayton Christensen's</b> original theory, which described a specific and well-documented pattern of how incumbents fail. The buzzword abuse Thiel criticizes is real, but the underlying theory remains one of the most rigorously tested frameworks in innovation studies.</p>
+</details>
+
+<h2>Chapter 6: You Are Not a Lottery Ticket</h2>
+
+<p>This ambitious chapter tackles the question of whether success comes from <b>luck or skill</b>. Thiel notes that while successful people often credit luck (Buffett's "ovarian lottery," Bezos's "planetary alignment"), the existence of <b>serial entrepreneurs</b> like Steve Jobs, Jack Dorsey, and Elon Musk suggests that success is not merely random. He argues that our culture has become excessively deferential to chance, undermining the importance of planning and design.</p>
+
+<p>Thiel introduces a <b>four-quadrant framework</b> combining definite/indefinite attitudes with optimism/pessimism. <b>Definite optimism</b> (the U.S. in the 1950s&ndash;60s) produced the Interstate Highway System, the Apollo Program, and bold engineering projects. <b>Indefinite optimism</b> (the U.S. since 1982) produces bankers, lawyers, and consultants who rearrange existing value rather than creating anything new. <b>Definite pessimism</b> (modern China) drives relentless copying and saving. <b>Indefinite pessimism</b> (modern Europe) produces bureaucratic drift and vacation mania.</p>
+
+<p>The chapter extends this analysis to finance (nobody knows what to do with money, so it cycles through layers of diversification), politics (polling replaces vision), philosophy (Rawls and Nozick both focus on process over substance), and even biology (drug discovery relies on random screening rather than definite theories). Thiel holds up <b>Steve Jobs and Apple</b> as the model of definite optimism: Jobs planned multi-year product strategies rather than iterating based on focus groups. The chapter concludes that a startup is "the largest endeavor over which you can have definite mastery."</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Thiel's dismissal of luck is at odds with substantial empirical research. <b>Robert Frank's</b> <i>Success and Luck</i> presents compelling evidence that chance plays a much larger role in outcomes than successful people typically acknowledge, particularly in winner-take-all markets. The existence of serial entrepreneurs may reflect <b>compounding advantages</b> (networks, capital, reputation) rather than pure skill.</p>
+  <p>The critique of "indefinite optimism" in finance also oversimplifies. <b>Modern portfolio theory</b> and diversification have produced demonstrably better risk-adjusted returns for most investors than concentrated bets. Thiel's own success at Founders Fund doesn't invalidate indexing for the vast majority of people who are not Peter Thiel.</p>
+</details>
+
+<h2>Chapter 7: Follow the Money</h2>
+
+<p>Thiel introduces the <b>power law</b>&mdash;the mathematical principle that a small number of outcomes radically outperform all others&mdash;as the most important pattern in venture capital and, by extension, in life. In Founders Fund's 2005 fund, Facebook alone returned more than all other investments combined, and Palantir returned more than everything else excluding Facebook. This pattern repeats across all their funds.</p>
+
+<p>This yields two rules for VCs: <b>only invest in companies that could return the value of the entire fund</b>, and because that rule is so restrictive, there can be no other rules. The "spray and pray" approach of diversified venture investing usually produces portfolios of flops because it treats venture returns as normally distributed when they actually follow a power law. Thiel notes that venture-backed companies, though receiving less than 0.2% of GDP in investment, create 11% of private sector jobs and generate 21% of GDP.</p>
+
+<p>The chapter extends the power law beyond investing to <b>individual career decisions</b>. Life is not a portfolio&mdash;you can't diversify yourself across dozens of careers. Schools teach the opposite by encouraging generic "well-roundedness," but the power law means it matters enormously <i>what</i> you choose to do. One market, one distribution strategy, and some moments matter far more than all others combined. In a power law world, you can't afford not to think hard about where your actions fall on the curve.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>While the power law accurately describes venture capital returns, Thiel's extension to individual career advice is more questionable. <b>Scott Page's</b> research on diversity and problem-solving suggests that breadth of experience and diverse skills often outperform narrow specialization in complex environments. The "focus relentlessly" advice can lead to catastrophic outcomes for the many who bet wrong.</p>
+  <p>The VC model also benefits from a structural advantage that individuals lack: funds can make multiple bets across companies, while individuals have exactly one career. Telling people to "think in power law terms" without acknowledging this asymmetry is potentially harmful advice for most people.</p>
+</details>
+
+<h2>Chapter 8: Secrets</h2>
+
+<p>Thiel argues that every great business is built around a <b>secret</b>&mdash;an important truth that most people don't know or disagree with. The chapter asks why people have stopped looking for secrets, identifying four social trends: <b>incrementalism</b> (education rewards small steps, not bold leaps), <b>risk aversion</b> (being lonely and wrong is unbearable), <b>complacency</b> (elites see no reason to search when they're already comfortable), and <b>"flatness"</b> (if a secret existed, wouldn't someone in the global talent pool have found it already?).</p>
+
+<p>Thiel uses the <b>Unabomber's manifesto</b> as a striking illustration: Kaczynski argued that all hard problems have been solved, leaving only the easy and the impossible. While his methods were insane, his loss of faith in the technological frontier is widespread. Thiel then shows the consequences of abandoning secrets through Hewlett-Packard's decline&mdash;when its board stopped pursuing new technologies and devolved into governance squabbles, the company's value collapsed.</p>
+
+<p>The chapter distinguishes between <b>secrets of nature</b> (discovered through studying the physical world) and <b>secrets about people</b> (things people hide or don't know about themselves). Airbnb, Uber, and Lyft all discovered business secrets hidden in plain sight. Thiel advises looking for secrets in fields that matter but haven't been standardized (like nutrition). When you find a secret, the right number of people to tell is the core team of a company&mdash;<b>"a great company is a conspiracy to change the world."</b></p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Thiel's framing risks conflating genuine insight with contrarianism for its own sake. Many "secrets" in Silicon Valley have turned out to be well-known ideas repackaged with technology&mdash;<b>Uber</b> is fundamentally a taxi dispatch service, and <b>Airbnb</b> is a vacation rental marketplace. The real innovation was often in execution and timing rather than in discovering a hidden truth.</p>
+  <p>The Unabomber analogy, while provocative, is somewhat misleading. Most people who don't look for "secrets" aren't nihilists&mdash;they're rationally allocating their limited time and resources to problems where they can make incremental progress, which is how most scientific and technological advancement actually works.</p>
+</details>
+
+<h2>Chapter 9: Foundations</h2>
+
+<p>Thiel introduces <b>"Thiel's law"</b>: a startup messed up at its foundation cannot be fixed. Just as the U.S. Constitution established rules that have been nearly impossible to change, the decisions made in a company's earliest days&mdash;choosing co-founders, allocating ownership, defining governance&mdash;set patterns that persist indefinitely. Choosing a co-founder is like getting married, and founder conflict is just as ugly as divorce.</p>
+
+<p>The chapter distinguishes three key concepts: <b>ownership</b> (who holds equity), <b>possession</b> (who runs day-to-day operations), and <b>control</b> (who governs through the board). Misalignment between these three&mdash;illustrated by the DMV, where nominal public ownership coexists with bureaucratic possession&mdash;is a primary source of dysfunction. For startups, the most common conflict is between founders and investors on the board. Thiel recommends boards of three, never more than five for private companies.</p>
+
+<p>Thiel argues that <b>everyone should be full-time and "on the bus"</b>&mdash;part-time employees, consultants, and even remote workers create misalignment. On compensation, he states that <b>lower CEO pay correlates with better company performance</b>, citing Box's Aaron Levie living in a bare one-bedroom apartment years after founding the company. Cash teaches workers to extract value from the company as it exists; <b>equity</b> orients them toward creating future value. The founding moment lasts as long as a company keeps creating new things.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Thiel's insistence on full-time, in-person work has been challenged by the success of distributed companies like <b>GitLab</b>, <b>Automattic</b>, and <b>Zapier</b>, which have built valuable businesses with fully remote teams. The COVID-19 pandemic further demonstrated that remote work can be highly effective for many types of knowledge work.</p>
+  <p>The advice to keep CEO pay low also has limits. Research by <b>compensation consultants</b> shows that extremely low founder pay can create perverse incentives too&mdash;founders may make decisions to accelerate a liquidity event rather than building for the long term if they're under personal financial stress.</p>
+</details>
+
+<h2>Chapter 10: The Mechanics of Mafia</h2>
+
+<p>Thiel uses the <b>"PayPal Mafia"</b>&mdash;the network of former PayPal colleagues who went on to found or fund Tesla, LinkedIn, YouTube, Yelp, Yammer, and Palantir&mdash;to illustrate the importance of company culture. He dismisses superficial perks (beanbag chairs, sushi chefs, Ping-Pong tables) as meaningless without substance: "no company <i>has</i> a culture; every company <i>is</i> a culture."</p>
+
+<p>The chapter outlines Thiel's approach to <b>recruiting</b>: never outsource it, hire people who genuinely want to work together (not just skilled résumé-holders), and answer the question "Why should the 20th employee join?" with specifics about your mission and team rather than generic promises about stock options or smart colleagues. PayPal hired people who were "all the same kind of nerd"&mdash;obsessed with creating digital currency and devoted to science fiction (with <i>Cryptonomicon</i> as required reading).</p>
+
+<p>Thiel's most distinctive management practice was making <b>every person responsible for exactly one thing</b>, which reduced internal conflict by eliminating competition for the same responsibilities. The chapter concludes with a spectrum from cults to consulting firms: the best startups are "slightly less extreme kinds of cults"&mdash;fanatically <i>right</i> about something others have missed, rather than fanatically wrong.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The emphasis on cultural homogeneity ("all the same kind of nerd") raises concerns about <b>groupthink</b> and <b>diversity</b>. Research by <b>Katherine Phillips</b> at Columbia Business School shows that diverse teams, while sometimes less comfortable, consistently produce better decisions and more innovative solutions. Silicon Valley's well-documented problems with diversity may be partly rooted in exactly the hiring philosophy Thiel advocates.</p>
+  <p>The "one person, one thing" approach also becomes impractical as companies grow and problems become more cross-functional. Modern agile organizations often rely on <b>collaborative, overlapping responsibilities</b> precisely because rigid role boundaries create silos and slow adaptation.</p>
+</details>
+
+<h2>Chapter 11: If You Build It, Will They Come?</h2>
+
+<p>Thiel tackles Silicon Valley's most persistent blind spot: the belief that great products sell themselves. He argues that <b>distribution</b>&mdash;everything it takes to sell a product&mdash;is at least as important as the product itself. Engineers underrate sales because it's designed to be invisible; the best salespeople, like Tom Sawyer, don't look like they're selling at all. Job titles throughout industry systematically disguise sales roles: "account executives," "business development," "investment bankers."</p>
+
+<p>The chapter maps out a <b>distribution continuum</b> based on deal size. <b>Complex sales</b> (seven-figure deals) require CEO-level relationships, as demonstrated by Elon Musk at SpaceX and Alex Karp at Palantir. <b>Personal sales</b> ($10K&ndash;$100K deals) require building repeatable processes, as Box demonstrated by starting with small groups and expanding within organizations. A dangerous <b>"dead zone"</b> exists for products around $1,000 that are too expensive for advertising but too cheap for dedicated salespeople. <b>Marketing and advertising</b> work for mass-market products like Warby Parker's eyeglasses. <b>Viral marketing</b> is the most powerful channel when achievable&mdash;PayPal grew at 7% daily by paying users to sign up and refer friends.</p>
+
+<p>Critically, Thiel argues that <b>distribution follows a power law</b>: one channel will likely dominate all others for any given business. The "kitchen sink" approach of trying multiple channels without mastering one usually fails. Poor sales, not bad product, is the most common cause of startup failure.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>While Thiel's emphasis on distribution is well-placed, the "one dominant channel" thesis has been questioned by growth marketers like <b>Andrew Chen</b>, who notes that most successful companies eventually need <b>multiple distribution channels</b> as individual channels saturate. Facebook started with viral growth but now relies heavily on advertising revenue and paid acquisition for its family of apps.</p>
+</details>
+
+<h2>Chapter 12: Man and Machine</h2>
+
+<p>Thiel challenges the prevailing narrative that computers will replace human workers, arguing instead that <b>computers are complements for humans, not substitutes</b>. He draws a sharp distinction between globalization (human-to-human substitution, where workers compete for jobs and resources) and technology (human-machine complementarity, where each excels at fundamentally different tasks). Humans have intentionality and judgment; computers excel at processing massive data. A Google supercomputer needed 16,000 CPUs to identify cats with 75% accuracy&mdash;something any four-year-old does flawlessly.</p>
+
+<p>The chapter uses PayPal's fraud detection system as a case study. Neither purely automated systems nor human analysts alone could stop adaptive fraudsters. The breakthrough came from a <b>hybrid approach called "Igor"</b>: computers flagged suspicious transactions, and human operators made final judgments. This man-machine symbiosis turned PayPal's first quarterly profit and later inspired the founding of <b>Palantir</b>, which applies the same principle to counterterrorism, financial fraud, and disease outbreak detection.</p>
+
+<p>Thiel criticizes the ideology of computer science for training engineers to think in terms of human replacement ("machine learning," "big data") rather than complementarity. He argues that <b>the most valuable businesses of the future</b> won't ask what problems computers can solve alone, but how computers can help humans solve hard problems. LinkedIn exemplifies this: rather than replacing recruiters, it transformed how they work, creating value for hundreds of millions of professionals.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Since the book's publication in 2014, advances in <b>large language models</b> and generative AI have significantly blurred the line between complementarity and substitution. Systems like GPT-4 can now perform many tasks Thiel argued required human judgment&mdash;legal analysis, medical diagnosis, and creative writing&mdash;at levels that rival or exceed average human performance. The complementarity thesis may need updating for an era of increasingly general AI capabilities.</p>
+  <p>Economists like <b>Daron Acemoglu</b> and <b>Pascual Restrepo</b> have also documented significant labor displacement from automation in manufacturing, suggesting that the substitution concern is not merely ideological but reflects real economic outcomes for many workers.</p>
+</details>
+
+<h2>Chapter 13: Seeing Green</h2>
+
+<p>Thiel conducts a post-mortem of the <b>cleantech bubble</b>, in which investors poured over $50 billion into green energy companies that mostly failed spectacularly&mdash;more than 40 solar manufacturers went bankrupt in 2012 alone. He frames the analysis around <b>seven questions every business must answer</b>: the engineering question (10x improvement?), timing, monopoly, people, distribution, durability, and the secret question. Most cleantech companies failed because they couldn't answer even one of these well.</p>
+
+<p>The chapter methodically examines each failure mode. Solar companies offered <b>incremental improvements</b>, not 10x breakthroughs. They claimed to serve "trillion-dollar markets"&mdash;which actually meant ruthless competition. Their executives <b>wore suits</b> (Thiel's red flag for nontechnical leadership). They neglected distribution, as illustrated by Better Place, which spent $800 million building an electric vehicle ecosystem that required customers to jump through absurd hoops. They failed to anticipate competition from Chinese manufacturers or the fracking revolution. And they all justified themselves with the same conventional wisdom about clean energy&mdash;the very opposite of a secret.</p>
+
+<p>Thiel contrasts these failures with <b>Tesla</b>, which answered all seven questions correctly: genuinely superior integrated technology, perfectly timed government loans, dominance of the tiny luxury electric sports car market, an engineering-driven team led by Elon Musk, owned distribution through Tesla stores, a durable brand advantage, and the secret that cleantech was fundamentally a <b>social phenomenon</b>&mdash;people wanted to look cool, not just green.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Thiel's cleantech analysis, while incisive, reflects a <b>2014 snapshot</b> that has aged in complex ways. Solar costs have plummeted by over 90% since the bubble, and many of the "failed" companies contributed to the technological learning curve that made today's solar industry viable. <b>Ramez Naam</b> and other energy analysts argue that the cleantech investments, while individually unprofitable, collectively drove the cost reductions that are now reshaping global energy markets.</p>
+  <p>The "suits = bad" heuristic, while entertaining, is a crude proxy that could cause investors to miss legitimate opportunities. Many successful cleantech companies since 2014&mdash;including in areas like grid-scale storage and next-generation nuclear&mdash;are led by people who dress professionally without being nontechnical.</p>
+</details>
+
+<h2>Chapter 14: The Founder's Paradox</h2>
+
+<p>The final chapter explores the <b>extreme and contradictory nature of founders</b>. Thiel observes that founders exhibit traits that follow an "inverse normal distribution"&mdash;they cluster at both extremes rather than in the middle. Startup CEOs can be simultaneously cash poor and paper millionaires, insiders and outsiders, charismatic and difficult. The chapter traces this pattern from PayPal's eccentric founding team (four had built bombs in high school, three had escaped communist countries) through figures like Richard Branson, Sean Parker, and Lady Gaga.</p>
+
+<p>Thiel connects this to deep cultural patterns, drawing on <b>Ren&eacute; Girard's</b> theory of the scapegoat: in primitive societies, a single figure absorbed the community's conflicts and was alternately worshipped and sacrificed. The chapter traces this dynamic through American "royalty"&mdash;Elvis, Michael Jackson, and Britney Spears, all elevated to godlike status before being torn down&mdash;and tech founders like <b>Howard Hughes</b> (from aviation hero to reclusive madman), <b>Bill Gates</b> (from world's most important person to antitrust target), and <b>Steve Jobs</b> (ousted from Apple, then returned to make it the world's most valuable company).</p>
+
+<p>Thiel's conclusion is nuanced: we need founders and their peculiar vision, but founders must not believe their own myths. <b>"The single greatest danger for a founder is to become so certain of his own myth that he loses his mind. But an equally insidious danger for every business is to lose all sense of myth and mistake disenchantment for wisdom."</b> Companies resemble feudal monarchies more than modern bureaucracies&mdash;a unique founder can inspire loyalty and plan for decades, while professional managers default to short-term thinking.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Thiel's celebration of founder authority has been challenged by governance researchers who point to cases where unchecked founder power led to disasters: <b>WeWork's</b> Adam Neumann, <b>Theranos's</b> Elizabeth Holmes, and <b>Uber's</b> Travis Kalanick all demonstrated the risks of founder-worship taken too far. <b>Noam Wasserman's</b> research at Harvard shows that founder-CEOs are actually replaced by the time of IPO in the majority of successful startups, suggesting that professional management often adds value.</p>
+  <p>The Girardian scapegoat framework, while intellectually stimulating, may romanticize what are often straightforward cases of <b>accountability for bad behavior</b>. Bill Gates's antitrust troubles reflected genuine market manipulation, not ritualistic sacrifice.</p>
+</details>
+
+<h2>Conclusion: Stagnation or Singularity?</h2>
+
+<p>Thiel frames humanity's future as a choice among four scenarios drawn from philosopher <b>Nick Bostrom</b>: recurrent collapse (an endless cycle of rise and fall), convergence to a plateau (globalization brings the whole world to a similar level), extinction (catastrophic collapse with no recovery), or accelerating takeoff toward a radically better future (the <b>Singularity</b>). He argues that recurrent collapse is unlikely given how widespread knowledge has become, and that a global plateau would be unstable because competition for scarce resources without new technology leads to conflict.</p>
+
+<p>This leaves two realistic scenarios: stagnation leading to extinction, or breakthrough leading to a much better world. Thiel pushes back against Ray Kurzweil's deterministic Singularitarianism&mdash;the future won't happen on its own. <b>The stark choice is between nothing and something, and it's up to us.</b> The book closes with a call to action: "Our task today is to find singular ways to create the new things that will make the future not just different, but better&mdash;to go from 0 to 1."</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Bostrom's four scenarios present a false set of exhaustive possibilities. Most historians and futurists expect something far messier: <b>uneven progress</b> with simultaneous advances in some domains and stagnation or regression in others. The framing of "Singularity or bust" is a rhetorical device that may motivate technologists but doesn't capture the complex, multi-dimensional nature of human progress across health, governance, culture, and technology.</p>
+</details>
+
+<h2 id="quiz-heading">Comprehension Quiz</h2>
+
+<details id="quiz-section" class="quiz-wrapper">
+  <summary class="quiz-toggle">Take the Quiz</summary>
+
+  <form id="quiz-form">
+
+    <div class="q-block">
+      <p class="q-label">1. What is the core distinction Thiel draws between "0 to 1" and "1 to n"?</p>
+      <label><input type="radio" name="q1" value="a"> a) Small companies vs. large corporations</label>
+      <label><input type="radio" name="q1" value="b"> b) Creating something new vs. copying what already works</label>
+      <label><input type="radio" name="q1" value="c"> c) Domestic business vs. international expansion</label>
+      <label><input type="radio" name="q1" value="d"> d) Software startups vs. hardware companies</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">2. According to Thiel, what four dogmatic lessons did Silicon Valley learn from the dot-com crash?</p>
+      <label><input type="radio" name="q2" value="a"> a) Think big, plan ahead, ignore competitors, and focus on engineering</label>
+      <label><input type="radio" name="q2" value="b"> b) Make incremental advances, stay lean, improve on competition, and focus on product over sales</label>
+      <label><input type="radio" name="q2" value="c"> c) Raise lots of capital, hire fast, disrupt incumbents, and grow virally</label>
+      <label><input type="radio" name="q2" value="d"> d) Avoid debt, seek profitability early, diversify products, and target enterprise customers</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">3. What does Thiel mean when he says "capitalism and competition are opposites"?</p>
+      <label><input type="radio" name="q3" value="a"> a) Capitalist economies should avoid free markets</label>
+      <label><input type="radio" name="q3" value="b"> b) Under perfect competition, all profits are competed away, undermining capital accumulation</label>
+      <label><input type="radio" name="q3" value="c"> c) Only socialist economies can sustain competition</label>
+      <label><input type="radio" name="q3" value="d"> d) Large companies always collude to avoid competition</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">4. How do monopolists and non-monopolists lie about their market position, according to Thiel?</p>
+      <label><input type="radio" name="q4" value="a"> a) Monopolists claim to be innovative; non-monopolists claim to be established</label>
+      <label><input type="radio" name="q4" value="b"> b) Monopolists hide their monopoly by framing their market as a union of large markets; non-monopolists exaggerate uniqueness by defining narrow market intersections</label>
+      <label><input type="radio" name="q4" value="c"> c) Both monopolists and non-monopolists overstate their market share</label>
+      <label><input type="radio" name="q4" value="d"> d) Monopolists understate revenue; non-monopolists overstate revenue</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">5. In Thiel's Shakespeare vs. Marx framework, why do businesses compete destructively?</p>
+      <label><input type="radio" name="q5" value="a"> a) Because they have fundamentally different goals (the Marx model)</label>
+      <label><input type="radio" name="q5" value="b"> b) Because they are too similar and lose sight of what matters (the Shakespeare model)</label>
+      <label><input type="radio" name="q5" value="c"> c) Because government regulation forces them into the same markets</label>
+      <label><input type="radio" name="q5" value="d"> d) Because consumers demand identical products from multiple providers</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">6. What are the four characteristics of a durable monopoly?</p>
+      <label><input type="radio" name="q6" value="a"> a) Low costs, high volume, global reach, and government contracts</label>
+      <label><input type="radio" name="q6" value="b"> b) Proprietary technology, network effects, economies of scale, and branding</label>
+      <label><input type="radio" name="q6" value="c"> c) Patents, lobbying power, vertical integration, and first-mover advantage</label>
+      <label><input type="radio" name="q6" value="d"> d) Strong leadership, diverse products, flexible pricing, and fast iteration</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">7. What are the four quadrants in Thiel's framework for attitudes toward the future?</p>
+      <label><input type="radio" name="q7" value="a"> a) Technological, financial, political, and cultural</label>
+      <label><input type="radio" name="q7" value="b"> b) Definite optimism, indefinite optimism, definite pessimism, and indefinite pessimism</label>
+      <label><input type="radio" name="q7" value="c"> c) Short-term, long-term, domestic, and global</label>
+      <label><input type="radio" name="q7" value="d"> d) Risk-seeking, risk-neutral, risk-averse, and risk-immune</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">8. What is the key insight about venture capital returns and the power law?</p>
+      <label><input type="radio" name="q8" value="a"> a) Most VC investments return a modest 2&ndash;4x</label>
+      <label><input type="radio" name="q8" value="b"> b) The best investment in a successful fund equals or outperforms the entire rest of the fund combined</label>
+      <label><input type="radio" name="q8" value="c"> c) Diversified portfolios consistently outperform concentrated bets</label>
+      <label><input type="radio" name="q8" value="d"> d) Early-stage investments are always riskier than late-stage ones</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">9. According to Thiel, what is a "secret" in the context of building a great company?</p>
+      <label><input type="radio" name="q9" value="a"> a) Proprietary intellectual property protected by patents</label>
+      <label><input type="radio" name="q9" value="b"> b) An important and unknown truth that is hard to discover but doable</label>
+      <label><input type="radio" name="q9" value="c"> c) Insider information about market trends</label>
+      <label><input type="radio" name="q9" value="d"> d) A technology that no competitor can ever replicate</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">10. What is "Thiel's law" regarding startup foundations?</p>
+      <label><input type="radio" name="q10" value="a"> a) The first product always fails</label>
+      <label><input type="radio" name="q10" value="b"> b) A startup messed up at its foundation cannot be fixed</label>
+      <label><input type="radio" name="q10" value="c"> c) Co-founders should always split equity equally</label>
+      <label><input type="radio" name="q10" value="d"> d) Every startup needs at least three founders to succeed</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">11. Why does Thiel argue that lower CEO pay correlates with better startup performance?</p>
+      <label><input type="radio" name="q11" value="a"> a) It saves the company money on operating expenses</label>
+      <label><input type="radio" name="q11" value="b"> b) High pay incentivizes defending the status quo rather than aggressively solving problems</label>
+      <label><input type="radio" name="q11" value="c"> c) Investors require it as a condition of funding</label>
+      <label><input type="radio" name="q11" value="d"> d) It reduces the tax burden on the company</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">12. What did Thiel's management approach of assigning each person "one thing" accomplish at PayPal?</p>
+      <label><input type="radio" name="q12" value="a"> a) It maximized individual productivity through specialization</label>
+      <label><input type="radio" name="q12" value="b"> b) It reduced internal conflict by eliminating competition for the same responsibilities</label>
+      <label><input type="radio" name="q12" value="c"> c) It made it easier to fire underperformers</label>
+      <label><input type="radio" name="q12" value="d"> d) It allowed employees to work shorter hours</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">13. What is the most common cause of startup failure, according to Thiel's analysis of distribution?</p>
+      <label><input type="radio" name="q13" value="a"> a) Building a bad product</label>
+      <label><input type="radio" name="q13" value="b"> b) Running out of funding</label>
+      <label><input type="radio" name="q13" value="c"> c) Poor sales and distribution, not bad product</label>
+      <label><input type="radio" name="q13" value="d"> d) Hiring the wrong team</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">14. What is Thiel's core argument about the relationship between computers and humans?</p>
+      <label><input type="radio" name="q14" value="a"> a) Computers will inevitably replace most human workers</label>
+      <label><input type="radio" name="q14" value="b"> b) Computers are complements for humans, not substitutes, and the most valuable businesses will empower people rather than make them obsolete</label>
+      <label><input type="radio" name="q14" value="c"> c) Humans should resist technological advancement to preserve jobs</label>
+      <label><input type="radio" name="q14" value="d"> d) Only software engineers will remain employable in the future</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">15. How did Tesla succeed where other cleantech companies failed?</p>
+      <label><input type="radio" name="q15" value="a"> a) By receiving the largest government subsidies</label>
+      <label><input type="radio" name="q15" value="b"> b) By answering all seven critical business questions correctly, including starting with a small luxury market and understanding cleantech as a social phenomenon</label>
+      <label><input type="radio" name="q15" value="c"> c) By undercutting competitors on price</label>
+      <label><input type="radio" name="q15" value="d"> d) By focusing exclusively on environmental messaging</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">16. What is the "founder's paradox" that gives Chapter 14 its title?</p>
+      <label><input type="radio" name="q16" value="a"> a) Founders must choose between wealth and control</label>
+      <label><input type="radio" name="q16" value="b"> b) Founders exhibit extreme and contradictory traits, and are alternately worshipped and demonized by society</label>
+      <label><input type="radio" name="q16" value="c"> c) The best founders are always technical, but companies need business leaders</label>
+      <label><input type="radio" name="q16" value="d"> d) Starting a company requires both more and less risk than working for someone else</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">17. In the conclusion, what does Thiel identify as the two most likely scenarios for humanity's future?</p>
+      <label><input type="radio" name="q17" value="a"> a) Global cooperation or global conflict</label>
+      <label><input type="radio" name="q17" value="b"> b) Stagnation leading to extinction, or breakthrough leading to a much better future</label>
+      <label><input type="radio" name="q17" value="c"> c) Economic plateau or economic decline</label>
+      <label><input type="radio" name="q17" value="d"> d) AI dominance or human supremacy</label>
+    </div>
+
+    <button type="button" id="score-btn" onclick="scoreQuiz()">Score My Answers</button>
+
+    <div id="quiz-result" style="display:none;">
+      <p id="score-text"></p>
+      <div id="answer-review"></div>
+    </div>
+
+  </form>
+</details>
+
+<script>
+(function() {
+  const answers = {
+    q1: { correct: "b", explain: "Thiel defines '0 to 1' as creating something entirely new (vertical progress) versus '1 to n' which means copying what works (horizontal progress/globalization)." },
+    q2: { correct: "b", explain: "The four post-crash dogmas were: make incremental advances, stay lean and flexible, improve on the competition, and focus on product not sales. Thiel argues the opposite principles are more correct." },
+    q3: { correct: "b", explain: "Thiel argues that capitalism is premised on accumulating capital, but perfect competition drives all profits to zero, so entrepreneurs should build monopolies rather than undifferentiated commodity businesses." },
+    q4: { correct: "b", explain: "Monopolists like Google frame their market as the union of large markets to appear small; non-monopolists define their market as the intersection of tiny niches to appear unique." },
+    q5: { correct: "b", explain: "Thiel favors the Shakespeare model: businesses compete most fiercely when they are most alike, losing sight of what matters—just like the Montagues and Capulets." },
+    q6: { correct: "b", explain: "Thiel identifies proprietary technology, network effects, economies of scale, and branding as the four characteristics that define durable monopolies." },
+    q7: { correct: "b", explain: "Thiel's 2x2 matrix combines definite/indefinite with optimistic/pessimistic, yielding four quadrants that describe different societies' attitudes toward the future." },
+    q8: { correct: "b", explain: "The power law in VC means the best investment in a successful fund equals or outperforms all other investments combined, as Facebook did for Founders Fund's 2005 fund." },
+    q9: { correct: "b", explain: "A secret is something important and unknown, something hard to do but doable. Every great business is built around a secret that's hidden from the outside." },
+    q10: { correct: "b", explain: "Thiel's law states that a startup messed up at its foundation cannot be fixed—early decisions about co-founders, ownership, and governance set patterns that persist indefinitely." },
+    q11: { correct: "b", explain: "High CEO pay incentivizes defending the status quo and salary rather than working aggressively to solve problems and increase the company's long-term value." },
+    q12: { correct: "b", explain: "Assigning each person one unique responsibility reduced internal conflict by eliminating competition for the same roles, making it easier to build long-term relationships." },
+    q13: { correct: "c", explain: "Thiel argues that poor sales rather than bad product is the most common cause of failure—if you haven't invented an effective way to sell your product, you have a bad business." },
+    q14: { correct: "b", explain: "Thiel argues computers are complements, not substitutes, for humans—they excel at different things, and the most valuable future businesses will use computers to help humans solve hard problems." },
+    q15: { correct: "b", explain: "Tesla succeeded by answering all seven questions: 10x technology, perfect timing on government loans, dominating the luxury EV niche, engineering-driven team, owned distribution, durable brand, and the secret that cleantech was a social phenomenon." },
+    q16: { correct: "b", explain: "The founder's paradox is that founders exhibit extreme, contradictory traits and are alternately worshipped and demonized—simultaneously insiders and outsiders, heroes and scapegoats." },
+    q17: { correct: "b", explain: "Thiel argues that a global plateau would be unstable (competition for resources without new technology leads to conflict), leaving two realistic scenarios: stagnation/extinction or breakthrough/singularity." }
+  };
+
+  window.scoreQuiz = function() {
+    const form = document.getElementById("quiz-form");
+    let correct = 0;
+    const total = Object.keys(answers).length;
+    let reviewHTML = "";
+
+    for (let i = 1; i <= total; i++) {
+      const key = "q" + i;
+      const selected = form.elements[key] ? form.elements[key].value : "";
+      const isCorrect = selected === answers[key].correct;
+      if (isCorrect) correct++;
+
+      const status = !selected ? "wrong" : (isCorrect ? "correct" : "wrong");
+      const icon = isCorrect ? "\u2705" : "\u274C";
+      const yourAnswer = selected ? selected.toUpperCase() : "No answer";
+      const correctAnswer = answers[key].correct.toUpperCase();
+
+      reviewHTML += '<div class="review-item ' + status + '">';
+      reviewHTML += '<div class="ri-q">' + icon + " Question " + i + "</div>";
+      reviewHTML += '<div class="ri-detail">';
+      if (!isCorrect) {
+        reviewHTML += "Your answer: " + yourAnswer + " &mdash; Correct answer: " + correctAnswer + "<br>";
+      }
+      reviewHTML += answers[key].explain;
+      reviewHTML += "</div></div>";
+    }
+
+    const pct = Math.round((correct / total) * 100);
+    let grade;
+    if (pct === 100) grade = "Perfect score!";
+    else if (pct >= 80) grade = "Great understanding!";
+    else if (pct >= 60) grade = "Good, but review the summaries above for the ones you missed.";
+    else grade = "Consider re-reading the summaries above and trying again.";
+
+    document.getElementById("score-text").textContent = correct + " / " + total + " (" + pct + "%) \u2014 " + grade;
+    document.getElementById("answer-review").innerHTML = reviewHTML;
+    document.getElementById("quiz-result").style.display = "block";
+    document.getElementById("quiz-result").scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+})();
+</script>
+
+</div><!-- .content -->
+
+</body>
+</html>

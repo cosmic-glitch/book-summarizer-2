@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Black Swan — Book Summary Pro</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      line-height: 1.7;
+      color: #222;
+      background: #fafafa;
+    }
+    .app-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #2c2c2c;
+      padding: 14px 24px;
+    }
+    .content {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 32px 20px 40px;
+    }
+    .app-nav .app-name {
+      font-size: 1.05em;
+      font-weight: bold;
+      color: #e8e0d0;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+    }
+    .app-nav .app-name:hover {
+      color: #d4a843;
+    }
+    .app-nav .back-link {
+      font-size: 0.9em;
+      color: #999;
+      text-decoration: none;
+    }
+    .app-nav .back-link:hover {
+      color: #d4a843;
+    }
+    h1 {
+      font-size: 1.8em;
+      border-bottom: 2px solid #333;
+      padding-bottom: 10px;
+      margin-bottom: 5px;
+    }
+    .subtitle {
+      font-size: 1.1em;
+      color: #444;
+      margin: 2px 0 0 0;
+      font-style: italic;
+    }
+    .author {
+      font-style: italic;
+      color: #777;
+      font-size: 0.95em;
+      margin-bottom: 40px;
+    }
+    h2 {
+      font-size: 1.3em;
+      margin-top: 48px;
+      color: #1a1a1a;
+      border-left: 4px solid #555;
+      padding-left: 12px;
+    }
+    p {
+      margin-bottom: 14px;
+      text-align: justify;
+    }
+    details.counter {
+      background: #f0ece4;
+      border-left: 4px solid #b8860b;
+      padding: 14px 18px;
+      margin: 20px 0 28px 0;
+      border-radius: 0 6px 6px 0;
+    }
+    details.counter summary {
+      font-weight: bold;
+      font-size: 0.95em;
+      color: #8b6914;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    details.counter summary::-webkit-details-marker {
+      display: none;
+    }
+    details.counter summary::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    details.counter[open] summary::before {
+      transform: rotate(90deg);
+    }
+    details.counter p {
+      margin-top: 12px;
+      margin-bottom: 10px;
+      color: #3a3a3a;
+    }
+    details.counter p:last-child {
+      margin-bottom: 0;
+    }
+    .quiz-wrapper {
+      margin-top: 48px;
+      background: #f5f5f0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 16px 20px;
+    }
+    .quiz-toggle {
+      font-weight: bold;
+      font-size: 1.05em;
+      cursor: pointer;
+      color: #2a5a2a;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .quiz-toggle::-webkit-details-marker { display: none; }
+    .quiz-toggle::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    .quiz-wrapper[open] .quiz-toggle::before {
+      transform: rotate(90deg);
+    }
+    .q-block {
+      margin: 24px 0;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    .q-block:last-of-type { border-bottom: none; }
+    .q-label {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .q-block label {
+      display: block;
+      padding: 6px 10px;
+      margin: 4px 0;
+      border-radius: 4px;
+      cursor: pointer;
+      line-height: 1.5;
+    }
+    .q-block label:hover { background: #e8e8e0; }
+    #score-btn {
+      display: block;
+      margin: 28px auto 0;
+      padding: 12px 32px;
+      font-family: Georgia, serif;
+      font-size: 1em;
+      background: #2a5a2a;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #score-btn:hover { background: #1e441e; }
+    #quiz-result {
+      margin-top: 24px;
+      padding: 18px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    #score-text {
+      font-size: 1.15em;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .review-item {
+      margin-bottom: 14px;
+      padding: 10px 12px;
+      border-radius: 4px;
+    }
+    .review-item.correct { background: #e6f4e6; }
+    .review-item.wrong { background: #fce8e8; }
+    .review-item .ri-q { font-weight: bold; margin-bottom: 4px; }
+    .review-item .ri-detail { font-size: 0.93em; color: #444; }
+  </style>
+</head>
+<body>
+
+<nav class="app-nav">
+  <a href="index.html" class="app-name">Book Summary Pro</a>
+  <a href="index.html" class="back-link">&larr; All Books</a>
+</nav>
+
+<div class="content">
+
+<h1>The Black Swan</h1>
+<p class="subtitle">The Impact of the Highly Improbable</p>
+<p class="author">Nassim Nicholas Taleb</p>
+
+<h2>Prologue: On the Plumage of Birds</h2>
+
+<p>The author introduces the concept of the <b>Black Swan</b>&mdash;an event characterized by three attributes: <b>rarity</b> (it lies outside the realm of regular expectations), <b>extreme impact</b>, and <b>retrospective predictability</b> (after the fact, we concoct explanations that make it seem predictable). Taleb argues that a small number of Black Swans explain almost everything significant in our world, from the success of ideas and religions to historical events and personal fortunes.</p>
+
+<p>The prologue establishes the book's central concern: our <b>blindness to randomness</b>, particularly large deviations. The author introduces <b>Platonicity</b>&mdash;our tendency to mistake the map for the territory, to focus on pure, well-defined forms while ignoring the messiness of reality. Where the Platonic mind-set collides with messy reality lies what Taleb calls the <b>Platonic fold</b>, and it is here that Black Swans are produced. He also introduces the idea of the <b>silent hero</b>&mdash;the legislator whose preventive actions never receive credit because the disasters they averted remain invisible.</p>
+
+<p>The book is organized into four parts: Part One examines how we perceive historical and current events; Part Two addresses prediction errors and the limitations of knowledge; Part Three goes deeper into extreme events and the flaws of the bell curve; and Part Four offers practical conclusions. The author positions himself as a <b>skeptical empiricist</b>&mdash;someone who focuses on the unread books in the library of knowledge.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Taleb's framework, while powerful, risks encouraging a kind of <b>epistemic paralysis</b>. Critics like the psychologist Steven Pinker have argued that Taleb overstates human inability to learn from the past, noting that actuarial science, weather forecasting, and engineering have achieved genuine predictive success in many domains. The blanket skepticism toward all prediction can be as dangerous as overconfidence, potentially discouraging legitimate risk assessment and evidence-based planning.</p>
+</details>
+
+<h2>Chapter 1: The Apprenticeship of an Empirical Skeptic</h2>
+
+<p>Taleb draws on his personal experience growing up in Lebanon during the civil war to illustrate the Black Swan concept. The country, long considered a "paradise" of ethnic coexistence, was shattered overnight by an unexpected and brutal civil conflict. This taught Taleb that <b>history does not crawl; it jumps</b>&mdash;moving through sudden, discontinuous fractures rather than smooth, predictable progressions.</p>
+
+<p>The author introduces the <b>triplet of opacity</b>: three ailments of the human mind when confronting history. First, the <b>illusion of understanding</b>&mdash;we think the world is more comprehensible than it is. Second, <b>retrospective distortion</b>&mdash;we assess events only after the fact, making history seem clearer in rearview. Third, the <b>overvaluation of factual information</b>, particularly by learned people who create categories. Taleb discovered that his grandfather, a government minister, could predict no better than his cabdriver Mikhail, except Mikhail had the humility to say "God knows."</p>
+
+<p>The chapter traces Taleb's intellectual journey from Lebanon to Wharton business school to the <b>1987 stock market crash</b>, which vindicated his approach of betting on rare, unexpected events. He describes achieving what he calls <b>"f*** you money"</b>&mdash;enough capital to free himself from external authority and pursue his ideas about randomness full-time.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>While Taleb's autobiographical narrative is compelling, his personal experience of the Lebanese civil war as the <i>ur</i>-Black Swan may introduce selection bias into his theorizing. Historians like Kamal Salibi have documented that the tensions in Lebanon were well understood by regional analysts, suggesting the war was less "unpredictable" than Taleb implies. The sociologist Charles Tilly argued that civil wars follow identifiable patterns of <b>political mobilization</b> that, while not precisely predictable, are far from random.</p>
+</details>
+
+<h2>Chapter 2: Yevgenia's Black Swan</h2>
+
+<p>Taleb introduces <b>Yevgenia Nikolayevna Krasnova</b>, a fictional neuroscientist-turned-novelist whose unusual book, rejected by every major publisher, eventually becomes a massive global success after being posted on the Web. Her story illustrates how Black Swans operate in the realm of <b>cultural success</b>&mdash;unpredictable, extreme, and rationalized after the fact.</p>
+
+<p>The chapter highlights how the publishing industry, like many gatekeeping institutions, systematically fails to predict breakthroughs. Yevgenia's editors told her she needed to fit into a genre, write for a defined audience, and conform to established rules. After her success, the same industry retrospectively claimed her rise was <b>"inevitable"</b> and traced her literary lineage to established predecessors she had never read. This post-hoc rationalization is a hallmark of our relationship with Black Swans.</p>
+
+<h2>Chapter 3: The Speculator and the Prostitute</h2>
+
+<p>This chapter introduces the fundamental distinction between <b>Mediocristan</b> and <b>Extremistan</b>&mdash;two types of randomness that govern different domains of life. In Mediocristan, no single observation can significantly change the aggregate. Physical quantities like height, weight, and calorie consumption belong here. Even the heaviest person on earth would barely affect the average weight of a large sample.</p>
+
+<p>In <b>Extremistan</b>, a single observation can disproportionately impact the total. Wealth, book sales, city populations, and celebrity belong to this domain. Taleb illustrates this by noting that if you add Bill Gates to a room of a thousand people, his net worth would represent 99.9% of the total. The chapter traces the rise of Extremistan to the invention of <b>scalable professions</b>&mdash;activities where output can be multiplied without proportional effort, from the alphabet to the gramophone to the Internet.</p>
+
+<p>The distinction has profound epistemological consequences: in Mediocristan, you can learn reliably from data; in Extremistan, knowledge grows erratically and is vulnerable to Black Swans. The author warns that we increasingly live in Extremistan but continue to use Mediocristan tools to understand our world.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The Mediocristan/Extremistan dichotomy, while illuminating, may be too binary. Many real-world phenomena exhibit <b>mixed characteristics</b>&mdash;income distribution, for instance, follows roughly Gaussian patterns for the middle class but power-law dynamics at the extremes. Economist Xavier Gabaix has shown that the boundary between these regimes is itself complex and context-dependent. Furthermore, the claim that "almost all social matters are from Extremistan" may overstate the case, as much of daily economic life (grocery purchases, commute times, routine transactions) behaves quite predictably.</p>
+</details>
+
+<h2>Chapter 4: One Thousand and One Days, or How Not to Be a Sucker</h2>
+
+<p>The chapter presents the <b>turkey problem</b> (also known as the problem of induction): a turkey fed every day grows increasingly confident in its safety, reaching maximum confidence just before Thanksgiving&mdash;the moment of greatest danger. This illustrates how learning from the past can be not just useless but <i>negatively</i> useful, as accumulated evidence of safety makes the eventual shock more devastating.</p>
+
+<p>Taleb traces the history of inductive skepticism from <b>Sextus Empiricus</b> (second century) through the medieval Arab thinker <b>Al-Ghazali</b> to <b>David Hume</b> and <b>Karl Popper</b>. He emphasizes that while Black Swans are relative to expectations (the turkey's slaughter is not a Black Swan for the butcher), most of us operate as turkeys in environments we mistakenly believe we understand. The chapter introduces the unsettling notion that bankers, for example, appear "conservative" while sitting on time bombs&mdash;their steady profits mask catastrophic hidden risks.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The turkey analogy, while vivid, can be misleading when applied universally. Philosopher Ian Hacking has argued that <b>inductive reasoning</b> is not uniformly unreliable&mdash;it works quite well in stable, well-understood domains. The real question is not whether induction fails, but <i>when</i> and <i>where</i> it fails. Scientists have developed sophisticated tools (Bayesian updating, out-of-sample testing, cross-validation) specifically to guard against the turkey problem, and these methods do have genuine predictive power in many contexts.</p>
+</details>
+
+<h2>Chapter 5: Confirmation Shmonfirmation!</h2>
+
+<p>The author examines the <b>confirmation bias</b>&mdash;our natural tendency to seek evidence that confirms our existing beliefs while ignoring disconfirming evidence. He introduces the critical distinction between "no evidence of Black Swans" and "evidence of no Black Swans," calling the confusion between these the <b>round-trip fallacy</b>. Just because we haven't seen something doesn't mean it doesn't exist.</p>
+
+<p>Taleb discusses <b>domain specificity</b>&mdash;the disturbing fact that we can solve logical problems in the classroom but fail to apply the same reasoning in daily life. Statisticians, he notes, leave their brains in the classroom and make elementary errors on the street. The chapter advocates for <b>negative empiricism</b>, following Popper's insight that we learn more from falsification than from confirmation. A single black swan disproves the theory that all swans are white, but millions of white swans cannot conclusively prove it.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>While the confirmation bias is well-documented, cognitive scientist Hugo Mercier has proposed the <b>argumentative theory of reasoning</b>, suggesting that confirmation bias is not a flaw but an evolved feature for social argumentation. In group settings, individuals advocating different positions can collectively arrive at better conclusions through debate. The bias becomes problematic mainly when individuals reason alone without adversarial challenge.</p>
+</details>
+
+<h2>Chapter 6: The Narrative Fallacy</h2>
+
+<p>The <b>narrative fallacy</b> is our compulsion to weave explanations into sequences of facts, imposing logical links and causal arrows where none may exist. Taleb argues this is not merely a psychological tendency but has a <b>biological basis</b>&mdash;split-brain experiments show that the left hemisphere acts as an automatic "interpreter," generating explanations even for actions it had no part in producing. The neurotransmitter <b>dopamine</b> further drives pattern-seeking; patients treated with L-dopa for Parkinson's disease sometimes become compulsive gamblers, seeing patterns in randomness.</p>
+
+<p>The chapter also introduces the <b>Kolmogorov complexity</b> framework: our brains need to compress information to manage it, and narratives serve as compression algorithms. The more random the information, the harder it is to compress&mdash;so we impose patterns that reduce dimensionality but also reduce accuracy. The Black Swan, Taleb argues, <i>is what we leave out of simplification</i>. He illustrates with Bloomberg News headlines that attributed the same market movement to Saddam Hussein's capture&mdash;first as a reason for bonds rising, then for bonds falling.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Narrative reasoning, while prone to error, is also humanity's most powerful tool for <b>transmitting complex knowledge</b> across generations. The cognitive scientist Mark Turner argues in <i>The Literary Mind</i> that narrative is fundamental to human thought itself, not merely an error-prone shortcut. Historian Hayden White has shown that historical understanding is <i>inherently</i> narrative in structure, raising the question of whether Taleb's critique of narrative amounts to a critique of understanding itself.</p>
+</details>
+
+<h2>Chapter 7: Living in the Antechamber of Hope</h2>
+
+<p>This chapter explores the emotional and psychological toll of pursuing <b>Black Swan-dependent activities</b>&mdash;creative, scientific, or entrepreneurial endeavors where rewards are lumpy, rare, and unpredictable. Taleb introduces the character of <b>Nero Tulip</b>, a trader who practices a "bleed" strategy: losing small amounts daily in exchange for occasional massive gains from unexpected events.</p>
+
+<p>The chapter draws on the Italian novel <i>Il deserto dei tartari</i> by Dino Buzzati, about a soldier who spends thirty-five years at a remote fort waiting for a glorious battle that arrives only as he lies dying. Taleb uses this as a metaphor for those who live in the <b>antechamber of hope</b>&mdash;sacrificing the steady rewards of Mediocristan for the possibility of a Extremistan payoff. The research on <b>hedonic happiness</b> shows that humans derive more pleasure from frequent small rewards than rare large ones, meaning that Black Swan hunters are biologically programmed to suffer in their pursuit.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Taleb romanticizes the Black Swan hunter while underplaying the <b>survivorship bias</b> in his own examples. Economist Thomas Astebro's research, which Taleb himself cites, shows that returns on independent inventions are far lower than venture capital returns. The vast majority of people who "live in the antechamber of hope" never see their Black Swan. Psychologist Angela Duckworth's research on <b>grit</b> suggests that sustained effort in well-chosen domains, not passive waiting for rare events, better predicts achievement.</p>
+</details>
+
+<h2>Chapter 8: Giacomo Casanova's Unfailing Luck: The Problem of Silent Evidence</h2>
+
+<p>The <b>silent evidence problem</b>&mdash;also known as survivorship bias&mdash;is the systematic distortion created by our inability to see what <i>didn't</i> happen. Taleb traces this insight to the Roman orator <b>Cicero</b>, who recounted the story of Diagoras: shown paintings of worshippers who survived shipwrecks after praying, Diagoras asked where the paintings were of those who prayed and drowned. The dead leave no testimony.</p>
+
+<p>The chapter applies this to multiple domains: the "swimmer's body" illusion (swimmers don't have athletic bodies because they swim; people with athletic bodies become swimmers), the myth of "beginner's luck" (unlucky beginners simply quit), and the legend of <b>Casanova's étoile</b> (his perceived invincibility was simply the result of being the one adventurer who happened to survive). Taleb also introduces <b>Bastiat's</b> insight about the seen versus the unseen: governments and individuals receive credit for what they do, but the invisible costs of their actions&mdash;including opportunities foregone and lives not saved elsewhere&mdash;go unnoticed.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>While survivorship bias is real and important, Taleb's extreme version risks nihilism about success. Psychologist K. Anders Ericsson's research on <b>deliberate practice</b> has shown that in domains with clear feedback (music, chess, sports), skill development follows identifiable patterns. The fact that silent evidence exists does not mean that <i>all</i> success is luck. Organizational researchers have identified consistent practices (like Toyota's production system) that reliably outperform competitors over decades, suggesting that systematic skill advantages do exist alongside random variation.</p>
+</details>
+
+<h2>Chapter 9: The Ludic Fallacy, or The Uncertainty of the Nerd</h2>
+
+<p>The <b>ludic fallacy</b> (from <i>ludus</i>, Latin for games) is the mistake of applying the sterilized, known-rules uncertainty of games and laboratory settings to the messy, unknown-rules uncertainty of real life. Taleb contrasts two characters: <b>Dr. John</b>, an actuary who thinks entirely within given frameworks, and <b>Fat Tony</b>, a Brooklyn street-smart operator who understands that real-world assumptions must be questioned. When told a fair coin has landed heads 99 times, Dr. John says the next flip is 50/50; Fat Tony says the coin must be loaded.</p>
+
+<p>Taleb recounts visiting a casino for a defense-department symposium on risk, discovering that the casino's four largest losses had nothing to do with gambling: a performer mauled by a tiger, a disgruntled contractor attempting to dynamite the building, an employee hiding tax forms, and the owner's daughter being kidnapped. The off-model risks outweighed the on-model risks by a factor of 1,000 to 1. Yet "the rest of the world still learns about uncertainty and probability from gambling examples."</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The ludic fallacy, while a useful corrective, risks dismissing the genuine value of <b>formal probabilistic reasoning</b>. Actuarial science, despite using "ludic" mathematics, has successfully priced insurance for centuries. The key insight from decision theorist Robyn Dawes is that simple statistical models consistently outperform human intuition&mdash;the Fat Tonys of the world&mdash;in domains with sufficient data. The solution is not to abandon formal models but to understand their <b>domain of applicability</b>.</p>
+</details>
+
+<h2>Chapter 10: The Scandal of Prediction</h2>
+
+<p>Taleb presents devastating evidence of our failure to predict. He introduces <b>epistemic arrogance</b>: when people set 98% confidence intervals for unknown quantities, they are wrong not 2% but closer to <b>45% of the time</b>. The chapter examines the work of psychologist <b>Philip Tetlock</b>, who studied 27,000 predictions by nearly 300 political and economic experts over decades and found that experts predicted no better than random&mdash;and worse, those with the biggest reputations performed worst.</p>
+
+<p>The "scandal" is not just that we predict badly, but that we <b>refuse to acknowledge</b> it. Experts spin elaborate defenses: they claim they were "almost right," that unforeseen external events derailed their predictions, or that they were "playing a different game." The chapter also addresses the <b>planning fallacy</b>&mdash;our systematic underestimation of project costs and timelines, illustrated by the Sydney Opera House (planned for $7 million, costing $104 million). Taleb shows that in Extremistan, the longer you wait past a deadline, the <i>longer</i> you should expect to continue waiting.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Tetlock's own later work, <i>Superforecasting</i> (2015), significantly nuanced his earlier findings. He identified a group of <b>"superforecasters"</b> who consistently outperformed chance and even intelligence analysts with classified information. These individuals used probabilistic thinking, updated beliefs frequently, and avoided the hedgehog mentality Taleb criticizes. This suggests that the problem is not prediction itself but <i>how</i> we predict&mdash;and that training and proper methods can meaningfully improve forecasting accuracy.</p>
+</details>
+
+<h2>Chapter 11: How to Look for Bird Poop</h2>
+
+<p>The chapter explores the <b>structural limits</b> on prediction, moving beyond human psychology to fundamental constraints. Taleb presents <b>Popper's central argument</b>: predicting historical events requires predicting technological innovation, which is fundamentally unpredictable because if you could predict a discovery, you would have already made it. This is formalized as the <b>law of iterated expectations</b>: if you expect to know something tomorrow, you effectively know it today.</p>
+
+<p>The chapter catalogs accidental discoveries: <b>penicillin</b> (Fleming's contaminated experiment), <b>cosmic background radiation</b> (astronomers cleaning bird droppings from their antenna), the <b>laser</b> (a "solution looking for a problem"). Taleb connects this to <b>Poincar&eacute;'s three body problem</b>, which showed that even in simple physical systems, tiny perturbations can produce wildly divergent outcomes. To predict the 56th impact of a billiard ball, you would need to account for the gravitational pull of every elementary particle in the universe. If this is true for billiard balls, imagine the difficulty with human societies endowed with free will.</p>
+
+<p>The chapter also discusses <b>Hayek's critique of central planning</b>: no single institution can aggregate the dispersed knowledge of society. True forecasting emerges organically from the system, not from any planner's model. Taleb laments that Hayek's warnings about "scientism"&mdash;the inappropriate application of hard-science methods to social phenomena&mdash;went unheeded as economics became increasingly mathematical.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>While Poincar&eacute;'s sensitivity to initial conditions is mathematically correct, practical forecasting often doesn't require infinite precision. Meteorologist Edward Lorenz (whom Taleb discusses) also helped develop <b>ensemble forecasting</b>&mdash;running many slightly different simulations to map the <i>range</i> of possible outcomes. Modern weather forecasting, which Taleb acknowledges as a relative success, works precisely by embracing uncertainty rather than pretending to eliminate it. The lesson may be not that prediction is hopeless, but that <b>probabilistic prediction</b> is the appropriate framework.</p>
+</details>
+
+<h2>Chapter 12: Epistemocracy, a Dream</h2>
+
+<p>Taleb advocates for an <b>epistemocracy</b>&mdash;a society governed by awareness of the limits of human knowledge. His model epistemocrat is <b>Michel de Montaigne</b>, the sixteenth-century essayist who practiced skeptical self-examination, was acutely aware of human fallibility, and refused dogmatic certainty. Unlike later "Enlightenment" thinkers who believed reason could conquer all, Montaigne accepted that humans are fundamentally flawed thinkers and built his philosophy around that limitation.</p>
+
+<p>The chapter distinguishes between <b>epistemic humility</b> (knowing you don't know) and epistemic arrogance (thinking you know more than you do). Taleb argues that our intellectual tradition, from Aristotle through the Enlightenment, has systematically encouraged arrogance by treating knowledge as a positive, cumulative enterprise while ignoring the vast domain of what we do not and cannot know. He proposes that the <b>unread books in Eco's library</b>&mdash;our ignorance&mdash;should receive as much attention as our knowledge.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The epistemocratic ideal, while philosophically appealing, faces a practical problem: societies must make decisions under uncertainty, and <b>suspended judgment is itself a choice</b> with consequences. Political scientist Aaron Wildavsky argued that excessive caution&mdash;the "precautionary principle" taken to extremes&mdash;can prevent beneficial innovations and create its own catastrophic risks through inaction. The challenge is not to eliminate epistemic arrogance but to calibrate it appropriately.</p>
+</details>
+
+<h2>Chapter 13: Apelles the Painter, or What Do You Do if You Cannot Predict?</h2>
+
+<p>Having established that prediction is deeply unreliable, Taleb turns to practical advice built around the concept of <b>asymmetric outcomes</b>. The core strategy is the <b>barbell approach</b>: put 85-90% of your resources in extremely safe instruments (like Treasury bills), and the remaining 10-15% in extremely speculative, high-upside bets. This eliminates the risk of catastrophic loss while maintaining exposure to positive Black Swans.</p>
+
+<p>The chapter distinguishes between <b>positive Black Swan domains</b> (publishing, venture capital, scientific research&mdash;where you lose small and can win big) and <b>negative Black Swan domains</b> (banking, insurance, military&mdash;where you win small and can lose big). Taleb's key recommendations: maximize exposure to serendipity by living in big cities and attending parties; seize opportunities aggressively because they are rarer than you think; avoid dependence on large-scale predictions; and focus on <b>consequences rather than probabilities</b>, since the former are knowable while the latter are not.</p>
+
+<p>The chapter's title references the ancient painter Apelles, who, frustrated in his attempt to paint foam on a horse's mouth, threw his sponge at the canvas in irritation&mdash;and accidentally created the perfect representation. The message: <b>trial and error</b>, not top-down planning, is the engine of discovery.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The barbell strategy, while elegant in theory, is difficult to implement in practice. Financial advisor William Bernstein has pointed out that most individuals lack the <b>psychological fortitude</b> to watch 10-15% of their portfolio go to zero repeatedly while waiting for a payoff that may never come. Furthermore, the strategy assumes you can identify "extremely safe" instruments, which the 2008 financial crisis showed is itself a form of prediction. Even Treasury bills carry inflation risk and opportunity cost.</p>
+</details>
+
+<h2>Chapter 14: From Mediocristan to Extremistan, and Back</h2>
+
+<p>The chapter examines the <b>mechanisms</b> that generate extreme inequality and winner-take-all dynamics. Taleb presents three models: economist <b>Sherwin Rosen's</b> tournament theory (marginal advantages produce outsized rewards), sociologist <b>Robert Merton's Matthew effect</b> (initial advantages compound through cumulative citation and reputation), and the general theory of <b>preferential attachment</b> (the rich get richer through self-reinforcing feedback loops).</p>
+
+<p>Crucially, Taleb notes that luck plays a larger role than any of these models acknowledge. He introduces the concept of the <b>long tail</b> (via Chris Anderson): while the Internet creates extreme concentration (Google dominates search), it also creates a reservoir of alternatives waiting in the wings. Nobody is truly safe in Extremistan&mdash;today's winner can be displaced by tomorrow's lucky newcomer. This is why capitalism works: it allows the constant reshuffling of fortune through aggressive trial and error, with free markets serving as engines of <b>creative destruction</b>.</p>
+
+<p>The chapter warns about <b>na&iuml;ve globalization</b>: while reducing day-to-day volatility, the interconnection of global financial institutions creates <b>systemic fragility</b>. Fewer but larger crises become inevitable&mdash;and precisely because they are rarer, we understand their probability less.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Taleb's enthusiasm for creative destruction and his dismissal of government intervention sits uneasily with his own warnings about systemic fragility. Economist Hyman Minsky (whom Taleb cites approvingly) argued that financial instability is <b>endogenous to capitalism</b>&mdash;not an external shock but a natural product of market dynamics. If Minsky is right, then some form of regulation is necessary precisely <i>because</i> of the Black Swans that free markets generate. Taleb's later work on "antifragility" partially addresses this tension, but in <i>The Black Swan</i> the contradiction remains unresolved.</p>
+</details>
+
+<h2>Chapter 15: The Bell Curve, That Great Intellectual Fraud</h2>
+
+<p>Taleb mounts a sustained attack on the <b>Gaussian bell curve</b> (which he calls the "GIF"&mdash;Great Intellectual Fraud), arguing that its dominance in social science and finance has been catastrophic. The bell curve, developed for astronomy and later applied to human height by <b>Adolphe Qu&eacute;telet</b>, assumes that extreme deviations are vanishingly rare and that large samples converge predictably to an average. This works in Mediocristan but fails spectacularly in Extremistan.</p>
+
+<p>The chapter explains how the bell curve achieves stability through the <b>law of large numbers</b>&mdash;as samples grow, individual observations become insignificant relative to the whole. But this only works when observations are independent and bounded. In Extremistan, where a single observation can dominate the total, the law of large numbers either doesn't apply or converges so slowly as to be useless for practical purposes. Taleb argues that the near-universal application of Gaussian statistics to finance, economics, and social science is not just wrong but <b>dangerously wrong</b>, since it systematically underestimates the probability and impact of extreme events.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Statistician Andrew Gelman has argued that Taleb's critique of the bell curve, while correct in certain domains, is too sweeping. Many applications of Gaussian statistics&mdash;in quality control, experimental design, and measurement error&mdash;are <b>perfectly appropriate</b> because they deal with genuinely bounded, independent phenomena. The problem is not the bell curve itself but its <b>misapplication</b> to domains where its assumptions don't hold. Furthermore, modern statistics has developed robust methods (heavy-tailed distributions, extreme value theory) that go well beyond the Gaussian.</p>
+</details>
+
+<h2>Chapter 16: The Aesthetics of Randomness</h2>
+
+<p>Taleb introduces <b>Mandelbrotian</b> (fractal) randomness as a more realistic alternative to the Gaussian bell curve. Named after mathematician <b>Beno&icirc;t Mandelbrot</b>, fractal randomness exhibits <b>self-similarity across scales</b>&mdash;the pattern of variation looks similar whether you examine it over a day, a year, or a century. Unlike the bell curve, which has thin tails and makes extreme events nearly impossible, fractal distributions have <b>fat tails</b>, where extreme events are rare but not negligibly so.</p>
+
+<p>The chapter explains <b>power laws</b> and <b>scalable distributions</b>: in these systems, there is no characteristic scale, no "typical" member. The rich resemble the superrich, just less wealthy. Mandelbrotian randomness turns Black Swans into what Taleb calls <b>Gray Swans</b>&mdash;events that are still surprising but whose general possibility can be anticipated. While you cannot predict the specific Black Swan, you can acknowledge that extreme events <i>will</i> occur and prepare accordingly.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Taleb himself acknowledges a crucial limitation: fractal models are <b>extremely sensitive to parameter estimation</b>. A small change in the "tail exponent" can change probability estimates by a factor of ten or more. This means that while Mandelbrotian statistics are theoretically superior to Gaussian ones for modeling extremes, they may not be much more <b>practically useful</b> for prediction. The physicist Didier Sornette has developed "log-periodic" models that claim to identify precursors to crashes, but their track record remains debated.</p>
+</details>
+
+<h2>Chapter 17: Locke's Madmen, or Bell Curves in the Wrong Places</h2>
+
+<p>The chapter documents how the bell curve has been <b>systematically misapplied</b> in finance and economics, with catastrophic results. Taleb targets the <b>portfolio theory</b> of Harry Markowitz, the <b>Black-Scholes option pricing model</b>, and the <b>risk management</b> frameworks used by major financial institutions&mdash;all built on Gaussian assumptions that grossly underestimate tail risk.</p>
+
+<p>Taleb recounts the spectacular failure of <b>Long-Term Capital Management (LTCM)</b> in 1998, a hedge fund employing two Nobel Prize-winning economists whose models failed to anticipate what actually happened in markets. He argues that the Nobel Prize in Economics (technically the Bank of Sweden Prize) has been <b>harmful to society</b> by conferring scientific legitimacy on models that are empirically bankrupt. The chapter calls for intellectual humility: "Locke's madmen" are those who reason correctly from false premises&mdash;the elaborate mathematical models of modern finance being a prime example.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Financial economist Robert Merton (son of the sociologist) has argued that the <b>Black-Scholes model</b>, while imperfect, represented a genuine advance in understanding option pricing and was never intended to be applied mechanically without judgment. The LTCM failure, he contends, resulted from excessive leverage and liquidity risk rather than a fundamental flaw in the underlying theory. More broadly, critics note that Taleb's alternative&mdash;acknowledging that "we cannot compute" risks&mdash;offers <b>little practical guidance</b> for institutions that must make quantitative risk decisions daily.</p>
+</details>
+
+<h2>Chapter 18: The Uncertainty of the Phony</h2>
+
+<p>Taleb argues that many professional "experts" on uncertainty are themselves the greatest source of <b>false confidence</b>. Those who study risk using precise mathematical tools create an illusion of understanding that is more dangerous than honest ignorance. He targets academic disciplines that focus on inconsequential, measurable uncertainties while ignoring the truly important, unmeasurable ones.</p>
+
+<p>The chapter introduces the concept of <b>tunneling</b>&mdash;focusing on well-defined sources of uncertainty while ignoring the vast space of unknown unknowns. People who worry about pennies instead of dollars, who obsess over precisely measurable but inconsequential risks while ignoring imprecisely measurable but catastrophic ones, are "wasting our studies of uncertainty by focusing on the insignificant." The phony uncertainty experts, Taleb argues, are not merely useless but actively harmful: they give us a false sense of security and divert cognitive resources from where they are truly needed.</p>
+
+<h2>Chapter 19: Half and Half, or How to Get Even with the Black Swan</h2>
+
+<p>The concluding chapter synthesizes the book's arguments into a philosophy of action. Taleb reiterates the <b>barbell strategy</b>: be maximally conservative in protecting against negative Black Swans and maximally aggressive in exposing yourself to positive ones. He offers practical wisdom: "I don't run for trains"&mdash;missing a train is only painful if you run for it; snubbing randomness by refusing to let it affect your emotional state is liberating.</p>
+
+<p>The chapter emphasizes that the right response to Black Swans is not prediction but <b>robustness</b>. Since we cannot know which specific extreme events will occur, we should structure our lives and institutions to survive and even benefit from the unexpected. Taleb proposes focusing on <b>consequences rather than probabilities</b>&mdash;you don't need to know the odds of an earthquake to buy insurance against one. He revisits the <b>Great Asymmetry</b>: our inability to predict the future is offset by our ability to understand asymmetric payoffs and position ourselves accordingly.</p>
+
+<p>Taleb concludes with an optimistic note about <b>stochastic tinkering</b>&mdash;the trial-and-error process by which free markets and open societies generate innovation. The overconfident entrepreneurs, na&iuml;ve investors, and aggressive venture capitalists who collectively fuel innovation may be individually foolish but are collectively wise. "We are being driven by history," he writes, "all the while thinking that we are doing the driving."</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Taleb's concluding philosophy sits in tension with his earlier arguments. If we truly cannot predict, then we also cannot reliably identify which bets constitute "exposure to positive Black Swans" versus which are simply foolish gambles. The philosopher Nassim Haramein (no relation) has noted that the advice to "maximize serendipity" is itself a form of prediction&mdash;a bet that the <b>distribution of unknown opportunities</b> favors certain strategies over others. Furthermore, Taleb's celebration of stochastic tinkering glosses over the <b>human costs</b> of failure: the bankrupt entrepreneurs, the failed artists, and the communities devastated by creative destruction are not simply statistical noise.</p>
+</details>
+
+<h2 id="quiz-heading">Comprehension Quiz</h2>
+
+<details id="quiz-section" class="quiz-wrapper">
+  <summary class="quiz-toggle">Take the Quiz</summary>
+
+  <form id="quiz-form">
+
+    <div class="q-block">
+      <p class="q-label">1. What are the three defining attributes of a Black Swan event?</p>
+      <label><input type="radio" name="q1" value="a"> High probability, low impact, and predictability</label>
+      <label><input type="radio" name="q1" value="b"> Rarity, extreme impact, and retrospective predictability</label>
+      <label><input type="radio" name="q1" value="c"> Frequency, moderate impact, and randomness</label>
+      <label><input type="radio" name="q1" value="d"> Unpredictability, low impact, and statistical normality</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">2. What does Taleb mean by "Platonicity"?</p>
+      <label><input type="radio" name="q2" value="a"> The tendency to follow Plato's ethical philosophy</label>
+      <label><input type="radio" name="q2" value="b"> A preference for abstract mathematical proofs</label>
+      <label><input type="radio" name="q2" value="c"> The tendency to mistake the map for the territory, favoring crisp models over messy reality</label>
+      <label><input type="radio" name="q2" value="d"> The belief that only ancient wisdom contains truth</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">3. In Taleb's framework, which of the following belongs to Extremistan?</p>
+      <label><input type="radio" name="q3" value="a"> Human height</label>
+      <label><input type="radio" name="q3" value="b"> Calorie consumption</label>
+      <label><input type="radio" name="q3" value="c"> Book sales per author</label>
+      <label><input type="radio" name="q3" value="d"> Body weight</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">4. What does the "turkey problem" illustrate?</p>
+      <label><input type="radio" name="q4" value="a"> That turkeys are poor decision makers</label>
+      <label><input type="radio" name="q4" value="b"> That accumulated evidence of safety can be misleading, as confidence peaks just before catastrophe</label>
+      <label><input type="radio" name="q4" value="c"> That Thanksgiving is statistically the most dangerous holiday</label>
+      <label><input type="radio" name="q4" value="d"> That animal behavior follows predictable patterns</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">5. What is the "round-trip fallacy" discussed in the chapter on confirmation?</p>
+      <label><input type="radio" name="q5" value="a"> The error of returning to a previously rejected hypothesis</label>
+      <label><input type="radio" name="q5" value="b"> Confusing "no evidence of Black Swans" with "evidence of no Black Swans"</label>
+      <label><input type="radio" name="q5" value="c"> The tendency to travel the same intellectual path repeatedly</label>
+      <label><input type="radio" name="q5" value="d"> The mistake of buying round-trip airline tickets when one-way would suffice</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">6. What is the "narrative fallacy"?</p>
+      <label><input type="radio" name="q6" value="a"> The belief that all stories are fiction</label>
+      <label><input type="radio" name="q6" value="b"> Our compulsion to impose causal explanations on sequences of events, reducing complexity into misleading stories</label>
+      <label><input type="radio" name="q6" value="c"> The error of relying on novels for historical knowledge</label>
+      <label><input type="radio" name="q6" value="d"> The tendency to prefer long narratives over short ones</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">7. What is the "silent evidence" problem?</p>
+      <label><input type="radio" name="q7" value="a"> Evidence that is too quiet to be measured by instruments</label>
+      <label><input type="radio" name="q7" value="b"> The systematic distortion caused by our inability to see what didn't happen or who didn't survive</label>
+      <label><input type="radio" name="q7" value="c"> The refusal of witnesses to testify in court</label>
+      <label><input type="radio" name="q7" value="d"> Data that is classified by governments</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">8. What is the "ludic fallacy"?</p>
+      <label><input type="radio" name="q8" value="a"> The belief that games are always fair</label>
+      <label><input type="radio" name="q8" value="b"> Applying the sterilized, known-rules uncertainty of games to the messy, unknown-rules uncertainty of real life</label>
+      <label><input type="radio" name="q8" value="c"> The mistake of taking life too seriously instead of treating it as a game</label>
+      <label><input type="radio" name="q8" value="d"> The error of gambling with money you can't afford to lose</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">9. In Tetlock's study of expert predictions, what was the relationship between reputation and forecasting accuracy?</p>
+      <label><input type="radio" name="q9" value="a"> More famous experts were significantly more accurate</label>
+      <label><input type="radio" name="q9" value="b"> Reputation had no effect on accuracy</label>
+      <label><input type="radio" name="q9" value="c"> Those with bigger reputations were worse predictors than those with none</label>
+      <label><input type="radio" name="q9" value="d"> Only experts in natural sciences were accurate</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">10. Why does Taleb argue that prediction of historical events is fundamentally impossible?</p>
+      <label><input type="radio" name="q10" value="a"> Because historical records are unreliable</label>
+      <label><input type="radio" name="q10" value="b"> Because predicting history requires predicting technological innovation, and if you could predict a discovery, you would have already made it</label>
+      <label><input type="radio" name="q10" value="c"> Because historians are biased</label>
+      <label><input type="radio" name="q10" value="d"> Because governments suppress accurate forecasts</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">11. What is the "barbell strategy" that Taleb recommends?</p>
+      <label><input type="radio" name="q11" value="a"> Investing equally across all risk categories</label>
+      <label><input type="radio" name="q11" value="b"> Putting 85-90% in extremely safe instruments and 10-15% in highly speculative bets</label>
+      <label><input type="radio" name="q11" value="c"> Diversifying across exactly ten different asset classes</label>
+      <label><input type="radio" name="q11" value="d"> Investing only in medium-risk instruments to minimize volatility</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">12. Why does Taleb call the Gaussian bell curve the "Great Intellectual Fraud"?</p>
+      <label><input type="radio" name="q12" value="a"> Because Gauss did not actually invent it</label>
+      <label><input type="radio" name="q12" value="b"> Because it systematically underestimates the probability and impact of extreme events in Extremistan</label>
+      <label><input type="radio" name="q12" value="c"> Because it is too mathematically complex for practical use</label>
+      <label><input type="radio" name="q12" value="d"> Because it was developed for military purposes</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">13. What does Taleb mean by "Mandelbrotian" or fractal randomness?</p>
+      <label><input type="radio" name="q13" value="a"> Randomness that is completely unpredictable and structureless</label>
+      <label><input type="radio" name="q13" value="b"> Randomness that exhibits self-similarity across scales, with fat tails where extreme events are rare but not negligible</label>
+      <label><input type="radio" name="q13" value="c"> Randomness that follows the bell curve perfectly</label>
+      <label><input type="radio" name="q13" value="d"> Randomness found only in fractal geometry, not in social phenomena</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">14. According to Taleb, what is the key principle for decision-making under uncertainty?</p>
+      <label><input type="radio" name="q14" value="a"> Focus on computing exact probabilities of rare events</label>
+      <label><input type="radio" name="q14" value="b"> Trust expert forecasts from prestigious institutions</label>
+      <label><input type="radio" name="q14" value="c"> Focus on consequences (which you can know) rather than probabilities (which you can't)</label>
+      <label><input type="radio" name="q14" value="d"> Avoid all risk-taking activities</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">15. What does the "Matthew effect" describe?</p>
+      <label><input type="radio" name="q15" value="a"> The tendency for religious people to be more successful</label>
+      <label><input type="radio" name="q15" value="b"> The phenomenon where initial advantages compound over time, so the rich get richer and the famous get more famous</label>
+      <label><input type="radio" name="q15" value="c"> The biblical principle that the meek shall inherit the earth</label>
+      <label><input type="radio" name="q15" value="d"> The statistical tendency for averages to regress toward the mean</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">16. What practical lesson does Taleb draw from the casino's experience with its four largest losses?</p>
+      <label><input type="radio" name="q16" value="a"> Casinos should invest more in gambling theory</label>
+      <label><input type="radio" name="q16" value="b"> The biggest risks come from outside your models, not from within them</label>
+      <label><input type="radio" name="q16" value="c"> Security surveillance systems are always worth the investment</label>
+      <label><input type="radio" name="q16" value="d"> Tiger attacks are the primary risk in the entertainment industry</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">17. Why does Taleb recommend "maximizing serendipity"?</p>
+      <label><input type="radio" name="q17" value="a"> Because planned efforts always fail</label>
+      <label><input type="radio" name="q17" value="b"> Because positive Black Swans require exposure to unexpected opportunities, and broad exposure increases the chance of beneficial accidents</label>
+      <label><input type="radio" name="q17" value="c"> Because serendipity is more fun than hard work</label>
+      <label><input type="radio" name="q17" value="d"> Because the Internet makes all information equally accessible</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">18. What does Taleb mean by "epistemic arrogance"?</p>
+      <label><input type="radio" name="q18" value="a"> The arrogance of people who have advanced degrees</label>
+      <label><input type="radio" name="q18" value="b"> Our systematic overestimation of what we know and underestimation of uncertainty</label>
+      <label><input type="radio" name="q18" value="c"> The tendency of philosophers to look down on scientists</label>
+      <label><input type="radio" name="q18" value="d"> The belief that knowledge is more important than wisdom</label>
+    </div>
+
+    <button type="button" id="score-btn" onclick="scoreQuiz()">Score My Answers</button>
+
+    <div id="quiz-result" style="display:none;">
+      <p id="score-text"></p>
+      <div id="answer-review"></div>
+    </div>
+
+  </form>
+</details>
+
+<script>
+(function() {
+  const answers = {
+    q1: { correct: "b", explain: "A Black Swan is defined by rarity (outlier status), extreme impact, and retrospective predictability (we explain it after the fact)." },
+    q2: { correct: "c", explain: "Platonicity is our tendency to focus on pure, well-defined forms and mistake our simplified models for reality itself." },
+    q3: { correct: "c", explain: "Book sales follow Extremistan dynamics where a single author (like J.K. Rowling) can dominate the entire distribution, unlike physical measurements like height and weight." },
+    q4: { correct: "b", explain: "The turkey is fed every day, growing more confident in its safety, until the day before Thanksgiving when its confidence is highest and its danger is greatest." },
+    q5: { correct: "b", explain: "The round-trip fallacy is confusing the absence of evidence for something with evidence of its absence—a subtle but crucial logical error." },
+    q6: { correct: "b", explain: "The narrative fallacy is our compulsion to weave causal stories into sequences of facts, making events seem more predictable and explainable than they are." },
+    q7: { correct: "b", explain: "Silent evidence refers to the systematic distortion caused by not seeing failures, the dead, and outcomes that didn't happen—like the drowned worshippers who can't testify about prayer's ineffectiveness." },
+    q8: { correct: "b", explain: "The ludic fallacy is mistaking the known, rule-bound uncertainty of games and laboratory settings for the wild, unknown uncertainty of real life." },
+    q9: { correct: "c", explain: "Tetlock found a negative correlation between reputation and accuracy—famous experts were worse predictors, possibly because fame rewards confident hedgehog-style thinking." },
+    q10: { correct: "b", explain: "Following Popper, Taleb argues that predicting history requires predicting innovation, but if you could predict a discovery you would have already made it—making prediction self-defeating." },
+    q11: { correct: "b", explain: "The barbell strategy eliminates catastrophic downside risk while maintaining exposure to positive Black Swans through highly speculative bets." },
+    q12: { correct: "b", explain: "The bell curve makes extreme events appear vanishingly improbable, leading to gross underestimation of tail risks in finance and social science." },
+    q13: { correct: "b", explain: "Mandelbrotian randomness exhibits self-similarity across scales and has fat tails, making extreme events rare but not negligible—turning Black Swans into Gray Swans." },
+    q14: { correct: "c", explain: "Since probabilities of rare events are nearly impossible to compute, Taleb argues we should focus on the consequences of events, which are easier to assess." },
+    q15: { correct: "b", explain: "Named after a biblical passage, the Matthew effect describes how initial advantages (even random ones) compound over time through cumulative reinforcement." },
+    q16: { correct: "b", explain: "The casino's biggest losses came from a tiger attack, a bombing attempt, tax fraud, and a kidnapping—all outside their sophisticated gambling models." },
+    q17: { correct: "b", explain: "Since positive Black Swans require exposure, Taleb recommends maximizing opportunities for beneficial accidents through broad social engagement and openness." },
+    q18: { correct: "b", explain: "Epistemic arrogance is our hubris about the limits of our knowledge—we overestimate what we know and underestimate uncertainty by compressing the range of possible outcomes." }
+  };
+
+  window.scoreQuiz = function() {
+    const form = document.getElementById("quiz-form");
+    let correct = 0;
+    const total = Object.keys(answers).length;
+    let reviewHTML = "";
+
+    for (let i = 1; i <= total; i++) {
+      const key = "q" + i;
+      const selected = form.elements[key] ? form.elements[key].value : "";
+      const isCorrect = selected === answers[key].correct;
+      if (isCorrect) correct++;
+
+      const status = !selected ? "wrong" : (isCorrect ? "correct" : "wrong");
+      const icon = isCorrect ? "\u2705" : "\u274C";
+      const yourAnswer = selected ? selected.toUpperCase() : "No answer";
+      const correctAnswer = answers[key].correct.toUpperCase();
+
+      reviewHTML += '<div class="review-item ' + status + '">';
+      reviewHTML += '<div class="ri-q">' + icon + " Question " + i + "</div>";
+      reviewHTML += '<div class="ri-detail">';
+      if (!isCorrect) {
+        reviewHTML += "Your answer: " + yourAnswer + " &mdash; Correct answer: " + correctAnswer + "<br>";
+      }
+      reviewHTML += answers[key].explain;
+      reviewHTML += "</div></div>";
+    }
+
+    const pct = Math.round((correct / total) * 100);
+    let grade;
+    if (pct === 100) grade = "Perfect score!";
+    else if (pct >= 80) grade = "Great understanding!";
+    else if (pct >= 60) grade = "Good, but review the summaries above for the ones you missed.";
+    else grade = "Consider re-reading the summaries above and trying again.";
+
+    document.getElementById("score-text").textContent = correct + " / " + total + " (" + pct + "%) \u2014 " + grade;
+    document.getElementById("answer-review").innerHTML = reviewHTML;
+    document.getElementById("quiz-result").style.display = "block";
+    document.getElementById("quiz-result").scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+})();
+</script>
+
+</div><!-- .content -->
+
+</body>
+</html>

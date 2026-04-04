@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capital in the Twenty-First Century — Book Summary Pro</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      line-height: 1.7;
+      color: #222;
+      background: #fafafa;
+    }
+    .app-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #2c2c2c;
+      padding: 14px 24px;
+    }
+    .content {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 32px 20px 40px;
+    }
+    .app-nav .app-name {
+      font-size: 1.05em;
+      font-weight: bold;
+      color: #e8e0d0;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+    }
+    .app-nav .app-name:hover {
+      color: #d4a843;
+    }
+    .app-nav .back-link {
+      font-size: 0.9em;
+      color: #999;
+      text-decoration: none;
+    }
+    .app-nav .back-link:hover {
+      color: #d4a843;
+    }
+    h1 {
+      font-size: 1.8em;
+      border-bottom: 2px solid #333;
+      padding-bottom: 10px;
+      margin-bottom: 5px;
+    }
+    .subtitle {
+      font-size: 1.1em;
+      color: #444;
+      margin: 2px 0 0 0;
+      font-style: italic;
+    }
+    .author {
+      font-style: italic;
+      color: #777;
+      font-size: 0.95em;
+      margin-bottom: 40px;
+    }
+    h2 {
+      font-size: 1.3em;
+      margin-top: 48px;
+      color: #1a1a1a;
+      border-left: 4px solid #555;
+      padding-left: 12px;
+    }
+    p {
+      margin-bottom: 14px;
+      text-align: justify;
+    }
+    details.counter {
+      background: #f0ece4;
+      border-left: 4px solid #b8860b;
+      padding: 14px 18px;
+      margin: 20px 0 28px 0;
+      border-radius: 0 6px 6px 0;
+    }
+    details.counter summary {
+      font-weight: bold;
+      font-size: 0.95em;
+      color: #8b6914;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    details.counter summary::-webkit-details-marker {
+      display: none;
+    }
+    details.counter summary::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    details.counter[open] summary::before {
+      transform: rotate(90deg);
+    }
+    details.counter p {
+      margin-top: 12px;
+      margin-bottom: 10px;
+      color: #3a3a3a;
+    }
+    details.counter p:last-child {
+      margin-bottom: 0;
+    }
+    .quiz-wrapper {
+      margin-top: 48px;
+      background: #f5f5f0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 16px 20px;
+    }
+    .quiz-toggle {
+      font-weight: bold;
+      font-size: 1.05em;
+      cursor: pointer;
+      color: #2a5a2a;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .quiz-toggle::-webkit-details-marker { display: none; }
+    .quiz-toggle::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    .quiz-wrapper[open] .quiz-toggle::before {
+      transform: rotate(90deg);
+    }
+    .q-block {
+      margin: 24px 0;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    .q-block:last-of-type { border-bottom: none; }
+    .q-label {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .q-block label {
+      display: block;
+      padding: 6px 10px;
+      margin: 4px 0;
+      border-radius: 4px;
+      cursor: pointer;
+      line-height: 1.5;
+    }
+    .q-block label:hover { background: #e8e8e0; }
+    #score-btn {
+      display: block;
+      margin: 28px auto 0;
+      padding: 12px 32px;
+      font-family: Georgia, serif;
+      font-size: 1em;
+      background: #2a5a2a;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #score-btn:hover { background: #1e441e; }
+    #quiz-result {
+      margin-top: 24px;
+      padding: 18px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    #score-text {
+      font-size: 1.15em;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .review-item {
+      margin-bottom: 14px;
+      padding: 10px 12px;
+      border-radius: 4px;
+    }
+    .review-item.correct { background: #e6f4e6; }
+    .review-item.wrong { background: #fce8e8; }
+    .review-item .ri-q { font-weight: bold; margin-bottom: 4px; }
+    .review-item .ri-detail { font-size: 0.93em; color: #444; }
+  </style>
+</head>
+<body>
+
+<nav class="app-nav">
+  <a href="index.html" class="app-name">Book Summary Pro</a>
+  <a href="index.html" class="back-link">&larr; All Books</a>
+</nav>
+
+<div class="content">
+
+<h1>Capital in the Twenty-First Century</h1>
+<p class="author">Thomas Piketty</p>
+
+<h2>Introduction</h2>
+
+<p>Piketty opens with a fundamental question: does capitalism inevitably lead to the concentration of wealth in fewer and fewer hands, as Marx believed, or do the forces of growth and competition lead to reduced inequality, as Kuznets argued? The author positions his work as an empirical intervention in this centuries-old debate, drawing on data covering three centuries and more than twenty countries. His central thesis is captured in the formula <b>r &gt; g</b>&mdash;when the rate of return on capital (<b>r</b>) exceeds the rate of economic growth (<b>g</b>), inherited wealth grows faster than earned income, generating inequalities that are potentially incompatible with democratic values.</p>
+
+<p>The introduction traces the intellectual history of distributional thought, from <b>Malthus</b> and <b>Ricardo</b> (who feared scarcity would benefit landlords at everyone else's expense) through <b>Marx</b> (whose "principle of infinite accumulation" predicted capitalism's apocalyptic end) to <b>Kuznets</b>, whose famous "bell curve" theory suggested inequality would naturally decline as economies matured. Piketty argues Kuznets's optimism was a product of the Cold War and based on a narrow dataset (the US from 1913&ndash;1948), and that the decline in inequality Kuznets observed was primarily the result of the world wars and their political aftermath, not any natural economic process.</p>
+
+<p>Piketty describes his methodological approach: assembling the most comprehensive historical dataset on income and wealth distribution ever compiled, drawing on tax records, estate data, and national accounts. He introduces the <b>World Top Incomes Database</b> (WTID) and historical wealth estimates stretching back to the eighteenth century. The book's four parts move from basic concepts of income and capital, through the dynamics of the capital/income ratio, to the structure of inequality, and finally to policy proposals for regulating capital in the twenty-first century.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Some economists, notably <b>Daron Acemoglu</b> and <b>James Robinson</b>, have argued that Piketty's framework underemphasizes the role of <i>institutions</i>&mdash;political systems, property rights, and governance structures&mdash;in determining inequality, treating r &gt; g as too mechanistic. Others contend that the historical forces driving inequality are more contingent and path-dependent than a single inequality formula suggests.</p>
+  <p><b>Gregory Mankiw</b> and other mainstream economists have questioned whether r &gt; g is truly a "contradiction" of capitalism or simply a standard feature of any growing economy with diminishing returns to capital, arguing that the formula conflates the return on capital with the growth rate of any <i>individual</i> fortune (which also depends on consumption, taxes, and division among heirs).</p>
+</details>
+
+<h2>Chapter 1: Income and Output</h2>
+
+<p>The chapter introduces the fundamental concepts that underpin the entire book: <b>national income</b>, <b>capital</b>, and the <b>capital/income ratio</b>. Piketty defines national income as domestic output minus depreciation plus net income from abroad, and capital (or wealth) as the total market value of all nonhuman assets that can be owned and exchanged&mdash;including land, real estate, financial assets, and professional capital&mdash;net of debt. Crucially, he excludes <b>human capital</b> from his definition, since it cannot be traded on a market in non-slave societies.</p>
+
+<p>Piketty introduces the <b>first fundamental law of capitalism</b>: <b>&alpha; = r &times; &beta;</b>, where &alpha; is capital's share of national income, r is the average rate of return on capital, and &beta; is the capital/income ratio. In wealthy countries around 2010, &beta; was approximately 600% (six years of national income), r was about 5%, and capital's share of income was roughly 30%. He illustrates these relationships with concrete examples from both modern economies and nineteenth-century novels by <b>Jane Austen</b> and <b>Balzac</b>, where a 5% return on capital was taken for granted.</p>
+
+<p>The chapter surveys the <b>global distribution of production</b>, showing that Europe and America's share of world output peaked at 70&ndash;80% in the early twentieth century but has fallen to about 50% as emerging economies catch up. Piketty argues that the primary mechanism for international convergence is the <b>diffusion of knowledge and skills</b>, not capital mobility. Indeed, historically, countries that financed their own development (like Japan, South Korea, and China) have fared better than those owned by foreign investors.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Piketty's exclusion of <b>human capital</b> has been criticized by economists like <b>David Weil</b>, who argue that in modern knowledge economies, human capital may be more important than physical capital for understanding inequality and growth. Including human capital would significantly alter the capital/income ratio and potentially weaken the r &gt; g argument.</p>
+  <p>The claim that capital mobility has not been the primary driver of convergence is contested by proponents of <b>financial globalization</b>, who point to the role of foreign direct investment in countries like Ireland, Singapore, and parts of Eastern Europe in accelerating catch-up growth.</p>
+</details>
+
+<h2>Chapter 2: Growth: Illusions and Realities</h2>
+
+<p>Piketty decomposes economic growth into its <b>demographic</b> and <b>per capita output</b> components, arguing that both have historically been quite modest&mdash;about 0.8% per year each on average since 1700. He introduces the <b>"law of cumulative growth"</b>: even seemingly small annual growth rates compound dramatically over centuries, which is why both population and living standards increased tenfold between 1700 and 2012. He emphasizes that growth rates above 1&ndash;1.5% at the technological frontier are historically unprecedented and unsustainable over the very long run.</p>
+
+<p>The chapter traces the stages of <b>demographic growth</b>, from near-zero rates before 1700 through the peak of nearly 2% per year in the mid-twentieth century, and argues that the <b>demographic transition</b> is now well advanced globally, with population growth projected to fall toward zero by the end of the twenty-first century. This has profound implications: slower growth means accumulated wealth from the past takes on greater importance relative to current income, strengthening the forces of inherited inequality.</p>
+
+<p>Piketty examines the <b>Trente Glorieuses</b> (1945&ndash;1975) in Europe, arguing that this period of exceptional growth was a <i>catch-up</i> phenomenon after the devastation of 1914&ndash;1945, not a permanent new normal. He also discusses the role of <b>inflation</b>, noting that the monetary stability of the eighteenth and nineteenth centuries (which allowed novelists like Austen and Balzac to use precise monetary references) was shattered by the world wars. The twentieth century saw significant inflation for the first time, which played a crucial role in redistributing wealth, particularly by eroding public debts and the real value of fixed-income assets.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Piketty's rather pessimistic view of future growth has been challenged by <b>techno-optimists</b> like <b>Erik Brynjolfsson</b> and <b>Andrew McAfee</b>, who argue that artificial intelligence, robotics, and other transformative technologies could sustain growth rates well above 1.5% for decades to come. <b>Robert Gordon</b>, whom Piketty cites, represents the pessimistic end, but many economists fall between these views.</p>
+  <p>The assumption that low growth automatically leads to greater inequality of wealth is also debatable. <b>Matthew Rognlie</b> has argued that much of the increase in the capital/income ratio is driven by housing wealth specifically, which reflects land-use restrictions and planning failures more than any deep structural force of capitalism.</p>
+</details>
+
+<h2>Chapter 3: The Metamorphoses of Capital</h2>
+
+<p>Piketty examines how the <i>composition</i> of capital has changed radically since the eighteenth century while its <i>total value</i> relative to income has remained remarkably stable. In both Britain and France, national capital fluctuated between six and seven years of national income throughout the eighteenth and nineteenth centuries. <b>Agricultural land</b>, which once constituted two-thirds of all wealth, has been gradually replaced by <b>housing</b>, <b>industrial capital</b>, and <b>financial assets</b>, but the overall capital/income ratio has returned to pre-World War I levels.</p>
+
+<p>The chapter traces the rise and fall of <b>foreign capital</b>. On the eve of World War I, Britain owned foreign assets equivalent to nearly two years of national income, while France held assets worth more than one year. These vast colonial and financial portfolios evaporated between 1914 and 1945 through war, revolution, decolonization, and nationalization. Both countries' net foreign positions have hovered near zero since the 1950s.</p>
+
+<p>Piketty also examines the relationship between <b>public wealth and private wealth</b>. Britain's experience is instructive: public debt reached 200% of GDP after both the Napoleonic wars and World War II. In the first case, the debt was paid off over a century through budget surpluses, enriching bondholders at the expense of taxpayers. In the second case, inflation, financial repression, and nationalization dramatically reduced the debt within a few years. Currently, net public wealth in both countries is close to zero, meaning private wealth accounts for virtually all of national wealth&mdash;a historically unusual situation.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The stability of the capital/income ratio over centuries, which Piketty presents as a fundamental fact, has been questioned on methodological grounds. <b>Branko Milanovic</b> and others note that the valuation of agricultural land in pre-industrial societies is highly uncertain, and that comparing eighteenth-century land values to twenty-first-century stock market capitalizations involves significant conceptual stretching.</p>
+</details>
+
+<h2>Chapter 4: From Old Europe to the New World</h2>
+
+<p>Piketty extends his analysis to Germany and the United States. <b>Germany</b> followed a broadly similar trajectory to Britain and France&mdash;high capital/income ratios before 1914, collapse through 1945, and recovery since&mdash;but with distinctive features. Germany resorted to extreme inflation (prices multiplied by 300 between 1913 and 1950) to deal with its war debts, which paradoxically made it the most inflation-averse country in modern Europe. German private wealth is also valued lower than British or French private wealth, partly because of the <b>"Rhenish capitalism"</b> or <b>stakeholder model</b>, in which firms are governed not just by shareholders but also by worker representatives, leading to lower stock market valuations but not necessarily lower social value.</p>
+
+<p>The <b>United States</b> presents a fundamentally different picture. Because of abundant land, rapid demographic growth (from 3 million to 300 million in just over two centuries), and the absence of a feudal past, the capital/income ratio has been structurally lower in the US (4&ndash;5 years vs. 6&ndash;7 in Europe). However, the US had its own distinctive form of capital concentration: <b>slavery</b>. In the antebellum South, the total market value of slaves was comparable to the total value of land, making the Southern states among the most capital-intensive in the world.</p>
+
+<p>Piketty shows that the collapse of the capital/income ratio between 1914 and 1945 was caused far more by political and budgetary shocks&mdash;destruction of foreign portfolios, low savings rates, nationalizations, inflation, and depressed asset prices in the new regulatory environment&mdash;than by physical war damage. Physical destruction accounted for only about one-fifth to one-third of the total decline, even in the most heavily affected countries.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Piketty's treatment of <b>slavery as capital</b> is analytically consistent but morally provocative. Some critics, including <b>Ta-Nehisi Coates</b>, have argued that this framing, while illuminating, risks reducing human beings to an accounting category. Others note that the inclusion of slave wealth makes the antebellum US look more like Old Europe than Piketty sometimes implies, complicating his narrative about American exceptionalism.</p>
+  <p>The comparison between Rhenish and Anglo-Saxon capitalism models has been criticized as somewhat static. In practice, German corporate governance has been converging toward the Anglo-Saxon model in recent decades, and the "varieties of capitalism" literature has become more nuanced about the boundaries between these ideal types.</p>
+</details>
+
+<h2>Chapter 5: The Capital/Income Ratio over the Long Run</h2>
+
+<p>Piketty introduces the <b>second fundamental law of capitalism</b>: <b>&beta; = s / g</b>, where &beta; is the capital/income ratio, s is the savings rate, and g is the growth rate. This means a country that saves a lot and grows slowly will accumulate an enormous stock of capital relative to its income. With savings rates of 10&ndash;12% and growth rates slowing toward 1&ndash;1.5%, Piketty projects that capital/income ratios in wealthy countries could reach 6&ndash;8 years of national income by the mid-twenty-first century&mdash;returning to or exceeding the levels of the Belle &Eacute;poque.</p>
+
+<p>The law explains why Europe tends to have a structurally higher capital/income ratio than the United States: Europe's demographic growth is lower. It also explains the post-1945 recovery: after capital was destroyed by the shocks of 1914&ndash;1945, high savings rates and initially rapid growth rebuilt the stock, but as growth has slowed, accumulated capital has become ever more important. Piketty emphasizes that this is an <i>asymptotic</i> law&mdash;it describes where the economy tends over decades, not year-to-year fluctuations.</p>
+
+<p>The chapter also considers global patterns. Piketty notes that the capital/income ratio is rising in all wealthy countries and that as growth slows everywhere (as demographics stabilize), the entire world may come to resemble the capital-heavy societies of nineteenth-century Europe. This would mark a fundamental shift: wealth accumulated in the past would naturally take on disproportionate importance in a slow-growth world.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p><b>Lawrence Summers</b> and others have pointed out that the second fundamental law assumes a closed economy in steady state, whereas capital flows freely across borders in the modern world. The equilibrium capital/income ratio for any single country depends on global, not just domestic, savings and growth rates. Additionally, <b>per Krusell</b> and <b>Tony Smith</b> have argued that the law is sensitive to assumptions about the elasticity of substitution between capital and labor, and that Piketty's assumed elasticity may be too high.</p>
+</details>
+
+<h2>Chapter 6: The Capital-Labor Split in the Twenty-First Century</h2>
+
+<p>Piketty examines how the share of national income going to capital versus labor has evolved. Using the first fundamental law (&alpha; = r &times; &beta;), he shows that capital's share of income follows a U-shaped curve similar to the capital/income ratio but less pronounced, because the <b>rate of return on capital</b> (r) has partially compensated for changes in the quantity of capital (&beta;). When capital is scarce (as in the mid-twentieth century), returns are higher; when capital is abundant, returns fall&mdash;but not enough to prevent capital's overall share from rising.</p>
+
+<p>In both Britain and France, capital's share was 35&ndash;40% in the nineteenth century, fell to 20&ndash;25% in the mid-twentieth century, and has since recovered to 25&ndash;30%. The average rate of return on capital has historically been around <b>4&ndash;5%</b>, with significant variation by asset type: riskier investments like stocks yield 7&ndash;8%, while real estate and bonds return 3&ndash;4%. Piketty discusses the concept of a <b>"pure" rate of return</b>, which accounts for the informal labor involved in managing investments.</p>
+
+<p>The critical question is whether the <b>elasticity of substitution</b> between capital and labor is greater than one&mdash;meaning that as capital accumulates, its owners can find enough productive uses that the return on capital does not fall as fast as the capital stock rises. Piketty believes the evidence supports an elasticity between 1.3 and 1.6, implying that capital's share of income will continue to rise as the capital/income ratio increases in the twenty-first century.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p><b>Matthew Rognlie</b>'s influential critique showed that almost all of the increase in capital's share of income in recent decades is attributable to <b>housing</b>, not to productive capital. If housing is excluded, the capital-labor split has been relatively stable. This suggests the problem may be one of land-use policy and housing supply rather than any deep structural tendency of capitalism.</p>
+  <p><b>Robert Solow</b> and other growth theorists have questioned whether the elasticity of substitution is really above one in the long run, noting that Piketty's estimates may be influenced by short-term asset price bubbles rather than genuine technological substitutability.</p>
+</details>
+
+<h2>Chapter 7: Inequality and Concentration: Preliminary Bearings</h2>
+
+<p>Piketty shifts from aggregate analysis to the study of inequality at the individual level. He introduces the key conceptual framework: total income inequality can be decomposed into <b>inequality of income from labor</b> and <b>inequality of income from capital</b>, with the latter always being far more concentrated. In all known societies, the bottom 50% of the population owns virtually nothing (less than 5% of total wealth), while the top 10% typically owns 60&ndash;90% of everything.</p>
+
+<p>The chapter uses <b>Vautrin's famous lecture</b> from Balzac's <i>P&egrave;re Goriot</i> to illustrate the central dilemma of patrimonial societies: in the nineteenth century, no amount of study, talent, or hard work could match the standard of living available through inherited wealth. Vautrin demonstrates to young Rastignac that even the most successful lawyer at age fifty would earn less than the annual income from a modest inheritance. The lesson was clear: marry money, because meritocracy is an illusion.</p>
+
+<p>Piketty introduces the emergence of a <b>"patrimonial middle class"</b>&mdash;a group owning between a quarter and a third of national wealth&mdash;as perhaps the most important structural transformation of the twentieth century. He establishes that inequality of capital ownership is always much greater than inequality of labor income: in the most egalitarian societies, the Gini coefficient for labor income is around 0.2&ndash;0.3, while for capital ownership it is typically 0.6&ndash;0.9.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Piketty's reliance on Balzac as a guide to nineteenth-century inequality, while evocative, has been criticized by some historians as selective. <b>Robert Allen</b> and others have shown that real wages for skilled workers in nineteenth-century Britain and France were actually rising significantly, suggesting that the meritocratic path was more viable than Vautrin's cynical lecture implies&mdash;at least for some segments of the population.</p>
+</details>
+
+<h2>Chapter 8: Two Worlds</h2>
+
+<p>Piketty compares the historical dynamics of inequality in <b>France</b> and the <b>United States</b>, which he calls "two worlds" of inequality. In France, the reduction of inequality during the twentieth century was driven entirely by the <b>collapse of very high incomes from capital</b>&mdash;the "fall of the rentier." Wage inequality remained remarkably stable: the top decile of earners consistently received about 25% of total wages throughout the century. The compression of total income inequality was concentrated in the period 1914&ndash;1945 and was caused by war, inflation, nationalization, rent control, and progressive taxation.</p>
+
+<p>The United States tells a different story. Income inequality also fell between 1914 and 1945 (driven by the same forces of war and crisis), but it has risen dramatically since the 1970s&ndash;1980s, driven primarily by the <b>explosion of very high labor incomes</b>&mdash;the rise of the "supermanager." The top decile's share of national income has returned to the 45&ndash;50% levels last seen in the 1920s. Unlike in France, this resurgence of inequality has been driven not by capital income but by extreme wage inequality, particularly the compensation of top executives.</p>
+
+<p>Piketty argues that the divergence between France (and continental Europe generally) and the United States is primarily explained by differences in <b>social and fiscal norms</b>. The dramatic reduction in top marginal tax rates in the US and UK since 1980 (from 80&ndash;90% to 30&ndash;40%) gave top earners powerful incentives to negotiate higher pay. By contrast, countries that maintained higher top rates saw no comparable explosion of executive compensation, with no apparent negative effects on economic growth.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p><b>Greg Mankiw</b>, <b>Steven Kaplan</b>, and others have argued that the rise in executive compensation reflects genuine increases in the <b>marginal productivity</b> of top managers in a globalized, winner-take-all economy, rather than mere rent-seeking enabled by lower tax rates. They point to the parallel rise in compensation for star athletes, entertainers, and other high-earners who are not subject to the same corporate governance concerns.</p>
+  <p><b>Kevin Murphy</b> and others note that the correlation between top tax rate cuts and rising top incomes could reflect reverse causality: countries where top incomes were rising for technological reasons may have been more likely to cut top tax rates, rather than the tax cuts causing the income growth.</p>
+</details>
+
+<h2>Chapter 9: Inequality of Labor Income</h2>
+
+<p>Piketty examines the forces that determine <b>wage inequality</b> across countries and time periods. He discusses the influential <b>"race between education and technology"</b> theory, associated with <b>Claudia Goldin</b> and <b>Lawrence Katz</b>: when the supply of educated workers keeps pace with technological demand for skills, wage inequality is contained; when education falls behind, inequality widens. This framework explains the stability of French wage inequality (where educational expansion kept pace with technological change) and the widening gap in the US (where college completion rates stagnated after the 1970s).</p>
+
+<p>However, Piketty argues that the education-technology framework alone cannot explain the <b>rise of the supermanager</b>. The explosion of top executive pay in the Anglo-Saxon world was not matched by comparable changes in other developed countries with similar levels of education and technology. He proposes that the key factor is <b>institutional and social norms</b>: the minimum wage, the power of unions, corporate governance practices, and especially <b>top marginal tax rates</b>. When top rates were 80&ndash;90%, there was little incentive to negotiate extravagant pay packages; when rates dropped to 30&ndash;40%, the incentive to extract higher compensation became enormous.</p>
+
+<p>The chapter also examines the role of <b>the minimum wage</b> in France and the US, noting that France's minimum wage has risen steadily in real terms since the 1970s while the US federal minimum wage has declined dramatically in real terms. Piketty argues that the compression of French wage inequality at the bottom owes much to this institutional choice, and that the belief that markets alone determine wages is dangerously na&iuml;ve&mdash;wages at every level are shaped by institutions, norms, and power relations.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p><b>Edward Lazear</b> and other labor economists argue that Piketty underestimates the role of <b>performance-based pay</b> and genuine productivity differences in explaining executive compensation. The shift from fixed salaries to stock options and bonuses may reflect efficient contracting rather than rent-seeking, particularly in highly competitive industries.</p>
+  <p>Some economists note that France's relatively compressed wage distribution comes with significant costs: higher youth unemployment, labor market rigidity, and slower job creation, suggesting that institutional wage compression may have trade-offs that Piketty does not fully acknowledge.</p>
+</details>
+
+<h2>Chapter 10: Inequality of Capital Ownership</h2>
+
+<p>Piketty turns to the distribution of wealth, drawing on France's exceptionally rich probate records stretching back to 1791. The key finding is that <b>wealth concentration increased steadily throughout the nineteenth century</b>, with the top decile owning 80&ndash;85% of all wealth in 1810 and nearly 90% by 1910. The top 1% alone went from 45&ndash;50% in 1810 to 60% by 1910. There was no natural tendency toward deconcentration&mdash;on the contrary, the <b>"inegalitarian spiral"</b> accelerated in the decades before World War I.</p>
+
+<p>The compression of wealth inequality during the twentieth century was caused entirely by the <b>shocks of 1914&ndash;1945</b> and the policies that followed: progressive taxation, inflation, war damage, and nationalization devastated the largest fortunes. The emergence of a <b>patrimonial middle class</b>&mdash;owning 25&ndash;35% of total wealth&mdash;is the century's most important structural change. But Piketty emphasizes that the bottom 50% still own almost nothing, and that the deconcentration of wealth occurred entirely at the expense of the top 1%, not through any broad-based democratization of capital.</p>
+
+<p>Piketty introduces the crucial role of <b>r &minus; g</b> in explaining wealth concentration. When the return on capital significantly exceeds the growth rate, inherited wealth accumulates faster than new wealth from labor, creating a self-reinforcing dynamic. He shows that in the nineteenth century, with r around 5% and g around 1%, capital concentration reached extreme levels. The twentieth-century compression occurred because wars and policies temporarily pushed r below g. As growth slows in the twenty-first century, there is every reason to expect wealth concentration to increase again.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p><b>Carlos Goes</b> and others have conducted cross-country empirical tests and found little statistical relationship between r &minus; g and changes in wealth inequality, suggesting that the mechanism may be less automatic than Piketty implies. <b>Daron Acemoglu</b> and <b>James Robinson</b> argue that institutions and political power dynamics matter more than any mechanical relationship between capital returns and growth.</p>
+  <p>The claim that the bottom 50% "still own nothing" has been nuanced by studies showing that <b>pension wealth</b> (Social Security, public pension entitlements) represents a significant form of wealth for lower-income households that is excluded from Piketty's framework because it cannot be traded on a market.</p>
+</details>
+
+<h2>Chapter 11: Merit and Inheritance in the Long Run</h2>
+
+<p>Piketty investigates the relative importance of <b>inherited wealth versus savings</b> in the formation of fortunes. He shows that in nineteenth-century France, the annual flow of inheritances accounted for 20&ndash;25% of national income, meaning that nearly all capital was inherited rather than accumulated through individual effort. This flow collapsed to barely 4&ndash;5% by 1950 (giving rise to the widespread belief that inheritance had become irrelevant) but has since rebounded to about 15% and is still rising.</p>
+
+<p>The mechanics are straightforward: the inheritance flow depends on three factors: the <b>capital/income ratio</b> (&beta;), the <b>mortality rate</b>, and the <b>ratio of average wealth at death to average wealth of the living</b>. As the capital/income ratio rises, life expectancy increases (meaning people die older and richer), and growth slows (meaning past accumulation weighs more heavily), the inheritance flow naturally increases. Piketty projects that by 2050&ndash;2060, the flow could return to 20&ndash;25% of national income in France&mdash;essentially the same level as in Balzac's era.</p>
+
+<p>The return of inheritance has profound implications for <b>social mobility and meritocracy</b>. Piketty shows that the share of inherited wealth in total wealth has been rising since the 1970s, and that for younger generations, whether or not one receives gifts from parents has an increasingly important impact on access to housing and other opportunities. The twenty-first century may see a new form of patrimonial society that combines the supermanager phenomenon with the rentier phenomenon&mdash;it is now possible to be both a high earner <i>and</i> an heir, compounding advantages in ways that were less common in the past.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Some researchers argue that the <b>life-cycle savings hypothesis</b> (people save for retirement) can explain a larger share of observed wealth accumulation than Piketty allows. <b>Modigliani's</b> original estimates suggested that inherited wealth accounted for only 20&ndash;30% of total wealth, though more recent studies (including by <b>Kopczuk and Lupton</b>) have produced estimates closer to Piketty's.</p>
+  <p>The projection that inheritance will return to nineteenth-century levels has been questioned by those who note that <b>longer lifespans</b> mean inheritances are received later in life (often in one's 50s or 60s), reducing their economic impact compared to the era when people inherited in their 20s or 30s.</p>
+</details>
+
+<h2>Chapter 12: Global Inequality of Wealth in the Twenty-First Century</h2>
+
+<p>Piketty examines wealth inequality at the global level, introducing a critical factor: <b>unequal returns on capital</b>. While economic models typically assume a uniform rate of return, in reality, larger fortunes systematically earn higher returns&mdash;6&ndash;7% or more for the wealthiest, compared to 2&ndash;3% for modest savings&mdash;due to economies of scale in portfolio management, access to better investment opportunities, and greater ability to take risks. This creates a powerful force for divergence: large fortunes grow faster than small ones, independent of any individual effort.</p>
+
+<p>Piketty draws on <b>Forbes</b> billionaire rankings and, more revealingly, on the endowment returns of major <b>US universities</b> to document this phenomenon. Harvard, Yale, and Princeton have earned average real returns of 10% or more on their endowments over the past three decades, while smaller university endowments earned significantly less. The difference is almost entirely explained by portfolio composition: the largest endowments invest heavily in alternative assets (private equity, hedge funds, real assets) that are simply inaccessible to smaller investors.</p>
+
+<p>The chapter also considers whether <b>petroleum-exporting countries</b> or <b>China</b> might come to "own" the wealthy nations. Piketty argues this is unlikely in the medium term: sovereign wealth funds, while growing, still represent a small fraction of global wealth. The greater danger is the concentration of wealth <i>within</i> countries, driven by the interaction of r &gt; g with unequal returns on capital. Without a <b>progressive global tax on capital</b>, there is no natural force to prevent an endless divergence of wealth.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The use of university endowment returns to illustrate unequal returns on capital has been criticized on the grounds that endowments are <b>institutional investors</b> with perpetual time horizons, tax advantages, and access to deal flow that are not available to individual wealthy investors. <b>Cliff Asness</b> and others argue that the gap in returns between large and small investors has narrowed significantly with the democratization of financial products (index funds, ETFs).</p>
+  <p>Piketty's argument that sovereign wealth funds pose little threat has been questioned by scholars who note the <b>political</b> dimensions of state-owned capital, particularly Chinese investment in strategic assets abroad, which may have implications beyond pure financial returns.</p>
+</details>
+
+<h2>Chapter 13: A Social State for the Twenty-First Century</h2>
+
+<p>Piketty begins Part Four by examining the evolution of the <b>social state</b>&mdash;the system of taxes and transfers that defines the role of government in modern economies. He notes that total taxes as a share of national income rose from less than 10% in 1900 to 30&ndash;50% by 2010 in all developed countries, with the bulk of this increase going to fund <b>education</b>, <b>health care</b>, <b>pensions</b>, and other social spending. This "fiscal revolution" was the defining feature of twentieth-century governance.</p>
+
+<p>The 2008 financial crisis demonstrated both the indispensability and the limitations of state intervention. <b>Central banks</b> acted as lenders of last resort, averting a repeat of the 1930s depression, but the structural problems of rising inequality and financial opacity remain unaddressed. Piketty argues that the social state needs modernization, not dismantlement: existing systems of taxation and social insurance have become so complex that they are difficult for citizens to understand, undermining democratic accountability.</p>
+
+<p>Piketty advocates for reforming the <b>pension system</b> toward a unified, pay-as-you-go model that would be more transparent and equitable than the fragmented systems that exist in most countries. He also argues for greater public investment in <b>education</b>, noting the paradox that the most prestigious institutions in both France and the US spend far more per student on the children of the wealthy than on the rest of the population, despite rhetorical commitment to meritocracy.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p><b>Libertarian economists</b> such as <b>Friedrich Hayek</b> (historically) and more recently advocates of limited government argue that a social state consuming 40&ndash;50% of GDP creates significant deadweight losses, reduces incentives to work and invest, and leads to bureaucratic inefficiency. Piketty largely dismisses these concerns, but cross-country evidence on the relationship between government size and economic performance is genuinely mixed.</p>
+  <p>The call for pension reform toward a unified system underestimates the <b>political difficulty</b> of dismantling existing pension arrangements, which create powerful vested interests. Sweden's pension reform experience shows that even well-designed reforms can take decades to implement.</p>
+</details>
+
+<h2>Chapter 14: Rethinking the Progressive Income Tax</h2>
+
+<p>Piketty argues that the <b>progressive income tax</b> was the great fiscal innovation of the twentieth century, playing a decisive role in reducing inequality&mdash;particularly by preventing the reconstitution of extreme wealth after the shocks of 1914&ndash;1945. He traces its history from the political battles of the late nineteenth century (when a progressive income tax was fiercely resisted) through its rapid expansion during and after the world wars. The US and UK led the way, with top marginal rates reaching <b>80&ndash;90%</b> between the 1940s and 1970s.</p>
+
+<p>The dramatic reduction of top marginal rates since 1980&mdash;to around 35&ndash;40% in the US and UK&mdash;has, in Piketty's analysis, directly contributed to the explosion of top incomes. He presents evidence showing a strong cross-country correlation between lower top tax rates and higher top income shares, and argues that the optimal top marginal rate on very high incomes (above $500,000 or $1 million) is probably around <b>80%</b>&mdash;a level that would discourage rent-seeking and excessive pay without significantly reducing productive economic activity.</p>
+
+<p>Piketty also notes with alarm that in many countries, the overall tax system has become <b>regressive</b> at the very top of the income distribution, because capital income is increasingly exempt from the progressive income tax (through flat-rate taxes on dividends and capital gains, or through tax optimization and evasion). In France, detailed studies show that the top 0.1% pay a lower effective tax rate than the middle class. This "fiscal secession" of the wealthiest threatens the very foundation of democratic consent to taxation.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p><b>Arthur Laffer</b> and supply-side economists argue that an 80% top marginal rate would be well beyond the revenue-maximizing point and would drive capital and talent abroad, especially in an era of global mobility. <b>Christina Romer</b> and <b>David Romer</b>'s research suggests the revenue-maximizing top rate is around 70%, though estimates vary widely.</p>
+  <p>The correlation between lower top tax rates and higher top income shares may partly reflect <b>income shifting</b> rather than real changes in economic activity: when top rates fall, high earners have less incentive to defer income or reclassify it, making inequality <i>appear</i> to increase even if pre-tax incomes haven't truly changed.</p>
+</details>
+
+<h2>Chapter 15: A Global Tax on Capital</h2>
+
+<p>Piketty presents his signature policy proposal: a <b>progressive annual tax on global wealth</b>. He acknowledges upfront that this is a "useful utopia"&mdash;unlikely to be implemented globally anytime soon, but valuable as a benchmark against which other policies can be measured. The proposed tax would apply to net wealth (assets minus debts) of all types, with rates rising from perhaps 0.1% on modest fortunes to 1&ndash;2% on large ones, and potentially 5&ndash;10% on fortunes exceeding a billion euros.</p>
+
+<p>The capital tax serves two distinct purposes. First, it would generate <b>democratic and financial transparency</b>: implementing such a tax would require a comprehensive global registry of who owns what, creating the kind of financial cadaster that currently does not exist. This transparency would be valuable in itself for regulating banks, combating tax evasion, and informing democratic debate. Second, it would <b>contain the endless growth of inequality</b> by ensuring that the largest fortunes cannot grow indefinitely at rates far exceeding overall economic growth.</p>
+
+<p>Piketty argues that the alternative to a coordinated, transparent capital tax is far worse: a retreat into <b>nationalism and protectionism</b>, with capital controls, trade barriers, and growing international tensions. He advocates beginning with regional cooperation, particularly within the <b>European Union</b>, and building outward. He also discusses the precedent of recent negotiations around <b>automatic sharing of banking information</b> (such as FATCA), arguing that these represent small but real steps toward the international financial transparency that a capital tax would require.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Many economists across the political spectrum have expressed skepticism about the feasibility of a global wealth tax. <b>Lawrence Summers</b> has called it "utopian" in a non-useful sense, arguing that the political obstacles are insurmountable and that revenue could be raised more efficiently through reforming existing income and estate taxes. <b>Kenneth Rogoff</b> suggests that eliminating high-denomination cash and promoting digital payments would do more for financial transparency than a wealth tax.</p>
+  <p>Practical experience with wealth taxes in Europe has been mixed: <b>France</b>, <b>Sweden</b>, and <b>Germany</b> all had wealth taxes that were plagued by valuation problems, exemptions, and capital flight, leading several countries to repeal them. Piketty argues these failures resulted from poorly designed taxes rather than inherent problems with the concept, but critics counter that the design problems are inherent to taxing wealth.</p>
+</details>
+
+<h2>Chapter 16: The Question of the Public Debt</h2>
+
+<p>Piketty examines the public debt crisis facing wealthy nations, with European public debt averaging about one year of national income (90% of GDP). He outlines three approaches to reducing public debt: a <b>progressive tax on capital</b> (the most just and efficient), <b>inflation</b> (historically effective but chaotic), and <b>austerity</b> (the worst option, which Europe is currently pursuing). A one-time 15% flat tax on all private wealth would be sufficient to pay off Europe's entire public debt, though Piketty prefers a progressive version that spares modest fortunes.</p>
+
+<p>Piketty contrasts the European and American approaches to the crisis. The <b>European Central Bank</b>, constrained by its single mandate of price stability, has been far less interventionist than the <b>Federal Reserve</b> or the <b>Bank of England</b>, contributing to Europe's longer and deeper recession. He argues that the Eurozone's fundamental problem is that it created monetary union without fiscal or political union&mdash;a recipe for perpetual crisis, since member states can neither devalue their currencies nor agree on common fiscal policies.</p>
+
+<p>The chapter also considers questions of <b>public capital accumulation</b> and the <b>degradation of natural capital</b>. Piketty argues that climate change represents a fundamental challenge to the capitalist model of indefinite accumulation: if environmental damage is not properly accounted for, private capital may be growing even as total (natural plus man-made) capital declines. He advocates for public investment in clean energy and environmental protection, financed not by debt but by progressive taxation.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p><b>Austerity advocates</b> like <b>Alberto Alesina</b> have argued that fiscal consolidation through spending cuts can be expansionary under certain conditions ("expansionary austerity"), though this view has been significantly challenged by subsequent research, including by the <b>IMF</b>. The experience of Greece and other peripheral Eurozone countries has largely discredited the strong form of the expansionary austerity thesis.</p>
+  <p>Piketty's proposed one-time capital levy to pay off public debt raises concerns about <b>time consistency</b>: if governments can impose exceptional wealth taxes once, rational investors will expect them to do so again, potentially leading to capital flight and reduced investment. <b>Martin Feldstein</b> and others have argued this makes one-time capital levies impractical even if theoretically attractive.</p>
+</details>
+
+<h2>Conclusion</h2>
+
+<p>Piketty restates his central finding: the inequality <b>r &gt; g</b>&mdash;the tendency for the rate of return on capital to exceed the growth rate&mdash;is not a market imperfection but a fundamental feature of capitalism that tends to generate extreme and potentially destabilizing inequality. "The entrepreneur inevitably tends to become a rentier," he writes, "more and more dominant over those who own nothing but their labor. Once constituted, capital reproduces itself faster than output increases. The past devours the future."</p>
+
+<p>The principal remedy, Piketty argues, is a <b>progressive annual tax on capital</b>, implemented at the regional level (starting with Europe) if not globally. Such a tax would contain the growth of inequality while preserving economic openness and incentives for entrepreneurship. He acknowledges that this requires unprecedented levels of international cooperation and argues that the alternative&mdash;nationalist retreat and protectionism&mdash;would be far worse.</p>
+
+<p>Piketty concludes with a plea for a <b>political and historical economics</b> that bridges the gap between social science disciplines. He criticizes the economics profession for its "childish passion for mathematics" at the expense of historical research, and argues that the distributional question&mdash;who gets what and why&mdash;must be placed at the center of economic analysis. Democracy, he insists, must regain control over capitalism: "if we are to regain control of capitalism, we must bet everything on democracy."</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Piketty's framing of r &gt; g as "the central contradiction of capitalism" has been critiqued by <b>Tyler Cowen</b>, who argues that the real "central contradiction" may be the political difficulty of sustaining democratic institutions and good governance, rather than any mechanical property of capital returns. Others note that <b>creative destruction</b>, technological disruption, and market competition regularly destroy large fortunes, providing a natural counterforce to wealth concentration that Piketty's framework may underweight.</p>
+  <p>The call to "bet everything on democracy" has been questioned by those who note that democratic politics can also <i>exacerbate</i> inequality&mdash;through regulatory capture, lobbying, and policies that favor incumbent wealth holders&mdash;suggesting that the relationship between democracy and equality is more complex than Piketty implies.</p>
+</details>
+
+<h2 id="quiz-heading">Comprehension Quiz</h2>
+
+<details id="quiz-section" class="quiz-wrapper">
+  <summary class="quiz-toggle">Take the Quiz</summary>
+
+  <form id="quiz-form">
+
+    <div class="q-block">
+      <p class="q-label">1. What does Piketty's formula r &gt; g represent?</p>
+      <label><input type="radio" name="q1" value="a"> The rate of inflation exceeds GDP growth</label>
+      <label><input type="radio" name="q1" value="b"> The return on capital exceeds the growth rate of the economy</label>
+      <label><input type="radio" name="q1" value="c"> Government revenue exceeds government spending</label>
+      <label><input type="radio" name="q1" value="d"> The savings rate exceeds the investment rate</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">2. According to Piketty, why was the Kuznets curve overly optimistic?</p>
+      <label><input type="radio" name="q2" value="a"> Kuznets used faulty mathematical models</label>
+      <label><input type="radio" name="q2" value="b"> The decline in inequality Kuznets observed was caused by wars and policy shocks, not natural market forces</label>
+      <label><input type="radio" name="q2" value="c"> Kuznets only studied developing countries</label>
+      <label><input type="radio" name="q2" value="d"> Kuznets ignored the role of technological progress</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">3. What is the "first fundamental law of capitalism" as Piketty defines it?</p>
+      <label><input type="radio" name="q3" value="a"> &beta; = s / g</label>
+      <label><input type="radio" name="q3" value="b"> Supply equals demand in equilibrium</label>
+      <label><input type="radio" name="q3" value="c"> &alpha; = r &times; &beta;</label>
+      <label><input type="radio" name="q3" value="d"> National income equals output minus depreciation</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">4. What does the second fundamental law of capitalism (&beta; = s / g) imply about slow-growing economies?</p>
+      <label><input type="radio" name="q4" value="a"> They will have lower savings rates</label>
+      <label><input type="radio" name="q4" value="b"> They will accumulate very large stocks of capital relative to income</label>
+      <label><input type="radio" name="q4" value="c"> They will experience higher inflation</label>
+      <label><input type="radio" name="q4" value="d"> They will have lower rates of return on capital</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">5. How has the composition of capital changed since the eighteenth century?</p>
+      <label><input type="radio" name="q5" value="a"> Agricultural land has been replaced by housing and financial assets, but total capital relative to income is similar</label>
+      <label><input type="radio" name="q5" value="b"> Financial assets have replaced all other forms of capital</label>
+      <label><input type="radio" name="q5" value="c"> Total capital has doubled relative to income while maintaining the same composition</label>
+      <label><input type="radio" name="q5" value="d"> Government bonds now dominate national wealth</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">6. What primarily caused the collapse of the capital/income ratio between 1914 and 1945?</p>
+      <label><input type="radio" name="q6" value="a"> Physical destruction of buildings and infrastructure</label>
+      <label><input type="radio" name="q6" value="b"> Mass emigration from Europe</label>
+      <label><input type="radio" name="q6" value="c"> Political and budgetary shocks including lost foreign assets, low savings, inflation, and depressed asset prices</label>
+      <label><input type="radio" name="q6" value="d"> The end of the gold standard</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">7. What distinguishes the rise of inequality in the United States since 1980 from the historical pattern in Europe?</p>
+      <label><input type="radio" name="q7" value="a"> It is driven by rising capital income, as in Europe</label>
+      <label><input type="radio" name="q7" value="b"> It is driven by the explosion of very high labor incomes (supermanagers)</label>
+      <label><input type="radio" name="q7" value="c"> It reflects faster population growth</label>
+      <label><input type="radio" name="q7" value="d"> It is entirely due to immigration</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">8. What does Piketty identify as the most important structural transformation of the twentieth-century wealth distribution?</p>
+      <label><input type="radio" name="q8" value="a"> The elimination of all inequality</label>
+      <label><input type="radio" name="q8" value="b"> The emergence of a patrimonial middle class owning 25&ndash;35% of total wealth</label>
+      <label><input type="radio" name="q8" value="c"> The rise of government ownership of capital</label>
+      <label><input type="radio" name="q8" value="d"> The complete disappearance of inherited wealth</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">9. Why does Piketty argue that larger fortunes earn higher returns on capital?</p>
+      <label><input type="radio" name="q9" value="a"> Wealthy people work harder</label>
+      <label><input type="radio" name="q9" value="b"> Economies of scale in portfolio management and access to better investment opportunities</label>
+      <label><input type="radio" name="q9" value="c"> Governments provide subsidies to the wealthy</label>
+      <label><input type="radio" name="q9" value="d"> Inflation benefits larger portfolios disproportionately</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">10. What was the approximate top marginal income tax rate in the US and UK between the 1940s and 1970s?</p>
+      <label><input type="radio" name="q10" value="a"> 30&ndash;40%</label>
+      <label><input type="radio" name="q10" value="b"> 50&ndash;60%</label>
+      <label><input type="radio" name="q10" value="c"> 80&ndash;90%</label>
+      <label><input type="radio" name="q10" value="d"> 95&ndash;100%</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">11. What is Piketty's primary policy recommendation for addressing wealth inequality?</p>
+      <label><input type="radio" name="q11" value="a"> Abolishing private property</label>
+      <label><input type="radio" name="q11" value="b"> A progressive annual tax on global wealth</label>
+      <label><input type="radio" name="q11" value="c"> Returning to the gold standard</label>
+      <label><input type="radio" name="q11" value="d"> Eliminating all forms of inheritance</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">12. According to Piketty, what is the primary mechanism for economic convergence between rich and poor countries?</p>
+      <label><input type="radio" name="q12" value="a"> Free capital flows from rich to poor countries</label>
+      <label><input type="radio" name="q12" value="b"> The diffusion of knowledge and skills</label>
+      <label><input type="radio" name="q12" value="c"> International aid programs</label>
+      <label><input type="radio" name="q12" value="d"> Currency devaluation by developing countries</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">13. Why does Piketty consider austerity the worst approach to reducing public debt?</p>
+      <label><input type="radio" name="q13" value="a"> It is unconstitutional in most countries</label>
+      <label><input type="radio" name="q13" value="b"> It is the least just and efficient method compared to a capital tax or inflation</label>
+      <label><input type="radio" name="q13" value="c"> It has never been tried before</label>
+      <label><input type="radio" name="q13" value="d"> It only works in small countries</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">14. What lesson does Vautrin's lecture in Balzac's P&egrave;re Goriot illustrate about nineteenth-century society?</p>
+      <label><input type="radio" name="q14" value="a"> Education was the surest path to wealth</label>
+      <label><input type="radio" name="q14" value="b"> No amount of professional success through work could match the living standard afforded by inherited wealth</label>
+      <label><input type="radio" name="q14" value="c"> Crime was the only way to get rich</label>
+      <label><input type="radio" name="q14" value="d"> The French legal system was fair and meritocratic</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">15. What does Piketty mean by "Rhenish capitalism"?</p>
+      <label><input type="radio" name="q15" value="a"> A system where the state owns all means of production</label>
+      <label><input type="radio" name="q15" value="b"> A stakeholder model where firms are governed by shareholders, workers, and other interested parties</label>
+      <label><input type="radio" name="q15" value="c"> A purely free-market system with no government regulation</label>
+      <label><input type="radio" name="q15" value="d"> An economic system based primarily on river trade</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">16. What happened to the annual flow of inheritances in France during the twentieth century?</p>
+      <label><input type="radio" name="q16" value="a"> It remained constant at about 20% of national income</label>
+      <label><input type="radio" name="q16" value="b"> It fell from 25% to about 5% by 1950, then rebounded to about 15% by 2010</label>
+      <label><input type="radio" name="q16" value="c"> It steadily increased throughout the century</label>
+      <label><input type="radio" name="q16" value="d"> It permanently disappeared after World War II</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">17. Why does Piketty argue the US capital/income ratio is structurally lower than Europe's?</p>
+      <label><input type="radio" name="q17" value="a"> Americans save less money</label>
+      <label><input type="radio" name="q17" value="b"> Higher US demographic growth dilutes the capital/income ratio</label>
+      <label><input type="radio" name="q17" value="c"> The US has more government regulation of capital</label>
+      <label><input type="radio" name="q17" value="d"> US capital was destroyed in the Civil War</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">18. What dual purpose does Piketty's proposed global capital tax serve?</p>
+      <label><input type="radio" name="q18" value="a"> Funding military defense and space exploration</label>
+      <label><input type="radio" name="q18" value="b"> Containing inequality growth and promoting financial transparency</label>
+      <label><input type="radio" name="q18" value="c"> Replacing all other forms of taxation</label>
+      <label><input type="radio" name="q18" value="d"> Redistributing wealth from rich to poor countries</label>
+    </div>
+
+    <button type="button" id="score-btn" onclick="scoreQuiz()">Score My Answers</button>
+
+    <div id="quiz-result" style="display:none;">
+      <p id="score-text"></p>
+      <div id="answer-review"></div>
+    </div>
+
+  </form>
+</details>
+
+<script>
+(function() {
+  const answers = {
+    q1: { correct: "b", explain: "r > g means the rate of return on capital exceeds the growth rate of the economy, which Piketty identifies as the central force driving wealth concentration." },
+    q2: { correct: "b", explain: "Piketty argues the decline in inequality Kuznets observed (1913-1948) was caused by the world wars and their political aftermath, not by natural market forces as Kuznets's bell curve theory suggested." },
+    q3: { correct: "c", explain: "The first fundamental law states that capital's share of income (α) equals the rate of return on capital (r) times the capital/income ratio (β)." },
+    q4: { correct: "b", explain: "β = s / g means that when growth (g) is low and savings (s) remain steady, the capital/income ratio (β) becomes very large — accumulated wealth dominates the economy." },
+    q5: { correct: "a", explain: "Agricultural land has been replaced by housing, industrial, and financial capital, but the total value of capital relative to national income has remained roughly stable at 5-7 years." },
+    q6: { correct: "c", explain: "Physical destruction accounted for only one-fifth to one-third of the decline. The main causes were loss of foreign portfolios, low savings, inflation, nationalizations, and depressed asset prices." },
+    q7: { correct: "b", explain: "Unlike historical European inequality (driven by capital income), the post-1980 US surge was driven by the explosion of very high labor incomes — the rise of the 'supermanager.'" },
+    q8: { correct: "b", explain: "The emergence of a patrimonial middle class owning 25-35% of total wealth was the most important structural change, as previously the top 10% owned virtually everything." },
+    q9: { correct: "b", explain: "Larger fortunes benefit from economies of scale in portfolio management and access to alternative investments (private equity, hedge funds) unavailable to smaller investors." },
+    q10: { correct: "c", explain: "Top marginal rates reached 80-90% in the US and UK between the 1940s and 1970s, which Piketty argues played a key role in preventing the reconstitution of extreme wealth." },
+    q11: { correct: "b", explain: "Piketty's signature proposal is a progressive annual tax on global wealth, which he calls a 'useful utopia' that would contain inequality while preserving economic openness." },
+    q12: { correct: "b", explain: "Piketty argues the diffusion of knowledge and skills is the primary mechanism for convergence, noting that countries that financed their own development fared better than those relying on foreign capital." },
+    q13: { correct: "b", explain: "Piketty considers austerity the worst approach because a capital tax is more just (progressive) and efficient, while inflation has historically been effective though chaotic." },
+    q14: { correct: "b", explain: "Vautrin demonstrates that even the most successful professionals earned far less than the income from a modest inheritance, making marriage into wealth the rational strategy." },
+    q15: { correct: "b", explain: "Rhenish capitalism is a stakeholder model where firms are governed not just by shareholders but also by worker representatives, regional governments, and other interested parties." },
+    q16: { correct: "b", explain: "The inheritance flow fell from 20-25% of national income to about 4-5% by 1950 due to war shocks, then rebounded to about 15% by 2010 as capital recovered and growth slowed." },
+    q17: { correct: "b", explain: "Per β = s / g, higher US demographic growth means a higher total growth rate (g), which reduces the long-run capital/income ratio compared to slower-growing Europe." },
+    q18: { correct: "b", explain: "The capital tax would both contain the endless growth of inequality and require a global financial registry, promoting democratic transparency about who owns what." }
+  };
+
+  window.scoreQuiz = function() {
+    const form = document.getElementById("quiz-form");
+    let correct = 0;
+    const total = Object.keys(answers).length;
+    let reviewHTML = "";
+
+    for (let i = 1; i <= total; i++) {
+      const key = "q" + i;
+      const selected = form.elements[key] ? form.elements[key].value : "";
+      const isCorrect = selected === answers[key].correct;
+      if (isCorrect) correct++;
+
+      const status = !selected ? "wrong" : (isCorrect ? "correct" : "wrong");
+      const icon = isCorrect ? "\u2705" : "\u274C";
+      const yourAnswer = selected ? selected.toUpperCase() : "No answer";
+      const correctAnswer = answers[key].correct.toUpperCase();
+
+      reviewHTML += '<div class="review-item ' + status + '">';
+      reviewHTML += '<div class="ri-q">' + icon + " Question " + i + "</div>";
+      reviewHTML += '<div class="ri-detail">';
+      if (!isCorrect) {
+        reviewHTML += "Your answer: " + yourAnswer + " &mdash; Correct answer: " + correctAnswer + "<br>";
+      }
+      reviewHTML += answers[key].explain;
+      reviewHTML += "</div></div>";
+    }
+
+    const pct = Math.round((correct / total) * 100);
+    let grade;
+    if (pct === 100) grade = "Perfect score!";
+    else if (pct >= 80) grade = "Great understanding!";
+    else if (pct >= 60) grade = "Good, but review the summaries above for the ones you missed.";
+    else grade = "Consider re-reading the summaries above and trying again.";
+
+    document.getElementById("score-text").textContent = correct + " / " + total + " (" + pct + "%) \u2014 " + grade;
+    document.getElementById("answer-review").innerHTML = reviewHTML;
+    document.getElementById("quiz-result").style.display = "block";
+    document.getElementById("quiz-result").scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+})();
+</script>
+
+</div><!-- .content -->
+
+</body>
+</html>

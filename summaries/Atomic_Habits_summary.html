@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atomic Habits — Book Summary Pro</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      line-height: 1.7;
+      color: #222;
+      background: #fafafa;
+    }
+    .app-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #2c2c2c;
+      padding: 14px 24px;
+    }
+    .content {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 32px 20px 40px;
+    }
+    .app-nav .app-name {
+      font-size: 1.05em;
+      font-weight: bold;
+      color: #e8e0d0;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+    }
+    .app-nav .app-name:hover {
+      color: #d4a843;
+    }
+    .app-nav .back-link {
+      font-size: 0.9em;
+      color: #999;
+      text-decoration: none;
+    }
+    .app-nav .back-link:hover {
+      color: #d4a843;
+    }
+    h1 {
+      font-size: 1.8em;
+      border-bottom: 2px solid #333;
+      padding-bottom: 10px;
+      margin-bottom: 5px;
+    }
+    .subtitle {
+      font-size: 1.1em;
+      color: #444;
+      margin: 2px 0 0 0;
+      font-style: italic;
+    }
+    .author {
+      font-style: italic;
+      color: #777;
+      font-size: 0.95em;
+      margin-bottom: 40px;
+    }
+    h2 {
+      font-size: 1.3em;
+      margin-top: 48px;
+      color: #1a1a1a;
+      border-left: 4px solid #555;
+      padding-left: 12px;
+    }
+    p {
+      margin-bottom: 14px;
+      text-align: justify;
+    }
+    details.counter {
+      background: #f0ece4;
+      border-left: 4px solid #b8860b;
+      padding: 14px 18px;
+      margin: 20px 0 28px 0;
+      border-radius: 0 6px 6px 0;
+    }
+    details.counter summary {
+      font-weight: bold;
+      font-size: 0.95em;
+      color: #8b6914;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    details.counter summary::-webkit-details-marker {
+      display: none;
+    }
+    details.counter summary::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    details.counter[open] summary::before {
+      transform: rotate(90deg);
+    }
+    details.counter p {
+      margin-top: 12px;
+      margin-bottom: 10px;
+      color: #3a3a3a;
+    }
+    details.counter p:last-child {
+      margin-bottom: 0;
+    }
+    .quiz-wrapper {
+      margin-top: 48px;
+      background: #f5f5f0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 16px 20px;
+    }
+    .quiz-toggle {
+      font-weight: bold;
+      font-size: 1.05em;
+      cursor: pointer;
+      color: #2a5a2a;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .quiz-toggle::-webkit-details-marker { display: none; }
+    .quiz-toggle::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    .quiz-wrapper[open] .quiz-toggle::before {
+      transform: rotate(90deg);
+    }
+    .q-block {
+      margin: 24px 0;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    .q-block:last-of-type { border-bottom: none; }
+    .q-label {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .q-block label {
+      display: block;
+      padding: 6px 10px;
+      margin: 4px 0;
+      border-radius: 4px;
+      cursor: pointer;
+      line-height: 1.5;
+    }
+    .q-block label:hover { background: #e8e8e0; }
+    #score-btn {
+      display: block;
+      margin: 28px auto 0;
+      padding: 12px 32px;
+      font-family: Georgia, serif;
+      font-size: 1em;
+      background: #2a5a2a;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #score-btn:hover { background: #1e441e; }
+    #quiz-result {
+      margin-top: 24px;
+      padding: 18px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    #score-text {
+      font-size: 1.15em;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .review-item {
+      margin-bottom: 14px;
+      padding: 10px 12px;
+      border-radius: 4px;
+    }
+    .review-item.correct { background: #e6f4e6; }
+    .review-item.wrong { background: #fce8e8; }
+    .review-item .ri-q { font-weight: bold; margin-bottom: 4px; }
+    .review-item .ri-detail { font-size: 0.93em; color: #444; }
+  </style>
+</head>
+<body>
+
+<nav class="app-nav">
+  <a href="index.html" class="app-name">Book Summary Pro</a>
+  <a href="index.html" class="back-link">&larr; All Books</a>
+</nav>
+
+<div class="content">
+
+<h1>Atomic Habits</h1>
+<p class="subtitle">An Easy &amp; Proven Way to Build Good Habits &amp; Break Bad Ones</p>
+<p class="author">James Clear</p>
+
+<h2>Introduction: My Story</h2>
+
+<p>The author opens with a dramatic personal story: during his sophomore year of high school, he was struck in the face by a baseball bat, suffering multiple skull fractures, a broken nose, shattered eye sockets, and seizures that put him in a medically induced coma. The long recovery&mdash;eight months before he could drive again&mdash;threatened his dream of playing baseball professionally. Yet Clear used this setback as a launching pad, building <b>small, consistent habits</b> during college that compounded over time: better sleep, a tidy room, disciplined study, and regular weight training.</p>
+
+<p>These incremental improvements accumulated into remarkable results. By his senior year at Denison University, Clear was named the top male athlete, earned ESPN Academic All-America honors, and appeared in eight categories of the school record books. He credits not a single defining moment but a <b>"gradual evolution, a long series of small wins and tiny breakthroughs."</b> After college, he began writing about habits at jamesclear.com, eventually growing his newsletter to nearly 500,000 subscribers and building the Habits Academy for organizations and leaders.</p>
+
+<p>Clear introduces the backbone of his framework: a <b>four-step model of habits&mdash;cue, craving, response, and reward</b>&mdash;and the <b>Four Laws of Behavior Change</b> that emerge from it. He acknowledges intellectual debts to B. F. Skinner's operant conditioning and Charles Duhigg's <i>The Power of Habit</i>, but argues that his model more fully integrates both external stimuli and internal emotions. The book, he says, is not an academic paper but an "operating manual" for building better habits for a lifetime.</p>
+
+<h2>Chapter 1: The Surprising Power of Atomic Habits</h2>
+
+<p>Clear opens with the story of <b>Dave Brailsford</b> and British Cycling. When Brailsford took over in 2003, British cyclists had endured nearly a century of mediocrity. His strategy was the <b>"aggregation of marginal gains"</b>&mdash;searching for a 1 percent improvement in everything from bike seat comfort to hand-washing techniques. Within five years, the team dominated the 2008 Olympics, and over the next decade won five Tour de France titles and 66 Olympic or Paralympic gold medals.</p>
+
+<p>The chapter introduces the core mathematical insight: <b>getting 1 percent better each day for one year yields results that are 37 times better</b> (1.01^365 = 37.78), while getting 1 percent worse each day drives you nearly to zero. Clear frames habits as the <b>"compound interest of self-improvement"</b>&mdash;they seem insignificant on any given day but become enormous over months and years. He uses the metaphor of an ice cube slowly warming from 25 to 32 degrees: nothing visible happens until the critical threshold is crossed. This is the <b>Plateau of Latent Potential</b>&mdash;the "valley of disappointment" where people give up because results haven't materialized yet.</p>
+
+<p>Clear then argues that we should <b>focus on systems rather than goals</b>. Goals are about the results you want; systems are the processes that lead to those results. He identifies four problems with goal-centric thinking: winners and losers share the same goals (survivorship bias); achieving a goal is only a momentary change; goals restrict happiness to a future milestone; and goals conflict with long-term progress. The chapter concludes with the phrase that becomes a recurring motif: <b>"You do not rise to the level of your goals. You fall to the level of your systems."</b></p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>While the "systems over goals" framework is compelling, research by <b>Edwin Locke and Gary Latham</b> on goal-setting theory shows that specific, challenging goals consistently lead to higher performance than vague intentions. The dichotomy Clear draws between goals and systems may be overstated&mdash;effective goal-setting often <i>includes</i> system design. Additionally, the 1-percent-per-day compounding metaphor, while motivational, assumes perfect consistency and no regression, which rarely holds in practice. Real habit formation involves plateaus, setbacks, and nonlinear progress.</p>
+</details>
+
+<h2>Chapter 2: How Your Habits Shape Your Identity (and Vice Versa)</h2>
+
+<p>Clear introduces the concept of <b>three layers of behavior change</b>, visualized as concentric circles like an onion. The outermost layer is <b>outcomes</b> (what you get), the middle layer is <b>processes</b> (what you do), and the deepest layer is <b>identity</b> (what you believe). Most people start from the outside in&mdash;setting outcome-based goals&mdash;but Clear argues the most effective approach is to start from the inside out, with <b>identity-based habits</b>.</p>
+
+<p>He illustrates this with the example of two people declining a cigarette. The first says, "I'm trying to quit"&mdash;they still identify as a smoker. The second says, "I'm not a smoker"&mdash;a fundamental shift in self-image. The key insight is that <b>behavior that is incongruent with the self will not last</b>. True behavior change is identity change. The goal is not to read a book but to <i>become a reader</i>; not to run a marathon but to <i>become a runner</i>.</p>
+
+<p>Clear explains a <b>two-step process for changing identity</b>: (1) Decide who you want to be, and (2) prove it to yourself with small wins. Every action is a "vote" for the type of person you wish to become&mdash;you don't need a unanimous vote, just a majority. Your identity emerges from your habits, and this creates a powerful feedback loop: your habits shape your identity, and your identity shapes your habits.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The identity-based approach has merit but carries risks. Psychologist <b>Carol Dweck's</b> research on <b>fixed versus growth mindsets</b> suggests that rigid identity labels ("I am a runner") can become problematic if they make people resist change when circumstances shift. Clear himself acknowledges this concern later in Chapter 20 but doesn't fully address it here. Furthermore, for people with deeply entrenched negative self-concepts, simply "deciding" on a new identity may be insufficient without addressing underlying psychological barriers through therapy or other interventions.</p>
+</details>
+
+<h2>Chapter 3: How to Build Better Habits in 4 Simple Steps</h2>
+
+<p>The chapter begins with <b>Edward Thorndike's</b> puzzle-box experiments with cats in 1898, which demonstrated that <b>behaviors followed by satisfying consequences tend to be repeated</b>. Clear uses this as a springboard to explain why the brain builds habits: they are <b>"mental shortcuts learned from experience"</b> that reduce cognitive load, freeing the conscious mind for other tasks. A habit is a behavior repeated enough times to become automatic.</p>
+
+<p>Clear then introduces the <b>four-step habit loop: cue, craving, response, and reward</b>. The cue triggers the brain to initiate a behavior; the craving provides the motivational force; the response is the actual habit performed; and the reward satisfies the craving and teaches the brain which actions are worth repeating. These four steps split into a <b>problem phase</b> (cue + craving) and a <b>solution phase</b> (response + reward). He provides everyday examples: your phone buzzes (cue), you want to read the message (craving), you grab the phone (response), and you satisfy your curiosity (reward).</p>
+
+<p>From this loop, Clear derives his <b>Four Laws of Behavior Change</b> for creating good habits: (1) Make it obvious, (2) Make it attractive, (3) Make it easy, (4) Make it satisfying. For breaking bad habits, he inverts each law: make it invisible, unattractive, difficult, and unsatisfying. These four laws provide the organizing structure for the rest of the book.</p>
+
+<h2>Chapter 4: The Man Who Didn't Look Right</h2>
+
+<p>Clear tells the story of a paramedic who looked at her father-in-law at a family gathering and instantly sensed he was about to have a heart attack&mdash;even though he felt fine. She couldn't articulate what she noticed, but her years of experience had trained her brain to recognize subtle patterns in blood distribution on the face. This illustrates a key point: <b>you don't need to be aware of the cue for a habit to begin</b>. Much of our habitual behavior operates below the threshold of conscious awareness.</p>
+
+<p>Because habits become automatic and invisible over time, Clear argues that <b>the process of behavior change must start with awareness</b>. He introduces two tools for raising awareness. The first is <b>Pointing-and-Calling</b>, borrowed from the Japanese railway system, where operators physically point at signals and call out observations aloud. This system reduces errors by up to 85 percent by elevating behavior from nonconscious to conscious. The second tool is the <b>Habits Scorecard</b>&mdash;a simple exercise where you list your daily habits and rate each as positive (+), negative (&ndash;), or neutral (=), asking whether each habit casts a vote for or against your desired identity.</p>
+
+<h2>Chapter 5: The Best Way to Start a New Habit</h2>
+
+<p>Clear presents a British study where 248 people were divided into three groups to build exercise habits. The control group simply tracked exercise; the motivation group also read about exercise benefits; but the third group was asked to write down <i>when</i> and <i>where</i> they would exercise. The result: 91 percent of the third group exercised at least once per week, compared to 35-38 percent for the other groups. The key difference was an <b>implementation intention</b>&mdash;a specific plan using the formula: <b>"I will [BEHAVIOR] at [TIME] in [LOCATION]."</b></p>
+
+<p>Clear then introduces <b>habit stacking</b>, a concept adapted from BJ Fogg's Tiny Habits program. The formula is: <b>"After [CURRENT HABIT], I will [NEW HABIT]."</b> This leverages the <b>Diderot Effect</b>&mdash;the tendency for one behavior to trigger the next&mdash;by chaining new habits onto existing ones. The key to success is selecting a cue that is highly specific and immediately actionable, with the same frequency as the desired habit.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Implementation intentions are well-supported by research (<b>Peter Gollwitzer</b> and colleagues have published extensively on them), but their effectiveness can vary. A meta-analysis by Gollwitzer and Sheeran (2006) found that implementation intentions have a <b>medium-to-large effect size</b>, but their impact is weaker for habits that require sustained effort over long periods compared to one-time actions. For complex behaviors like exercise, the initial boost from an implementation intention may fade unless reinforced by other strategies&mdash;which Clear covers in later chapters.</p>
+</details>
+
+<h2>Chapter 6: Motivation Is Overrated; Environment Often Matters More</h2>
+
+<p>The chapter opens with Anne Thorndike's study at Massachusetts General Hospital, where researchers redesigned the cafeteria's <b>"choice architecture"</b>&mdash;placing water at every drink station alongside soda&mdash;without saying a word to anyone. The result: soda sales dropped 11.4 percent and water sales rose 25.8 percent. The lesson: <b>people often choose products not because of what they are but because of where they are</b>. Environment is the "invisible hand" that shapes behavior.</p>
+
+<p>Clear argues that <b>visual cues are the greatest catalyst of behavior</b> because roughly ten million of the body's eleven million sensory receptors are dedicated to sight. He encourages readers to <b>design their environments</b> to make good-habit cues obvious and bad-habit cues invisible. He also introduces the concept that habits become associated not with a single trigger but with the <b>entire context</b> surrounding the behavior. This is why new environments can be powerful: you escape old cues and can create fresh associations. His mantra is <b>"One space, one use"</b>&mdash;separating spaces for work, relaxation, exercise, and eating.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Environment design is powerful but has limits. <b>Behavioral economist Richard Thaler</b> (co-author of <i>Nudge</i>) has noted that "nudges" work best for one-time or low-effort decisions, but may be insufficient for deeply ingrained habits like addiction. The "one space, one use" advice is also impractical for many people living in small apartments or shared housing. Clear's examples tend toward middle-class lifestyles with discretionary control over living spaces, which may not generalize to all socioeconomic contexts.</p>
+</details>
+
+<h2>Chapter 7: The Secret to Self-Control</h2>
+
+<p>Clear tells the remarkable story of the <b>Vietnam War heroin epidemic</b>. Over 15 percent of U.S. soldiers were heroin addicts while stationed in Vietnam, yet when researcher <b>Lee Robins</b> tracked them after returning home, only 5 percent relapsed within a year. The reason: the soldiers had moved to an entirely different environment devoid of the cues that triggered their habit. This contradicted the prevailing view that heroin addiction was permanent, and demonstrated that <b>addictions can dissolve with a radical change in environment</b>.</p>
+
+<p>The chapter challenges the popular belief that self-control is primarily about willpower. Research shows that people who appear to have tremendous self-control are actually <b>better at structuring their lives to avoid tempting situations</b> in the first place. Bad habits are <b>autocatalytic</b>&mdash;they foster the feelings they try to numb, creating downward spirals. Clear introduces the concept of <b>"cue-induced wanting"</b>: once a habit is encoded in the brain, exposure to the cue automatically triggers craving, even below conscious awareness. The practical takeaway is the <b>inversion of the 1st Law: make it invisible</b>. Rather than relying on willpower, reduce exposure to the cues that trigger bad habits.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The Vietnam heroin study is frequently cited but has important caveats. <b>Lee Robins herself</b> noted that the soldiers who became addicted in Vietnam may have been a different population from typical street addicts&mdash;many were recreational users whose addiction was situational. The 95 percent non-relapse rate may overstate the role of environment and understate factors like social support, age, and the specific pharmacology of wartime-grade heroin. Additionally, <b>Angela Duckworth's</b> research on self-control suggests that willpower <i>does</i> play a meaningful role alongside environment design; the two are complementary rather than one replacing the other.</p>
+</details>
+
+<h2>Chapter 8: How to Make a Habit Irresistible</h2>
+
+<p>Clear introduces the <b>2nd Law of Behavior Change: make it attractive</b>, beginning with Niko Tinbergen's Nobel Prize-winning research on <b>supernormal stimuli</b>. Tinbergen found that herring gull chicks would peck more vigorously at a fake beak with three large red dots than at their actual mother's beak, and greylag geese would try to roll a volleyball back into their nest. Humans are similarly susceptible: junk food, social media, and pornography are all <b>engineered supernormal stimuli</b> that exploit our Paleolithic reward circuits.</p>
+
+<p>The chapter then explains the <b>dopamine-driven feedback loop</b>. Critically, dopamine is released not only when you <i>experience</i> pleasure but also when you <i>anticipate</i> it. It is the anticipation of reward&mdash;not the fulfillment of it&mdash;that drives action. The brain allocates far more neural circuitry to "wanting" than to "liking." Clear introduces <b>temptation bundling</b>&mdash;linking an action you <i>want</i> to do with an action you <i>need</i> to do, based on <b>Premack's Principle</b> that more probable behaviors reinforce less probable ones. He provides a combined formula: "After [CURRENT HABIT], I will [HABIT I NEED]. After [HABIT I NEED], I will [HABIT I WANT]."</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The neuroscience of dopamine presented here is somewhat simplified. Neuroscientist <b>Kent Berridge</b>, whose "wanting vs. liking" framework Clear draws upon, has cautioned against reducing dopamine's role to a single function. Dopamine is also involved in <b>learning, attention, and motor control</b>, and its relationship to motivation is more complex than a simple "anticipation = action" equation. Additionally, temptation bundling may lose effectiveness over time as the "need" habit becomes associated with the obligation rather than the reward, a phenomenon known as the <b>overjustification effect</b>.</p>
+</details>
+
+<h2>Chapter 9: The Role of Family and Friends in Shaping Your Habits</h2>
+
+<p>The chapter opens with the story of <b>Laszlo Polgar</b>, a Hungarian man who rejected the idea of innate talent and set out to prove that any child could become a genius through deliberate practice. He raised his three daughters&mdash;Susan, Sofia, and Judit&mdash;as chess prodigies. All three became world-class players, with Judit becoming the youngest grandmaster in history. The Polgar sisters illustrate how <b>culture shapes which behaviors feel attractive</b>.</p>
+
+<p>Clear identifies three social groups whose habits we tend to imitate: <b>the close</b> (family and friends), <b>the many</b> (the tribe), and <b>the powerful</b> (those with status and prestige). A landmark study tracking 12,000 people over 32 years found that a person's chances of becoming obese increased by 57 percent if a friend became obese. Clear recommends joining <b>a culture where your desired behavior is the normal behavior</b> and where you already share something in common with the group. He also discusses Solomon Asch's conformity experiments, noting that <b>the normal behavior of the tribe often overpowers the desired behavior of the individual</b>.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The Polgar sisters' story, while inspiring, is a sample size of one family. <b>Behavioral geneticists</b> like Robert Plomin argue that genetic factors account for roughly 50 percent of the variance in cognitive abilities, suggesting that the Polgar children may have had genetic predispositions that facilitated their chess mastery. The Framingham obesity study Clear cites has also faced methodological criticism for potential confounding variables&mdash;people who become friends may already share lifestyle similarities rather than causing each other's weight gain.</p>
+</details>
+
+<h2>Chapter 10: How to Find and Fix the Causes of Your Bad Habits</h2>
+
+<p>Clear recounts a conversation with a group in Istanbul where several former smokers credited the book <b><i>Allen Carr's Easy Way to Stop Smoking</i></b> for helping them quit. Carr's method works by systematically <b>reframing the associations</b> people have with smoking&mdash;making the habit seem unattractive rather than desirable. This illustrates the <b>inversion of the 2nd Law: make it unattractive</b>.</p>
+
+<p>The chapter explains that every behavior has a <b>surface-level craving</b> and a <b>deeper underlying motive</b>. Your brain did not evolve to crave Instagram or cigarettes; it evolved to seek social acceptance, reduce uncertainty, and achieve status. Current habits are simply modern solutions to ancient desires. Clear emphasizes that <b>the cause of your habits is the prediction that precedes them</b>&mdash;two people can see the same cigarette and have opposite reactions depending on their learned associations. He recommends <b>reframing habits</b> (changing "I have to" to "I get to") and creating <b>motivation rituals</b>&mdash;performing an enjoyable activity immediately before a difficult habit to create positive associations.</p>
+
+<h2>Chapter 11: Walk Slowly, but Never Backward</h2>
+
+<p>Clear tells the story of a photography professor who divided his class into a <b>"quantity" group</b> (graded on number of photos) and a <b>"quality" group</b> (graded on excellence of a single photo). Surprisingly, all the best photos came from the quantity group, who learned through experimentation rather than theorizing about perfection. The lesson: <b>the most effective form of learning is practice, not planning</b>. Clear calls this the distinction between "being in motion" (planning, strategizing) and "taking action" (producing outcomes).</p>
+
+<p>The chapter introduces the <b>3rd Law of Behavior Change: make it easy</b>, and explains that <b>habit formation is based on frequency, not time</b>. There is nothing magical about "21 days" or "30 days"&mdash;what matters is the number of repetitions. Clear describes how repetition physically changes the brain through <b>long-term potentiation</b> (Hebb's Law: "neurons that fire together wire together"), citing studies on musicians' enlarged cerebellums and London taxi drivers' enlarged hippocampi. The key takeaway: to build a habit, start with repetition, not perfection.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The photography class anecdote, attributed to the book <i>Art &amp; Fear</i> by David Bayles and Ted Orland, may be apocryphal&mdash;it is often cited but has never been independently verified. More substantively, the "frequency over time" argument, while supported by research from <b>Phillippa Lally</b> at University College London (whose study found habit formation ranged from 18 to 254 days), doesn't account for the <i>quality</i> of repetitions. <b>K. Anders Ericsson's</b> research on deliberate practice shows that mindless repetition can reinforce bad technique. Repetition matters, but <i>how</i> you practice also matters significantly.</p>
+</details>
+
+<h2>Chapter 12: The Law of Least Effort</h2>
+
+<p>Drawing on Jared Diamond's <i>Guns, Germs, and Steel</i>, Clear explains how the <b>east-west orientation of Europe and Asia</b> allowed agriculture to spread two to three times faster than along the north-south axis of the Americas, because east-west neighbors share similar climates. This illustrates the <b>Law of Least Effort</b>: when deciding between two similar options, people naturally gravitate toward the one requiring the least work. This isn't laziness&mdash;it's an intelligent energy-conservation strategy.</p>
+
+<p>The practical application is to <b>reduce friction for good habits and increase friction for bad ones</b>. Clear describes Japanese "lean production" methods that removed wasted motion from manufacturing, calling the strategy <b>"addition by subtraction."</b> He recommends <b>priming your environment for future use</b>&mdash;laying out workout clothes the night before, pre-chopping vegetables on weekends, or placing a book on your pillow. Conversely, to break bad habits, add friction: unplug the television after each use, leave your phone in another room, or delete social media apps.</p>
+
+<h2>Chapter 13: How to Stop Procrastinating by Using the Two-Minute Rule</h2>
+
+<p>Clear introduces choreographer <b>Twyla Tharp's</b> morning ritual: every day she puts on workout clothes, hails a cab to the gym, and works out for two hours. But the ritual isn't the workout&mdash;it's <i>hailing the cab</i>. The decisive moment that shapes the rest of the sequence. Clear argues that habits are like <b>"the entrance ramp to a highway"</b>&mdash;small initial choices cascade into larger behaviors. Each day contains a handful of <b>decisive moments</b> that determine the trajectory of your time.</p>
+
+<p>The centerpiece strategy is the <b>Two-Minute Rule</b>: when you start a new habit, it should take less than two minutes. "Read before bed" becomes "read one page." "Run three miles" becomes "tie my running shoes." The point is not the two minutes themselves but <b>mastering the habit of showing up</b>. Clear explains that you must <b>standardize before you optimize</b>&mdash;you can't improve a habit that doesn't exist. He also introduces <b>habit shaping</b>, a progression from easy to hard phases (e.g., Phase 1: change into workout clothes → Phase 5: exercise three times per week).</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The Two-Minute Rule is psychologically sound as a commitment device, but some researchers argue it can backfire. <b>Behavioral scientist Ayelet Fishbach</b> has found that when people set very small goals, they may feel satisfied with minimal effort and never progress beyond the initial stage. Clear addresses this concern by introducing habit shaping, but the risk of "gateway habits" becoming <i>ceiling habits</i> is real for some personality types. Additionally, for genuinely complex behaviors like learning a language, two minutes of daily practice may be so insufficient that it creates a false sense of progress.</p>
+</details>
+
+<h2>Chapter 14: How to Make Good Habits Inevitable and Bad Habits Impossible</h2>
+
+<p>Clear tells how <b>Victor Hugo</b> overcame procrastination on <i>The Hunchback of Notre Dame</i> by having his assistant lock away all his clothes, leaving him nothing to wear outside. This is a <b>commitment device</b>&mdash;a present choice that controls future behavior. Other examples include purchasing food in individual packages, asking to be banned from casinos, or using an outlet timer to cut internet access at a set time each night.</p>
+
+<p>The chapter then explores <b>automation</b> as the ultimate form of the 3rd Law. Clear tells the story of <b>John Henry Patterson</b>, whose employees were stealing from his store until he purchased Ritty's Incorruptible Cashier&mdash;the first cash register&mdash;which automated ethical behavior. Clear provides a list of <b>onetime actions</b> that lock in good habits: buying a water filter, setting up automatic savings, using email filters, getting blackout curtains. He also warns about the <b>downside of automation</b>: when effort drops to zero, we can slip into mindless consumption of easy pleasures like social media. He describes his own experiment of having his assistant reset his social media passwords every Monday, discovering he didn't need social media nearly as much as he thought.</p>
+
+<h2>Chapter 15: The Cardinal Rule of Behavior Change</h2>
+
+<p>Clear tells the story of <b>Stephen Luby</b>, a public health worker who partnered with Procter &amp; Gamble to distribute premium Safeguard soap in the slums of Karachi, Pakistan. The soap foamed easily and smelled great, making handwashing a <b>more pleasurable experience</b>. The results were dramatic: diarrhea fell 52 percent, pneumonia 48 percent, and skin infections 35 percent. Six years later, over 95 percent of households still maintained the handwashing habit.</p>
+
+<p>This illustrates the <b>4th Law of Behavior Change: make it satisfying</b>. The <b>Cardinal Rule</b> is: <b>"What is immediately rewarded is repeated. What is immediately punished is avoided."</b> Clear explains the evolutionary mismatch between our <b>immediate-return</b> brains and our <b>delayed-return</b> environment. The costs of good habits are in the present; their rewards are in the future. The reverse is true for bad habits. He recommends using <b>immediate reinforcement</b>&mdash;like transferring money to a "Trip to Europe" savings account every time you skip eating out&mdash;to bridge the gap. The key is selecting short-term rewards that <b>align with your desired identity</b> rather than conflict with it.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The Karachi soap study is compelling but occurred in a context of extreme deprivation where basic hygiene infrastructure was absent. Whether making habits "more pleasant" works equally well in affluent contexts where people already have adequate soap is less clear. More broadly, behavioral economists like <b>George Loewenstein</b> have argued that adding extrinsic rewards to intrinsically motivated behaviors can sometimes <b>undermine long-term motivation</b> through the overjustification effect&mdash;once the external reward is removed, the behavior may decrease below its original baseline.</p>
+</details>
+
+<h2>Chapter 16: How to Stick with Good Habits Every Day</h2>
+
+<p>Clear introduces the <b>Paper Clip Strategy</b>, used by stockbroker Trent Dyrsmid, who started each day with 120 paper clips and moved one to an empty jar after every sales call. Within 18 months, he was bringing in $5 million. This illustrates the power of <b>habit tracking</b>&mdash;a visual measurement system that makes habits obvious (the streak reminds you to act), attractive (progress is motivating), and satisfying (crossing off an item feels good).</p>
+
+<p>Clear discusses Benjamin Franklin's virtue-tracking booklet and Jerry Seinfeld's "don't break the chain" method. He recommends automating tracking where possible, limiting manual tracking to your most important habits, and recording each measurement immediately after the habit occurs using a habit-stacking formula: "After [CURRENT HABIT], I will [TRACK MY HABIT]." Perhaps most importantly, Clear introduces the <b>"never miss twice" rule</b>: the first mistake is never the one that ruins you; it's the spiral of repeated mistakes. He also warns about <b>Goodhart's Law</b>&mdash;"when a measure becomes a target, it ceases to be a good measure"&mdash;cautioning against optimizing for the wrong metric.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Habit tracking has strong empirical support, but it can become counterproductive for certain personality types. Research on <b>obsessive-compulsive tendencies</b> suggests that rigid tracking systems can fuel anxiety and perfectionism. The "don't break the chain" mentality, while motivating for some, can cause people to perform meaningless versions of a habit just to maintain a streak. <b>Psychologist Kelly McGonigal</b> has noted that self-compassion after failure is often more effective than streak-based motivation, which can lead to shame spirals when the chain does break.</p>
+</details>
+
+<h2>Chapter 17: How an Accountability Partner Can Change Everything</h2>
+
+<p>Clear opens with <b>Roger Fisher's</b> provocative nuclear deterrence proposal: implant the launch codes in a capsule next to a volunteer's heart, so the President would have to personally kill someone before firing nuclear weapons. This dramatic thought experiment illustrates the <b>inversion of the 4th Law: make it unsatisfying</b>. When consequences are immediate, tangible, and painful, behavior changes fast.</p>
+
+<p>The chapter introduces the <b>habit contract</b>&mdash;a written agreement specifying the commitment and the punishment for failure, signed by accountability partners. Clear profiles <b>Bryan Harris</b>, who created a detailed contract with his wife and trainer that included escalating consequences: paying his trainer $100 for missing nutrition targets, giving his wife $500 for not weighing himself, and wearing his rival Auburn team's Alabama hat if he skipped sprints. Clear also describes Thomas Frank's automated tweet system that publicly shames him if he doesn't wake up on time. The social cost of failing publicly is a powerful motivator because <b>we care deeply about what others think of us</b>.</p>
+
+<h2>Chapter 18: The Truth About Talent (When Genes Matter and When They Don't)</h2>
+
+<p>Clear contrasts <b>Michael Phelps</b> (6'4" with a long torso, ideal for swimming) with <b>Hicham El Guerrouj</b> (5'9" with long legs, ideal for distance running)&mdash;two world-class athletes who wear the same inseam despite a seven-inch height difference. The point: <b>the secret to maximizing success is choosing the right field of competition</b>. Genes don't determine destiny; they determine areas of opportunity.</p>
+
+<p>Clear discusses the <b>Big Five personality traits</b> (openness, conscientiousness, extroversion, agreeableness, neuroticism) and their biological underpinnings, arguing that habits are easier and more satisfying when they align with your natural inclinations. He recommends the <b>explore/exploit strategy</b>: spend the early phase trying many things (explore), then focus on what works best (exploit), while still dedicating 10-20 percent of time to continued exploration. Four diagnostic questions help identify your strengths: What feels like fun to you but work to others? What makes you lose track of time? Where do you get greater returns than average? What comes naturally? When you can't find a game that favors you, Clear advises: <b>create one</b>, combining skills to reduce competition.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p><b>Angela Duckworth's</b> research on grit suggests that passion and perseverance for long-term goals may matter more than finding the "right" field. Her studies show that gritty individuals often succeed not because they found their perfect fit immediately but because they persevered through difficulty. The explore/exploit framework, while useful, can also become an excuse for perpetual exploration&mdash;never committing deeply enough to any one pursuit. Additionally, the emphasis on genetic "fit" risks discouraging people from pursuing interests that don't come naturally, when deliberate practice can overcome many initial disadvantages.</p>
+</details>
+
+<h2>Chapter 19: The Goldilocks Rule: How to Stay Motivated in Life and Work</h2>
+
+<p>Clear tells the story of <b>Steve Martin</b>, who spent 18 years developing his comedy act&mdash;"10 years spent learning, 4 years spent refining, and 4 years as a wild success." Martin's persistence illustrates the <b>Goldilocks Rule</b>: humans experience peak motivation when working on tasks that are <b>right on the edge of their current abilities</b>&mdash;not too hard, not too easy. Scientists quantify this as roughly <b>4 percent beyond your current ability</b>, the zone where flow states become possible.</p>
+
+<p>Clear argues that <b>the greatest threat to success is not failure but boredom</b>. Once the beginner gains fade and the habit becomes routine, we start seeking novelty. He discusses <b>variable rewards</b> (like slot machines) that maintain interest through unpredictability, but notes that not all habits can or should have variable reward components. The key insight is that <b>professionals stick to the schedule; amateurs let life get in the way</b>. Successful people feel the same boredom as everyone else but find a way to show up anyway. The only path to excellence is to "fall in love with boredom."</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The Goldilocks Rule aligns with <b>Csikszentmihalyi's</b> flow research, but the "4 percent beyond current ability" figure is a rough heuristic from sports science, not a universal law. In cognitive and creative domains, the optimal difficulty level is harder to quantify. Furthermore, the advice to "fall in love with boredom" may oversimplify the challenge of long-term motivation. Research by <b>Edward Deci and Richard Ryan</b> on <b>self-determination theory</b> suggests that sustained motivation also requires autonomy and relatedness, not just optimal difficulty. Simply pushing through boredom without these elements can lead to burnout.</p>
+</details>
+
+<h2>Chapter 20: The Downside of Creating Good Habits</h2>
+
+<p>Clear acknowledges a fundamental paradox: <b>the upside of habits is that we can do things without thinking; the downside is that we stop paying attention to little errors</b>. Once a skill becomes automatic, we become less sensitive to feedback and may reinforce current habits rather than improve them. Some research even shows a slight decline in performance after mastery if deliberate attention is not maintained.</p>
+
+<p>The solution is <b>Habits + Deliberate Practice = Mastery</b>. Clear profiles <b>Pat Riley's</b> Career Best Effort (CBE) program with the Los Angeles Lakers, where each player's performance was quantified across multiple dimensions and they were asked to improve by just 1 percent over the season. The Lakers won back-to-back championships using this system. Clear recommends establishing a <b>system for reflection and review</b>, describing his own Annual Review (three questions: what went well, what didn't, what did I learn?) and Integrity Report (revisiting core values). He also warns about the danger of <b>clinging too tightly to any single identity</b>, citing Paul Graham's advice to "keep your identity small." When identity becomes brittle, losing one role can be devastating. The solution is to redefine yourself flexibly: "I'm an athlete" becomes "I'm the type of person who is mentally tough and loves a physical challenge."</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The tension between habits (automatic) and deliberate practice (effortful) is a genuine challenge that Clear identifies but doesn't fully resolve. <b>K. Anders Ericsson</b> argued that "naive practice"&mdash;simply repeating what you already know&mdash;does not lead to improvement and can even entrench bad technique. The habits framework throughout this book emphasizes making things automatic, which is somewhat at odds with the deliberate practice framework that demands constant conscious attention to weaknesses. Readers may struggle to know when to automate and when to deliberately engage.</p>
+</details>
+
+<h2>Conclusion: The Secret to Results That Last</h2>
+
+<p>Clear returns to the <b>Sorites Paradox</b>&mdash;the ancient Greek question of whether one coin can make a person rich. One coin cannot, but at some point, as coins accumulate, you must admit that the single coin made the difference. The same logic applies to atomic habits: one tiny change won't transform your life, but a <b>thousand of them will</b>. Each improvement is like adding a grain of sand to the positive side of a scale, slowly tilting things in your favor until you hit a tipping point where the system works <i>for</i> you rather than against you.</p>
+
+<p>Clear recaps the <b>Four Laws of Behavior Change</b> as a continuous cycle: make it obvious, attractive, easy, and satisfying for good habits; make it invisible, unattractive, hard, and unsatisfying for bad ones. There is no finish line, no permanent solution&mdash;just an endless process of refinement. He closes with a powerful restatement of his core philosophy: <b>"Small habits don't add up. They compound."</b> Success is not a goal to reach but a system to improve, and the secret to lasting results is to never stop making improvements.</p>
+
+<h2 id="quiz-heading">Comprehension Quiz</h2>
+
+<details id="quiz-section" class="quiz-wrapper">
+  <summary class="quiz-toggle">Take the Quiz</summary>
+
+  <form id="quiz-form">
+
+    <div class="q-block">
+      <p class="q-label">1. What is the "aggregation of marginal gains" strategy used by Dave Brailsford?</p>
+      <label><input type="radio" name="q1" value="a"> Setting one ambitious goal per season and focusing all resources on it</label>
+      <label><input type="radio" name="q1" value="b"> Searching for a tiny margin of improvement in everything you do</label>
+      <label><input type="radio" name="q1" value="c"> Hiring only the most talented athletes regardless of cost</label>
+      <label><input type="radio" name="q1" value="d"> Copying the training methods of the most successful teams</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">2. According to Clear, what is the relationship between goals and systems?</p>
+      <label><input type="radio" name="q2" value="a"> Goals are more important than systems for long-term success</label>
+      <label><input type="radio" name="q2" value="b"> Systems are the processes that lead to results; goals merely set direction</label>
+      <label><input type="radio" name="q2" value="c"> Goals and systems are identical concepts described differently</label>
+      <label><input type="radio" name="q2" value="d"> Systems should only be used after goals have been achieved</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">3. What are the three layers of behavior change, from outermost to deepest?</p>
+      <label><input type="radio" name="q3" value="a"> Habits, routines, and rituals</label>
+      <label><input type="radio" name="q3" value="b"> Motivation, action, and reward</label>
+      <label><input type="radio" name="q3" value="c"> Outcomes, processes, and identity</label>
+      <label><input type="radio" name="q3" value="d"> Goals, strategies, and beliefs</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">4. What are the four steps of the habit loop in order?</p>
+      <label><input type="radio" name="q4" value="a"> Trigger, behavior, consequence, reflection</label>
+      <label><input type="radio" name="q4" value="b"> Cue, craving, response, reward</label>
+      <label><input type="radio" name="q4" value="c"> Stimulus, motivation, action, satisfaction</label>
+      <label><input type="radio" name="q4" value="d"> Observation, desire, habit, outcome</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">5. What is the Habits Scorecard used for?</p>
+      <label><input type="radio" name="q5" value="a"> Ranking your habits from most to least important</label>
+      <label><input type="radio" name="q5" value="b"> Becoming aware of your current habits by listing and rating them</label>
+      <label><input type="radio" name="q5" value="c"> Tracking how many new habits you build each month</label>
+      <label><input type="radio" name="q5" value="d"> Competing with friends to see who has the best habits</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">6. What is the formula for habit stacking?</p>
+      <label><input type="radio" name="q6" value="a"> "I will [BEHAVIOR] at [TIME] in [LOCATION]"</label>
+      <label><input type="radio" name="q6" value="b"> "When [CUE] happens, I will [REWARD] myself"</label>
+      <label><input type="radio" name="q6" value="c"> "After [CURRENT HABIT], I will [NEW HABIT]"</label>
+      <label><input type="radio" name="q6" value="d"> "Before [BAD HABIT], I will [GOOD HABIT]"</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">7. Why did Vietnam War soldiers who were heroin addicts largely stop using after returning home?</p>
+      <label><input type="radio" name="q7" value="a"> The military provided intensive rehabilitation programs</label>
+      <label><input type="radio" name="q7" value="b"> They moved to an environment devoid of the cues that triggered their habit</label>
+      <label><input type="radio" name="q7" value="c"> They developed stronger willpower during military service</label>
+      <label><input type="radio" name="q7" value="d"> Heroin was less available in the United States at the time</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">8. What is the key insight about dopamine and habits?</p>
+      <label><input type="radio" name="q8" value="a"> Dopamine is only released after you experience pleasure</label>
+      <label><input type="radio" name="q8" value="b"> Dopamine is released when you anticipate a reward, not just when you receive it</label>
+      <label><input type="radio" name="q8" value="c"> Higher dopamine levels make habits easier to break</label>
+      <label><input type="radio" name="q8" value="d"> Dopamine is irrelevant to habit formation</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">9. What does the Two-Minute Rule state?</p>
+      <label><input type="radio" name="q9" value="a"> Every habit should be practiced for exactly two minutes per day</label>
+      <label><input type="radio" name="q9" value="b"> You should wait two minutes before deciding to break a habit</label>
+      <label><input type="radio" name="q9" value="c"> When you start a new habit, it should take less than two minutes to do</label>
+      <label><input type="radio" name="q9" value="d"> Bad habits can be broken within two minutes of identifying them</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">10. What is a "commitment device" as described in the book?</p>
+      <label><input type="radio" name="q10" value="a"> A device that tracks your daily habits automatically</label>
+      <label><input type="radio" name="q10" value="b"> A choice you make in the present that controls your actions in the future</label>
+      <label><input type="radio" name="q10" value="c"> A written list of all the habits you want to build</label>
+      <label><input type="radio" name="q10" value="d"> A social media post declaring your goals publicly</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">11. What is the Cardinal Rule of Behavior Change?</p>
+      <label><input type="radio" name="q11" value="a"> What is tracked is improved</label>
+      <label><input type="radio" name="q11" value="b"> What is immediately rewarded is repeated; what is immediately punished is avoided</label>
+      <label><input type="radio" name="q11" value="c"> What is difficult becomes easy with enough practice</label>
+      <label><input type="radio" name="q11" value="d"> What is invisible cannot influence your behavior</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">12. What does the "never miss twice" rule mean?</p>
+      <label><input type="radio" name="q12" value="a"> You should never attempt a habit more than twice if it fails</label>
+      <label><input type="radio" name="q12" value="b"> If you miss a habit once, get back on track immediately rather than letting it spiral</label>
+      <label><input type="radio" name="q12" value="c"> Always do each habit at least twice per day</label>
+      <label><input type="radio" name="q12" value="d"> Track your habits in two different systems for redundancy</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">13. According to the Goldilocks Rule, when do humans experience peak motivation?</p>
+      <label><input type="radio" name="q13" value="a"> When tasks are extremely easy and require no effort</label>
+      <label><input type="radio" name="q13" value="b"> When tasks are as difficult as possible to maximize growth</label>
+      <label><input type="radio" name="q13" value="c"> When working on tasks right on the edge of their current abilities</label>
+      <label><input type="radio" name="q13" value="d"> When they receive the largest possible external rewards</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">14. What does Clear say is the greatest threat to success?</p>
+      <label><input type="radio" name="q14" value="a"> Failure</label>
+      <label><input type="radio" name="q14" value="b"> Lack of talent</label>
+      <label><input type="radio" name="q14" value="c"> Boredom</label>
+      <label><input type="radio" name="q14" value="d"> Competition from others</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">15. What is the formula Clear gives for mastery?</p>
+      <label><input type="radio" name="q15" value="a"> Talent + Opportunity = Mastery</label>
+      <label><input type="radio" name="q15" value="b"> Goals + Willpower = Mastery</label>
+      <label><input type="radio" name="q15" value="c"> Habits + Deliberate Practice = Mastery</label>
+      <label><input type="radio" name="q15" value="d"> Motivation + Consistency = Mastery</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">16. Why does Clear recommend "keeping your identity small"?</p>
+      <label><input type="radio" name="q16" value="a"> So you don't become arrogant about your achievements</label>
+      <label><input type="radio" name="q16" value="b"> Because the tighter you cling to one identity, the harder it becomes to grow beyond it</label>
+      <label><input type="radio" name="q16" value="c"> To avoid standing out and attracting unwanted attention</label>
+      <label><input type="radio" name="q16" value="d"> Because identity has no role in habit formation</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">17. According to the book, what determines whether habit formation is successful?</p>
+      <label><input type="radio" name="q17" value="a"> The number of days spent performing the habit</label>
+      <label><input type="radio" name="q17" value="b"> The frequency (number of repetitions) of performing the habit</label>
+      <label><input type="radio" name="q17" value="c"> The intensity of motivation when starting the habit</label>
+      <label><input type="radio" name="q17" value="d"> The complexity of the habit being formed</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">18. What three social groups do we tend to imitate?</p>
+      <label><input type="radio" name="q18" value="a"> Teachers, celebrities, and politicians</label>
+      <label><input type="radio" name="q18" value="b"> The close (family/friends), the many (the tribe), and the powerful (those with status)</label>
+      <label><input type="radio" name="q18" value="c"> Parents, peers, and mentors</label>
+      <label><input type="radio" name="q18" value="d"> Employers, neighbors, and social media influencers</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">19. What is Goodhart's Law as applied to habit tracking?</p>
+      <label><input type="radio" name="q19" value="a"> Good habits always lead to good outcomes</label>
+      <label><input type="radio" name="q19" value="b"> When a measure becomes a target, it ceases to be a good measure</label>
+      <label><input type="radio" name="q19" value="c"> The more you track, the better your habits become</label>
+      <label><input type="radio" name="q19" value="d"> Habits can only be measured by their final outcomes</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">20. How does Clear summarize the power of atomic habits in the conclusion?</p>
+      <label><input type="radio" name="q20" value="a"> "Big changes require big actions"</label>
+      <label><input type="radio" name="q20" value="b"> "Small habits don't add up. They compound."</label>
+      <label><input type="radio" name="q20" value="c"> "One perfect habit is worth a hundred mediocre ones"</label>
+      <label><input type="radio" name="q20" value="d"> "Success comes from eliminating all bad habits first"</label>
+    </div>
+
+    <button type="button" id="score-btn" onclick="scoreQuiz()">Score My Answers</button>
+
+    <div id="quiz-result" style="display:none;">
+      <p id="score-text"></p>
+      <div id="answer-review"></div>
+    </div>
+
+  </form>
+</details>
+
+<script>
+(function() {
+  const answers = {
+    q1: { correct: "b", explain: "Brailsford's strategy was searching for a tiny margin of improvement in everything, which compounded into dramatic results." },
+    q2: { correct: "b", explain: "Clear argues that goals set direction, but systems—the processes you follow—are what actually lead to results." },
+    q3: { correct: "c", explain: "The three layers are outcomes (what you get), processes (what you do), and identity (what you believe), from outermost to deepest." },
+    q4: { correct: "b", explain: "Clear's four-step habit loop is cue, craving, response, and reward—the backbone of every habit." },
+    q5: { correct: "b", explain: "The Habits Scorecard is an awareness exercise where you list daily habits and rate each as positive, negative, or neutral." },
+    q6: { correct: "c", explain: "Habit stacking pairs a new habit with an existing one: 'After [CURRENT HABIT], I will [NEW HABIT].'" },
+    q7: { correct: "b", explain: "The soldiers returned to environments without the cues that triggered heroin use, showing that environment change can dissolve addiction." },
+    q8: { correct: "b", explain: "Dopamine spikes during anticipation of a reward, not just during the reward itself—it is anticipation that drives action." },
+    q9: { correct: "c", explain: "The Two-Minute Rule says new habits should take less than two minutes to start, making it easy to show up consistently." },
+    q10: { correct: "b", explain: "A commitment device is a present choice that locks in future behavior, like Victor Hugo locking away his clothes to force himself to write." },
+    q11: { correct: "b", explain: "The Cardinal Rule states that behaviors with immediate rewards get repeated and those with immediate punishment get avoided." },
+    q12: { correct: "b", explain: "Missing once is an accident; missing twice is the start of a new habit. The key is to rebound quickly after any lapse." },
+    q13: { correct: "c", explain: "The Goldilocks Rule says peak motivation occurs when tasks are right at the edge of current abilities—not too hard, not too easy." },
+    q14: { correct: "c", explain: "Clear argues that boredom, not failure, is the greatest threat because it causes people to abandon effective habits in search of novelty." },
+    q15: { correct: "c", explain: "Clear's formula for mastery is Habits + Deliberate Practice = Mastery, combining automation with intentional improvement." },
+    q16: { correct: "b", explain: "Clinging too tightly to one identity makes you brittle; redefining yourself flexibly allows growth when circumstances change." },
+    q17: { correct: "b", explain: "Habits form based on frequency (number of repetitions), not time. What matters is how many times you perform the behavior." },
+    q18: { correct: "b", explain: "We imitate the close (family and friends), the many (the tribe/culture), and the powerful (those with status and prestige)." },
+    q19: { correct: "b", explain: "Goodhart's Law warns that when a measure becomes a target, we optimize for the number rather than the purpose behind it." },
+    q20: { correct: "b", explain: "Clear's central message is that small habits don't merely add up—they compound, producing results far greater than the sum of individual changes." }
+  };
+
+  window.scoreQuiz = function() {
+    const form = document.getElementById("quiz-form");
+    let correct = 0;
+    const total = Object.keys(answers).length;
+    let reviewHTML = "";
+
+    for (let i = 1; i <= total; i++) {
+      const key = "q" + i;
+      const selected = form.elements[key] ? form.elements[key].value : "";
+      const isCorrect = selected === answers[key].correct;
+      if (isCorrect) correct++;
+
+      const status = !selected ? "wrong" : (isCorrect ? "correct" : "wrong");
+      const icon = isCorrect ? "\u2705" : "\u274C";
+      const yourAnswer = selected ? selected.toUpperCase() : "No answer";
+      const correctAnswer = answers[key].correct.toUpperCase();
+
+      reviewHTML += '<div class="review-item ' + status + '">';
+      reviewHTML += '<div class="ri-q">' + icon + " Question " + i + "</div>";
+      reviewHTML += '<div class="ri-detail">';
+      if (!isCorrect) {
+        reviewHTML += "Your answer: " + yourAnswer + " &mdash; Correct answer: " + correctAnswer + "<br>";
+      }
+      reviewHTML += answers[key].explain;
+      reviewHTML += "</div></div>";
+    }
+
+    const pct = Math.round((correct / total) * 100);
+    let grade;
+    if (pct === 100) grade = "Perfect score!";
+    else if (pct >= 80) grade = "Great understanding!";
+    else if (pct >= 60) grade = "Good, but review the summaries above for the ones you missed.";
+    else grade = "Consider re-reading the summaries above and trying again.";
+
+    document.getElementById("score-text").textContent = correct + " / " + total + " (" + pct + "%) \u2014 " + grade;
+    document.getElementById("answer-review").innerHTML = reviewHTML;
+    document.getElementById("quiz-result").style.display = "block";
+    document.getElementById("quiz-result").scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+})();
+</script>
+
+</div><!-- .content -->
+
+</body>
+</html>

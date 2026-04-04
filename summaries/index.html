@@ -3,151 +3,154 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Book Summaries</title>
+  <title>Book Summary Pro</title>
   <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: Georgia, 'Times New Roman', serif;
-      max-width: 780px;
-      margin: 40px auto;
-      padding: 0 20px;
       line-height: 1.7;
       color: #222;
       background: #fafafa;
     }
-    h1 {
-      font-size: 1.8em;
-      border-bottom: 2px solid #333;
-      padding-bottom: 10px;
-      margin-bottom: 5px;
+    .app-nav {
+      background: #2c2c2c;
+      padding: 14px 24px;
     }
-    .page-subtitle {
+    .app-nav .app-name {
+      display: block;
       font-size: 1.05em;
-      color: #777;
-      font-style: italic;
-      margin-bottom: 36px;
+      font-weight: bold;
+      color: #e8e0d0;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+    }
+    .app-nav .app-name:hover {
+      color: #d4a843;
+    }
+    .content {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 24px 24px 40px;
     }
     .book-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px 20px;
+    }
+    @media (max-width: 800px) {
+      .book-list { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 540px) {
+      .book-list { grid-template-columns: repeat(2, 1fr); }
     }
     .book-card {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       align-items: center;
-      gap: 18px;
       text-decoration: none;
       color: inherit;
-      padding: 20px 18px;
-      border-bottom: 1px solid #ddd;
+      padding: 16px 8px;
+      border-radius: 6px;
       transition: background 0.15s;
-    }
-    .book-cover {
-      width: 60px;
-      min-width: 60px;
-      border-radius: 3px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.15);
-    }
-    .book-info {
-      flex: 1;
-    }
-    .book-card:first-child {
-      border-top: 1px solid #ddd;
     }
     .book-card:hover {
       background: #f0ece4;
     }
+    .book-cover {
+      height: 220px;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+      border-radius: 3px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+      margin-bottom: 12px;
+    }
     .book-title {
       display: block;
-      font-size: 1.15em;
+      font-size: 0.92em;
       font-weight: bold;
       color: #1a1a1a;
-      margin-bottom: 2px;
-    }
-    .book-subtitle {
-      display: block;
-      font-size: 0.95em;
-      font-style: italic;
-      color: #555;
-      margin-bottom: 4px;
-    }
-    .book-author {
-      display: block;
-      font-size: 0.9em;
-      color: #888;
+      text-align: center;
+      line-height: 1.3;
     }
     .count {
       font-size: 0.9em;
       color: #999;
       margin-top: 32px;
+      text-align: center;
     }
   </style>
 </head>
 <body>
 
-<h1>Book Summaries</h1>
-<p class="page-subtitle">Chapter-level summaries with counterpoints and comprehension quizzes</p>
+<nav class="app-nav">
+  <span class="app-name">Book Summary Pro</span>
+</nav>
 
-<div class="book-list">
+
+<div class="content">
+  <div class="book-list">
 
     <a href="1929_summary.html" class="book-card">
       <img src="covers/1929.jpg" alt="" class="book-cover" loading="lazy">
-      <div class="book-info">
-        <span class="book-title">1929</span>
-        <span class="book-subtitle">Inside the Greatest Crash in Wall Street History&mdash;and How It Shattered a Nation</span>
-        <span class="book-author">Andrew Ross Sorkin</span>
-      </div>
+      <span class="book-title">1929</span>
+    </a>
+    <a href="Atomic_Habits_summary.html" class="book-card">
+      <img src="covers/Atomic_Habits.jpg" alt="" class="book-cover" loading="lazy">
+      <span class="book-title">Atomic Habits</span>
+    </a>
+    <a href="Capital_in_the_Twenty-First_Century_summary.html" class="book-card">
+      <img src="covers/Capital_in_the_Twenty-First_Century.jpg" alt="" class="book-cover" loading="lazy">
+      <span class="book-title">Capital in the Twenty-First Century</span>
+    </a>
+    <a href="Deep_Work_summary.html" class="book-card">
+      <img src="covers/Deep_Work.jpg" alt="" class="book-cover" loading="lazy">
+      <span class="book-title">Deep Work</span>
+    </a>
+    <a href="Guns,_Germs,_and_Steel_summary.html" class="book-card">
+      <img src="covers/Guns,_Germs,_and_Steel.jpg" alt="" class="book-cover" loading="lazy">
+      <span class="book-title">Guns, Germs, and Steel</span>
     </a>
     <a href="Power_And_Progress_summary.html" class="book-card">
       <img src="covers/Power_And_Progress.jpg" alt="" class="book-cover" loading="lazy">
-      <div class="book-info">
-        <span class="book-title">Power and Progress</span>
-        <span class="book-subtitle">Our Thousand-Year Struggle Over Technology and Prosperity</span>
-        <span class="book-author">Daron Acemoglu and Simon Johnson</span>
-      </div>
+      <span class="book-title">Power and Progress</span>
+    </a>
+    <a href="Sapiens_summary.html" class="book-card">
+      <img src="covers/Sapiens.jpg" alt="" class="book-cover" loading="lazy">
+      <span class="book-title">Sapiens</span>
     </a>
     <a href="The_4-Hour_Workweek_summary.html" class="book-card">
       <img src="covers/The_4-Hour_Workweek.jpg" alt="" class="book-cover" loading="lazy">
-      <div class="book-info">
-        <span class="book-title">The 4-Hour Workweek</span>
-        <span class="book-subtitle">Escape 9&ndash;5, Live Anywhere, and Join the New Rich</span>
-        <span class="book-author">Timothy Ferriss</span>
-      </div>
+      <span class="book-title">The 4-Hour Workweek</span>
+    </a>
+    <a href="The_Black_Swan_summary.html" class="book-card">
+      <img src="covers/The_Black_Swan.jpg" alt="" class="book-cover" loading="lazy">
+      <span class="book-title">The Black Swan</span>
     </a>
     <a href="The_Five_Rules_for_Successful_Stock_Investing_summary.html" class="book-card">
       <img src="covers/The_Five_Rules_for_Successful_Stock_Investing.jpg" alt="" class="book-cover" loading="lazy">
-      <div class="book-info">
-        <span class="book-title">The Five Rules for Successful Stock Investing</span>
-        <span class="book-subtitle">Morningstar's Guide to Building Wealth and Winning in the Market</span>
-        <span class="book-author">Pat Dorsey</span>
-      </div>
+      <span class="book-title">The Five Rules for Successful Stock Investing</span>
     </a>
     <a href="The_Intelligent_Investor_summary.html" class="book-card">
       <img src="covers/The_Intelligent_Investor.jpg" alt="" class="book-cover" loading="lazy">
-      <div class="book-info">
-        <span class="book-title">The Intelligent Investor</span>
-        <span class="book-subtitle">A Book of Practical Counsel (Revised Edition)</span>
-        <span class="book-author">Benjamin Graham, with commentary by Jason Zweig</span>
-      </div>
+      <span class="book-title">The Intelligent Investor</span>
     </a>
     <a href="The_Wealth_of_Nations_summary.html" class="book-card">
       <img src="covers/The_Wealth_of_Nations.jpg" alt="" class="book-cover" loading="lazy">
-      <div class="book-info">
-        <span class="book-title">An Inquiry into the Nature and Causes of the Wealth of Nations</span>
-        <span class="book-author">Adam Smith</span>
-      </div>
+      <span class="book-title">An Inquiry into the Nature and Causes of the Wealth of Nations</span>
+    </a>
+    <a href="Thinking_Fast_and_Slow_summary.html" class="book-card">
+      <img src="covers/Thinking_Fast_and_Slow.jpg" alt="" class="book-cover" loading="lazy">
+      <span class="book-title">Thinking, Fast and Slow</span>
     </a>
     <a href="Why_Everyone_(Else)_Is_a_Hypocrite_summary.html" class="book-card">
       <img src="covers/Why_Everyone_(Else)_Is_a_Hypocrite.jpg" alt="" class="book-cover" loading="lazy">
-      <div class="book-info">
-        <span class="book-title">Why Everyone (Else) Is a Hypocrite</span>
-        <span class="book-subtitle">Evolution and the Modular Mind</span>
-        <span class="book-author">Robert Kurzban</span>
-      </div>
+      <span class="book-title">Why Everyone (Else) Is a Hypocrite</span>
     </a>
-</div>
+  </div>
 
-<p class="count">7 books summarized</p>
+  <p class="count">14 books summarized</p>
+</div>
 
 </body>
 </html>

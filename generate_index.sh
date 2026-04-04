@@ -13,8 +13,6 @@ for f in "$SUMMARIES_DIR"/*_summary.html; do
   count=$((count + 1))
   filename="$(basename "$f")"
   title="$(grep -m1 '<h1>' "$f" | sed 's/<[^>]*>//g' | sed 's/^[[:space:]]*//' | sed 's/[[:space:]]*$//')"
-  author="$(grep -m1 'class="author"' "$f" | sed 's/<[^>]*>//g' | sed 's/^[[:space:]]*//' | sed 's/[[:space:]]*$//' || true)"
-  subtitle="$(grep -m1 'class="subtitle"' "$f" | sed 's/<[^>]*>//g' | sed 's/^[[:space:]]*//' | sed 's/[[:space:]]*$//' || true)"
 
   # Check for cover image
   cover_stem="${filename%_summary.html}"
@@ -27,15 +25,7 @@ for f in "$SUMMARIES_DIR"/*_summary.html; do
       <img src=\"covers/${cover_stem}.jpg\" alt=\"\" class=\"book-cover\" loading=\"lazy\">"
   fi
   entry="$entry
-      <div class=\"book-info\">
-        <span class=\"book-title\">${title}</span>"
-  if [ -n "$subtitle" ]; then
-    entry="$entry
-        <span class=\"book-subtitle\">${subtitle}</span>"
-  fi
-  entry="$entry
-        <span class=\"book-author\">${author}</span>
-      </div>"
+      <span class=\"book-title\">${title}</span>"
   entry="$entry
     </a>"
   entries="$entries
@@ -48,96 +38,98 @@ cat > "$OUTPUT" << HTMLEOF
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Book Summaries</title>
+  <title>Book Summary Pro</title>
   <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: Georgia, 'Times New Roman', serif;
-      max-width: 780px;
-      margin: 40px auto;
-      padding: 0 20px;
       line-height: 1.7;
       color: #222;
       background: #fafafa;
     }
-    h1 {
-      font-size: 1.8em;
-      border-bottom: 2px solid #333;
-      padding-bottom: 10px;
-      margin-bottom: 5px;
+    .app-nav {
+      background: #2c2c2c;
+      padding: 14px 24px;
     }
-    .page-subtitle {
+    .app-nav .app-name {
+      display: block;
       font-size: 1.05em;
-      color: #777;
-      font-style: italic;
-      margin-bottom: 36px;
+      font-weight: bold;
+      color: #e8e0d0;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+    }
+    .app-nav .app-name:hover {
+      color: #d4a843;
+    }
+    .content {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 24px 24px 40px;
     }
     .book-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px 20px;
+    }
+    @media (max-width: 800px) {
+      .book-list { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 540px) {
+      .book-list { grid-template-columns: repeat(2, 1fr); }
     }
     .book-card {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       align-items: center;
-      gap: 18px;
       text-decoration: none;
       color: inherit;
-      padding: 20px 18px;
-      border-bottom: 1px solid #ddd;
+      padding: 16px 8px;
+      border-radius: 6px;
       transition: background 0.15s;
-    }
-    .book-cover {
-      width: 60px;
-      min-width: 60px;
-      border-radius: 3px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.15);
-    }
-    .book-info {
-      flex: 1;
-    }
-    .book-card:first-child {
-      border-top: 1px solid #ddd;
     }
     .book-card:hover {
       background: #f0ece4;
     }
+    .book-cover {
+      height: 220px;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+      border-radius: 3px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+      margin-bottom: 12px;
+    }
     .book-title {
       display: block;
-      font-size: 1.15em;
+      font-size: 0.92em;
       font-weight: bold;
       color: #1a1a1a;
-      margin-bottom: 2px;
-    }
-    .book-subtitle {
-      display: block;
-      font-size: 0.95em;
-      font-style: italic;
-      color: #555;
-      margin-bottom: 4px;
-    }
-    .book-author {
-      display: block;
-      font-size: 0.9em;
-      color: #888;
+      text-align: center;
+      line-height: 1.3;
     }
     .count {
       font-size: 0.9em;
       color: #999;
       margin-top: 32px;
+      text-align: center;
     }
   </style>
 </head>
 <body>
 
-<h1>Book Summaries</h1>
-<p class="page-subtitle">Chapter-level summaries with counterpoints and comprehension quizzes</p>
+<nav class="app-nav">
+  <span class="app-name">Book Summary Pro</span>
+</nav>
 
-<div class="book-list">
+
+<div class="content">
+  <div class="book-list">
 ${entries}
-</div>
+  </div>
 
-<p class="count">${count} books summarized</p>
+  <p class="count">${count} books summarized</p>
+</div>
 
 </body>
 </html>

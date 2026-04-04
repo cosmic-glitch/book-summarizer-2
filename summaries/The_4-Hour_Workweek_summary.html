@@ -3,16 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The 4-Hour Workweek — Chapter Summaries</title>
+  <title>The 4-Hour Workweek — Book Summary Pro</title>
   <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: Georgia, 'Times New Roman', serif;
-      max-width: 780px;
-      margin: 40px auto;
-      padding: 0 20px;
       line-height: 1.7;
       color: #222;
       background: #fafafa;
+    }
+    .app-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #2c2c2c;
+      padding: 14px 24px;
+    }
+    .content {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 32px 20px 40px;
+    }
+    .app-nav .app-name {
+      display: block;
+      font-size: 1.05em;
+      font-weight: bold;
+      color: #e8e0d0;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+    }
+    .app-nav .app-name:hover {
+      color: #d4a843;
+    }
+
+    .app-nav .back-link {
+      font-size: 0.9em;
+      color: #999;
+      text-decoration: none;
+    }
+    .app-nav .back-link:hover {
+      color: #d4a843;
     }
     h1 {
       font-size: 1.8em;
@@ -164,6 +194,13 @@
   </style>
 </head>
 <body>
+
+<nav class="app-nav">
+  <a href="index.html" class="app-name">Book Summary Pro</a>
+  <a href="index.html" class="back-link">&larr; All Books</a>
+</nav>
+
+<div class="content">
 
 <h1>The 4-Hour Workweek</h1>
 <p class="subtitle">Escape 9&ndash;5, Live Anywhere, and Join the New Rich</p>
@@ -612,6 +649,8 @@
   };
 })();
 </script>
+
+</div><!-- .content -->
 
 </body>
 </html>

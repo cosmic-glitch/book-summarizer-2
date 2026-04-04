@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thinking, Fast and Slow — Book Summary Pro</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      line-height: 1.7;
+      color: #222;
+      background: #fafafa;
+    }
+    .app-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #2c2c2c;
+      padding: 14px 24px;
+    }
+    .content {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 32px 20px 40px;
+    }
+    .app-nav .app-name {
+      font-size: 1.05em;
+      font-weight: bold;
+      color: #e8e0d0;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+    }
+    .app-nav .app-name:hover {
+      color: #d4a843;
+    }
+    .app-nav .back-link {
+      font-size: 0.9em;
+      color: #999;
+      text-decoration: none;
+    }
+    .app-nav .back-link:hover {
+      color: #d4a843;
+    }
+    h1 {
+      font-size: 1.8em;
+      border-bottom: 2px solid #333;
+      padding-bottom: 10px;
+      margin-bottom: 5px;
+    }
+    .subtitle {
+      font-size: 1.1em;
+      color: #444;
+      margin: 2px 0 0 0;
+      font-style: italic;
+    }
+    .author {
+      font-style: italic;
+      color: #777;
+      font-size: 0.95em;
+      margin-bottom: 40px;
+    }
+    h2 {
+      font-size: 1.3em;
+      margin-top: 48px;
+      color: #1a1a1a;
+      border-left: 4px solid #555;
+      padding-left: 12px;
+    }
+    p {
+      margin-bottom: 14px;
+      text-align: justify;
+    }
+    details.counter {
+      background: #f0ece4;
+      border-left: 4px solid #b8860b;
+      padding: 14px 18px;
+      margin: 20px 0 28px 0;
+      border-radius: 0 6px 6px 0;
+    }
+    details.counter summary {
+      font-weight: bold;
+      font-size: 0.95em;
+      color: #8b6914;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    details.counter summary::-webkit-details-marker {
+      display: none;
+    }
+    details.counter summary::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    details.counter[open] summary::before {
+      transform: rotate(90deg);
+    }
+    details.counter p {
+      margin-top: 12px;
+      margin-bottom: 10px;
+      color: #3a3a3a;
+    }
+    details.counter p:last-child {
+      margin-bottom: 0;
+    }
+    .quiz-wrapper {
+      margin-top: 48px;
+      background: #f5f5f0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 16px 20px;
+    }
+    .quiz-toggle {
+      font-weight: bold;
+      font-size: 1.05em;
+      cursor: pointer;
+      color: #2a5a2a;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .quiz-toggle::-webkit-details-marker { display: none; }
+    .quiz-toggle::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    .quiz-wrapper[open] .quiz-toggle::before {
+      transform: rotate(90deg);
+    }
+    .q-block {
+      margin: 24px 0;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    .q-block:last-of-type { border-bottom: none; }
+    .q-label {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .q-block label {
+      display: block;
+      padding: 6px 10px;
+      margin: 4px 0;
+      border-radius: 4px;
+      cursor: pointer;
+      line-height: 1.5;
+    }
+    .q-block label:hover { background: #e8e8e0; }
+    #score-btn {
+      display: block;
+      margin: 28px auto 0;
+      padding: 12px 32px;
+      font-family: Georgia, serif;
+      font-size: 1em;
+      background: #2a5a2a;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #score-btn:hover { background: #1e441e; }
+    #quiz-result {
+      margin-top: 24px;
+      padding: 18px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    #score-text {
+      font-size: 1.15em;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .review-item {
+      margin-bottom: 14px;
+      padding: 10px 12px;
+      border-radius: 4px;
+    }
+    .review-item.correct { background: #e6f4e6; }
+    .review-item.wrong { background: #fce8e8; }
+    .review-item .ri-q { font-weight: bold; margin-bottom: 4px; }
+    .review-item .ri-detail { font-size: 0.93em; color: #444; }
+  </style>
+</head>
+<body>
+
+<nav class="app-nav">
+  <a href="index.html" class="app-name">Book Summary Pro</a>
+  <a href="index.html" class="back-link">&larr; All Books</a>
+</nav>
+
+<div class="content">
+
+<h1>Thinking, Fast and Slow</h1>
+<p class="author">Daniel Kahneman</p>
+
+<h2>Introduction</h2>
+
+<p>The author introduces the central ambition of the book: to enrich the vocabulary people use when discussing judgments, choices, and errors&mdash;particularly the kind of "educated gossip" that takes place at the office watercooler. Kahneman argues that <b>systematic errors (biases)</b> recur predictably in particular circumstances, and that having labels for these biases makes them easier to anticipate and discuss. He hopes that better language will lead to better self-criticism and improved decision-making.</p>
+
+<p>Kahneman recounts his long collaboration with <b>Amos Tversky</b>, beginning in 1969 at the Hebrew University of Jerusalem. Together they studied whether people are good intuitive statisticians&mdash;and concluded that the answer is largely no. Their landmark 1974 <i>Science</i> article, "Judgment Under Uncertainty: Heuristics and Biases," documented how people rely on mental shortcuts (<b>heuristics</b>) such as <b>representativeness</b> (judging probability by resemblance) and <b>availability</b> (judging frequency by ease of recall). These heuristics are useful but produce predictable biases.</p>
+
+<p>The introduction also previews the book's five-part structure: Part I introduces two mental systems (fast and slow thinking), Part II examines heuristics and biases, Part III explores overconfidence, Part IV discusses choices through the lens of <b>prospect theory</b>, and Part V distinguishes between the <b>experiencing self</b> and the <b>remembering self</b>. The metaphor of <b>System 1</b> (fast, intuitive, automatic) and <b>System 2</b> (slow, deliberate, effortful) serves as the book's organizing framework.</p>
+
+<h2>Part I: Two Systems</h2>
+
+<h2>Chapter 1: The Characters of the Story</h2>
+
+<p>Kahneman introduces the two protagonists of the book: <b>System 1</b> and <b>System 2</b>. System 1 operates automatically and quickly, with little or no effort and no sense of voluntary control&mdash;such as detecting that one object is more distant than another, or reading words on a billboard. System 2 allocates attention to effortful mental activities, including complex computations like multiplying 17 &times; 24. The operations of System 2 are often associated with the subjective experience of agency, choice, and concentration.</p>
+
+<p>The author explains that System 1 continuously generates impressions, feelings, and inclinations that, when endorsed by System 2, become beliefs and voluntary actions. System 2 is normally in a comfortable low-effort mode, using only a fraction of its capacity. When System 1 encounters difficulty, it calls on System 2 for more detailed and specific processing. Crucially, <b>System 2 has the ability to resist the suggestions of System 1</b>, but engaging it requires effort, and people are often "cognitively lazy"&mdash;accepting the easier intuitive answer rather than investing the effort to check it.</p>
+
+<p>Kahneman introduces the <b>gorilla experiment</b> by Christopher Chabris and Daniel Simons, in which viewers counting basketball passes fail to notice a gorilla walking across the screen. This demonstrates <b>inattentional blindness</b>&mdash;the fact that people can be blind to the obvious when their attention is engaged elsewhere. The chapter establishes that much of what System 2 thinks it decides is actually determined by System 1.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The <b>dual-process model</b> (System 1/System 2) has been criticized by researchers such as <b>Gerd Gigerenzer</b> for being too vague&mdash;more a useful metaphor than a rigorous scientific theory. Critics argue that labeling diverse cognitive processes as belonging to two "systems" can obscure the distinct mechanisms at work. Some cognitive scientists prefer models with multiple specialized modules rather than a simple two-system dichotomy.</p>
+</details>
+
+<h2>Chapter 2: Attention and Effort</h2>
+
+<p>This chapter explores the relationship between mental effort and attention. Kahneman describes his early research using <b>pupil dilation</b> as a measure of cognitive effort. He discovered that the pupils dilate in proportion to the difficulty of a task&mdash;the harder the mental work, the larger the pupils become. A task like the <b>Add-1</b> exercise (where participants add 1 to each digit of a string) produces measurable, graded increases in pupil size as cognitive load increases.</p>
+
+<p>The author explains that <b>mental effort is a limited resource</b>. When people are engaged in demanding tasks, they become effectively blind to stimuli they would normally notice. System 2 activities require attention and are disrupted when attention is drawn away. There is a "budget" of attention, and some tasks are more expensive than others. Importantly, <b>time pressure</b> intensifies the effort, because System 2 must work faster, depleting its limited resources more quickly.</p>
+
+<p>Kahneman also introduces the concept of <b>flow</b>&mdash;a state described by psychologist Mihaly Csikszentmihalyi in which people experience effortful concentration as pleasurable. In flow states, the task demands exactly match the person's abilities, producing an optimal experience. However, most effortful tasks do not produce flow and are experienced as aversive, which explains why people avoid them when possible.</p>
+
+<h2>Chapter 3: The Lazy Controller</h2>
+
+<p>Kahneman argues that <b>self-control and deliberate thought draw on the same limited budget of effort</b>. People who are cognitively busy are more likely to make selfish choices, use sexist language, and make superficial judgments. The psychologist Roy Baumeister's research on <b>ego depletion</b> showed that exerting self-control in one task reduces the ability to exert it in a subsequent task&mdash;as if willpower is a depletable resource. Activities as simple as resisting the temptation of chocolate can impair subsequent performance on demanding cognitive tasks.</p>
+
+<p>The chapter discusses how System 2 is fundamentally lazy: it tends to accept the easiest answer available from System 1 rather than investing effort to verify it. Kahneman introduces the <b>bat-and-ball problem</b> ("A bat and ball cost $1.10. The bat costs $1.00 more than the ball. How much does the ball cost?"). Most people answer $0.10 intuitively, but the correct answer is $0.05. Even students at elite universities frequently get this wrong, illustrating how System 2 often fails to check System 1's intuitive but incorrect output.</p>
+
+<p>The author also discusses the role of <b>glucose</b> in self-control. Baumeister's experiments found that effortful mental activity is fueled by glucose, and that depleted glucose corresponds to reduced willpower. Judges were found to grant more paroles after meals than before them, suggesting that judicial decisions are influenced by biological factors rather than purely legal reasoning.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The <b>ego depletion</b> model has faced significant challenges in recent years. A large-scale replication effort (the "Many Labs" project) <b>failed to replicate</b> the core ego depletion effect, leading many psychologists to question whether willpower truly operates like a depletable resource. The glucose theory of self-control has been similarly questioned, with researchers like <b>Martin Hagger</b> and others arguing that the effect sizes are smaller than originally reported and that motivational accounts may better explain the findings.</p>
+</details>
+
+<h2>Chapter 4: The Associative Machine</h2>
+
+<p>Kahneman describes how System 1 operates through <b>associative activation</b>&mdash;a process in which one idea triggers many other ideas in a spreading cascade. When you see the words "bananas" and "vomit," your mind automatically constructs a causal story, your body reacts with a slight aversion, and your face may briefly express disgust. This complex constellation of responses happens automatically and is called an <b>associatively coherent</b> pattern.</p>
+
+<p>The chapter introduces the phenomenon of <b>priming</b>: exposure to a word or concept activates related ideas and can influence subsequent behavior without conscious awareness. In one famous experiment by psychologist John Bargh, students who were exposed to words associated with elderly stereotypes (such as "Florida," "forgetful," "wrinkle") subsequently walked more slowly down a hallway. Another study found that people primed with the concept of money became more self-reliant but also more selfish. Kahneman argues that priming effects demonstrate the pervasive influence of System 1 on behavior.</p>
+
+<p>The author emphasizes that these <b>ideomotor effects</b>&mdash;where ideas influence actions&mdash;also work in reverse: actions influence ideas. Nodding your head while listening to a message makes you more likely to agree with it; holding a pencil crosswise in your mouth (forcing a smile) makes cartoons seem funnier. This bidirectional link between cognition and physical action is a hallmark of associative coherence.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Several prominent <b>priming studies</b> cited in this chapter have faced serious replication failures. The elderly-walking study by <b>John Bargh</b> was not replicated in a well-known attempt by <b>St&eacute;phane Doyen</b> and colleagues, and the pencil-in-mouth study also failed to replicate in a large registered replication report. The broader field of <b>social priming</b> has undergone significant scrutiny during the replication crisis in psychology, and many researchers now view the original effect sizes as inflated or the phenomena as more fragile than Kahneman presents them.</p>
+</details>
+
+<h2>Chapter 5: Cognitive Ease</h2>
+
+<p>This chapter explores the concept of <b>cognitive ease</b>&mdash;the feeling that things are going well, that no threats or major news demand redirection of attention. Cognitive ease is influenced by repeated experience, clear display, primed ideas, and good mood. When cognitive ease is high, System 1 is in charge: you are likely to feel good, trust your intuitions, and feel that the situation is familiar and true. When cognitive strain is high, System 2 is more engaged: you are more vigilant, suspicious, and analytical.</p>
+
+<p>Kahneman describes the <b>mere exposure effect</b>, discovered by psychologist Robert Zajonc: the more often you encounter something, the more you tend to like it, even if you are not consciously aware of having seen it before. This applies to words, faces, shapes, and even nonsense syllables. The effect has a deep evolutionary logic: familiar things are unlikely to be dangerous. The author also discusses how <b>fluency</b>&mdash;the ease with which information is processed&mdash;affects judgments of truth. Statements that are easier to read (due to clear fonts, simple language, or rhyme) are more likely to be judged as true.</p>
+
+<p>The chapter also covers how cognitive ease affects creativity. Participants in a <b>good mood</b> perform better on the <b>Remote Association Test</b> (a measure of creative thinking) because positive affect broadens the scope of associative thinking. Conversely, cognitive strain makes people more careful but less creative. Kahneman suggests that System 1 generates creative associations, while System 2 evaluates and filters them.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>While the <b>mere exposure effect</b> is well-replicated, the broader claim that cognitive ease reliably signals truth has troubling implications in the age of misinformation. Researchers such as <b>Gordon Pennycook</b> have shown that repeated exposure to false headlines increases their perceived accuracy&mdash;suggesting that the cognitive ease mechanism can be systematically exploited. Kahneman acknowledges fluency effects but may understate how easily they can be weaponized.</p>
+</details>
+
+<h2>Chapter 6: Norms, Surprises, and Causes</h2>
+
+<p>Kahneman explains that System 1 maintains and updates a <b>model of what is normal</b> in our personal world. When events fit this model, we process them effortlessly; when they violate expectations, we experience surprise and allocate attention. However, the range of what System 1 treats as "normal" is remarkably broad. After seeing a series of unusual events, the system rapidly adjusts its expectations. If you see a gorilla crossing a basketball court, you will be shocked&mdash;but you would be less surprised to see it a second time.</p>
+
+<p>The chapter discusses how System 1 is designed to find <b>causal explanations</b> for events. The author describes research by psychologists Fritz Heider and Mary-Ann Simmel showing that people spontaneously attribute intentions and causality even to geometric shapes moving on a screen. System 1 constantly generates causal stories, which is adaptive in most situations but can lead to errors when purely statistical phenomena (like regression to the mean) are given causal interpretations.</p>
+
+<p>Kahneman also introduces the distinction between <b>surprise and normality</b>: System 1 is not easily surprised by individual events but maintains a remarkably accurate model of expectations over time. The surprise we feel at a single shocking outcome is often temporary, as the associative machine rapidly incorporates the new event into an updated model of normality.</p>
+
+<h2>Chapter 7: A Machine for Jumping to Conclusions</h2>
+
+<p>This chapter describes System 1's tendency to <b>jump to conclusions on the basis of limited evidence</b>. Kahneman introduces the acronym <b>WYSIATI</b>&mdash;"What You See Is All There Is"&mdash;to describe this tendency. System 1 constructs the best possible story from whatever information is available and does not account for information it does not have. The confidence people feel in their beliefs depends mostly on the quality of the story they can construct, not on the quantity or quality of the evidence supporting it.</p>
+
+<p>The chapter discusses several consequences of WYSIATI. The <b>halo effect</b> is a tendency to like (or dislike) everything about a person based on a first impression. Kahneman describes how he discovered this in his own grading: his evaluation of a student's first essay influenced his grading of subsequent essays by the same student. He fixed this by grading all students' answers to one question before moving on to the next, which reduced the halo effect. <b>Confirmation bias</b> is another consequence: System 1 generates a hypothesis and then searches selectively for confirming evidence.</p>
+
+<p>Kahneman explains that WYSIATI helps explain why people can feel confident in beliefs formed on the basis of very little information. Because System 1 suppresses doubt and ambiguity, the subjective experience is one of confident understanding&mdash;even when the evidence is woefully incomplete. This mechanism underlies <b>overconfidence</b>, which the author explores in greater depth in Part III.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Researchers in the <b>ecological rationality</b> tradition, notably <b>Gerd Gigerenzer</b>, have argued that jumping to conclusions is not always a flaw. In many real-world environments, using limited information ("fast and frugal heuristics") can be <i>more</i> accurate than deliberative analysis, especially when data is noisy or time is scarce. Gigerenzer contends that Kahneman's framing systematically emphasizes the errors produced by heuristics while undervaluing their adaptive success in natural environments.</p>
+</details>
+
+<h2>Chapter 8: How Judgments Happen</h2>
+
+<p>Kahneman explains that System 1 continuously monitors the environment and generates <b>basic assessments</b>&mdash;evaluations of threat, familiarity, mood, and the relative size and distance of objects. These assessments happen automatically and without intention. Some of these basic assessments, such as the ability to judge whether a stranger is trustworthy from a brief glance at their face, are evolutionarily ancient and shared with other animals.</p>
+
+<p>The chapter introduces the phenomenon of <b>intensity matching</b>: System 1 can translate impressions across very different dimensions. If asked "How much would you pay to see this sunset again?" people can translate an aesthetic impression into a monetary scale with surprising consistency. This ability underlies many heuristic judgments&mdash;when faced with a difficult question, System 1 substitutes an assessment from a related but easier dimension.</p>
+
+<p>Kahneman also discusses <b>the mental shotgun</b>: System 1 computes more than is needed for any particular task. When asked "Is the word 'bank' capitalized?", you cannot help also reading the word and activating its meanings. This excess computation means that irrelevant information often contaminates judgments, because System 1 cannot be instructed to compute only what is needed.</p>
+
+<h2>Chapter 9: Answering an Easier Question</h2>
+
+<p>This chapter formalizes the idea of <b>substitution</b>: when faced with a difficult <b>target question</b>, System 1 often answers an easier <b>heuristic question</b> instead. For example, when asked "How happy are you with your life these days?", people often substitute the easier question "What is my mood right now?" The heuristic answer is then mapped onto the scale of the target question through <b>intensity matching</b>.</p>
+
+<p>Kahneman explains that substitution is the mechanism underlying many heuristic biases. The <b>affect heuristic</b>, described by psychologist Paul Slovic, is a prime example: people's judgments about the risks and benefits of technologies (like nuclear power) are driven by their emotional reactions rather than by careful analysis. If they feel positively about something, they judge its benefits as high and its risks as low, and vice versa. This emotional coherence is produced by System 1 and only rarely corrected by System 2.</p>
+
+<p>The author describes an experiment showing that asking students about their dating life <i>before</i> asking about overall happiness produced a strong correlation between the two answers, while reversing the order eliminated this effect. This demonstrates that the answer to the life-satisfaction question is heavily influenced by whatever emotion is salient at the moment&mdash;a clear case of substitution.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Some researchers argue that <b>substitution</b> may sometimes reflect genuine relevance rather than error. If your current emotional state is in fact a reasonable indicator of your overall well-being, then using mood as a proxy for life satisfaction is not necessarily a bias&mdash;it may be an efficient and often accurate shortcut. The distinction between "substitution as error" and "substitution as reasonable inference" is not always as clear as Kahneman suggests.</p>
+</details>
+
+<h2>Part II: Heuristics and Biases</h2>
+
+<h2>Chapter 10: The Law of Small Numbers</h2>
+
+<p>Kahneman explains that people&mdash;including trained scientists&mdash;have poor intuitions about <b>sampling variability</b>. Small samples produce extreme results far more often than large samples, but people intuitively expect even small samples to be representative of the population. He and Tversky called this the <b>"belief in the law of small numbers"</b>&mdash;a pun on the statistical law of large numbers, which guarantees that large samples converge on the population average.</p>
+
+<p>The chapter illustrates this with a study of kidney cancer rates across U.S. counties. The counties with the <i>lowest</i> cancer rates tended to be rural, sparsely populated, and located in traditionally Republican states&mdash;which invites causal explanations about clean living and fresh air. But the counties with the <i>highest</i> cancer rates also turned out to be rural, sparsely populated, and in Republican states. The real explanation is simply that <b>small populations produce more extreme statistics</b>, both high and low. System 1 insists on causal narratives where none exist.</p>
+
+<p>Kahneman describes how even professional researchers under-appreciate sample size. In their original 1971 survey, he and Tversky found that sophisticated statisticians gave poor advice about sample sizes and overestimated the replicability of small-sample results. The chapter emphasizes that the human mind is not naturally equipped to think statistically; it is designed to see patterns and construct causal stories.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>While the claim that humans are poor intuitive statisticians is well-supported, <b>Gigerenzer</b> and colleagues have shown that people perform much better when statistical information is presented as <b>natural frequencies</b> (e.g., "1 out of 10") rather than as probabilities (e.g., "10%"). This suggests that the deficit may lie partly in the format of information presentation rather than in a fundamental cognitive inability. The way problems are framed significantly affects whether people reason statistically or not.</p>
+</details>
+
+<h2>Chapter 11: Anchors</h2>
+
+<p>This chapter examines the <b>anchoring effect</b>: people's estimates are heavily influenced by an initial value, even when that value is clearly arbitrary or irrelevant. In a classic demonstration, Kahneman and Tversky had participants spin a rigged wheel that always landed on either 10 or 65, then asked them to estimate the percentage of African nations in the United Nations. Those who saw 65 gave much higher estimates than those who saw 10, even though the wheel was obviously random.</p>
+
+<p>Kahneman describes two mechanisms of anchoring. <b>Anchoring-as-adjustment</b> occurs when people start from an anchor and adjust insufficiently, typically stopping as soon as they reach the edge of a plausible range. <b>Anchoring-as-priming</b> (or the "anchoring index") is a System 1 phenomenon: the anchor activates compatible information in memory, making anchor-consistent thoughts more accessible. Both mechanisms produce robust effects that are extremely difficult to eliminate.</p>
+
+<p>The chapter provides practical examples: real estate agents' valuations are influenced by listing prices, judges' sentencing is affected by arbitrary numbers proposed by prosecutors, and negotiators' outcomes are shaped by initial offers. Kahneman warns that anchoring effects are pervasive in everyday life and notes that the best defense is to focus on the lower bound of the opponent's position in negotiations rather than the anchor itself.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Some researchers have argued that anchoring effects in real-world settings may be <b>smaller and more context-dependent</b> than laboratory experiments suggest. Experienced professionals&mdash;such as seasoned real estate appraisers or judges with extensive sentencing experience&mdash;may be somewhat less susceptible to anchoring than novices, although they are not immune. The degree to which expertise mitigates anchoring remains debated.</p>
+</details>
+
+<h2>Chapter 12: The Science of Availability</h2>
+
+<p>Kahneman revisits the <b>availability heuristic</b>&mdash;the tendency to judge the frequency or probability of events by the ease with which examples come to mind. He describes early research with Tversky showing that people overestimate the frequency of dramatic causes of death (such as tornadoes and murders) and underestimate mundane but common causes (such as diabetes and stroke), because dramatic events receive more media coverage and are more memorable.</p>
+
+<p>The chapter presents the influential work of psychologist <b>Norbert Schwarz</b>, who refined understanding of availability with a clever experiment. Participants were asked to recall either 6 or 12 instances of their own assertive behavior and then to rate their assertiveness. Those who recalled only 6 instances rated themselves <i>more</i> assertive than those who recalled 12, because the task of producing 12 examples felt difficult&mdash;and that difficulty was interpreted as evidence that they were not actually very assertive. This showed that <b>the experience of ease or difficulty of retrieval</b> is often more influential than the content retrieved.</p>
+
+<p>Kahneman explains that the availability heuristic can be disrupted by providing an alternative explanation for retrieval difficulty. When participants were told that background music would interfere with their memory, the fluency effect disappeared&mdash;because the difficulty could now be attributed to the music rather than to a lack of assertiveness. This demonstrates that availability judgments involve an inference from experience, not just a count of instances.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>While the availability heuristic is one of the most robust findings in judgment research, critics note that it is <b>often ecologically rational</b>. In natural environments (before mass media), the ease of recalling events was a reasonably good proxy for their actual frequency. The heuristic becomes misleading primarily in modern information environments where media coverage distorts the availability of examples&mdash;a context-specific failure rather than a fundamental flaw in human cognition.</p>
+</details>
+
+<h2>Chapter 13: Availability, Emotion, and Risk</h2>
+
+<p>This chapter extends the availability heuristic to the domain of <b>risk perception</b>. Kahneman discusses the work of Paul Slovic, who showed that people's judgments about the risks and benefits of technologies are guided by emotion rather than analysis. When people <i>like</i> a technology, they perceive its benefits as high and its risks as low; when they <i>dislike</i> it, they perceive the opposite. This is the <b>affect heuristic</b> at work&mdash;a single emotional evaluation drives apparently separate judgments.</p>
+
+<p>The chapter describes <b>availability cascades</b>&mdash;self-reinforcing cycles in which a minor event triggers public concern, attracts media attention, which increases the event's availability, which amplifies the concern further. Kahneman and legal scholar Cass Sunstein discuss how this process can lead to disproportionate regulatory responses. The Love Canal incident and the Alar scare over apples are cited as examples where public fear, amplified by media coverage, led to costly government actions that may not have been justified by the actual risks.</p>
+
+<p>Kahneman argues that <b>probability neglect</b>&mdash;the tendency to focus on the severity of an outcome while ignoring its likelihood&mdash;compounds the availability effect. When a particularly vivid or frightening outcome is brought to mind, the emotional response dominates, and the actual probability of the event plays little role in the resulting judgment. This explains why terrorism, despite its statistically low death toll, commands enormous public attention and policy resources.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The concept of <b>availability cascades</b> has been criticized for potentially dismissing legitimate public concerns as irrational. Sociologists of risk, such as those in the tradition of <b>Ulrich Beck</b>, argue that public outrage about certain risks may reflect genuine value judgments about the distribution of risk and benefit in society&mdash;not merely cognitive errors. What looks like "irrational" fear from an actuarial perspective may be a reasonable response to perceived injustice or lack of control.</p>
+</details>
+
+<h2>Chapter 14: Tom W's Specialty</h2>
+
+<p>Kahneman uses the story of <b>Tom W</b>&mdash;a fictional graduate student described as orderly, detailed, and lacking in creativity&mdash;to illustrate the <b>representativeness heuristic</b>. When asked to predict Tom W's field of specialization, people overwhelmingly choose computer science or engineering because his personality description matches the stereotype of those fields. They almost completely ignore the <b>base rates</b>&mdash;the relative sizes of different graduate programs&mdash;which would make humanities or social sciences far more likely simply because many more students are enrolled in those fields.</p>
+
+<p>The chapter formalizes the distinction between <b>representativeness</b> and statistical reasoning. According to <b>Bayes' theorem</b>, a rational prediction should combine the base rate (prior probability) with the diagnostic value of the evidence (likelihood ratio). But people tend to rely entirely on the resemblance between the description and the stereotype, ignoring base rates altogether. Kahneman describes this as "base-rate neglect" and explains that it arises because assessing resemblance is a natural operation for System 1, while integrating base rates requires the effortful engagement of System 2.</p>
+
+<p>Kahneman notes that even weak or unreliable evidence tends to dominate base rates in people's judgments. A personality sketch written by a psychologist who met Tom W briefly years ago should be given very little weight, but people treat it as highly diagnostic. This chapter sets up the discussion of the <b>conjunction fallacy</b> in the next chapter.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p><b>Gigerenzer</b> and others have argued that base-rate neglect is partly an artifact of how problems are presented. When the same problems are presented using <b>natural frequencies</b> (e.g., "out of every 100 graduate students, 80 are in humanities") rather than probabilities, people are much more likely to incorporate base rates. This suggests that the representativeness heuristic may be less about a fundamental cognitive limitation and more about the difficulty of processing probability formats.</p>
+</details>
+
+<h2>Chapter 15: Linda: Less is More</h2>
+
+<p>This chapter presents one of the most famous experiments in behavioral science: the <b>Linda problem</b>. Linda is described as a bright, outspoken philosophy major who was deeply concerned with social justice as a student. Participants are asked whether it is more probable that Linda is (a) a bank teller, or (b) a bank teller and active in the feminist movement. The vast majority choose option (b), even though this violates a fundamental rule of probability&mdash;the <b>conjunction rule</b>&mdash;which states that the probability of two events occurring together can never exceed the probability of either event alone.</p>
+
+<p>Kahneman explains that people commit the <b>conjunction fallacy</b> because they evaluate probability by representativeness. Linda "looks like" a feminist bank teller more than she looks like a mere bank teller, and this impression of resemblance overwhelms logical reasoning. The effect persists even among statistically sophisticated respondents and even when the logical structure of the problem is made transparent. Kahneman argues that System 1 generates a compelling narrative that System 2 fails to override.</p>
+
+<p>The chapter also discusses how adding detail to a scenario can make it seem <i>more</i> probable, even though each added detail actually makes the conjunction <i>less</i> probable. This is the "less is more" paradox: richer, more detailed descriptions feel more plausible but are statistically less likely. Kahneman connects this to broader issues of how people evaluate evidence and construct narratives.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The Linda problem has generated extensive debate. <b>Gigerenzer</b> and <b>Ralph Hertwig</b> have argued that many participants interpret "probable" not in the strict logical sense but as "plausible" or "typical"&mdash;a reasonable conversational interpretation. When the problem is rephrased in frequency terms ("Out of 100 people like Linda, how many are bank tellers? How many are feminist bank tellers?"), the conjunction fallacy rate drops significantly. This raises the question of whether the "error" reflects a cognitive bias or a pragmatic misunderstanding of the question.</p>
+</details>
+
+<h2>Chapter 16: Causes Trump Statistics</h2>
+
+<p>Kahneman demonstrates that people are far more influenced by <b>causal stories</b> than by statistical information. He describes a famous experiment in which participants were told that a taxi was involved in a hit-and-run accident in a city where 85% of cabs are Green and 15% are Blue. A witness identified the cab as Blue, and the witness is 80% accurate. Most people estimate a high probability that the cab was Blue, but the correct Bayesian answer (about 41%) takes the base rate into account. People largely ignore the base rate and focus on the witness testimony because it provides a causal narrative.</p>
+
+<p>However, when the same base-rate information is presented causally&mdash;"Blue cabs are involved in 85% of accidents"&mdash;people readily incorporate it. This suggests that <b>statistical base rates</b> are neglected because they have no causal force in people's minds, while <b>causal base rates</b> are given appropriate weight. System 1 is designed to think in terms of causes and stories, not statistics and proportions.</p>
+
+<p>The chapter also discusses the "noncausal" nature of purely statistical facts. Kahneman argues that teaching people Bayesian reasoning has limited effect because the lesson does not change how System 1 processes information. Even trained statisticians fall prey to base-rate neglect in everyday judgments, reverting to causal thinking as soon as a compelling narrative is available.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Research by <b>David Mandel</b> and others has shown that when problems are worded more clearly and participants are given adequate incentive, base-rate utilization improves considerably. The degree of base-rate neglect may depend heavily on problem framing, context, and the perceived relevance of the statistical information. The conclusion that people are fundamentally unable to think statistically may be overstated.</p>
+</details>
+
+<h2>Chapter 17: Regression to the Mean</h2>
+
+<p>Kahneman describes <b>regression to the mean</b> as one of the most important and least intuitive statistical phenomena. He recounts his personal eureka moment while training Israeli Air Force flight instructors: the instructors believed that praise led to worse performance and punishment led to improvement, but this was simply regression to the mean in action. An exceptionally good performance is likely to be followed by a more average one (and vice versa), regardless of any feedback given.</p>
+
+<p>The chapter explains the statistical basis of regression: whenever two measures are imperfectly correlated, extreme scores on one measure will tend to be less extreme on the other. Tall parents tend to have children who are tall but slightly less tall than they are; students who score very high on one exam will tend to score slightly lower on the next. This is a mathematical inevitability, not a causal phenomenon&mdash;but people almost always construct causal narratives to explain it.</p>
+
+<p>Kahneman emphasizes that <b>failure to recognize regression</b> leads to systematic errors in many domains: managers attributing performance fluctuations to their own leadership, coaches believing punishment works better than praise, and analysts constructing elaborate causal stories to explain what is essentially statistical noise. The author calls regression to the mean "perhaps the most common source of difficulty in understanding research results."</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>While regression to the mean is a genuine statistical phenomenon, some critics argue that Kahneman overstates the degree to which real-world performance fluctuations are purely due to regression. In many domains, <b>genuine causal factors</b> (coaching changes, motivational interventions, environmental shifts) also contribute to performance changes. The challenge is disentangling regression effects from real causal influences, which is more nuanced than the chapter sometimes implies.</p>
+</details>
+
+<h2>Chapter 18: Taming Intuitive Predictions</h2>
+
+<p>Kahneman provides a practical procedure for making less biased predictions. He argues that <b>intuitive predictions</b> tend to be too extreme because they match the extremeness of the evidence rather than accounting for regression to the mean. If a student's essay seems brilliant, our intuitive prediction of their final grade will also be extreme&mdash;but regression effects mean the final grade will likely be less extreme than the essay quality would suggest.</p>
+
+<p>The author outlines a disciplined four-step procedure for prediction: (1) start with the <b>base rate</b> (the average outcome), (2) form an intuitive impression of the evidence, (3) estimate the <b>correlation</b> between the evidence and the outcome, and (4) move from the base rate toward the intuitive estimate by a proportion equal to the correlation. If the correlation is low, the prediction should stay close to the base rate; if high, it can move further toward the impression. This produces statistically optimal (regressed) predictions.</p>
+
+<p>Kahneman acknowledges that regressed predictions feel wrong&mdash;they seem excessively cautious and fail to reflect the full richness of the evidence. He argues that people must accept a trade-off: <b>unbiased predictions are less satisfying to produce but more accurate on average</b>. System 1 naturally generates extreme, narrative-consistent predictions that feel compelling, and it takes deliberate System 2 effort to moderate them.</p>
+
+<h2>Part III: Overconfidence</h2>
+
+<h2>Chapter 19: The Illusion of Understanding</h2>
+
+<p>Kahneman introduces the concept of <b>narrative fallacy</b>&mdash;a term borrowed from Nassim Nicholas Taleb&mdash;to describe how people construct coherent stories about the past and then treat those stories as though they were predictable. The chapter discusses <b>hindsight bias</b>: after an event occurs, people believe they "knew it all along." This bias is pervasive and affects experts as much as laypeople. Once you know the outcome of a historical event (such as the success of Google), you cannot faithfully reconstruct your former state of ignorance.</p>
+
+<p>The chapter uses the example of Google's success to illustrate how <b>outcome knowledge</b> reshapes our understanding of the past. After the fact, every decision made by Google's founders seems shrewd and prescient. But this narrative conceals the enormous role of luck and the many junctures at which things could have gone differently. Kahneman argues that <b>the illusion of understanding the past fosters overconfidence about the ability to predict the future</b>.</p>
+
+<p>Kahneman also discusses Philip Tetlock's research on political experts' predictions, which found that experts were barely better than chance at forecasting political events&mdash;and that the most confident experts tended to be the least accurate. The chapter concludes that we live in a world that is far less predictable than we believe, and that our sense of understanding is largely an illusion sustained by hindsight.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>While hindsight bias is well-documented, <b>Tetlock's</b> own later work on <b>superforecasters</b> demonstrated that some individuals can significantly outperform chance in political prediction by using disciplined probabilistic reasoning, updating beliefs incrementally, and aggregating diverse viewpoints. This suggests that the world is not as hopelessly unpredictable as Kahneman sometimes implies&mdash;certain cognitive strategies can genuinely improve foresight, even if most people and experts do not employ them.</p>
+</details>
+
+<h2>Chapter 20: The Illusion of Validity</h2>
+
+<p>Kahneman recounts his experience as a young psychologist evaluating Israeli military recruits. He and his colleagues developed confident impressions of each candidate's leadership potential, but their predictions turned out to have <b>very low validity</b>&mdash;barely better than chance. Despite receiving this feedback repeatedly, they could not shake the subjective feeling of confidence in their assessments. Kahneman calls this the <b>illusion of validity</b>: the experience of confident judgment persists even when the judge has clear evidence that their judgments are inaccurate.</p>
+
+<p>The chapter extends this idea to the financial industry. Kahneman describes analyzing 25 years of investment outcomes at a wealth management firm and finding that the year-to-year correlation of individual advisors' performance was <b>essentially zero</b>&mdash;indicating that success was due to luck, not skill. Yet the firm continued to award performance bonuses as though skill were being rewarded. When Kahneman presented these findings, the advisors acknowledged the data but continued to behave as before. The illusion of skill was too deeply embedded in their professional identity to be overturned by statistics.</p>
+
+<p>Kahneman connects the illusion of validity to <b>WYSIATI</b>: because System 1 constructs a coherent story from available evidence, the subjective experience of understanding feels genuine even when the evidence is insufficient for accurate prediction. Confidence is determined by the coherence of the story, not by the amount or quality of evidence.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The claim that stock-picking skill is entirely illusory has been challenged by finance researchers who identify persistent outperformance by certain fund managers, particularly in less efficient market segments. <b>Eugene Fama</b> and <b>Kenneth French</b> acknowledge that while most active managers underperform, a small fraction consistently outperform by enough to suggest genuine skill. The debate between the efficient market hypothesis and behavioral finance remains unresolved, and the blanket claim that all financial skill is illusory is an overstatement.</p>
+</details>
+
+<h2>Chapter 21: Intuitions Vs. Formulas</h2>
+
+<p>Kahneman reviews the extensive evidence, beginning with <b>Paul Meehl's</b> landmark 1954 book, that <b>simple statistical formulas consistently outperform expert judgment</b> in prediction tasks. Whether predicting criminal recidivism, academic success, wine quality, or the viability of newborn infants, algorithms that use a small number of variables with equal weights perform at least as well as&mdash;and usually better than&mdash;expert clinicians. This remains one of the most robust and important findings in the social sciences.</p>
+
+<p>The author explains why experts lose to formulas: experts try to be clever, weighting different factors in complex ways and incorporating their "clinical intuition," but this introduces noise and inconsistency. Two experts examining the same case will often reach different conclusions, and the same expert may reach different conclusions on different days. Formulas eliminate this <b>noise</b> and apply the same weights consistently. Even formulas with <b>equal weights</b> (not statistically optimized) typically beat expert judgment.</p>
+
+<p>Kahneman proposes a practical procedure for hiring decisions: identify six to eight traits relevant to the job, rate each candidate on each trait independently using standardized questions, and then combine the scores with equal weights. He describes implementing this system for Israeli military recruitment and achieving significantly better predictions than the previous holistic approach. The chapter advocates for the use of algorithms in all predictive tasks, while acknowledging that expert judgment may add value only at the final stage, as a holistic "close your eyes" evaluation to supplement the formula.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>While the evidence for algorithmic superiority in prediction is strong, critics such as <b>Robin Hogarth</b> note that algorithms perform best in stable, well-defined environments with clear outcome criteria. In dynamic, novel, or highly complex situations (such as geopolitical crises or unprecedented technological disruptions), formulas may lack the flexibility to adapt. Additionally, the use of algorithms in high-stakes decisions like hiring and criminal sentencing raises concerns about <b>fairness, transparency, and accountability</b> that go beyond predictive accuracy.</p>
+</details>
+
+<h2>Chapter 22: Expert Intuition: When Can We Trust It?</h2>
+
+<p>Kahneman describes his collaboration with psychologist <b>Gary Klein</b>, a champion of expert intuition, to identify when expert intuition is trustworthy and when it is not. They agreed on two conditions that must be met for expert intuition to develop: (1) the environment must be <b>sufficiently regular</b> (i.e., there are stable, learnable patterns), and (2) the expert must have had <b>adequate opportunity to learn</b> those patterns through prolonged practice and feedback.</p>
+
+<p>In environments that meet these criteria&mdash;such as chess, firefighting, and medicine (in its pattern-recognition aspects)&mdash;experts develop genuine intuitive skill that is fast, accurate, and impressive. In environments that are essentially <b>unpredictable</b>&mdash;such as long-term political forecasting, stock picking, and clinical psychology in certain domains&mdash;expert intuition is no better than chance, no matter how experienced the expert. The subjective feeling of confidence, however, is the same in both cases.</p>
+
+<p>Kahneman concludes that the key question to ask about any expert's intuition is: <b>"Is the environment regular enough to support learning?"</b> If yes, and if the expert has had sufficient practice with feedback, their intuitions are likely to be valuable. If not, their confident intuitions are likely to be an illusion of validity. The chapter represents a nuanced synthesis of the "heuristics and biases" tradition (which emphasizes errors) and the "naturalistic decision making" tradition (which celebrates expert skill).</p>
+
+<h2>Chapter 23: The Outside View</h2>
+
+<p>Kahneman introduces the distinction between the <b>inside view</b> and the <b>outside view</b>. The inside view focuses on the specific case at hand, its unique features, and plans for how to achieve the goal. The outside view ignores the specifics and asks what happened in similar cases&mdash;the <b>reference class</b>. Kahneman's key insight is that the inside view almost always produces overly optimistic predictions because it constructs a plausible narrative of success while underweighting the base rate of failure.</p>
+
+<p>The chapter recounts Kahneman's own experience of the <b>planning fallacy</b>. When he and a team of colleagues were developing a new curriculum, he asked each member to estimate how long the project would take. The inside-view estimates ranged from 18 to 30 months. When Kahneman then asked a curriculum expert what happened to similar teams, the expert revealed that 40% of such projects were never completed, and those that were typically took 7 to 10 years. Yet the team, armed with this devastating outside-view evidence, continued to work&mdash;and the project took 8 years.</p>
+
+<p>Kahneman advocates for <b>reference class forecasting</b>: when making predictions, first identify the appropriate reference class, obtain the statistics for that class, and then adjust for the specific features of the case. He credits the decision scholar <b>Bent Flyvbjerg</b> with applying this approach to large infrastructure projects, revealing systematic cost overruns and delays that could be predicted by the outside view but are invisible from the inside view.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The outside view is powerful, but its application depends on identifying the right <b>reference class</b>, which is often ambiguous. For truly novel projects (like the first iPhone or a breakthrough drug), there may be no good reference class. Critics also note that if everyone adopted the outside view, it could produce excessive conservatism and discourage the bold bets that drive innovation&mdash;exactly the kind of optimistic delusion that Kahneman acknowledges in the next chapter as useful for entrepreneurs.</p>
+</details>
+
+<h2>Chapter 24: The Engine of Capitalism</h2>
+
+<p>Kahneman examines the role of <b>optimistic bias</b> in entrepreneurship and business. He argues that most entrepreneurs and business leaders are excessively optimistic, overestimating their chances of success and underestimating risks and obstacles. The failure rate of new businesses is extremely high&mdash;roughly 65% of small restaurants close within five years&mdash;yet new entrepreneurs consistently believe their business will succeed. This optimistic bias is amplified by <b>WYSIATI</b>, the <b>planning fallacy</b>, and the tendency to focus on one's own skills rather than on the statistical base rate.</p>
+
+<p>The author argues that optimistic bias, while harmful to individual decision-making, may be <b>beneficial for society as a whole</b>. Entrepreneurs who accurately assessed their chances of failure would never start businesses, and the economy depends on people taking risks that are, on average, unprofitable for the individual but collectively produce innovation and economic growth. Kahneman calls optimism "the engine of capitalism."</p>
+
+<p>The chapter also introduces the <b>premortem technique</b>, developed by Gary Klein, as a partial remedy for overconfidence. In a premortem, a team imagines that a project has failed and writes a brief history of the disaster. This legitimizes doubt and surfaces risks that group dynamics would otherwise suppress. Kahneman considers this one of the few practical interventions that can mitigate optimistic bias within organizations.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The claim that optimism is essential for capitalism assumes that the market efficiently recycles resources from failed ventures. However, in practice, business failures impose enormous costs on founders, employees, and communities&mdash;costs that are not always recovered. Some economists argue that <b>better calibrated</b> entrepreneurs (not delusional optimists) would allocate resources more efficiently and produce better societal outcomes. The romantic view of entrepreneurial optimism may mask preventable waste and suffering.</p>
+</details>
+
+<h2>Part IV: Choices</h2>
+
+<h2>Chapter 25: Bernoulli's Errors</h2>
+
+<p>Kahneman critiques the foundations of <b>expected utility theory</b>, beginning with Daniel Bernoulli's 1738 insight that people evaluate gambles based on the <b>utility of wealth</b> (subjective value) rather than on the expected monetary value. Bernoulli's theory introduced the concept of <b>diminishing marginal utility</b>&mdash;the idea that the same amount of money is worth more to a poor person than to a rich one&mdash;and used it to explain risk aversion. For over 250 years, this framework dominated economic theory.</p>
+
+<p>However, Kahneman argues that Bernoulli made a critical error: he assumed that the utility of a state of wealth determines decisions, when in fact people evaluate outcomes as <b>gains and losses relative to a reference point</b>. Two people with identical wealth can have very different attitudes toward a gamble depending on whether they recently gained or lost money. Bernoulli's theory cannot explain this because it does not include a reference point.</p>
+
+<p>The chapter demonstrates this with simple examples: being told you have $1 million feels very different depending on whether you started with $2 million (a loss) or with nothing (a gain). Kahneman and Tversky's crucial insight, which became the foundation of <b>prospect theory</b>, was that the carriers of utility are changes from a reference point, not absolute states of wealth. This chapter sets the stage for the formal presentation of prospect theory.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Defenders of expected utility theory, including economist <b>Matthew Rabin</b> (who is actually a critic of the theory), argue that Bernoulli's framework remains a useful approximation for many economic contexts. While prospect theory better describes laboratory behavior, expected utility theory's mathematical tractability makes it indispensable for modeling markets, insurance, and contract design. The question is not whether Bernoulli was "wrong" but whether the added descriptive accuracy of prospect theory justifies the increased complexity in applied models.</p>
+</details>
+
+<h2>Chapter 26: Prospect Theory</h2>
+
+<p>Kahneman presents the core elements of <b>prospect theory</b>, which he and Tversky developed as an alternative to expected utility theory. The theory has three key features: (1) outcomes are evaluated as <b>gains and losses relative to a reference point</b>, not as final states of wealth; (2) the value function is <b>concave for gains</b> (producing risk aversion) and <b>convex for losses</b> (producing risk seeking); and (3) the value function is <b>steeper for losses than for gains</b>&mdash;a property called <b>loss aversion</b>, which means that losing $100 hurts roughly twice as much as gaining $100 feels good.</p>
+
+<p>The chapter explains how prospect theory accounts for phenomena that expected utility theory cannot. For example, people simultaneously buy insurance (risk-averse for losses) and lottery tickets (risk-seeking for gains), which is paradoxical under Bernoulli's framework but entirely consistent with prospect theory's S-shaped value function. The <b>reference point</b> determines what counts as a gain or a loss, and shifts in the reference point can dramatically change preferences.</p>
+
+<p>Kahneman also discusses "blind spots" in prospect theory, acknowledging that the theory does not provide a precise account of how reference points are set or how they shift over time. He emphasizes that prospect theory is a descriptive theory of how people actually behave, not a normative theory of how they should behave&mdash;an important distinction that separates behavioral economics from classical economics.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Critics of prospect theory, including <b>Charles Plott</b> and others from the experimental economics tradition, have argued that many of its signature findings (such as loss aversion in exchanges) are partly due to experimental design artifacts, such as participants' unfamiliarity with the tasks or the use of hypothetical rather than real payoffs. Some recent research has also questioned the universality of <b>loss aversion</b>, finding that it diminishes or disappears in certain contexts, such as small losses, experienced traders, and repeated transactions.</p>
+</details>
+
+<h2>Chapter 27: The Endowment Effect</h2>
+
+<p>Kahneman describes the <b>endowment effect</b>&mdash;the finding that people demand more to give up an object they own than they would pay to acquire it. In a classic experiment by economist <b>Richard Thaler</b>, students who were randomly given coffee mugs demanded roughly twice as much to sell them as other students were willing to pay to buy them. This violates a basic prediction of standard economics: that buyers and sellers should agree on the fair price of an object regardless of who currently owns it.</p>
+
+<p>The chapter explains the endowment effect as a manifestation of <b>loss aversion</b>. Giving up an object you own is experienced as a loss, while failing to acquire an object is experienced merely as a forgone gain. Because losses loom larger than gains, sellers demand more than buyers will pay. Kahneman notes that the endowment effect is strongest for goods that are <b>"for use"</b> rather than "for exchange"&mdash;it applies to mugs and vacation days but not to money or stock held for trading.</p>
+
+<p>The author connects the endowment effect to the concept of <b>reference points</b> in prospect theory. Standard economic theory assumes that indifference curves are fixed and do not depend on current holdings, but the endowment effect shows that the status quo serves as a powerful reference point. Moving away from the status quo in any direction is experienced as a loss in that dimension, which explains why people exhibit a strong <b>status quo bias</b>&mdash;a preference for the current state of affairs.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Economist <b>John List</b> has shown that the endowment effect diminishes substantially among experienced traders&mdash;for example, dealers in sports memorabilia show little or no endowment effect for goods they routinely trade. This suggests that the effect may reflect <b>inexperience</b> or unfamiliarity with transactions rather than a deep cognitive bias. If market experience can eliminate the effect, it may be less of a fundamental challenge to standard economics than Kahneman implies.</p>
+</details>
+
+<h2>Chapter 28: Bad Events</h2>
+
+<p>Kahneman explores the asymmetry between <b>gains and losses</b> in greater depth, documenting that losses consistently produce stronger psychological reactions than equivalent gains. This principle&mdash;<b>"bad is stronger than good"</b>&mdash;extends far beyond money. Negative emotions, bad parents, and bad feedback all have more impact than their positive counterparts. A single cockroach can ruin a bowl of cherries, but a single cherry cannot improve a bowl of cockroaches.</p>
+
+<p>The chapter discusses <b>loss aversion</b> in negotiations, labor relations, and reform. Kahneman explains that when a proposed change creates both winners and losers, the losses experienced by the losers will be felt more intensely than the gains experienced by the winners. This asymmetry makes reform difficult: the opposition of those who stand to lose is typically fiercer than the support of those who stand to gain. Kahneman and Tversky proposed that this explains why the political landscape is often biased toward the status quo.</p>
+
+<p>The author also introduces the concept of <b>the reference point in fairness judgments</b>. People have strong intuitions about what constitutes fair behavior, and these intuitions are anchored to existing conditions. A landlord who raises rent in a tight housing market is perceived as unfair, even if market conditions justify the increase, because the existing rent serves as the reference point. Kahneman, Tversky, and Thaler's research on fairness norms showed that <b>firms that exploit their market power to increase profits at the expense of customers or workers are perceived as acting unfairly</b>, even when this behavior is economically rational.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The "bad is stronger than good" principle, while broadly supported, has notable exceptions. Research on <b>psychological resilience</b> suggests that most people adapt to negative events (including serious disability and bereavement) more effectively than they predict. The work of <b>Daniel Gilbert</b> on the "immune neglect" phenomenon shows that people systematically underestimate their ability to cope with losses, suggesting that the psychological impact of losses, while real, may be less enduring than Kahneman implies.</p>
+</details>
+
+<h2>Chapter 29: The Fourfold Pattern</h2>
+
+<p>Kahneman describes the <b>fourfold pattern</b> of risk attitudes predicted by prospect theory, which results from the combination of two factors: (1) the curvature of the value function (concave for gains, convex for losses) and (2) the <b>decision weighting function</b>, which overweights small probabilities and underweights moderate-to-high probabilities. This produces four distinct patterns of behavior.</p>
+
+<p>When probabilities are <b>moderate to high</b>, people are risk-averse for gains (preferring a sure $900 over a 90% chance of $1,000) and risk-seeking for losses (preferring a 90% chance of losing $1,000 over a sure loss of $900). This is the pattern explained by the curvature of the value function alone. When probabilities are <b>small</b>, the pattern reverses: people are risk-seeking for gains (buying lottery tickets, preferring a small chance of a big win) and risk-averse for losses (buying insurance, overpaying to eliminate a small risk). This reversal is driven by the overweighting of small probabilities.</p>
+
+<p>The fourfold pattern explains why people simultaneously buy lottery tickets and insurance, a combination that is paradoxical under expected utility theory. It also explains why <b>plaintiffs in lawsuits</b> tend to accept unfavorable settlements (they are in the domain of gains, seeking certainty) while <b>defendants</b> tend to gamble on trial (they are in the domain of losses, seeking risk). Kahneman argues that the fourfold pattern is one of prospect theory's most important achievements, unifying diverse phenomena under a single framework.</p>
+
+<h2>Chapter 30: Rare Events</h2>
+
+<p>Kahneman examines how people handle <b>rare events</b>&mdash;a topic where prospect theory's predictions become complex. He argues that rare events are either <b>overweighted or ignored entirely</b>, depending on whether they are brought to focal attention. When a vivid, emotionally charged rare event is made salient (such as a terrorist attack or a plane crash), people overestimate its probability and overweight it in their decisions. But when a rare event is not on their radar, people treat its probability as effectively zero.</p>
+
+<p>The chapter discusses experimental evidence showing that <b>choices from description</b> (where probabilities are stated explicitly) differ systematically from <b>choices from experience</b> (where people learn probabilities through repeated trials). In choices from description, people overweight rare events, consistent with prospect theory's decision weighting function. In choices from experience, people underweight rare events, because rare events are often not encountered in limited samples. This discrepancy is an important qualification to prospect theory.</p>
+
+<p>Kahneman also discusses <b>denominator neglect</b>: people's tendency to focus on the numerator of a fraction (the number of events) while ignoring the denominator (the total opportunities). An urn containing "1 red marble out of 10" feels less dangerous than an urn containing "8 red marbles out of 100," even though the latter actually has a higher probability of a red draw. This demonstrates that the format in which probabilities are presented significantly influences risk perception.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The distinction between choices from description and choices from experience reveals a significant <b>limitation of prospect theory</b>, which was originally developed to explain choices from description. Researchers such as <b>Ralph Hertwig</b> and <b>Ido Erev</b> have argued that the two domains require fundamentally different theoretical frameworks, and that prospect theory's decision weighting function does not generalize well to experienced-based decisions&mdash;which arguably characterize most real-world choices.</p>
+</details>
+
+<h2>Chapter 31: Risk Policies</h2>
+
+<p>Kahneman argues that people make worse decisions by treating each risky choice in isolation rather than adopting a consistent <b>risk policy</b>. He presents a pair of concurrent decision problems in which most people choose a sure gain in one and a gamble in the other&mdash;but the combination of these two choices is dominated by an alternative combination that everyone would prefer if they saw the aggregate result. This demonstrates that <b>narrow framing</b>&mdash;considering each decision separately rather than as part of a portfolio&mdash;leads to systematically inferior outcomes.</p>
+
+<p>The chapter advocates for <b>broad framing</b>: adopting a risk policy that applies across many decisions. For example, the rule "always take a favorable gamble" will produce better aggregate outcomes than evaluating each gamble individually and sometimes refusing favorable bets due to loss aversion. Kahneman acknowledges that broad framing requires self-control and a willingness to accept occasional losses, but argues that it is demonstrably superior to narrow framing for anyone who faces many similar decisions over time.</p>
+
+<p>Kahneman connects this to the work of economist <b>Paul Samuelson</b>, who showed that a rational agent who would refuse a single favorable gamble should logically accept many such gambles bundled together. The insight is that <b>loss aversion diminishes when losses are viewed as part of a portfolio</b> rather than experienced individually. This chapter provides one of the most practical implications of prospect theory for everyday financial decision-making.</p>
+
+<h2>Chapter 32: Keeping Score</h2>
+
+<p>Kahneman describes how people maintain <b>mental accounts</b>&mdash;a concept developed by Richard Thaler&mdash;that track gains and losses relative to reference points. Mental accounting violates the economic principle of <b>fungibility</b> (the idea that money is money regardless of its source) and leads to systematic irrationalities. For example, people who have lost money gambling often take greater risks to break even (the <b>sunk cost fallacy</b>), and people treat a $20 theater ticket differently depending on whether they lost the ticket or lost a separate $20 bill.</p>
+
+<p>The chapter discusses the <b>disposition effect</b> in investing: people tend to sell stocks that have gained value (to lock in gains) and hold stocks that have lost value (to avoid realizing losses). This pattern, driven by loss aversion and mental accounting, is consistently harmful to investment returns because winners tend to continue winning and losers tend to continue losing. Professional fund managers exhibit the same bias, though to a lesser degree than individual investors.</p>
+
+<p>Kahneman also explores how <b>regret</b> and <b>responsibility</b> influence decisions. People feel more regret for bad outcomes that result from action than from inaction, which produces a bias toward the status quo. The fear of regret is strongest when one's decision is unconventional&mdash;buying a losing stock on a friend's tip produces more regret than buying the same stock on one's own analysis, because the social responsibility is clearer.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>While mental accounting is often presented as irrational, <b>Thaler himself</b> has argued that it can serve as a useful <b>self-control device</b>. By compartmentalizing money into different accounts (savings, entertainment, emergency fund), people may actually save more and spend more wisely than they would if they treated all money as perfectly fungible. The "irrationality" of mental accounting may in some cases represent a second-best solution for individuals with limited willpower.</p>
+</details>
+
+<h2>Chapter 33: Reversals</h2>
+
+<p>Kahneman examines how preferences can <b>reverse</b> depending on whether options are evaluated jointly or separately. In <b>single evaluation</b> (seeing one option at a time), people are influenced by emotional reactions and easily available comparisons. In <b>joint evaluation</b> (seeing both options side by side), people can apply explicit principles and make more consistent choices. The problem is that many real-world decisions are made in single evaluation, where System 1's intuitive reactions dominate.</p>
+
+<p>The chapter uses the example of victim compensation: when evaluating a gunshot victim's case in isolation, people award significantly more compensation if the victim happened to be in an unusual location (higher poignancy), but when evaluating both cases side by side, nearly everyone agrees that location should not affect compensation. Single evaluation reveals emotional preferences that people would reject upon reflection in joint evaluation. This creates a troubling gap between what people <i>do</i> and what they <i>endorse</i>.</p>
+
+<p>Kahneman connects preference reversals to broader issues of public policy. Policies designed through single evaluation (responding to the most emotionally salient case) may produce outcomes that the public would not endorse if they could evaluate all cases jointly. The author argues for institutional mechanisms that force <b>joint evaluation</b> and principled comparison, such as sentencing guidelines and standardized procedures for regulatory decisions.</p>
+
+<h2>Chapter 34: Frames and Reality</h2>
+
+<p>Kahneman explores <b>framing effects</b>&mdash;the finding that logically equivalent descriptions of the same situation can lead to different decisions. The classic demonstration is the <b>Asian disease problem</b>: when outcomes are described in terms of lives saved (positive frame), people choose the sure option; when described in terms of lives lost (negative frame), they choose the gamble. The two descriptions are mathematically identical, but the frame determines whether people think in terms of gains or losses.</p>
+
+<p>The chapter argues that framing effects represent a deep challenge to the <b>rationality assumption</b> in economics. A rational agent should make the same choice regardless of how the options are described, but framing effects demonstrate that preferences are constructed in the moment and depend on the formulation of the problem. Kahneman connects this to prospect theory: the frame determines the reference point, which determines whether an outcome is coded as a gain or a loss, which determines the risk attitude.</p>
+
+<p>Kahneman describes how framing affects medical decisions: patients and physicians make different choices about surgery versus radiation therapy depending on whether outcomes are framed in terms of survival rates or mortality rates. He argues that people have a right to be protected from frames that exploit their cognitive weaknesses, and that <b>good policy should present information in ways that promote thoughtful choice</b> rather than manipulating the frame to achieve a particular outcome.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Some philosophers and economists have argued that framing effects may reflect <b>legitimate differences in meaning</b> rather than pure irrationality. "200 people will die" and "400 people will be saved" may be logically equivalent, but they emphasize different moral aspects of the situation. <b>Amartya Sen</b> and others argue that the description of a decision problem is itself part of the decision context, and that sensitivity to framing may sometimes reflect deeper moral reasoning rather than a cognitive flaw.</p>
+</details>
+
+<h2>Part V: Two Selves</h2>
+
+<h2>Chapter 35: Two Selves</h2>
+
+<p>Kahneman introduces the distinction between the <b>experiencing self</b> (which lives in the present moment) and the <b>remembering self</b> (which constructs and maintains the story of our lives). These two selves often have conflicting interests, and the remembering self typically dominates decision-making. The chapter draws on Kahneman's research on colonoscopy patients, which showed that the <b>peak-end rule</b> governs how painful episodes are remembered: the worst moment and the final moment determine the remembered quality of the experience, while <b>duration</b> has surprisingly little effect.</p>
+
+<p>The author describes an experiment in which subjects held one hand in painfully cold water (14&deg;C) for 60 seconds, and the other hand for 90 seconds&mdash;but the last 30 seconds of the longer trial were slightly less cold (15&deg;C). When given the choice of which trial to repeat, most subjects chose the 90-second trial, even though it involved more total pain. This is because the remembering self evaluated the experience based on the peak and the end, not the duration. Kahneman calls this <b>duration neglect</b>.</p>
+
+<p>Kahneman argues that the conflict between the two selves has profound implications for how we think about well-being. The experiencing self might prefer a short, pleasant vacation, but the remembering self prefers a longer one that provides more memories. Our decisions are driven by anticipated memories rather than anticipated experiences, which means that <b>we do not maximize our experienced well-being</b>&mdash;we maximize the well-being of our remembering self.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The two-selves framework has been questioned by philosophers such as <b>Derek Parfit</b> and psychologists like <b>Ed Diener</b>, who argue that the distinction between experiencing and remembering may be less sharp than Kahneman suggests. Our moment-to-moment experiences are always interpreted through memory and narrative, making it difficult to access a "pure" experiencing self. Additionally, some philosophers argue that the <b>remembering self's</b> evaluations are not merely distortions but reflect genuine values about what kind of life story a person wants to construct.</p>
+</details>
+
+<h2>Chapter 36: Life as a Story</h2>
+
+<p>Kahneman extends the two-selves framework to argue that people care deeply about the <b>narrative arc</b> of their lives. The remembering self evaluates lives as stories, and stories are judged by their most intense moments and their endings, not by their duration. A life that ends badly&mdash;even after decades of happiness&mdash;is judged less favorably than a shorter life with a good ending. This has counterintuitive implications: adding a mildly pleasant period to the end of a wonderful life can actually <i>reduce</i> the overall evaluation of that life.</p>
+
+<p>The chapter discusses cases where duration neglect and the peak-end rule lead to judgments that seem irrational from the perspective of the experiencing self. Kahneman asks whether a person who had 30 wonderful years followed by 5 miserable years lived a better life than one who had 30 wonderful years and then died peacefully. Most people rate the first life as worse, even though it contains 5 more years of existence. The remembering self's emphasis on narrative coherence produces evaluations that systematically discount <b>the quantity of experienced happiness</b>.</p>
+
+<h2>Chapter 37: Experienced Well-Being</h2>
+
+<p>Kahneman describes his efforts to measure the well-being of the experiencing self directly, using a method called the <b>Day Reconstruction Method (DRM)</b>. In this approach, respondents reconstruct the previous day episode by episode and rate the intensity of various feelings (happiness, stress, sadness, etc.) during each episode. This provides a richer picture of well-being than the standard life-satisfaction question, which primarily captures the remembering self's evaluation.</p>
+
+<p>The chapter reports key findings from the DRM research. The <b>U-index</b> (the proportion of time spent in an unpleasant state) reveals that commuting is the activity most often associated with negative affect, while socializing and intimate relations are most associated with positive affect. Kahneman found that being with friends produces more positive affect than being with one's spouse, and that being with children produces surprisingly mixed results&mdash;more stress and less moment-to-moment happiness than being alone, despite parents' reports that children are a major source of life satisfaction.</p>
+
+<p>Perhaps the most striking finding concerns the relationship between <b>income and experienced well-being</b>. While life satisfaction (as measured by the remembering self) continues to rise with income, experienced well-being plateaus at a household income of roughly <b>$75,000</b> in high-cost U.S. areas. Above this level, additional income does not increase moment-to-moment happiness, although it continues to increase life satisfaction. This suggests that above a certain threshold, additional income buys life satisfaction (a judgment) but not actual happiness (an experience).</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The $75,000 threshold has been revisited by researcher <b>Matthew Killingsworth</b>, whose 2021 study using real-time experience sampling found that experienced well-being <i>does</i> continue to rise with income well beyond $75,000, contradicting Kahneman's original finding. A 2023 collaborative reanalysis by Killingsworth and Kahneman (with Barbara Mellers as an adversarial collaborator) found a more nuanced picture: for most people, well-being does continue to rise with income, but for the unhappiest ~20% of the population, there is indeed a plateau. The original $75,000 threshold appears to have been an oversimplification.</p>
+</details>
+
+<h2>Chapter 38: Thinking About Life</h2>
+
+<p>Kahneman examines how people evaluate their lives as a whole and argues that <b>life satisfaction</b> is heavily influenced by whatever happens to be on one's mind at the moment of judgment. In a classic experiment, he and colleagues found that asking students about their dating life <i>before</i> asking about their overall life satisfaction produced a strong correlation between the two, while reversing the question order eliminated the effect. This demonstrates that the life-satisfaction question is highly susceptible to <b>focusing illusions</b>.</p>
+
+<p>The chapter introduces Kahneman's famous aphorism: <b>"Nothing in life is as important as you think it is while you are thinking about it."</b> This <b>focusing illusion</b> means that any aspect of life will seem more important than it actually is when attention is drawn to it. People who live in California are no happier than people who live in Ohio, even though both groups believe Californians are happier&mdash;because when they think about the comparison, they focus on weather (where California wins) and ignore the many aspects of daily life that are similar.</p>
+
+<p>Kahneman concludes the chapter by reflecting on the difficulty of measuring well-being. Neither life satisfaction (which reflects the remembering self's narrative judgments) nor experienced well-being (which captures moment-to-moment affect) provides a complete picture. He argues that <b>policy should attend to both measures</b> and that societies should not assume that increasing GDP or life satisfaction automatically increases the quality of people's daily experiences.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Researchers in the <b>life satisfaction</b> tradition, such as <b>Ed Diener</b>, have argued that life satisfaction judgments are not as unstable or arbitrary as Kahneman suggests. While momentary factors do influence responses, test-retest reliability for life satisfaction measures is reasonably high over periods of weeks and months. Diener contends that life satisfaction captures something important and relatively stable about a person's overall evaluation of their life&mdash;not just whatever happens to be on their mind at the moment of questioning.</p>
+</details>
+
+<h2>Conclusions</h2>
+
+<p>Kahneman revisits the book's three major distinctions: (1) between the <b>experiencing self and the remembering self</b>, (2) between <b>Econs</b> (the perfectly rational agents of classical economics) and <b>Humans</b> (the flawed decision-makers that behavioral economics studies), and (3) between <b>System 1 and System 2</b>. He argues that these distinctions are not merely academic but have practical implications for individuals, organizations, and governments.</p>
+
+<p>The author reiterates that System 1's automatic operations generate impressively accurate intuitions in familiar environments but also produce systematic errors in domains that require statistical thinking. He advocates for <b>organizational changes</b> rather than individual self-improvement, arguing that biases are easier to recognize in others than in oneself. The "educated gossip" of the watercooler&mdash;where colleagues identify each other's cognitive errors&mdash;is more effective than introspection as a corrective mechanism.</p>
+
+<p>Kahneman concludes with a measured assessment of what can and cannot be changed. System 1 will always produce its characteristic errors; these cannot be eliminated through training or willpower. But organizations can create <b>decision processes</b>&mdash;checklists, formulas, premortems, and reference class forecasting&mdash;that systematically counteract the biases of intuitive judgment. The goal is not to eliminate intuition but to create environments in which its errors are caught before they cause damage. The book ends on a note of realistic optimism: understanding cognitive biases will not make them disappear, but a richer vocabulary for discussing them makes better decisions more likely.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Kahneman's emphasis on organizational rather than individual improvement has been questioned by researchers who demonstrate that <b>individual debiasing training</b> can be effective. Studies by <b>Carey Morewedge</b> and others have shown that training people to recognize specific biases (such as anchoring and representativeness) can reduce their influence, with effects lasting weeks or months. While Kahneman is right that System 1 cannot be retrained, the claim that individual improvement is largely hopeless may be too pessimistic.</p>
+</details>
+
+<h2 id="quiz-heading">Comprehension Quiz</h2>
+
+<details id="quiz-section" class="quiz-wrapper">
+  <summary class="quiz-toggle">Take the Quiz</summary>
+
+  <form id="quiz-form">
+
+    <div class="q-block">
+      <p class="q-label">1. What does System 1 refer to in Kahneman's framework?</p>
+      <label><input type="radio" name="q1" value="a"> The deliberate, effortful mode of thinking</label>
+      <label><input type="radio" name="q1" value="b"> The fast, automatic, intuitive mode of thinking</label>
+      <label><input type="radio" name="q1" value="c"> The emotional processing center of the brain</label>
+      <label><input type="radio" name="q1" value="d"> The memory storage and retrieval system</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">2. What did Kahneman use to measure cognitive effort in his early research?</p>
+      <label><input type="radio" name="q2" value="a"> Brain scans using fMRI</label>
+      <label><input type="radio" name="q2" value="b"> Self-reported difficulty ratings</label>
+      <label><input type="radio" name="q2" value="c"> Pupil dilation</label>
+      <label><input type="radio" name="q2" value="d"> Reaction time measurements</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">3. What is the correct answer to the bat-and-ball problem ($1.10 total, bat costs $1.00 more than ball)?</p>
+      <label><input type="radio" name="q3" value="a"> The ball costs $0.10</label>
+      <label><input type="radio" name="q3" value="b"> The ball costs $0.05</label>
+      <label><input type="radio" name="q3" value="c"> The ball costs $0.15</label>
+      <label><input type="radio" name="q3" value="d"> The ball costs $0.01</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">4. What does the acronym WYSIATI stand for?</p>
+      <label><input type="radio" name="q4" value="a"> What You See Is Always True Intuitively</label>
+      <label><input type="radio" name="q4" value="b"> When You Search It All Turns Inward</label>
+      <label><input type="radio" name="q4" value="c"> What You See Is All There Is</label>
+      <label><input type="radio" name="q4" value="d"> Why You Should Investigate All The Information</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">5. Why do small counties show both the highest and lowest kidney cancer rates?</p>
+      <label><input type="radio" name="q5" value="a"> Rural lifestyles produce extreme health outcomes</label>
+      <label><input type="radio" name="q5" value="b"> Small populations produce more extreme statistics due to sampling variability</label>
+      <label><input type="radio" name="q5" value="c"> Rural areas have both the best and worst healthcare</label>
+      <label><input type="radio" name="q5" value="d"> Environmental factors vary more in rural areas</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">6. In the anchoring experiment, what arbitrary device influenced participants' estimates of African nations in the UN?</p>
+      <label><input type="radio" name="q6" value="a"> A randomly assigned number on a card</label>
+      <label><input type="radio" name="q6" value="b"> A rigged spinning wheel</label>
+      <label><input type="radio" name="q6" value="c"> A previous participant's answer</label>
+      <label><input type="radio" name="q6" value="d"> A number displayed on a screen</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">7. In Schwarz's assertiveness study, why did people who recalled 12 examples rate themselves as LESS assertive than those who recalled 6?</p>
+      <label><input type="radio" name="q7" value="a"> They ran out of real examples and started inventing ones</label>
+      <label><input type="radio" name="q7" value="b"> The difficulty of retrieval was interpreted as evidence of low assertiveness</label>
+      <label><input type="radio" name="q7" value="c"> Recalling more examples made them realize they were average</label>
+      <label><input type="radio" name="q7" value="d"> The task was too long and they became bored</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">8. What is the conjunction fallacy, as demonstrated by the Linda problem?</p>
+      <label><input type="radio" name="q8" value="a"> Believing that a general category is more likely than a specific one</label>
+      <label><input type="radio" name="q8" value="b"> Judging that two events occurring together is more probable than either event alone</label>
+      <label><input type="radio" name="q8" value="c"> Confusing correlation with causation</label>
+      <label><input type="radio" name="q8" value="d"> Overweighting the first piece of evidence encountered</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">9. What did Kahneman discover about Israeli flight instructors' beliefs about praise and punishment?</p>
+      <label><input type="radio" name="q9" value="a"> Punishment genuinely improved performance more than praise</label>
+      <label><input type="radio" name="q9" value="b"> The perceived effects of praise and punishment were actually due to regression to the mean</label>
+      <label><input type="radio" name="q9" value="c"> Praise worked better for experienced pilots while punishment worked for beginners</label>
+      <label><input type="radio" name="q9" value="d"> Neither praise nor punishment had any effect on performance</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">10. What is hindsight bias?</p>
+      <label><input type="radio" name="q10" value="a"> The tendency to remember the past more positively than it was</label>
+      <label><input type="radio" name="q10" value="b"> The belief that one "knew it all along" after learning an outcome</label>
+      <label><input type="radio" name="q10" value="c"> The inability to recall past decisions accurately</label>
+      <label><input type="radio" name="q10" value="d"> The preference for familiar outcomes over unfamiliar ones</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">11. What did Kahneman find when analyzing 25 years of investment advisor performance?</p>
+      <label><input type="radio" name="q11" value="a"> About 20% of advisors consistently beat the market</label>
+      <label><input type="radio" name="q11" value="b"> Year-to-year correlation in individual performance was essentially zero</label>
+      <label><input type="radio" name="q11" value="c"> Advisors with more experience performed significantly better</label>
+      <label><input type="radio" name="q11" value="d"> Performance improved after the advisors received feedback</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">12. According to Paul Meehl's research, how do simple statistical formulas compare to expert judgment in prediction tasks?</p>
+      <label><input type="radio" name="q12" value="a"> Experts are better for complex cases, formulas for simple ones</label>
+      <label><input type="radio" name="q12" value="b"> They perform about equally well</label>
+      <label><input type="radio" name="q12" value="c"> Formulas consistently match or outperform expert judgment</label>
+      <label><input type="radio" name="q12" value="d"> Experts outperform formulas when given sufficient time</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">13. What two conditions must be met for expert intuition to be trustworthy?</p>
+      <label><input type="radio" name="q13" value="a"> High intelligence and extensive education</label>
+      <label><input type="radio" name="q13" value="b"> A regular environment and adequate opportunity to learn through practice</label>
+      <label><input type="radio" name="q13" value="c"> Emotional detachment and strong analytical skills</label>
+      <label><input type="radio" name="q13" value="d"> Peer review and statistical training</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">14. What is the planning fallacy?</p>
+      <label><input type="radio" name="q14" value="a"> The tendency to make plans that are too detailed</label>
+      <label><input type="radio" name="q14" value="b"> The tendency to underestimate costs and time while overestimating benefits</label>
+      <label><input type="radio" name="q14" value="c"> The belief that planning eliminates uncertainty</label>
+      <label><input type="radio" name="q14" value="d"> The habit of abandoning plans at the first obstacle</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">15. What is a "premortem" and who developed it?</p>
+      <label><input type="radio" name="q15" value="a"> A post-project review developed by Peter Drucker</label>
+      <label><input type="radio" name="q15" value="b"> A risk assessment tool developed by Amos Tversky</label>
+      <label><input type="radio" name="q15" value="c"> An exercise imagining a project has failed, developed by Gary Klein</label>
+      <label><input type="radio" name="q15" value="d"> A budgeting technique developed by Richard Thaler</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">16. What was Bernoulli's critical error, according to Kahneman?</p>
+      <label><input type="radio" name="q16" value="a"> He ignored the role of emotions in decision-making</label>
+      <label><input type="radio" name="q16" value="b"> He assumed utility depends on absolute wealth rather than gains and losses from a reference point</label>
+      <label><input type="radio" name="q16" value="c"> He overestimated people's ability to calculate probabilities</label>
+      <label><input type="radio" name="q16" value="d"> He failed to account for risk-seeking behavior</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">17. What is loss aversion?</p>
+      <label><input type="radio" name="q17" value="a"> The tendency to avoid all risky decisions</label>
+      <label><input type="radio" name="q17" value="b"> The finding that losses are felt roughly twice as intensely as equivalent gains</label>
+      <label><input type="radio" name="q17" value="c"> The preference for certain outcomes over uncertain ones</label>
+      <label><input type="radio" name="q17" value="d"> The fear of losing social status</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">18. What is the endowment effect?</p>
+      <label><input type="radio" name="q18" value="a"> People value inherited possessions more than purchased ones</label>
+      <label><input type="radio" name="q18" value="b"> People demand more to give up something they own than they would pay to acquire it</label>
+      <label><input type="radio" name="q18" value="c"> Wealthy people make better economic decisions</label>
+      <label><input type="radio" name="q18" value="d"> People value experiences more than material goods</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">19. In the fourfold pattern, why do people buy lottery tickets AND insurance?</p>
+      <label><input type="radio" name="q19" value="a"> They are simply irrational</label>
+      <label><input type="radio" name="q19" value="b"> They overweight small probabilities of large gains (lottery) and large losses (insurance)</label>
+      <label><input type="radio" name="q19" value="c"> They seek social belonging through shared activities</label>
+      <label><input type="radio" name="q19" value="d"> They are influenced by advertising in both cases</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">20. What is the Asian disease problem designed to demonstrate?</p>
+      <label><input type="radio" name="q20" value="a"> Cultural differences in risk perception</label>
+      <label><input type="radio" name="q20" value="b"> Framing effects: identical outcomes described differently lead to different choices</label>
+      <label><input type="radio" name="q20" value="c"> The difficulty of making decisions under time pressure</label>
+      <label><input type="radio" name="q20" value="d"> People's inability to understand large numbers</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">21. In the cold-water experiment, why did subjects prefer the longer (90-second) trial?</p>
+      <label><input type="radio" name="q21" value="a"> The longer trial was actually less painful overall</label>
+      <label><input type="radio" name="q21" value="b"> Subjects forgot how long the trial was</label>
+      <label><input type="radio" name="q21" value="c"> The slightly warmer ending created a better memory due to the peak-end rule</label>
+      <label><input type="radio" name="q21" value="d"> Subjects were told the longer trial was better</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">22. What is the "focusing illusion"?</p>
+      <label><input type="radio" name="q22" value="a"> The tendency to focus only on positive information</label>
+      <label><input type="radio" name="q22" value="b"> Nothing in life is as important as you think it is while you are thinking about it</label>
+      <label><input type="radio" name="q22" value="c"> The inability to focus on multiple tasks simultaneously</label>
+      <label><input type="radio" name="q22" value="d"> The belief that focused attention improves performance</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">23. At what household income level did Kahneman find that experienced well-being plateaus?</p>
+      <label><input type="radio" name="q23" value="a"> $50,000</label>
+      <label><input type="radio" name="q23" value="b"> $75,000</label>
+      <label><input type="radio" name="q23" value="c"> $100,000</label>
+      <label><input type="radio" name="q23" value="d"> $150,000</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">24. What did the mere exposure effect demonstrate?</p>
+      <label><input type="radio" name="q24" value="a"> People dislike unfamiliar stimuli</label>
+      <label><input type="radio" name="q24" value="b"> Repeated exposure to a stimulus increases liking for it</label>
+      <label><input type="radio" name="q24" value="c"> Exposure to risk makes people more cautious</label>
+      <label><input type="radio" name="q24" value="d"> People learn faster through repeated exposure to information</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">25. What does Kahneman recommend as the most effective way to improve organizational decision-making?</p>
+      <label><input type="radio" name="q25" value="a"> Individual bias training for all employees</label>
+      <label><input type="radio" name="q25" value="b"> Hiring only highly rational decision-makers</label>
+      <label><input type="radio" name="q25" value="c"> Creating decision processes like checklists, formulas, and premortems</label>
+      <label><input type="radio" name="q25" value="d"> Eliminating System 1 thinking from the workplace</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">26. What is narrow framing in the context of risk decisions?</p>
+      <label><input type="radio" name="q26" value="a"> Considering only the downside of a decision</label>
+      <label><input type="radio" name="q26" value="b"> Evaluating each risky choice in isolation rather than as part of a portfolio</label>
+      <label><input type="radio" name="q26" value="c"> Focusing only on short-term outcomes</label>
+      <label><input type="radio" name="q26" value="d"> Making decisions based on limited information</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">27. What is the disposition effect in investing?</p>
+      <label><input type="radio" name="q27" value="a"> The tendency to invest in companies one admires</label>
+      <label><input type="radio" name="q27" value="b"> The tendency to sell winners too early and hold losers too long</label>
+      <label><input type="radio" name="q27" value="c"> The preference for dividend-paying stocks</label>
+      <label><input type="radio" name="q27" value="d"> The tendency to follow other investors' decisions</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">28. According to Kahneman, what is the relationship between the representativeness heuristic and base-rate neglect?</p>
+      <label><input type="radio" name="q28" value="a"> They are completely unrelated phenomena</label>
+      <label><input type="radio" name="q28" value="b"> People rely on resemblance to stereotypes and ignore statistical base rates</label>
+      <label><input type="radio" name="q28" value="c"> Base-rate neglect causes people to rely on representativeness</label>
+      <label><input type="radio" name="q28" value="d"> They cancel each other out in most situations</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">29. Why does Kahneman call optimism "the engine of capitalism"?</p>
+      <label><input type="radio" name="q29" value="a"> Optimistic investors consistently outperform pessimistic ones</label>
+      <label><input type="radio" name="q29" value="b"> Entrepreneurs who accurately assessed their failure odds would never start businesses</label>
+      <label><input type="radio" name="q29" value="c"> Capitalism requires constant growth, which demands optimistic forecasting</label>
+      <label><input type="radio" name="q29" value="d"> Optimistic companies attract more investment capital</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">30. What is the affect heuristic?</p>
+      <label><input type="radio" name="q30" value="a"> The tendency to make decisions based on the most recent emotional event</label>
+      <label><input type="radio" name="q30" value="b"> Judgments about risk and benefit driven by feelings of liking or disliking</label>
+      <label><input type="radio" name="q30" value="c"> The influence of mood on memory recall</label>
+      <label><input type="radio" name="q30" value="d"> The tendency to affect others' decisions through emotional displays</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">31. What is the key difference between the "inside view" and the "outside view"?</p>
+      <label><input type="radio" name="q31" value="a"> The inside view is subjective while the outside view is objective</label>
+      <label><input type="radio" name="q31" value="b"> The inside view focuses on the specific case while the outside view consults the reference class</label>
+      <label><input type="radio" name="q31" value="c"> The inside view uses System 1 while the outside view uses System 2</label>
+      <label><input type="radio" name="q31" value="d"> The inside view comes from experts while the outside view comes from novices</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">32. What does duration neglect mean in the context of the two selves?</p>
+      <label><input type="radio" name="q32" value="a"> People forget how long experiences lasted</label>
+      <label><input type="radio" name="q32" value="b"> The remembering self's evaluations are largely unaffected by the duration of an experience</label>
+      <label><input type="radio" name="q32" value="c"> Short experiences are remembered more vividly than long ones</label>
+      <label><input type="radio" name="q32" value="d"> People prefer shorter experiences to longer ones</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">33. How do "causal base rates" differ from "statistical base rates" in their influence on judgment?</p>
+      <label><input type="radio" name="q33" value="a"> Causal base rates are always more accurate</label>
+      <label><input type="radio" name="q33" value="b"> Statistical base rates are given more weight because they seem scientific</label>
+      <label><input type="radio" name="q33" value="c"> Causal base rates are readily incorporated while statistical base rates are often ignored</label>
+      <label><input type="radio" name="q33" value="d"> There is no meaningful difference in how they influence judgment</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">34. What cognitive phenomenon explains why preference reversals occur between single and joint evaluation?</p>
+      <label><input type="radio" name="q34" value="a"> People change their minds when given more options</label>
+      <label><input type="radio" name="q34" value="b"> In single evaluation, System 1's emotional reactions dominate; in joint evaluation, System 2 can apply explicit principles</label>
+      <label><input type="radio" name="q34" value="c"> Joint evaluation always produces better decisions</label>
+      <label><input type="radio" name="q34" value="d"> Single evaluation is too quick for careful thought</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">35. What does the halo effect describe?</p>
+      <label><input type="radio" name="q35" value="a"> The tendency to see oneself in a positive light</label>
+      <label><input type="radio" name="q35" value="b"> The tendency to like or dislike everything about a person based on a first impression</label>
+      <label><input type="radio" name="q35" value="c"> The influence of physical attractiveness on social outcomes</label>
+      <label><input type="radio" name="q35" value="d"> The positive feelings associated with achievement</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">36. According to prospect theory, what are the "carriers of utility"?</p>
+      <label><input type="radio" name="q36" value="a"> Absolute levels of wealth</label>
+      <label><input type="radio" name="q36" value="b"> Gains and losses relative to a reference point</label>
+      <label><input type="radio" name="q36" value="c"> Expected future income</label>
+      <label><input type="radio" name="q36" value="d"> Emotional satisfaction from purchases</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">37. What activity is most associated with negative affect according to the Day Reconstruction Method?</p>
+      <label><input type="radio" name="q37" value="a"> Working</label>
+      <label><input type="radio" name="q37" value="b"> Housework</label>
+      <label><input type="radio" name="q37" value="c"> Commuting</label>
+      <label><input type="radio" name="q37" value="d"> Watching television</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">38. What is substitution in the context of heuristic judgments?</p>
+      <label><input type="radio" name="q38" value="a"> Replacing one heuristic with another</label>
+      <label><input type="radio" name="q38" value="b"> Answering an easier question instead of the difficult target question</label>
+      <label><input type="radio" name="q38" value="c"> Substituting expert judgment for personal opinion</label>
+      <label><input type="radio" name="q38" value="d"> Replacing intuition with statistical analysis</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">39. What pattern does prospect theory's value function show for losses?</p>
+      <label><input type="radio" name="q39" value="a"> Concave (diminishing sensitivity to increasing losses)</label>
+      <label><input type="radio" name="q39" value="b"> Convex (diminishing sensitivity), which produces risk-seeking behavior</label>
+      <label><input type="radio" name="q39" value="c"> Linear (constant sensitivity to losses)</label>
+      <label><input type="radio" name="q39" value="d"> S-shaped (increasing then decreasing sensitivity)</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">40. How long did Kahneman's curriculum development project actually take, compared to the inside-view estimates?</p>
+      <label><input type="radio" name="q40" value="a"> 3 years, compared to estimates of 1-2 years</label>
+      <label><input type="radio" name="q40" value="b"> 8 years, compared to estimates of 18-30 months</label>
+      <label><input type="radio" name="q40" value="c"> 5 years, compared to estimates of 6 months</label>
+      <label><input type="radio" name="q40" value="d"> 10 years, compared to estimates of 3-4 years</label>
+    </div>
+
+    <button type="button" id="score-btn" onclick="scoreQuiz()">Score My Answers</button>
+
+    <div id="quiz-result" style="display:none;">
+      <p id="score-text"></p>
+      <div id="answer-review"></div>
+    </div>
+
+  </form>
+</details>
+
+<script>
+(function() {
+  const answers = {
+    q1: { correct: "b", explain: "System 1 is the fast, automatic, intuitive mode of thinking that operates with little effort or voluntary control." },
+    q2: { correct: "c", explain: "Kahneman used pupil dilation (pupillometry) to measure cognitive effort, finding that pupils dilate in proportion to task difficulty." },
+    q3: { correct: "b", explain: "If the bat costs $1.00 more than the ball and together they cost $1.10, the ball costs $0.05 and the bat costs $1.05." },
+    q4: { correct: "c", explain: "WYSIATI stands for 'What You See Is All There Is'—System 1's tendency to construct stories from only the available evidence." },
+    q5: { correct: "b", explain: "Small populations produce more extreme statistics (both high and low) due to sampling variability, not because of any causal factor." },
+    q6: { correct: "b", explain: "Kahneman and Tversky used a rigged spinning wheel that landed on either 10 or 65 to demonstrate anchoring effects." },
+    q7: { correct: "b", explain: "The difficulty of retrieving 12 examples was interpreted as evidence of low assertiveness—the experience of ease or difficulty matters more than the content retrieved." },
+    q8: { correct: "b", explain: "The conjunction fallacy is judging that two events occurring together (e.g., bank teller AND feminist) is more probable than one event alone, violating the conjunction rule of probability." },
+    q9: { correct: "b", explain: "The apparent effects of praise and punishment on flight performance were actually due to regression to the mean—extreme performances are naturally followed by more average ones." },
+    q10: { correct: "b", explain: "Hindsight bias is the tendency to believe, after learning an outcome, that one 'knew it all along'—it distorts our understanding of the past." },
+    q11: { correct: "b", explain: "The year-to-year correlation of individual advisors' performance was essentially zero, indicating that success was due to luck rather than skill." },
+    q12: { correct: "c", explain: "Meehl's research showed that simple statistical formulas consistently match or outperform expert judgment across a wide range of prediction tasks." },
+    q13: { correct: "b", explain: "Expert intuition is trustworthy when the environment is sufficiently regular (has learnable patterns) and the expert has had adequate practice with feedback." },
+    q14: { correct: "b", explain: "The planning fallacy is the tendency to underestimate the time and costs of projects while overestimating their benefits, driven by the inside view." },
+    q15: { correct: "c", explain: "A premortem, developed by Gary Klein, is an exercise where a team imagines a project has already failed and writes a history of the disaster to surface hidden risks." },
+    q16: { correct: "b", explain: "Bernoulli assumed utility depends on absolute states of wealth, but Kahneman and Tversky showed that people evaluate outcomes as gains and losses relative to a reference point." },
+    q17: { correct: "b", explain: "Loss aversion is the finding that losses are felt roughly twice as intensely as equivalent gains—losing $100 hurts about twice as much as gaining $100 feels good." },
+    q18: { correct: "b", explain: "The endowment effect is people demanding more to give up something they own than they would pay to acquire it, driven by loss aversion." },
+    q19: { correct: "b", explain: "The fourfold pattern shows that people overweight small probabilities—seeking risk for small chances of large gains (lottery) while being risk-averse for small chances of large losses (insurance)." },
+    q20: { correct: "b", explain: "The Asian disease problem demonstrates framing effects: identical outcomes described as 'lives saved' vs. 'lives lost' produce different risk preferences." },
+    q21: { correct: "c", explain: "The slightly warmer ending of the 90-second trial created a better memory due to the peak-end rule, even though it involved more total pain." },
+    q22: { correct: "b", explain: "The focusing illusion is Kahneman's principle that nothing in life is as important as you think it is while you are thinking about it." },
+    q23: { correct: "b", explain: "Kahneman found that experienced well-being (moment-to-moment happiness) plateaus at roughly $75,000 household income in high-cost U.S. areas." },
+    q24: { correct: "b", explain: "The mere exposure effect, discovered by Zajonc, shows that repeated exposure to a stimulus increases liking for it, even without conscious awareness." },
+    q25: { correct: "c", explain: "Kahneman advocates for organizational decision processes—checklists, formulas, premortems, and reference class forecasting—rather than relying on individual debiasing." },
+    q26: { correct: "b", explain: "Narrow framing means evaluating each risky choice in isolation rather than as part of a portfolio, which leads to worse aggregate outcomes due to loss aversion." },
+    q27: { correct: "b", explain: "The disposition effect is the tendency to sell winning stocks too early (to lock in gains) and hold losing stocks too long (to avoid realizing losses)." },
+    q28: { correct: "b", explain: "People judge probability by how well evidence matches stereotypes (representativeness) and ignore the statistical base rates that should inform their predictions." },
+    q29: { correct: "b", explain: "Kahneman argues that entrepreneurs who accurately assessed their chances of failure would never start businesses, so optimistic bias drives economic innovation." },
+    q30: { correct: "b", explain: "The affect heuristic, described by Paul Slovic, is when judgments about risks and benefits are driven by emotional feelings of liking or disliking." },
+    q31: { correct: "b", explain: "The inside view focuses on the specific case and its unique features; the outside view asks what happened in similar cases (the reference class)." },
+    q32: { correct: "b", explain: "Duration neglect means the remembering self's evaluations are largely unaffected by how long an experience lasted—the peak and end matter more." },
+    q33: { correct: "c", explain: "Causal base rates (e.g., 'Blue cabs cause 85% of accidents') are readily used in judgments, while statistical base rates (e.g., '85% of cabs are Green') are often ignored." },
+    q34: { correct: "b", explain: "In single evaluation, System 1's emotional reactions dominate; in joint evaluation, System 2 can apply explicit principles and make consistent comparisons." },
+    q35: { correct: "b", explain: "The halo effect is the tendency to form a global impression of a person and let it color all subsequent evaluations of their specific traits." },
+    q36: { correct: "b", explain: "Prospect theory's key insight is that the carriers of utility are gains and losses relative to a reference point, not absolute states of wealth." },
+    q37: { correct: "c", explain: "Commuting was found to be the activity most associated with negative affect in the Day Reconstruction Method studies." },
+    q38: { correct: "b", explain: "Substitution occurs when System 1 answers an easier heuristic question instead of the difficult target question that was actually asked." },
+    q39: { correct: "b", explain: "For losses, the value function is convex (showing diminishing sensitivity), which produces risk-seeking behavior—people prefer a gamble over a sure loss." },
+    q40: { correct: "b", explain: "The curriculum project took 8 years, compared to inside-view estimates of 18-30 months. The outside view (reference class) had predicted 7-10 years." }
+  };
+
+  window.scoreQuiz = function() {
+    const form = document.getElementById("quiz-form");
+    let correct = 0;
+    const total = Object.keys(answers).length;
+    let reviewHTML = "";
+
+    for (let i = 1; i <= total; i++) {
+      const key = "q" + i;
+      const selected = form.elements[key] ? form.elements[key].value : "";
+      const isCorrect = selected === answers[key].correct;
+      if (isCorrect) correct++;
+
+      const status = !selected ? "wrong" : (isCorrect ? "correct" : "wrong");
+      const icon = isCorrect ? "\u2705" : "\u274C";
+      const yourAnswer = selected ? selected.toUpperCase() : "No answer";
+      const correctAnswer = answers[key].correct.toUpperCase();
+
+      reviewHTML += '<div class="review-item ' + status + '">';
+      reviewHTML += '<div class="ri-q">' + icon + " Question " + i + "</div>";
+      reviewHTML += '<div class="ri-detail">';
+      if (!isCorrect) {
+        reviewHTML += "Your answer: " + yourAnswer + " &mdash; Correct answer: " + correctAnswer + "<br>";
+      }
+      reviewHTML += answers[key].explain;
+      reviewHTML += "</div></div>";
+    }
+
+    const pct = Math.round((correct / total) * 100);
+    let grade;
+    if (pct === 100) grade = "Perfect score!";
+    else if (pct >= 80) grade = "Great understanding!";
+    else if (pct >= 60) grade = "Good, but review the summaries above for the ones you missed.";
+    else grade = "Consider re-reading the summaries above and trying again.";
+
+    document.getElementById("score-text").textContent = correct + " / " + total + " (" + pct + "%) \u2014 " + grade;
+    document.getElementById("answer-review").innerHTML = reviewHTML;
+    document.getElementById("quiz-result").style.display = "block";
+    document.getElementById("quiz-result").scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+})();
+</script>
+
+</div><!-- .content -->
+
+</body>
+</html>

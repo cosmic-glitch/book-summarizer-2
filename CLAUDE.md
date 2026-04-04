@@ -9,7 +9,8 @@ A book summarizer that converts PDF and EPUB files into self-contained HTML summ
 ## Key Commands
 
 - `/summarize-book <filename>` — Summarize a single book from `books/` into `summaries/`
-- `/summarize-all-pending` — Find books in `books/` without summaries and process them sequentially
+- `/summarize-all-pending` — Find books in `books/` without summaries and process them sequentially (also fetches covers)
+- `/fetch-cover <stem>` — Fetch a cover image for a book from Open Library (e.g., `/fetch-cover The_Intelligent_Investor`). Pass `all` to fetch all missing covers. Uses visual inspection to ensure covers are English, high-quality, and actually book covers.
 - `./generate_index.sh` — Regenerate `summaries/index.html` from all existing summary files. Run this after adding new summaries.
 
 ## Architecture

@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deep Work — Book Summary Pro</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      line-height: 1.7;
+      color: #222;
+      background: #fafafa;
+    }
+    .app-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #2c2c2c;
+      padding: 14px 24px;
+    }
+    .content {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 32px 20px 40px;
+    }
+    .app-nav .app-name {
+      font-size: 1.05em;
+      font-weight: bold;
+      color: #e8e0d0;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+    }
+    .app-nav .app-name:hover {
+      color: #d4a843;
+    }
+    .app-nav .back-link {
+      font-size: 0.9em;
+      color: #999;
+      text-decoration: none;
+    }
+    .app-nav .back-link:hover {
+      color: #d4a843;
+    }
+    h1 {
+      font-size: 1.8em;
+      border-bottom: 2px solid #333;
+      padding-bottom: 10px;
+      margin-bottom: 5px;
+    }
+    .subtitle {
+      font-size: 1.1em;
+      color: #444;
+      margin: 2px 0 0 0;
+      font-style: italic;
+    }
+    .author {
+      font-style: italic;
+      color: #777;
+      font-size: 0.95em;
+      margin-bottom: 40px;
+    }
+    h2 {
+      font-size: 1.3em;
+      margin-top: 48px;
+      color: #1a1a1a;
+      border-left: 4px solid #555;
+      padding-left: 12px;
+    }
+    p {
+      margin-bottom: 14px;
+      text-align: justify;
+    }
+    details.counter {
+      background: #f0ece4;
+      border-left: 4px solid #b8860b;
+      padding: 14px 18px;
+      margin: 20px 0 28px 0;
+      border-radius: 0 6px 6px 0;
+    }
+    details.counter summary {
+      font-weight: bold;
+      font-size: 0.95em;
+      color: #8b6914;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    details.counter summary::-webkit-details-marker {
+      display: none;
+    }
+    details.counter summary::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    details.counter[open] summary::before {
+      transform: rotate(90deg);
+    }
+    details.counter p {
+      margin-top: 12px;
+      margin-bottom: 10px;
+      color: #3a3a3a;
+    }
+    details.counter p:last-child {
+      margin-bottom: 0;
+    }
+    .quiz-wrapper {
+      margin-top: 48px;
+      background: #f5f5f0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 16px 20px;
+    }
+    .quiz-toggle {
+      font-weight: bold;
+      font-size: 1.05em;
+      cursor: pointer;
+      color: #2a5a2a;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .quiz-toggle::-webkit-details-marker { display: none; }
+    .quiz-toggle::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    .quiz-wrapper[open] .quiz-toggle::before {
+      transform: rotate(90deg);
+    }
+    .q-block {
+      margin: 24px 0;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    .q-block:last-of-type { border-bottom: none; }
+    .q-label {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .q-block label {
+      display: block;
+      padding: 6px 10px;
+      margin: 4px 0;
+      border-radius: 4px;
+      cursor: pointer;
+      line-height: 1.5;
+    }
+    .q-block label:hover { background: #e8e8e0; }
+    #score-btn {
+      display: block;
+      margin: 28px auto 0;
+      padding: 12px 32px;
+      font-family: Georgia, serif;
+      font-size: 1em;
+      background: #2a5a2a;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #score-btn:hover { background: #1e441e; }
+    #quiz-result {
+      margin-top: 24px;
+      padding: 18px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    #score-text {
+      font-size: 1.15em;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .review-item {
+      margin-bottom: 14px;
+      padding: 10px 12px;
+      border-radius: 4px;
+    }
+    .review-item.correct { background: #e6f4e6; }
+    .review-item.wrong { background: #fce8e8; }
+    .review-item .ri-q { font-weight: bold; margin-bottom: 4px; }
+    .review-item .ri-detail { font-size: 0.93em; color: #444; }
+  </style>
+</head>
+<body>
+
+<nav class="app-nav">
+  <a href="index.html" class="app-name">Book Summary Pro</a>
+  <a href="index.html" class="back-link">&larr; All Books</a>
+</nav>
+
+<div class="content">
+
+<h1>Deep Work</h1>
+<p class="subtitle">Rules for Focused Success in a Distracted World</p>
+<p class="author">Cal Newport</p>
+
+<h2>Introduction</h2>
+
+<p>Newport opens with <b>Carl Jung</b>, who in 1922 built a stone retreat called the Tower in Bollingen, Switzerland, specifically to pursue deep, undistracted thinking. Jung wasn't escaping work&mdash;he was advancing it, producing the ideas that would make him one of the twentieth century's most influential thinkers. Newport uses this as the launching point for his central concept: <b>Deep Work</b>, defined as "professional activities performed in a state of distraction-free concentration that push your cognitive capabilities to their limit." He contrasts this with <b>Shallow Work</b>&mdash;"noncognitively demanding, logistical-style tasks, often performed while distracted."</p>
+
+<p>Newport argues that knowledge workers are increasingly replacing deep work with shallow alternatives&mdash;a 2012 McKinsey study found the average knowledge worker spends over 60 percent of the workweek on electronic communication. He illustrates the transformative power of depth through the story of <b>Jason Benn</b>, who quit his finance job, locked himself in a room with only textbooks, taught himself to code through months of intense deep work, and ultimately landed a $100,000 developer job. The introduction culminates in the <b>Deep Work Hypothesis</b>: "The ability to perform deep work is becoming increasingly rare at exactly the same time it is becoming increasingly valuable in our economy. As a consequence, the few who cultivate this skill, and then make it the core of their working life, will thrive."</p>
+
+<h2>Chapter 1: Deep Work Is Valuable</h2>
+
+<p>Newport draws on economists <b>Erik Brynjolfsson and Andrew McAfee</b> (<i>Race Against the Machine</i>) and <b>Tyler Cowen</b> (<i>Average Is Over</i>) to identify three groups that will thrive in the new economy: <b>high-skilled workers</b> who can work with intelligent machines (exemplified by Nate Silver), <b>superstars</b> who are the best at what they do in a winner-take-all marketplace (exemplified by David Heinemeier Hansson), and <b>owners</b> of capital (exemplified by John Doerr). To join the first two accessible groups requires two core abilities: <b>the ability to quickly master hard things</b> and <b>the ability to produce at an elite level</b>.</p>
+
+<p>Newport connects these abilities to deep work through neuroscience and psychology. Drawing on <b>K. Anders Ericsson's</b> deliberate practice research, he explains that mastering hard skills requires focused, undistracted attention&mdash;because focused repetition triggers <b>myelination</b>, the wrapping of fatty tissue around neural circuits that makes them fire faster. He then introduces <b>Adam Grant</b>, the youngest tenured professor at Wharton, whose productivity secret is batching work into long, uninterrupted stretches. Newport formalizes this as: <b>High-Quality Work Produced = (Time Spent) &times; (Intensity of Focus)</b>. He supports this with <b>Sophie Leroy's</b> research on <b>attention residue</b>&mdash;the finding that when you switch tasks, your attention doesn't fully follow, degrading performance on the new task.</p>
+
+<p>Newport addresses the "Jack Dorsey objection"&mdash;that some highly successful people (like CEOs) thrive without deep work. He argues these are specific exceptions: a CEO is essentially a "hard-to-automate decision engine" whose value comes from rapid judgment, not extended concentration. This specificity means their approach cannot be generalized to most knowledge workers.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The claim that deep work is <i>increasingly</i> valuable rests on the premise that the economy is restructuring around cognitive complexity. However, economists like <b>David Autor</b> have noted that many growing job categories (healthcare, personal services) don't obviously reward deep work in Newport's sense. Additionally, the dismissal of CEOs and other "shallow" successes as mere exceptions may be too convenient&mdash;<b>Henry Mintzberg's</b> research on managerial work suggests that <i>most</i> management roles inherently require fragmented attention, which describes a very large portion of the knowledge workforce.</p>
+</details>
+
+<h2>Chapter 2: Deep Work Is Rare</h2>
+
+<p>Despite its value, deep work is becoming rarer in most workplaces. Newport identifies three forces driving this decline. First, the <b>metric black hole</b>: it's extremely difficult to measure the bottom-line impact of depth-destroying behaviors like constant email or open offices, so these behaviors persist unchallenged. Second, the <b>Principle of Least Resistance</b>: "In a business setting, without clear feedback on the impact of various behaviors to the bottom line, we will tend toward behaviors that are easiest in the moment." Constant connectivity and recurring meetings survive because they make daily work easier to manage, even though they undermine productivity.</p>
+
+<p>Third, Newport identifies <b>Busyness as a Proxy for Productivity</b>: "In the absence of clear indicators of what it means to be productive and valuable in their jobs, many knowledge workers turn back toward an industrial indicator of productivity: doing lots of stuff in a visible manner." He contrasts this with the clarity enjoyed by academics who can point to their h-index. Finally, he discusses the <b>Cult of the Internet</b>, drawing on <b>Neil Postman's</b> concept of "technopoly" and <b>Evgeny Morozov's</b> critique of "Internet-centrism"&mdash;the reflexive assumption that anything Internet-related is inherently good and progressive. These forces combine to make deep work paradoxically rare despite its clear value, creating a personal opportunity for those willing to swim against the current.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Newport's Principle of Least Resistance applies a broad brush. Research by <b>Teresa Amabile</b> at Harvard has shown that some forms of collaborative interruption genuinely accelerate creative problem-solving, particularly in fields requiring diverse inputs. The "metric black hole" argument also cuts both ways&mdash;if we can't measure the cost of shallow work, we also can't definitively measure the benefit of deep work in most organizational contexts, making Newport's own claims somewhat unfalsifiable.</p>
+</details>
+
+<h2>Chapter 3: Deep Work Is Meaningful</h2>
+
+<p>Newport argues that deep work isn't just economically valuable but makes for a <b>better, more meaningful life</b>. He presents three perspectives. <b>Neurologically</b>, he draws on science writer <b>Winifred Gallagher</b>, whose book <i>Rapt</i> argues that "who you are, what you think, feel, and do, what you love&mdash;is the sum of what you focus on." Deep work hijacks your attention apparatus, preventing you from dwelling on the petty stresses and irritations that populate most knowledge workers' inboxes. <b>Psychologically</b>, he cites <b>Mihaly Csikszentmihalyi's</b> research on <b>flow</b>&mdash;the finding that people are happiest when immersed deeply in challenging tasks, not when relaxing.</p>
+
+<p><b>Philosophically</b>, Newport draws on <b>Hubert Dreyfus and Sean Dorrance Kelly's</b> <i>All Things Shining</i>, which argues that craftsmanship provides a source of meaning in a post-Enlightenment world. A craftsman doesn't generate meaning arbitrarily but cultivates "the skill of discerning the meanings that are already there" in the materials and tasks before them. Newport extends this to knowledge work: "You don't need a rarified job; you need instead a rarified approach to your work." Deep work is the mechanism through which knowledge workers can access this craftsman's sense of sacred purpose.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The philosophical argument conflates two distinct claims: that <i>skilled</i> work is meaningful, and that <i>deep</i> (i.e., uninterrupted) work is meaningful. Many highly skilled workers&mdash;emergency physicians, trial lawyers, diplomats&mdash;exercise profound craft under conditions of constant interruption. The Csikszentmihalyi flow research, while robust, has been critiqued by <b>Jeanne Nakamura</b> and others for potentially conflating <i>enjoyable challenge</i> with <i>sustained isolation</i>, which are not identical.</p>
+</details>
+
+<h2>Rule #1: Work Deeply</h2>
+
+<p>Newport opens Part 2 with architect <b>David Dewane's Eudaimonia Machine</b>&mdash;a building designed to progressively lead workers from social spaces to soundproofed deep work chambers. Since most of us lack such ideal environments, this rule provides strategies to simulate its effects. Newport first establishes why willpower alone is insufficient, citing <b>Roy Baumeister's</b> research showing willpower is a finite resource that depletes with use. The key is therefore to build <b>routines and rituals</b> that minimize the willpower needed to enter and sustain depth.</p>
+
+<p>Newport presents four <b>depth philosophies</b>. The <b>monastic</b> approach (used by Donald Knuth and Neal Stephenson) radically eliminates shallow obligations. The <b>bimodal</b> approach (used by Carl Jung and Adam Grant) alternates between extended deep periods and normal open availability. The <b>rhythmic</b> approach transforms deep work into a daily habit at fixed times (like Jerry Seinfeld's "chain method"). The <b>journalistic</b> approach (used by Walter Isaacson) fits deep work into any available gap&mdash;but requires practiced skill to execute.</p>
+
+<p>Beyond choosing a philosophy, Newport advocates <b>ritualizing</b> deep work (specifying where, how, and with what support you'll work), making <b>grand gestures</b> (like J.K. Rowling checking into a luxury hotel to finish <i>The Deathly Hallows</i>), leveraging <b>collaborative depth</b> through a "hub-and-spoke" model that separates serendipitous encounter from concentrated thinking, <b>executing like a business</b> using the <b>4 Disciplines of Execution</b> (4DX) framework, and finally, <b>being lazy</b>&mdash;implementing a strict shutdown ritual at the end of each workday, supported by research on <b>unconscious thought theory</b>, <b>attention restoration theory</b>, and the limited daily capacity for deliberate practice.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The "willpower as finite resource" model (<b>ego depletion</b>) that Newport relies on has faced significant replication challenges. A large-scale 2016 replication study published in <i>Perspectives on Psychological Science</i> found little evidence for the ego depletion effect. If willpower is not as depletable as Baumeister originally claimed, the urgency of Newport's elaborate ritual-building may be somewhat overstated&mdash;though the rituals themselves may still help through habit formation rather than willpower conservation.</p>
+</details>
+
+<h2>Rule #2: Embrace Boredom</h2>
+
+<p>Newport argues that the ability to concentrate intensely is a skill that must be trained&mdash;not merely a matter of motivation. He illustrates this through <b>Adam Marlin</b>, who studies the Talmud each morning and found that this daily "mental calisthenics" improved his professional creativity. Critically, Newport warns that training for depth will fail if you simultaneously feed a dependence on distraction, citing <b>Clifford Nass's</b> Stanford research showing that chronic multitaskers develop lasting attention deficits&mdash;they "can't filter out irrelevancy" and become "pretty much mental wrecks."</p>
+
+<p>Newport proposes several strategies. Rather than taking occasional breaks <i>from</i> distraction (like an "Internet Sabbath"), he recommends <b>scheduling breaks from focus</b>&mdash;designating specific Internet blocks and keeping all other time offline. He introduces <b>Roosevelt dashes</b>: setting artificially tight deadlines to force intense concentration, named after Theodore Roosevelt's habit of compressing study into short, fierce bursts at Harvard. He advocates <b>productive meditation</b>&mdash;using physical-but-not-mental activities (walking, commuting) to work through professional problems. Finally, he suggests <b>memory training</b> (like memorizing a deck of cards) as a side exercise that strengthens attentional control, citing research from <b>Henry Roediger's</b> Memory Lab.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The advice to schedule Internet use and resist all online access outside those blocks may be impractical for many knowledge workers whose jobs fundamentally require real-time collaboration tools. Newport acknowledges this but his workaround&mdash;scheduling more frequent Internet blocks&mdash;may effectively eliminate the offline training periods he considers essential. Additionally, <b>Gloria Mark's</b> own research, which Newport cites elsewhere, suggests that some workers actually perform better with brief diversions, and that the relationship between interruption and productivity is more complex than a simple "distraction bad, focus good" dichotomy.</p>
+</details>
+
+<h2>Rule #3: Quit Social Media</h2>
+
+<p>Newport argues that most people adopt network tools using the <b>any-benefit approach</b>&mdash;"You're justified in using a network tool if you can identify <i>any</i> possible benefit to its use." He proposes replacing this with the <b>craftsman approach to tool selection</b>: "Identify the core factors that determine success and happiness in your professional and personal life. Adopt a tool only if its positive impacts on these factors substantially outweigh its negative impacts." He illustrates this through farmer <b>Forrest Pritchard</b>, who sold his hay baler despite its obvious benefits because a nuanced cost-benefit analysis showed it hurt his soil health&mdash;his true baseline for success.</p>
+
+<p>Newport offers three strategies. First, <b>apply the Law of the Vital Few</b> (the 80/20 principle): identify your most important professional and personal goals and their key supporting activities, then evaluate each tool against only these activities. He shows how even for writers, Twitter often fails this test. Second, <b>quit social media for 30 days</b> without announcement, then ask: "Would the last thirty days have been notably better with this service?" and "Did people care that I wasn't using it?" If both answers are no, quit permanently. Third, <b>don't use the Internet to entertain yourself</b>&mdash;drawing on <b>Arnold Bennett's</b> 1910 advice to treat leisure as a "day within a day" to be deliberately structured with enriching activities rather than surrendered to clickbait.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Newport's framework works well for established professionals (like bestselling authors who don't need to build audiences), but may disadvantage those at earlier career stages where network effects and visibility genuinely matter. Researchers like <b>danah boyd</b> have documented how social media provides genuine social capital, particularly for marginalized communities and people without access to traditional professional networks. The 30-day experiment is clever but may not capture the <i>long-term</i> costs of network absence&mdash;relationships and opportunities that develop over months or years, not weeks.</p>
+</details>
+
+<h2>Rule #4: Drain the Shallows</h2>
+
+<p>Newport opens with <b>37signals (Basecamp)</b>, whose founder Jason Fried shortened the workweek to four days and found employees accomplished the same amount of meaningful work&mdash;the reduction disproportionately eliminated shallow rather than deep work. Newport takes this further: Anders Ericsson's research suggests even experts can sustain only about <b>four hours of truly deep work per day</b>, meaning the rest of a typical workday is already shallow by default.</p>
+
+<p>Newport provides several tactical strategies. <b>Schedule every minute of your day</b>&mdash;not as a rigid constraint but as a forcing function for thoughtfulness about time allocation. <b>Quantify depth</b> by asking: "How long would it take to train a smart recent college graduate to complete this task?" The longer the answer, the deeper the work. <b>Ask your boss for a shallow work budget</b>&mdash;typically 30-50 percent&mdash;to gain explicit permission to protect deep time. <b>Finish work by five thirty</b> (or a similar fixed endpoint) using what Newport calls <b>fixed-schedule productivity</b>, working backward from the constraint to eliminate unnecessary shallow commitments. Finally, <b>become hard to reach</b> through sender filters, process-centric email responses that minimize back-and-forth, and the willingness to simply not respond to messages that are ambiguous, uninteresting, or inconsequential.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The four-hour deep work limit, drawn from Ericsson's deliberate practice research, was studied primarily in domains like music and chess. Whether it transfers cleanly to knowledge work&mdash;which involves more varied cognitive demands&mdash;is unclear. Some software engineers and writers report productive deep sessions lasting six to eight hours. Additionally, the "schedule every minute" approach may conflict with research by <b>Ap Dijksterhuis</b> (which Newport himself cites in Rule #1) showing that unstructured mental wandering can improve complex decision-making.</p>
+</details>
+
+<h2>Conclusion</h2>
+
+<p>Newport closes by returning to <b>Bill Gates</b>, whose famous creation of a BASIC interpreter for the Altair in 1974 was fueled by what Paul Allen called "a prodigious feat of concentration"&mdash;Gates would code so intensely he'd collapse asleep on his keyboard, then wake and continue exactly where he left off. Newport emphasizes that his argument for deep work is <b>pragmatic, not moral</b>: "Deep work is important, in other words, not because distraction is evil, but because it enabled Bill Gates to start a billion-dollar industry in less than a semester."</p>
+
+<p>He then shares his own journey of progressively deepening his commitment to focused work&mdash;from graduate student to professor, eventually doubling his publication rate to nine peer-reviewed papers in a single year while simultaneously writing this book and maintaining a strict five-thirty shutdown. His message is that deep work is not a fixed trait but a trainable skill with compounding returns: the more deliberately you practice it, the more remarkable your output becomes. <b>"A deep life is a good life, any way you look at it."</b></p>
+
+<h2 id="quiz-heading">Comprehension Quiz</h2>
+
+<details id="quiz-section" class="quiz-wrapper">
+  <summary class="quiz-toggle">Take the Quiz</summary>
+
+  <form id="quiz-form">
+
+    <div class="q-block">
+      <p class="q-label">1. What is Newport's definition of "deep work"?</p>
+      <label><input type="radio" name="q1" value="a"> Working long hours without breaks</label>
+      <label><input type="radio" name="q1" value="b"> Professional activities performed in distraction-free concentration that push cognitive capabilities to their limit</label>
+      <label><input type="radio" name="q1" value="c"> Any work that requires a college education to perform</label>
+      <label><input type="radio" name="q1" value="d"> Creative work that produces artistic output</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">2. According to Newport, what three groups will thrive in the new economy?</p>
+      <label><input type="radio" name="q2" value="a"> Managers, salespeople, and consultants</label>
+      <label><input type="radio" name="q2" value="b"> High-skilled workers, superstars, and owners of capital</label>
+      <label><input type="radio" name="q2" value="c"> Engineers, doctors, and lawyers</label>
+      <label><input type="radio" name="q2" value="d"> Entrepreneurs, influencers, and remote workers</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">3. What is "attention residue" as described by Sophie Leroy?</p>
+      <label><input type="radio" name="q3" value="a"> The fatigue you feel after a long workday</label>
+      <label><input type="radio" name="q3" value="b"> The leftover attention stuck on a previous task when you switch to a new one</label>
+      <label><input type="radio" name="q3" value="c"> The tendency to remember irrelevant information</label>
+      <label><input type="radio" name="q3" value="d"> The mental energy consumed by email notifications</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">4. What is the "Principle of Least Resistance" in workplace behavior?</p>
+      <label><input type="radio" name="q4" value="a"> People resist change in all work environments</label>
+      <label><input type="radio" name="q4" value="b"> Without clear feedback on impact, we tend toward behaviors that are easiest in the moment</label>
+      <label><input type="radio" name="q4" value="c"> Workers always choose the path that minimizes their total working hours</label>
+      <label><input type="radio" name="q4" value="d"> Managers resist giving employees time for deep work</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">5. Why does Newport say "busyness" has become a proxy for productivity?</p>
+      <label><input type="radio" name="q5" value="a"> Because busy workers are always more productive</label>
+      <label><input type="radio" name="q5" value="b"> Because without clear indicators of value, visible activity substitutes for meaningful output</label>
+      <label><input type="radio" name="q5" value="c"> Because managers require employees to appear busy at all times</label>
+      <label><input type="radio" name="q5" value="d"> Because technology has made all work equally shallow</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">6. Which psychologist's research on "flow" does Newport cite to argue deep work is psychologically satisfying?</p>
+      <label><input type="radio" name="q6" value="a"> Daniel Kahneman</label>
+      <label><input type="radio" name="q6" value="b"> Mihaly Csikszentmihalyi</label>
+      <label><input type="radio" name="q6" value="c"> Roy Baumeister</label>
+      <label><input type="radio" name="q6" value="d"> Carol Dweck</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">7. What are the four "depth philosophies" Newport describes for scheduling deep work?</p>
+      <label><input type="radio" name="q7" value="a"> Morning, evening, weekend, and vacation</label>
+      <label><input type="radio" name="q7" value="b"> Monastic, bimodal, rhythmic, and journalistic</label>
+      <label><input type="radio" name="q7" value="c"> Intensive, moderate, light, and flexible</label>
+      <label><input type="radio" name="q7" value="d"> Solo, collaborative, hybrid, and remote</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">8. What does Newport mean by a "grand gesture"?</p>
+      <label><input type="radio" name="q8" value="a"> Publicly quitting social media</label>
+      <label><input type="radio" name="q8" value="b"> A radical change in environment or significant investment to boost the perceived importance of a deep work task</label>
+      <label><input type="radio" name="q8" value="c"> Sending a dramatic email to your boss requesting deep work time</label>
+      <label><input type="radio" name="q8" value="d"> Making a large career change to pursue meaningful work</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">9. Instead of taking breaks from distraction, what does Newport recommend?</p>
+      <label><input type="radio" name="q9" value="a"> Eliminating all Internet use permanently</label>
+      <label><input type="radio" name="q9" value="b"> Taking breaks from focus by scheduling specific Internet blocks</label>
+      <label><input type="radio" name="q9" value="c"> Using distraction as a reward after completing deep work</label>
+      <label><input type="radio" name="q9" value="d"> Practicing meditation for 30 minutes each morning</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">10. What is the "craftsman approach to tool selection"?</p>
+      <label><input type="radio" name="q10" value="a"> Using only analog tools and avoiding all digital technology</label>
+      <label><input type="radio" name="q10" value="b"> Adopting a tool only if its positive impacts on core success factors substantially outweigh its negatives</label>
+      <label><input type="radio" name="q10" value="c"> Choosing tools based on what competitors are using</label>
+      <label><input type="radio" name="q10" value="d"> Selecting the most expensive tools to signal seriousness</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">11. What question does Newport suggest for quantifying how deep a task is?</p>
+      <label><input type="radio" name="q11" value="a"> "Does this task require an Internet connection?"</label>
+      <label><input type="radio" name="q11" value="b"> "How long would it take to train a smart recent college graduate to complete this task?"</label>
+      <label><input type="radio" name="q11" value="c"> "Can this task be done while watching television?"</label>
+      <label><input type="radio" name="q11" value="d"> "Does this task appear on my job description?"</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">12. What is "fixed-schedule productivity"?</p>
+      <label><input type="radio" name="q12" value="a"> Working the same number of hours every day regardless of workload</label>
+      <label><input type="radio" name="q12" value="b"> Setting a firm end time for work and working backward to find strategies that honor it</label>
+      <label><input type="radio" name="q12" value="c"> Following a fixed daily routine with no flexibility</label>
+      <label><input type="radio" name="q12" value="d"> Scheduling all meetings at the same time each week</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">13. According to Newport's productivity formula, what determines the quality of work produced?</p>
+      <label><input type="radio" name="q13" value="a"> Total hours worked multiplied by number of tasks completed</label>
+      <label><input type="radio" name="q13" value="b"> Time spent multiplied by intensity of focus</label>
+      <label><input type="radio" name="q13" value="c"> Talent level plus years of experience</label>
+      <label><input type="radio" name="q13" value="d"> Number of collaborators multiplied by meeting frequency</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">14. What does Newport say is the maximum daily capacity for deep work, based on Ericsson's research?</p>
+      <label><input type="radio" name="q14" value="a"> About two hours for all workers</label>
+      <label><input type="radio" name="q14" value="b"> About four hours for experts, less for novices</label>
+      <label><input type="radio" name="q14" value="c"> About eight hours with proper training</label>
+      <label><input type="radio" name="q14" value="d"> There is no limit if you build the right rituals</label>
+    </div>
+
+    <button type="button" id="score-btn" onclick="scoreQuiz()">Score My Answers</button>
+
+    <div id="quiz-result" style="display:none;">
+      <p id="score-text"></p>
+      <div id="answer-review"></div>
+    </div>
+
+  </form>
+</details>
+
+<script>
+(function() {
+  const answers = {
+    q1: { correct: "b", explain: "Newport defines deep work as professional activities performed in distraction-free concentration that push your cognitive capabilities to their limit." },
+    q2: { correct: "b", explain: "Drawing on Brynjolfsson, McAfee, and Cowen, Newport identifies high-skilled workers, superstars, and owners of capital as the three groups that will thrive." },
+    q3: { correct: "b", explain: "Attention residue is the leftover attention that remains stuck on a previous task when you switch to a new one, degrading performance." },
+    q4: { correct: "b", explain: "Without clear metrics on impact, people default to whatever behaviors are easiest in the moment, even if they undermine productivity." },
+    q5: { correct: "b", explain: "Without clear indicators of what valuable work looks like, knowledge workers substitute visible activity for meaningful output." },
+    q6: { correct: "b", explain: "Csikszentmihalyi's research on flow shows people are happiest when deeply immersed in challenging tasks, not when relaxing." },
+    q7: { correct: "b", explain: "The four philosophies are monastic (eliminate all shallowness), bimodal (alternate deep and open periods), rhythmic (daily deep work habit), and journalistic (fit depth into any gap)." },
+    q8: { correct: "b", explain: "A grand gesture involves a radical environmental change or significant investment (like checking into a hotel) to boost motivation for deep work." },
+    q9: { correct: "b", explain: "Newport recommends scheduling specific Internet blocks and keeping all other time offline, rather than occasional breaks from distraction." },
+    q10: { correct: "b", explain: "The craftsman approach adopts a tool only if its positive impacts on core factors of success substantially outweigh its negative impacts." },
+    q11: { correct: "b", explain: "The longer it would take a smart graduate to learn the task, the deeper the work and the more it leverages your hard-won expertise." },
+    q12: { correct: "b", explain: "Fixed-schedule productivity means setting a firm end time (like 5:30 p.m.) and working backward to find strategies that honor that constraint." },
+    q13: { correct: "b", explain: "Newport's formula is High-Quality Work Produced = (Time Spent) x (Intensity of Focus)." },
+    q14: { correct: "b", explain: "Ericsson's research suggests experts can sustain about four hours of deliberate deep work per day; novices about one hour." }
+  };
+
+  window.scoreQuiz = function() {
+    const form = document.getElementById("quiz-form");
+    let correct = 0;
+    const total = Object.keys(answers).length;
+    let reviewHTML = "";
+
+    for (let i = 1; i <= total; i++) {
+      const key = "q" + i;
+      const selected = form.elements[key] ? form.elements[key].value : "";
+      const isCorrect = selected === answers[key].correct;
+      if (isCorrect) correct++;
+
+      const status = !selected ? "wrong" : (isCorrect ? "correct" : "wrong");
+      const icon = isCorrect ? "\u2705" : "\u274C";
+      const yourAnswer = selected ? selected.toUpperCase() : "No answer";
+      const correctAnswer = answers[key].correct.toUpperCase();
+
+      reviewHTML += '<div class="review-item ' + status + '">';
+      reviewHTML += '<div class="ri-q">' + icon + " Question " + i + "</div>";
+      reviewHTML += '<div class="ri-detail">';
+      if (!isCorrect) {
+        reviewHTML += "Your answer: " + yourAnswer + " &mdash; Correct answer: " + correctAnswer + "<br>";
+      }
+      reviewHTML += answers[key].explain;
+      reviewHTML += "</div></div>";
+    }
+
+    const pct = Math.round((correct / total) * 100);
+    let grade;
+    if (pct === 100) grade = "Perfect score!";
+    else if (pct >= 80) grade = "Great understanding!";
+    else if (pct >= 60) grade = "Good, but review the summaries above for the ones you missed.";
+    else grade = "Consider re-reading the summaries above and trying again.";
+
+    document.getElementById("score-text").textContent = correct + " / " + total + " (" + pct + "%) \u2014 " + grade;
+    document.getElementById("answer-review").innerHTML = reviewHTML;
+    document.getElementById("quiz-result").style.display = "block";
+    document.getElementById("quiz-result").scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+})();
+</script>
+
+</div><!-- .content -->
+
+</body>
+</html>

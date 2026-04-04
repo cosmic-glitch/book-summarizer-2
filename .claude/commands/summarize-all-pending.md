@@ -21,12 +21,38 @@ Follow these steps exactly:
 For each pending book, in alphabetical order:
 
 1. Tell the user which book you are starting: "Summarizing 1 of N: <filename>"
-2. Invoke the `/summarize-book` skill with the filename as the argument (e.g., `/summarize-book The Intelligent Investor.pdf`).
-3. After the skill completes, confirm success: "Completed <filename>. Moving to next."
-4. If any error occurs — including running out of context/token budget, a missing tool like `pdftotext`, a corrupt file, or any other failure — **stop immediately**. Tell the user which book failed and why, and list any remaining books that were not processed.
+2. Use the **Bash tool** to spawn an isolated Claude Code subprocess that will summarize the book in its own context window. Run the following command (with a timeout of 600000 milliseconds):
+
+   ```
+   claude -p "/summarize-book <filename>" --permission-mode bypassPermissions
+   ```
+
+   Replace `<filename>` with the actual book filename (e.g., `The Intelligent Investor.pdf`). Each subprocess gets a **fresh context window**, so large books do not exhaust the parent session's context.
+
+3. Check the exit code of the subprocess. Exit code 0 means success.
+4. After a successful summarization, fetch the book's cover image by spawning another isolated subprocess:
+
+   ```
+   claude -p "/fetch-cover <stem>" --permission-mode bypassPermissions
+   ```
+
+   Replace `<stem>` with the book's stem name (filename without extension, spaces replaced with underscores — e.g., `The Intelligent Investor.pdf` → `The_Intelligent_Investor`). If the cover fetch fails, log a warning but **do not stop** — cover failures are non-fatal.
+
+5. After success, confirm: "Completed <filename>. Moving to next."
+6. If the summarization subprocess fails (non-zero exit code), **stop immediately**. Tell the user which book failed, include the last ~20 lines of output for diagnosis, and list any remaining books that were not processed.
+
+## Step 3: Regenerate the index
+
+After all pending books have been successfully summarized, run:
+
+```
+./generate_index.sh
+```
+
+This updates `summaries/index.html` to include all newly generated summaries. Only run this step if at least one book was successfully summarized.
 
 ## Important rules
 
+- Each book is summarized in its own **isolated subprocess** via `claude -p`. This prevents large books from filling up the parent session's context window. Do NOT invoke the `/summarize-book` skill directly — always use the subprocess approach.
 - Process books **sequentially**, one at a time. Do not attempt to parallelize.
 - Stop on the **first failure**. Do not skip failed books and continue.
-- The most likely failure mode is running out of token budget in Claude Code. If you notice you are close to the context limit, stop before starting the next book and tell the user how many remain.

@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Factfulness — Book Summary Pro</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      line-height: 1.7;
+      color: #222;
+      background: #fafafa;
+    }
+    .app-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #2c2c2c;
+      padding: 14px 24px;
+    }
+    .content {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 32px 20px 40px;
+    }
+    .app-nav .app-name {
+      font-size: 1.05em;
+      font-weight: bold;
+      color: #e8e0d0;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+    }
+    .app-nav .app-name:hover {
+      color: #d4a843;
+    }
+    .app-nav .back-link {
+      font-size: 0.9em;
+      color: #999;
+      text-decoration: none;
+    }
+    .app-nav .back-link:hover {
+      color: #d4a843;
+    }
+    h1 {
+      font-size: 1.8em;
+      border-bottom: 2px solid #333;
+      padding-bottom: 10px;
+      margin-bottom: 5px;
+    }
+    .subtitle {
+      font-size: 1.1em;
+      color: #444;
+      margin: 2px 0 0 0;
+      font-style: italic;
+    }
+    .author {
+      font-style: italic;
+      color: #777;
+      font-size: 0.95em;
+      margin-bottom: 40px;
+    }
+    h2 {
+      font-size: 1.3em;
+      margin-top: 48px;
+      color: #1a1a1a;
+      border-left: 4px solid #555;
+      padding-left: 12px;
+    }
+    p {
+      margin-bottom: 14px;
+      text-align: justify;
+    }
+    details.counter {
+      background: #f0ece4;
+      border-left: 4px solid #b8860b;
+      padding: 14px 18px;
+      margin: 20px 0 28px 0;
+      border-radius: 0 6px 6px 0;
+    }
+    details.counter summary {
+      font-weight: bold;
+      font-size: 0.95em;
+      color: #8b6914;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    details.counter summary::-webkit-details-marker {
+      display: none;
+    }
+    details.counter summary::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    details.counter[open] summary::before {
+      transform: rotate(90deg);
+    }
+    details.counter p {
+      margin-top: 12px;
+      margin-bottom: 10px;
+      color: #3a3a3a;
+    }
+    details.counter p:last-child {
+      margin-bottom: 0;
+    }
+    .quiz-wrapper {
+      margin-top: 48px;
+      background: #f5f5f0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 16px 20px;
+    }
+    .quiz-toggle {
+      font-weight: bold;
+      font-size: 1.05em;
+      cursor: pointer;
+      color: #2a5a2a;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .quiz-toggle::-webkit-details-marker { display: none; }
+    .quiz-toggle::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    .quiz-wrapper[open] .quiz-toggle::before {
+      transform: rotate(90deg);
+    }
+    .q-block {
+      margin: 24px 0;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    .q-block:last-of-type { border-bottom: none; }
+    .q-label {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .q-block label {
+      display: block;
+      padding: 6px 10px;
+      margin: 4px 0;
+      border-radius: 4px;
+      cursor: pointer;
+      line-height: 1.5;
+    }
+    .q-block label:hover { background: #e8e8e0; }
+    #score-btn {
+      display: block;
+      margin: 28px auto 0;
+      padding: 12px 32px;
+      font-family: Georgia, serif;
+      font-size: 1em;
+      background: #2a5a2a;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #score-btn:hover { background: #1e441e; }
+    #quiz-result {
+      margin-top: 24px;
+      padding: 18px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    #score-text {
+      font-size: 1.15em;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .review-item {
+      margin-bottom: 14px;
+      padding: 10px 12px;
+      border-radius: 4px;
+    }
+    .review-item.correct { background: #e6f4e6; }
+    .review-item.wrong { background: #fce8e8; }
+    .review-item .ri-q { font-weight: bold; margin-bottom: 4px; }
+    .review-item .ri-detail { font-size: 0.93em; color: #444; }
+  </style>
+</head>
+<body>
+
+<nav class="app-nav">
+  <a href="index.html" class="app-name">Book Summary Pro</a>
+  <a href="index.html" class="back-link">&larr; All Books</a>
+</nav>
+
+<div class="content">
+
+<h1>Factfulness</h1>
+<p class="subtitle">Ten Reasons We're Wrong About the World &mdash; and Why Things Are Better Than You Think</p>
+<p class="author">Hans Rosling with Ola Rosling and Anna Rosling R&ouml;nnlund</p>
+
+<h2>Introduction: Why I Love the Circus</h2>
+
+<p>Hans Rosling, a Swedish global health professor, opens with a confession: he occasionally swallows swords at the end of lectures to demonstrate that the seemingly impossible can be possible. The circus metaphor frames his broader argument &mdash; our intuitions about the world are often spectacularly wrong, and the truth is far more surprising than we assume. He challenges readers with a 13-question quiz about global trends in poverty, health, education, and environment, and explains that most people &mdash; including Nobel laureates, senior politicians, and business executives &mdash; score worse than random chance. A troop of chimpanzees choosing randomly would outscore the typical well-educated respondent.</p>
+
+<p>The reason, Rosling argues, is not stupidity or outdated knowledge alone. Even people with access to the latest information fail these tests. The culprit is what he calls the <b>overdramatic worldview</b>: a systematically distorted picture of the world as more frightening, more violent, more divided, and more hopeless than it actually is. This worldview is not accidental but is shaped by ten <b>dramatic instincts</b> &mdash; cognitive biases hardwired into human brains from an evolutionary past &mdash; that filter, distort, and exaggerate incoming information. The book promises both to name these instincts and to offer practical <b>factfulness rules of thumb</b> for controlling them.</p>
+
+<p>Rosling introduces the concept of <b>factfulness</b> itself: not merely knowing facts, but cultivating a habit of thought that replaces fear-driven, binary, and overdramatic interpretations with cool-headed, data-grounded reasoning. Like a healthy diet or regular exercise, factfulness is a discipline to be practiced daily. Rosling frames the project as his "last battle" against global ignorance, written in the final two years of his life after a diagnosis of pancreatic cancer.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>While Rosling's critique of the overdramatic worldview is compelling, some scholars argue his framing is itself selective. Critics such as <b>Jason Hickel</b> contend that Rosling's poverty metrics rely on a very low threshold ($1.90/day) that obscures persistent deprivation; raising the bar to $5 or $10 a day paints a far grimmer picture of progress. The argument that people are <i>systematically</i> misinformed could also be reversed: Rosling's own framing systematically emphasizes improvements while downplaying structural inequalities and ecological costs of growth. His "chimpanzee benchmark" is rhetorically powerful but statistically misleading &mdash; systematically wrong answers in one direction suggest a real, exploitable bias in media and education, not merely random failure.</p>
+</details>
+
+<h2>Chapter 1: The Gap Instinct</h2>
+
+<p>The first and most consequential dramatic instinct is the <b>gap instinct</b>: the irresistible human urge to divide the world into two distinct, opposing groups with an imagined chasm between them. In the context of global development, this manifests as the belief in a world split between "developed" and "developing" countries, the "West and the rest," or simply "rich versus poor." Rosling traces this misconception to a 1995 classroom experiment in which his students confidently claimed that countries outside the West "could never live like us" &mdash; a belief that data tables immediately demolished.</p>
+
+<p>In 1965, the world did roughly fit a two-group model: a cluster of high-fertility, high-child-mortality nations and a separate cluster of low-fertility, low-mortality nations. But that picture is now fifty years obsolete. Today, <b>85 percent of humanity</b> lives inside what used to be called the "developed" box on measures of family size and child survival. The gap has disappeared. Most people live not at the extremes but in a vast, diverse middle. To replace the obsolete binary, Rosling introduces the <b>four income levels</b> framework: Level 1 (~1 billion, under $2/day), Level 2 (~3 billion, $2&ndash;$8/day), Level 3 (~2 billion, $8&ndash;$32/day), and Level 4 (~1 billion, over $32/day). Vivid descriptions of daily life at each level &mdash; water buckets, bicycles, motorcycles, cars &mdash; make the distinctions visceral and memorable.</p>
+
+<p>Three warning signs indicate that the gap instinct is being triggered: <b>comparisons of averages</b> (which hide overlapping distributions), <b>comparisons of extremes</b> (which ignore the dense middle), and the <b>view from up here</b> (the distortion that arises when Level 4 residents look "down" and see everyone else as equally poor). The antidote is to seek out the majority, which almost always sits in the middle of any distribution rather than at either pole.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The four-level framework, while more nuanced than a binary, still abstracts enormously. Critics point out that aggregating billions of people into income buckets obscures <b>within-country inequality</b>, geographic concentration of poverty, and the lived difference between, say, $4/day in rural sub-Saharan Africa versus $4/day near a city with public services. Economist <b>Branko Milanovic</b>, whose work on global inequality Rosling cites approvingly, nevertheless shows that the "elephant curve" of income growth reveals dramatic winners and losers, complicating any simple "rising middle" narrative. The framework's optimism can also inadvertently discourage structural intervention by making incremental progress seem sufficient.</p>
+</details>
+
+<h2>Chapter 2: The Negativity Instinct</h2>
+
+<p>The <b>negativity instinct</b> is the tendency to notice, remember, and weight bad news more heavily than good. This instinct, Rosling argues, drives the most common mega-misconception: that the world is getting worse. He marshals an impressive array of trend data to rebut this belief. <b>Extreme poverty</b> fell from 85 percent of humanity in 1800 to roughly 9 percent today, with the steepest drop occurring in the last 20 years. <b>Life expectancy</b> has risen from around 30 years in 1800 to 72 globally. Child mortality, deaths from natural disasters, deaths in war, rates of illiteracy, legal slavery, and ozone depletion have all declined dramatically. Meanwhile, the number of democracies, girls in school, children vaccinated, and people with access to electricity has risen.</p>
+
+<p>Three mechanisms sustain the negativity illusion. First, <b>misremembering of the past</b>: people romanticize earlier decades, forgetting the deprivation that was then normal. Second, <b>selective reporting</b>: journalism is structurally incentivized to report crises, disasters, and conflict rather than slow, invisible improvements. Third, the <b>feeling that acknowledging progress is heartless</b>: as long as suffering exists, claiming things are getting better can feel morally wrong. Rosling's remedy is a disciplined mental maneuver &mdash; holding two thoughts simultaneously: things can be <i>both bad and better</i>. The world is like a premature baby in an incubator: critically unwell, but improving. Rosling insists he is not an optimist but a <b>"possibilist"</b> &mdash; someone who neither hopes nor fears without reason.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The progressivist narrative Rosling presents is contested on several fronts. <b>Ecological economists</b> note that much of the measured improvement in human welfare has been purchased at the cost of planetary boundaries &mdash; biodiversity loss, climate disruption, nitrogen cycle overload &mdash; which are not captured in GDP or life-expectancy metrics. <b>David Graeber</b> and others argue that industrial capitalism's destruction of indigenous commons and subsistence economies, which provided real security, is erased when we measure poverty only in monetary terms. Even within Rosling's chosen metrics, the pace of poverty reduction has stalled since 2015 and some regions have regressed, suggesting the trend is neither automatic nor irreversible.</p>
+</details>
+
+<h2>Chapter 3: The Straight Line Instinct</h2>
+
+<p>The <b>straight line instinct</b> is the reflex to assume that a trend currently going in one direction will continue indefinitely along a straight trajectory. Rosling introduces it through the terrifying experience of watching Ebola case counts double every three weeks in 2014 &mdash; a doubling curve he initially missed because he assumed straight-line growth. He then pivots to the most consequential application: population growth. People universally assume that because the global population has been rising steeply, it will <i>just keep increasing</i>. This, he argues, is wrong in a specific and important way.</p>
+
+<p>The UN's population forecasts, which almost no one knows, show the global total plateauing at approximately <b>10&ndash;12 billion</b> by 2100. This is because the number of children born per year has already stopped growing &mdash; the world has reached "peak child." The future population growth will come not from new babies but from today's large cohort of children and young adults growing into adulthood and old age, filling up the age pyramid before it stabilizes. The underlying driver of this stabilization is <b>the escape from extreme poverty</b>: as child mortality falls and women gain education and access to contraception, family sizes drop across all cultures and religions. This "demographic transition" has occurred in every country that has developed, regardless of religion or tradition.</p>
+
+<p>Rosling introduces four archetypal curve shapes that are common in reality: <b>S-bends</b> (rapid growth then plateau, as with vaccination rates), <b>slides</b> (steady decline, as with babies per woman), <b>humps</b> (rise then fall, as with traffic accidents during development), and <b>doubling lines</b> (exponential growth, as with infectious disease spread). Assuming straight lines where these shapes apply produces wildly wrong conclusions.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The UN's medium-variant population projection is the most credible single estimate, but the <b>uncertainty bands are enormous</b>: high-variant forecasts show 16 billion by 2100. Climate disruption, which could depress agricultural yields and intensify conflict, is not fully incorporated into demographic models. Some demographers, including <b>Wolfgang Lutz</b>, argue that the trajectory of sub-Saharan African fertility is more uncertain than Rosling implies, and that education investment (not just poverty reduction) is the critical lever. Moreover, a plateau at 10&ndash;12 billion humans consuming at rising middle-class levels poses profound resource and ecological challenges that Rosling acknowledges but does not deeply engage with.</p>
+</details>
+
+<h2>Chapter 4: The Fear Instinct</h2>
+
+<p>The <b>fear instinct</b> &mdash; evolved attention to physical harm, captivity, and contamination &mdash; served our ancestors well on the savanna but now systematically distorts modern risk assessment. Rosling illustrates it through a vivid personal anecdote: as a young doctor treating a crashed Swedish Air Force pilot, he convinced himself that World War III had started, an elaborate confabulation built on fear. His central argument is that the things we fear most &mdash; terrorism, plane crashes, natural disasters, nuclear radiation &mdash; kill far fewer people than the things we barely notice.</p>
+
+<p>Deaths from <b>natural disasters</b> have fallen to roughly 25 percent of what they were a century ago, despite a fivefold increase in global population. Commercial aviation has become 2,100 times safer since the 1930s, thanks to the 1944 Chicago Convention's shared incident-reporting system. <b>Terrorism</b>, while genuinely increasing in lower-income regions, kills only 0.05 percent of all global deaths per year. In wealthy countries it has actually declined since 9/11. Nuclear accidents have killed far fewer people than the evacuations prompted by fear of them &mdash; the 1,600 deaths from the Fukushima evacuation dwarfing any confirmed radiation fatalities. Meanwhile, <b>diarrhea</b> from contaminated water kills 9,000 children every ten days, receiving almost no media coverage.</p>
+
+<p>Rosling's prescription is to <b>calculate the risk</b> rather than feel it. Danger is not the same as fright. Risk equals danger multiplied by exposure. When afraid, make as few decisions as possible until the panic subsides &mdash; fear literally impairs analytical reasoning.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The argument that terrorism and disasters are overrated risks is statistically sound but can become politically contentious. Critics point out that the <b>distributional inequality</b> of risk matters as much as the aggregate: terrorism may kill a small fraction of global deaths, but its psychological and social costs &mdash; eroded civil liberties, xenophobia, destabilized democracies &mdash; extend far beyond the body count. <b>Security scholars</b> like Bruce Schneier make similar statistical arguments but acknowledge that catastrophic low-probability events (bioterrorism, nuclear terrorism) warrant precautionary spending that raw death-rate comparisons might not justify. The chemophobia section, while pointing to real irrationality, glosses over the genuine difficulty of setting safety thresholds for chemicals with uncertain long-term effects at low doses.</p>
+</details>
+
+<h2>Chapter 5: The Size Instinct</h2>
+
+<p>The <b>size instinct</b> involves two related errors: being swayed by a single large number without context, and fixating on a visible individual victim at the expense of anonymous statistical deaths. Rosling traces both failures to his early career as the only doctor for 300,000 people in Mozambique, where he realized that the 52 children who died in his hospital each year represented just 1.3 percent of the child deaths in his district. Prioritizing the visible patients over invisible community prevention would mean saving far fewer lives overall.</p>
+
+<p>The antidote is two "magic tools" that everyone already possesses: <b>compare</b> and <b>divide</b>. Never let a number stand alone. Always ask: compared to what? The 4.2 million babies who died globally in 2016 sounds enormous &mdash; until compared to the 14.4 million who died in 1950, revealing extraordinary progress. Dividing by total births converts a raw death count into an infant mortality <i>rate</i>, which fell from 15 percent in 1950 to 3 percent today. Rosling introduces the <b>80/20 rule</b> as a practical shortcut: when confronted with a long list of items (energy sources, budget lines, causes of death), identify the few items that account for 80 percent of the total and focus there first. He also introduces the <b>PIN code of the world</b> &mdash; 1-1-1-4 (billions in Americas, Europe, Africa, Asia respectively) &mdash; as a memorable reminder that Asia contains the majority of humanity, a fact most Westerners don't know.</p>
+
+<p>The chapter also addresses <b>per capita measures</b>: total CO2 emissions per nation are misleading without dividing by population, as an Indian official memorably argued at Davos. When comparing countries or groups of vastly different sizes, per-person rates almost always tell a more meaningful story than raw totals.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Rosling's argument for per-capita and rate-based thinking is broadly correct, but rates can themselves obscure important realities. <b>Cumulative CO2 emissions</b> (total historical output, not just current annual rates) represent the relevant stock for climate purposes, not per-capita annual flows &mdash; a point the Indian official's argument elides. The 80/20 focus rule, while practical, can lead analysts to systematically neglect tail risks and small populations whose suffering is statistically invisible. The "visible victim" bias Rosling criticizes is real, but psychologists like <b>Paul Slovic</b> argue it is not merely irrational &mdash; it also encodes moral commitments about the irreducibility of individual lives that purely statistical reasoning cannot capture.</p>
+</details>
+
+<h2>Chapter 6: The Generalization Instinct</h2>
+
+<p>The <b>generalization instinct</b> &mdash; the automatic categorization of people, places, and phenomena into groups &mdash; is cognitively necessary but chronically misapplied. The chapter opens with Rosling lying to village hosts in Congo to avoid eating larvae (claiming Swedes culturally don't eat them), an illustration of the universality of tribal generalizations. The more consequential versions of the instinct cause businesses to miss billions of consumers, investors to misplace capital, and health professionals to inadvertently kill patients.</p>
+
+<p>Rosling recounts his own culpability in the latter: for years he followed the public health advice to lay sleeping babies on their tummies to prevent SIDS, not realizing this was a sweeping generalization from a valid finding about unconscious soldiers (who need the recovery position) to sleeping infants (who have active reflexes). Thousands of babies died before the evidence reversed the policy. The generalization was invisible because the chain of logic seemed sound and the intentions were good.</p>
+
+<p>His remedy is the <b>Dollar Street</b> project created by Anna Rosling R&ouml;nnlund: photographs of families from dozens of countries arranged by income level. The images make viscerally clear that the main driver of how people live is <i>income level</i>, not nationality or culture. Nigerian and Chinese families on Level 2 store food in essentially identical ways. The key principles are: look for differences <i>within</i> groups as well as similarities <i>across</i> them; beware of "the majority" (which might mean 51 percent or 99 percent); treat vivid examples as potential exceptions rather than representative cases; and assume other people are not idiots &mdash; their apparently strange solutions are usually intelligent adaptations to their circumstances.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Dollar Street is a genuinely powerful educational tool, but the claim that income explains almost everything about lifestyle is itself a kind of monocausal generalization. <b>Anthropologists</b> and cultural economists point to persistent cultural differences in risk preferences, time horizons, family structure, and religious practices that affect economic behavior in ways not reducible to income levels. <b>Amartya Sen's</b> capabilities approach argues that what people can do and be matters beyond what they can buy, and that capabilities are shaped by cultural and institutional factors that income alone cannot capture. The SIDS story is a compelling cautionary tale about generalization, but Rosling's own four-level framework is itself a generalization subject to the same caveats he applies to "developing/developed."</p>
+</details>
+
+<h2>Chapter 7: The Destiny Instinct</h2>
+
+<p>The <b>destiny instinct</b> is the belief that people, cultures, religions, and countries have innate, unchanging characteristics that determine their fates. It is the instinct behind the conviction that "Africa will never develop," that "Muslim countries will always have high birth rates," or that patriarchal values are timeless features of non-Western cultures rather than historical phases through which all societies pass. Rosling diagnoses this instinct as both cognitively lazy and empirically false.</p>
+
+<p>The chapter opens with a confident investor at an Edinburgh hotel who, having served in Nigeria, dismisses Africa's prospects as culturally impossible &mdash; illustrating how personal anecdote masquerades as universal law. Rosling counters with data: sub-Saharan African countries reduced child mortality faster than Sweden ever did; countries like Ghana, Ethiopia, and Nigeria are growing rapidly; <b>Iran achieved the fastest drop in birth rates in world history</b> &mdash; from over 6 to under 3 children per woman in 15 years &mdash; a fact virtually unknown in the West. He tells the story of his Swedish grandfather, who refused to discuss contraception and disliked telephones, to make the point that "Western values" of sexual openness and gender equality are recent developments, not eternal cultural endowments.</p>
+
+<p>The key insight is that <b>slow change is still change</b>. A 1 percent annual shift in attitudes or conditions becomes dramatic over decades. Cultures do not evolve at news-cycle speed, which is why destiny narratives feel plausible &mdash; we confuse the slowness of change with its absence. The prescription is to update one's knowledge regularly, compare one's values with grandparents' and grandchildren's, and collect examples of cultural transformation.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The destiny instinct critique is well-aimed at facile cultural essentialism, but Rosling may slightly overcorrect. <b>Historical institutionalists</b> like Daron Acemoglu and James Robinson (<i>Why Nations Fail</i>) argue that path dependencies in institutions &mdash; extractive colonial structures, property rights regimes, governance quality &mdash; create lasting development divergences that are not reducible to "income level" and are genuinely difficult to change quickly. The Iran example, while striking, occurred under specific conditions (a strong centralized state, high female education, existing health infrastructure) that do not automatically generalize to other contexts. Rosling's optimism about Africa's trajectory, while data-grounded in 2018, must also contend with the 2020s reversal of poverty reduction in several sub-Saharan countries due to COVID-19, climate shocks, and conflict.</p>
+</details>
+
+<h2>Chapter 8: The Single Perspective Instinct</h2>
+
+<p>The <b>single perspective instinct</b> is the human preference for simple explanations and single solutions. Experts become fixated on their own tools ("give a child a hammer and everything looks like a nail"); ideologues apply their favorite framework to every problem; activists exaggerate the problem they care about. The result is a systematic distortion in which complex, multi-causal realities are flattened into elegant but misleading monocausal stories.</p>
+
+<p>Rosling illustrates the professional version with a trio of examples. A WHO campaign to eradicate tuberculosis via mass chest X-rays failed because the community's most pressing health needs were entirely different. Big Pharma's fixation on breakthrough drugs misses the enormous market for existing drugs at prices affordable on Levels 2 and 3. Gynecologists comfortable asking patients every intimate question refused to ask about income; World Bank income-surveyors refused to ask about sex &mdash; professional norms create blind spots that prevent integrated analysis.</p>
+
+<p>The ideological version is illustrated through the <b>Cuba/United States comparison</b>: Cuba is the "healthiest of the poor" because its socialist government prioritized health metrics, but a statistically minded official privately corrected Rosling &mdash; Cuba is more accurately "the poorest of the healthy." The United States is the "sickest of the rich," spending over twice as much per capita as peer nations for shorter life expectancy, a consequence of its ideological rejection of universal basic health insurance. Neither country's single-perspective approach delivers optimal outcomes. Rosling also challenges the assumption that democracy is a prerequisite for development: most countries that achieved rapid economic and social progress did so under non-democratic governance, and claiming otherwise invites contradiction by reality.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Rosling's pluralism is admirable, but his own implicit framework &mdash; "measure everything, follow the data" &mdash; is itself a single perspective with ideological content. <b>Wendy Brown</b> and other political theorists argue that purely technocratic governance strips out the legitimate value conflicts that politics is meant to resolve; reducing policy to optimization smuggles in distributional preferences as technical facts. Rosling's dismissal of democracy as merely one tool among others is contested by democratic theorists who argue that self-governance has intrinsic value beyond its developmental outputs, and that development achieved under authoritarian conditions often creates fragile or inequitable outcomes that data dashboards miss. His Cuba example, while analytically interesting, sidesteps the question of whether health improvements are worth the costs in political freedom.</p>
+</details>
+
+<h2>Chapter 9: The Blame Instinct</h2>
+
+<p>The <b>blame instinct</b> drives us to find a guilty individual or group whenever something goes wrong, and to credit a heroic individual when something goes right. This instinct feels satisfying and morally righteous but consistently misdirects attention away from the systemic causes that actually explain most outcomes. Rosling illustrates with a classroom exercise in which students want to "punch the boss" of a pharmaceutical company for neglecting diseases of the poor &mdash; until they trace the chain of ownership to pension funds, and ultimately to their own grandmothers' retirement savings.</p>
+
+<p>The chapter examines three common blame targets. <b>Businesses</b> are not automatically villainous: Rosling's UNICEF investigation of an impossibly cheap malaria pill bid revealed a brilliantly automated Swiss factory earning interest arbitrage on UNICEF's payment terms &mdash; innovative capitalism, not exploitation. <b>Journalists</b> are not deliberately deceiving us: they score just as badly as the general public on factual questions about the world, meaning their distorted coverage reflects genuine ignorance, not intentional manipulation. <b>Refugees</b> are dying in the Mediterranean not because of evil smugglers but because EU immigration directives make it practically impossible for asylum-eligible Syrians to travel by safe, legal means &mdash; a systemic outcome that "smart and kind people" avoid acknowledging because it implicates their own governments.</p>
+
+<p>The prescription is to look for <b>causes, not villains</b>, and <b>systems, not heroes</b>. Ebola in Liberia was defeated not by charismatic leaders but by local health workers systematically tracing contacts and changing funeral practices. Washing machines liberated women from hours of labor not because of any individual's genius but because of a system of industrial technology, electrical infrastructure, and chemical engineering. The unsung heroes of development are institutions and technology.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The systemic analysis Rosling advocates is powerful, but completely dissolving individual responsibility into systems can also be self-serving for those who benefit from those systems. <b>Corporate accountability researchers</b> document deliberate strategies by fossil fuel companies, tobacco companies, and others to manufacture uncertainty, suppress inconvenient research, and influence regulation &mdash; actions that are both systemic and individually chosen. The refugee example is compelling but could equally be used to argue for <b>accountability</b> of specific policymakers rather than away from it. Rosling's warning against blame can inadvertently counsel passivity in the face of exploitable power asymmetries.</p>
+</details>
+
+<h2>Chapter 10: The Urgency Instinct</h2>
+
+<p>The <b>urgency instinct</b> &mdash; the pressure to act <i>now or never</i> in the face of perceived immediate danger &mdash; is perhaps the most dangerous of all ten instincts because it shuts down every other cognitive faculty. Rosling recounts one of the most harrowing moments of his career: in 1981 in Mozambique, confronted with an unexplained paralytic epidemic, he told the mayor to set up a roadblock to stop the disease spreading. Within hours, women and children who could no longer take the bus had taken fishing boats instead, and all drowned when the boats capsized. "In the rush to do something, I did something terrible."</p>
+
+<p>The instinct is systematically exploited by salespeople ("this offer expires tonight!"), activists ("we must act now before it's too late!"), and well-meaning experts. Rosling confronted this directly in a conversation with <b>Al Gore</b>, who asked him to help create fear about climate change by showing only worst-case scenarios. Rosling refused. He is deeply concerned about climate change but insists that exaggeration &mdash; showing extreme scenarios without uncertainty bands, linking climate to every current crisis including those with tenuous connections &mdash; ultimately destroys credibility and produces "boys who cried wolf." The Ebola response in 2014 demonstrated the alternative: Rosling's team cleaned and combined four separate data sets to show that confirmed cases had already peaked and were falling, allowing resources to be directed effectively rather than panically.</p>
+
+<p>Rosling identifies <b>five global risks</b> that genuinely warrant sustained attention: pandemic disease, financial collapse, world war, climate change, and extreme poverty. These are his priority concerns not because of fear but because they are likely, large in scale, and capable of pausing all other human progress. The prescription for the urgency instinct is to take small steps, insist on data, beware of fortune-tellers, and remain suspicious of calls to drastic action.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Rosling's critique of urgency-manufacturing is partly valid but has been challenged on climate specifically. Some climate scientists argue that communicating risk in moderate, uncertainty-laden terms has already been tried for decades and has not produced adequate policy response &mdash; that the political economy of fossil fuel interests and short electoral cycles means that urgency rhetoric is a necessary, not merely manipulative, counterweight. <b>Naomi Oreskes</b> documents how the "balance" norm in scientific communication was systematically exploited by industry-funded doubt-merchants to delay action on tobacco, acid rain, and climate. Rosling's insistence on showing full uncertainty ranges, while scientifically correct, can paradoxically be weaponized by those who deny the underlying reality. His five global risks list also predates COVID-19, which arrived in 2020 and proved many of his warnings about pandemic preparedness tragically prescient.</p>
+</details>
+
+<h2>Chapter 11: Factfulness in Practice</h2>
+
+<p>The final chapter synthesizes the preceding arguments into a vision for how factfulness can be applied across different domains. It opens with perhaps the most dramatic personal story in the book: in 1989 in a remote Congo village called Makanga, Rosling faced a crowd of angry villagers brandishing machetes, convinced he had come to steal their blood for malicious purposes. He was saved not by armed force or authority but by an illiterate village woman who stepped forward, rolled up her sleeve, and explained in perfect logical sequence why the research was worth doing &mdash; invoking the measles vaccine as analogous precedent. She intuited and controlled the fear instinct, generalization instinct, blame instinct, and urgency instinct in real time, under extreme duress. "Her factfulness saved my life."</p>
+
+<p>For <b>education</b>, Rosling argues that schools should teach the four-level framework, the factfulness rules of thumb, and above all <b>humility and curiosity</b> &mdash; being comfortable saying "I don't know" and being excited by discovering you were wrong. The Dollar Street project offers a replacement for folkloric world maps that freeze cultures in exotic stasis. For <b>business</b>, ignoring the rise of 4 billion new middle-class consumers in Asia and Africa &mdash; who need reliable products at affordable prices, not ultrathin yoga-specific sanitary pads &mdash; is a strategic failure disguised as a worldview failure. For <b>journalists and activists</b>, the book does not expect neutrality but does ask for historical context, proportionality, and willingness to acknowledge progress alongside crisis.</p>
+
+<p>Rosling closes with characteristic optimism grounded in data: a fact-based worldview is not just more accurate but more <i>comfortable</i> &mdash; it generates less stress and more realistic hope than the perpetually frightened overdramatic alternative. The book was completed posthumously by Ola Rosling and Anna Rosling R&ouml;nnlund after Hans died of pancreatic cancer in February 2017, dictating editorial notes from his hospital bed.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The prescriptions for education and business are sensible but arguably incremental given the scale of the problem Rosling diagnoses. If world leaders, Nobel laureates, and senior executives all consistently fail the 13-question quiz, it suggests the problem may be structural &mdash; embedded in how media ecosystems and political incentives function &mdash; rather than correctible through better pedagogy. <b>Media scholars</b> argue that the economics of digital attention essentially guarantee dramatic, negative framing regardless of individual journalists' knowledge levels. Critics also note that Rosling's faith in data-driven decision-making implicitly favors technocracy over democratic deliberation, and that the "factfulness" framework is itself a value-laden stance about what counts as a fact, what data sources to trust, and whose suffering counts in the statistics.</p>
+</details>
+
+<h2 id="quiz-heading">Comprehension Quiz</h2>
+
+<details id="quiz-section" class="quiz-wrapper">
+  <summary class="quiz-toggle">Take the Quiz</summary>
+
+  <form id="quiz-form">
+
+    <div class="q-block">
+      <p class="q-label">1. What is the central metaphor Rosling uses to explain why people systematically score <i>worse than random chance</i> on his global fact quiz?</p>
+      <label><input type="radio" name="q1" value="a"> a) A broken GPS navigating the wrong city</label>
+      <label><input type="radio" name="q1" value="b"> b) Chimpanzees choosing banana-labeled answers at random</label>
+      <label><input type="radio" name="q1" value="c"> c) A sword swallower defying expectations</label>
+      <label><input type="radio" name="q1" value="d"> d) An outdated textbook from 1965</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">2. How many income levels does Rosling propose to replace the outdated "developed/developing" binary?</p>
+      <label><input type="radio" name="q2" value="a"> a) Two</label>
+      <label><input type="radio" name="q2" value="b"> b) Three</label>
+      <label><input type="radio" name="q2" value="c"> c) Four</label>
+      <label><input type="radio" name="q2" value="d"> d) Five</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">3. The gap instinct is most dangerous when applied to which of the following visual data traps?</p>
+      <label><input type="radio" name="q3" value="a"> a) Comparing individual countries' GDP trajectories</label>
+      <label><input type="radio" name="q3" value="b"> b) Comparing the averages of two groups without examining the spread</label>
+      <label><input type="radio" name="q3" value="c"> c"> Comparing literacy rates across different continents</label>
+      <label><input type="radio" name="q3" value="d"> d) Reading a newspaper headline about inequality</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">4. Rosling calls himself a "possibilist" rather than an optimist. What does he mean by this?</p>
+      <label><input type="radio" name="q4" value="a"> a) He believes the best possible future is guaranteed by data</label>
+      <label><input type="radio" name="q4" value="b"> b"> He neither hopes nor fears without reason, and believes progress is possible but not inevitable</label>
+      <label><input type="radio" name="q4" value="c"> c) He is optimistic about wealthy countries but pessimistic about poor ones</label>
+      <label><input type="radio" name="q4" value="d"> d) He thinks the world is getting better in every single measurable dimension</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">5. According to Rosling, what is the single most important reason that global population growth will slow and plateau?</p>
+      <label><input type="radio" name="q5" value="a"> a) Government one-child policies like China's</label>
+      <label><input type="radio" name="q5" value="b"> b"> The "fill-up effect" as today's large cohort of children grows into adulthood</label>
+      <label><input type="radio" name="q5" value="c"> c) Falling birth rates driven by escape from extreme poverty, female education, and contraception access</label>
+      <label><input type="radio" name="q5" value="d"> d) Declining life expectancy in high-income countries</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">6. In Chapter 3, which curve shape describes how babies-per-woman changes as income increases from Level 1 to Level 4?</p>
+      <label><input type="radio" name="q6" value="a"> a) An S-bend (flat, then rising, then flat)</label>
+      <label><input type="radio" name="q6" value="b"> b) A doubling line (exponential growth)</label>
+      <label><input type="radio" name="q6" value="c"> c) A slide (flat, then declining, then flat)</label>
+      <label><input type="radio" name="q6" value="d"> d) A straight line (constant decline)</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">7. What does Rosling identify as the primary reason deaths from natural disasters have fallen to roughly 25 percent of their rate a century ago?</p>
+      <label><input type="radio" name="q7" value="a"> a) Nature has become less volatile due to climate regulation</label>
+      <label><input type="radio" name="q7" value="b"> b"> Most people no longer live on Level 1, which means better preparedness and infrastructure</label>
+      <label><input type="radio" name="q7" value="c"> c) International rescue organizations like the UN have improved response times</label>
+      <label><input type="radio" name="q7" value="d"> d) Advances in earthquake prediction technology</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">8. The "PIN code of the world" introduced in Chapter 5 refers to which distribution?</p>
+      <label><input type="radio" name="q8" value="a"> a) The distribution of global GDP across four income levels</label>
+      <label><input type="radio" name="q8" value="b"> b"> The number of billions of people on each continent: Americas 1, Europe 1, Africa 1, Asia 4</label>
+      <label><input type="radio" name="q8" value="c"> c) The proportion of children vaccinated per income level</label>
+      <label><input type="radio" name="q8" value="d"> d) The four main causes of preventable child deaths globally</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">9. Rosling's story about turning sleeping babies from their backs onto their tummies illustrates which instinct and danger?</p>
+      <label><input type="radio" name="q9" value="a"> a) The fear instinct &mdash; doctors overreacted to rare SIDS cases</label>
+      <label><input type="radio" name="q9" value="b"> b"> The generalization instinct &mdash; a valid finding about unconscious soldiers was incorrectly generalized to sleeping infants</label>
+      <label><input type="radio" name="q9" value="c"> c) The blame instinct &mdash; parents were blamed for their babies' deaths</label>
+      <label><input type="radio" name="q9" value="d"> d) The urgency instinct &mdash; doctors rushed to implement a policy without waiting for evidence</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">10. What did the Dollar Street project reveal as the primary driver of how families live around the world?</p>
+      <label><input type="radio" name="q10" value="a"> a) National culture and religious tradition</label>
+      <label><input type="radio" name="q10" value="b"> b) Geographic climate and available resources</label>
+      <label><input type="radio" name="q10" value="c"> c) Income level</label>
+      <label><input type="radio" name="q10" value="d"> d) Government policy and social safety nets</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">11. Iran's family planning transformation in the 1980s&ndash;90s &mdash; the fastest drop in birth rate in world history &mdash; is used to illustrate which instinct's failure?</p>
+      <label><input type="radio" name="q11" value="a"> a) The gap instinct &mdash; Iran was assumed to be in the "developing" category</label>
+      <label><input type="radio" name="q11" value="b"> b) The negativity instinct &mdash; only negative news about Iran was reported</label>
+      <label><input type="radio" name="q11" value="c"> c"> The destiny instinct &mdash; Islamic culture was assumed to permanently determine large family sizes</label>
+      <label><input type="radio" name="q11" value="d"> d) The single perspective instinct &mdash; demographers focused only on religious factors</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">12. When a Cuban health minister said Cuba was "the healthiest of the poor," a statistical aide whispered a correction to Rosling. What was the corrected formulation?</p>
+      <label><input type="radio" name="q12" value="a"> a"> "We are the poorest of the healthy"</label>
+      <label><input type="radio" name="q12" value="b"> b) "We are the most educated of the poor"</label>
+      <label><input type="radio" name="q12" value="c"> c) "We are healthier than comparable socialist states"</label>
+      <label><input type="radio" name="q12" value="d"> d) "Our statistics are worse than the minister believes"</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">13. Rosling's students wanted to "punch the boss" of a pharmaceutical company for neglecting diseases of the poor. Who did Rosling reveal as the true "owners" of pharmaceutical companies, responsible for their investment priorities?</p>
+      <label><input type="radio" name="q13" value="a"> a) Billionaire hedge fund managers</label>
+      <label><input type="radio" name="q13" value="b"> b"> Pension funds, meaning effectively the students' own grandparents</label>
+      <label><input type="radio" name="q13" value="c"> c) Government sovereign wealth funds</label>
+      <label><input type="radio" name="q13" value="d"> d) Insurance companies reinvesting premium revenue</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">14. Why were refugees in 2015 dying in the Mediterranean on inflatable boats rather than traveling safely by commercial airline to Europe?</p>
+      <label><input type="radio" name="q14" value="a"> a) Airlines were too expensive for refugees who couldn't afford the fares</label>
+      <label><input type="radio" name="q14" value="b"> b) EU airports had special security protocols preventing Syrian nationals from entering</label>
+      <label><input type="radio" name="q14" value="c"> c"> An EU directive required airlines to return undocumented passengers at their own cost, making it impossible for asylum-seekers without visas to board</label>
+      <label><input type="radio" name="q14" value="d"> d) Turkey and Lebanon had no international airports close to the refugee camps</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">15. What happened when Rosling told the mayor of Nacala to set up a roadblock during the 1981 cassava poisoning epidemic, illustrating the urgency instinct's dangers?</p>
+      <label><input type="radio" name="q15" value="a"> a) The roadblock successfully contained the disease but caused supply shortages</label>
+      <label><input type="radio" name="q15" value="b"> b) Women and children deprived of the bus took fishing boats, which capsized, and all drowned</label>
+      <label><input type="radio" name="q15" value="c"> c) The military overreacted and quarantined an entire village unnecessarily</label>
+      <label><input type="radio" name="q15" value="d"> d) The roadblock stopped the disease but delayed Rosling's investigation by weeks</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">16. Al Gore asked Rosling to help communicate climate change by showing only worst-case scenarios. Why did Rosling refuse?</p>
+      <label><input type="radio" name="q16" value="a"> a) He doubted the scientific consensus on climate change</label>
+      <label><input type="radio" name="q16" value="b"> b"> He believed exaggeration destroys credibility and triggers the urgency instinct, leading to poor decisions rather than systematic action</label>
+      <label><input type="radio" name="q16" value="c"> c) He thought the best-case scenario was more likely than the worst-case</label>
+      <label><input type="radio" name="q16" value="d"> d) He was concerned about political blowback from climate skeptics</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">17. Which of the following is NOT one of Rosling's five global risks that he believes warrant sustained, calm, collaborative attention?</p>
+      <label><input type="radio" name="q17" value="a"> a) Global pandemic</label>
+      <label><input type="radio" name="q17" value="b"> b) Financial collapse</label>
+      <label><input type="radio" name="q17" value="c"> c"> Artificial intelligence risk</label>
+      <label><input type="radio" name="q17" value="d"> d) Extreme poverty</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">18. The Ebola outbreak in 2014 was ultimately brought under control through which mechanism?</p>
+      <label><input type="radio" name="q18" value="a"> a) A military roadblock preventing disease spread across borders</label>
+      <label><input type="radio" name="q18" value="b"> b"> Patient contact tracing by local health workers combined with behavior change, confirmed by cleaned data showing cases had already peaked</label>
+      <label><input type="radio" name="q18" value="c"> c) A last-minute WHO vaccine intervention funded by international donors</label>
+      <label><input type="radio" name="q18" value="d"> d) Heroic leadership by a charismatic WHO director who coordinated the global response</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">19. What did Rosling's observation of three war monuments in Hanoi (a small plaque, a marble stone, and a towering golden pagoda) teach him about the size instinct?</p>
+      <label><input type="radio" name="q19" value="a"> a) That the Vietnam War was considered the most traumatic event in Vietnamese history</label>
+      <label><input type="radio" name="q19" value="b"> b"> That the "Vietnam War" was relatively minor to Vietnamese compared with the 2,000-year conflict with China &mdash; context transforms scale</label>
+      <label><input type="radio" name="q19" value="c"> c) That commemorative architecture reflects political propaganda more than historical significance</label>
+      <label><input type="radio" name="q19" value="d"> d) That Asian cultures place greater value on historical memory than Western ones</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">20. In the Chapter 11 Congo village story, who ultimately calmed the crowd and saved Rosling's life from the men with machetes?</p>
+      <label><input type="radio" name="q20" value="a"> a) The village chief, who vouched for Rosling's credentials</label>
+      <label><input type="radio" name="q20" value="b"> b) A government official who had preapproved the research</label>
+      <label><input type="radio" name="q20" value="c"> c"> An illiterate village woman who explained the research logic by analogy to the measles vaccine and offered her own arm for blood-drawing</label>
+      <label><input type="radio" name="q20" value="d"> d) Rosling's translator, who reassured the villagers that no money would leave the village</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">21. According to Chapter 2, why does Rosling say global life expectancy dropped visibly around 1960 on the world health chart?</p>
+      <label><input type="radio" name="q21" value="a"> a) The global HIV/AIDS epidemic began spreading in that period</label>
+      <label><input type="radio" name="q21" value="b"> b"> A massive man-made famine in China, caused by government mismanagement of agriculture and kept secret for 36 years, killed 15&ndash;40 million people</label>
+      <label><input type="radio" name="q21" value="c"> c) The Cold War proxy conflicts in Korea and Vietnam dramatically raised global death rates</label>
+      <label><input type="radio" name="q21" value="d"> d) A series of severe droughts reduced global food supply and caused widespread starvation</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">22. Rosling argues that the 80/20 rule is an essential antidote to the size instinct. How does he describe it?</p>
+      <label><input type="radio" name="q22" value="a"> a) Focus on the 20 percent of problems causing 80 percent of deaths</label>
+      <label><input type="radio" name="q22" value="b"> b"> When analyzing a list of items, identify the few largest items that together account for roughly 80 percent of the total, and understand those first</label>
+      <label><input type="radio" name="q22" value="c"> c) Allocate 80 percent of development resources to Level 1 countries and 20 percent to Levels 2 and 3</label>
+      <label><input type="radio" name="q22" value="d"> d) Trust data only when at least 80 percent of experts agree with a finding</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">23. What does Rosling's account of Sweden's historical development reveal about the destiny instinct?</p>
+      <label><input type="radio" name="q23" value="a"> a) That Sweden's current prosperity was always destined due to its Protestant work ethic</label>
+      <label><input type="radio" name="q23" value="b"> b"> That Sweden in the 19th century was comparable to today's Level 1 countries, demonstrating that no culture or nation is permanently destined for poverty or wealth</label>
+      <label><input type="radio" name="q23" value="c"> c) That Sweden's welfare state was uniquely responsible for its exceptional development trajectory</label>
+      <label><input type="radio" name="q23" value="d"> d) That Swedish values of gender equality and openness about sex were always present but suppressed</label>
+    </div>
+
+    <button type="button" id="score-btn" onclick="scoreQuiz()">Score My Answers</button>
+
+    <div id="quiz-result" style="display:none;">
+      <p id="score-text"></p>
+      <div id="answer-review"></div>
+    </div>
+
+  </form>
+</details>
+
+<script>
+(function() {
+  const answers = {
+    q1: { correct: "b", explain: "Rosling's central rhetorical device is that chimpanzees choosing randomly among three-option questions would score 33% (4 out of 12), while educated humans consistently score worse than this — around 2 out of 12 — because they hold actively wrong beliefs, not just random ignorance." },
+    q2: { correct: "c", explain: "Rosling proposes four income levels (roughly $1/day, $4/day, $16/day, and $64+/day) as a replacement for the binary 'developed/developing' framework, which he argues is at least 50 years out of date." },
+    q3: { correct: "b", explain: "Comparing averages of two groups hides the overlapping spread of individual data points, making groups appear more separate than they actually are. This is one of three 'gap traps' Rosling identifies alongside comparing extremes and the 'view from up here.'" },
+    q4: { correct: "b", explain: "A 'possibilist' neither hopes blindly nor fears without reason. Rosling rejects the 'optimist' label because it implies naivety; instead he argues that data-grounded conviction in what is possible is both more accurate and more useful than either optimism or pessimism." },
+    q5: { correct: "c", explain: "Rosling emphasizes that the falling birth rate — driven by escape from extreme poverty, female education, and contraceptive access — is the foundational change that will eventually flatten the population curve. The 'fill-up effect' (answer B) explains why the population will keep growing for several more decades, but falling birth rates explain why it will eventually stop." },
+    q6: { correct: "c", explain: "Babies-per-woman follows a slide-shaped curve: it is relatively flat at very high numbers on Level 1, then declines steeply as incomes rise through Levels 2 and 3, then flattens again below 2 on Level 4. The same slide pattern applies to the cost of vaccines through bulk negotiation." },
+    q7: { correct: "b", explain: "Most people no longer live on Level 1, where disasters are most lethal due to poor construction, inadequate infrastructure, and inaccessible medical care. With rising incomes come better preparedness, evacuation systems, and rescue capacity that dramatically reduce fatalities even when natural hazards remain constant." },
+    q8: { correct: "b", explain: "The PIN code 1-1-1-4 represents billions of people per continent: Americas ~1 billion, Europe ~1 billion, Africa ~1 billion, Asia ~4 billion. By 2100 the UN expects the code to shift to 1-1-4-5, with Africa growing by 3 billion and Asia by 1 billion." },
+    q9: { correct: "b", explain: "The 'recovery position' that saves unconscious soldiers (who cannot clear their own airways) was incorrectly generalized to sleeping babies (who have active reflexes and can turn their heads). This sweeping generalization, enforced for decades with good intentions, caused thousands of SIDS deaths before the policy was reversed." },
+    q10: { correct: "c", explain: "Dollar Street photographs demonstrate that families on the same income level across vastly different countries and cultures organize their daily lives in strikingly similar ways — the same cooking pots, the same tooth-brushing habits, the same sleeping arrangements. Culture matters, but income level is the more powerful predictor." },
+    q11: { correct: "c", explain: "The destiny instinct assumes Islamic culture permanently determines large family sizes. Iran's extraordinary fertility decline — from over 6 to under 3 babies per woman in 15 years, accompanied by the world's biggest condom factory and compulsory pre-marriage sex education — directly contradicts this assumption." },
+    q12: { correct: "a", explain: "The statistical aide's whispered correction reframes the same data from a celebratory perspective (Cuba is the best among poor countries) to a critical one (Cuba is the worst among healthy countries). This illustrates how single perspectives constrain interpretation without changing the underlying facts." },
+    q13: { correct: "b", explain: "Pharma shares are stable investments favored by pension funds, meaning most shareholders are ordinary citizens saving for retirement. Rosling uses this to argue that blame should be redirected from villainous individuals to systems, and that understanding the system is necessary for changing it." },
+    q14: { correct: "c", explain: "A 2001 EU Council Directive required carriers to pay repatriation costs for undocumented passengers, making it commercially impossible for airlines to allow anyone without a visa to board — even those legally entitled to asylum. EU embassies lacked the capacity to process visa applications quickly enough. The directive created the market for dangerous smuggling routes." },
+    q15: { correct: "b", explain: "The roadblock prevented the morning bus from running, so market-bound women and children paid fishermen to take them by sea instead. The boats capsized and all aboard drowned. Rosling uses this tragedy to illustrate how urgency-driven action — 'you must do something' — can cause catastrophic unintended consequences." },
+    q16: { correct: "b", explain: "Rosling's consistent principle is that exaggeration, once discovered, destroys the credibility of the underlying valid concern. Fear and urgency produce poor, drastic decisions rather than the systematic, incremental, data-tracked action that complex problems require. He applied this principle even when it meant disagreeing with someone he deeply respected." },
+    q17: { correct: "c", explain: "Rosling's five global risks are pandemic disease, financial collapse, world war, climate change, and extreme poverty — all of which have historical precedent or are ongoing. Artificial intelligence risk does not appear on his list, written in 2018 before AI became a mainstream concern." },
+    q18: { correct: "b", explain: "The Ebola outbreak was defeated by contact tracers doing patient, meticulous work, and by Liberians voluntarily changing behavior (no handshakes, strict hygiene). Ola Rosling's cleaning of four separate data sets revealed that confirmed cases had already peaked before anyone knew — data confirmed the strategy was working." },
+    q19: { correct: "b", explain: "The tiny plaque honored the 'Vietnam War' (a 20-year conflict), the marble stone honored 200 years of French colonial rule, and the golden pagoda honored 2,000 years of wars with China. The monument sizes put the 'Vietnam War' — which profoundly shaped Western consciousness — in its proper historical proportion for the Vietnamese." },
+    q20: { correct: "c", explain: "An illiterate village woman stepped out of the crowd, invoked the measles vaccine as an analogy for why blood-based research produces cures, and offered her own arm for blood drawing. Rosling notes she had never left the region but demonstrated near-perfect factfulness instincts under extreme pressure." },
+    q21: { correct: "b", explain: "The 1959–61 Chinese famine — caused by a combination of poor harvests, disastrous collectivization policies, and local officials falsifying production figures — killed an estimated 15–40 million people. The Chinese government kept it secret for 36 years. It caused the only visible dip in the 20th-century global life expectancy curve." },
+    q22: { correct: "b", explain: "The 80/20 rule is a practical heuristic: focus first on the items that account for about 80% of the total (whether deaths, budget lines, energy sources, or anything else). This prevents small, dramatic items from monopolizing attention at the expense of larger, less glamorous ones." },
+    q23: { correct: "b", explain: "Rosling traces his family's development: great-grandmother in 1863 Sweden lived at what would today be Level 1 conditions; his grandmother experienced Level 2; he was born into what was then equivalent to today's Egypt (Level 3); by his children's birth Sweden had reached Level 4. This historical trajectory directly parallels what is now happening in today's lower-income countries, demolishing the notion of fixed national destinies." }
+  };
+
+  window.scoreQuiz = function() {
+    const form = document.getElementById("quiz-form");
+    let correct = 0;
+    const total = Object.keys(answers).length;
+    let reviewHTML = "";
+
+    for (let i = 1; i <= total; i++) {
+      const key = "q" + i;
+      const selected = form.elements[key] ? form.elements[key].value : "";
+      const isCorrect = selected === answers[key].correct;
+      if (isCorrect) correct++;
+
+      const status = !selected ? "wrong" : (isCorrect ? "correct" : "wrong");
+      const icon = isCorrect ? "\u2705" : "\u274C";
+      const yourAnswer = selected ? selected.toUpperCase() : "No answer";
+      const correctAnswer = answers[key].correct.toUpperCase();
+
+      reviewHTML += '<div class="review-item ' + status + '">';
+      reviewHTML += '<div class="ri-q">' + icon + " Question " + i + "</div>";
+      reviewHTML += '<div class="ri-detail">';
+      if (!isCorrect) {
+        reviewHTML += "Your answer: " + yourAnswer + " &mdash; Correct answer: " + correctAnswer + "<br>";
+      }
+      reviewHTML += answers[key].explain;
+      reviewHTML += "</div></div>";
+    }
+
+    const pct = Math.round((correct / total) * 100);
+    let grade;
+    if (pct === 100) grade = "Perfect score!";
+    else if (pct >= 80) grade = "Great understanding!";
+    else if (pct >= 60) grade = "Good, but review the summaries above for the ones you missed.";
+    else grade = "Consider re-reading the summaries above and trying again.";
+
+    document.getElementById("score-text").textContent = correct + " / " + total + " (" + pct + "%) \u2014 " + grade;
+    document.getElementById("answer-review").innerHTML = reviewHTML;
+    document.getElementById("quiz-result").style.display = "block";
+    document.getElementById("quiz-result").scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+})();
+</script>
+
+</div><!-- .content -->
+
+</body>
+</html>

@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Brief History of Time — Book Summary Pro</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      line-height: 1.7;
+      color: #222;
+      background: #fafafa;
+    }
+    .app-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #2c2c2c;
+      padding: 14px 24px;
+    }
+    .content {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 32px 20px 40px;
+    }
+    .app-nav .app-name {
+      font-size: 1.05em;
+      font-weight: bold;
+      color: #e8e0d0;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+    }
+    .app-nav .app-name:hover {
+      color: #d4a843;
+    }
+    .app-nav .back-link {
+      font-size: 0.9em;
+      color: #999;
+      text-decoration: none;
+    }
+    .app-nav .back-link:hover {
+      color: #d4a843;
+    }
+    h1 {
+      font-size: 1.8em;
+      border-bottom: 2px solid #333;
+      padding-bottom: 10px;
+      margin-bottom: 5px;
+    }
+    .subtitle {
+      font-size: 1.1em;
+      color: #444;
+      margin: 2px 0 0 0;
+      font-style: italic;
+    }
+    .author {
+      font-style: italic;
+      color: #777;
+      font-size: 0.95em;
+      margin-bottom: 40px;
+    }
+    h2 {
+      font-size: 1.3em;
+      margin-top: 48px;
+      color: #1a1a1a;
+      border-left: 4px solid #555;
+      padding-left: 12px;
+    }
+    p {
+      margin-bottom: 14px;
+      text-align: justify;
+    }
+    details.counter {
+      background: #f0ece4;
+      border-left: 4px solid #b8860b;
+      padding: 14px 18px;
+      margin: 20px 0 28px 0;
+      border-radius: 0 6px 6px 0;
+    }
+    details.counter summary {
+      font-weight: bold;
+      font-size: 0.95em;
+      color: #8b6914;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    details.counter summary::-webkit-details-marker {
+      display: none;
+    }
+    details.counter summary::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    details.counter[open] summary::before {
+      transform: rotate(90deg);
+    }
+    details.counter p {
+      margin-top: 12px;
+      margin-bottom: 10px;
+      color: #3a3a3a;
+    }
+    details.counter p:last-child {
+      margin-bottom: 0;
+    }
+    .quiz-wrapper {
+      margin-top: 48px;
+      background: #f5f5f0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 16px 20px;
+    }
+    .quiz-toggle {
+      font-weight: bold;
+      font-size: 1.05em;
+      cursor: pointer;
+      color: #2a5a2a;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .quiz-toggle::-webkit-details-marker { display: none; }
+    .quiz-toggle::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    .quiz-wrapper[open] .quiz-toggle::before {
+      transform: rotate(90deg);
+    }
+    .q-block {
+      margin: 24px 0;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    .q-block:last-of-type { border-bottom: none; }
+    .q-label {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .q-block label {
+      display: block;
+      padding: 6px 10px;
+      margin: 4px 0;
+      border-radius: 4px;
+      cursor: pointer;
+      line-height: 1.5;
+    }
+    .q-block label:hover { background: #e8e8e0; }
+    #score-btn {
+      display: block;
+      margin: 28px auto 0;
+      padding: 12px 32px;
+      font-family: Georgia, serif;
+      font-size: 1em;
+      background: #2a5a2a;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #score-btn:hover { background: #1e441e; }
+    #quiz-result {
+      margin-top: 24px;
+      padding: 18px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    #score-text {
+      font-size: 1.15em;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .review-item {
+      margin-bottom: 14px;
+      padding: 10px 12px;
+      border-radius: 4px;
+    }
+    .review-item.correct { background: #e6f4e6; }
+    .review-item.wrong { background: #fce8e8; }
+    .review-item .ri-q { font-weight: bold; margin-bottom: 4px; }
+    .review-item .ri-detail { font-size: 0.93em; color: #444; }
+  </style>
+</head>
+<body>
+
+<nav class="app-nav">
+  <a href="index.html" class="app-name">Book Summary Pro</a>
+  <a href="index.html" class="back-link">&larr; All Books</a>
+</nav>
+
+<div class="content">
+
+<h1>A Brief History of Time</h1>
+<p class="subtitle">From the Big Bang to Black Holes</p>
+<p class="author">Stephen Hawking</p>
+
+<h2>Foreword</h2>
+
+<p>In this updated foreword, Hawking reflects on the unexpected global success of the original 1988 edition, which spent 237 weeks on the London <i>Sunday Times</i> bestseller list and sold roughly one copy for every 750 people on Earth. He explains that the book's popularity reflects a widespread hunger for answers to the deepest questions: Where did we come from? Why is the universe the way it is?</p>
+
+<p>Hawking notes two major updates in this edition. First, a new chapter on <b>wormholes and time travel</b> explores whether Einstein's general theory of relativity could allow shortcuts through space-time. Second, theoretical progress on <b>dualities</b> &mdash; correspondences between seemingly different theories of physics &mdash; suggests a complete unified theory exists, though it may require multiple overlapping formulations rather than a single set of equations, much as no single flat map can represent the entire curved surface of the Earth.</p>
+
+<p>On the observational side, the COBE satellite's measurement of fluctuations in the <b>cosmic microwave background radiation</b> is highlighted as the most important recent development &mdash; tiny fingerprints of creation that match predictions of the no-boundary proposal for the universe's origin.</p>
+
+<h2>Chapter 1: Our Picture of the Universe</h2>
+
+<p>The chapter opens with the famous story of a scientist who is told the world rests on a tower of turtles &mdash; an image Hawking uses to ask how we know anything at all about the universe. He traces the history of cosmological models from Aristotle's Earth-centered cosmos and Ptolemy's elaboration of it, through the heliocentric revolution of Copernicus, Kepler's discovery of elliptical orbits, Galileo's telescopic observations, and finally to Newton's <b>universal law of gravitation</b>, which explained planetary motion through a single elegant principle.</p>
+
+<p>Newton's theory removed the need for celestial spheres but raised new puzzles: if gravity always attracts, why doesn't the universe collapse? Newton argued an infinite, uniform distribution of stars might avoid this &mdash; a line of reasoning that anticipated later cosmological debates. By the nineteenth century, thermodynamic puzzles such as <b>Olbers' paradox</b> (why is the night sky dark if the universe is infinite and eternal?) hinted that the universe must have a finite past.</p>
+
+<p>Hawking then articulates what a good scientific theory requires: it must describe a broad class of observations with a simple model and make <b>definite, falsifiable predictions</b>, as Karl Popper emphasized. Today, physics rests on two partial but enormously successful theories: <b>general relativity</b>, governing gravity and large-scale structure, and <b>quantum mechanics</b>, governing subatomic behavior. Crucially, these two theories are mathematically inconsistent with each other. The book's central quest is the search for a single <b>quantum theory of gravity</b> that would unify them &mdash; a complete description of the universe we live in.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Hawking adopts a broadly <b>scientific realist</b> view &mdash; that theories describe an objective reality we are progressively uncovering. Philosophers of science such as <b>Bas van Fraassen</b> (constructive empiricism) argue instead that scientific theories need only "save the phenomena" and make accurate predictions; claims about unobservable entities like quarks or curved space-time are not literally true descriptions of the world. On this view, asking whether a unified theory gives us the <i>real</i> picture is misguided. Hawking's confidence that science converges on the truth also sits uneasily with the history of theory change: even general relativity and quantum mechanics, presented here as near-definitive, may be supplanted by something unrecognizable, as Newton was supplanted by Einstein.</p>
+</details>
+
+<h2>Chapter 2: Space and Time</h2>
+
+<p>Galileo demolished Aristotelian physics by demonstrating experimentally that all objects fall at the same rate regardless of mass &mdash; a fact later codified in Newton's <b>second law of motion</b> and <b>law of universal gravitation</b>. Newton's framework showed there is no absolute standard of rest: the laws of physics look identical to observers moving at constant velocity relative to each other. This implied that neither absolute position nor absolute rest could be defined.</p>
+
+<p>The crisis came when James Clerk Maxwell's 1865 equations predicted that light travels at a fixed speed regardless of the source's motion. This conflicted with Newton's framework, which demanded that speeds be measured relative to something. The proposed carrier of light waves, the "ether," was ruled out by the 1887 Michelson-Morley experiment, which found the speed of light identical in all directions to extraordinary precision. Einstein resolved this in 1905 with his <b>special theory of relativity</b>: the laws of physics, including the speed of light, are the same for all freely moving observers. The consequence is that <b>time is not absolute</b> &mdash; each observer carries their own clock, and clocks in relative motion genuinely disagree. Mass and energy are equivalent ($E = mc^2$), and nothing can travel faster than light.</p>
+
+<p>In 1915, Einstein's <b>general theory of relativity</b> revolutionized our understanding of gravity. Rather than a force propagating through space, gravity is the curvature of space-time caused by the distribution of mass and energy. Objects follow <b>geodesics</b> &mdash; the straightest possible paths in curved space-time. Light rays bend around massive objects (confirmed in 1919 by Eddington's solar eclipse observations), and clocks run slower in stronger gravitational fields (confirmed in 1962 using clocks at different heights). Space and time are no longer a fixed stage; they are dynamic quantities shaped by everything in the universe.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>While general relativity and special relativity are spectacularly confirmed by experiment, some physicists have proposed alternatives. <b>Modified Newtonian Dynamics (MOND)</b>, proposed by Mordehai Milgrom, attempts to explain galactic rotation curves without invoking dark matter, challenging one of general relativity's key predictions in weak-field regimes. More fundamentally, general relativity is a <b>classical theory</b> that breaks down at singularities &mdash; by Hawking's own admission later in the book, it predicts its own incompleteness. Physicists including <b>Lee Smolin</b> (loop quantum gravity) argue that space-time itself may be discrete at the Planck scale, meaning the smooth geometric picture of general relativity is an approximation.</p>
+</details>
+
+<h2>Chapter 3: The Expanding Universe</h2>
+
+<p>In 1924, Edwin Hubble demonstrated that our galaxy is just one of roughly a hundred billion, each itself containing a hundred billion stars. Using standard candle stars to measure distances, he mapped the universe's large-scale structure. In 1929, Hubble published perhaps the most consequential astronomical observation of the century: almost all galaxies show <b>redshifted</b> spectra, and the degree of redshift is proportional to distance &mdash; the farther a galaxy, the faster it recedes. The universe is <i>expanding</i>.</p>
+
+<p>This discovery had been predicted years earlier by the Russian mathematician Alexander Friedmann, who derived three types of cosmological models from general relativity depending on whether the universe's average density is above, at, or below the <b>critical density</b>: these models respectively predict eventual recollapse, expansion forever at a diminishing rate, or indefinite expansion. The 1965 discovery of the <b>cosmic microwave background</b> radiation by Penzias and Wilson &mdash; a faint thermal glow at about 2.7 degrees above absolute zero filling the entire sky &mdash; confirmed that the early universe was extremely hot and dense, dealing a fatal blow to the rival <b>steady-state theory</b>.</p>
+
+<p>Running the expansion backwards, all matter converges to a point of infinite density about 13.8 billion years ago &mdash; the <b>big bang singularity</b>. Roger Penrose and Hawking proved in 1970, using geometric methods from general relativity, that this singularity is not an artifact of the simplifying assumptions in Friedmann's models but an inevitable prediction of any sufficiently realistic cosmological model. At the singularity, the curvature of space-time becomes infinite and all known physical laws break down &mdash; general relativity cannot tell us what happened at or before it.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The big bang singularity theorems, while mathematically rigorous given classical general relativity, are widely understood as signaling the breakdown of that theory rather than a genuine physical infinity. The <b>loop quantum cosmology</b> program (Bojowald, Ashtekar) replaces the big bang singularity with a "big bounce," in which a contracting phase precedes the current expansion &mdash; eliminating the singularity entirely within a quantum framework. Meanwhile, Hubble's constant (the expansion rate) remains subject to a significant <b>Hubble tension</b>: measurements from the CMB and from local distance ladders disagree at the 4&ndash;5 sigma level, suggesting either new physics or unresolved systematic errors in one or both measurements.</p>
+</details>
+
+<h2>Chapter 4: The Uncertainty Principle</h2>
+
+<p>The Marquis de Laplace imagined a demon that, knowing the position and velocity of every particle in the universe, could calculate the entire future with certainty. This dream of <b>scientific determinism</b> was shattered in the early twentieth century. The first crack came when Max Planck proposed in 1900 that energy is not emitted continuously but in discrete packets called <b>quanta</b> &mdash; a radical departure that explained the spectrum of radiation from hot bodies.</p>
+
+<p>The decisive blow was Werner Heisenberg's 1926 <b>uncertainty principle</b>: the position and momentum of a particle cannot both be precisely known. The more accurately one is measured, the less accurately the other can be. This is not a limitation of instruments but a fundamental feature of nature &mdash; particles do not have definite positions and velocities. Instead they have a <b>quantum state</b>, or wave function, which gives the probability of various outcomes when measured. The famous <b>two-slit experiment</b> illustrates this vividly: even a single electron, sent through two slits one at a time, produces an interference pattern that can only be explained by the electron passing through <i>both</i> slits simultaneously.</p>
+
+<p>Quantum mechanics replaced classical determinism with irreducible <b>probabilism</b> &mdash; science can only predict the likelihood of outcomes. Einstein famously resisted: "God does not play dice." Yet quantum mechanics has proven extraordinarily successful, underlying all of modern chemistry, biology, electronics, and computing. Richard Feynman's elegant reformulation, the <b>sum over histories</b>, captures wave-particle duality by saying a particle travels all possible paths simultaneously; the probability of any outcome is found by summing all contributing amplitudes. This framework becomes crucial when Hawking later applies it to the entire universe.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The <b>interpretation of quantum mechanics</b> remains deeply contested. The standard Copenhagen interpretation (Bohr, Heisenberg) says the wave function collapses upon measurement and that asking what a particle is "really doing" before measurement is meaningless. The <b>many-worlds interpretation</b> (Everett) avoids collapse entirely by proposing that all possible outcomes occur in branching parallel universes &mdash; a view some physicists (e.g., David Deutsch) argue is forced by taking the mathematics seriously. <b>Pilot-wave (Bohmian) mechanics</b> (de Broglie, Bohm) restores determinism by positing hidden variables guiding the particle's trajectory. Hawking's own use of Feynman's sum over histories implicitly favors a many-histories-like framework, but without fully endorsing any interpretation. The measurement problem &mdash; what constitutes a "measurement" that collapses the wave function &mdash; has no universally accepted resolution.</p>
+</details>
+
+<h2>Chapter 5: Elementary Particles and the Forces of Nature</h2>
+
+<p>Modern physics divides the fundamental ingredients of the universe into two classes: <b>matter particles</b> (fermions, spin ½) and <b>force carriers</b> (bosons, integer spin). Matter is built from quarks and leptons. Quarks come in six "flavors" (up, down, strange, charm, bottom, top) and three "colors" (a quantum number, not literal color), bound by gluons into protons and neutrons inside atomic nuclei. Protons and electrons together build all 118 elements. Wolfgang Pauli's <b>exclusion principle</b> &mdash; no two identical fermions can occupy the same quantum state &mdash; is what prevents matter from collapsing into a dense soup and gives atoms their structure.</p>
+
+<p>There are four fundamental forces. <b>Gravity</b> (carried by the hypothetical spin-2 graviton) is by far the weakest but acts over infinite range and is always attractive, making it dominant at cosmic scales. <b>Electromagnetism</b> (carried by photons) governs atoms and chemistry. The <b>weak nuclear force</b> (carried by the W⁺, W⁻, and Z⁰ bosons) is responsible for radioactive decay. The <b>strong nuclear force</b> (carried by gluons) binds quarks inside protons and neutrons. In 1967, Weinberg and Salam unified electromagnetism and the weak force into the <b>electroweak theory</b>, confirmed dramatically by the discovery of the W and Z bosons at CERN in 1983. <b>Grand unified theories (GUTs)</b> attempt to merge the strong force with the electroweak force at energies far beyond current accelerators, predicting that protons should occasionally decay &mdash; a prediction so far unconfirmed experimentally.</p>
+
+<p>GUTs also provide a natural explanation for <b>matter-antimatter asymmetry</b>: the CP symmetry of the weak force is slightly broken, allowing the early universe &mdash; which began with equal numbers of quarks and antiquarks &mdash; to end up with a tiny excess of quarks after mutual annihilation. That tiny excess became all the matter we observe. Our very existence is, in this sense, a consequence of CP violation.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Despite decades of searching, <b>proton decay</b> &mdash; a key prediction of GUTs &mdash; has never been observed. The Super-Kamiokande detector in Japan set a lower bound on the proton lifetime of more than 10<sup>34</sup> years, already exceeding the predictions of the simplest GUT models. This severely constrains (though does not rule out) more elaborate GUT frameworks. More fundamentally, the <b>strong CP problem</b> &mdash; why the strong nuclear force appears to conserve CP symmetry despite nothing in the theory requiring it &mdash; remains unsolved. The proposed solution, the Peccei-Quinn mechanism and its associated particle the <b>axion</b>, has not been experimentally confirmed despite extensive searches.</p>
+</details>
+
+<h2>Chapter 6: Black Holes</h2>
+
+<p>The concept of a body so massive that light cannot escape dates to John Michell's 1783 paper, predating general relativity by over a century. The modern theory of black holes emerges from stellar evolution. A star is a balance between the outward pressure of nuclear fusion and the inward pull of gravity. When fuel is exhausted, the balance breaks. Stars below about 1.5 solar masses (the <b>Chandrasekhar limit</b>) settle as dense white dwarfs, supported by electron degeneracy pressure. Heavier remnants may become neutron stars, supported by neutron and proton degeneracy pressure. For remnants above roughly 2 solar masses, no known force can halt gravitational collapse, and the star implodes to a <b>black hole</b>: a region bounded by an <b>event horizon</b> from which nothing &mdash; not even light &mdash; can escape.</p>
+
+<p>Inside the event horizon, Penrose and Hawking's singularity theorems guarantee a <b>singularity</b> of infinite density, a breakdown of all known physics. The "no hair" theorem, assembled across several papers in the 1970s, establishes that a stationary black hole is entirely described by just three numbers: <b>mass, angular momentum, and electric charge</b>. All other information about the progenitor star is forever inaccessible. This represents a profound loss of information and has deep implications for the compatibility of general relativity with quantum mechanics.</p>
+
+<p>Observational evidence for black holes comes from systems like <b>Cygnus X-1</b>, where a visible star orbits an unseen compact companion too massive to be a white dwarf or neutron star, and the companion's X-ray emission indicates gas heating as it spirals inward. Supermassive black holes &mdash; millions to billions of solar masses &mdash; are now understood to lurk at the centers of most galaxies, including our own, and to power the prodigious luminosities of quasars.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>While the existence of black holes is now overwhelmingly supported by observations &mdash; including the 2019 Event Horizon Telescope image of M87* and the 2020 Nobel Prize awarded for the discovery of Sgr A* &mdash; the <b>information paradox</b> raised by Hawking remains unresolved. If a black hole evaporates completely via Hawking radiation, the information about what fell in seems to be destroyed, violating a fundamental principle of quantum mechanics (unitarity). The <b>"firewall" hypothesis</b> (Almheiri, Marolf, Polchinski, Sully, 2012) argues that the event horizon may not be the smooth, unremarkable surface classical general relativity predicts; instead, infalling observers might encounter a wall of high-energy radiation. This remains a central open problem in theoretical physics.</p>
+</details>
+
+<h2>Chapter 7: Black Holes Ain't So Black</h2>
+
+<p>Hawking's most celebrated scientific discovery arose from a simple observation in 1970: the <b>area of a black hole's event horizon can never decrease over time</b>. If two black holes merge, the area of the result exceeds the sum of the originals. This non-decreasing behavior mirrors exactly the behavior of entropy in the second law of thermodynamics, prompting Princeton student Jacob Bekenstein to propose that a black hole's entropy is proportional to its event horizon area. Hawking initially resisted &mdash; entropy implies temperature, and temperature implies radiation, but black holes were supposed to emit nothing.</p>
+
+<p>Reconciling this with quantum mechanics led Hawking to his most important calculation. Near the event horizon, the quantum vacuum is not truly empty: <b>virtual particle-antiparticle pairs</b> spontaneously appear and annihilate. At the horizon, one member of such a pair can fall inside while the other escapes as a real particle. To a distant observer, the black hole appears to emit <b>thermal radiation</b> &mdash; Hawking radiation &mdash; at a temperature inversely proportional to its mass. A stellar-mass black hole is extraordinarily cold (far colder than the CMB), but a sufficiently small black hole radiates intensely and eventually evaporates in a spectacular burst of energy.</p>
+
+<p>This result has profound implications: black holes are not final sinks of matter and energy. Mass lost to a black hole is eventually returned to the universe as radiation, in a roundabout sense "recycling" everything that fell in &mdash; though the information content may not survive. <b>Primordial black holes</b> formed in the early universe could, if small enough, be completing their evaporation today, detectable as gamma-ray bursts. Hawking radiation was the first theoretical prediction to require both general relativity and quantum mechanics, making it the closest existing result to a full theory of quantum gravity.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Hawking radiation has never been directly observed, because stellar-mass black holes emit radiation at temperatures of order $10^{-7}$ Kelvin &mdash; far below the CMB temperature and utterly undetectable with current instruments. The prediction rests on semiclassical approximations: quantum fields are treated quantum-mechanically while space-time is kept classical. Some physicists (including <b>William Unruh</b>, whose analogous "Unruh effect" in accelerated frames is also unobserved) consider the semiclassical derivation robust, but others worry that the calculation breaks down precisely when it matters most &mdash; near the Planck scale, as the black hole nears the end of its evaporation. The <b>information paradox</b> remains: recent work by <b>Ahmed Almheiri</b> and collaborators (the "island formula") suggests information is indeed preserved via subtle correlations in the Hawking radiation, but a full derivation from first principles in quantum gravity does not yet exist.</p>
+</details>
+
+<h2>Chapter 8: The Origin and Fate of the Universe</h2>
+
+<p>The <b>hot big bang model</b> describes the universe's earliest moments with remarkable precision. One second after the big bang, the temperature was about 10 billion degrees &mdash; comparable to an H-bomb explosion &mdash; and the universe was filled with photons, electrons, neutrinos, and their antiparticles, with a slight excess of protons and neutrons. Over the next three minutes, nuclear fusion produced roughly 25% helium nuclei, with the rest remaining as hydrogen &mdash; the observed cosmic abundances match these predictions with striking accuracy. Hundreds of thousands of years later, electrons and nuclei combined to form neutral atoms, the universe became transparent, and the resulting photons survive today as the <b>cosmic microwave background</b>. Over billions of years, slight density fluctuations collapsed under gravity into galaxies, stars, and ultimately planets and life.</p>
+
+<p>Yet three puzzles resist the standard model. The <b>horizon problem</b>: regions of the CMB separated by distances larger than light could have traveled since the big bang have identical temperatures &mdash; how did they come to agree? The <b>flatness problem</b>: the universe's density is extraordinarily close to the critical value, requiring a fine-tuned initial expansion rate to 1 part in 10<sup>15</sup>. The <b>density fluctuation problem</b>: where did the small irregularities seeding galaxy formation come from? Alan Guth's <b>inflationary model</b> (1981), refined by Linde's chaotic inflation, proposes that the universe underwent an enormous exponential expansion in its first 10<sup>−32</sup> seconds, driven by a temporarily dominant vacuum energy. Inflation smooths curvature and causal horizons, naturally explaining the CMB's uniformity and the flatness of space, while quantum fluctuations during inflation produce the right spectrum of density variations.</p>
+
+<p>Hawking and Hartle's <b>no-boundary proposal</b> addresses the deeper question: what determined the initial conditions? In quantum gravity, using <b>imaginary time</b> (a mathematical device that makes time and space formally equivalent), the universe need not have a boundary or singularity at all &mdash; it is finite but edgeless, like the surface of a sphere. There is no moment of creation and no "before the big bang"; time itself begins with the universe. The no-boundary condition predicts that the universe began in the smoothest, lowest-entropy state consistent with the uncertainty principle, and then expanded through an inflationary phase, explaining the CMB fluctuations detected by COBE in 1992. If correct, it removes the need to impose initial conditions from outside physics &mdash; and with them, a role for a Creator to set the clockwork in motion.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Inflation is widely accepted, but it is not uniquely predictive: over 200 inflationary models exist, differing in their predictions for the CMB's tensor-to-scalar ratio. The Bicep2 collaboration's 2014 announcement of a detection of primordial gravitational waves &mdash; a smoking gun for inflation &mdash; was subsequently shown to be contaminated by galactic dust, illustrating how difficult the confirmation remains. The no-boundary proposal itself is contested: <b>Neil Turok and Stephen Hawking</b> had a famous debate about whether the no-boundary wave function predicts a large or a small universe, with Diaz Dorronsoro and Lehners arguing that the saddle-point approximations Hawking used actually predict an unstable, large-fluctuation universe. Alternative cosmologies, such as the <b>cyclic ekpyrotic model</b> (Steinhardt and Turok), propose a universe bouncing through repeated cycles driven by collisions of higher-dimensional branes, avoiding a big bang singularity altogether.</p>
+</details>
+
+<h2>Chapter 9: The Arrow of Time</h2>
+
+<p>The laws of physics are almost entirely symmetric under time reversal: the equations governing particles look the same run forwards or backwards. Yet experience is overwhelmingly asymmetric. Hawking identifies three distinct <b>arrows of time</b>. The <b>thermodynamic arrow</b> is the direction in which entropy &mdash; disorder &mdash; increases; a broken cup does not spontaneously reassemble. The <b>psychological arrow</b> is the direction in which we remember events &mdash; we recall the past, not the future. The <b>cosmological arrow</b> is the direction in which the universe expands rather than contracts.</p>
+
+<p>The psychological arrow is explained by the thermodynamic arrow: forming a memory requires dissipating heat, increasing net disorder. Hawking illustrates this with a computer memory analogy: recording information always increases total entropy, so the direction in which a computer remembers is the direction in which entropy increases. The thermodynamic arrow itself exists because the <b>no-boundary proposal</b> predicts the universe began in a uniquely smooth, low-entropy state. As the universe expanded, it could only increase in disorder, establishing a persistent thermodynamic arrow.</p>
+
+<p>Hawking also corrects a published error: he had previously argued that the thermodynamic arrow would <i>reverse</i> in a contracting universe, meaning inhabitants of a collapsing universe would remember the future and not the past. His student Raymond Laflamme and colleague Don Page showed this was wrong &mdash; the no-boundary condition does not require time-reversal symmetry between expanding and contracting phases. The thermodynamic and psychological arrows will continue pointing in the same direction through any eventual contraction. Intelligent life requires a strong thermodynamic arrow to sustain the metabolism of ordered energy into heat; by the <b>weak anthropic principle</b>, we can only observe ourselves to exist in the expanding phase where such an arrow is present.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The explanation of the thermodynamic arrow via a low-entropy initial condition raises a deeper puzzle: why did the universe begin in such a special state? <b>Roger Penrose</b> has argued that the initial low entropy of the universe is vastly more remarkable than Hawking acknowledges, requiring an explanation at least as deep as the one it provides. Penrose's <b>Weyl curvature hypothesis</b> proposes that the initial state must have vanishing Weyl curvature &mdash; a specific geometric constraint not explained by the no-boundary proposal. More broadly, <b>Sean Carroll and Jennifer Chen</b> have argued that invoking the no-boundary condition merely pushes the fine-tuning of initial conditions into the domain of quantum gravity without resolving it, and that eternal inflation plus a multiverse framework provides a more natural statistical account of why some regions of the universe appear low-entropy.</p>
+</details>
+
+<h2>Chapter 10: Wormholes and Time Travel</h2>
+
+<p>General relativity, in principle, permits space-times containing <b>closed timelike curves</b> &mdash; paths through space-time that loop back to earlier times. Gödel discovered such a solution in 1949, though it requires the entire universe to be rotating, which it is not. More realistic possibilities involve <b>cosmic strings</b> moving at relativistic speeds, or <b>wormholes</b>: thin tubes of space-time connecting distant regions, analogous to the Einstein-Rosen bridges derived from general relativity in 1935. A wormhole with one end accelerated relative to the other could create a time-travel machine, since relative motion induces a time difference between the two ends.</p>
+
+<p>Maintaining a traversable wormhole requires matter with <b>negative energy density</b>. The <b>Casimir effect</b> &mdash; the measurable attractive force between closely spaced conducting plates, arising because the quantum vacuum between them has fewer virtual photon modes than free space &mdash; provides experimental confirmation that negative energy densities are physically real in quantum mechanics, even if they cannot be produced in bulk. The faster-than-light travel that wormholes would allow also implies backward time travel, since relativity shows that faster-than-light motion relative to one observer corresponds to backward motion in time relative to another.</p>
+
+<p>Hawking favors the <b>chronology protection conjecture</b>: virtual particles circulating on closed timelike loops would accumulate diverging energy densities, generating a backreaction that destroys the wormhole before it can be used as a time machine. He notes that microscopic time travel already occurs in quantum mechanics &mdash; antiparticles are equivalent to particles moving backward in time (Feynman) &mdash; but macroscopic time machines appear to be self-defeating. Two frameworks for avoiding paradoxes are discussed: <b>consistent histories</b> (history is self-consistent and cannot be changed) and <b>alternative histories</b> (time travel creates branching universes where different events occur), with Feynman's sum over histories suggesting the former is more natural.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The chronology protection conjecture, while plausible, is not proven. <b>Kip Thorne</b> and colleagues have argued that it is an open question whether quantum gravity effects protect chronology or permit time machines. The <b>Novikov self-consistency principle</b> offers an alternative: closed timelike curves are possible, but only self-consistent histories (ones without true paradoxes) are physically realized. Under this view, a time traveler can visit the past but cannot change it in any way that contradicts the timeline they departed from. Some researchers in quantum gravity argue that the Casimir effect, while demonstrating locally negative energy densities, cannot in practice provide the large-scale negative energy needed to stabilize a macroscopic wormhole &mdash; quantum inequalities severely limit the magnitude and duration of negative energy regions.</p>
+</details>
+
+<h2>Chapter 11: The Unification of Physics</h2>
+
+<p>The history of physics is a history of unification: electricity and magnetism became electromagnetism; the weak nuclear force merged with electromagnetism into the electroweak theory. The next step &mdash; a single theory encompassing all four forces, including gravity &mdash; is the deepest open problem in physics. The obstacle is that general relativity is a classical theory that ignores the uncertainty principle, while the other three forces are inherently quantum mechanical. Combining them produces <b>infinities</b> that cannot be tamed by standard renormalization techniques.</p>
+
+<p><b>Supergravity</b> in the 1970s attempted to cancel these infinities by combining the spin-2 graviton with particles of other spins into a unified "superparticle," but calculations were too complex to verify and the particle content did not match observations. In 1984, interest shifted decisively to <b>string theory</b>: in place of point particles, the fundamental objects are one-dimensional vibrating strings. Different vibrational modes correspond to different particles, including the graviton. String theory is free of the point-particle infinities of quantum gravity, but requires space-time to have either <b>ten or twenty-six dimensions</b>. The extra dimensions are assumed to be compactified &mdash; curled up at scales far below detectability.</p>
+
+<p>By the mid-1990s, five distinct string theories were discovered to be related by <b>dualities</b> &mdash; equivalent descriptions of the same underlying physics. This suggests they are all approximations to a deeper theory, provisionally called <b>M-theory</b>, which also incorporates higher-dimensional objects called p-branes. Hawking proposes that the ultimate unified theory may not admit a single formulation, analogous to how multiple overlapping maps are required to cover a sphere. He expresses cautious optimism that a complete unified theory may be discovered within our lifetimes, though he warns of "false dawns" &mdash; premature announcements of physics being "nearly complete" have a poor track record.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>String theory's most persistent critics, notably <b>Lee Smolin</b> (<i>The Trouble With Physics</i>) and <b>Peter Woit</b> (<i>Not Even Wrong</i>), argue that after four decades and thousands of researchers, string theory has made no experimentally testable predictions at accessible energies, and that its vast "landscape" of 10<sup>500</sup> possible vacuum states makes it effectively unfalsifiable. The <b>LHC at CERN</b> found no evidence for supersymmetric particles at the TeV scale, which many string theorists had predicted, raising serious doubts about the most natural low-energy extensions of the framework. Alternative quantum gravity programs, notably <b>loop quantum gravity</b> (Rovelli, Smolin) and <b>causal dynamical triangulations</b>, attempt to quantize gravity without invoking extra dimensions or strings, though they face their own difficulties in recovering smooth large-scale space-time.</p>
+</details>
+
+<h2>Chapter 12: Conclusion</h2>
+
+<p>Hawking surveys the arc of scientific progress from animist cosmologies &mdash; in which natural phenomena were governed by capricious spirits &mdash; through the gradual discovery of underlying regularities, to Laplace's bold declaration that deterministic laws could in principle predict everything. That vision was corrected but not abandoned: quantum mechanics imposes irreducible uncertainty, but physics still pursues laws governing the evolution of the universe's wave function. The remaining gap is the <b>initial state</b>: what determined how the universe began?</p>
+
+<p>The no-boundary proposal suggests a radical answer: if space-time is finite but edgeless in imaginary time, there is no initial boundary to specify, no moment of creation, and no need for external causes. The universe is <b>completely self-contained</b> &mdash; its laws and its initial conditions are determined by consistency alone. Einstein asked how much freedom God had in constructing the universe; Hawking suggests the answer may be: essentially none. There may be only one (or a small family of) mathematically consistent unified theories that allow structures as complex as human beings to exist and ask these questions.</p>
+
+<p>Yet even a complete mathematical theory leaves the deepest question open: what <i>breathes fire into the equations</i> and makes a universe for them to describe? Why does something exist rather than nothing? Hawking calls for a unified theory that is eventually understandable in outline by everyone &mdash; not just a handful of specialists &mdash; so that humanity can collectively grapple with the question of why we and the universe exist. If we find that answer, he writes, "it would be the ultimate triumph of human reason &mdash; for then we would know the mind of God."</p>
+
+<h2 id="quiz-heading">Comprehension Quiz</h2>
+
+<details id="quiz-section" class="quiz-wrapper">
+  <summary class="quiz-toggle">Take the Quiz</summary>
+
+  <form id="quiz-form">
+
+    <div class="q-block">
+      <p class="q-label">1. According to Hawking, what makes a scientific theory "good"?</p>
+      <label><input type="radio" name="q1" value="a"> It cannot be disproved by any observation</label>
+      <label><input type="radio" name="q1" value="b"> It accurately describes observations with a simple model and makes definite, falsifiable predictions</label>
+      <label><input type="radio" name="q1" value="c"> It is endorsed by the most prestigious scientists of the era</label>
+      <label><input type="radio" name="q1" value="d"> It explains events through appeal to divine or supernatural causes</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">2. What did the Michelson-Morley experiment demonstrate?</p>
+      <label><input type="radio" name="q2" value="a"> Light bends near massive objects like the sun</label>
+      <label><input type="radio" name="q2" value="b"> The universe is expanding in all directions</label>
+      <label><input type="radio" name="q2" value="c"> The speed of light is the same in all directions, regardless of Earth's motion through the proposed ether</label>
+      <label><input type="radio" name="q2" value="d"> Time passes more slowly at high altitudes due to gravity</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">3. In Einstein's general theory of relativity, what is gravity?</p>
+      <label><input type="radio" name="q3" value="a"> A particle called the graviton exchanged between massive bodies</label>
+      <label><input type="radio" name="q3" value="b"> The curvature of space-time caused by the distribution of mass and energy</label>
+      <label><input type="radio" name="q3" value="c"> A repulsive force that counterbalances electromagnetic attraction at large scales</label>
+      <label><input type="radio" name="q3" value="d"> An electromagnetic field proportional to an object's mass</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">4. What does Hubble's discovery that galaxies are receding at speeds proportional to their distance imply?</p>
+      <label><input type="radio" name="q4" value="a"> The Milky Way is at the precise center of the universe</label>
+      <label><input type="radio" name="q4" value="b"> The universe is contracting and heading toward a big crunch</label>
+      <label><input type="radio" name="q4" value="c"> The universe is expanding</label>
+      <label><input type="radio" name="q4" value="d"> Distant galaxies are moving toward us due to net gravitational attraction</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">5. Heisenberg's uncertainty principle states that:</p>
+      <label><input type="radio" name="q5" value="a"> Measurements are always inaccurate due to the limitations of instruments</label>
+      <label><input type="radio" name="q5" value="b"> The position and momentum of a particle cannot both be precisely known simultaneously &mdash; this is a fundamental feature of nature, not a technological limitation</label>
+      <label><input type="radio" name="q5" value="c"> Energy is always conserved in any quantum mechanical system</label>
+      <label><input type="radio" name="q5" value="d"> Particles always travel along definite, pre-determined paths in space-time</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">6. Which particle carries the strong nuclear force that binds quarks inside protons and neutrons?</p>
+      <label><input type="radio" name="q6" value="a"> Photon</label>
+      <label><input type="radio" name="q6" value="b"> Graviton</label>
+      <label><input type="radio" name="q6" value="c"> Gluon</label>
+      <label><input type="radio" name="q6" value="d"> Z-boson</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">7. The "no hair" theorem states that a stationary black hole is entirely described by which set of properties?</p>
+      <label><input type="radio" name="q7" value="a"> The type of matter (hydrogen, iron, etc.) that formed it</label>
+      <label><input type="radio" name="q7" value="b"> Its mass, angular momentum, and electric charge</label>
+      <label><input type="radio" name="q7" value="c"> Its temperature, entropy, and luminosity</label>
+      <label><input type="radio" name="q7" value="d"> Its age, location in space, and original stellar class</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">8. What is the physical mechanism behind Hawking radiation?</p>
+      <label><input type="radio" name="q8" value="a"> X-rays emitted by hot gas spiraling into a black hole from a companion star</label>
+      <label><input type="radio" name="q8" value="b"> Gravitational waves produced by a rapidly rotating black hole</label>
+      <label><input type="radio" name="q8" value="c"> Virtual particle-antiparticle pairs forming near the event horizon, with one member falling in and the other escaping as real radiation</label>
+      <label><input type="radio" name="q8" value="d"> Proton decay events inside the black hole's intense gravitational field</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">9. The Hawking-Hartle "no-boundary proposal" suggests that:</p>
+      <label><input type="radio" name="q9" value="a"> The universe has clear spatial boundaries at its outermost edge</label>
+      <label><input type="radio" name="q9" value="b"> Using imaginary time in quantum gravity, space-time can be finite in extent without any singularities or edges &mdash; the universe had no singular beginning</label>
+      <label><input type="radio" name="q9" value="c"> Time travel is impossible because there are no boundaries between past and future space-time regions</label>
+      <label><input type="radio" name="q9" value="d"> The universe must have been created by an external cause because it has a definite beginning</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">10. What does the thermodynamic arrow of time describe?</p>
+      <label><input type="radio" name="q10" value="a"> The direction in which the universe is expanding rather than contracting</label>
+      <label><input type="radio" name="q10" value="b"> The direction in which we remember events rather than anticipate them</label>
+      <label><input type="radio" name="q10" value="c"> The direction in which disorder (entropy) tends to increase over time</label>
+      <label><input type="radio" name="q10" value="d"> The direction in which clocks run slower in stronger gravitational fields</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">11. What major puzzle about the early universe does Guth's inflationary model address?</p>
+      <label><input type="radio" name="q11" value="a"> Why there is more matter than antimatter in the universe</label>
+      <label><input type="radio" name="q11" value="b"> How the universe can be so smooth and uniform even though causally disconnected regions in the early universe could not have exchanged information</label>
+      <label><input type="radio" name="q11" value="c"> Why quantum mechanics and general relativity are mathematically inconsistent with each other</label>
+      <label><input type="radio" name="q11" value="d"> Why galaxy formation requires dark matter rather than ordinary baryonic matter</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">12. The Casimir effect is relevant to discussions of time travel because it demonstrates that:</p>
+      <label><input type="radio" name="q12" value="a"> Faster-than-light travel is already occurring in atomic systems</label>
+      <label><input type="radio" name="q12" value="b"> Quantum mechanics allows regions of negative energy density, which are needed to maintain a wormhole</label>
+      <label><input type="radio" name="q12" value="c"> Gravity is repulsive at very short distances between parallel plates</label>
+      <label><input type="radio" name="q12" value="d"> Virtual particles do not carry real forces and cannot affect observable physics</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">13. String theory requires space-time to have how many dimensions (in the most commonly studied version)?</p>
+      <label><input type="radio" name="q13" value="a"> Four</label>
+      <label><input type="radio" name="q13" value="b"> Six</label>
+      <label><input type="radio" name="q13" value="c"> Eight</label>
+      <label><input type="radio" name="q13" value="d"> Ten</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">14. Why, according to Hawking, do the thermodynamic and cosmological arrows of time point in the same direction?</p>
+      <label><input type="radio" name="q14" value="a"> The second law of thermodynamics is mathematically derived from general relativity's field equations</label>
+      <label><input type="radio" name="q14" value="b"> The big bang simultaneously created both types of order and they have been aligned ever since</label>
+      <label><input type="radio" name="q14" value="c"> Intelligent beings can only exist in the expanding phase of the universe, where a strong thermodynamic arrow is present; we could not observe a contracting phase</label>
+      <label><input type="radio" name="q14" value="d"> The cosmological constant forces entropy to increase at the same rate as the universe expands</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">15. What deep question does Hawking leave unanswered even if a complete unified theory is found?</p>
+      <label><input type="radio" name="q15" value="a"> Whether the universe will eventually stop expanding and recollapse</label>
+      <label><input type="radio" name="q15" value="b"> Whether supersymmetric particles exist at energies accessible to particle accelerators</label>
+      <label><input type="radio" name="q15" value="c"> What breathes fire into the equations &mdash; why does a universe exist at all for the theory to describe?</label>
+      <label><input type="radio" name="q15" value="d"> Whether wormholes can be kept open long enough for practical interstellar travel</label>
+    </div>
+
+    <button type="button" id="score-btn" onclick="scoreQuiz()">Score My Answers</button>
+
+    <div id="quiz-result" style="display:none;">
+      <p id="score-text"></p>
+      <div id="answer-review"></div>
+    </div>
+
+  </form>
+</details>
+
+<script>
+(function() {
+  const answers = {
+    q1:  { correct: "b", explain: "Hawking defines a good theory as one that accurately describes observations with a model containing few arbitrary elements and makes definite, falsifiable predictions — following Karl Popper's criterion." },
+    q2:  { correct: "c", explain: "The Michelson-Morley experiment found the speed of light identical in all directions regardless of Earth's motion, demolishing the ether hypothesis and paving the way for special relativity." },
+    q3:  { correct: "b", explain: "General relativity replaces the Newtonian idea of gravity as a force with the geometric concept that mass and energy curve space-time, and objects follow geodesics — the straightest paths in that curved geometry." },
+    q4:  { correct: "c", explain: "Hubble's law — recession speed proportional to distance — directly implies the universe is expanding; running time backwards points to a hot, dense beginning (the big bang)." },
+    q5:  { correct: "b", explain: "Heisenberg's uncertainty principle is a fundamental property of nature: the product of the uncertainties in position and momentum can never be less than a fixed constant (Planck's constant divided by 4π), regardless of how measurements are made." },
+    q6:  { correct: "c", explain: "Gluons are the spin-1 bosons that carry the strong nuclear force, binding quarks inside protons and neutrons through the property of 'color charge'." },
+    q7:  { correct: "b", explain: "The 'no hair' theorem, proven step-by-step through work by Israel, Kerr, Carter, Robinson, and Hawking, shows that a stationary black hole is uniquely characterized by just three numbers: its mass, angular momentum, and electric charge." },
+    q8:  { correct: "c", explain: "Hawking showed that virtual particle-antiparticle pairs near the event horizon can be separated by it — one falls in, acquiring negative energy, while the other escapes as real radiation. The black hole loses mass and eventually evaporates." },
+    q9:  { correct: "b", explain: "The Hawking-Hartle no-boundary proposal uses imaginary time to treat the early universe as a smooth, finite four-dimensional surface with no boundary or singularity — there is no 'before the big bang' because time itself begins with the universe." },
+    q10: { correct: "c", explain: "The thermodynamic arrow of time is the direction in which disorder (entropy) increases — broken cups don't reassemble, mixed gases don't unmix. It reflects the far greater number of disordered states than ordered ones." },
+    q11: { correct: "b", explain: "Inflation explains the horizon problem: the universe expanded so rapidly that regions now separated beyond the causal horizon were once in contact, explaining why the CMB has the same temperature everywhere. It also explains the flatness of space." },
+    q12: { correct: "b", explain: "The Casimir effect — a measurable attractive force between closely spaced conducting plates arising from suppressed virtual photon modes — provides experimental proof that quantum mechanics allows negative energy densities, which are required to keep a wormhole open." },
+    q13: { correct: "d", explain: "The most studied version of string theory (the superstring / heterotic string) requires ten space-time dimensions to be mathematically consistent. The extra six dimensions are assumed to be compactified (curled up) at the Planck scale." },
+    q14: { correct: "c", explain: "Hawking invokes the weak anthropic principle: the contracting phase of the universe would lack a strong thermodynamic arrow (entropy would already be near maximum), making it unsuitable for intelligent life. We can only observe ourselves to exist in the expanding phase." },
+    q15: { correct: "c", explain: "Even a complete, consistent unified theory is a set of mathematical equations. Hawking notes it cannot answer why those equations should describe a real universe — what 'breathes fire into the equations and makes a universe for them to describe.' This is the question he ends the book with." },
+  };
+
+  window.scoreQuiz = function() {
+    const form = document.getElementById("quiz-form");
+    let correct = 0;
+    const total = Object.keys(answers).length;
+    let reviewHTML = "";
+
+    for (let i = 1; i <= total; i++) {
+      const key = "q" + i;
+      const selected = form.elements[key] ? form.elements[key].value : "";
+      const isCorrect = selected === answers[key].correct;
+      if (isCorrect) correct++;
+
+      const status = !selected ? "wrong" : (isCorrect ? "correct" : "wrong");
+      const icon = isCorrect ? "\u2705" : "\u274C";
+      const yourAnswer = selected ? selected.toUpperCase() : "No answer";
+      const correctAnswer = answers[key].correct.toUpperCase();
+
+      reviewHTML += '<div class="review-item ' + status + '">';
+      reviewHTML += '<div class="ri-q">' + icon + " Question " + i + "</div>";
+      reviewHTML += '<div class="ri-detail">';
+      if (!isCorrect) {
+        reviewHTML += "Your answer: " + yourAnswer + " &mdash; Correct answer: " + correctAnswer + "<br>";
+      }
+      reviewHTML += answers[key].explain;
+      reviewHTML += "</div></div>";
+    }
+
+    const pct = Math.round((correct / total) * 100);
+    let grade;
+    if (pct === 100) grade = "Perfect score!";
+    else if (pct >= 80) grade = "Great understanding!";
+    else if (pct >= 60) grade = "Good, but review the summaries above for the ones you missed.";
+    else grade = "Consider re-reading the summaries above and trying again.";
+
+    document.getElementById("score-text").textContent = correct + " / " + total + " (" + pct + "%) \u2014 " + grade;
+    document.getElementById("answer-review").innerHTML = reviewHTML;
+    document.getElementById("quiz-result").style.display = "block";
+    document.getElementById("quiz-result").scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+})();
+</script>
+
+</div><!-- .content -->
+
+</body>
+</html>

@@ -39,46 +39,58 @@ When the argument is `all`:
 
 ## Step 2: Search Open Library
 
-Use `curl` to search the Open Library API. Make multiple search queries to maximize results:
+Use `curl` to search the Open Library API. First search the works endpoint to get edition lists:
 
 ```
-https://openlibrary.org/search.json?title=<encoded_title>&author=<encoded_author>&limit=5&fields=cover_i,isbn,title,author_name,language
+https://openlibrary.org/search.json?title=<encoded_title>&author=<encoded_author>&limit=5&fields=key,cover_i,isbn,title,author_name,language
 ```
 
 Also try a title-only search as a fallback:
 ```
-https://openlibrary.org/search.json?title=<encoded_title>&limit=5&fields=cover_i,isbn,title,author_name,language
+https://openlibrary.org/search.json?title=<encoded_title>&limit=5&fields=key,cover_i,isbn,title,author_name,language
 ```
 
-From the results, collect:
-- All ISBNs across the top results (prefer ISBNs starting with `9780` or `0` as these are English-language publishers, but collect others too)
-- All `cover_i` IDs
+From the top matching work, fetch its full editions list to find all cover IDs:
+```
+https://openlibrary.org/works/<work_key>/editions.json?limit=50
+```
 
-## Step 3: Download and visually inspect candidates
+Collect all unique cover IDs from:
+- `cover_i` fields across search results
+- `covers` arrays in each edition (skip IDs that are `-1`)
 
-Try to download cover images one at a time. For each candidate:
+Also collect ISBNs from editions (prefer `9780`/`0` prefixes for English editions).
 
-1. Download it to a temp file using `curl`:
-   - For ISBN-based: `https://covers.openlibrary.org/b/isbn/<isbn>-M.jpg`
-   - For cover_i-based: `https://covers.openlibrary.org/b/id/<cover_id>-M.jpg`
-2. Check the file size — skip if under 1KB (placeholder image).
-3. **Read the image file** using the Read tool so you can visually inspect it.
-4. Evaluate the image. Ask yourself:
-   - Is this actually a book cover (not an audiobook/CD, a photo, or a placeholder)?
-   - Is it in English? (Reject covers in other languages)
-   - Does it look like a reasonable quality cover (not extremely dark, blurry, or cropped)?
-   - Is the aspect ratio roughly that of a book (taller than wide)?
-5. If the image passes all checks, **accept it** and move to Step 4.
-6. If it fails, delete the temp file and try the next candidate.
+## Step 3: Download ALL candidates, then pick the best
 
-**Try candidates in this order:**
-1. First try up to 5 English-publisher ISBNs (starting with `9780` or `0`)
-2. Then try up to 3 `cover_i` IDs from the search results
-3. Then try up to 3 non-English ISBNs as a last resort
+**Do not accept the first passing candidate. Download all viable candidates first, then compare.**
 
-Add a `sleep 0.5` between API calls to be polite.
+### 3a: Download all candidates
 
-If no candidate passes visual inspection after trying all options, report failure to the user.
+For each candidate cover ID or ISBN (up to ~10 total), download to a temp file:
+- For cover ID: `https://covers.openlibrary.org/b/id/<cover_id>-L.jpg` (use `-L` for large)
+- For ISBN: `https://covers.openlibrary.org/b/isbn/<isbn>-L.jpg`
+
+Skip any file under 5KB (placeholder). Add a `sleep 0.5` between downloads to be polite.
+
+### 3b: Visually inspect all downloaded candidates
+
+Use the Read tool to view **every** downloaded image. For each, note:
+- Is it in English?
+- Is it a printed book cover (not audiobook/CD/cassette packaging)?
+- Is it clean and high quality (not a scanned physical copy, not blurry, not too dark)?
+- Is it a modern edition (prefer newer, more vibrant covers over archaic ones)?
+- Is the aspect ratio roughly that of a book (taller than wide)?
+
+### 3c: Pick the best one
+
+After inspecting all candidates, choose the single best cover. Prefer:
+1. Clean, official-looking publisher cover art
+2. Modern/vibrant over old/archaic
+3. Not a photograph of a physical book
+4. Not an audiobook or other non-book-cover format
+
+If no candidate passes minimum quality checks (English, actual book cover, not blurry), report failure to the user.
 
 ## Step 4: Resize and save
 

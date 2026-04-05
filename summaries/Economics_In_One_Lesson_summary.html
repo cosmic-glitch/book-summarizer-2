@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Economics in One Lesson — Book Summary Pro</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      line-height: 1.7;
+      color: #222;
+      background: #fafafa;
+    }
+    .app-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #2c2c2c;
+      padding: 14px 24px;
+    }
+    .content {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 32px 20px 40px;
+    }
+    .app-nav .app-name {
+      font-size: 1.05em;
+      font-weight: bold;
+      color: #e8e0d0;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+    }
+    .app-nav .app-name:hover {
+      color: #d4a843;
+    }
+    .app-nav .back-link {
+      font-size: 0.9em;
+      color: #999;
+      text-decoration: none;
+    }
+    .app-nav .back-link:hover {
+      color: #d4a843;
+    }
+    h1 {
+      font-size: 1.8em;
+      border-bottom: 2px solid #333;
+      padding-bottom: 10px;
+      margin-bottom: 5px;
+    }
+    .subtitle {
+      font-size: 1.1em;
+      color: #444;
+      margin: 2px 0 0 0;
+      font-style: italic;
+    }
+    .author {
+      font-style: italic;
+      color: #777;
+      font-size: 0.95em;
+      margin-bottom: 40px;
+    }
+    h2 {
+      font-size: 1.3em;
+      margin-top: 48px;
+      color: #1a1a1a;
+      border-left: 4px solid #555;
+      padding-left: 12px;
+    }
+    p {
+      margin-bottom: 14px;
+      text-align: justify;
+    }
+    details.counter {
+      background: #f0ece4;
+      border-left: 4px solid #b8860b;
+      padding: 14px 18px;
+      margin: 20px 0 28px 0;
+      border-radius: 0 6px 6px 0;
+    }
+    details.counter summary {
+      font-weight: bold;
+      font-size: 0.95em;
+      color: #8b6914;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    details.counter summary::-webkit-details-marker {
+      display: none;
+    }
+    details.counter summary::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    details.counter[open] summary::before {
+      transform: rotate(90deg);
+    }
+    details.counter p {
+      margin-top: 12px;
+      margin-bottom: 10px;
+      color: #3a3a3a;
+    }
+    details.counter p:last-child {
+      margin-bottom: 0;
+    }
+    .quiz-wrapper {
+      margin-top: 48px;
+      background: #f5f5f0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 16px 20px;
+    }
+    .quiz-toggle {
+      font-weight: bold;
+      font-size: 1.05em;
+      cursor: pointer;
+      color: #2a5a2a;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .quiz-toggle::-webkit-details-marker { display: none; }
+    .quiz-toggle::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    .quiz-wrapper[open] .quiz-toggle::before {
+      transform: rotate(90deg);
+    }
+    .q-block {
+      margin: 24px 0;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    .q-block:last-of-type { border-bottom: none; }
+    .q-label {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .q-block label {
+      display: block;
+      padding: 6px 10px;
+      margin: 4px 0;
+      border-radius: 4px;
+      cursor: pointer;
+      line-height: 1.5;
+    }
+    .q-block label:hover { background: #e8e8e0; }
+    #score-btn {
+      display: block;
+      margin: 28px auto 0;
+      padding: 12px 32px;
+      font-family: Georgia, serif;
+      font-size: 1em;
+      background: #2a5a2a;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #score-btn:hover { background: #1e441e; }
+    #quiz-result {
+      margin-top: 24px;
+      padding: 18px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    #score-text {
+      font-size: 1.15em;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .review-item {
+      margin-bottom: 14px;
+      padding: 10px 12px;
+      border-radius: 4px;
+    }
+    .review-item.correct { background: #e6f4e6; }
+    .review-item.wrong { background: #fce8e8; }
+    .review-item .ri-q { font-weight: bold; margin-bottom: 4px; }
+    .review-item .ri-detail { font-size: 0.93em; color: #444; }
+  </style>
+</head>
+<body>
+
+<nav class="app-nav">
+  <a href="index.html" class="app-name">Book Summary Pro</a>
+  <a href="index.html" class="back-link">&larr; All Books</a>
+</nav>
+
+<div class="content">
+
+<h1>Economics in One Lesson</h1>
+<p class="subtitle">The Shortest and Surest Way to Understand Basic Economics</p>
+<p class="author">Henry Hazlitt</p>
+
+<h2>Preface</h2>
+
+<p>Hazlitt opens by declaring that the book is an analysis of economic fallacies so pervasive they have nearly become a new orthodoxy. He locates the primary danger not in esoteric academic error but in half-truths that are politically convenient and emotionally satisfying&mdash;errors that every major government of the time had embedded in its policies. The preface makes clear that the work is an exercise in <b>exposition rather than original theory</b>, drawing heavily on predecessors: Frédéric Bastiat's essay <i>Ce qu'on voit et ce qu'on ne voit pas</i> provides the core framework of visible versus invisible consequences; Philip Wicksteed's <i>Common Sense of Political Economy</i> informs the treatment of wages; and Ludwig von Mises supplies the analysis of monetary inflation.</p>
+
+<p>Hazlitt distinguishes his approach from mere partisan attack: he deliberately avoids naming contemporary ideologues (Marx, Keynes, Veblen) because his target is not any particular author's careful formulation but the <b>popularized, simplified fallacy</b> as it actually circulates in political speeches and editorial columns. By the time a doctrine becomes mass opinion, its original qualifications have been washed away, leaving only the error in pure form. The book aims to expose these errors in that naked, politically influential form.</p>
+
+<h2>Chapter 1: The Lesson</h2>
+
+<p>Hazlitt states the book's central principle with deliberate simplicity: <b>"The art of economics consists in looking not merely at the immediate but at the longer effects of any act or policy; it consists in tracing the consequences of that policy not merely for one group but for all groups."</b> This single sentence, he argues, contains the whole of sound economics. Bad economists see only immediate effects on a special group; good economists look further&mdash;in time and in scope&mdash;to all the consequences for everyone.</p>
+
+<p>The chapter diagnoses why bad economics flourishes. Two forces perpetuate fallacy: the <b>special pleading of self-interested groups</b>, who hire skilled advocates to present one-sided cases, and the natural human tendency to notice what is immediately visible while overlooking what is prevented from coming into existence. Demagogues can be more plausible than honest economists precisely because they are presenting half-truths: the half that is immediate and visible. The other half&mdash;longer-term, indirect, dispersed among many&mdash;requires a sustained chain of reasoning that audiences resist following.</p>
+
+<p>Hazlitt also corrects the classical economists' opposite error: they sometimes concentrated so fully on long-run and aggregate effects that they grew callous about short-term suffering by identifiable groups. Sound economics requires holding both perspectives simultaneously&mdash;acknowledging the real costs to particular people in the short run while insisting that long-run effects on everyone must also be weighed.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Hazlitt's formulation, though elegant, has been challenged by economists in the <b>Keynesian tradition</b> who argue that "in the long run we are all dead"&mdash;a phrase Hazlitt dismisses as a wisecrack, but which Keynes intended seriously. In a liquidity trap or severe depression, the "long-run equilibrating forces" Hazlitt relies on may take so long to operate that the immediate human suffering they produce is not a mere transitional cost but a catastrophe in its own right. <b>Paul Krugman</b> and others argue that ignoring short-run aggregate demand effects is itself a form of the single-group fallacy: concentrating only on the long-run effects on "the economy as a whole" while ignoring the unemployed workers who bear the short-run adjustment cost.</p>
+  <p>There is also the question of which consequences to count. Hazlitt's framework assumes all consequences can in principle be traced, but <b>behavioral economists</b> and complexity theorists note that economic systems generate unpredictable second-order effects that no single analytical framework can reliably track. The "one lesson" risks being applied mechanically to dismiss interventions whose full consequences&mdash;including benefits&mdash;are equally invisible.</p>
+</details>
+
+<h2>Chapter 2: The Broken Window</h2>
+
+<p>This chapter introduces Hazlitt's most celebrated illustration, adapted from Bastiat: a hoodlum throws a brick through a baker's shop window. Bystanders console themselves that the disaster is really a benefit&mdash;the glazier gets business, spends his earnings, and the prosperity ripples outward. Hazlitt dismantles this reasoning by insisting we ask what the baker would have done with the money had his window not been broken. He had intended to buy a suit; now he cannot. The glazier's gain is <i>precisely</i> the tailor's loss. No new wealth has been created; purchasing power has merely been <b>diverted</b>.</p>
+
+<p>The fallacy lies in noticing only two parties&mdash;baker and glazier&mdash;while forgetting the third party (the tailor) whose business is silently destroyed. The unseen consequence is as real as the seen one: the community is poorer by one suit that will never be made. The <b>"broken window fallacy"</b> is simple in this form, yet Hazlitt will demonstrate throughout the book that it recurs in increasingly sophisticated disguises whenever destruction is claimed to create net economic benefit.</p>
+
+<h2>Chapter 3: The Blessings of Destruction</h2>
+
+<p>Hazlitt scales the broken window fallacy up to wartime. Many economists and commentators of his era argued that the destruction wrought by World War II would create a great pent-up demand that would fuel postwar prosperity. He systematically refutes this. Destruction eliminates real wealth&mdash;factories, homes, infrastructure&mdash;and <b>need is not the same as demand</b>. Effective demand requires purchasing power, which itself requires production. A destroyed factory does not generate the purchasing power needed to replace itself.</p>
+
+<p>The chapter also addresses the confusion between money and real wealth. Wartime inflation can make national income figures appear to rise even as real goods become scarcer. People who mistake higher monetary totals for increased prosperity fall victim to the <b>money illusion</b>. Post-war "replacement demand" is real but merely diverts productive capacity from other uses; the community rebuilds what existed before rather than advancing beyond it. Technological improvements during war may partially offset destruction, but these could equally have occurred without the war.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Hazlitt's argument is largely correct in peacetime but has nuances in the context of depression economies. <b>Keynes</b> argued that in conditions of widespread unemployment and idle resources, increased government spending&mdash;even on projects of dubious value&mdash;could put those idle resources to work and generate a <b>multiplier effect</b> on income. In a fully employed economy, Hazlitt's crowding-out argument holds; in a severely depressed one, the "tailor" who would have made the suit may himself be unemployed and unable to produce it without the external demand stimulus. The empirical record on this remains contested, with economists like <b>Robert Barro</b> emphasizing crowding out and economists like <b>Christina Romer</b> finding significant multiplier effects in historical data.</p>
+</details>
+
+<h2>Chapter 4: Public Works Mean Taxes</h2>
+
+<p>The chapter turns to the perennial political argument that government spending on public works creates employment and adds wealth. Hazlitt accepts the premise that some public works are genuinely necessary and beneficial&mdash;his argument is specifically against projects justified primarily as <b>job creation schemes</b>. Every dollar the government spends must come from somewhere: either current taxation or future taxation (through borrowing). For every visible construction job created by a public bridge, an invisible private job is destroyed because taxpayers have less money to spend on the goods and services they would otherwise have purchased.</p>
+
+<p>The psychological force of the argument for public works lies in visibility. We see the bridge being built and the workers employed; we cannot see the cars, clothing, or household goods that were never made because the money was taxed away. Hazlitt extends this to large-scale projects like the Tennessee Valley Authority: the capital invested there came from taxpayers across the country, who could not invest it in private businesses, homes, or goods they wanted. The regional benefit of the TVA is purchased at the expense of diminished production elsewhere.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Modern public finance recognizes that the productivity of public infrastructure can generate returns that exceed private-sector alternatives, particularly where private markets fail to supply <b>public goods</b> (roads, bridges, basic research, flood control). <b>Larry Summers</b> and others have argued that infrastructure investment in conditions of low interest rates and underemployment passes even strict cost-benefit tests&mdash;the "invisible" private activity that is crowded out is minimal when private investment is already depressed. Hazlitt's framework also does not account for <b>network effects</b>: a single private actor cannot capture the full benefits of a transport network, making market provision systematically insufficient.</p>
+</details>
+
+<h2>Chapter 5: Taxes Discourage Production</h2>
+
+<p>Government spending is not simply a transfer of purchasing power from one pocket to another. High taxes alter incentives in ways that reduce the total amount of wealth produced. When corporations face the prospect of losing 100 cents of every dollar they lose but keeping only 60 cents of every dollar they gain, they become <b>risk-averse</b>: they avoid expansion, shun new ventures, and underinvest in machinery and innovation. Consumers ultimately receive fewer, more expensive, lower-quality goods as a result.</p>
+
+<p>At the individual level, very high marginal tax rates&mdash;50, 75, 90 percent&mdash;cause workers and entrepreneurs to ask whether it is worth laboring for several months of the year for the government's benefit. Capital that might have been accumulated and put to productive use is taxed away before it can be formed. A moderate level of taxation to fund essential government functions is acceptable and even beneficial (since law and order themselves enable production), but beyond a threshold, rising taxes actively destroy the productive capacity of an economy.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The relationship between tax rates and economic output is empirically complex. The <b>Laffer curve</b>, which Hazlitt anticipates conceptually, suggests there is an optimal tax rate beyond which revenue falls&mdash;but economists debate where that peak lies. Studies by <b>Thomas Piketty</b> and <b>Emmanuel Saez</b> find that top marginal rates in the 70–80% range, as existed in mid-20th-century America, were associated with strong economic growth, not stagnation. High-tax Scandinavian economies consistently outperform lower-tax peers on measures of innovation and human development, suggesting that tax-financed public goods (education, healthcare, infrastructure) can raise productive capacity enough to offset incentive effects.</p>
+</details>
+
+<h2>Chapter 6: Credit Diverts Production</h2>
+
+<p>Government credit programs&mdash;loans to farmers, subsidies to failing businesses, guarantees of private debt&mdash;do not create new capital; they <b>redirect existing capital</b> from more efficient to less efficient uses. When the government lends to borrower B who could not obtain private credit, it deprives creditworthy borrower A of funds. Private lenders risk their own money and are thus disciplined by the market to evaluate creditworthiness rigorously; government lenders risk taxpayers' money and face no such market discipline. The result is that capital flows to borrowers who are less productive, less reliable, and less likely to generate the returns needed to justify the investment.</p>
+
+<p>The chapter applies this logic to government subsidies as well: they tax successful private enterprise to support unsuccessful private enterprise, invariably producing net losses in wealth. Hazlitt acknowledges that in some emergencies a plausible case for bailouts might exist, but insists that as a long-run strategy, government credit programs consistently misallocate capital and reduce national wealth. The fundamental insight is that <b>credit is not money created from nothing</b>&mdash;it represents real resources (farms, tractors, factories) that can only be in one place at a time.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The case for government credit is strongest where private markets systematically underserve certain borrowers due to <b>information asymmetries</b> or <b>market failures</b> rather than genuine uncreditworthiness. Small business lending, student loans, and agricultural credit in areas without local banking infrastructure are examples where private markets fail not because borrowers are risky but because screening costs are high. <b>Development economics</b> literature (e.g., work by <b>Daron Acemoglu</b> and <b>Abhijit Banerjee</b>) shows that credit constraints prevent economically sound investments, and targeted credit programs can generate positive returns. The SBA's loan programs and the post-WWII GI Bill mortgage guarantees are cited as examples where government credit generated significant economic returns.</p>
+</details>
+
+<h2>Chapter 7: The Curse of Machinery</h2>
+
+<p>One of the most persistent economic fallacies is that labor-saving machinery destroys jobs permanently. Hazlitt demolishes this with historical evidence: the Luddite riots of the early Industrial Revolution, the introduction of Arkwright's cotton-spinning machinery in 1760 (which increased textile employment from 7,900 to 320,000 in 27 years), and the stocking-frame knitters who, after decades of hardship, found their industry employing a hundred workers for every one employed before. Each wave of technological displacement was followed by <b>vastly greater employment</b> at higher wages.</p>
+
+<p>The chapter traces the mechanism carefully. When a clothing manufacturer installs labor-saving machinery, he initially employs fewer workers directly. But his increased profits are spent on something&mdash;expanding the business, investing in other industries, or consuming more goods&mdash;each of which creates employment. Competition then forces prices down, making coats cheaper; consumers have more money left over for other goods, stimulating employment elsewhere. The net effect is higher real wages (workers can buy more) and greater total production. Hazlitt does not minimize short-term disruption: displaced workers like "Joe Smith" may lose skills that took years to acquire, and their suffering is real. Sound policy acknowledges this while not treating their pain as a reason to freeze technological progress.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The historical optimism of this chapter faces new scrutiny in the era of <b>artificial intelligence and automation</b>. Economists <b>Daron Acemoglu</b> and <b>Pascual Restrepo</b> argue that not all automation is alike: automation that displaces labor without creating new tasks or industries may not generate compensating employment gains. The 19th-century Industrial Revolution created entirely new sectors (railways, electricity, chemicals) that absorbed displaced workers, but there is no guarantee that AI-driven automation will do the same. <b>Erik Brynjolfsson</b> and <b>Andrew McAfee</b> document a decoupling of productivity growth from employment and wage growth since the 1990s, suggesting that the historic relationship Hazlitt cites may be weakening. The burden of proof has shifted: the compensating mechanisms must be demonstrated, not assumed.</p>
+</details>
+
+<h2>Chapter 8: Spread-the-Work Schemes</h2>
+
+<p>Union make-work practices&mdash;arbitrary subdivision of labor, restrictions on who may perform which tasks, mandatory "stand-in" musicians and duplicate drivers&mdash;rest on the false premise that there is a fixed amount of work to be done in the world. If total work is finite, spreading it across more workers or more hours seems rational. But work is not finite: as long as any human need remains unsatisfied, there is potential work to be done. <b>Work creates work</b>: what one producer makes constitutes demand for what another produces.</p>
+
+<p>Shortened working weeks, whether achieved through union bargaining or government mandate (like the 40-hour overtime law), face a similar analysis. If the week is shortened without a wage increase, total payrolls fall and workers are no better off in aggregate&mdash;the employed subsidize the newly employed by sharing their hours. If the week is shortened with a compensating wage increase sufficient to maintain total weekly pay, production costs rise sharply, forcing marginal firms out of business, creating unemployment, and raising prices&mdash;which erodes the real wage gains workers thought they achieved.</p>
+
+<h2>Chapter 9: Disbanding Troops and Bureaucrats</h2>
+
+<p>After every major war, fears arise that demobilized soldiers will flood the labor market and cause mass unemployment. Hazlitt shows why these fears are misplaced: if soldiers were supported by taxation, their demobilization means taxpayers retain those funds and spend them on civilian goods&mdash;creating exactly the civilian demand needed to employ the returning soldiers. If soldiers were supported by deficit financing, the question becomes one of monetary policy, not of employment capacity per se.</p>
+
+<p>The same logic applies to unnecessary civilian bureaucrats. Cutting superfluous government employees does not destroy purchasing power; it returns resources to taxpayers who then spend or invest them. The dismissed bureaucrats, if they were truly unproductive, now enter private employment where they <b>produce something of value in exchange for their wages</b>. The country gains by the amount of productive output they now contribute. Hazlitt is careful to distinguish this argument from an attack on necessary government services (police, courts, public health)&mdash;his target is specifically employment justified by its "purchasing power" rather than its actual value produced.</p>
+
+<h2>Chapter 10: The Fetish of Full Employment</h2>
+
+<p>Hazlitt argues that full employment has been elevated from a means to an end in itself&mdash;a <b>"fetish"</b>&mdash;with perverse consequences. The real goal of any economy is maximum production: the greatest output of goods and services that raise human welfare. Employment is merely the means by which production occurs. Full employment in the absence of production is not prosperity; it is activity without result&mdash;the condition of slave labor, prison camps, or primitive subsistence economies, all of which achieve "full employment."</p>
+
+<p>When policy is directed at employment as an end rather than production as an end, all manner of wasteful make-work becomes virtuous. WPA administrators were praised for designing projects that employed the most men relative to the value produced&mdash;in other words, projects of maximum inefficiency. The chapter concludes that the right question is not "how many will be employed?" but "how much will be produced, and what will our standard of living consequently be?" Production is the cow; employment is merely one feature of the milking process.</p>
+
+<h2>Chapter 11: Who's "Protected" by Tariffs?</h2>
+
+<p>Tariffs protect specific domestic producers by raising prices for all domestic consumers. The political argument for tariffs focuses on the visible: the domestic sweater manufacturer whose workers keep their jobs behind a protective wall. What is invisible is the cost imposed on every consumer who pays more for sweaters, and the lost jobs in all the other industries where that extra consumer spending would have gone. Because the consumer loss is spread thinly across millions of people and the producer gain is concentrated in one visible industry, tariffs generate intense political support from producers and diffuse, politically ineffective resistance from consumers.</p>
+
+<p>Hazlitt extends the analysis: tariffs also reduce exports. Because foreign countries cannot sell as much to the United States, they earn fewer dollars and therefore cannot buy as much American goods. American export industries (agriculture, manufacturing) are harmed precisely as much as protected import-competing industries are helped. The overall effect is a <b>reduction in the efficiency of American production</b>&mdash;resources are diverted from industries where America has a comparative advantage into industries where it does not. Real wages fall because labor productivity falls when capital and workers are misallocated.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The case for free trade is broadly accepted among economists, but there are recognized exceptions. The <b>infant industry argument</b>, associated with economists from Alexander Hamilton to <b>Ha-Joon Chang</b>, holds that some industries cannot become competitive without an initial period of protection that allows them to achieve economies of scale and learning-curve advantages. Many of today's industrial powerhouses&mdash;South Korea, Japan, Taiwan&mdash;built their manufacturing bases behind protective walls before liberalizing. <b>Strategic trade theory</b> (Paul Krugman, Elhanan Helpman) shows that in industries with oligopolistic competition, subsidies or protection can shift rents to domestic firms. And the distributional consequences of free trade, documented by <b>David Autor</b> and colleagues, show that trade liberalization can impose severe concentrated costs on manufacturing workers even while generating diffuse gains for consumers.</p>
+</details>
+
+<h2>Chapter 12: The Drive for Exports</h2>
+
+<p>Nations simultaneously fear imports and crave exports&mdash;a logical contradiction, since imports and exports must ultimately balance. Every export creates the foreign earnings needed to buy American goods; every import restriction reduces foreign earnings and thus foreign demand for American exports. The chapter focuses on a specific fallacy: the argument that government should make bad loans to foreign countries to "stimulate exports." Hazlitt shows this is economically self-defeating: if the loans are not repaid, the exports were essentially <b>given away</b>, making Americans poorer rather than richer.</p>
+
+<p>Export subsidies suffer from the same flaw. By selling goods to foreigners below cost, a country transfers wealth abroad. The domestic industries that appear to benefit from export expansion are gaining at the expense of domestic taxpayers, who finance the subsidy, and domestic consumers of everything else, who have less purchasing power because of the taxes required. The chapter reinforces the central lesson: policies that appear to benefit one visible group (exporters) impose invisible costs on everyone else that exceed the visible gains.</p>
+
+<h2>Chapter 13: "Parity" Prices</h2>
+
+<p>Agricultural price supports that set farm prices at a fixed historical ratio (the 1909&ndash;1914 "parity") rest on the premise that farmers need higher prices to be prosperous and that their prosperity will benefit the entire economy through increased purchasing power. Hazlitt dismantles both claims. Higher farm prices extracted through government intervention represent a transfer from urban consumers to farmers: for every additional dollar farmers gain in purchasing power, urban consumers lose an equivalent dollar. There is <b>no net increase</b> in purchasing power for industry as a whole.</p>
+
+<p>Moreover, parity schemes necessarily involve restricting agricultural output to raise prices, which means <b>deliberate destruction of wealth</b>. The nation has less food available. Hazlitt also skewers the inconsistency of the parity principle: car prices and aluminum prices fell enormously between 1909 and the 1940s due to improved productivity&mdash;yet no one demanded that these prices be held at 1909 levels. Farm productivity also rose dramatically over the same period, meaning that "parity" prices were far above what free-market supply and demand would have set.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Defenders of agricultural support programs point to genuine market failures in farming: commodity prices are notoriously volatile due to weather shocks, planting decisions that must be made months before prices are known, and the tendency of competitive markets to produce periodic boom-and-bust cycles that drive farmers into bankruptcy and then create food supply shortfalls. <b>Price stabilization</b>&mdash;not necessarily parity at a specific historical ratio&mdash;has legitimate economic rationale. Additionally, the social value of maintaining a large domestic agricultural sector (food security, rural communities, environmental stewardship) may justify some support that pure market pricing would not generate. Modern agricultural economists generally distinguish between badly designed parity programs and better-targeted income support or crop insurance mechanisms.</p>
+</details>
+
+<h2>Chapter 14: Saving the X Industry</h2>
+
+<p>The argument for saving any particular "sick" or "dying" industry is a generalization of the cases already examined. Subsidies, tariffs, or restrictions on entry may temporarily preserve jobs in the protected industry, but they do so by diverting capital and labor that would otherwise be more productively employed elsewhere. When industries are forcibly kept alive beyond their natural economic life, they <b>absorb resources that should be released</b> for growing industries&mdash;exactly as keeping the horse-and-buggy industry alive would have stunted the automobile industry.</p>
+
+<p>The chapter distinguishes two sub-types of protection: blocking new competitors (which keeps inefficient producers in business and raises costs across the economy) and direct subsidies (which are a transparent wealth transfer from taxpayers to the protected industry). Both produce net losses because they prevent the <b>creative destruction</b> that directs capital toward its most valued uses. A dynamic economy requires that dying industries be allowed to die just as much as it requires growing industries to be allowed to grow; the two processes are complementary, not in tension.</p>
+
+<h2>Chapter 15: How the Price System Works</h2>
+
+<p>This chapter provides the positive counterpart to the book's many negative analyses: an explanation of how <b>competitive markets solve the resource allocation problem</b> that any economy must face. Hazlitt uses the Robinson Crusoe analogy to make the underlying problem vivid&mdash;any individual or group with limited resources must constantly choose among competing uses. In a complex modern economy with millions of goods and billions of potential uses, this problem would be utterly beyond any planner's ability to solve by decree.</p>
+
+<p>The price system solves it automatically. When demand for a good rises, its price rises, profits in its production increase, new entrants are attracted, supply expands, and the price falls back toward equilibrium. When demand falls, the reverse occurs. This <b>quasi-automatic governor</b>&mdash;like the centrifugal governor on a steam engine&mdash;constantly adjusts production across thousands of commodities in response to millions of consumer decisions. Hazlitt argues that "production for use and not for profit" critics misunderstand the system: profits are the signal that tells producers what to make and how to make it efficiently. Without that signal, no amount of technical expertise can allocate resources as well.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The price system coordinates well under conditions of <b>competitive markets, complete information, and no externalities</b>&mdash;conditions that are frequently violated. <b>Market failures</b> recognized by mainstream economics include public goods (defense, basic research), negative externalities (pollution, greenhouse gas emissions), information asymmetries (insurance markets, used-car markets), and natural monopolies (utilities, railroads). In each case, the price system generates outcomes that are inefficient even by its own internal logic. The socialist calculation debate (Hayek vs. Lange) showed that the price system has genuine information-aggregating advantages over central planning&mdash;but this does not imply that unregulated markets are optimal across all domains.</p>
+</details>
+
+<h2>Chapter 16: "Stabilizing" Commodities</h2>
+
+<p>Government commodity price stabilization programs&mdash;particularly government loans to farmers to hold crops off the market&mdash;claim only to smooth out price volatility, not to raise prices permanently. Hazlitt argues that this objective is already well served by private speculators, who serve a genuine social function by buying when prices are low (absorbing supply) and selling when prices are high (releasing supply), thereby <b>reducing</b> volatility rather than causing it. The professional speculator profits exactly to the extent that he forecasts prices accurately, and accurate forecasting means dampened swings.</p>
+
+<p>When government intervenes instead, the "ever-normal granary" becomes an "ever-political granary." Political pressures lead governments to set prices above market-clearing levels, accumulate excessive stocks, destroy foreign markets for the commodity (by keeping domestic prices artificially high), and stimulate foreign production. The ultimate result is that the scheme intended to stabilize prices produces <b>greater instability</b>: artificial scarcity in the short run followed by collapsing prices when the accumulated surplus must eventually reach the market.</p>
+
+<h2>Chapter 17: Government Price-Fixing</h2>
+
+<p>When governments fix prices below market levels&mdash;typically for "necessities" like bread, milk, and meat&mdash;they trigger an inexorable chain of consequences. Below-market prices increase demand (consumers buy more of the cheap good) while reducing supply (producers find it unprofitable to produce). The result is an immediate <b>shortage</b>&mdash;precisely the opposite of what regulators intended. To address the shortage, regulators impose rationing. To prevent producers from exiting the market, they must also control input prices&mdash;feedstocks, labor, raw materials&mdash;which creates shortages upstream. The controls must extend "vertically" through the entire production chain and "horizontally" across all substitutes.</p>
+
+<p>Pursued to its logical conclusion, comprehensive price control leads to a <b>fully regimented economy</b>: the government must allocate not only what consumers may buy but what producers may produce, what materials factories may use, and what wages workers may earn. Hazlitt notes that in practice, black markets partially rescue people from the worst consequences, but they do so at the cost of systematic dishonesty and the displacement of efficient established firms by fly-by-night operators willing to break the law. He locates the root error in a split psychological perspective: as consumers, people want low prices for what they buy; as producers, they understand why prices for what they sell must cover costs. Consistent application of either perspective reveals the futility of the other.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Hazlitt's analysis applies most forcefully to peacetime price controls maintained over long periods. <b>Wartime price controls</b>, as practiced in the United States and United Kingdom during WWII, were broadly judged successful in preventing runaway inflation during a period of massive demand pressure without equivalent supply expansion. <b>Rent control</b> in high-demand urban markets is more contested: while economists broadly agree that long-term rent control reduces housing supply, <b>Raj Chetty</b> and colleagues have found that well-designed rent stabilization policies can reduce housing instability and improve life outcomes for existing tenants, and that the supply effects depend heavily on the specific policy design. Some forms of price regulation in natural monopoly settings (utilities, pharmaceuticals) are also mainstream policy precisely because competitive markets do not exist to perform the price-discovery function Hazlitt relies upon.</p>
+</details>
+
+<h2>Chapter 18: Minimum Wage Laws</h2>
+
+<p>A wage is a price&mdash;the price of labor services. The same logic that governs the effects of price floors on goods applies to minimum wage laws. When the government mandates that no worker may be employed for less than a specified wage, workers whose productivity is <b>below that threshold</b> become unemployable: no employer will pay $30 a week for labor worth $20. The minimum wage does not raise the value of low-productivity workers; it simply makes it illegal to hire them at the wage their productivity justifies, causing their unemployment.</p>
+
+<p>The chapter addresses the argument that industries forced to pay higher wages will simply pass the cost along to consumers. Hazlitt accepts that some price pass-through occurs, but notes that higher prices reduce demand and therefore sales volumes, causing the industry to shrink and employment to fall. The argument that minimum wages are harmless because they merely shift income from profits to wages ignores that profits are the signal for investment and expansion; squeezed margins lead to reduced investment, slower growth, and ultimately fewer jobs. Real wages, Hazlitt insists, are raised not by legal decree but by <b>raising labor productivity</b> through capital investment, technology, and better management.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>This is one of the most empirically contested claims in the book. The landmark 1994 study by <b>David Card and Alan Krueger</b> found that New Jersey's minimum wage increase did not reduce employment relative to neighboring Pennsylvania&mdash;a result that sparked decades of follow-up research. The dominant explanation is that low-wage labor markets are often characterized by <b>monopsony power</b>: employers have market power over workers (because workers face search costs, geographic constraints, and information gaps), and minimum wages set within the monopsony range can actually increase both wages and employment. <b>Arindrajit Dube</b> and colleagues have found in multiple recent studies that minimum wage increases up to moderate levels produce negligible employment effects while significantly raising wages for low-income workers.</p>
+</details>
+
+<h2>Chapter 19: Do Unions Really Raise Wages?</h2>
+
+<p>Hazlitt concedes that unions can serve a legitimate function: ensuring that workers with imperfect information and weak individual bargaining power receive wages closer to their true market value. Where employers have monopsony-like power over poorly informed workers, collective bargaining can be a genuine corrective. But he argues that unions typically go far beyond this legitimate function by using coercion to raise wages <b>above</b> the true market value of their members' labor&mdash;a goal achievable only by excluding other workers through intimidation, jurisdictional restrictions, or striking to prevent employers from hiring willing replacements.</p>
+
+<p>The macroeconomic argument against excessive union power runs through a thought experiment: if six sectors of workers each succeed in raising wages by different amounts (farm workers: 0%, railway workers: 50%), and if prices rise proportionally, the average worker ends up roughly where they started in real terms&mdash;but with wasted economic disruption, misallocated labor, and pockets of unemployment. In the long run, Hazlitt argues, <b>real wage growth comes from capital accumulation and technological progress</b>, not from union power. America's wage growth in the 20th century occurred because of rising productivity, not because of union growth (which happened simultaneously but not causally).</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The decades since this book was written have produced significant evidence that <b>declining union membership correlates with rising income inequality</b>. <b>Lawrence Katz</b> and <b>Alan Krueger</b> find that the erosion of union bargaining power since the 1970s explains a substantial fraction of the widening gap between productivity growth and median wage growth. Unions may raise wages not only for their members but for non-union workers in unionized industries, through the "threat effect" on employers. The question of whether unions are primarily redistributive (taking from employers or consumers) or efficiency-enhancing (by reducing turnover, improving communication, and investing in worker training) is actively debated, with significant evidence for the latter in some contexts.</p>
+</details>
+
+<h2>Chapter 20: "Enough to Buy Back the Product"</h2>
+
+<p>The "purchasing power" doctrine holds that workers must receive wages high enough to buy back the goods they produce; otherwise demand will be chronically deficient and depression will follow. Hazlitt identifies this as a circular fallacy. <i>Everyone's</i> income is someone else's purchasing power: the question is never whether total income is sufficient to buy total production (by definition it always is, since income and output are two ways of measuring the same thing) but whether incomes, wages, and prices are correctly aligned with each other.</p>
+
+<p>If wages are forced above the level justified by labor productivity, costs rise. Either prices rise proportionally (in which case workers can buy no more than before), or profits are squeezed until marginal firms close and unemployment rises (reducing total payrolls). In neither case do workers collectively gain in real terms. The chapter draws on empirical estimates by <b>Paul Douglas</b> and <b>A.C. Pigou</b> suggesting that a 1% reduction in real wages expands employment by 3&ndash;4%&mdash;implying that forcing wages above equilibrium creates unemployment far in excess of the wage gain. The best wages are not the highest wages but the <b>functional wages</b> that maximize total payrolls and employment simultaneously.</p>
+
+<h2>Chapter 21: The Function of Profits</h2>
+
+<p>Profits are widely resented, yet they perform indispensable functions in a market economy. They serve as a <b>signal</b>: high profits in a sector indicate that consumers value its output more than its current cost of production, attracting investment and expansion until supply meets demand and profits normalize. Low profits or losses signal the opposite, directing resources away from sectors where they are creating less value than they consume. Without the profit signal, no planner can replicate this information-processing system across thousands of commodities.</p>
+
+<p>Profits also provide the <b>incentive</b> for efficiency: every firm operating in a competitive market is under constant pressure to reduce costs and improve quality, because rivals that do so will capture market share. This pressure is far more effective at eliminating waste than any external regulator. Hazlitt notes that average profits, properly measured (accounting for losses, risk, and the imputed wage of owner-operators), are far more modest than popular imagery suggests&mdash;in many years corporate losses exceed corporate profits. Artificially suppressing profits through price controls or excess-profits taxes does not help workers or consumers; it deprives the economy of the incentive system that drives investment, job creation, and technological advance.</p>
+
+<h2>Chapter 22: The Mirage of Inflation</h2>
+
+<p>Inflation is attractive to governments because it appears to create purchasing power from nothing&mdash;a way of funding spending without the political pain of explicit taxation. Hazlitt demolishes this illusion. <b>Inflation is a hidden tax</b>: it transfers real wealth from those who receive new money later (after prices have risen) to those who receive it first (before prices have risen). The first beneficiaries&mdash;typically war contractors, government agencies, and their suppliers&mdash;gain at the expense of the last to receive the new money, who find their purchasing power eroded before their own incomes adjust.</p>
+
+<p>Inflation also distorts the structure of production. During inflation, businesses expand into lines that appear profitable only because of rising prices, not because of genuine consumer demand. When inflation slows or reverses, these overexpanded sectors must contract, generating unemployment and destroying the capital invested in them. Hazlitt is particularly critical of the Keynesian argument that moderate inflation can "get the wheels of industry turning": it attempts to reduce real wages through price rises rather than directly, fooling workers into accepting a real wage cut they would resist if it were openly proposed. He argues that sophisticated unions, aware of price index movements, will simply demand nominal wage increases that restore their real position, making the inflation ineffective as well as dishonest. <b>Inflation plants the seeds of eventual collapse</b>&mdash;economic distortion, social injustice, and ultimately political instability.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Modern macroeconomics distinguishes sharply between <b>hyperinflation</b> (which Hazlitt rightly fears) and moderate, stable inflation of 2&ndash;4% (which central banks actively target as a policy objective). The rationale for a positive inflation target includes: maintaining a buffer against deflation (which has historically been associated with deep recessions, as in the 1930s), providing room for real wage adjustments without requiring nominal wage cuts (which workers resist strongly), and ensuring that monetary policy retains traction (interest rates cannot fall below zero, but a positive inflation rate provides room for negative real rates). <b>Ben Bernanke's</b> research on the Great Depression demonstrated that the deflationary trap was more economically destructive than the moderate inflation Hazlitt condemns. The consensus among central bankers and most macroeconomists today is that a <i>stable, predictable, moderate</i> inflation rate is preferable to either deflation or the zero-inflation target Hazlitt implicitly favors.</p>
+</details>
+
+<h2>Chapter 23: The Assault on Saving</h2>
+
+<p>Since Keynes, saving has been portrayed as a private virtue but a social vice&mdash;if individuals collectively save more, aggregate demand falls and depression follows. Hazlitt argues this confuses <b>hoarding</b> (keeping money idle) with <b>saving</b> (which in a modern financial system means investment). Money deposited in banks is immediately lent to businesses; money invested directly purchases capital goods. In either case, saving puts as much money into circulation as spending does&mdash;just differently directed, toward capital goods rather than consumption goods.</p>
+
+<p>The chapter uses a vivid thought experiment: two brothers, Alvin (the lavish spender) and Benjamin (the prudent saver), each with the same income. Alvin is visibly generous to waiters and furriers; Benjamin appears to contribute little. But over a decade, Benjamin's savings, invested in productive enterprises, have expanded both his income and the economy's capital stock. By year twelve, Alvin is bankrupt while Benjamin provides more employment than ever. The Keynesian fear that savings create a "stagnation trap" is addressed: savings and investment are equilibrated by interest rates, just as supply and demand are equilibrated by prices. Artificially suppressing interest rates does not encourage productive investment&mdash;it discourages saving, reduces the supply of real capital, and ultimately creates inflation rather than growth.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The <b>"paradox of thrift"</b>&mdash;that individually rational saving can be collectively destructive in a demand-deficient economy&mdash;is one of the most robust and well-documented insights in Keynesian economics. <b>Irving Fisher's</b> debt-deflation theory and Keynes's liquidity preference theory both show that in conditions of economic panic, saving can become genuinely self-defeating: if everyone saves simultaneously, incomes fall (since one person's spending is another's income), making debts harder to service and triggering further saving in a deflationary spiral. The 2008 financial crisis, where deleveraging by households, banks, and governments simultaneously drove prolonged recession, is a modern example. Hazlitt is correct that "saving" in normal times means investment, but <b>in abnormal conditions</b>&mdash;precisely when the analysis matters most&mdash;the relationship between saving and investment can break down dramatically.</p>
+</details>
+
+<h2>Chapter 24: The Lesson Restated</h2>
+
+<p>The concluding chapter synthesizes the book's argument into a broader statement. Economics is a science of <b>recognizing inevitable implications</b>&mdash;like mathematics, it shows that if certain premises are true, certain conclusions necessarily follow, even if those conclusions are not immediately obvious. When someone says "the way to prosperity is to increase farm prices," they are saying, in other words, "the way to prosperity is to make food more expensive for city workers." When they advocate government subsidies, they are in effect advocating higher taxes. Recognizing these implications does not mean the original policy is always wrong; it means both sides of every economic coin must be examined.</p>
+
+<p>Hazlitt retrieves William Graham Sumner's concept of the <b>"Forgotten Man"</b>&mdash;the C who is always asked to do something for X, arranged by A and B, and is never thought of by the reformers. Economic fallacies systematically make C invisible: concentrated, visible benefits to special interests obscure dispersed, invisible costs imposed on everyone else. The chapter also explores why division of labor creates a structural tendency toward such fallacies: each person benefits from abundance in everything except the one thing they sell, and so has a self-interested tendency to promote scarcity in their own product. Sound economics requires the intellectual discipline to resist this tendency and to see the economy as a whole&mdash;"to see the problem as a whole, and not in fragments: that is the goal of economic science."</p>
+
+<h2 id="quiz-heading">Comprehension Quiz</h2>
+
+<details id="quiz-section" class="quiz-wrapper">
+  <summary class="quiz-toggle">Take the Quiz</summary>
+
+  <form id="quiz-form">
+
+    <div class="q-block">
+      <p class="q-label">1. What is the single lesson that Hazlitt argues summarizes all of economics?</p>
+      <label><input type="radio" name="q1" value="a"> a) Markets always allocate resources more efficiently than governments</label>
+      <label><input type="radio" name="q1" value="b"> b) The art of economics consists in looking at immediate effects on one group and correcting for them</label>
+      <label><input type="radio" name="q1" value="c"> c) The art of economics consists in tracing the longer effects of any policy on all groups, not just the immediate effects on one group</label>
+      <label><input type="radio" name="q1" value="d"> d) Supply always creates its own demand in the long run</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">2. In the "broken window" story, why does Hazlitt say the crowd is wrong to celebrate the window being smashed?</p>
+      <label><input type="radio" name="q2" value="a"> a) The glazier will not actually spend his earnings</label>
+      <label><input type="radio" name="q2" value="b"> b) The baker will not be able to pay the glazier</label>
+      <label><input type="radio" name="q2" value="c"> c) The glazier's gain is exactly offset by the tailor's loss — the baker cannot now buy the suit he planned to buy</label>
+      <label><input type="radio" name="q2" value="d"> d) Broken windows do not actually create any employment</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">3. According to Hazlitt, why does the argument that war destruction boosts postwar prosperity fail?</p>
+      <label><input type="radio" name="q3" value="a"> a) War destroys money as well as goods</label>
+      <label><input type="radio" name="q3" value="b"> b) Postwar demand for replacement goods merely diverts resources from other needs and cannot restore what was destroyed for free</label>
+      <label><input type="radio" name="q3" value="c"> c) Wars always end in hyperinflation, which wipes out demand</label>
+      <label><input type="radio" name="q3" value="d"> d) Wartime investment in weapons creates too much capital for peacetime</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">4. Why does Hazlitt argue that government public works do not increase net employment?</p>
+      <label><input type="radio" name="q4" value="a"> a) Government workers are less productive than private workers</label>
+      <label><input type="radio" name="q4" value="b"> b) Public projects are always completed over budget and behind schedule</label>
+      <label><input type="radio" name="q4" value="c"> c) Every dollar taxed away to pay for public works destroys a private job that would otherwise have been created</label>
+      <label><input type="radio" name="q4" value="d"> d) Bond markets absorb all the funds that would otherwise go to private investment</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">5. What is the primary mechanism by which high taxes discourage production, according to Hazlitt?</p>
+      <label><input type="radio" name="q5" value="a"> a) They reduce consumer spending by making goods more expensive</label>
+      <label><input type="radio" name="q5" value="b"> b) They reduce incentives to invest, take risks, and accumulate capital</label>
+      <label><input type="radio" name="q5" value="c"> c) They force businesses to relocate to lower-tax jurisdictions</label>
+      <label><input type="radio" name="q5" value="d"> d) They cause the money supply to shrink</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">6. What is Hazlitt's key objection to government credit programs for farmers and businesses?</p>
+      <label><input type="radio" name="q6" value="a"> a) The interest rates on government loans are too high</label>
+      <label><input type="radio" name="q6" value="b"> b) Government credit diverts capital from more creditworthy, efficient borrowers to less creditworthy, less efficient ones, reducing overall wealth</label>
+      <label><input type="radio" name="q6" value="c"> c"> Government lenders are too strict in their credit standards</label>
+      <label><input type="radio" name="q6" value="d"> d) Borrowed funds are always spent on consumption rather than investment</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">7. When a labor-saving machine is introduced and some workers lose their jobs, Hazlitt argues the long-run result is:</p>
+      <label><input type="radio" name="q7" value="a"> a) Permanent net unemployment because displaced workers cannot retrain quickly enough</label>
+      <label><input type="radio" name="q7" value="b"> b) Higher real wages and more employment across the economy, as productivity gains reduce prices and expand purchasing power</label>
+      <label><input type="radio" name="q7" value="c"> c) Exactly equal employment, since one job is destroyed for every job the machine-makers create</label>
+      <label><input type="radio" name="q7" value="d"> d) Higher unemployment in the short run with no long-run benefit</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">8. The "spread-the-work" fallacy rests on which false assumption?</p>
+      <label><input type="radio" name="q8" value="a"> a) That productivity is constant regardless of hours worked</label>
+      <label><input type="radio" name="q8" value="b"> b"> That workers prefer fewer hours to higher pay</label>
+      <label><input type="radio" name="q8" value="c"> c) That there is only a fixed amount of work to be done in the world</label>
+      <label><input type="radio" name="q8" value="d"> d) That overtime pay discourages employers from hiring at all</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">9. According to Hazlitt, why does demobilizing soldiers after a war not cause lasting unemployment?</p>
+      <label><input type="radio" name="q9" value="a"> a) Soldiers have skills that are directly transferable to civilian industries</label>
+      <label><input type="radio" name="q9" value="b"> b) The government can always create enough public sector jobs to absorb them</label>
+      <label><input type="radio" name="q9" value="c"> c) Taxpayers retain the funds previously spent to support the soldiers and use them to purchase civilian goods, creating equivalent civilian employment</label>
+      <label><input type="radio" name="q9" value="d"> d) Veterans' benefits programs automatically stimulate enough consumer demand</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">10. What does Hazlitt mean by calling full employment a "fetish"?</p>
+      <label><input type="radio" name="q10" value="a"> a) He denies that unemployment is a serious problem</label>
+      <label><input type="radio" name="q10" value="b"> b) Full employment has been elevated from a means to an end, displacing production — the true goal — as the measure of economic success</label>
+      <label><input type="radio" name="q10" value="c"> c) He believes full employment causes inflation</label>
+      <label><input type="radio" name="q10" value="d"> d) He thinks employment statistics are unreliable</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">11. A tariff on imported sweaters protects American sweater makers. What does Hazlitt say is the net effect on the American economy?</p>
+      <label><input type="radio" name="q11" value="a"> a) A net benefit, because domestic jobs are more valuable than foreign ones</label>
+      <label><input type="radio" name="q11" value="b"> b) Neutral — one industry grows as another shrinks, with no net change</label>
+      <label><input type="radio" name="q11" value="c"> c) A net loss — resources are diverted to less efficient uses, consumers pay more, exports fall, and real wages decline</label>
+      <label><input type="radio" name="q11" value="d"> d) A short-run loss but a long-run gain once the industry achieves scale</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">12. Why does Hazlitt argue that bad foreign loans intended to boost exports actually harm the American economy?</p>
+      <label><input type="radio" name="q12" value="a"> a) Foreign governments retaliate with their own tariffs on American goods</label>
+      <label><input type="radio" name="q12" value="b"> b) If the loans are unpaid, the exports were given away for free, making Americans poorer; domestic demand is reduced by as much as export demand is raised</label>
+      <label><input type="radio" name="q12" value="c"> c) The loans cause inflation by increasing the money supply</label>
+      <label><input type="radio" name="q12" value="d"> d) Foreign borrowers spend the loans on goods from third countries rather than from America</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">13. Hazlitt's objection to agricultural "parity prices" is primarily that:</p>
+      <label><input type="radio" name="q13" value="a"> a) The 1909–1914 base period was chosen arbitrarily and doesn't reflect natural price relationships</label>
+      <label><input type="radio" name="q13" value="b"> b) Higher farm prices transfer purchasing power from urban consumers to farmers with no net economic gain, while also restricting farm output</label>
+      <label><input type="radio" name="q13" value="c"> c) Parity prices encourage overproduction and create surpluses</label>
+      <label><input type="radio" name="q13" value="d"> d) Farm productivity has not improved enough to justify lower prices</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">14. What is Hazlitt's argument about why dying industries should be allowed to die?</p>
+      <label><input type="radio" name="q14" value="a"> a) Workers in dying industries are usually low-skilled and easily reabsorbed elsewhere</label>
+      <label><input type="radio" name="q14" value="b"> b) Dying industries free up capital and labor needed for growing industries; artificially preserving them blocks economic progress</label>
+      <label><input type="radio" name="q14" value="c"> c) The government cannot afford to subsidize all failing businesses indefinitely</label>
+      <label><input type="radio" name="q14" value="d"> d) International competition will undercut protected domestic industries anyway</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">15. In Hazlitt's description, how does the price system solve the problem of resource allocation?</p>
+      <label><input type="radio" name="q15" value="a"> a) A central planning bureau calculates the optimal allocation using price data</label>
+      <label><input type="radio" name="q15" value="b"> b) Consumer cooperatives vote on which goods should be produced</label>
+      <label><input type="radio" name="q15" value="c"> c) Rising prices and profits attract new production; falling prices and losses contract it — automatically and continuously across all goods</label>
+      <label><input type="radio" name="q15" value="d"> d) Large corporations negotiate production agreements with each other to avoid overproduction</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">16. Why does Hazlitt argue that government commodity stabilization programs produce greater instability rather than less?</p>
+      <label><input type="radio" name="q16" value="a"> a) Government agencies are too slow to respond to market changes</label>
+      <label><input type="radio" name="q16" value="b"> b) Political pressures lead to prices set above market-clearing levels, which accumulate surpluses that must eventually collapse prices far below what a free market would have produced</label>
+      <label><input type="radio" name="q16" value="c"> c) Stabilization programs require too much paperwork and delay market responses</label>
+      <label><input type="radio" name="q16" value="d"> d) Speculators retaliate against government programs by driving prices to extremes</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">17. When government imposes a price ceiling below the market price, the immediate consequence according to Hazlitt is:</p>
+      <label><input type="radio" name="q17" value="a"> a) Oversupply, because producers rush to meet the increased demand</label>
+      <label><input type="radio" name="q17" value="b"> b) Shortage, because demand increases while supply decreases</label>
+      <label><input type="radio" name="q17" value="c"> c) Price stability, because consumers are protected from producer exploitation</label>
+      <label><input type="radio" name="q17" value="d"> d) Black markets alone, with no effect on legal markets</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">18. What does Hazlitt say is the best way to raise wages?</p>
+      <label><input type="radio" name="q18" value="a"> a) Expand union membership to cover all workers</label>
+      <label><input type="radio" name="q18" value="b"> b"> Pass more comprehensive minimum wage legislation</label>
+      <label><input type="radio" name="q18" value="c"> c) Raise labor productivity through capital investment, new technology, and better management</label>
+      <label><input type="radio" name="q18" value="d"> d) Reduce hours worked so each hour commands a higher price</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">19. Hazlitt's argument about unions is that they:</p>
+      <label><input type="radio" name="q19" value="a"> a) Can never raise wages because employers always have more bargaining power</label>
+      <label><input type="radio" name="q19" value="b"> b) Serve a legitimate function in ensuring workers receive market value, but when they use coercion to push wages above market value they harm other workers and consumers</label>
+      <label><input type="radio" name="q19" value="c"> c) Consistently raise real wages for all workers through their advocacy</label>
+      <label><input type="radio" name="q19" value="d"> d) Should be replaced entirely by government wage boards</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">20. The "enough to buy back the product" doctrine claims workers must earn enough to repurchase what they produce. Hazlitt's rebuttal is that:</p>
+      <label><input type="radio" name="q20" value="a"> a) Workers actually produce more than they consume, creating a natural surplus</label>
+      <label><input type="radio" name="q20" value="b"> b) Forcing wages above productivity raises costs, causing either price inflation (which erases the real wage gain) or unemployment — so workers collectively are not better off</label>
+      <label><input type="radio" name="q20" value="c"> c) The doctrine is correct but applies only to manufacturing workers, not service workers</label>
+      <label><input type="radio" name="q20" value="d"> d) The total national product is already sufficient to meet all workers' needs at existing wage levels</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">21. What economic function do profits serve in Hazlitt's account?</p>
+      <label><input type="radio" name="q21" value="a"> a) They accumulate in the hands of the wealthy, reducing demand and causing recessions</label>
+      <label><input type="radio" name="q21" value="b"> b"> They are a reward for political connections rather than productive activity</label>
+      <label><input type="radio" name="q21" value="c"> c) They signal where resources are most needed, attract investment to those areas, and incentivize efficiency</label>
+      <label><input type="radio" name="q21" value="d"> d) They primarily compensate owners for the risk of business failure with no broader economic role</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">22. Hazlitt calls inflation "the opium of the people" because:</p>
+      <label><input type="radio" name="q22" value="a"> a) It is addictive for governments and impossible to stop once begun</label>
+      <label><input type="radio" name="q22" value="b"> b) It makes people feel richer by raising their money incomes even as it makes them poorer in real terms, dulling their perception of the actual harm being done</label>
+      <label><input type="radio" name="q22" value="c"> c) It benefits drug manufacturers and other inflation-proof industries at others' expense</label>
+      <label><input type="radio" name="q22" value="d"> d) It creates a euphoric economic boom that is followed by painful withdrawal</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">23. In Hazlitt's analysis, inflation harms different groups differently because:</p>
+      <label><input type="radio" name="q23" value="a"> a) Some industries are more capital-intensive and therefore more vulnerable to rising input costs</label>
+      <label><input type="radio" name="q23" value="b"> b) Those who receive newly created money first benefit at the expense of those who receive it last, whose purchasing power has already been eroded by rising prices</label>
+      <label><input type="radio" name="q23" value="c"> c) Creditors always gain and debtors always lose during inflation</label>
+      <label><input type="radio" name="q23" value="d"> d) Workers in non-unionized sectors face higher inflation than workers in unionized sectors</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">24. The brother Benjamin in Chapter 23 illustrates that saving is economically beneficial because:</p>
+      <label><input type="radio" name="q24" value="a"> a) Savers are more virtuous than spenders and deserve higher incomes</label>
+      <label><input type="radio" name="q24" value="b"> b) Savings placed in banks or investments create as much employment as direct consumption spending, while also building productive capital for the future</label>
+      <label><input type="radio" name="q24" value="c"> c) Saving reduces demand and thus prevents inflationary price increases</label>
+      <label><input type="radio" name="q24" value="d"> d) Banks pay interest on savings, which redistributes income from borrowers to savers</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">25. Who is William Graham Sumner's "Forgotten Man" as Hazlitt uses the term?</p>
+      <label><input type="radio" name="q25" value="a"> a) The unemployed worker left behind by technological progress</label>
+      <label><input type="radio" name="q25" value="b"> b"> The farmer unable to access credit from private lenders</label>
+      <label><input type="radio" name="q25" value="c"> c) The taxpayer (C) who is always made to pay the cost of helping some group X, as arranged by reformers A and B, and is never thought of</label>
+      <label><input type="radio" name="q25" value="d"> d) The consumer who cannot afford goods priced above market by monopolies</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">26. Why does division of labor create a structural tendency toward economic fallacies, according to Chapter 24?</p>
+      <label><input type="radio" name="q26" value="a"> a) Specialized workers lose their ability to understand the full production process</label>
+      <label><input type="radio" name="q26" value="b"> b"> Specialization reduces the wages of unskilled workers relative to skilled workers</label>
+      <label><input type="radio" name="q26" value="c"> c) Each person produces one thing and buys everything else, so they naturally want scarcity in what they sell and abundance in what they buy — leading them to support policies that restrict supply in their own sector</label>
+      <label><input type="radio" name="q26" value="d"> d) Specialized workers cannot see the effects of policies on industries they don't work in</label>
+    </div>
+
+    <button type="button" id="score-btn" onclick="scoreQuiz()">Score My Answers</button>
+
+    <div id="quiz-result" style="display:none;">
+      <p id="score-text"></p>
+      <div id="answer-review"></div>
+    </div>
+
+  </form>
+</details>
+
+<script>
+(function() {
+  const answers = {
+    q1: { correct: "c", explain: "Hazlitt's one lesson is to look at the longer effects on all groups, not just immediate effects on one special group." },
+    q2: { correct: "c", explain: "The glazier's gain is exactly the tailor's loss — the baker cannot buy the suit he planned, so the third party (the tailor) is unseen but equally real." },
+    q3: { correct: "b", explain: "Replacement demand merely diverts resources from other uses — the community rebuilds what was destroyed rather than advancing, and no real wealth is created from destruction." },
+    q4: { correct: "c", explain: "Every tax dollar spent on public works is one less dollar available to private taxpayers, destroying private jobs at the same rate as public jobs are created." },
+    q5: { correct: "b", explain: "High taxes reduce the incentive to invest, risk capital, and accumulate wealth, thereby shrinking the capital stock needed for future production and employment." },
+    q6: { correct: "b", explain: "Government credit redirects capital from creditworthy borrowers (who would use it more productively) to less creditworthy borrowers, reducing overall economic output." },
+    q7: { correct: "b", explain: "Historical evidence from the Industrial Revolution and beyond shows that productivity-raising machinery ultimately generates more jobs and higher real wages across the economy." },
+    q8: { correct: "c", explain: "The spread-the-work fallacy assumes a fixed 'job fund' — but as long as any human need remains unmet, there is work to be done; work creates work." },
+    q9: { correct: "c", explain: "When soldiers are demobilized, taxpayers retain the funds previously used to support them and spend on civilian goods, creating civilian demand that absorbs the returning workers." },
+    q10: { correct: "b", explain: "Employment is a means to production; making it an end in itself leads to make-work schemes and inefficiency. Full employment in a prison camp is not prosperity." },
+    q11: { correct: "c", explain: "Tariffs raise consumer prices, reduce purchasing power for all other goods, and divert resources to less efficient industries — reducing real wages and overall productivity." },
+    q12: { correct: "b", explain: "Unpaid foreign loans mean the exported goods were given away, making Americans poorer; every dollar of export demand created is offset by a dollar of reduced domestic demand through higher taxes." },
+    q13: { correct: "b", explain: "Parity prices transfer purchasing power from urban consumers to farmers with no net gain, while also restricting output — making the nation poorer." },
+    q14: { correct: "b", explain: "Dying industries tie up capital and labor that growing industries need; protecting them blocks the creative destruction that drives economic progress." },
+    q15: { correct: "c", explain: "Rising prices and profits attract investment and production; falling prices and losses contract them — a quasi-automatic process that allocates resources better than any planner can." },
+    q16: { correct: "b", explain: "Political pressures push support prices above market levels, accumulating surpluses; when those surpluses must eventually be sold, prices collapse further than they would have without intervention." },
+    q17: { correct: "b", explain: "Below-market price ceilings increase demand while discouraging supply, producing shortages — the exact opposite of the abundance regulators intended." },
+    q18: { correct: "c", explain: "Real wages rise when workers produce more per hour — through better tools, technology, and management. Legal decrees cannot raise wages above the value of the labor they command." },
+    q19: { correct: "b", explain: "Hazlitt acknowledges unions' legitimate role in equalizing bargaining power but argues that using coercion to push wages above market value harms other workers and consumers." },
+    q20: { correct: "b", explain: "Forced wage increases above productivity raise costs, causing either proportional price increases (no real gain) or unemployment (reducing total payrolls) — workers collectively cannot gain." },
+    q21: { correct: "c", explain: "Profits signal where resources are needed most, attract investment to those areas until supply meets demand, and relentlessly pressure firms to operate efficiently." },
+    q22: { correct: "b", explain: "Inflation raises nominal incomes and prices simultaneously, making people feel richer while they are actually poorer in real terms — an anesthetic that dulls perception of the harm." },
+    q23: { correct: "b", explain: "New money enters the economy at specific points; those who receive it first spend it before prices rise, gaining at the expense of those who receive it last after prices have already risen." },
+    q24: { correct: "b", explain: "Benjamin's savings are lent or invested, creating as much employment as direct spending while also building productive capital — the economy is richer in both the short and long run." },
+    q25: { correct: "c", explain: "Sumner's Forgotten Man is C — the taxpayer made to fund the reformers' programs for X — who is never considered by the A-and-B reformers who arrange for him to pay." },
+    q26: { correct: "c", explain: "Under division of labor, each producer wants scarcity in what they sell but abundance in everything else, creating a structural self-interest in policies that restrict supply in their own sector — even though these policies harm everyone collectively." }
+  };
+
+  window.scoreQuiz = function() {
+    const form = document.getElementById("quiz-form");
+    let correct = 0;
+    const total = Object.keys(answers).length;
+    let reviewHTML = "";
+
+    for (let i = 1; i <= total; i++) {
+      const key = "q" + i;
+      const selected = form.elements[key] ? form.elements[key].value : "";
+      const isCorrect = selected === answers[key].correct;
+      if (isCorrect) correct++;
+
+      const status = !selected ? "wrong" : (isCorrect ? "correct" : "wrong");
+      const icon = isCorrect ? "\u2705" : "\u274C";
+      const yourAnswer = selected ? selected.toUpperCase() : "No answer";
+      const correctAnswer = answers[key].correct.toUpperCase();
+
+      reviewHTML += '<div class="review-item ' + status + '">';
+      reviewHTML += '<div class="ri-q">' + icon + " Question " + i + "</div>";
+      reviewHTML += '<div class="ri-detail">';
+      if (!isCorrect) {
+        reviewHTML += "Your answer: " + yourAnswer + " &mdash; Correct answer: " + correctAnswer + "<br>";
+      }
+      reviewHTML += answers[key].explain;
+      reviewHTML += "</div></div>";
+    }
+
+    const pct = Math.round((correct / total) * 100);
+    let grade;
+    if (pct === 100) grade = "Perfect score!";
+    else if (pct >= 80) grade = "Great understanding!";
+    else if (pct >= 60) grade = "Good, but review the summaries above for the ones you missed.";
+    else grade = "Consider re-reading the summaries above and trying again.";
+
+    document.getElementById("score-text").textContent = correct + " / " + total + " (" + pct + "%) \u2014 " + grade;
+    document.getElementById("answer-review").innerHTML = reviewHTML;
+    document.getElementById("quiz-result").style.display = "block";
+    document.getElementById("quiz-result").scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+})();
+</script>
+
+</div><!-- .content -->
+
+</body>
+</html>

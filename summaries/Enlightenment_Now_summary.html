@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enlightenment Now — Book Summary Pro</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      line-height: 1.7;
+      color: #222;
+      background: #fafafa;
+    }
+    .app-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #2c2c2c;
+      padding: 14px 24px;
+    }
+    .content {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 32px 20px 40px;
+    }
+    .app-nav .app-name {
+      font-size: 1.05em;
+      font-weight: bold;
+      color: #e8e0d0;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+    }
+    .app-nav .app-name:hover {
+      color: #d4a843;
+    }
+    .app-nav .back-link {
+      font-size: 0.9em;
+      color: #999;
+      text-decoration: none;
+    }
+    .app-nav .back-link:hover {
+      color: #d4a843;
+    }
+    h1 {
+      font-size: 1.8em;
+      border-bottom: 2px solid #333;
+      padding-bottom: 10px;
+      margin-bottom: 5px;
+    }
+    .subtitle {
+      font-size: 1.1em;
+      color: #444;
+      margin: 2px 0 0 0;
+      font-style: italic;
+    }
+    .author {
+      font-style: italic;
+      color: #777;
+      font-size: 0.95em;
+      margin-bottom: 40px;
+    }
+    h2 {
+      font-size: 1.3em;
+      margin-top: 48px;
+      color: #1a1a1a;
+      border-left: 4px solid #555;
+      padding-left: 12px;
+    }
+    p {
+      margin-bottom: 14px;
+      text-align: justify;
+    }
+    details.counter {
+      background: #f0ece4;
+      border-left: 4px solid #b8860b;
+      padding: 14px 18px;
+      margin: 20px 0 28px 0;
+      border-radius: 0 6px 6px 0;
+    }
+    details.counter summary {
+      font-weight: bold;
+      font-size: 0.95em;
+      color: #8b6914;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    details.counter summary::-webkit-details-marker {
+      display: none;
+    }
+    details.counter summary::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    details.counter[open] summary::before {
+      transform: rotate(90deg);
+    }
+    details.counter p {
+      margin-top: 12px;
+      margin-bottom: 10px;
+      color: #3a3a3a;
+    }
+    details.counter p:last-child {
+      margin-bottom: 0;
+    }
+    .quiz-wrapper {
+      margin-top: 48px;
+      background: #f5f5f0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 16px 20px;
+    }
+    .quiz-toggle {
+      font-weight: bold;
+      font-size: 1.05em;
+      cursor: pointer;
+      color: #2a5a2a;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .quiz-toggle::-webkit-details-marker { display: none; }
+    .quiz-toggle::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    .quiz-wrapper[open] .quiz-toggle::before {
+      transform: rotate(90deg);
+    }
+    .q-block {
+      margin: 24px 0;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    .q-block:last-of-type { border-bottom: none; }
+    .q-label {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .q-block label {
+      display: block;
+      padding: 6px 10px;
+      margin: 4px 0;
+      border-radius: 4px;
+      cursor: pointer;
+      line-height: 1.5;
+    }
+    .q-block label:hover { background: #e8e8e0; }
+    #score-btn {
+      display: block;
+      margin: 28px auto 0;
+      padding: 12px 32px;
+      font-family: Georgia, serif;
+      font-size: 1em;
+      background: #2a5a2a;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #score-btn:hover { background: #1e441e; }
+    #quiz-result {
+      margin-top: 24px;
+      padding: 18px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    #score-text {
+      font-size: 1.15em;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .review-item {
+      margin-bottom: 14px;
+      padding: 10px 12px;
+      border-radius: 4px;
+    }
+    .review-item.correct { background: #e6f4e6; }
+    .review-item.wrong { background: #fce8e8; }
+    .review-item .ri-q { font-weight: bold; margin-bottom: 4px; }
+    .review-item .ri-detail { font-size: 0.93em; color: #444; }
+  </style>
+</head>
+<body>
+
+<nav class="app-nav">
+  <a href="index.html" class="app-name">Book Summary Pro</a>
+  <a href="index.html" class="back-link">&larr; All Books</a>
+</nav>
+
+<div class="content">
+
+<h1>Enlightenment Now</h1>
+<p class="subtitle">The Case for Reason, Science, Humanism, and Progress</p>
+<p class="author">Steven Pinker</p>
+
+<h2>Preface</h2>
+
+<p>Pinker opens by noting that the book was largely written before the 2016 U.S. presidential election and Britain's Brexit vote, events he had not anticipated. Rather than treating those developments as cause to abandon the book's thesis, he argues they make it <b>more urgent</b>: the Enlightenment ideals of reason, science, humanism, and progress are under assault from populist movements that embrace tribalism, authoritarianism, and disdain for expertise. The preface frames the entire project as a defense of a worldview that most educated people implicitly hold but rarely articulate or justify.</p>
+
+<p>Pinker dedicates substantial gratitude to <b>Max Roser</b> of <i>Our World in Data</i>, whose charts documenting global human progress inform much of the book's empirical backbone. He acknowledges many other researchers&mdash;economists, epidemiologists, political scientists&mdash;whose data he draws on. The preface also introduces the book's central conceit: that progress is real, measurable, and underappreciated because of deep psychological biases that make bad news feel more salient than good news.</p>
+
+<h2>Chapter 1: Dare to Understand!</h2>
+
+<p>The opening chapter sets the philosophical stage by invoking Immanuel Kant's 1784 essay <i>What Is Enlightenment?</i>, in which Kant defined Enlightenment as humanity's emergence from self-imposed immaturity&mdash;the courage to use one's own reason rather than deferring to authority. Pinker identifies four interconnected ideals that define the Enlightenment: <b>reason</b> (applying logic and evidence rather than tradition or revelation), <b>science</b> (systematic empirical inquiry), <b>humanism</b> (valuing human flourishing as the ultimate moral standard), and <b>progress</b> (the belief that knowledge and institutions can be improved over time). These ideals, Pinker argues, are not just historical curiosities but the foundation of every genuine advance in human welfare.</p>
+
+<p>The chapter traces key Enlightenment thinkers&mdash;Voltaire, Locke, Hume, Kant, Adam Smith&mdash;and notes how they were embedded in their era's limitations (accepting slavery, confining women's roles), yet their core ideas contained the seeds of later emancipation. Pinker introduces <b>doux commerce</b> (gentle commerce), the Enlightenment idea that trade knits nations together and reduces the incentive for war, and references Kant's vision of <i>Perpetual Peace</i> through international law and federated republics. The chapter argues that these ideals, however imperfectly realized, have been responsible for the vast improvements in human life documented in the rest of the book.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Critics from both left and right challenge Pinker's Enlightenment framing. Postcolonial scholars such as <b>Dipesh Chakrabarty</b> argue that the Enlightenment's universalism was historically complicit in imperialism&mdash;the same rational-scientific worldview that produced vaccines also provided ideological cover for conquest and the classification of colonized peoples as inferior. From the right, <b>traditionalist conservatives</b> (e.g., Roger Scruton) argue that Enlightenment rationalism severed people from the inherited wisdom embedded in religion, custom, and community, producing rootless individuals and totalitarian ideologies. Neither critique necessarily demolishes Pinker's case for the <i>ideals</i>, but they complicate the triumphalist narrative by showing that those ideals have historically traveled in complex company.</p>
+</details>
+
+<h2>Chapter 2: Entro, Evo, Info</h2>
+
+<p>This chapter provides the scientific framework for understanding why progress requires effort and why it is not inevitable. Pinker invokes the <b>Second Law of Thermodynamics</b>&mdash;entropy increases in closed systems&mdash;to explain why things naturally decay and fall apart without deliberate energy inputs. Disorder is the default state of the universe; complexity and order must be actively created and maintained. This is not a metaphor but a literal constraint: the reason cities crumble, diseases spread, and institutions degrade is that entropy is always working against structure.</p>
+
+<p><b>Evolution</b> explains how biological complexity arose without a designer&mdash;natural selection builds functional organisms through differential reproduction, not foresight. But evolution is also responsible for many human cognitive biases and tribalist instincts that undermine reasoned cooperation. Pinker argues that understanding these evolved tendencies is the first step to overcoming them. Finally, <b>information</b>&mdash;understood in Claude Shannon's technical sense as the reduction of uncertainty&mdash;bridges the physical and mental worlds. Knowledge is the capacity to impose order on entropy. The chapter concludes that human progress is best understood as the expansion of useful knowledge and the application of energy to hold entropy at bay.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Some philosophers and social scientists object to Pinker's move from thermodynamic entropy to social entropy as a rhetorical sleight of hand. The Second Law applies rigorously to closed physical systems; applying it to historical institutions and social order is <i>analogical</i>, not literal, and the analogy can be questioned. Critics such as <b>John Gray</b> argue that Pinker's "entro, evo, info" framing gives scientific-sounding authority to a fundamentally liberal-progressive view of history that is itself a value commitment, not a scientific finding. The evolutionary psychology claims are also contested: many social scientists dispute whether specific human cognitive tendencies (e.g., tribalism, loss aversion) are best explained evolutionarily or through cultural and developmental processes.</p>
+</details>
+
+<h2>Chapter 3: Counter-Enlightenments</h2>
+
+<p>Pinker surveys the major intellectual and cultural movements that have historically opposed Enlightenment ideals, framing them as recurring obstacles to progress rather than legitimate alternatives. The <b>Romantic movement</b> of the 18th and 19th centuries reacted against the perceived coldness of Enlightenment rationalism by championing feeling, authenticity, organic community, and connection to nature. While romanticism produced great art, Pinker argues its political manifestations&mdash;nationalism, volkisch thought, fascism&mdash;were catastrophic.</p>
+
+<p>Counter-Enlightenment thinking also appears in religious fundamentalism (which rejects empirical inquiry in favor of revelation), in various forms of <b>eco-romanticism</b> (which idealize a pre-industrial nature unspoiled by human intervention), and in what Pinker calls <b>declinism</b>&mdash;the nostalgic belief that the past was better and modernity represents corruption. He is particularly pointed about the <b>Second Culture</b>: literary and humanistic intellectuals (following C.P. Snow's formulation) who cultivate a snobbish disdain for science and progress as markers of philistine optimism. These counter-Enlightenments, Pinker argues, are not merely academic curiosities but feed directly into political movements that threaten the institutions sustaining progress.</p>
+
+<h2>Chapter 4: Progressophobia</h2>
+
+<p>If things are genuinely getting better, why do most people believe the world is getting worse? This chapter diagnoses what Pinker calls <b>progressophobia</b>&mdash;a systematic bias toward pessimism about the state of the world. The primary psychological culprit is the <b>availability heuristic</b>, described by Daniel Kahneman and Amos Tversky: we judge the frequency and probability of events by how easily examples come to mind. Because news media overwhelmingly report <i>bad</i> events (disasters, crimes, conflicts), these feel omnipresent even when they are statistically rare or declining.</p>
+
+<p>Pinker adds the finding that <b>"bad is stronger than good"</b>&mdash;negative events have a greater psychological impact than positive events of equivalent magnitude. This asymmetry is evolutionarily adaptive (attending to threats is more urgent than savoring improvements) but makes us systematically miscalibrate the state of the world. He also argues that pessimism has become <i>socially respectable</i> in intellectual circles&mdash;a sign of seriousness and moral sensitivity&mdash;while optimism is caricatured as naivety. The chapter distinguishes Pinker's project from <i>Panglossian</i> optimism: he is not claiming the world is good, but that it is getting better, and that this matters for how we allocate effort and evaluate policy.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Some critics argue that Pinker's diagnosis of progressophobia itself risks complacency. <b>David Runciman</b> and others contend that optimism about long-run trends can blunt the urgency needed for action on pressing current threats (climate change, democratic erosion). The media negativity bias argument cuts both ways: it could also explain why people underestimate <i>emerging</i> threats that haven't yet generated dramatic news events. Additionally, some argue that the pessimism Pinker derides is not irrational but reflects lived experience for people in declining communities who are not sharing in aggregate progress&mdash;the "deaths of despair" documented by <b>Anne Case and Angus Deaton</b> in the United States being a prime example.</p>
+</details>
+
+<h2>Chapter 5: Life</h2>
+
+<p>The empirical case for progress begins here with life expectancy, the most fundamental measure of human welfare. Pinker documents the dramatic compression of death across all age groups and most regions of the world. In 1800, global life expectancy at birth was approximately <b>29 years</b>&mdash;not because people routinely died at 29, but because massive child mortality dragged the average down. By 2015, global life expectancy had reached <b>71.4 years</b>, an improvement achieved in less than two centuries. Even in the world's poorest countries, life expectancy today exceeds what the richest countries achieved in the mid-20th century.</p>
+
+<p>Crucially, Pinker shows that <b>child mortality</b> has plummeted: in 1950, 27% of children died before their fifth birthday; by 2015, this had fallen below 4% globally. <b>Maternal mortality</b> has similarly collapsed with the spread of trained birth attendants, antibiotics, and surgical capability. Pinker also addresses the quality of these additional years&mdash;disability-adjusted life years (DALYs) data show that the extra decades gained are predominantly <i>healthy</i> years, not years of decline. He dismisses scenarios of radical life extension as implausible given the accumulated cellular damage that entropy imposes on biological systems, but celebrates the real gains as extraordinary achievements of applied knowledge.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>While the aggregate trends are robust, critics note that the gains are <b>highly unequal</b> across race, class, and geography. Within the United States, the <b>life expectancy gap</b> between the wealthiest and poorest counties exceeds 20 years. The "deaths of despair" phenomenon documented by <b>Anne Case and Angus Deaton</b> shows rising mortality among middle-aged white Americans without college degrees&mdash;a reversal of long-run trends that Pinker's chapter-level optimism tends to smooth over. Globally, countries affected by conflict, governance failure, or AIDS epidemics have seen life expectancy stagnate or reverse, suggesting that progress is fragile and contingent on political conditions Pinker sometimes treats as given.</p>
+</details>
+
+<h2>Chapter 6: Health</h2>
+
+<p>Building on the life expectancy data, this chapter traces the specific mechanisms that drove the health revolution. The conceptual breakthrough was <b>germ theory</b>&mdash;the discovery by Semmelweis, Pasteur, and Koch that infectious diseases are caused by microorganisms rather than miasmas or moral failing. This insight enabled targeted interventions: <b>vaccination</b> (beginning with Jenner's smallpox vaccine in 1796), <b>sanitation</b> (clean water and sewage treatment), <b>chlorination</b> of municipal water supplies, and eventually <b>antibiotics</b> (Fleming's discovery of penicillin in 1928). Each of these innovations saved millions of lives and continues to do so.</p>
+
+<p>Pinker presents a striking table of scientists whose discoveries have saved enormous numbers of human lives&mdash;Borlaug for food, Müller for DDT-based malaria control, Sabin and Salk for polio vaccines&mdash;and contrasts the obscurity of these names with the celebrity of artists, generals, and politicians. He argues this reflects a cultural distortion: the people who have done the most for human welfare are systematically underappreciated because their contributions operate through <b>impersonal causal chains</b> (a vaccine prevents a disease that would have killed someone you'll never meet) rather than dramatic narratives. This ingratitude for medical progress is, for Pinker, a symptom of the broader failure to appreciate modernity's achievements.</p>
+
+<h2>Chapter 7: Sustenance</h2>
+
+<p>Famine, once the perennial companion of humanity, is becoming rarer. Pinker documents the collapse of famine deaths across the 20th and 21st centuries and attributes it to a combination of agricultural technology, global trade, and improved governance. The central figure is <b>Norman Borlaug</b>, the agricultural scientist whose <b>Green Revolution</b>&mdash;developing high-yield, disease-resistant wheat and rice varieties&mdash;is credited with preventing a billion deaths from starvation in Asia and Latin America. The <b>Haber-Bosch process</b> for synthesizing nitrogen fertilizer (Fritz Haber and Carl Bosch, early 20th century) is similarly cited as one of history's most impactful inventions, enabling crops to grow on soils that would otherwise be depleted.</p>
+
+<p>Pinker takes direct aim at <b>Malthusian pessimism</b>&mdash;the prediction that population growth inevitably outstrips food production&mdash;showing that food production per capita has risen even as population has grown, because human ingenuity is not a fixed resource. He also makes a pointed historical observation: roughly <b>80% of 20th-century famine deaths</b> occurred under Communist regimes (Soviet Union, China, North Korea, Ethiopia, Cambodia) where deliberate policy or ideological agricultural experiments caused catastrophic food system failures. This leads Pinker to conclude that famine today is primarily a political phenomenon&mdash;a product of war, bad governance, and deliberate obstruction&mdash;rather than a natural or inevitable one.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The Green Revolution's legacy is contested. Critics including <b>Vandana Shiva</b> and agroecologists argue that Borlaug's high-yield varieties came with serious costs: dependence on petrochemical fertilizers and pesticides, erosion of crop biodiversity, displacement of traditional farming communities, and soil degradation. The "saved a billion lives" figure is a counterfactual projection, not an observed outcome. More broadly, some researchers argue that Pinker overstates the role of technology and understates the importance of <b>land reform, political organization, and redistribution</b> in food security&mdash;the Kerala model in India, for instance, achieved low malnutrition rates through social policy rather than Green Revolution inputs alone.</p>
+</details>
+
+<h2>Chapter 8: Wealth</h2>
+
+<p>Poverty is not an affliction visited upon humanity&mdash;it is the <b>default state</b>. For most of human history, virtually everyone lived at subsistence level; the question was not how to escape poverty but how to survive within it. Pinker frames the entire history of economic growth as the progressive escape from this baseline, borrowing economist <b>Angus Deaton's</b> metaphor of the <b>"Great Escape"</b>: the breakout from mass deprivation that began in earnest with the Industrial Revolution and has accelerated dramatically in the past half-century.</p>
+
+<p>The data Pinker marshals are striking. In 1820, approximately 90% of the world's population lived in <b>extreme poverty</b> (defined as under $1.90/day in 2011 purchasing power). By 2015, this figure had fallen below 10%&mdash;despite the global population growing sevenfold in the same period. China alone lifted roughly 680 million people out of extreme poverty between 1981 and 2015. Global GDP per capita has grown roughly ninefold since 1820. Pinker also documents <b>convergence</b>: poor countries are growing faster than rich ones, narrowing the global gap. He attributes this growth to market economies, the rule of law, education, and the diffusion of technology, rejecting zero-sum narratives that frame rich-country wealth as extracted from poor countries.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Critics challenge both the poverty line used and the causal narrative. <b>Jason Hickel</b> and others argue that the $1.90/day threshold is far too low to capture meaningful poverty, and that using slightly higher thresholds (e.g., $5 or $10/day) shows much slower progress. The "default state of poverty" framing has also been disputed: historians like <b>David Graeber</b> argue that pre-capitalist societies often had more egalitarian access to resources, and that the poverty of early industrialization was partly <i>created</i> by enclosures, colonialism, and the destruction of subsistence economies. The claim that rich-country wealth is not extracted from poor countries is contested by <b>dependency theorists</b> who argue that global trade structures continue to disadvantage developing economies.</p>
+</details>
+
+<h2>Chapter 9: Inequality</h2>
+
+<p>While acknowledging that economic inequality within many Western countries has risen since the 1970s, Pinker argues that the obsession with <b>within-country inequality</b> obscures a more important story: <b>global inequality is declining</b>. Because hundreds of millions of Chinese, Indian, and other developing-world citizens have risen dramatically in income, the gap between the world's richest and poorest people has actually narrowed when measured globally rather than within national borders. The Gini coefficient for global (rather than national) income distribution has been falling since roughly 1990.</p>
+
+<p>Pinker addresses the popular notion that wealth is a fixed pie&mdash;that the rich getting richer necessarily makes others poorer&mdash;calling it the <b>"lump fallacy."</b> Wealth is created, not merely distributed; economic growth can make virtually everyone better off simultaneously. He cites research by <b>Andrew Kelley and Jonathan Evans</b> suggesting that within-country income inequality does not reliably reduce subjective happiness once absolute income is controlled for&mdash;people care more about their absolute standard of living than their position in a distribution. Finally, Pinker celebrates what he calls the <b>Egalitarian Revolution</b>&mdash;the expansion of social insurance, progressive taxation, and public services in the 20th century&mdash;as the most humane and effective mechanism for reducing inequality without sacrificing growth.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Many economists and sociologists dispute Pinker's dismissal of within-country inequality. <b>Richard Wilkinson and Kate Pickett</b> (<i>The Spirit Level</i>) present extensive evidence that unequal societies have worse outcomes across a wide range of social indicators&mdash;health, crime, social trust, mental illness&mdash;independent of average income. <b>Thomas Piketty's</b> work suggests that current levels of wealth concentration are historically unprecedented and self-reinforcing through capital returns. The claim that people's well-being is unaffected by their relative position is contested by <b>status anxiety</b> research: humans are deeply social animals for whom relative standing matters. Pinker's focus on the global picture can also function to make concentrated local inequality seem tolerable by comparison.</p>
+</details>
+
+<h2>Chapter 10: The Environment</h2>
+
+<p>This chapter navigates the environmental record with careful optimism. Pinker argues for an <b>ecomodernist</b> position: rather than reducing human ambition to protect nature, we should use technology and economic growth to <b>decouple</b> human welfare from environmental impact. As nations get richer, they progressively clean up their environments&mdash;the <b>environmental Kuznets curve</b>&mdash;because wealthy citizens can afford to demand clean air and water, and because efficient technology uses fewer resources per unit of output. Pollution levels in rich countries have declined dramatically since the 1970s; rivers that were biologically dead are recovering; the ozone layer is healing.</p>
+
+<p>On <b>climate change</b>, Pinker is unambiguous: it is real, human-caused, and a serious threat. But he argues the environmentalist movement has often been its own worst enemy by opposing the two most powerful tools for decarbonization: <b>nuclear energy</b> (which produces no carbon and has the best safety record per unit of energy generated) and <b>natural gas</b> as a transitional bridge fuel replacing coal. He also documents a long-run <b>dematerialization</b> trend&mdash;the global economy increasingly produces value through information and services rather than physical materials&mdash;and argues that this, combined with solar cost declines and carbon pricing, offers a plausible path to decarbonization without immiseration.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Climate scientists and environmentalists have pushed back hard on Pinker's nuclear advocacy and on his environmental Kuznets curve argument. The EKC has been challenged empirically: it applies reliably to local pollutants like sulfur dioxide, but global pollutants like CO2 do not show automatic improvement with rising income&mdash;historically, richer countries have emitted <i>more</i> carbon, not less. On nuclear, critics note that <b>cost overruns</b> and long construction times have made new nuclear plants economically uncompetitive in most markets. <b>Bill McKibben</b> and many climate scientists argue that the scale and speed of required decarbonization exceeds what ecomodernist incrementalism can deliver&mdash;that genuine transformation of energy systems requires political interventions Pinker treats as secondary.</p>
+</details>
+
+<h2>Chapter 11: Peace</h2>
+
+<p>One of the book's most surprising empirical claims is that the world has become dramatically more peaceful. Pinker builds on his earlier work in <i>The Better Angels of Our Nature</i> to show that interstate warfare&mdash;armed conflict between recognized states&mdash;has become nearly obsolete. Since World War II, no great power has fought another great power&mdash;what Pinker calls the <b>Long Peace</b>. The number of interstate wars, their duration, and the battle deaths they produce have all fallen sharply. Civil wars peaked in the early 1990s and have since declined, though an uptick in Islamist-related conflicts has slightly reversed the trend since 2010.</p>
+
+<p>Pinker identifies multiple reinforcing mechanisms behind the Long Peace: the <b>democratic peace</b> (democracies rarely fight each other), <b>gentle commerce</b> (trade raises the opportunity cost of conflict), the spread of <b>international institutions</b> (the UN, WTO, ICC), the legal prohibition on territorial conquest under the UN Charter (the <b>Kellogg-Briand Pact</b> precedent), and the <b>nuclear deterrent</b> that makes great-power war catastrophically unthinkable. He also argues against <b>romantic militarism</b>&mdash;the glorification of war as ennobling&mdash;which he identifies as a major cause of World War I. War is increasingly seen, even by military establishments, as a problem to be managed rather than a noble pursuit.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p><b>Nassim Nicholas Taleb</b> has offered a statistical critique: the Long Peace may be a statistical artifact of a small sample (the post-WWII era is ~80 years) in a fat-tailed distribution where catastrophic wars are rare but when they occur are enormous. By Taleb's analysis, we cannot confidently conclude that the <i>probability</i> of great-power war has declined&mdash;only that we haven't had one lately. <b>John Mueller's</b> work supports Pinker's thesis but historians of specific regions dispute the "peace" characterization: proxy wars, drone strikes, and covert interventions by great powers in developing countries have killed millions since 1945, suggesting the Long Peace is partly a great-power perspective that obscures ongoing violence elsewhere.</p>
+</details>
+
+<h2>Chapter 12: Safety</h2>
+
+<p>The chapter documents a broad decline in violence and accidents across multiple domains. Homicide rates in the United States and Europe have fallen dramatically over the long run, a trend Pinker attributes to the <b>Civilizing Process</b> described by sociologist <b>Norbert Elias</b>: the gradual internalization of self-restraint, the transfer of violence monopoly to states, and the expansion of empathy circles. The spike in U.S. crime from the 1960s to the early 1990s was real but exceptional, driven by demographic bulges and crack cocaine; it reversed decisively after 1993 through a combination of policing innovations, incarceration, and the removal of lead from gasoline.</p>
+
+<p>Beyond homicide, Pinker documents dramatic improvements in <b>traffic safety</b> (U.S. traffic deaths per mile driven fell by a factor of about 24 since 1921), <b>occupational safety</b> (workplace deaths have plunged in most industries), and <b>child safety</b> (accidental deaths of children have fallen sharply). He attributes these improvements to a shift in cultural attitudes&mdash;accidents are no longer accepted as "acts of God" but as preventable failures that call for engineering and behavioral solutions. The concept of life having measurable value, and thus risk being worth the cost of reduction, is itself an Enlightenment contribution.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Pinker's reliance on Elias's Civilizing Process has been critiqued by historians who argue it is too Eurocentric and imposes a teleological narrative on a complex history. The 1990s crime decline remains disputed: some researchers emphasize policing and incarceration (which entailed massive costs to Black communities), others point to lead removal, abortion legalization (<b>Donohue-Levitt hypothesis</b>), and economic factors. Critics also note that Pinker's long-run homicide trend conflates very different social contexts&mdash;medieval European violence was embedded in different institutional structures, making direct comparisons of rates across centuries difficult and potentially misleading.</p>
+</details>
+
+<h2>Chapter 13: Terrorism</h2>
+
+<p>Pinker argues that terrorism, while real and morally horrifying, is statistically trivial as a cause of death and systematically overweighted in public consciousness and policy. In 2015, <b>terrorism killed 44 people in the United States</b>, compared to 15,696 homicides, 38,000 traffic deaths, and 611,000 cancer deaths. The gap between the fear terrorism generates and its actual lethality is, Pinker argues, one of the clearest examples of the <b>availability heuristic</b> at work: dramatic, intentional violence by alien-seeming groups triggers threat-detection systems evolved for a world where such attacks could signal the arrival of a hostile tribe, not a small cell of extremists.</p>
+
+<p>The chapter documents waves of <b>terrorism across history</b>&mdash;anarchist assassinations of the late 19th century, leftist terrorism of the 1970s, the IRA, Palestinian groups&mdash;and shows that terrorist campaigns have consistently failed to achieve their stated political goals. The Islamic State represents a particularly lethal recent peak, but even at its height, its death toll was dwarfed by mundane causes. Pinker does not dismiss terrorism as unimportant but argues that the response to it has often been more costly than the threat: wars launched in response to 9/11 killed far more people than the attack itself, while systematically eroding civil liberties and inflaming geopolitical tensions.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Security researchers and political scientists push back on purely statistical framings of terrorism. <b>Bruce Schneier</b> and others note that terrorism has demonstrable <i>indirect</i> effects beyond body counts: it can destabilize governments, trigger authoritarian backlash, and, as Pinker himself acknowledges, provoke disproportionate military responses. The argument that terrorist campaigns "don't work" has also been contested: some scholars (notably <b>Robert Pape</b>) argue that suicide terrorism in particular has achieved political concessions (Israeli withdrawals from Lebanon, U.S. withdrawal from Saudi Arabia). Dismissing terrorism because it kills fewer people than cancer risks undervaluing the political and psychological mechanisms through which it operates.</p>
+</details>
+
+<h2>Chapter 14: Democracy</h2>
+
+<p>Pinker traces <b>three waves of democratization</b>: the first in the 19th and early 20th centuries, the second after World War II, and the third following the collapse of Soviet communism. By 2015, roughly <b>103 countries</b> qualified as electoral democracies, representing about 56% of the world's population&mdash;up from fewer than 20 democracies in 1946. He documents improvements not just in the formal holding of elections but in <b>human rights</b> practices: using the sophisticated statistical model developed by <b>Christopher Fariss</b>, which corrects for changing reporting standards, Pinker shows that countries are on average treating their citizens better even when headlines suggest otherwise.</p>
+
+<p>The chapter also documents the global decline of <b>capital punishment</b>: the number of countries that have abolished the death penalty has grown from a handful in 1960 to over two-thirds of nations by 2015. Pinker discusses democracy not as an ideal of perfectly informed civic participation but pragmatically, as a system that <b>allows peaceful transfer of power</b> and provides mechanisms for citizens to remove bad leaders. He also raises concerns about democratic backsliding, noting that some democracies have degraded into what political scientists call <b>competitive authoritarianism</b>&mdash;states that hold elections but systematically tilt the playing field.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Political scientists such as <b>Steven Levitsky and Lucan Way</b> (<i>Competitive Authoritarianism</i>) and <b>Larry Diamond</b> have documented a <b>democratic recession</b> since about 2006, with more countries moving toward authoritarianism than away from it. The Freedom House and V-Dem indices show declining democratic quality in established democracies (Hungary, Poland, Turkey, India) as well as reversals in new ones. Pinker's count of 103 democracies aggregates countries with very different levels of democratic quality; treating formal electoral competition as equivalent to genuine liberal democracy overstates the scale of democratic achievement. The Fariss model's optimistic reading of human rights trends has also been disputed by other researchers using different methodologies.</p>
+</details>
+
+<h2>Chapter 15: Equal Rights</h2>
+
+<p>This chapter documents the progressive expansion of the moral circle to include groups previously excluded from full legal and social equality. Pinker marshals survey data showing that <b>racist, sexist, and homophobic attitudes</b> have declined dramatically across all demographic groups in the United States and Western Europe since the mid-20th century. He uses Google Trends and survey data to show that derogatory language and expressed prejudice have fallen substantially. African American poverty rates, life expectancy, and educational attainment have improved significantly. <b>Rape and domestic violence</b> have fallen substantially (by roughly 80% since 1993 in the U.S.), <b>hate crimes</b> declined in the 1990s and 2000s, and LGBT rights have expanded dramatically with same-sex marriage now legal in dozens of countries.</p>
+
+<p>The driving force behind these changes, Pinker argues, is not simply economic development but the spread of <b>cosmopolitanism</b>&mdash;the expansion of people's ability to imaginatively inhabit the perspective of others who are different from them&mdash;enabled by literacy, travel, fiction, and mass media. Reasoned argument also plays a role: the philosophical case against discrimination, once articulated clearly (as in Peter Singer's work on the <b>expanding circle</b>), is difficult to rebut without special pleading. Progress in equal rights is not automatic or irreversible, but the long-run trend has been toward expanding inclusion.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Critics argue that Pinker's focus on attitude change and formal legal equality understates the persistence of <b>structural racism</b> and other forms of systemic inequality. <b>Michelle Alexander</b> (<i>The New Jim Crow</i>) documents how mass incarceration has perpetuated racial hierarchy in the United States even as overt racist attitudes declined. Feminist scholars note that while domestic violence statistics have improved, the structural conditions enabling gender-based violence (economic dependence, cultural norms) remain entrenched. Some researchers also question survey-based measures of prejudice, as social desirability effects may mean people express more egalitarian attitudes than they actually hold&mdash;a gap that <b>implicit association tests</b> attempt to measure, with contested results.</p>
+</details>
+
+<h2>Chapter 16: Knowledge</h2>
+
+<p>The expansion of <b>literacy and education</b> represents one of the most significant transformations in human history. In 1800, fewer than 12% of the world's population could read; by 2016, global literacy had reached 83% and was still rising. Pinker documents the extraordinary expansion of formal schooling across all regions and income levels, the near-universal enrollment of girls in primary education in most countries, and the closing of the gender gap in secondary and tertiary education in the developed world. More people have access to more knowledge today than at any prior point in human history.</p>
+
+<p>The chapter introduces the <b>Flynn effect</b>&mdash;the discovery by political scientist James Flynn that IQ scores have risen by approximately <b>3 points per decade</b> across the 20th century in every country tested. This is not genetic evolution but reflects improvements in abstract reasoning, test familiarity, nutrition, and education. Pinker also celebrates the democratization of knowledge through libraries, encyclopedias, and most recently <b>MOOCs</b> (Massive Open Online Courses) and Wikipedia, which make university-level learning available to anyone with internet access. The expansion of knowledge is cumulative and self-reinforcing: more educated populations generate more knowledge, which enables further education.</p>
+
+<h2>Chapter 17: Quality of Life</h2>
+
+<p>This chapter extends the progress narrative beyond survival and income to the texture of daily experience. Average <b>work hours</b> have fallen dramatically: an American worker in 2015 worked roughly 22-28 fewer hours per week than in 1870, and this is not counting the invention of <b>weekends</b> and <b>paid vacation</b>. <b>Housework</b> has been transformed by appliances&mdash;the time spent on laundry, food preparation, and cleaning fell fourfold in the 20th century, a liberation that disproportionately benefited women. Childhood has lengthened as child labor has been restricted and play has been recognized as developmentally essential.</p>
+
+<p>Pinker uses the economist William Nordhaus's calculation that the <b>cost of light</b>&mdash;the fundamental human desire to see after dark&mdash;has fallen by a factor of approximately <b>12,000</b> since the pre-industrial era, from tallow candles to kerosene to electric bulbs to LEDs. More broadly, the share of income required to purchase basic necessities (food, clothing, shelter) has fallen from about three-fifths in 1900 to about one-third today, freeing resources for discretionary goods and experiences. A long-run <b>dematerialization</b> trend means that smartphones now contain the functionality of dozens of formerly separate physical devices; entire categories of consumer goods (cameras, clocks, encyclopedias, GPS devices) have been absorbed into a single pocket-sized object costing a few hundred dollars.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Critics argue that aggregate measures of leisure and consumption obscure important quality-of-life losses. <b>Robert Gordon</b> in <i>The Rise and Fall of American Growth</i> documents that the big quality-of-life gains from electrification, indoor plumbing, automobiles, and antibiotics came in a concentrated period (1870&ndash;1970) unlikely to be repeated. The shortening of the formal work week has been partly offset by <b>"time deepening"</b>&mdash;more activities packed into each hour, more connectivity expectations&mdash;documented by sociologist <b>Judy Wajcman</b>. The dematerialization argument also doesn't fully account for the environmental cost of manufacturing consumer electronics or the conditions in supply chain factories in the developing world.</p>
+</details>
+
+<h2>Chapter 18: Happiness</h2>
+
+<p>Is all this material progress actually making people happier? Pinker engages directly with the <b>Easterlin paradox</b>&mdash;the influential 1974 finding by economist Richard Easterlin that within countries, richer people are happier than poorer ones, but countries do not appear to get happier as they get richer over time. If true, this would undercut much of the book's normative argument. Pinker cites the work of <b>Betsey Stevenson and Justin Wolfers</b>, who reanalyzed the data with a larger sample and found that the paradox largely disappears: <i>richer countries are happier than poorer ones</i>, and countries do tend to get happier as they get richer, though with diminishing returns at higher income levels.</p>
+
+<p>Pinker also addresses concerns about modern epidemics of <b>loneliness, depression, and suicide</b>. He argues these are largely statistical artifacts of improved diagnosis, changing reporting norms, or cherry-picked data rather than genuine secular trends. He distinguishes between <b>hedonic happiness</b> (moment-to-moment pleasure) and <b>evaluative well-being</b> (life satisfaction), arguing that both have improved with rising income and security. He also distinguishes happiness from <b>meaning</b>&mdash;people can find their lives meaningful even when circumstances are difficult&mdash;and argues that the Enlightenment project is about the latter as much as the former: creating conditions in which people can pursue their own conception of a good life.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Richard Easterlin has continued to defend his paradox, arguing that Stevenson and Wolfers use methodological choices that favor their conclusion. The academic debate remains genuinely unresolved. On the depression question, psychiatrists note that even adjusting for diagnostic expansion, there is evidence of rising rates of anxiety and depression especially among young people in wealthy countries&mdash;documented in <b>Jean Twenge's</b> <i>iGen</i> research linking smartphone use to declining adolescent mental health. The happiness-income relationship also has important cultural dimensions that aggregate data obscure: societies with strong social ties and meaning systems (as in <b>Bhutan's Gross National Happiness</b> framework) may prioritize dimensions of well-being that GDP-linked measures miss.</p>
+</details>
+
+<h2>Chapter 19: Existential Threats</h2>
+
+<p>Shifting from demonstrated progress to potential catastrophes, Pinker examines the major <b>existential risks</b> sometimes cited as reasons for pessimism about humanity's future. He opens with the <b>Y2K bug</b> as a cautionary tale: the threat was real, but enormous coordinated effort successfully addressed it, with none of the predicted catastrophes materializing&mdash;suggesting that foreseeing a problem enables solving it. He applies this logic to fears about artificial intelligence, bioterrorism, nuclear weapons, and climate change.</p>
+
+<p>On <b>AI apocalypse scenarios</b> (as advanced by Nick Bostrom, Elon Musk, and others), Pinker identifies what he sees as the key confusion: conflating <i>intelligence</i> (the ability to achieve goals efficiently) with <i>motivation</i> (having particular goals, especially world domination). A superintelligent AI would be instrumental in pursuing whatever goals it was given; there is no reason to think intelligence itself generates a drive for self-preservation or resource acquisition beyond what is needed. On <b>bioterrorism</b>, Pinker notes that creating genuinely devastating biological weapons requires deep scientific expertise that is socially embedded&mdash;scientists embedded in communities have social inhibitions against creating mass-casualty weapons. On nuclear weapons, he documents the most hopeful trend: global stockpiles have been reduced by approximately <b>85%</b> from their Cold War peak through arms reduction treaties and unilateral drawdowns.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Pinker's dismissal of AI risk has been the most contested section of the book among technical researchers. <b>Stuart Russell</b> and others in the AI safety community argue that the "intelligence doesn't imply bad goals" argument doesn't address the core alignment problem: it may be very difficult to specify goals precisely enough that a powerful optimizer doesn't find unexpected and harmful ways to achieve them. On bioterrorism, advances in synthetic biology and gene editing (CRISPR) are dramatically lowering the expertise barrier for pathogen engineering&mdash;a concern that gained new salience after COVID-19. The nuclear optimism may also be prematurely reassuring: rising tensions between the U.S., Russia, and China since the book's publication have stalled arms control, and several near-miss incidents documented by <b>Eric Schlosser</b> in <i>Command and Control</i> suggest nuclear safety is more fragile than official narratives suggest.</p>
+</details>
+
+<h2>Chapter 20: The Future of Progress</h2>
+
+<p>This penultimate chapter surveys the remaining challenges and the threats to the progress documented throughout the book. Pinker is guardedly optimistic about continued economic growth despite concerns about secular stagnation: he cites the potential of the <b>Second Machine Age</b> (Brynjolfsson and McAfee's framework) to drive productivity gains through artificial intelligence and automation. He acknowledges that technological unemployment could create serious distributional problems and argues for stronger social insurance rather than abandoning technological progress.</p>
+
+<p>The chapter's most urgent concern is <b>authoritarian populism</b>&mdash;political movements in the U.S. (Trump), UK (Brexit), Hungary, Poland, Turkey, and elsewhere that explicitly reject Enlightenment norms: disdaining expertise, cultivating tribalism, attacking independent institutions, and appealing to national or ethnic identity over universal human values. Pinker frames these movements as a <b>counter-Enlightenment backlash</b> by people left behind by globalization and threatened by demographic and cultural change. He enumerates how each domain of progress documented earlier in the book&mdash;peace, democracy, environment, health&mdash;faces specific threats from these movements' policy preferences, and urges a political coalition of Enlightenment defenders across traditional partisan lines.</p>
+
+<h2>Chapter 21: Reason</h2>
+
+<p>The final three chapters turn from the empirical record to the philosophical foundations of the Enlightenment worldview. On reason, Pinker makes a <b>transcendental argument</b>: reason is self-justifying, because any attempt to argue against reason must itself employ reason. You cannot coherently argue that argumentation is invalid. This does not mean that humans are naturally rational&mdash;the psychological literature on cognitive biases shows they are not&mdash;but it means that rationality is the proper <i>standard</i> by which we should evaluate beliefs and policies, even if we often fall short.</p>
+
+<p>Pinker confronts <b>motivated reasoning</b> and <b>identity-protective cognition</b>&mdash;the tendency for people to reason in ways that protect group identity rather than track truth. He cites <b>Dan Kahan's</b> research showing that more scientifically literate people are <i>better</i> at rationalizing away inconvenient scientific findings (e.g., climate change) when those findings conflict with their political tribe's commitments. The solution is not more education per se but better <b>epistemic norms</b>&mdash;cultivating the values of open inquiry, willingness to update on evidence, and commitment to calibrated uncertainty. He praises the <b>superforecasters</b> studied by Philip Tetlock as exemplars of applied rationality. He reserves particular criticism for <b>epistemic cowardice</b>&mdash;the failure of intellectuals to state obvious truths for fear of controversy.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Pinker's confidence in reason's self-justifying nature has been challenged on philosophical grounds. The transcendental argument&mdash;that you need reason to argue against reason&mdash;doesn't fully address <b>non-argumentative</b> challenges to reason (e.g., mystical or pragmatist traditions that doubt reason's primacy without making a formal argument against it). The motivated reasoning research cited by Pinker can also be read against his own thesis: if even educated, intelligent people systematically reason in identity-protective ways, the "just reason better" prescription may be insufficient. Social psychologists like <b>Jonathan Haidt</b> argue that moral intuitions drive reasoning, not the reverse, suggesting that changing minds requires emotional and cultural strategies, not just better epistemic norms.</p>
+</details>
+
+<h2>Chapter 22: Science</h2>
+
+<p>Pinker calls science humanity's greatest collective achievement&mdash;not a list of facts but a <b>commitment to two norms</b>: that the world is intelligible (natural phenomena have natural explanations) and that claims must be tested against reality and revised when they fail. These norms, he argues, are responsible for every genuine advance in understanding, from germ theory to relativity to the structure of DNA. Science is not the only source of knowledge, but it is the most reliable method for resolving factual disputes about the world.</p>
+
+<p>The chapter identifies threats to science from both political directions. From the <b>right</b>: creationism, climate denial, vaccine hesitancy, and other rejections of scientific consensus for ideological reasons. From the <b>left</b>: postmodernist and social constructivist critiques in the humanities ("science is just one narrative among many"), politically motivated resistance to research on group differences in traits, and campus cultures hostile to open inquiry. Pinker also addresses the accusation of <b>"scientism"</b>&mdash;the alleged tendency to extend science beyond its proper domain into ethics and meaning. He argues that while values cannot be derived from facts alone, science can inform ethics by revealing what beings can suffer, what policies achieve their goals, and what claims about human nature are true or false. On the relationship between science and religion, he argues that wherever religion makes factual claims (about the age of the Earth, human origins, the efficacy of prayer), those claims are testable and have generally been found false.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Philosopher <b>Mary Midgley</b> and others argue that "scientism" is a real and not merely imaginary failure mode&mdash;that scientists do routinely overreach into domains (consciousness, meaning, ethics) where their methods provide less guidance than Pinker suggests. The sociologist of science <b>Harry Collins</b> and colleagues distinguish between "interactional expertise" and "contributory expertise" to argue that the authority of science depends on institutional structures that can be corrupted&mdash;a point reinforced by replication crises in psychology, nutrition science, and biomedicine. Pinker's characterization of the "left" science problem somewhat conflates legitimate critiques of <b>science policy</b> (who funds what, whose questions get studied) with anti-scientific epistemology, and his treatment of the "both sides" framing has been criticized for creating a false equivalence between isolated academic critiques and the organized, politically funded denial of climate science.</p>
+</details>
+
+<h2>Chapter 23: Humanism</h2>
+
+<p>The book's final chapter argues that the Enlightenment project needs not just reason and science but also a coherent value system: <b>humanism</b>&mdash;the commitment to maximizing human (and by extension, all sentient) flourishing without appeal to supernatural authority. Pinker grounds humanist morality in what he calls the <b>impartiality principle</b>: if we try to justify our preferences from an objective standpoint&mdash;asking why <i>my</i> interests or <i>my</i> group's interests should take precedence over others'&mdash;we cannot provide a principled reason, and are led to a universalist ethics. Entropy and evolution explain why suffering is bad (it represents the destruction of evolved systems that value their own continued existence); they do not justify causing it.</p>
+
+<p>Pinker argues that <b>theistic morality</b> provides no better foundation than humanism: divine command theory makes morality arbitrary (whatever God commands is good, which provides no independent standard), and historical religious moral codes have consistently been revised in humanistic directions over time (permitting slavery, condoning torture, burning heretics). He identifies <b>romantic heroism</b>&mdash;the valorization of struggle, sacrifice, and greatness over happiness and peace&mdash;as humanism's most dangerous alternative and traces it to the authoritarian populism and alt-right movements he critiques throughout the book. He concludes with the <b>Universal Declaration of Human Rights</b> as a practical humanist manifesto, and argues that humanism is not alien to human nature but represents the best of it&mdash;the capacity for empathy, reason, and the imagination of a better world.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Religious philosophers argue that Pinker's dismissal of theistic morality begs the question: if God exists and has good moral reasons for commands, divine command theory need not be arbitrary. <b>Natural law theorists</b> (Aquinas, Finnis) argue that reason itself, properly understood, leads to moral conclusions grounded in human nature&mdash;a position that doesn't require supernatural revelation. From a secular direction, <b>communitarian philosophers</b> (Alasdair MacIntyre, Michael Sandel) argue that liberal humanism's abstract universalism strips morality of the particular communal traditions and shared meanings that give people's lives moral substance. Pinker's "impartiality principle" is contested by moral particularists who argue that special obligations to family, friends, and community are not irrational biases but legitimate moral claims that a purely universalist humanism cannot accommodate.</p>
+</details>
+
+<h2 id="quiz-heading">Comprehension Quiz</h2>
+
+<details id="quiz-section" class="quiz-wrapper">
+  <summary class="quiz-toggle">Take the Quiz</summary>
+
+  <form id="quiz-form">
+
+    <div class="q-block">
+      <p class="q-label">1. What primary goal does Pinker state in the Preface for writing <i>Enlightenment Now</i>?</p>
+      <label><input type="radio" name="q1" value="a"> To predict the political consequences of Brexit and Trump's election</label>
+      <label><input type="radio" name="q1" value="b"> To defend Enlightenment ideals of reason, science, humanism, and progress against rising pessimism</label>
+      <label><input type="radio" name="q1" value="c"> To document all the ways the world has gotten worse since the 1970s</label>
+      <label><input type="radio" name="q1" value="d"> To argue that Max Roser's data is more reliable than mainstream media reporting</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">2. Which four ideals does Pinker identify as defining the Enlightenment in Chapter 1?</p>
+      <label><input type="radio" name="q2" value="a"> Liberty, equality, fraternity, and progress</label>
+      <label><input type="radio" name="q2" value="b"> Democracy, capitalism, individualism, and secularism</label>
+      <label><input type="radio" name="q2" value="c"> Reason, science, humanism, and progress</label>
+      <label><input type="radio" name="q2" value="d"> Rationalism, empiricism, naturalism, and optimism</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">3. What does the Enlightenment concept of <i>doux commerce</i> (gentle commerce) refer to?</p>
+      <label><input type="radio" name="q3" value="a"> The idea that free markets naturally produce ethical behavior</label>
+      <label><input type="radio" name="q3" value="b"> Trade softening relations between nations by raising the cost of conflict</label>
+      <label><input type="radio" name="q3" value="c"> The replacement of physical goods with digital services</label>
+      <label><input type="radio" name="q3" value="d"> Consumer protection regulations that keep markets fair</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">4. In Chapter 2, what does Pinker use the Second Law of Thermodynamics to explain?</p>
+      <label><input type="radio" name="q4" value="a"> Why economic inequality tends to increase over time</label>
+      <label><input type="radio" name="q4" value="b"> Why nuclear energy is inherently dangerous</label>
+      <label><input type="radio" name="q4" value="c"> Why things naturally fall apart without deliberate effort to maintain them</label>
+      <label><input type="radio" name="q4" value="d"> Why evolution favors tribalism over cooperation</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">5. What psychological phenomenon does Pinker cite as the primary driver of "progressophobia" in Chapter 4?</p>
+      <label><input type="radio" name="q5" value="a"> Confirmation bias</label>
+      <label><input type="radio" name="q5" value="b"> The availability heuristic, combined with media's focus on negative events</label>
+      <label><input type="radio" name="q5" value="c"> Dunning-Kruger effect</label>
+      <label><input type="radio" name="q5" value="d"> Loss aversion in financial decision-making</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">6. What was the approximate global life expectancy at birth in 1800, according to Chapter 5?</p>
+      <label><input type="radio" name="q6" value="a"> About 29 years, primarily due to massive child mortality</label>
+      <label><input type="radio" name="q6" value="b"> About 45 years, similar to developing countries today</label>
+      <label><input type="radio" name="q6" value="c"> About 55 years, but with very high variation by region</label>
+      <label><input type="radio" name="q6" value="d"> About 35 years, reflecting primarily deaths from warfare</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">7. In Chapter 6, why does Pinker argue that scientists like Norman Borlaug and Fritz Haber are less celebrated than they deserve?</p>
+      <label><input type="radio" name="q7" value="a"> Their discoveries were considered morally controversial at the time</label>
+      <label><input type="radio" name="q7" value="b"> Their contributions operated through impersonal causal chains rather than dramatic personal narratives</label>
+      <label><input type="radio" name="q7" value="c"> Their work was classified by governments for national security reasons</label>
+      <label><input type="radio" name="q7" value="d"> They refused to accept Nobel Prizes or other public recognition</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">8. What does Pinker identify as the primary cause of roughly 80% of 20th-century famine deaths in Chapter 7?</p>
+      <label><input type="radio" name="q8" value="a"> Climate events such as drought and crop disease</label>
+      <label><input type="radio" name="q8" value="b"> Overpopulation outstripping agricultural capacity (the Malthusian scenario)</label>
+      <label><input type="radio" name="q8" value="c"> Communist regimes whose policies deliberately or catastrophically disrupted food systems</label>
+      <label><input type="radio" name="q8" value="d"> Colonial extraction of agricultural resources from developing countries</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">9. What percentage of the world's population lived in extreme poverty in 1820, according to Chapter 8?</p>
+      <label><input type="radio" name="q9" value="a"> About 50%</label>
+      <label><input type="radio" name="q9" value="b"> About 70%</label>
+      <label><input type="radio" name="q9" value="c"> About 90%</label>
+      <label><input type="radio" name="q9" value="d"> About 30%</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">10. What does Pinker call the false belief that wealth is a fixed quantity so that gains by one person necessarily come at the expense of others?</p>
+      <label><input type="radio" name="q10" value="a"> The zero-sum fallacy</label>
+      <label><input type="radio" name="q10" value="b"> The lump fallacy</label>
+      <label><input type="radio" name="q10" value="c"> The Malthusian trap</label>
+      <label><input type="radio" name="q10" value="d"> The distributional error</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">11. What is "ecomodernism," as described in Chapter 10?</p>
+      <label><input type="radio" name="q11" value="a"> The belief that environmental problems are exaggerated by anti-capitalist activists</label>
+      <label><input type="radio" name="q11" value="b"> Using technology and economic growth to decouple human welfare from environmental impact</label>
+      <label><input type="radio" name="q11" value="c"> A movement to return to pre-industrial agricultural practices</label>
+      <label><input type="radio" name="q11" value="d"> International regulatory frameworks to limit carbon emissions</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">12. What energy source does Pinker advocate as essential for addressing climate change, despite environmentalist opposition?</p>
+      <label><input type="radio" name="q12" value="a"> Wind power</label>
+      <label><input type="radio" name="q12" value="b"> Hydroelectric power</label>
+      <label><input type="radio" name="q12" value="c"> Nuclear energy</label>
+      <label><input type="radio" name="q12" value="d"> Geothermal energy</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">13. What does Pinker call the post-WWII absence of war between great powers in Chapter 11?</p>
+      <label><input type="radio" name="q13" value="a"> The Democratic Peace</label>
+      <label><input type="radio" name="q13" value="b"> The Liberal Order</label>
+      <label><input type="radio" name="q13" value="c"> The Long Peace</label>
+      <label><input type="radio" name="q13" value="d"> The Nuclear Deterrent Era</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">14. What historical process does Pinker credit for the long-run decline in homicide rates in Chapter 12?</p>
+      <label><input type="radio" name="q14" value="a"> The Civilizing Process, described by sociologist Norbert Elias</label>
+      <label><input type="radio" name="q14" value="b"> The spread of Christianity and its prohibition on murder</label>
+      <label><input type="radio" name="q14" value="c"> Rising incarceration rates in modern democracies</label>
+      <label><input type="radio" name="q14" value="d"> The removal of lead from gasoline and paint</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">15. How many terrorism-related deaths occurred in the United States in 2015, as cited in Chapter 13?</p>
+      <label><input type="radio" name="q15" value="a"> 144</label>
+      <label><input type="radio" name="q15" value="b"> 44</label>
+      <label><input type="radio" name="q15" value="c"> 440</label>
+      <label><input type="radio" name="q15" value="d"> 1,044</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">16. Approximately how many countries qualified as electoral democracies by 2015, according to Chapter 14?</p>
+      <label><input type="radio" name="q16" value="a"> 53</label>
+      <label><input type="radio" name="q16" value="b"> 75</label>
+      <label><input type="radio" name="q16" value="c"> 103</label>
+      <label><input type="radio" name="q16" value="d"> 142</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">17. According to Chapter 15, what does Pinker identify as the primary driver of the long-run expansion of equal rights?</p>
+      <label><input type="radio" name="q17" value="a"> Economic growth creating surplus resources for redistribution</label>
+      <label><input type="radio" name="q17" value="b"> Revolutionary political movements demanding rights by force</label>
+      <label><input type="radio" name="q17" value="c"> The spread of cosmopolitanism and reasoned moral argument</label>
+      <label><input type="radio" name="q17" value="d"> International treaties imposing human rights standards on governments</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">18. What is the "Flynn effect," introduced in Chapter 16?</p>
+      <label><input type="radio" name="q18" value="a"> The tendency for educational achievement gaps to persist across generations</label>
+      <label><input type="radio" name="q18" value="b"> IQ scores rising approximately 3 points per decade in every country tested</label>
+      <label><input type="radio" name="q18" value="c"> The observation that literacy rates plateau after 80% of a population can read</label>
+      <label><input type="radio" name="q18" value="d"> The correlation between economic freedom and educational attainment</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">19. By approximately what factor did the cost of light fall due to technological progress, as calculated in Chapter 17?</p>
+      <label><input type="radio" name="q19" value="a"> 100-fold</label>
+      <label><input type="radio" name="q19" value="b"> 1,000-fold</label>
+      <label><input type="radio" name="q19" value="c"> 12,000-fold</label>
+      <label><input type="radio" name="q19" value="d"> 50,000-fold</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">20. What did economists Betsey Stevenson and Justin Wolfers find that challenged the Easterlin paradox, as discussed in Chapter 18?</p>
+      <label><input type="radio" name="q20" value="a"> Happiness is primarily genetic and largely independent of income</label>
+      <label><input type="radio" name="q20" value="b"> Richer countries are indeed happier, and countries get happier as they grow richer</label>
+      <label><input type="radio" name="q20" value="c"> The relationship between income and happiness disappears after controlling for social inequality</label>
+      <label><input type="radio" name="q20" value="d"> Subjective well-being surveys are too unreliable to draw any economic conclusions</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">21. What does Pinker identify as the key conceptual flaw in AI apocalypse scenarios in Chapter 19?</p>
+      <label><input type="radio" name="q21" value="a"> The belief that computers can ever achieve genuine consciousness</label>
+      <label><input type="radio" name="q21" value="b"> Conflating intelligence (the ability to achieve goals) with motivation (having dangerous goals)</label>
+      <label><input type="radio" name="q21" value="c"> Underestimating the difficulty of building truly general artificial intelligence</label>
+      <label><input type="radio" name="q21" value="d"> Assuming that AI systems cannot be regulated by international law</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">22. By approximately what percentage have global nuclear stockpiles been reduced from their Cold War peak, according to Chapter 19?</p>
+      <label><input type="radio" name="q22" value="a"> 25%</label>
+      <label><input type="radio" name="q22" value="b"> 50%</label>
+      <label><input type="radio" name="q22" value="c"> 85%</label>
+      <label><input type="radio" name="q22" value="d"> 99%</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">23. What does Pinker identify as the primary contemporary threat to the progress documented in Chapter 20?</p>
+      <label><input type="radio" name="q23" value="a"> Climate change-driven resource scarcity</label>
+      <label><input type="radio" name="q23" value="b"> Technological unemployment from automation</label>
+      <label><input type="radio" name="q23" value="c"> Authoritarian populism that rejects Enlightenment norms and expert knowledge</label>
+      <label><input type="radio" name="q23" value="d"> Declining international cooperation on trade and security</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">24. What does Pinker call "epistemic cowardice" in Chapter 21?</p>
+      <label><input type="radio" name="q24" value="a"> The tendency for scientists to overclaim the certainty of their findings</label>
+      <label><input type="radio" name="q24" value="b"> The failure of intellectuals to state obvious truths for fear of controversy</label>
+      <label><input type="radio" name="q24" value="c"> Deliberate spread of misinformation by political actors</label>
+      <label><input type="radio" name="q24" value="d"> Refusing to engage with ideas from opposing political camps</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">25. What does Dan Kahan's research on "identity-protective cognition," cited in Chapter 21, show?</p>
+      <label><input type="radio" name="q25" value="a"> That politically engaged citizens are better at evaluating scientific evidence</label>
+      <label><input type="radio" name="q25" value="b"> That more scientifically literate people are better at rationalizing away inconvenient scientific findings</label>
+      <label><input type="radio" name="q25" value="c"> That education reduces motivated reasoning across the political spectrum</label>
+      <label><input type="radio" name="q25" value="d"> That identity and reason operate in entirely separate cognitive systems</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">26. What two core norms does Pinker say define science in Chapter 22, distinguishing it from a mere collection of facts?</p>
+      <label><input type="radio" name="q26" value="a"> Skepticism and peer review</label>
+      <label><input type="radio" name="q26" value="b"> That the world is intelligible, and that claims must be tested against reality and revised when they fail</label>
+      <label><input type="radio" name="q26" value="c"> Falsifiability and reproducibility</label>
+      <label><input type="radio" name="q26" value="d"> Mathematical formalization and experimental control</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">27. What does Pinker use as an example of the "Two Cultures" problem in Chapter 22?</p>
+      <label><input type="radio" name="q27" value="a"> The gap between academic science and science journalism</label>
+      <label><input type="radio" name="q27" value="b"> The disconnect between scientific culture and literary/humanistic culture, described by C.P. Snow</label>
+      <label><input type="radio" name="q27" value="c"> Diverging scientific norms between Europe and the United States</label>
+      <label><input type="radio" name="q27" value="d"> The division between pure and applied scientific research</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">28. What principle does Pinker use to ground humanist morality without appeal to religion in Chapter 23?</p>
+      <label><input type="radio" name="q28" value="a"> The greatest happiness principle (classical utilitarianism)</label>
+      <label><input type="radio" name="q28" value="b"> The categorical imperative (Kantian deontology)</label>
+      <label><input type="radio" name="q28" value="c"> The impartiality principle&mdash;that one cannot give a principled reason why one's own interests should take precedence</label>
+      <label><input type="radio" name="q28" value="d"> The social contract&mdash;rational agents would agree to moral rules from behind a veil of ignorance</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">29. What does Pinker identify as the practical humanist manifesto at the end of Chapter 23?</p>
+      <label><input type="radio" name="q29" value="a"> John Rawls's <i>A Theory of Justice</i></label>
+      <label><input type="radio" name="q29" value="b"> The Universal Declaration of Human Rights</label>
+      <label><input type="radio" name="q29" value="c"> The U.S. Constitution's Bill of Rights</label>
+      <label><input type="radio" name="q29" value="d"> Peter Singer's <i>The Expanding Circle</i></label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">30. Which intellectual tradition does Pinker consistently identify throughout the book as "romantic heroism" and a major contemporary threat to Enlightenment values?</p>
+      <label><input type="radio" name="q30" value="a"> Neo-Marxist economic analysis</label>
+      <label><input type="radio" name="q30" value="b"> Religious fundamentalism across all major faiths</label>
+      <label><input type="radio" name="q30" value="c"> The valorization of struggle, sacrifice, and national greatness over peace and individual flourishing</label>
+      <label><input type="radio" name="q30" value="d"> Postmodernist relativism in university humanities departments</label>
+    </div>
+
+    <button type="button" id="score-btn" onclick="scoreQuiz()">Score My Answers</button>
+
+    <div id="quiz-result" style="display:none;">
+      <p id="score-text"></p>
+      <div id="answer-review"></div>
+    </div>
+
+  </form>
+</details>
+
+<script>
+(function() {
+  const answers = {
+    q1:  { correct: "b", explain: "Pinker states in the Preface that the book is a defense of Enlightenment ideals against pessimism, made more urgent (not abandoned) by the 2016 political events." },
+    q2:  { correct: "c", explain: "Pinker identifies reason, science, humanism, and progress as the four interconnected Enlightenment ideals he defends throughout the book." },
+    q3:  { correct: "b", explain: "Doux commerce (gentle commerce) is the Enlightenment idea that trade raises the opportunity cost of war and softens relations between nations by creating mutual economic interest." },
+    q4:  { correct: "c", explain: "Pinker uses the Second Law of Thermodynamics to explain why complexity and order must be actively created and maintained — entropy (disorder) is the default state, not stability." },
+    q5:  { correct: "b", explain: "The availability heuristic — judging frequency by how easily examples come to mind — combined with media's systematic focus on negative events, makes bad trends feel more prevalent than they are." },
+    q6:  { correct: "a", explain: "Global life expectancy in 1800 was approximately 29 years, primarily because massive child mortality dragged the average down, not because adults routinely died that young." },
+    q7:  { correct: "b", explain: "Pinker argues that scientists whose work prevents deaths operate through impersonal causal chains (a vaccine prevents a disease in someone you never meet), making their contributions less narratively compelling than soldiers or politicians." },
+    q8:  { correct: "c", explain: "Pinker cites historical data showing that approximately 80% of 20th-century famine deaths occurred under Communist regimes where ideological agricultural experiments or deliberate policy caused food system failures." },
+    q9:  { correct: "c", explain: "Pinker documents that approximately 90% of the world's population lived in extreme poverty in 1820, compared to under 10% by 2015, representing an extraordinary escape from the default human condition." },
+    q10: { correct: "b", explain: "The lump fallacy is Pinker's term for the false belief that wealth is fixed — that it must be redistributed rather than created, making rich-country gains necessarily come at poor-country expense." },
+    q11: { correct: "b", explain: "Ecomodernism is the position that technological advancement and economic growth can decouple human welfare from environmental harm — making humanity both richer and environmentally lighter." },
+    q12: { correct: "c", explain: "Pinker argues that nuclear energy, which produces no carbon and has the best safety record per unit of energy, is being irrationally opposed by environmentalists and is essential for deep decarbonization." },
+    q13: { correct: "c", explain: "Pinker calls the post-WWII absence of great-power warfare the Long Peace — a historically unprecedented period in which no two major powers have fought each other directly." },
+    q14: { correct: "a", explain: "Norbert Elias's Civilizing Process — the gradual internalization of self-restraint, monopolization of violence by states, and expansion of empathy — is Pinker's primary explanation for long-run homicide decline." },
+    q15: { correct: "b", explain: "Pinker cites 44 terrorism-related deaths in the U.S. in 2015, compared to 15,696 homicides and 38,000 traffic deaths, illustrating how fear of terrorism is disproportionate to its actual lethality." },
+    q16: { correct: "c", explain: "By 2015, approximately 103 countries qualified as electoral democracies, representing about 56% of the world's population — up from fewer than 20 in 1946." },
+    q17: { correct: "c", explain: "Pinker argues that cosmopolitanism — the capacity to imaginatively inhabit others' perspectives — combined with reasoned moral argument has been the primary driver of expanding equal rights." },
+    q18: { correct: "b", explain: "The Flynn effect, discovered by political scientist James Flynn, is the finding that IQ scores have risen by approximately 3 points per decade in every country tested — reflecting better nutrition, education, and abstract reasoning practice." },
+    q19: { correct: "c", explain: "Using economist William Nordhaus's calculation, Pinker documents a roughly 12,000-fold reduction in the cost of light from tallow candles to modern LEDs — a measure of how dramatically technology has increased purchasing power." },
+    q20: { correct: "b", explain: "Stevenson and Wolfers reanalyzed happiness data with a larger sample and found that richer countries are indeed happier and that countries get happier as they grow richer, largely debunking the Easterlin paradox." },
+    q21: { correct: "b", explain: "Pinker argues that AI apocalypse scenarios confuse intelligence (the ability to achieve goals efficiently) with motivation (having particular goals like world domination) — there is no reason intelligence itself generates dangerous drives." },
+    q22: { correct: "c", explain: "Pinker documents that global nuclear stockpiles have been reduced by approximately 85% from their Cold War peak through arms control treaties and unilateral drawdowns — one of the book's most hopeful trends." },
+    q23: { correct: "c", explain: "Pinker identifies authoritarian populism — movements that reject expertise, cultivate tribalism, and attack independent institutions — as the primary contemporary threat to the progress documented throughout the book." },
+    q24: { correct: "b", explain: "Epistemic cowardice is Pinker's term for the failure of intellectuals to state obvious truths for fear of controversy, social disapproval, or damage to their careers — a failure of intellectual integrity he finds widespread." },
+    q25: { correct: "b", explain: "Kahan's research shows that more scientifically literate people are actually better at rationalizing away inconvenient findings — using their intelligence to protect their political identity rather than track truth." },
+    q26: { correct: "b", explain: "Pinker defines science by two norms: the commitment to intelligibility (natural phenomena have natural explanations) and the commitment to empirical testing (claims must be revised when evidence contradicts them)." },
+    q27: { correct: "b", explain: "C.P. Snow's Two Cultures — the gap between scientific and literary-humanistic intellectual culture — is what Pinker invokes to describe how humanists cultivate disdain for science as a mark of seriousness." },
+    q28: { correct: "c", explain: "Pinker grounds humanist morality in the impartiality principle: when we ask from an objective standpoint why our own interests should take precedence over others', we cannot provide a principled reason, leading to universal moral consideration." },
+    q29: { correct: "b", explain: "Pinker closes the book by pointing to the Universal Declaration of Human Rights as a practical humanist manifesto — an international consensus document that codifies humanistic values without appealing to divine authority." },
+    q30: { correct: "c", explain: "Romantic heroism — the glorification of struggle, sacrifice, greatness, and national or ethnic identity over individual happiness and peace — is the alternative to humanism that Pinker traces in authoritarian populism and the alt-right throughout the book." },
+  };
+
+  window.scoreQuiz = function() {
+    const form = document.getElementById("quiz-form");
+    let correct = 0;
+    const total = Object.keys(answers).length;
+    let reviewHTML = "";
+
+    for (let i = 1; i <= total; i++) {
+      const key = "q" + i;
+      const selected = form.elements[key] ? form.elements[key].value : "";
+      const isCorrect = selected === answers[key].correct;
+      if (isCorrect) correct++;
+
+      const status = !selected ? "wrong" : (isCorrect ? "correct" : "wrong");
+      const icon = isCorrect ? "\u2705" : "\u274C";
+      const yourAnswer = selected ? selected.toUpperCase() : "No answer";
+      const correctAnswer = answers[key].correct.toUpperCase();
+
+      reviewHTML += '<div class="review-item ' + status + '">';
+      reviewHTML += '<div class="ri-q">' + icon + " Question " + i + "</div>";
+      reviewHTML += '<div class="ri-detail">';
+      if (!isCorrect) {
+        reviewHTML += "Your answer: " + yourAnswer + " &mdash; Correct answer: " + correctAnswer + "<br>";
+      }
+      reviewHTML += answers[key].explain;
+      reviewHTML += "</div></div>";
+    }
+
+    const pct = Math.round((correct / total) * 100);
+    let grade;
+    if (pct === 100) grade = "Perfect score!";
+    else if (pct >= 80) grade = "Great understanding!";
+    else if (pct >= 60) grade = "Good, but review the summaries above for the ones you missed.";
+    else grade = "Consider re-reading the summaries above and trying again.";
+
+    document.getElementById("score-text").textContent = correct + " / " + total + " (" + pct + "%) \u2014 " + grade;
+    document.getElementById("answer-review").innerHTML = reviewHTML;
+    document.getElementById("quiz-result").style.display = "block";
+    document.getElementById("quiz-result").scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+})();
+</script>
+
+</div><!-- .content -->
+
+</body>
+</html>

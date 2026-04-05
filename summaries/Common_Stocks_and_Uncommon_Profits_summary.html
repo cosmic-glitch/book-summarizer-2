@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Common Stocks and Uncommon Profits — Book Summary Pro</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      line-height: 1.7;
+      color: #222;
+      background: #fafafa;
+    }
+    .app-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #2c2c2c;
+      padding: 14px 24px;
+    }
+    .content {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 32px 20px 40px;
+    }
+    .app-nav .app-name {
+      font-size: 1.05em;
+      font-weight: bold;
+      color: #e8e0d0;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+    }
+    .app-nav .app-name:hover {
+      color: #d4a843;
+    }
+    .app-nav .back-link {
+      font-size: 0.9em;
+      color: #999;
+      text-decoration: none;
+    }
+    .app-nav .back-link:hover {
+      color: #d4a843;
+    }
+    h1 {
+      font-size: 1.8em;
+      border-bottom: 2px solid #333;
+      padding-bottom: 10px;
+      margin-bottom: 5px;
+    }
+    .subtitle {
+      font-size: 1.1em;
+      color: #444;
+      margin: 2px 0 0 0;
+      font-style: italic;
+    }
+    .author {
+      font-style: italic;
+      color: #777;
+      font-size: 0.95em;
+      margin-bottom: 40px;
+    }
+    h2 {
+      font-size: 1.3em;
+      margin-top: 48px;
+      color: #1a1a1a;
+      border-left: 4px solid #555;
+      padding-left: 12px;
+    }
+    p {
+      margin-bottom: 14px;
+      text-align: justify;
+    }
+    details.counter {
+      background: #f0ece4;
+      border-left: 4px solid #b8860b;
+      padding: 14px 18px;
+      margin: 20px 0 28px 0;
+      border-radius: 0 6px 6px 0;
+    }
+    details.counter summary {
+      font-weight: bold;
+      font-size: 0.95em;
+      color: #8b6914;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    details.counter summary::-webkit-details-marker {
+      display: none;
+    }
+    details.counter summary::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    details.counter[open] summary::before {
+      transform: rotate(90deg);
+    }
+    details.counter p {
+      margin-top: 12px;
+      margin-bottom: 10px;
+      color: #3a3a3a;
+    }
+    details.counter p:last-child {
+      margin-bottom: 0;
+    }
+    .quiz-wrapper {
+      margin-top: 48px;
+      background: #f5f5f0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 16px 20px;
+    }
+    .quiz-toggle {
+      font-weight: bold;
+      font-size: 1.05em;
+      cursor: pointer;
+      color: #2a5a2a;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .quiz-toggle::-webkit-details-marker { display: none; }
+    .quiz-toggle::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    .quiz-wrapper[open] .quiz-toggle::before {
+      transform: rotate(90deg);
+    }
+    .q-block {
+      margin: 24px 0;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    .q-block:last-of-type { border-bottom: none; }
+    .q-label {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .q-block label {
+      display: block;
+      padding: 6px 10px;
+      margin: 4px 0;
+      border-radius: 4px;
+      cursor: pointer;
+      line-height: 1.5;
+    }
+    .q-block label:hover { background: #e8e8e0; }
+    #score-btn {
+      display: block;
+      margin: 28px auto 0;
+      padding: 12px 32px;
+      font-family: Georgia, serif;
+      font-size: 1em;
+      background: #2a5a2a;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #score-btn:hover { background: #1e441e; }
+    #quiz-result {
+      margin-top: 24px;
+      padding: 18px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    #score-text {
+      font-size: 1.15em;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .review-item {
+      margin-bottom: 14px;
+      padding: 10px 12px;
+      border-radius: 4px;
+    }
+    .review-item.correct { background: #e6f4e6; }
+    .review-item.wrong { background: #fce8e8; }
+    .review-item .ri-q { font-weight: bold; margin-bottom: 4px; }
+    .review-item .ri-detail { font-size: 0.93em; color: #444; }
+  </style>
+</head>
+<body>
+
+<nav class="app-nav">
+  <a href="index.html" class="app-name">Book Summary Pro</a>
+  <a href="index.html" class="back-link">&larr; All Books</a>
+</nav>
+
+<div class="content">
+
+<h1>Common Stocks and Uncommon Profits</h1>
+<p class="subtitle">And Other Writings</p>
+<p class="author">Philip A. Fisher</p>
+
+<h2>Preface &amp; Introduction</h2>
+
+<p>Philip A. Fisher began his investment career in 1928 at a San Francisco bank, where he had a front-row seat to the speculative frenzy that culminated in the 1929 crash. That experience convinced him that a specialized investment firm built around finding genuinely outstanding companies would be far more rewarding than the conventional buy-and-sell approach. He founded <b>Fisher &amp; Co.</b> in March 1931&mdash;during the depths of the Great Depression&mdash;and spent the next several decades developing the principles he would eventually crystallize in this book.</p>
+
+<p>Fisher's son, Ken Fisher, contributes a preface noting that the book "grew on him" over fifteen years, from incomprehensible at age eight to foundational when he later founded his own large investment management firm. He emphasizes that his father's methods&mdash;particularly the <b>fifteen-point framework</b> and the <b>scuttlebutt technique</b>&mdash;remain as applicable today as when the book was first published in 1958, and that Warren Buffett himself credits Philip Fisher as a foundational influence.</p>
+
+<p>Philip Fisher explains in his own preface that he wrote the book for three audiences: the clients whose funds he managed, smaller investors who had absorbed misconceptions about investing, and corporate executives seeking to understand how investors evaluate businesses. He stresses two themes that recur throughout: the <i>necessity of patience</i> for large profits, and the <i>inherently deceptive nature of the stock market</i>, where the obvious popular action is frequently the wrong one.</p>
+
+<h2>Chapter 1: Clues from the Past</h2>
+
+<p>The chapter opens by surveying American stock market history to ask: how has serious money actually been made? Fisher's conclusion is stark&mdash;the investors who identified <b>outstanding companies and held them through all market fluctuations</b> made far more money than those who tried to time the business cycle. Even in the era when banking panics caused predictable boom-bust cycles, the patient growth-stock holder outperformed the clever market-timer.</p>
+
+<p>Fisher identifies three structural shifts that make the opportunity for growth-stock investing even better in the mid-twentieth century than in earlier periods. First, <b>corporate management has been professionalized</b>&mdash;the age of family autocracies indifferent to outside shareholders has been replaced by professional management continuously searching for improvement. Second, the rise of the <b>corporate research and development laboratory</b> means that leading companies can now systematically generate new products, with R&D expenditures having grown from $3.7 billion in 1953 to a projected $9 billion by 1960. Third, post-1932 government policy&mdash;under both parties&mdash;has committed to counter-cyclical deficit spending in downturns, making severe long-term depressions far less likely while creating a persistent <b>inflationary bias</b>.</p>
+
+<p>This inflationary bias has a profound implication Fisher explores at length: bonds have become poor long-term investments for individual investors. During the decade 1946&ndash;1956, the purchasing power of the dollar fell 29% in the United States, yet government bond yields were below 3%, producing negative real returns even before taxes. By contrast, outstanding growth stocks like Dow Chemical, DuPont, and IBM each appreciated roughly fivefold in the same period. The chapter concludes that the greatest investment rewards flow to those who find companies capable of growing sales and profits far faster than industry as a whole&mdash;and who then stay with them.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Fisher's argument that the post-1932 government commitment to deficit spending makes severe depressions unlikely has been questioned by subsequent events. The stagflation of the 1970s, the 2008 financial crisis, and periodic recessions demonstrated that counter-cyclical policy does not eliminate volatility for equity holders&mdash;it may merely change its character. <b>Nassim Taleb's</b> work on tail risk would suggest that Fisher underestimates the frequency and severity of true structural shocks.</p>
+  <p>Fisher's dismissal of bonds as long-term investments reflects the inflationary environment of his era. In the early 1980s, U.S. Treasury yields reached 15-16%, and bonds subsequently delivered extraordinary real returns for decades. The correct view is likely more nuanced: bonds are sometimes excellent and sometimes terrible long-term investments, depending on the entry yield relative to expected inflation&mdash;not simply uniformly poor as Fisher suggests.</p>
+</details>
+
+<h2>Chapter 2: What "Scuttlebutt" Can Do</h2>
+
+<p>Having established what kind of company to seek, Fisher addresses the practical question: how does an investor actually find one? He rejects the notion that a solitary analyst poring over balance sheets can identify the most outstanding companies. Instead, he introduces the <b>scuttlebutt method</b>&mdash;gathering intelligence about a company from the network of people who interact with it.</p>
+
+<p>The key sources Fisher identifies are: <b>competitors</b> (who will candidly describe each other's strengths and weaknesses if approached correctly and promised confidentiality); <b>customers and vendors</b> (who reveal how a company actually treats its business relationships); <b>research scientists</b> at universities and in government labs; <b>trade association executives</b>; and <b>former employees</b> (valuable but requiring careful adjustment for possible bias or grievance). Fisher notes that if five companies in an industry are asked intelligent questions about the other four, "nine times out of ten a surprisingly detailed and accurate picture of all five will emerge."</p>
+
+<p>The chapter emphasizes that this method is not only for professional analysts. Even investors who cannot conduct their own scuttlebutt research benefit from understanding the method, because it enables them to evaluate investment advisors&mdash;distinguishing those who genuinely investigate businesses from those who simply recycle brokerage reports. After scuttlebutt narrows candidates to genuine prospects, direct company contact is appropriate to fill remaining gaps.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Fisher's scuttlebutt approach, while powerful, raises modern concerns around <b>material non-public information</b>. Post-Regulation FD (2000) and evolving insider trading law have made some forms of informal corporate intelligence-gathering legally fraught, particularly conversations with management or employees about undisclosed developments. The practical application of scuttlebutt has been constrained since Fisher's era.</p>
+  <p>Additionally, <b>information asymmetry</b> has narrowed substantially since 1958. The rise of professional analyst communities, social media, and Glassdoor-style employee review sites has democratized much of what scuttlebutt once uniquely provided. This may mean that scuttlebutt's edge is now primarily available to those with deep specialist expertise in specific industries&mdash;not to generalist investors as Fisher envisioned.</p>
+</details>
+
+<h2>Chapter 3: What to Buy &mdash; The Fifteen Points</h2>
+
+<p>This chapter is the intellectual heart of the book. Fisher presents <b>fifteen criteria</b> for identifying an outstanding growth company. A company failing on many of these points is disqualified; failing on just a few of the less critical ones may still be acceptable.</p>
+
+<p>The first six points concern the company's competitive and operational position: (1) <b>market potential</b> sufficient for multi-year sales growth; (2) <b>management's determination to continue developing new products</b> when current lines mature; (3) <b>R&amp;D effectiveness</b> relative to company size; (4) an <b>above-average sales organization</b>; (5) a <b>worthwhile profit margin</b>; and (6) active efforts to <b>maintain or improve profit margins</b> over time. Points 7 through 10 address the human organization: (7) <b>outstanding labor relations</b>; (8) <b>outstanding executive relations</b> (no destructive internal rivalry); (9) <b>management depth</b> (capable second tier, not just one star); and (10) strong <b>cost analysis and accounting controls</b>.</p>
+
+<p>Points 11 through 15 address higher-level strategic and ethical factors: (11) <b>industry-specific advantages</b> that make the company stand out within its sector; (12) a <b>long-range rather than short-range profit orientation</b>&mdash;managements willing to sacrifice near-term earnings for lasting competitive position; (13) awareness of whether future <b>equity financing will dilute</b> current shareholders; (14) management <b>transparency</b>, including willingness to communicate openly when things go badly, not just when they go well; and (15) <b>unquestionable management integrity</b>. This final point is the only truly inviolable one&mdash;Fisher states explicitly that no investment should be made in a company where management integrity is in serious question, regardless of how well it scores on the other fourteen criteria.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Critics of qualitative frameworks like Fisher's fifteen points note that they are highly susceptible to <b>confirmation bias and narrative fallacy</b>. An investor who already likes a company will tend to interpret ambiguous scuttlebutt evidence favorably across all fifteen criteria, producing circular reasoning. Fisher's framework lacks objective scoring criteria, making it difficult to train, systematize, or audit.</p>
+  <p>Academic research, including studies by <b>Joel Greenblatt</b> and others in quantitative value investing, suggests that simpler, more mechanical approaches (e.g., ranking stocks on returns on capital and earnings yield) have produced competitive or superior results to qualitative "story-based" investing, with less reliance on investor judgment. Fisher's approach, while logically compelling, may reflect selection bias from his own successful track record.</p>
+</details>
+
+<h2>Chapter 4: What to Buy &mdash; Applying This to Your Own Needs</h2>
+
+<p>Fisher directly challenges the popular image of the investment expert as a solitary statistician. He argues that numbers alone are insufficient&mdash;the most important investment intelligence requires engaging with people and businesses, a skill that requires extroversion, curiosity, and genuine interest in how businesses work. Pure quantitative analysis can surface apparent bargains, but those bargains rarely appreciate by more than 50%; <b>great growth companies appreciate by hundreds of percent per decade</b>.</p>
+
+<p>He addresses the reality that most investors cannot do their own research and must delegate to advisors. His guidance for selecting an advisor is practical: demand a verifiable five-year track record compared to market indices; understand the advisor's fundamental philosophy before committing; and ensure alignment between the advisor's approach and the investor's own values. Fisher also distinguishes between two ends of the growth-stock spectrum: large, financially strong "institutional" growth companies (exemplified by Dow Chemical, DuPont, and IBM&mdash;each up roughly fivefold in the decade 1946&ndash;1956) and smaller, younger companies with higher risk but potentially far greater reward. He recommends that most investors keep the majority of funds in the more conservative tier.</p>
+
+<p>For small investors, Fisher addresses the dividend question head-on. Studies consistently show that growth stocks with <i>low</i> current yields outperform high-yield stocks over 5-10 years <i>even in absolute dividend dollars</i> received on the original investment, because the underlying earnings grow so much. The investor willing to forgo immediate income for compounding future income is likely to come out far ahead.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Fisher's dismissal of "statistical bargain hunters" understates the long-term performance of <b>deep value investing</b> as documented by Ben Graham and later by researchers like Fama and French. The value premium (cheap stocks outperforming expensive ones) has been one of the most documented anomalies in financial markets, suggesting that low-P/E, low-price-to-book stocks do generate systematically superior returns over long periods, even if individual growth stocks can produce spectacular gains.</p>
+  <p>Fisher's framework also implicitly assumes that identifying truly outstanding management is reliably possible in advance. Research on <b>managerial forecasting</b> suggests that humans systematically overestimate their ability to assess the quality of management teams from limited interactions&mdash;the scuttlebutt that sounds impressive in person may reflect PR skill as much as genuine operational excellence.</p>
+</details>
+
+<h2>Chapter 5: When to Buy</h2>
+
+<p>Fisher's answer to the timing question is essentially: buy based on company-specific knowledge, not macroeconomic forecasts. He argues that economic forecasting is too unreliable to be actionable&mdash;the "vast mass of economic data" marshaled by conventional analysts produces forecasts that are wrong often enough to make them useless as timing tools. A more productive strategy is to act when company-specific knowledge warrants it.</p>
+
+<p>He identifies three favorable buying situations: (1) when <b>development costs or a temporary product problem</b> have depressed the stock while the underlying business remains outstanding; (2) when <b>industry-wide pessimism</b> has unfairly dragged down a fine company; and (3) when a <b>general market decline</b> has pushed an outstanding stock to an attractive price. Fisher emphasizes that five distinct forces drive stock prices&mdash;the <b>business cycle, interest rates, government attitude toward enterprise, the long-run inflation trend, and new technology displacing old industries</b>&mdash;and they rarely all move in the same direction simultaneously. This complexity means that waiting for macro clarity before buying often means never buying at all.</p>
+
+<p>For investors newly committing large sums to growth stocks, Fisher recommends <b>staggering purchases over several years</b> rather than investing all at once. This approach ensures that if markets decline severely, capital remains available to buy at lower prices; and if markets rise, earlier purchases will have appreciated enough to cushion any later entries made at temporarily elevated prices.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>While Fisher's skepticism about macro-economic forecasting is well-founded, his alternative&mdash;acting entirely on company-specific knowledge regardless of macro conditions&mdash;can expose investors to severe mark-to-market losses in systemic downturns. The 2008 financial crisis affected even operationally excellent companies because of <b>credit market seizure</b> and forced selling by leveraged institutions, factors unrelated to any individual company's fifteen-point score. A complete disregard for macro conditions is not the same as having no macro view.</p>
+</details>
+
+<h2>Chapter 6: When to Sell &mdash; And When Not To</h2>
+
+<p>Fisher articulates three&mdash;and only three&mdash;valid financial reasons to sell a growth stock: (1) <b>a mistake was made</b> in the original purchase, and the company is clearly less attractive than believed; (2) <b>the company deteriorates</b> on the fifteen points over time (usually through management degradation); (3) a <b>clearly superior opportunity</b> exists and the current holding is merely adequate. Critically, none of these reasons is "the stock has gone up a lot and looks expensive." Fisher condemns the routine advice to "take profits" on appreciated growth stocks as one of the most consistently wealth-destroying impulses in investing.</p>
+
+<p>The chapter's most memorable passage uses an analogy: imagine buying a 25% share of a classmate's future lifetime earnings for ten times his first year's salary. If that classmate becomes a star executive on track for the CEO role, no sensible person would sell their contract at 6x the original price just because someone offered it. A great company&mdash;unlike a human being&mdash;has no finite life span. Du Pont in its second century and Dow Chemical after its founder's death continued to compound value for decades. Fisher's summary conclusion: <i>"If the job has been correctly done when a common stock is purchased, the time to sell it is&mdash;almost never."</i></p>
+
+<p>The chapter also addresses <b>the ego trap</b>: investors hold bad stocks waiting to "at least come out even," delaying the recognition of mistakes far longer than they should. This ego-driven behavior destroys more wealth than most market downturns. Similarly, selling good stocks to trigger capital gains taxes in order to reinvest rarely makes mathematical sense once the drag of the tax payment is accounted for.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Fisher's "almost never sell" dictum, while powerful for genuinely outstanding companies, can become a rationalization for <b>anchoring bias</b>&mdash;staying in deteriorating businesses longer than is rational because of the sunk cost of prior conviction. Academic research by <b>Barber and Odean</b> documents that individual investors sell their winners too early but also hold losers too long; Fisher's advice addresses the first error but may inadvertently encourage the second.</p>
+  <p>The Efficient Market Hypothesis, even in its semi-strong form, would question whether the "never sell" strategy is the correct one. If markets do periodically price stocks at genuine overvaluation (as during the 1990s tech bubble), then selling and waiting to reinvest at lower prices can be rational even for genuine growth stocks.</p>
+</details>
+
+<h2>Chapter 7: The Hullabaloo about Dividends</h2>
+
+<p>Fisher argues that most investors misunderstand dividends&mdash;they treat dividend announcements as inherently good or bad news when the relevant question is: <i>what does management do with earnings not paid out as dividends?</i> For a great growth company, retained earnings reinvested at high rates of return are worth far more to shareholders than the same money distributed as dividends. Paying out dividends is only beneficial when management has no better use for the capital.</p>
+
+<p>The chapter distinguishes cases where retained earnings create no value for shareholders (management hoards cash unproductively), minimal value (retaining earnings merely prevents balance sheet deterioration), or <b>enormous value</b> (retained earnings fund R&amp;D, capacity expansion, and new products that multiply future earnings). For outstanding companies in the third category, the long-run dividend outcome is paradoxical: low-yield growth stocks end up paying <i>more absolute dollars per year</i> in dividends on the original purchase price than high-yield stocks, because the underlying earnings stream grows so dramatically. Fisher cites Rohm &amp; Haas, purchased at $41.25 in 1949 with a $1 dividend, which had appreciated more than tenfold within a few years while progressively raising its dividend.</p>
+
+<p>Fisher's practical conclusion: <b>dividend considerations should be given the least, not the most, weight</b> in investment decisions. What matters above all is dividend policy consistency&mdash;investors need predictability to plan&mdash;not whether the current yield is high or low. Companies that shift dividend policies erratically lose their shareholder following and become poor long-term investments regardless of their business quality.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The <b>"bird in hand" theory</b> of dividends, associated with economists Lintner and Gordon, argues that investors rationally prefer certain dividends today over uncertain capital gains tomorrow because of risk and time preferences. Research by <b>Arnott and Asness</b> has shown that high dividend payout ratios have historically correlated with <i>higher</i> subsequent earnings growth&mdash;the opposite of Fisher's argument&mdash;possibly because high dividends reflect management discipline and force external scrutiny of capital allocation decisions.</p>
+  <p>For tax-disadvantaged investors (those paying high marginal rates on dividends vs. lower capital gains rates, or vice versa depending on jurisdiction and era), Fisher's indifference to dividend levels may be incomplete. Tax-aware investors should factor the after-tax dividend yield into return comparisons.</p>
+</details>
+
+<h2>Chapter 8: Five Don'ts for Investors</h2>
+
+<p>Fisher catalogs five common mistakes. First: <b>don't buy promotional companies</b>&mdash;businesses that haven't yet achieved commercial profitability. Without an operating history, it is impossible to evaluate the fifteen points; the only thing visible is a blueprint, and blueprints conceal most business problems. Pre-profit startups may look like the next great company but the odds are far worse than with established operations.</p>
+
+<p>Second: <b>don't ignore over-the-counter stocks</b>. Exchange listing reflects market capitalization and reporting requirements, not business quality. Some outstanding growth companies have traded OTC, and dismissing them based on listing status causes investors to miss genuine opportunities.</p>
+
+<p>Third: <b>don't buy a stock just because you like the tone of its annual report</b>. Annual reports are crafted communications, not investigative documents. A polished, confident report may reflect PR skill as much as business excellence&mdash;scuttlebutt and direct investigation remain the reliable methods.</p>
+
+<p>Fourth: <b>don't assume high P/E means the growth is priced in</b>. Fisher argues that outstanding growth companies routinely appear expensive by conventional metrics, and yet continue to deliver superior returns because the market underestimates how long and how strongly the growth will continue.</p>
+
+<p>Fifth: <b>don't quibble over eighths and quarters</b>. Fisher illustrates this vividly: an investor who refused to pay 35½ for a stock&mdash;insisting on 35&mdash;never got filled, and twenty-five years later the stock (adjusted for splits) was trading above 500. He tried to save $50 and missed $46,500 in gains. For large block buyers, modest price discipline is appropriate; for the typical investor, placing limit orders a fraction below the market is financial lunacy.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Fisher's blanket prohibition on promotional (pre-profit) companies was written in an era before modern <b>venture capital best practices</b> had developed. Companies like Amazon, Netflix, and Salesforce spent extended periods without conventional profitability while building substantial competitive moats. A strict application of Fisher's Point 1 would have excluded many of the most profitable investments of the past three decades. The key distinction&mdash;which Fisher's framework doesn't fully capture&mdash;is between companies burning cash to fund genuine competitive advantages versus those without a viable path to profitability.</p>
+</details>
+
+<h2>Chapter 9: Five More Don'ts for Investors</h2>
+
+<p>The second set of five prohibitions begins with <b>don't over-diversify</b>. Fisher argues that most investors are already over-diversified, not under-diversified. Owning 25 or more stocks typically means holding many mediocre positions without deep knowledge, creating the illusion of safety while sacrificing the concentration needed for outstanding returns. <b>Ten to twelve carefully chosen stocks</b>, about which the investor has genuine knowledge, provide adequate diversification; beyond that, each additional holding dilutes the portfolio's quality without meaningfully reducing risk.</p>
+
+<p>Second: <b>don't be afraid to buy on a war scare</b>. Fisher observes that every major war scare of the twentieth century created excellent buying opportunities for patient investors. Governments mobilize resources to win wars; the economic activity generated&mdash;and the inflation that typically follows&mdash;benefits equity holders. The instinct to sell or avoid stocks during geopolitical crises is historically one of the most reliably mistaken impulses.</p>
+
+<p>Third: <b>don't be influenced by what doesn't matter</b> (the "Gilbert and Sullivan" principle). Prior years' price ranges, historical P/E levels, and statistical records of past performance are often irrelevant to the question of whether a company is attractive today at today's price. Investors who anchor to such statistics regularly talk themselves out of excellent purchases.</p>
+
+<p>Fourth: <b>don't fail to consider time as well as price</b>. A wonderful company bought two or three years ahead of when its growth becomes evident may test the investor's patience severely. Timing, even for genuine growth stocks, matters at the margin. Fifth: <b>don't follow the crowd</b>. The financial community's conventional wisdom is typically wrong at key inflection points; the most reliable returns come from independent analysis that reaches correct conclusions before consensus does.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Fisher's argument against over-diversification contradicts the mainstream <b>Modern Portfolio Theory</b> framework developed by Markowitz, which demonstrates that diversification reduces unsystematic risk at minimal cost. From a statistical standpoint, even 15-20 carefully selected stocks leave an investor with significant <b>idiosyncratic risk</b>&mdash;exposure to company-specific events that diversification can virtually eliminate. Fisher's framework implicitly assumes investors possess the superior analytical ability to identify a reliably outstanding 10-12 stock portfolio, which empirical evidence suggests most investors&mdash;professional or otherwise&mdash;do not consistently demonstrate.</p>
+</details>
+
+<h2>Chapter 10: How I Go about Finding a Growth Stock</h2>
+
+<p>Fisher describes his actual search process, emphasizing that it has two distinct stages. The first&mdash;and often underappreciated&mdash;stage is <b>generating the right candidates</b>. With thousands of listed companies and dozens of industries, no investor can investigate more than a tiny fraction thoroughly. Fisher's approach to candidate generation relies on a <b>rich, broad network</b> cultivated over years: business contacts, university scientists, venture capitalists, industry specialists, and others who are well-positioned to notice genuinely exceptional situations. The quality of Stage 1 largely determines the quality of the final portfolio.</p>
+
+<p>Stage 2 is the deep investigation itself: applying scuttlebutt systematically, mapping the company against the fifteen points, and reaching a clear "buy or pass" decision. Fisher notes that a natural investor error is to spread Stage 2 work across too many candidates superficially, rather than concentrating it deeply on a few genuinely promising ones. <b>Deep knowledge of a few is worth far more than shallow knowledge of many.</b></p>
+
+<p>He acknowledges that this process is time-consuming and demanding, and that small investors may not have the capacity to execute it. This reinforces his view that the choice of a skilled investment advisor&mdash;evaluated rigorously on track record and philosophy&mdash;is one of the most important financial decisions most people make.</p>
+
+<h2>Chapter 11: Summary and Conclusion</h2>
+
+<p>Fisher closes Part One by synthesizing the preceding chapters. He argues that the emergence of modern management practices and the industrial harnessing of scientific research have fundamentally changed the opportunity set for investors&mdash;not by altering the principles of successful investing, but by making those principles more important and potentially more rewarding than ever before. The investor who follows them consistently should be positioned to benefit from the ongoing explosion in corporate R&amp;D and the expanding buying power of a prosperous society.</p>
+
+<p>He returns to his central themes: <b>patience</b> is essential (knowing what will happen matters less than enduring the wait for it to happen); <b>emotional self-discipline</b> is as important as analytical intelligence; and the contrarian posture&mdash;doing what appears risky when the crowd is fearful&mdash;is often the correct one. He closes with Shakespeare's observation from <i>Julius Caesar</i>: "There is a tide in the affairs of men which, taken at the flood, leads on to fortune"&mdash;a metaphor for the moments when outstanding companies are temporarily mispriced.</p>
+
+<h2>Part Two &mdash; Conservative Investors Sleep Well: First Dimension</h2>
+
+<p>Fisher's second book, written in 1975, reframes the concept of conservative investing. Most investors associate "conservative" with bonds and blue-chip dividend payers; Fisher argues that genuine conservatism means identifying companies with structural advantages so strong that they can survive downturns while continuing to compound. The <b>First Dimension</b> covers four operational qualities required of a truly conservative investment.</p>
+
+<p><b>Low-cost production</b> is first and foundational. A company that is the lowest-cost producer&mdash;or close to it&mdash;possesses a wide margin between costs and selling prices that creates two vital protections: in bad years, higher-cost competitors hit their break-even points first and are forced to exit, automatically improving the low-cost producer's volume and eventually its pricing power; and in good years, superior margins internally generate the capital needed for growth without dilutive equity financing. <b>Above-average marketing</b> is the second sub-dimension: the ability to understand and serve customers so well that product command carries pricing power. <b>Outstanding R&amp;D</b> is the third, recognizing that technological leadership must be renewed continuously. <b>Financial skill</b>&mdash;the ability to allocate capital efficiently, maintain appropriate leverage, and generate strong returns on invested assets&mdash;is the fourth.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Fisher's focus on <b>low-cost production</b> as a primary dimension sits in some tension with his broader growth-stock philosophy. Low-cost commodity producers (steel, aluminum, memory chips) often achieve their cost position through capital intensity and scale, not through proprietary knowledge or management excellence. <b>Michael Porter's</b> competitive strategy framework would note that cost leadership and differentiation are often mutually exclusive strategies; the companies with the most durable competitive advantages (Fisher's target) typically compete on differentiation, not cost.</p>
+</details>
+
+<h2>Part Two &mdash; Second Dimension: The People Factor</h2>
+
+<p>The Second Dimension is <b>management quality</b>, viewed specifically through an organizational lens. Fisher distinguishes between the "vivid spirit" entrepreneur who drives the creation of a small company and the deeper organizational capability needed for a large, conservatively investable enterprise. Citing venture capitalist Edward Heller, he acknowledges that visionary founders matter&mdash;but adds a crucial counterpoint: <i>"My friend is one of the most brilliant men I've ever known. He always has to be right. In a small company this may be fine. But as you grow, your men have to be right sometimes, too."</i></p>
+
+<p>At scale, the key is a CEO who has delegated substantial authority to an exceptional team, with clearly shared goals and no destructive internal power struggles. <b>Management depth</b>&mdash;capable people several layers deep, not just a stellar top layer&mdash;is essential for organizational resilience. A management culture that treats employees with respect, promotes from within, and minimizes turnover both reveals and creates competitive advantage. Scuttlebutt is particularly effective at uncovering this dimension, since employees in great companies speak well of them consistently, while those in mediocre ones reveal it through their complaints.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p><b>Jim Collins</b> in <i>Good to Great</i> found that the most successful companies were led by what he called "Level 5" leaders&mdash;paradoxically, often quiet and self-effacing rather than "vivid spirits." Fisher's emphasis on management quality is correct, but his identification of what constitutes outstanding management may be harder than it appears: research on the <b>halo effect</b> by Phil Rosenzweig demonstrates that we systematically attribute management greatness to companies whose results look good, making it nearly impossible to distinguish management quality from business-cycle luck in real time.</p>
+</details>
+
+<h2>Part Two &mdash; Third Dimension: Investment Characteristics of Some Businesses</h2>
+
+<p>The Third Dimension asks whether the <b>nature of the business itself</b> creates inherent, enduring advantages for above-average profitability. Fisher identifies two broad categories. The first encompasses businesses with structural moats: specialty companies with hard-to-replicate proprietary knowledge, patents, brands, or customer relationships that allow them to earn high returns on capital consistently. The second category covers capital-intensive commodity businesses (steel, paper, standard chemicals) where products are interchangeable, competition on price is intense, and return on capital is perennially compressed.</p>
+
+<p>Fisher makes a crucial observation about the self-reinforcing nature of profitability: companies with wide margins can fund the R&amp;D, marketing, and capital investment needed to stay ahead, while companies with thin margins cannot. This creates a divergence that widens over time. In inflationary periods, this dynamic is amplified&mdash;wide-margin companies can absorb cost increases more easily than narrow-margin competitors. The investor's task is to identify companies firmly in the first category and avoid confusing them with companies that merely appear profitable in a boom cycle.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Fisher's framework for identifying businesses with structural moats overlaps significantly with <b>Warren Buffett's</b> concept of economic moats, which Buffett explicitly credits to Fisher's influence. However, critics including <b>Michael Mauboussin</b> have documented that competitive advantages, even strong ones, erode over time as industries evolve and new entrants attack. Fisher's framework, focused on identifying current moat characteristics, may not adequately capture the <i>durability</i> of those advantages&mdash;a company that scores perfectly on the Third Dimension today may face structural disruption within a decade.</p>
+</details>
+
+<h2>Part Two &mdash; Fourth Dimension: Price of a Conservative Investment</h2>
+
+<p>The Fourth Dimension is the one most investors misunderstand: <b>price-to-earnings ratio</b> and what drives it. Fisher articulates a foundational law: <i>every significant price movement in an individual stock occurs because of a changed appraisal of that stock by the financial community.</i> This appraisal has three components: the community's view of equities as a whole, its view of the specific industry, and its view of the specific company.</p>
+
+<p>The practical implication is powerful: an investor who correctly assesses any one of these three components ahead of the market consensus can achieve superior returns without needing superior stock-picking across the board. The investor who correctly identifies a company whose individual prospects are significantly better than the financial community believes&mdash;and buys before consensus catches up&mdash;will earn exceptional returns as the P/E re-rates upward. Fisher notes that seemingly high P/E stocks are often not overvalued because the market underestimates how long their growth will continue: the <b>further into the future that profits will continue to grow, the higher the P/E an investor can rationally afford to pay</b>.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Fisher's P/E framework, while insightful, creates an asymmetric burden of proof: one can always argue that the market underestimates a company's long-term growth, justifying any current P/E. This makes the framework difficult to falsify and susceptible to motivated reasoning. Academic research by <b>Fama and French</b> consistently finds that low-P/E ("value") stocks outperform high-P/E ("growth") stocks over long periods, suggesting that the market may actually <i>overestimate</i> future growth for high-P/E companies on average, even if it occasionally underestimates individual exceptional cases.</p>
+</details>
+
+<h2>Part Two &mdash; More about the Fourth Dimension (Industry Appraisals)</h2>
+
+<p>Fisher examines how <b>industry-level appraisals</b> by the financial community rise and fall independently of underlying fundamentals. His example: U.S. chemical companies commanded high P/Es from the 1930s through the mid-1950s because Wall Street visualized them as producers of miraculous new materials emerging from test tubes. By the early 1960s, the image had shifted&mdash;chemicals were now seen as commodity businesses indistinguishable from steel or paper&mdash;and P/E ratios fell dramatically even as the underlying businesses continued growing.</p>
+
+<p>The implication for investors: industry images often <i>lag</i> reality in both directions. An industry transitioning from commodity to specialty (through innovation or market evolution) will be undervalued until the community updates its image. Conversely, an industry enjoying a prestige premium that is becoming obsolete will be overvalued until the image collapses. The patient, analytically independent investor who correctly identifies these image transitions can buy an industry before it is re-rated upward and avoid it before it is re-rated downward.</p>
+
+<h2>Part Two &mdash; Still More about the Fourth Dimension (Company Appraisals)</h2>
+
+<p>Individual company appraisal by the financial community is the most important driver of P/E variation. Fisher illustrates this with a thought experiment: two companies both expected to double earnings over four years, both selling at 20x earnings. Four years later, both have doubled earnings as forecast. But if Company A's growth is expected to continue robustly while Company B's growth is perceived to have plateaued, Company A's P/E remains at 20x (so its stock has doubled with its earnings) while Company B's P/E compresses to 10x (meaning its stock price is <i>unchanged</i> despite the earnings doubling).</p>
+
+<p>The rule Fisher derives: <b>the further into the future profits will continue to grow, the higher the P/E an investor can afford to pay.</b> This directly implies that an investor who correctly identifies which companies will be able to sustain growth far longer than the consensus expects will earn outsized returns not just from earnings growth but from P/E expansion as well. Conversely, buying a company whose growth is widely expected to plateau, hoping for a "cheap" P/E, typically disappoints as the cheap P/E stays cheap.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Fisher's observation that P/E expansion amplifies returns for companies with sustained growth is mathematically correct but creates a potential for overpaying. The <b>dot-com bubble of 1999-2000</b> illustrates how the expectation of indefinitely sustained growth, combined with P/E expansion logic, can drive prices to levels where even correct forecasts about long-term growth cannot justify the original purchase price. Fisher's framework is most useful as a reason not to sell great companies prematurely; it is less reliable as a reason to pay any P/E at all based on growth expectations.</p>
+</details>
+
+<h2>Part Three &mdash; Origins of a Philosophy</h2>
+
+<p>Fisher's third essay, published in 1980, traces the autobiographical origins of his investment approach. From early childhood curiosity about stock prices to his Stanford Business School fascination with two neighboring San Jose companies (which later merged to form Food Machinery Corporation), he describes how the seeds of his philosophy were planted before he ever entered the investment business. His 1928 banking career gave him a ground-level view of the speculative frenzy and the devastation that followed.</p>
+
+<p>The founding of Fisher &amp; Co. in March 1931&mdash;during some of the darkest months of the Depression&mdash;was driven more by the lack of attractive employment than by confidence. His first years were extraordinarily difficult (net profit of $2.99/month in 1932, improving to just over $29/month in 1933), but they built an intensely loyal client base and reinforced habits of rigorous, independent research. Fisher describes how his early investment framework crystallized through the painful discipline of learning from his own mistakes, particularly around the importance of holding outstanding companies through adverse conditions rather than trading in and out of positions.</p>
+
+<h2>Part Three &mdash; Learning from Experience</h2>
+
+<p>Fisher recounts key formative experiences, most centered on Food Machinery Corporation&mdash;a company he followed closely from its 1928 formation. The most instructive episode: a client placed a buy order at $33¾ when the stock was trading at $34½, refusing to raise his bid by a quarter point. The stock never reached his price. Over subsequent years, as a result of splits and appreciation, the stock rose to levels that made the missed quarter point irrelevant but the missed investment catastrophic. This story, combined with Fisher's own similar mistakes, permanently shaped his view on order execution: <b>for most transactions, placing limit orders below market in an attempt to save fractions is financial irrationality</b>.</p>
+
+<p>He also recounts his early experience trading in and out of California Packing Corporation, accumulating reasonable gains but then watching stocks he had sold continue appreciating dramatically. This reinforced the "almost never sell" principle&mdash;not as a theoretical position but as a hard-learned empirical lesson about the cost of frequent trading in excellent businesses. The cumulative effect of taxes, transaction costs, and opportunity cost from reinvestment into less outstanding businesses nearly always exceeded any tactical benefit.</p>
+
+<h2>Part Three &mdash; The Philosophy Matures</h2>
+
+<p>World War II service&mdash;which Fisher humorously notes never placed him in danger, his postings being Arkansas, Texas, Kansas, and Nebraska&mdash;provided unexpected time for deep reflection on his business. During slow periods, he analyzed his pre-war investment record in detail, identifying what had worked, what had not, and why. Two major conclusions emerged: first, he would narrow his postwar client base to a small group of large investors focused exclusively on long-term growth; second, he would concentrate entirely on this single investment class rather than trying to serve all types of objectives.</p>
+
+<p>His postwar investigation of the chemical industry&mdash;specifically his systematic use of scuttlebutt to identify Dow Chemical as the most attractive major chemical company by 1947&mdash;exemplifies his mature method in practice. He spoke with distributors, university chemistry professors, and construction firm executives who had built chemical plants, synthesizing these perspectives with financial analysis to build conviction well ahead of consensus. He also refined his views on dividends for his specific client base: tax-sensitive wealthy investors were generally better served by companies that reinvested rather than distributed earnings, though the growth of institutional ownership in later years somewhat complicated this picture.</p>
+
+<h2>Part Three &mdash; Is the Market Efficient?</h2>
+
+<p>Fisher's final essay directly addresses the <b>Efficient Market Hypothesis</b>, which had become academically dominant by the 1970s. He rejects it on empirical grounds, noting that across five consecutive decades (1930s through 1970s), each period generated investment opportunities of hundreds-to-thousands of percent gain for investors who correctly understood specific company situations that the financial community had misjudged. In every decade, some stocks that were consensus favorites proved disastrous; some that were overlooked or feared produced extraordinary returns for those with independent analysis.</p>
+
+<p>Fisher derives eight summary guidelines from his career: own a <b>very small number of truly outstanding companies</b> (10-12 for individuals, fewer for large institutional portfolios with concentrated positions); <b>add to strong positions rather than spreading to new ones</b>; never over-diversify; never confuse activity with accomplishment; have the <b>moral courage to act against the crowd</b> when your analysis is sound; treat every decade's particular fear (depression, inflation, war) as potentially creating the best buying opportunities; recognize that hard work, intelligence, and honesty are the foundations of sustained success; and remember that the future will largely belong to those who, through self-discipline, make the effort to achieve it.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Fisher's rejection of market efficiency based on his own multi-decade success record suffers from <b>survivorship bias</b>. Many investors using similar qualitative growth frameworks have failed to match his returns; we observe Fisher's example precisely because he succeeded. The EMH's strong and semi-strong forms predict that some investors will achieve extraordinary long-term records purely by chance in a large enough population&mdash;distinguishing genuine skill from luck requires statistical methods that single case studies cannot provide.</p>
+  <p>More significantly, Fisher's eight guidelines implicitly assume that the investor (or their advisor) possesses genuinely superior analytical ability. For the large majority of investors who do not, the advice to concentrate in 10-12 stocks and act against consensus is more likely to destroy wealth than create it. The academically validated implication of market efficiency&mdash;for most investors, low-cost passive indexing outperforms active stock selection&mdash;remains the empirically correct baseline recommendation even if Fisher's method works for a skilled minority.</p>
+</details>
+
+<h2 id="quiz-heading">Comprehension Quiz</h2>
+
+<details id="quiz-section" class="quiz-wrapper">
+  <summary class="quiz-toggle">Take the Quiz</summary>
+
+  <form id="quiz-form">
+
+    <div class="q-block">
+      <p class="q-label">1. According to Fisher, what method produced the greatest investment returns historically&mdash;far more than buying cheap and selling dear?</p>
+      <label><input type="radio" name="q1" value="a"> Betting on the business cycle by buying in busts and selling in booms</label>
+      <label><input type="radio" name="q1" value="b"> Finding outstanding companies and holding them through all market fluctuations</label>
+      <label><input type="radio" name="q1" value="c"> Diversifying across many industries to reduce risk</label>
+      <label><input type="radio" name="q1" value="d"> Focusing on high-yield dividend stocks for compounding income</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">2. What does Fisher mean by the "scuttlebutt" method?</p>
+      <label><input type="radio" name="q2" value="a"> Analyzing a company's SEC filings and financial statements</label>
+      <label><input type="radio" name="q2" value="b"> Reading independent brokerage research reports</label>
+      <label><input type="radio" name="q2" value="c"> Gathering intelligence from competitors, customers, vendors, scientists, and former employees</label>
+      <label><input type="radio" name="q2" value="d"> Attending annual shareholder meetings and listening to management presentations</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">3. Which of Fisher's Fifteen Points is the only truly inviolable one&mdash;a disqualifying failure regardless of scores on all other points?</p>
+      <label><input type="radio" name="q3" value="a"> Point 1: sufficient market potential for multi-year growth</label>
+      <label><input type="radio" name="q3" value="b"> Point 5: worthwhile profit margin</label>
+      <label><input type="radio" name="q3" value="c"> Point 3: effective R&amp;D relative to company size</label>
+      <label><input type="radio" name="q3" value="d"> Point 15: unquestionable management integrity</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">4. Fisher argues that investors who give the LEAST weight to current dividend yield typically end up with:</p>
+      <label><input type="radio" name="q4" value="a"> Lower total returns because dividends are a critical component of equity return</label>
+      <label><input type="radio" name="q4" value="b"> The best dividend returns over time, because growth stocks eventually pay more absolute dollars per year</label>
+      <label><input type="radio" name="q4" value="c"> Higher risk because low-yield stocks provide no income cushion in downturns</label>
+      <label><input type="radio" name="q4" value="d"> Tax disadvantages because capital gains are taxed at higher rates than dividends</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">5. Fisher's view on using macroeconomic forecasting to time stock purchases is:</p>
+      <label><input type="radio" name="q5" value="a"> It is the most important input for timing decisions</label>
+      <label><input type="radio" name="q5" value="b"> It is useful when combined with technical analysis of price charts</label>
+      <label><input type="radio" name="q5" value="c"> It is currently impractical because human knowledge of economics is insufficient for reliable forecasts</label>
+      <label><input type="radio" name="q5" value="d"> It works well for professional analysts but not for individual investors</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">6. Fisher identifies three valid reasons to sell a stock. Which of the following is NOT among them?</p>
+      <label><input type="radio" name="q6" value="a"> A mistake was made in the original purchase</label>
+      <label><input type="radio" name="q6" value="b"> The company has deteriorated and no longer qualifies on the fifteen points</label>
+      <label><input type="radio" name="q6" value="c"> The stock price has risen significantly and appears overvalued relative to the market</label>
+      <label><input type="radio" name="q6" value="d"> A clearly superior opportunity exists and the current holding is merely adequate</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">7. In "Conservative Investors Sleep Well," the First Dimension of conservative investment includes which four operational qualities?</p>
+      <label><input type="radio" name="q7" value="a"> CEO quality, management depth, employee retention, and board composition</label>
+      <label><input type="radio" name="q7" value="b"> Low-cost production, above-average marketing, outstanding R&amp;D, and financial skill</label>
+      <label><input type="radio" name="q7" value="c"> High dividend yield, low P/E ratio, strong balance sheet, and predictable earnings</label>
+      <label><input type="radio" name="q7" value="d"> Market share dominance, geographic diversification, regulatory moats, and pricing power</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">8. Fisher's fundamental law of stock price movements states:</p>
+      <label><input type="radio" name="q8" value="a"> Every significant price change is caused by changes in reported earnings per share</label>
+      <label><input type="radio" name="q8" value="b"> Every significant price change reflects shifts in interest rates and macroeconomic conditions</label>
+      <label><input type="radio" name="q8" value="c"> Every significant price move occurs because of a changed appraisal of that stock by the financial community</label>
+      <label><input type="radio" name="q8" value="d"> Every significant price move is driven by institutional buying or selling decisions</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">9. Fisher's rule about P/E ratios and growth duration states:</p>
+      <label><input type="radio" name="q9" value="a"> Companies with high P/E ratios are almost always overvalued and should be avoided</label>
+      <label><input type="radio" name="q9" value="b"> The further into the future profits will continue to grow, the higher the P/E an investor can afford to pay</label>
+      <label><input type="radio" name="q9" value="c"> P/E ratios above 20x invariably reflect speculative excess regardless of growth rate</label>
+      <label><input type="radio" name="q9" value="d"> A stock's P/E ratio should never exceed its expected annual earnings growth rate</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">10. Fisher's recommended number of stocks for a well-managed individual portfolio is:</p>
+      <label><input type="radio" name="q10" value="a"> As many as possible&mdash;25 or more to maximize diversification</label>
+      <label><input type="radio" name="q10" value="b"> Exactly 3 to 5 for maximum concentration in the investor's best ideas</label>
+      <label><input type="radio" name="q10" value="c"> Around 10 to 12 stocks chosen with deep knowledge</label>
+      <label><input type="radio" name="q10" value="d"> At least 20 to spread sector-specific risk adequately</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">11. What key lesson did Fisher draw from the experience of a client who refused to pay 34½ for Food Machinery Corporation, insisting on 33¾?</p>
+      <label><input type="radio" name="q11" value="a"> Patience in waiting for the right price is the most important investment skill</label>
+      <label><input type="radio" name="q11" value="b"> Quibbling over tiny price fractions can cost enormous long-term gains&mdash;great stocks rarely return to missed limit prices</label>
+      <label><input type="radio" name="q11" value="c"> Food Machinery was not a genuinely outstanding company and should not have been purchased at any price</label>
+      <label><input type="radio" name="q11" value="d"> Dollar-cost averaging is more effective than trying to time the perfect entry price</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">12. The Second Dimension of conservative investment (The People Factor) emphasizes:</p>
+      <label><input type="radio" name="q12" value="a"> A brilliant founder-CEO who can dominate all decisions personally as the company grows</label>
+      <label><input type="radio" name="q12" value="b"> A CEO who delegates to outstanding subordinates, builds management depth, and avoids internal power struggles</label>
+      <label><input type="radio" name="q12" value="c"> High employee compensation as an indicator of management commitment to talent retention</label>
+      <label><input type="radio" name="q12" value="d"> Low management turnover at the board level as a sign of continuity</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">13. Fisher's advice about buying stocks during war scares is:</p>
+      <label><input type="radio" name="q13" value="a"> Sell equities immediately; government spending creates deficits that harm stocks</label>
+      <label><input type="radio" name="q13" value="b"> Rotate into defense stocks only; civilian industries suffer during wars</label>
+      <label><input type="radio" name="q13" value="c"> Don't be afraid to buy during war scares&mdash;history shows markets recover and advance strongly afterward</label>
+      <label><input type="radio" name="q13" value="d"> Move to bonds; their stability outperforms stocks in geopolitical uncertainty</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">14. Which of the following best illustrates the Third Dimension&mdash;inherent business characteristics favoring above-average sustained profitability?</p>
+      <label><input type="radio" name="q14" value="a"> A steel manufacturer operating the most modern, low-cost blast furnace in the industry</label>
+      <label><input type="radio" name="q14" value="b"> A bulk commodity chemical producer with dominant scale in its region</label>
+      <label><input type="radio" name="q14" value="c"> A specialty pharmaceutical company with a portfolio of patent-protected, hard-to-replicate products</label>
+      <label><input type="radio" name="q14" value="d"> An airline with a modern, fuel-efficient fleet and a favorable hub location</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">15. Fisher founded Fisher &amp; Co. in what year and economic environment?</p>
+      <label><input type="radio" name="q15" value="a"> 1928, near the peak of the bull market</label>
+      <label><input type="radio" name="q15" value="b"> 1931, during the depths of the Great Depression</label>
+      <label><input type="radio" name="q15" value="c"> 1945, immediately after World War II ended</label>
+      <label><input type="radio" name="q15" value="d"> 1957, the year the original book was published</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">16. Fisher's "don't follow the crowd" principle is based on the observation that:</p>
+      <label><input type="radio" name="q16" value="a"> Institutional investors' consensus is always well-informed and thus should be faded</label>
+      <label><input type="radio" name="q16" value="b"> The crowd is typically wrong at key inflection points; superior returns come from independent analysis that reaches correct conclusions before consensus</label>
+      <label><input type="radio" name="q16" value="c"> Following the crowd generates excessive transaction costs that erode returns</label>
+      <label><input type="radio" name="q16" value="d"> Crowd behavior is a reliable contrarian indicator that should always be bet against</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">17. Fisher's argument against over-diversification centers on:</p>
+      <label><input type="radio" name="q17" value="a"> The transaction costs of managing many positions across different brokers</label>
+      <label><input type="radio" name="q17" value="b"> Tax complications arising from tracking cost basis across many holdings</label>
+      <label><input type="radio" name="q17" value="c"> Owning too many stocks forces holding mediocre positions without deep knowledge, sacrificing concentration in the investor's best ideas</label>
+      <label><input type="radio" name="q17" value="d"> Diversification is only appropriate for institutional investors, not individuals</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">18. Fisher's view on bonds as long-term investments for individual investors is:</p>
+      <label><input type="radio" name="q18" value="a"> High-grade bonds are the safest component of any long-term portfolio</label>
+      <label><input type="radio" name="q18" value="b"> Bonds are appropriate for tax-exempt institutions but generally poor for long-term individual investors given the persistent inflationary bias in modern economies</label>
+      <label><input type="radio" name="q18" value="c"> Municipal bonds offer the best risk-adjusted return for individual investors in high tax brackets</label>
+      <label><input type="radio" name="q18" value="d"> Bonds should always comprise at least 40% of a conservative portfolio regardless of interest rate levels</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">19. Fisher's two-stage process for finding growth stocks places the most emphasis on which underappreciated stage?</p>
+      <label><input type="radio" name="q19" value="a"> Stage 2: deep investigation of candidates using scuttlebutt and the fifteen points</label>
+      <label><input type="radio" name="q19" value="b"> Stage 1: generating the right candidates through a rich, broad network&mdash;since this determines the quality of the entire pool</label>
+      <label><input type="radio" name="q19" value="c"> The decision stage: buying or passing, since execution timing determines returns</label>
+      <label><input type="radio" name="q19" value="d"> Post-purchase monitoring: watching for the fifteen-point deterioration that triggers a sell</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">20. Fisher rejects the Efficient Market Hypothesis primarily on what basis?</p>
+      <label><input type="radio" name="q20" value="a"> Financial models underlying the EMH contain mathematical errors</label>
+      <label><input type="radio" name="q20" value="b"> Across five decades, patient investors with superior company-specific knowledge repeatedly identified situations the market misjudged and earned hundreds-to-thousands of percent gains</label>
+      <label><input type="radio" name="q20" value="c"> Markets are systematically manipulated by large institutions</label>
+      <label><input type="radio" name="q20" value="d"> Stock prices are driven by random noise rather than business fundamentals</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">21. Fisher's wartime reflection led him to which crucial postwar strategic decision?</p>
+      <label><input type="radio" name="q21" value="a"> Expanding his client base to serve the general public more broadly to build scale</label>
+      <label><input type="radio" name="q21" value="b"> Shifting to bond investing given the post-war uncertainty about equity markets</label>
+      <label><input type="radio" name="q21" value="c"> Narrowing his clientele to a small group of large investors and concentrating exclusively on long-term growth investing</label>
+      <label><input type="radio" name="q21" value="d"> Relocating his business from San Francisco to New York to be closer to major markets</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">22. Fisher's fifteen-point framework considers management that sacrifices short-term profits for long-term competitive positioning to be:</p>
+      <label><input type="radio" name="q22" value="a"> A warning sign of management that doesn't understand shareholder value</label>
+      <label><input type="radio" name="q22" value="b"> Generally more valuable for investors, reflecting the long-range profit orientation of Point 12</label>
+      <label><input type="radio" name="q22" value="c"> Only appropriate for small companies where shareholders can oversee management directly</label>
+      <label><input type="radio" name="q22" value="d"> Irrelevant to investment returns because markets price long-term prospects efficiently</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">23. Which of the following is NOT among Fisher's five forces that drive stock price levels?</p>
+      <label><input type="radio" name="q23" value="a"> The trend of interest rates</label>
+      <label><input type="radio" name="q23" value="b"> The business cycle</label>
+      <label><input type="radio" name="q23" value="c"> Currency exchange rate fluctuations</label>
+      <label><input type="radio" name="q23" value="d"> New inventions and technologies affecting old industries</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">24. Fisher's illustration of two companies both doubling earnings over four years demonstrates that:</p>
+      <label><input type="radio" name="q24" value="a"> Companies with lower financial leverage always deliver better stock returns</label>
+      <label><input type="radio" name="q24" value="b"> The company perceived as having continued future growth keeps its P/E and doubles in price; the one perceived as plateauing sees P/E compression, leaving price unchanged despite earnings growth</label>
+      <label><input type="radio" name="q24" value="c"> Investors should always sell when a company has doubled earnings, as further growth is priced in</label>
+      <label><input type="radio" name="q24" value="d"> R&amp;D spending is more important than sales growth in determining stock performance</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">25. Fisher argues that the chemical industry's P/E ratio collapsed in the early 1960s primarily because:</p>
+      <label><input type="radio" name="q25" value="a"> Chemical companies' actual profits fell due to new competitive entrants</label>
+      <label><input type="radio" name="q25" value="b"> The financial community's image of the industry shifted from "miracle product generator" to "capital-intensive commodity business"</label>
+      <label><input type="radio" name="q25" value="c"> Government regulation drove up compliance costs across the chemical sector</label>
+      <label><input type="radio" name="q25" value="d"> Oil price increases made chemical production uneconomic relative to alternative materials</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">26. Fisher's most memorable analogy for why you should almost never sell a great stock involves:</p>
+      <label><input type="radio" name="q26" value="a"> A farmer who sells his best land because land prices have risen substantially</label>
+      <label><input type="radio" name="q26" value="b"> A fisherman who abandons his most productive fishing spot because he has already caught enough this season</label>
+      <label><input type="radio" name="q26" value="c"> Buying a 25% share of a classmate's lifetime earnings&mdash;which you would never sell just because its value had risen 6x if the classmate was on track to be CEO</label>
+      <label><input type="radio" name="q26" value="d"> A homeowner who sells a house in a rising market to reinvest in a cheaper neighborhood</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">27. Fisher's "don't buy into promotional companies" rule applies because:</p>
+      <label><input type="radio" name="q27" value="a"> Pre-IPO companies are systematically overpriced by investment bankers</label>
+      <label><input type="radio" name="q27" value="b"> Without commercial operating history, none of the fifteen points can be evaluated&mdash;only blueprints and projections exist</label>
+      <label><input type="radio" name="q27" value="c"> Early-stage companies pay no dividends and thus provide no return cushion</label>
+      <label><input type="radio" name="q27" value="d"> Promotional companies are dominated by founders who lack financial discipline</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">28. Which of the following best summarizes Fisher's overall conclusion about the default holding period for a genuinely outstanding stock?</p>
+      <label><input type="radio" name="q28" value="a"> Three to five years, then reassess as the business matures</label>
+      <label><input type="radio" name="q28" value="b"> Until the stock has tripled in value from the original purchase price</label>
+      <label><input type="radio" name="q28" value="c"> Almost never&mdash;sell only if a fundamental mistake was made, the company deteriorates, or a clearly better opportunity exists</label>
+      <label><input type="radio" name="q28" value="d"> Until the P/E ratio reaches 25x earnings, at which point growth is fully priced in</label>
+    </div>
+
+    <button type="button" id="score-btn" onclick="scoreQuiz()">Score My Answers</button>
+
+    <div id="quiz-result" style="display:none;">
+      <p id="score-text"></p>
+      <div id="answer-review"></div>
+    </div>
+
+  </form>
+</details>
+
+<script>
+(function() {
+  const answers = {
+    q1: { correct: "b", explain: "Fisher's central historical argument: investors who identified outstanding companies and held them through fluctuations made far more money than cycle-timers, even in the era when business cycles were more violent." },
+    q2: { correct: "c", explain: "Scuttlebutt means building a composite picture from competitors, customers, vendors, research scientists, trade association executives, and former employees — the business grapevine." },
+    q3: { correct: "d", explain: "Fisher states explicitly that Point 15 (management integrity) is inviolable: no investment should be made if there is serious doubt about management's moral responsibility to shareholders, regardless of scores on other points." },
+    q4: { correct: "b", explain: "Fisher argues that over 5-10 years, growth stocks with low current yields end up paying more absolute dividend dollars per year on the original investment than high-yield stocks, because the underlying earnings compound dramatically." },
+    q5: { correct: "c", explain: "Fisher argues that economic forecasting is too unreliable in the current state of human knowledge to be used as a basis for timing investment decisions; company-specific knowledge is the more actionable input." },
+    q6: { correct: "c", explain: "Fisher explicitly condemns selling because a stock 'looks high' as one of the most reliably wealth-destroying impulses. A stock's having risen significantly is never a valid reason to sell an outstanding company." },
+    q7: { correct: "b", explain: "The First Dimension encompasses low-cost production, above-average marketing, outstanding R&D, and financial skill — the four operational qualities that make a company capable of conservative investment." },
+    q8: { correct: "c", explain: "Fisher's foundational law: every significant price movement occurs because of a changed appraisal by the financial community, which blends views on overall equities, the industry, and the individual company." },
+    q9: { correct: "b", explain: "Fisher's rule: the further into the future profits will continue to grow, the higher the P/E an investor can afford to pay — because earnings growth combined with sustained P/E produces compounding returns." },
+    q10: { correct: "c", explain: "Fisher argues that 10-12 stocks chosen with deep knowledge provide adequate diversification while allowing genuine concentration; owning 25 or more typically means holding mediocre positions about which the investor has insufficient knowledge." },
+    q11: { correct: "b", explain: "The client tried to save $0.75 per share and missed a stock that eventually rose dramatically. Fisher uses this to illustrate that quibbling over tiny fractions is irrational for most investors — the opportunity cost dwarfs the potential saving." },
+    q12: { correct: "b", explain: "The Second Dimension centers on a CEO who delegates to outstanding subordinates, builds management depth beyond the top layer, and creates a culture of collaboration toward shared goals rather than internal rivalry." },
+    q13: { correct: "c", explain: "Fisher observes that every war scare in his investment career created excellent buying opportunities, as post-war economic activity and inflation ultimately benefited equity holders who had the courage to buy during the fear." },
+    q14: { correct: "c", explain: "The Third Dimension asks whether the business has inherent characteristics enabling sustained above-average profitability. Patent-protected specialty pharmaceuticals exemplify this; steel, commodity chemicals, and airlines typically lack these structural advantages." },
+    q15: { correct: "b", explain: "Fisher founded Fisher & Co. on March 1, 1931, during the depths of the Great Depression — earning a net profit of $2.99/month in his first year." },
+    q16: { correct: "b", explain: "Fisher's empirical observation across five decades: the financial community's conventional wisdom is typically wrong at key turning points, and the investors who reached correct independent conclusions before consensus earned the greatest returns." },
+    q17: { correct: "c", explain: "Fisher argues that over-diversification forces investors to hold many positions about which they have insufficient knowledge, sacrificing the deep understanding needed for high conviction in the portfolio's best ideas." },
+    q18: { correct: "b", explain: "Fisher's analysis of 1946-1956 showed bonds produced negative real returns as inflation eroded purchasing power by 29% while yields were below 3%. He views bonds as appropriate for institutions with offsetting liabilities but poor for long-term individual investors given the structural inflationary bias." },
+    q19: { correct: "b", explain: "Fisher emphasizes that Stage 1 — generating the right candidates — is underappreciated and largely determines results. Without the right candidates to investigate, the quality of Stage 2 investigation is irrelevant." },
+    q20: { correct: "b", explain: "Fisher's empirical argument against the EMH: every decade from the 1930s to 1970s produced spectacular opportunities for investors who correctly assessed specific company situations the market had misjudged, earning hundreds to thousands of percent." },
+    q21: { correct: "c", explain: "During wartime desk work, Fisher resolved to narrow his client base to a small group of large investors and concentrate entirely on long-term growth investing — rejecting the broader, less focused model he had operated before the war." },
+    q22: { correct: "b", explain: "Point 12 of the fifteen points specifically favors managements with a long-range profit orientation — those willing to forgo maximum near-term earnings to build lasting competitive position." },
+    q23: { correct: "c", explain: "Fisher's five forces are: the business cycle, interest rates, government attitude toward investment and private enterprise, the long-range inflationary trend, and new inventions and techniques. Currency exchange rates are not among them." },
+    q24: { correct: "b", explain: "The key insight from Fisher's four-year illustration: earnings growth alone does not drive stock performance if P/E compresses. The company whose growth story continues attracts a maintained P/E (stock doubles with earnings); the one perceived as mature suffers P/E compression (stock price unchanged despite doubled earnings)." },
+    q25: { correct: "b", explain: "Fisher's case study of chemicals illustrates how industry image, independent of actual business performance, can cause dramatic P/E re-rating. The chemical industry's image shifted from 'endless new miracle products' to 'capital-intensive commodity like steel,' causing P/E compression without equivalent deterioration in business fundamentals." },
+    q26: { correct: "c", explain: "Fisher's classmate analogy: you've bought a 25% share of a classmate's lifetime earnings for 10x his first year's salary. If that classmate is on track for CEO, you would not sell your contract at 6x gain — and a corporation, unlike a person, has no finite life span." },
+    q27: { correct: "b", explain: "Fisher's rule: without at least two to three years of commercial operation and one year of operating profit, none of the fifteen points can be evaluated — only blueprints exist, and blueprints make meaningful company assessment impossible." },
+    q28: { correct: "c", explain: "Fisher summarizes his sell discipline in a single sentence: 'If the job has been correctly done when a common stock is purchased, the time to sell it is — almost never.' Only genuine mistakes, fundamental deterioration, or clearly superior alternatives justify selling." },
+  };
+
+  window.scoreQuiz = function() {
+    const form = document.getElementById("quiz-form");
+    let correct = 0;
+    const total = Object.keys(answers).length;
+    let reviewHTML = "";
+
+    for (let i = 1; i <= total; i++) {
+      const key = "q" + i;
+      const selected = form.elements[key] ? form.elements[key].value : "";
+      const isCorrect = selected === answers[key].correct;
+      if (isCorrect) correct++;
+
+      const status = !selected ? "wrong" : (isCorrect ? "correct" : "wrong");
+      const icon = isCorrect ? "\u2705" : "\u274C";
+      const yourAnswer = selected ? selected.toUpperCase() : "No answer";
+      const correctAnswer = answers[key].correct.toUpperCase();
+
+      reviewHTML += '<div class="review-item ' + status + '">';
+      reviewHTML += '<div class="ri-q">' + icon + " Question " + i + "</div>";
+      reviewHTML += '<div class="ri-detail">';
+      if (!isCorrect) {
+        reviewHTML += "Your answer: " + yourAnswer + " &mdash; Correct answer: " + correctAnswer + "<br>";
+      }
+      reviewHTML += answers[key].explain;
+      reviewHTML += "</div></div>";
+    }
+
+    const pct = Math.round((correct / total) * 100);
+    let grade;
+    if (pct === 100) grade = "Perfect score!";
+    else if (pct >= 80) grade = "Great understanding!";
+    else if (pct >= 60) grade = "Good, but review the summaries above for the ones you missed.";
+    else grade = "Consider re-reading the summaries above and trying again.";
+
+    document.getElementById("score-text").textContent = correct + " / " + total + " (" + pct + "%) \u2014 " + grade;
+    document.getElementById("answer-review").innerHTML = reviewHTML;
+    document.getElementById("quiz-result").style.display = "block";
+    document.getElementById("quiz-result").scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+})();
+</script>
+
+</div><!-- .content -->
+
+</body>
+</html>

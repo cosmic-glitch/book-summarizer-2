@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Random Walk Down Wall Street — Book Summary Pro</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      line-height: 1.7;
+      color: #222;
+      background: #fafafa;
+    }
+    .app-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #2c2c2c;
+      padding: 14px 24px;
+    }
+    .content {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 32px 20px 40px;
+    }
+    .app-nav .app-name {
+      font-size: 1.05em;
+      font-weight: bold;
+      color: #e8e0d0;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+    }
+    .app-nav .app-name:hover {
+      color: #d4a843;
+    }
+    .app-nav .back-link {
+      font-size: 0.9em;
+      color: #999;
+      text-decoration: none;
+    }
+    .app-nav .back-link:hover {
+      color: #d4a843;
+    }
+    h1 {
+      font-size: 1.8em;
+      border-bottom: 2px solid #333;
+      padding-bottom: 10px;
+      margin-bottom: 5px;
+    }
+    .subtitle {
+      font-size: 1.1em;
+      color: #444;
+      margin: 2px 0 0 0;
+      font-style: italic;
+    }
+    .author {
+      font-style: italic;
+      color: #777;
+      font-size: 0.95em;
+      margin-bottom: 40px;
+    }
+    h2 {
+      font-size: 1.3em;
+      margin-top: 48px;
+      color: #1a1a1a;
+      border-left: 4px solid #555;
+      padding-left: 12px;
+    }
+    p {
+      margin-bottom: 14px;
+      text-align: justify;
+    }
+    details.counter {
+      background: #f0ece4;
+      border-left: 4px solid #b8860b;
+      padding: 14px 18px;
+      margin: 20px 0 28px 0;
+      border-radius: 0 6px 6px 0;
+    }
+    details.counter summary {
+      font-weight: bold;
+      font-size: 0.95em;
+      color: #8b6914;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    details.counter summary::-webkit-details-marker {
+      display: none;
+    }
+    details.counter summary::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    details.counter[open] summary::before {
+      transform: rotate(90deg);
+    }
+    details.counter p {
+      margin-top: 12px;
+      margin-bottom: 10px;
+      color: #3a3a3a;
+    }
+    details.counter p:last-child {
+      margin-bottom: 0;
+    }
+    .quiz-wrapper {
+      margin-top: 48px;
+      background: #f5f5f0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 16px 20px;
+    }
+    .quiz-toggle {
+      font-weight: bold;
+      font-size: 1.05em;
+      cursor: pointer;
+      color: #2a5a2a;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .quiz-toggle::-webkit-details-marker { display: none; }
+    .quiz-toggle::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    .quiz-wrapper[open] .quiz-toggle::before {
+      transform: rotate(90deg);
+    }
+    .q-block {
+      margin: 24px 0;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    .q-block:last-of-type { border-bottom: none; }
+    .q-label {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .q-block label {
+      display: block;
+      padding: 6px 10px;
+      margin: 4px 0;
+      border-radius: 4px;
+      cursor: pointer;
+      line-height: 1.5;
+    }
+    .q-block label:hover { background: #e8e8e0; }
+    #score-btn {
+      display: block;
+      margin: 28px auto 0;
+      padding: 12px 32px;
+      font-family: Georgia, serif;
+      font-size: 1em;
+      background: #2a5a2a;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #score-btn:hover { background: #1e441e; }
+    #quiz-result {
+      margin-top: 24px;
+      padding: 18px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    #score-text {
+      font-size: 1.15em;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .review-item {
+      margin-bottom: 14px;
+      padding: 10px 12px;
+      border-radius: 4px;
+    }
+    .review-item.correct { background: #e6f4e6; }
+    .review-item.wrong { background: #fce8e8; }
+    .review-item .ri-q { font-weight: bold; margin-bottom: 4px; }
+    .review-item .ri-detail { font-size: 0.93em; color: #444; }
+  </style>
+</head>
+<body>
+
+<nav class="app-nav">
+  <a href="index.html" class="app-name">Book Summary Pro</a>
+  <a href="index.html" class="back-link">&larr; All Books</a>
+</nav>
+
+<div class="content">
+
+<h1>A Random Walk Down Wall Street</h1>
+<p class="subtitle">The Time-Tested Strategy for Successful Investing</p>
+<p class="author">Burton G. Malkiel</p>
+
+<h2>Preface</h2>
+
+<p>Burton Malkiel introduces the core thesis he has held for forty years: individual investors are <b>far better off buying and holding a broad index fund</b> than attempting to pick individual stocks or invest in actively managed mutual funds. He anchors this claim with a vivid comparison &mdash; a $10,000 investment placed in an S&P 500 index fund in 1969 would have grown to $463,000 by 2010, while the same sum invested in the average actively managed fund would have reached only $258,000. The gap of more than $200,000 is the compounded cost of higher fees, excessive trading, and the consistent inability of professional managers to outsmart an efficient market.</p>
+
+<p>The preface summarizes the book's evolution across ten editions, each adding coverage of new manias and crashes: the conglomerate craze, the biotech bubble, the Internet frenzy, and the 2008&ndash;09 financial crisis. Each new edition has added material while the central prescription &mdash; <i>buy index funds, keep costs low, stay the course</i> &mdash; has remained unchanged. Malkiel also previews new chapters on <b>behavioral finance</b>, which examines why investors repeatedly make irrational decisions, and a section on investment strategies for those approaching or in retirement.</p>
+
+<h2>Chapter 1: Firm Foundations and Castles in the Air</h2>
+
+<p>Malkiel opens by describing the two fundamental schools of thought about how stocks should be valued. The <b>firm-foundation theory</b>, associated with Benjamin Graham and David Dodd, holds that every investment instrument has an <i>intrinsic value</i> &mdash; a present-value sum of all future dividends or cash flows &mdash; and that analysis can identify when a stock is priced above or below this fundamental anchor. Disciplined investors who buy below intrinsic value and sell above it will, over time, earn superior returns.</p>
+
+<p>The competing <b>castle-in-the-air theory</b>, championed by John Maynard Keynes, argues that the stock market is less like a weighing machine and more like a beauty contest. Keynes famously observed that professional investing is not about picking the most beautiful face but about predicting what other judges will consider beautiful. What drives prices, on this view, is mass psychology &mdash; the willingness of investors to pay ever-higher prices because they expect someone else to pay still higher prices later, a dynamic Malkiel calls the <b>greater fool theory</b>.</p>
+
+<p>Malkiel treats both theories as partial truths. Fundamental analysis can occasionally identify genuine mispricings, and crowd psychology clearly drives booms and busts. The central message of the book is that these dynamics, taken together, result in a market that is broadly efficient: prices incorporate available information so quickly and completely that no systematic strategy based on publicly known data &mdash; whether from charts or earnings reports &mdash; can consistently beat the market after costs. This sets the stage for the book's argument in favor of passive index investing.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The strict efficient-market interpretation of the firm-foundation theory has been challenged by the long record of <b>Warren Buffett</b> and a handful of other value investors who have beaten the market over multi-decade horizons. Proponents of <b>fundamental analysis</b> argue that the persistence of value-stock outperformance (documented by Fama and French) shows that firm-foundation reasoning &mdash; buying cheap stocks relative to earnings or book value &mdash; does contain exploitable information. Malkiel acknowledges these anomalies later in the book but argues that once transaction costs and taxes are accounted for, they cannot be reliably harvested by ordinary investors.</p>
+  <p>On the castle-in-the-air side, some behavioral economists argue that <b>reflexivity</b> (George Soros's term) makes markets self-fulfilling in ways that rational models cannot capture. If enough investors believe in a momentum story, the resulting price appreciation validates the story &mdash; at least temporarily. This suggests that neither pure intrinsic-value models nor simple random-walk assumptions fully capture how markets operate during bubble phases.</p>
+</details>
+
+<h2>Chapter 2: The Madness of Crowds</h2>
+
+<p>Malkiel surveys three early speculative manias to illustrate how crowd psychology can drive prices to absurd levels. The <b>Dutch tulip-bulb mania</b> of the 1630s saw rare bulb varieties change hands at prices exceeding the cost of an Amsterdam townhouse. At the peak, a single Semper Augustus bulb reportedly fetched 6,000 guilders &mdash; enough to buy a well-furnished mansion. When the market collapsed in 1637, buyers who had contracted to purchase bulbs at outlandish prices simply refused to pay, and the Dutch economy lurched into prolonged depression.</p>
+
+<p>The <b>South Sea Bubble</b> of 1720 demonstrated that modern financial instruments could amplify speculation. The South Sea Company, granted a monopoly on trade with South America, issued shares that rose tenfold in a single year on almost no genuine trade. Company directors manipulated the share price by spreading false rumors and bribing government officials. When the bubble burst, thousands of investors were ruined &mdash; including Isaac Newton, who famously lamented that he could calculate the motions of heavenly bodies but not the madness of people. Simultaneously, John Law's <b>Mississippi Scheme</b> in France collapsed in a similar fashion, producing a financial panic that set back French economic development for decades.</p>
+
+<p>Malkiel draws a consistent pattern across all three episodes: an initial genuine opportunity attracts early investors who profit; their gains attract a wider crowd; rising prices create their own justification; insiders distribute their holdings to latecomers; and eventually the edifice collapses when buyers can no longer sustain the price. The rational investor's lesson is that speculative enthusiasm is contagious and can temporarily overwhelm any anchoring to intrinsic value.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Some economic historians, notably <b>Peter Garber</b>, have argued that the tulip-bulb mania was less irrational than it appears. Rare bulb varieties traded like modern financial options &mdash; early buyers had limited downside and substantial upside in a market for genuinely scarce goods. On this view, the prices were not entirely divorced from a rational, if highly speculative, calculation of expected value. Similarly, revisionist accounts of the South Sea Bubble note that share prices fell more gradually than the myth suggests and that many investors who held through the peak eventually recovered most of their losses, which complicates the simple "madness" narrative.</p>
+  <p>The broader economic literature on <b>rational bubbles</b> (Tirole, Blanchard, and Watson) shows that bubbles can be theoretically consistent with rational behavior if investors correctly anticipate that prices will keep rising until some unpredictable trigger deflates them. This does not rehabilitate speculation as a strategy for ordinary investors, but it challenges the claim that participants are simply deluded &mdash; they may be rationally riding a known bubble, each hoping to exit before others do.</p>
+</details>
+
+<h2>Chapter 3: Speculative Bubbles from the Sixties into the Nineties</h2>
+
+<p>Malkiel traces four distinct speculative episodes in the second half of the twentieth century, each illustrating how the castle-in-the-air dynamic re-emerges in new guises. The <b>Tronics Boom</b> of the early 1960s saw investors bid up any company whose name ended in "-tron" or "-onics," regardless of its actual business. Transistor-makers, electronics assemblers, and even unrelated companies that renamed themselves accordingly commanded price-earnings ratios of 50 or more. When the market recognized that electronics companies faced intense competition and thin margins, the stocks collapsed.</p>
+
+<p>The <b>conglomerate craze</b> of the late 1960s was driven by the theory of <i>synergy</i> &mdash; the claim that merging disparate businesses would produce 2+2=5 earnings growth through management expertise and financial engineering. Creative accountants made the math work by using high-multiple acquiring companies to buy low-multiple targets, mechanically boosting earnings per share. The Nifty Fifty era of the early 1970s elevated this thinking to the extreme: a small set of blue-chip growth stocks (Xerox, Polaroid, McDonald's, Avon Products) were deemed <b>"one-decision" stocks</b> &mdash; so certain to grow forever that any P/E ratio was considered justified. Polaroid reached 95 times earnings. When growth disappointed, these stocks lost 60&ndash;90% of their value.</p>
+
+<p>The 1980s <b>biotech bubble</b> showed that even genuine scientific breakthroughs cannot guarantee investor profits. Any company adding "bio" to its name could raise millions; analysts declared that traditional valuation metrics did not apply because the companies were developing entirely new classes of medicine. Most biotechnology firms of that era never brought a successful product to market. Even companies with eventually successful drugs lost three-quarters of their stock value during the correction of the late 1980s. Malkiel's consistent finding across all four episodes: technological or economic reality eventually reasserts itself, and the investors who bought at the peak suffer the most.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Critics of the bubble narrative point to <b>survivorship bias</b>: it is easy in hindsight to identify a period as a bubble once prices have fallen, but contemporaneous investors had genuine uncertainty about how transformative a given technology might be. The Nifty Fifty stocks did represent genuinely great businesses; an investor who bought McDonald's at the 1972 peak and held for thirty years still earned excellent returns, suggesting that the "bubble" label overstates the irrationality. Economist <b>Jeremy Siegel</b> found that as a group, the Nifty Fifty actually delivered returns close to the market average over a 25-year horizon from the peak &mdash; they were overpriced but not disastrously so.</p>
+  <p>More broadly, <b>financial historian Robert Shiller</b> argues that bubbles are driven not by stupidity but by <i>narrative contagion</i> &mdash; stories about new eras and transformative technologies spread like viruses, creating self-reinforcing price dynamics. This view is less dismissive of investors than Malkiel's "madness" framing and suggests that structural reforms (better disclosure, cooling-off periods for IPOs) might be more useful than simply urging individuals to remain rational.</p>
+</details>
+
+<h2>Chapter 4: The Explosive Bubbles of the Early 2000s</h2>
+
+<p>Malkiel examines the two most dramatic speculative episodes of the modern era. The <b>Internet bubble</b> of 1998&ndash;2000 dwarfed all previous manias in scale. Companies with no revenues and no plausible path to profitability carried market capitalizations in the billions. TheGlobe.com's IPO in November 1998 rose 606% on its first day of trading &mdash; the largest single-day gain in IPO history at the time. Analysts at major investment banks issued glowing reports on companies that would never turn a profit, openly conflating their research function with their investment banking interests: a 100-to-1 ratio of buy to sell recommendations was common. The author highlights notorious cases where analysts who published honest sell recommendations were fired or pressured to recant.</p>
+
+<p>The accounting scandals that followed &mdash; Enron, WorldCom, Global Crossing &mdash; revealed that even the fundamental data investors relied on had been systematically falsified. Enron established off-balance-sheet partnerships to hide losses and fabricate profits; analysts who saw through the ruse were silenced. When the Nasdaq Composite peaked in March 2000 at 5,048 it had lost 80% of its value by 2002. The chapter also covers the subsequent <b>real estate bubble</b> of 2003&ndash;2007. Mortgage lenders issued loans to borrowers with no income, no jobs, and no assets (so-called <b>NINJA loans</b>); these were bundled into mortgage-backed securities (MBS) and collateralized debt obligations (CDOs) that received spurious AAA ratings. When house prices stopped rising and subprime defaults spiked, the entire system of leveraged mortgage securities imploded in the 2008&ndash;09 financial crisis.</p>
+
+<p>Malkiel uses these episodes to reinforce two lessons: first, <b>conflicts of interest</b> between the advice-giving and fee-earning functions of financial firms consistently produce misleading guidance to retail investors; second, leverage amplifies bubbles and makes their unwinding catastrophic. The solution, he argues, is not to rely on Wall Street research but to own the entire market at minimal cost through index funds.</p>
+
+<h2>Chapter 5: Technical and Fundamental Analysis</h2>
+
+<p>Before evaluating the two main approaches Wall Street professionals use to pick stocks, Malkiel explains what each entails. <b>Technical analysis</b> (or chartism) holds that all relevant information about a stock &mdash; past, present, and expectations about the future &mdash; is already reflected in prices and volumes. Chartists therefore study price-and-volume graphs to identify recurring patterns: <i>head-and-shoulders formations</i>, <i>double tops and bottoms</i>, <i>support and resistance levels</i>, <i>channels</i>, and moving-average crossovers. The fundamental premise is that market psychology creates predictable price behaviors that repeat over time.</p>
+
+<p><b>Fundamental analysis</b> takes a different approach: it seeks to determine a stock's intrinsic value by analyzing the underlying business &mdash; earnings, dividends, growth prospects, competitive position, management quality, and macroeconomic factors. Fundamental analysts build earnings models, estimate discount rates, and compare a stock's price to its estimated value. Both approaches aim at the same goal (beating the market) but rely on entirely different types of information. Malkiel is openly skeptical of both, arguing that the evidence does not support either as a reliable system for generating consistent above-market returns. The following two chapters examine the evidence in detail.</p>
+
+<h2>Chapter 6: Technical Analysis and the Random-Walk Theory</h2>
+
+<p>The <b>random-walk hypothesis</b> holds that successive price changes in a stock are statistically independent &mdash; knowing that a stock rose yesterday tells you nothing useful about whether it will rise today. Malkiel reviews multiple empirical tests of this proposition. <b>Serial correlation studies</b> find virtually zero correlation between price changes in successive periods: the same stocks that rose last week are no more likely to rise this week than any other stocks. <b>Filter rules</b> &mdash; strategies that buy after a stock rises X% and sell after it falls X% &mdash; consistently underperform simple buy-and-hold once transaction costs are included. <b>Chart pattern tests</b> find that formations like head-and-shoulders produce results no better than coin flips when tested out-of-sample.</p>
+
+<p>Malkiel also examines <b>moving-average rules</b> and <b>relative-strength strategies</b>, finding that while some approaches show modest historical edge, the edge disappears when realistic trading costs &mdash; bid-ask spreads, commissions, and taxes &mdash; are deducted. He adds three important caveats: first, the evidence does not prove that price changes are <i>perfectly</i> random &mdash; there may be small, short-lived patterns; second, even if patterns exist, they may be exploitable only by high-frequency traders with minimal transaction costs; third, any widely known pattern tends to be arbitraged away once identified. He invokes a telling anecdote about chartist John Magee, who boarded up his office windows to eliminate any "contaminating" influence from the outside world &mdash; an extreme commitment that Malkiel treats as illustrating the almost religious fervor of technical analysis devotees.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The academic momentum literature presents the most serious challenge to the pure random-walk view. <b>Jegadeesh and Titman</b> (1993) documented that stocks with the best returns over the past 3&ndash;12 months tend to continue outperforming over the next 3&ndash;12 months &mdash; an effect robust across markets and decades. Malkiel acknowledges short-term momentum but argues transaction costs eliminate exploitability for retail investors. However, institutional investors and quantitative hedge funds have built substantial businesses on momentum strategies, suggesting the effect may be larger and more persistent than Malkiel allows.</p>
+  <p>More recently, <b>trend-following managed futures</b> funds have produced returns that are largely uncorrelated with equity markets and that appear to validate certain technical principles over long time horizons. Proponents argue that price trends reflect the slow diffusion of information through markets &mdash; not irrational momentum but <i>rational gradual updating</i> &mdash; which makes trend-following a theoretically coherent (not merely empirical) strategy.</p>
+</details>
+
+<h2>Chapter 7: How Good Is Fundamental Analysis?</h2>
+
+<p>Malkiel evaluates the track record of professional security analysts and finds it deeply disappointing. Studies of earnings forecasts show that professional analysts' predictions are only marginally better than naive statistical models or even simple extrapolations of past trends. He identifies <b>five structural reasons</b> why fundamental analysis fails to consistently beat the market. First, many stock price movements are driven by genuinely <i>random events</i> &mdash; a regulatory decision, a weather event, a competitor's innovation &mdash; that no amount of fundamental research can anticipate. Second, companies routinely use <b>creative accounting</b> to produce earnings that appear smooth and growing while obscuring underlying deterioration; Enron is the extreme case, but earnings management is pervasive.</p>
+
+<p>Third, even diligent analysts make systematic cognitive errors &mdash; they <i>anchor</i> too heavily to recent trends and adjust too slowly to new information. Fourth, the <b>best analysts are recruited</b> away from research into portfolio management or hedge funds, leaving publicly available research of lower average quality. Fifth, and most corrosively, <b>conflicts of interest</b> between research and investment banking have historically biased analyst recommendations toward buy ratings for companies that are investment banking clients. The ratio of buy to sell recommendations reached 100:1 during the late 1990s, rendering the research effectively useless as an independent guide.</p>
+
+<p>The aggregate evidence is even more damning: long-run studies consistently show that <b>more than two-thirds of actively managed mutual funds underperform</b> the unmanaged S&P 500 index over any ten-year period, and the funds that outperform in one decade do not reliably outperform in the next. Malkiel's conclusion is that the market is sufficiently efficient that consistent outperformance through fundamental stock-picking is not achievable for most investors after fees.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The existence of investors like <b>Warren Buffett</b>, <b>Peter Lynch</b>, and <b>Joel Greenblatt</b> &mdash; whose long-term records appear too consistent to be explained by luck &mdash; is the strongest empirical challenge to the claim that fundamental analysis adds no value. Malkiel's rejoinder is that in a universe of thousands of fund managers, chance alone will produce a handful of long-term outperformers who then become famous. But critics such as <b>Michael Mauboussin</b> argue that skill and process can be distinguished from luck through long enough track records and through analyzing how managers construct portfolios, not just whether they win.</p>
+  <p>The <b>Fama-French value premium</b> also complicates the picture: buying stocks with low price-to-book ratios (a form of fundamental analysis) has historically delivered higher returns than the market. Malkiel addresses this in later chapters, attributing the value premium to higher risk rather than superior information, but this interpretation remains contested &mdash; many behavioralists argue that the premium reflects systematic investor overreaction to recent earnings disappointments.</p>
+</details>
+
+<h2>Chapter 8: A New Walking Shoe: Modern Portfolio Theory</h2>
+
+<p>Malkiel introduces the academic revolution in investment theory that began with <b>Harry Markowitz's</b> 1952 paper on portfolio selection. Markowitz demonstrated that an investor should not evaluate each security in isolation but should consider how its returns <i>co-vary</i> with the rest of the portfolio. The key insight is that combining two imperfectly correlated assets reduces the overall portfolio's volatility without necessarily reducing its expected return &mdash; this is the famous <b>"free lunch" of diversification</b>. Risk is measured as the variance (or standard deviation) of returns, and the optimal portfolio lies on an <b>efficient frontier</b> &mdash; the set of portfolios that offer maximum expected return for each level of risk.</p>
+
+<p>Malkiel explains that risk can be decomposed into two parts. <b>Unsystematic (specific) risk</b> is the portion unique to a company or industry &mdash; a drug trial failure, a CEO scandal, a natural disaster &mdash; and it can be largely eliminated through diversification. Studies show that holding as few as 20&ndash;30 randomly selected stocks eliminates roughly 90% of specific risk. <b>Systematic (market) risk</b>, by contrast, reflects economy-wide factors that affect all stocks simultaneously and cannot be diversified away. The practical implication is that an investor's only reliable tool for raising expected return is to accept more market risk by tilting toward equities &mdash; not by picking individual stocks or sectors.</p>
+
+<p>Malkiel also discusses the mathematical mechanics of the efficient frontier and explains why the <b>correlation</b> between assets matters more than their individual volatilities. Combining a domestic equity index with international stocks, bonds, or real estate can improve portfolio efficiency even when those asset classes have lower standalone returns, because their imperfect correlation reduces the overall portfolio's volatility. This underpins the book's later recommendation to hold a globally diversified portfolio of index funds.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Modern portfolio theory's use of <b>variance as the measure of risk</b> has been widely criticized. Standard deviation is symmetric &mdash; it treats upside surprises as equally "risky" as downside ones &mdash; and it assumes returns follow a normal distribution. In practice, financial returns exhibit <b>fat tails</b> (extreme events far more common than a normal distribution predicts) and negative skew (crashes larger and more frequent than rallies). <b>Nassim Taleb</b> and <b>Benoit Mandelbrot</b> have argued that MPT's normality assumption causes investors to dramatically underestimate the true frequency and severity of portfolio drawdowns, as the 2008 crisis demonstrated when supposedly uncorrelated assets crashed together.</p>
+  <p>Practitioners also note that historical correlations between asset classes are <b>unstable</b> &mdash; they tend to spike toward 1.0 during market crises precisely when diversification is most needed, reducing the crisis-period benefit of holding multiple asset classes. This "correlation breakdown" problem is not addressed in standard MPT formulations and led to the failure of many supposedly diversified institutional portfolios in 2008.</p>
+</details>
+
+<h2>Chapter 9: Reaping Reward by Increasing Risk</h2>
+
+<p>Building on Modern Portfolio Theory, Malkiel explains the <b>Capital Asset Pricing Model (CAPM)</b> developed by William Sharpe and others in the 1960s. CAPM provides a clean mathematical relationship between an asset's risk and its expected return. The key variable is <b>beta (&beta;)</b> &mdash; a measure of how sensitive a stock's returns are to movements in the overall market. A stock with &beta; = 1 moves in lockstep with the market; &beta; = 1.5 means it rises or falls 50% more than the market; &beta; = 0.5 means it moves half as much. The <b>Security Market Line</b> predicts that a stock's expected return equals the risk-free rate plus beta times the equity risk premium (the market's excess return over the risk-free rate).</p>
+
+<p>The practical implication is powerful: only <b>systematic risk is rewarded</b>. Investors who hold undiversified portfolios bear specific risk but receive no extra return for doing so, because specific risk can be diversified away at zero cost. The model also predicts that investors cannot consistently beat the market because prices adjust until all stocks lie on the Security Market Line &mdash; no stock offers more expected return than its beta warrants. Malkiel uses this framework to explain why active managers, who collectively <i>are</i> the market, cannot as a group outperform it.</p>
+
+<p>The chapter also covers important critiques of CAPM. <b>Fama and French</b> showed empirically that beta alone does not explain cross-sectional differences in stock returns &mdash; <b>small-capitalization stocks</b> and <b>value stocks</b> (low price-to-book ratio) have earned higher returns than beta predicts for decades. They proposed a three-factor model adding size and value as additional risk factors. The competing <b>Arbitrage Pricing Theory (APT)</b>, developed by Stephen Ross, allows for multiple systematic risk factors without specifying what they are &mdash; a more flexible but less predictive framework. Malkiel concludes that while CAPM is imperfect, its core lesson stands: bearing more market risk is the only reliable way to earn higher long-run returns.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The empirical failure of CAPM is now so well documented that many finance professors teach it mainly as a historical artifact. <b>Fischer Black, Michael Jensen, and Myron Scholes</b> found as early as 1972 that low-beta stocks earn higher risk-adjusted returns than CAPM predicts &mdash; the so-called <b>betting-against-beta</b> anomaly. <b>Robert Haugen</b> and others showed that the least volatile stocks outperform the most volatile over long periods, directly inverting CAPM's prediction. The Fama-French value and size premiums have been replicated internationally and across asset classes, suggesting they are structural features of markets rather than data artifacts.</p>
+  <p>More fundamentally, the <b>joint hypothesis problem</b> (identified by Fama himself) means that every test of market efficiency is simultaneously a test of the asset pricing model used as a benchmark. If a strategy appears to "beat the market," it is impossible to tell whether the market is inefficient or the model is wrong. This makes CAPM (and its extensions) less falsifiable than they appear, and it means that the debate between efficient-market defenders and their critics can never be fully resolved by empirical evidence alone.</p>
+</details>
+
+<h2>Chapter 10: Behavioral Finance</h2>
+
+<p>Malkiel surveys the field of <b>behavioral finance</b>, which applies insights from psychology to explain why investors systematically deviate from rationality. The starting point is <b>overconfidence</b>: studies consistently find that 80&ndash;90% of people rate themselves above-average drivers, and investors exhibit the same bias &mdash; believing their stock picks are better than the market's. This overconfidence leads to excessive trading, which destroys value through commissions and taxes. Research by <b>Terrence Odean and Brad Barber</b> found that the most active individual traders underperformed the least active by about 6.5 percentage points annually.</p>
+
+<p><b>Herd behavior</b> explains how overconfidence at the individual level becomes collective mania at the market level. Groups reinforce one another's bullish or bearish views, producing the kind of groupthink that drove Internet analyst consensus in 1999&ndash;2000. <b>Loss aversion</b>, formalized by <b>Daniel Kahneman and Amos Tversky</b> in prospect theory, shows that people feel the pain of losses roughly twice as intensely as the pleasure of equivalent gains. This leads to the <b>disposition effect</b> &mdash; investors irrationally hold losing stocks too long (hoping to break even) and sell winners too early (locking in gains before they can be reversed). Mental accounting &mdash; treating money in different categories (house winnings, retirement savings) as fundamentally different &mdash; leads to further suboptimal decisions.</p>
+
+<p>Malkiel distills four practical lessons. First, <b>avoid herd behavior</b>: if a story is on the cover of every financial magazine, the crowd's enthusiasm is already priced in. Second, <b>avoid overtrading</b>: every transaction has costs, and active investors as a group underperform passive ones. Third, <b>sell losers, not winners</b>: the disposition effect is a systematic tax on performance; holding losers for "psychological" reasons while taking profits on winners is exactly backwards from tax efficiency. Fourth, beware <b>other stupid investor tricks</b>: chasing past performance, over-concentrating in employer stock, and making portfolio decisions based on recent news all reliably destroy value.</p>
+
+<h2>Chapter 11: Potshots at the Efficient-Market Theory and Why They Miss</h2>
+
+<p>Malkiel examines the most credible challenges to the efficient-market hypothesis (EMH). <b>Short-term price momentum</b> (Jegadeesh and Titman) shows that last year's winners tend to continue outperforming over the next 3&ndash;12 months. The <b>size effect</b> (Banz) finds that small-capitalization stocks have historically earned higher returns than large-caps after adjusting for beta. The <b>value effect</b> (Fama and French) shows that stocks with low price-to-book ratios outperform growth stocks. The <b>January effect</b> observes that small-cap stocks show abnormal positive returns in the first week of January, apparently driven by tax-loss selling in December. The <b>weekend effect</b> finds that stock returns are systematically lower on Mondays.</p>
+
+<p>To each of these, Malkiel offers a rebuttal. Many anomalies disappear or weaken once data mining is accounted for &mdash; with enough variables and enough history, spurious correlations are inevitable. Several anomalies evaporate after publication as arbitrageurs trade them away. The value and size effects may simply reflect <b>higher risk</b> (distressed or small companies are genuinely riskier) rather than market inefficiency. The Royal Dutch/Shell "Siamese twin" mispricing &mdash; where two claims on the same cash flows traded at a 20% price differential &mdash; appears damning, but Malkiel notes that exploiting it required bearing substantial risk over an indefinite horizon, which rational investors might price differently.</p>
+
+<p>His ultimate conclusion is nuanced: markets are <i>not</i> perfectly efficient in the textbook sense, but they are efficient <i>enough</i> that no systematic, low-cost strategy based on publicly available information reliably beats the market over long periods. Active managers, on average, fail to cover their fees. For ordinary investors, the practical implication is unchanged: buy index funds.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Critics argue that Malkiel's rebuttals amount to an unfalsifiable defense of EMH: any anomaly that persists is declared a "risk premium" and any anomaly that disappears is declared "data mining." <b>Andrew Lo's</b> Adaptive Markets Hypothesis offers a middle ground &mdash; markets are neither perfectly efficient nor irrationally chaotic, but cycle between regimes of efficiency and inefficiency as strategies become crowded and are then abandoned. On this view, anomalies like momentum and value are genuine but episodic, exploitable during some periods and not others.</p>
+  <p>The <b>long-run value premium</b> has now been documented across 40+ countries and over a century of data (Dimson, Marsh, and Staunton), making pure data-mining explanations increasingly implausible. Whether it represents risk or mispricing may be undecidable, but its practical existence means that a <i>value-tilted</i> index fund plausibly offers higher expected returns than a pure market-cap index &mdash; a finding that complicates Malkiel's blanket recommendation to simply own the whole market.</p>
+</details>
+
+<h2>Chapter 12: A Fitness Manual for Random Walkers</h2>
+
+<p>Shifting from theory to practice, Malkiel provides a comprehensive survey of the major investment instruments available to individual investors, evaluating each for its risk, return, liquidity, and tax characteristics. <b>Cash equivalents</b> &mdash; Treasury bills, money market funds, certificates of deposit &mdash; provide safety and liquidity but earn returns that barely keep pace with inflation over the long run. They are appropriate as an emergency fund or as a short-term holding while deploying capital, not as a long-term savings vehicle.</p>
+
+<p><b>Bonds</b> come in many varieties: government Treasuries (the safest dollar-denominated fixed income), corporate bonds (higher yield, credit risk), tax-exempt municipal bonds (advantageous for high-bracket taxpayers), zero-coupon bonds (sold at a discount and redeemed at face value, compounding at a fixed rate), and <b>TIPS</b> (Treasury Inflation-Protected Securities, whose principal adjusts with the CPI). Malkiel explains the inverse relationship between interest rates and bond prices and cautions that investors who buy long-duration bonds at low yields face significant capital loss if rates rise. <b>Real estate</b> and REITs (Real Estate Investment Trusts) offer inflation protection and portfolio diversification; homeownership also provides the psychological benefit of a forced savings plan. However, the spectacular run-up and crash of the 2000s showed that real estate is not inherently low-risk.</p>
+
+<p>Regarding <b>gold and collectibles</b>, Malkiel is skeptical: gold pays no dividend or coupon, and its real return over very long periods has been close to zero. Collectibles (art, wine, rare coins) involve high transaction costs and require specialized expertise. Both are appropriate, at most, as a small hedge against extreme inflation scenarios, not as core holdings. The chapter concludes that a properly diversified portfolio of <b>stocks and bonds</b> &mdash; held through low-cost index funds &mdash; is the most efficient vehicle for building long-term wealth for the overwhelming majority of investors.</p>
+
+<h2>Chapter 13: Handicapping the Financial Race: A Primer in Understanding and Projecting Returns</h2>
+
+<p>Malkiel explains the fundamental drivers of stock and bond returns to help investors set realistic expectations. For stocks, the long-run return equals the <b>initial dividend yield plus the long-run growth rate of dividends and earnings</b>. Since earnings growth tracks nominal GDP growth over time, and since current dividend yields are modest, Malkiel projects nominal stock returns of 6&ndash;8% and real returns of approximately 4&ndash;5% per year going forward &mdash; lower than the 20th-century average but still substantially above the return on bonds or cash.</p>
+
+<p>To give historical context, Malkiel examines <b>four eras of U.S. financial market returns</b> from 1946 to 2009. Era 1 (1946&ndash;1968): strong stock returns driven by post-war growth and expanding valuations. Era 2 (1969&ndash;1981): poor returns driven by inflation and rising interest rates compressing P/E multiples. Era 3 (1982&ndash;2000): spectacular returns from disinflation and the expansion of P/E ratios from single digits back to 30+. Era 4 (2000&ndash;2009): poor returns as the market unwound the valuation excesses of the 1990s. This four-era framework teaches that a substantial part of realized stock returns reflects changes in investor sentiment (P/E expansion or contraction) rather than underlying earnings growth.</p>
+
+<p>He then presents <b>five asset-allocation principles</b>: (1) risk and reward are positively related; (2) the actual riskiness of equities depends critically on the holding period &mdash; stocks are far less risky over 20-year horizons than over one-year horizons; (3) <b>dollar-cost averaging</b> (investing a fixed amount regularly) reduces the average cost per share because more shares are purchased when prices are low; (4) <b>rebalancing</b> restores target allocations and forces investors to sell high and buy low in a disciplined way; (5) distinguishing between one's <i>attitude</i> toward risk (willingness to bear volatility) and one's <i>capacity</i> for risk (ability to survive financially if the market falls 50%) is essential to building a portfolio one can actually hold through downturns.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Malkiel's dividend-discount framework for projecting returns has been criticized for assuming that the relationship between earnings growth and stock returns remains stable. <b>William Bernstein</b> and <b>John Bogle</b> have both noted that periods of rapid economic growth often coincide with low stock returns (the 20th-century experience of China, for example) because equity dilution from new issuance can offset aggregate earnings growth. The <b>equity risk premium</b> is also notoriously time-varying &mdash; during the late 1990s, leading economists argued it had narrowed to near zero, while after 2008 it expanded sharply.</p>
+  <p>Dollar-cost averaging, while psychologically helpful, is not superior to lump-sum investing when viewed purely as a strategy: research (including by Vanguard) shows that lump-sum investing outperforms DCA approximately two-thirds of the time because markets rise more often than they fall. DCA's real benefit is behavioral &mdash; it makes it easier for investors to get into the market and stay invested &mdash; not mathematical.</p>
+</details>
+
+<h2>Chapter 14: A Life-Cycle Guide to Investing</h2>
+
+<p>Malkiel argues that the appropriate investment strategy changes across the life cycle, primarily because one's <b>risk capacity</b> changes with age, income stability, and proximity to retirement. A 25-year-old with decades of earning power ahead can ride out a 50% market decline; a 65-year-old relying on portfolio withdrawals cannot. The chapter provides specific asset-allocation guidelines by age: investors in their 20s and early 30s should hold 70&ndash;80% equities; those in their 40s 55&ndash;65%; those in their 50s 45&ndash;55%; those in their 60s and beyond 30&ndash;40%, with the remainder in bonds and cash equivalents.</p>
+
+<p>Within equities, Malkiel recommends meaningful allocations to <b>international stocks</b> (the U.S. is only about 40% of world market capitalization) and especially to <b>emerging markets</b>, which grow faster than developed economies. He gives three guidelines for tailoring a life-cycle plan: first, specific goals require dedicated specific assets (saving for a house down payment in three years should not involve equities); second, match your portfolio's risk level to your genuine risk tolerance, not your theoretical tolerance; third, use tax-advantaged accounts (&mdash; 401(k), IRA, Roth IRA &mdash;) first, since tax-deferred compounding dramatically improves long-run wealth accumulation.</p>
+
+<p>The chapter also addresses <b>investors in or near retirement</b>. Malkiel recommends a "4% rule" as a starting withdrawal rate, adjusted upward by 2% per year to smooth spending. He cautions against withdrawing a fixed percentage of portfolio value each year, which produces highly variable spending as markets fluctuate. He also endorses <b>target-date funds</b> as a simple, low-cost option for investors who want automatic life-cycle allocation management without making ongoing decisions.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The conventional wisdom of reducing equity exposure with age has been challenged by <b>Zvi Bodie, Robert Merton, and William Samuelson</b>, who argue that human capital (the present value of future wages) is itself a bond-like asset for most workers. Young salaried workers already have substantial implicit "bond" exposure through their labor income, which implies they should hold <i>more</i> equities in their financial portfolios, not less. This "human capital" perspective inverts the standard life-cycle prescription for people with stable employment.</p>
+  <p>The 4% withdrawal rule, originally derived by <b>William Bengen</b> from historical U.S. data, has been questioned as too aggressive for current low-return, low-yield environments. <b>Wade Pfau</b> and others have argued that with current bond yields near historic lows and equity valuations elevated, a safer sustainable withdrawal rate might be closer to 3&ndash;3.5%. Malkiel's 2010 edition predates the prolonged low-yield environment of the 2010s, which has made this debate more urgent for retirees.</p>
+</details>
+
+<h2>Three Giant Steps Down Wall Street</h2>
+
+<p>In the book's concluding section, Malkiel translates all preceding analysis into a concrete, actionable investment program. <b>Step One</b> is to start saving immediately, maximize contributions to tax-advantaged retirement accounts (401(k), IRA, Roth IRA), and resist the temptation to delay because markets seem expensive or timing seems wrong. He demonstrates that small regular contributions (&mdash; as little as $23 per week &mdash;) compounded over a working life can build substantial retirement wealth, and that the cost of delaying is enormous due to <b>compound interest</b>.</p>
+
+<p><b>Step Two</b> is to build a globally diversified portfolio of low-cost index funds. Malkiel's recommended allocation includes a U.S. total-stock-market index fund, a developed-world (EAFE) international index, an emerging-markets index, a REIT index fund, and a bond index fund. The exact proportions should follow the life-cycle guidelines from Chapter 14, but the universal principle is to minimize costs: every dollar paid in management fees is a dollar permanently removed from compound growth. He reviews <b>exchange-traded funds (ETFs)</b> as an alternative to traditional index mutual funds, noting their slightly better tax efficiency and lower expense ratios, while warning that their intraday tradability can tempt investors toward harmful overtrading.</p>
+
+<p><b>Step Three</b> is to stay the course. Malkiel ends where he began: the single greatest enemy of investment returns is not market volatility but the investor's own behavior &mdash; panic selling in downturns, chasing performance in upturns, churning the portfolio in response to financial media. The index fund strategy works precisely because it removes the investor from the game of trying to outguess the market. The book closes with a simple mantra: <b>broad diversification, annual rebalancing, use index funds, and stay the course</b>. These four principles, consistently applied, have produced superior outcomes for millions of investors over four decades.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The strongest critique of Malkiel's final prescription is <b>sequence-of-returns risk</b> &mdash; the danger that a severe market decline in the first years of retirement can permanently impair a portfolio, even if long-run returns are positive. A simple total-market index fund held by a retiree who was 80% equities in 2007 would have lost half its value by early 2009 while also requiring withdrawals, leaving the portfolio in a deeply compromised state that decades of subsequent gains cannot fully repair. Critics argue that <i>risk-factor diversification</i> (adding value, momentum, and low-volatility tilts) or a <b>liability-matching</b> approach (matching bond duration to expected spending needs) provides better protection against this specific risk than a pure market-cap index strategy.</p>
+  <p>More broadly, the proliferation of index funds raises a <b>collective action problem</b> identified by <b>Jack Bogle himself</b> near the end of his life: if everyone indexes, no one is performing the price-discovery function that makes markets efficient in the first place. Research by <b>Sanford Grossman and Joseph Stiglitz</b> argues that a world of only passive investors is theoretically impossible &mdash; there must always be enough active investors to keep prices informative. This does not undermine Malkiel's advice for any individual investor, but it suggests that the strategy works partly because not everyone follows it.</p>
+</details>
+
+<h2 id="quiz-heading">Comprehension Quiz</h2>
+
+<details id="quiz-section" class="quiz-wrapper">
+  <summary class="quiz-toggle">Take the Quiz</summary>
+
+  <form id="quiz-form">
+
+    <div class="q-block">
+      <p class="q-label">1. According to Malkiel's forty-year comparison, how did $10,000 invested in an S&P 500 index fund in 1969 compare to the same amount in the average actively managed fund by 2010?</p>
+      <label><input type="radio" name="q1" value="a"> a) The index fund grew to $258,000; the managed fund to $463,000</label>
+      <label><input type="radio" name="q1" value="b"> b) Both grew to approximately the same amount</label>
+      <label><input type="radio" name="q1" value="c"> c) The index fund grew to $463,000; the managed fund to $258,000</label>
+      <label><input type="radio" name="q1" value="d"> d) The index fund grew to $350,000; the managed fund to $200,000</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">2. The "castle-in-the-air" theory, as Malkiel describes it, holds that stock prices are primarily driven by:</p>
+      <label><input type="radio" name="q2" value="a"> a) Discounted present value of future dividends</label>
+      <label><input type="radio" name="q2" value="b"> b) Earnings growth and competitive moats</label>
+      <label><input type="radio" name="q2" value="c"> c) Mass psychology and expectations about what others will pay</label>
+      <label><input type="radio" name="q2" value="d"> d) Central bank interest rate policy</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">3. What did Newton famously say after losing a fortune in the South Sea Bubble?</p>
+      <label><input type="radio" name="q3" value="a"> a) "Markets can remain irrational longer than you can remain solvent"</label>
+      <label><input type="radio" name="q3" value="b"> b) "I can calculate the motions of heavenly bodies, but not the madness of people"</label>
+      <label><input type="radio" name="q3" value="c"> c) "Buy when there is blood in the streets"</label>
+      <label><input type="radio" name="q3" value="d"> d) "The market is a voting machine in the short run and a weighing machine in the long run"</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">4. What was the "Tronics Boom" of the early 1960s?</p>
+      <label><input type="radio" name="q4" value="a"> a) A boom in transistor radio sales that drove consumer electronics companies to record profits</label>
+      <label><input type="radio" name="q4" value="b"> b) A speculative mania in which companies with electronics-sounding names commanded enormous P/E multiples regardless of their actual business</label>
+      <label><input type="radio" name="q4" value="c"> c) The early success of semiconductor companies that genuinely transformed the U.S. economy</label>
+      <label><input type="radio" name="q4" value="d"> d) A regulatory initiative that boosted stock prices of telecom companies</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">5. What was the ratio of buy to sell recommendations from analysts at large brokerage firms during the late 1990s Internet boom?</p>
+      <label><input type="radio" name="q5" value="a"> a) 5 to 1</label>
+      <label><input type="radio" name="q5" value="b"> b) 20 to 1</label>
+      <label><input type="radio" name="q5" value="c"> c) 100 to 1</label>
+      <label><input type="radio" name="q5" value="d"> d) 50 to 1</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">6. What does the random-walk hypothesis specifically claim about stock prices?</p>
+      <label><input type="radio" name="q6" value="a"> a) Stock prices follow predictable seasonal patterns</label>
+      <label><input type="radio" name="q6" value="b"> b) Successive price changes are statistically independent, so past prices cannot predict future prices</label>
+      <label><input type="radio" name="q6" value="c"> c) Stocks always revert to their intrinsic values within twelve months</label>
+      <label><input type="radio" name="q6" value="d"> d) Stock prices rise in the long run but fall unpredictably in the short run</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">7. Which of the following best describes what Malkiel found when "filter rules" (buying after a stock rises X% and selling after it falls X%) were tested?</p>
+      <label><input type="radio" name="q7" value="a"> a) Filter rules consistently beat a simple buy-and-hold strategy by 3&ndash;5% per year</label>
+      <label><input type="radio" name="q7" value="b"> b) Filter rules outperformed before 1990 but not after</label>
+      <label><input type="radio" name="q7" value="c"> c) Filter rules failed to beat buy-and-hold once transaction costs were included</label>
+      <label><input type="radio" name="q7" value="d"> d) Filter rules worked for individual stocks but not for broad market indices</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">8. Malkiel identifies five reasons why fundamental analysis fails to consistently beat the market. Which of the following is NOT one of them?</p>
+      <label><input type="radio" name="q8" value="a"> a) Random events affect stock prices in ways no analysis can anticipate</label>
+      <label><input type="radio" name="q8" value="b"> b) Analysts are too conservative with their earnings forecasts</label>
+      <label><input type="radio" name="q8" value="c"> c) The best analysts leave research for portfolio management or hedge funds</label>
+      <label><input type="radio" name="q8" value="d"> d) Conflicts of interest between research and investment banking bias recommendations toward buys</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">9. Harry Markowitz's key insight in Modern Portfolio Theory was that an investor should evaluate securities based on:</p>
+      <label><input type="radio" name="q9" value="a"> a) Each security's individual risk and return in isolation</label>
+      <label><input type="radio" name="q9" value="b"> b) How a security's returns co-vary with the rest of the portfolio, enabling diversification to reduce total risk</label>
+      <label><input type="radio" name="q9" value="c"> c) A security's beta coefficient relative to the S&P 500</label>
+      <label><input type="radio" name="q9" value="d"> d) The security's dividend yield relative to its P/E ratio</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">10. In the Capital Asset Pricing Model, what does "beta" measure?</p>
+      <label><input type="radio" name="q10" value="a"> a) A stock's dividend yield relative to its book value</label>
+      <label><input type="radio" name="q10" value="b"> b) A stock's total volatility, including both systematic and unsystematic risk</label>
+      <label><input type="radio" name="q10" value="c"> c) A stock's sensitivity to movements in the overall market</label>
+      <label><input type="radio" name="q10" value="d"> d) A stock's average annual return relative to Treasury bills</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">11. What is the "disposition effect" in behavioral finance?</p>
+      <label><input type="radio" name="q11" value="a"> a) The tendency to buy stocks that have recently risen in price</label>
+      <label><input type="radio" name="q11" value="b"> b) The tendency to hold losing stocks too long and sell winning stocks too soon</label>
+      <label><input type="radio" name="q11" value="c"> c) The tendency to concentrate a portfolio in familiar domestic stocks</label>
+      <label><input type="radio" name="q11" value="d"> d) The tendency to invest more aggressively after market gains</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">12. According to Malkiel, what does Kahneman and Tversky's prospect theory say about how people experience losses versus gains?</p>
+      <label><input type="radio" name="q12" value="a"> a"> People experience gains and losses with roughly equal emotional intensity</label>
+      <label><input type="radio" name="q12" value="b"> b) People feel gains about twice as intensely as equivalent losses</label>
+      <label><input type="radio" name="q12" value="c"> c) People feel losses about twice as intensely as equivalent gains</label>
+      <label><input type="radio" name="q12" value="d"> d) People are rational about small losses but irrational about large ones</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">13. Malkiel's response to the "size effect" anomaly (small-cap stocks earning higher returns) is that:</p>
+      <label><input type="radio" name="q13" value="a"> a) The effect proves the market is systematically inefficient</label>
+      <label><input type="radio" name="q13" value="b"> b) The higher returns may simply reflect higher risk, consistent with an efficient market, and are difficult to exploit after transaction costs</label>
+      <label><input type="radio" name="q13" value="c"> c) The effect is purely a U.S. phenomenon with no international evidence</label>
+      <label><input type="radio" name="q13" value="d"> d) Investors should always overweight small-cap index funds in their portfolios</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">14. What are TIPS, and why does Malkiel recommend them?</p>
+      <label><input type="radio" name="q14" value="a"> a"> Short-term money market instruments that protect against interest rate risk</label>
+      <label><input type="radio" name="q14" value="b"> b) Treasury Inflation-Protected Securities, whose principal adjusts with the CPI, making them a reliable real-return instrument</label>
+      <label><input type="radio" name="q14" value="c"> c) Tax-Indexed Portfolio Strategies, which minimize capital gains taxes in a bond portfolio</label>
+      <label><input type="radio" name="q14" value="d"> d) Total-Index Participation Shares, an early form of exchange-traded fund</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">15. According to Malkiel's framework, the long-run return from stocks can be estimated as:</p>
+      <label><input type="radio" name="q15" value="a"> a) The current P/E ratio divided by the 10-year bond yield</label>
+      <label><input type="radio" name="q15" value="b"> b) The initial dividend yield plus the long-run growth rate of earnings and dividends</label>
+      <label><input type="radio" name="q15" value="c"> c) The historical average return of the S&P 500 minus current inflation</label>
+      <label><input type="radio" name="q15" value="d"> d) Beta times the equity risk premium minus the risk-free rate</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">16. What does Malkiel mean by "dollar-cost averaging"?</p>
+      <label><input type="radio" name="q16" value="a"> a) Investing a lump sum when the market drops below its 200-day moving average</label>
+      <label><input type="radio" name="q16" value="b"> b) Investing a fixed dollar amount at regular intervals regardless of market conditions</label>
+      <label><input type="radio" name="q16" value="c"> c) Buying only stocks priced under $10 per share to minimize per-share cost</label>
+      <label><input type="radio" name="q16" value="d"> d) Averaging your cost basis by buying equal numbers of shares of each stock in an index</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">17. What does the "Nifty Fifty" refer to in the context of 1970s stock market history?</p>
+      <label><input type="radio" name="q17" value="a"> a) The fifty largest companies in the S&P 500 by market capitalization</label>
+      <label><input type="radio" name="q17" value="b"> b) Fifty blue-chip growth stocks considered so excellent that any P/E ratio was justified; many crashed 60&ndash;90% when growth disappointed</label>
+      <label><input type="radio" name="q17" value="c"> c) Fifty mutual funds that beat the market consistently in the 1960s</label>
+      <label><input type="radio" name="q17" value="d"> d) Fifty technology companies that survived the 1970s energy crisis</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">18. What does "unsystematic risk" mean in Malkiel's framework, and how is it treated?</p>
+      <label><input type="radio" name="q18" value="a"> a) Risk from macroeconomic factors like recessions; it can be reduced by holding bonds</label>
+      <label><input type="radio" name="q18" value="b"> b) Risk specific to an individual company or industry; it can be largely eliminated through diversification and is not rewarded by the market</label>
+      <label><input type="radio" name="q18" value="c"> c) The portion of a stock's return explained by its beta; it must be accepted for adequate return</label>
+      <label><input type="radio" name="q18" value="d"> d) Risk that cannot be measured because it arises from unpredictable events</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">19. Why does Malkiel argue that gold is a poor long-term core investment?</p>
+      <label><input type="radio" name="q19" value="a"> a) Gold prices are controlled by central banks and cannot rise independently</label>
+      <label><input type="radio" name="q19" value="b"> b) Gold pays no dividend or coupon, and its very long-run real return has been close to zero</label>
+      <label><input type="radio" name="q19" value="c"> c) Gold correlates too closely with equities to provide any diversification benefit</label>
+      <label><input type="radio" name="q19" value="d"> d) Gold has high storage and insurance costs that wipe out all gains</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">20. How does Malkiel recommend retirees determine their annual withdrawal from an investment portfolio?</p>
+      <label><input type="radio" name="q20" value="a"> a) Withdraw whatever the portfolio earns in dividends and interest each year, never touching principal</label>
+      <label><input type="radio" name="q20" value="b"> b) Withdraw 10% of portfolio value each year to avoid outliving the portfolio</label>
+      <label><input type="radio" name="q20" value="c"> c) Start with a 4% withdrawal rate and let the amount grow by approximately 2% per year to smooth spending</label>
+      <label><input type="radio" name="q20" value="d"> d) Withdraw a fixed percentage of the portfolio's current value each year, adjusting fully for market changes</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">21. In the four-era framework of U.S. financial market returns (1946&ndash;2009), what primarily drove the spectacular returns of Era 3 (1982&ndash;2000)?</p>
+      <label><input type="radio" name="q21" value="a"> a) Rapid earnings growth from the technology revolution alone</label>
+      <label><input type="radio" name="q21" value="b"> b) Disinflation and the expansion of P/E multiples from single digits to 30+</label>
+      <label><input type="radio" name="q21" value="c"> c) Strong dividend growth as companies paid out more cash to shareholders</label>
+      <label><input type="radio" name="q21" value="d"> d) Sustained GDP growth of 5% per year that directly translated into stock returns</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">22. The Fama-French three-factor model adds which two factors to the standard beta of CAPM?</p>
+      <label><input type="radio" name="q22" value="a"> a) Dividend yield and earnings momentum</label>
+      <label><input type="radio" name="q22" value="b"> b) Company size (small vs. large cap) and value (low vs. high price-to-book ratio)</label>
+      <label><input type="radio" name="q22" value="c"> c) Interest rate sensitivity and currency exposure</label>
+      <label><input type="radio" name="q22" value="d"> d) Analyst consensus and trading volume</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">23. What does Malkiel identify as the "free lunch" of investing?</p>
+      <label><input type="radio" name="q23" value="a"> a) Buying Treasury bonds, which offer guaranteed returns with no risk</label>
+      <label><input type="radio" name="q23" value="b"> b) Diversification, which can reduce portfolio risk without necessarily reducing expected return</label>
+      <label><input type="radio" name="q23" value="c"> c) Index investing, which produces returns 2% above the average managed fund every year</label>
+      <label><input type="radio" name="q23" value="d"> d) Tax-loss harvesting, which converts market losses into tax savings</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">24. According to Malkiel, what is the primary reason that most actively managed mutual funds underperform index funds over long periods?</p>
+      <label><input type="radio" name="q24" value="a"> a"> Fund managers are generally less intelligent than the average investor</label>
+      <label><input type="radio" name="q24" value="b"> b) Active funds are required by regulation to hold suboptimal positions</label>
+      <label><input type="radio" name="q24" value="c"> c) High expense ratios, trading costs, and taxes compound over time to overwhelm any stock-selection skill</label>
+      <label><input type="radio" name="q24" value="d"> d) Active managers are prohibited from investing in the most profitable sectors</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">25. What does Malkiel recommend as a simple, concrete portfolio for a typical investor, according to the "Three Giant Steps" conclusion?</p>
+      <label><input type="radio" name="q25" value="a"> a) Equal allocations to individual stocks selected by a fee-only financial advisor</label>
+      <label><input type="radio" name="q25" value="b"> b) A globally diversified mix of low-cost index funds covering U.S. stocks, international stocks, emerging markets, REITs, and bonds, with proportions adjusted by age</label>
+      <label><input type="radio" name="q25" value="c"> c) A portfolio of 50% in a single S&P 500 index fund and 50% in Treasury bonds at all ages</label>
+      <label><input type="radio" name="q25" value="d"> d) An actively managed balanced fund that automatically adjusts its equity/bond mix</label>
+    </div>
+
+    <button type="button" id="score-btn" onclick="scoreQuiz()">Score My Answers</button>
+
+    <div id="quiz-result" style="display:none;">
+      <p id="score-text"></p>
+      <div id="answer-review"></div>
+    </div>
+
+  </form>
+</details>
+
+<script>
+(function() {
+  const answers = {
+    q1: { correct: "c", explain: "The index fund grew to $463,000 while the average actively managed fund grew to only $258,000 &mdash; a gap of over $205,000 driven by compounding fees and trading costs." },
+    q2: { correct: "c", explain: "Keynes's castle-in-the-air theory holds that prices are driven by mass psychology and by investors' attempts to anticipate what other investors will pay, not by intrinsic value." },
+    q3: { correct: "b", explain: "Newton is famously quoted as saying he could calculate celestial mechanics but not the madness of people after losing a large fortune in the South Sea Bubble." },
+    q4: { correct: "b", explain: "The Tronics Boom was a speculative mania in which investors bid up any company whose name sounded like electronics technology, regardless of actual business or earnings." },
+    q5: { correct: "c", explain: "During the late 1990s, the ratio of buy to sell recommendations reached 100 to 1 at major brokerage firms, reflecting the corrupting influence of investment banking conflicts of interest." },
+    q6: { correct: "b", explain: "The random-walk hypothesis holds that successive price changes are statistically independent &mdash; knowing past price movements tells you nothing useful about future ones." },
+    q7: { correct: "c", explain: "Filter rules showed no ability to beat a simple buy-and-hold strategy once realistic transaction costs were deducted, consistent with the random-walk hypothesis." },
+    q8: { correct: "b", explain: "Being overly conservative is not one of Malkiel's five reasons. The reasons are: random events, creative accounting, analyst errors, talent drain to hedge funds, and investment banking conflicts of interest." },
+    q9: { correct: "b", explain: "Markowitz's central insight was that portfolio risk depends on the covariances between securities, not just their individual volatilities, enabling diversification to reduce total risk without sacrificing expected return." },
+    q10: { correct: "c", explain: "Beta measures how sensitively a stock moves relative to the overall market. A beta of 1.5 means the stock rises or falls 50% more than the market on average." },
+    q11: { correct: "b", explain: "The disposition effect is the documented tendency for investors to hold losing positions too long (waiting to break even) and sell winning positions too early (locking in gains), which is suboptimal both economically and for tax purposes." },
+    q12: { correct: "c", explain: "Kahneman and Tversky's prospect theory found that people feel the pain of losses approximately twice as intensely as the pleasure of equivalent gains, making loss aversion a dominant force in investor decision-making." },
+    q13: { correct: "b", explain: "Malkiel argues that the higher returns on small-cap stocks may reflect higher risk (smaller companies are more vulnerable to failure) rather than market inefficiency, and that after transaction costs the anomaly is difficult to exploit." },
+    q14: { correct: "b", explain: "TIPS are Treasury Inflation-Protected Securities whose principal value is adjusted with the Consumer Price Index, guaranteeing a real (inflation-adjusted) rate of return and making them valuable for investors concerned about inflation eroding purchasing power." },
+    q15: { correct: "b", explain: "Malkiel's fundamental formula for long-run stock returns is the initial dividend yield plus the long-run growth rate of earnings and dividends, which tracks nominal GDP growth over time." },
+    q16: { correct: "b", explain: "Dollar-cost averaging means investing a fixed dollar amount at regular intervals regardless of market conditions. It results in buying more shares when prices are low and fewer when prices are high, lowering the average cost per share." },
+    q17: { correct: "b", explain: "The Nifty Fifty were a group of blue-chip growth stocks in the early 1970s considered so certain to continue growing that any price was justified. Many fell 60&ndash;90% when their growth rates disappointed." },
+    q18: { correct: "b", explain: "Unsystematic risk is company-specific or industry-specific risk that can be eliminated by diversifying across many securities. Since it can be removed at no cost, the market does not reward investors for bearing it." },
+    q19: { correct: "b", explain: "Gold generates no income (no dividends or coupons), and its very long-run real return is approximately zero. Malkiel views it as at most a small inflation hedge, not a core portfolio holding." },
+    q20: { correct: "c", explain: "Malkiel recommends starting with a 4% withdrawal rate and increasing the annual withdrawal by about 2% per year. This smooths spending over time rather than varying wildly with portfolio value each year." },
+    q21: { correct: "b", explain: "Era 3 (1982&ndash;2000) produced spectacular returns primarily because disinflation caused P/E multiples to expand dramatically from single digits to over 30, adding a valuation windfall on top of normal earnings growth." },
+    q22: { correct: "b", explain: "The Fama-French three-factor model adds a size factor (small stocks vs. large stocks) and a value factor (high book-to-market vs. low book-to-market) to standard market beta to better explain cross-sectional return differences." },
+    q23: { correct: "b", explain: "Malkiel calls diversification the 'free lunch' of investing because combining imperfectly correlated assets reduces portfolio risk without necessarily reducing expected return &mdash; a genuine improvement in the risk/return tradeoff." },
+    q24: { correct: "c", explain: "Malkiel argues that the primary drag on actively managed fund performance is the compounding effect of high expense ratios, trading costs, and tax-inefficient portfolio turnover, which over decades overcome any stock-selection advantage." },
+    q25: { correct: "b", explain: "Malkiel's Three Giant Steps concludes with a recommendation for a globally diversified portfolio of low-cost index funds covering U.S. stocks, international developed-market stocks, emerging markets, REITs, and bonds, with allocations adjusted by age following life-cycle principles." },
+  };
+
+  window.scoreQuiz = function() {
+    const form = document.getElementById("quiz-form");
+    let correct = 0;
+    const total = Object.keys(answers).length;
+    let reviewHTML = "";
+
+    for (let i = 1; i <= total; i++) {
+      const key = "q" + i;
+      const selected = form.elements[key] ? form.elements[key].value : "";
+      const isCorrect = selected === answers[key].correct;
+      if (isCorrect) correct++;
+
+      const status = !selected ? "wrong" : (isCorrect ? "correct" : "wrong");
+      const icon = isCorrect ? "\u2705" : "\u274C";
+      const yourAnswer = selected ? selected.toUpperCase() : "No answer";
+      const correctAnswer = answers[key].correct.toUpperCase();
+
+      reviewHTML += '<div class="review-item ' + status + '">';
+      reviewHTML += '<div class="ri-q">' + icon + " Question " + i + "</div>";
+      reviewHTML += '<div class="ri-detail">';
+      if (!isCorrect) {
+        reviewHTML += "Your answer: " + yourAnswer + " &mdash; Correct answer: " + correctAnswer + "<br>";
+      }
+      reviewHTML += answers[key].explain;
+      reviewHTML += "</div></div>";
+    }
+
+    const pct = Math.round((correct / total) * 100);
+    let grade;
+    if (pct === 100) grade = "Perfect score!";
+    else if (pct >= 80) grade = "Great understanding!";
+    else if (pct >= 60) grade = "Good, but review the summaries above for the ones you missed.";
+    else grade = "Consider re-reading the summaries above and trying again.";
+
+    document.getElementById("score-text").textContent = correct + " / " + total + " (" + pct + "%) \u2014 " + grade;
+    document.getElementById("answer-review").innerHTML = reviewHTML;
+    document.getElementById("quiz-result").style.display = "block";
+    document.getElementById("quiz-result").scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+})();
+</script>
+
+</div><!-- .content -->
+
+</body>
+</html>

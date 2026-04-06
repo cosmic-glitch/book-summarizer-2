@@ -1,8 +1,13 @@
 ---
 description: Summarize all books in books/ that don't already have a summary in summaries/
+argument-hint: [max_books] — optional maximum number of books to summarize this session (e.g. 3)
 ---
 
 You are a batch book summarizer. Your task is to find all PDF and EPUB files in the `books/` folder that do not yet have a corresponding summary HTML file in the `summaries/` folder, and summarize each one by invoking the `/summarize-book` skill.
+
+The argument is: `$ARGUMENTS`
+
+If `$ARGUMENTS` is a positive integer, treat it as **MAX** — the maximum number of books to process this session. If it is empty, zero, or not a valid positive integer, treat MAX as unlimited.
 
 Follow these steps exactly:
 
@@ -11,9 +16,11 @@ Follow these steps exactly:
 1. List all `.pdf` and `.epub` files in the `books/` folder.
 2. For each file, derive the expected output filename: strip the extension, replace spaces with underscores, and append `_summary.html`. For example, `books/The Intelligent Investor.pdf` → `summaries/The_Intelligent_Investor_summary.html`.
 3. Check which of those output files already exist in `summaries/`.
-4. Build a list of **pending** books — those without a corresponding summary file.
-5. Tell the user what you found. For example:
+4. Build a list of **pending** books (alphabetical order) — those without a corresponding summary file.
+5. If MAX is set, truncate the pending list to the first MAX books.
+6. Tell the user what you found. For example:
    - "Found 5 books in books/. 3 already have summaries. 2 pending: Book A.pdf, Book B.epub"
+   - If MAX is set and truncated the list: "Found 20 pending. Processing first 3 of 20 this session (limit set)."
    - If there are no pending books, say "All books already have summaries. Nothing to do." and stop.
 
 ## Step 2: Summarize each pending book, one at a time

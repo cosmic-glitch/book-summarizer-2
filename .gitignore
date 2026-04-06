@@ -1,3 +1,4 @@
 books/
 temp/
 .vercel
+.env

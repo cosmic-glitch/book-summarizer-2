@@ -9,9 +9,10 @@ A book summarizer that converts PDF and EPUB files into self-contained HTML summ
 ## Key Commands
 
 - `/summarize-book <filename>` — Summarize a single book from `books/` into `summaries/`
-- `/summarize-all-pending` — Find books in `books/` without summaries and process them sequentially (also fetches covers)
+- `/summarize-all-pending [max_books]` — Find books in `books/` without summaries and process them sequentially (also fetches covers). Optional numeric argument caps the number of books processed in one session (e.g. `/summarize-all-pending 5`).
 - `/fetch-cover <stem>` — Fetch a cover image for a book from Open Library (e.g., `/fetch-cover The_Intelligent_Investor`). Pass `all` to fetch all missing covers. Uses visual inspection to ensure covers are English, high-quality, and actually book covers.
 - `./generate_index.sh` — Regenerate `summaries/index.html` from all existing summary files. Run this after adding new summaries.
+- `python generate_audio.py <stem>` — Generate an MP3 audio version of a summary using OpenAI TTS (e.g. `python generate_audio.py Factfulness`). Requires `OPENAI_API_KEY` (stored in `.env`).
 
 ## Architecture
 
@@ -20,6 +21,8 @@ A book summarizer that converts PDF and EPUB files into self-contained HTML summ
 - **`temp/`** — Intermediate extraction files per book (gitignored, kept for traceability)
 - **`.claude/commands/`** — Skill definitions that drive the summarization workflow
 - **`generate_index.sh`** — Parses title/author/subtitle from each summary HTML to build the index page
+- **`generate_audio.py`** — Generates MP3 audio summaries via OpenAI TTS. Output goes to `summaries/audio/<stem>.mp3`
+- **`.env`** — Local secrets (gitignored). Contains `OPENAI_API_KEY`
 
 ## How Summarization Works
 

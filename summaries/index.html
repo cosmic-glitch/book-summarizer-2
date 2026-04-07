@@ -44,6 +44,7 @@
       .book-list { grid-template-columns: repeat(2, 1fr); }
     }
     .book-card {
+      position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -55,6 +56,14 @@
     }
     .book-card:hover {
       background: #f0ece4;
+    }
+    .audio-badge {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      font-size: 1em;
+      line-height: 1;
+      pointer-events: none;
     }
     .book-cover {
       height: 220px;
@@ -156,6 +165,7 @@
       <span class="book-title">Power and Progress</span>
     </a>
     <a href="Sapiens_summary.html" class="book-card">
+      <div class="audio-badge">&#127911;</div>
       <img src="covers/Sapiens.jpg" alt="" class="book-cover" loading="lazy">
       <span class="book-title">Sapiens</span>
     </a>
@@ -212,6 +222,7 @@
       <span class="book-title">Thinking, Fast and Slow</span>
     </a>
     <a href="Why_Everyone_(Else)_Is_a_Hypocrite_summary.html" class="book-card">
+      <div class="audio-badge">&#127911;</div>
       <img src="covers/Why_Everyone_(Else)_Is_a_Hypocrite.jpg" alt="" class="book-cover" loading="lazy">
       <span class="book-title">Why Everyone (Else) Is a Hypocrite</span>
     </a>

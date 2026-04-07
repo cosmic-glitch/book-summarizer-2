@@ -14,12 +14,20 @@ for f in "$SUMMARIES_DIR"/*_summary.html; do
   filename="$(basename "$f")"
   title="$(grep -m1 '<h1>' "$f" | sed 's/<[^>]*>//g' | sed 's/^[[:space:]]*//' | sed 's/[[:space:]]*$//')"
 
-  # Check for cover image
+  # Check for cover image and audio
   cover_stem="${filename%_summary.html}"
   cover_file="$SUMMARIES_DIR/covers/${cover_stem}.jpg"
+  audio_badge=""
+  if [ -f "$SUMMARIES_DIR/audio/${cover_stem}.mp3" ]; then
+    audio_badge="      <div class=\"audio-badge\">&#127911;</div>"
+  fi
 
   # Build the card HTML
   entry="    <a href=\"${filename}\" class=\"book-card\">"
+  if [ -n "$audio_badge" ]; then
+    entry="$entry
+$audio_badge"
+  fi
   if [ -f "$cover_file" ]; then
     entry="$entry
       <img src=\"covers/${cover_stem}.jpg\" alt=\"\" class=\"book-cover\" loading=\"lazy\">"
@@ -79,6 +87,7 @@ cat > "$OUTPUT" << HTMLEOF
       .book-list { grid-template-columns: repeat(2, 1fr); }
     }
     .book-card {
+      position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -90,6 +99,14 @@ cat > "$OUTPUT" << HTMLEOF
     }
     .book-card:hover {
       background: #f0ece4;
+    }
+    .audio-badge {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      font-size: 1em;
+      line-height: 1;
+      pointer-events: none;
     }
     .book-cover {
       height: 220px;

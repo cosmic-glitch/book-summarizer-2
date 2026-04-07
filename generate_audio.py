@@ -3,9 +3,12 @@
 generate_audio.py — Generate an MP3 audio summary using OpenAI TTS.
 
 Usage:
-  python generate_audio.py <stem>
+  python generate_audio.py <stem>              # gpt-4o-mini-tts (default)
+  python generate_audio.py <stem> --legacy     # tts-1-hd (no instruction steering)
+
+Examples:
   python generate_audio.py Factfulness
-  python generate_audio.py The_Intelligent_Investor
+  python generate_audio.py The_Intelligent_Investor --legacy
 
 Reads summaries/<stem>_summary.html, extracts readable text (skips nav and
 quiz), and saves an MP3 to summaries/audio/<stem>.mp3.
@@ -24,9 +27,19 @@ from pathlib import Path
 
 # ── OpenAI TTS settings ───────────────────────────────────────────────────────
 
-MODEL = "tts-1-hd"   # higher quality; good for long-form listening
+MODEL_DEFAULT = "gpt-4o-mini-tts"   # steerable; supports instructions parameter
+MODEL_LEGACY  = "tts-1-hd"          # fixed-style; no instruction steering
+
 VOICE = "nova"       # clear, pleasant, works well for non-fiction narration
 MAX_CHUNK = 4096     # OpenAI TTS character limit per request
+
+# Narration style instructions for gpt-4o-mini-tts (ignored by tts-1-hd)
+INSTRUCTIONS = (
+    "You are narrating an audiobook summary of a non-fiction book. "
+    "Speak with energy and genuine enthusiasm, as if sharing ideas you find exciting. "
+    "Vary your pacing: slow down to let key insights land, pick up speed on transitions. "
+    "Sound warm and conversational — engaging, not stiff or robotic."
+)
 
 
 # ── HTML parsing ──────────────────────────────────────────────────────────────
@@ -174,32 +187,37 @@ def chunk_text(text: str, max_chars: int = MAX_CHUNK) -> list[str]:
 
 # ── Audio generation ──────────────────────────────────────────────────────────
 
-def generate_audio(chunks: list[str], output_path: Path) -> None:
+def generate_audio(chunks: list[str], output_path: Path, model: str) -> None:
     """Call OpenAI TTS for each chunk and write concatenated MP3."""
     from openai import OpenAI
     client = OpenAI()
 
-    print(f"  Generating audio: {len(chunks)} chunk(s), model={MODEL}, voice={VOICE}")
+    use_instructions = model == MODEL_DEFAULT
+    print(f"  Generating audio: {len(chunks)} chunk(s), model={model}, voice={VOICE}")
+    if use_instructions:
+        print(f"  Instructions: enabled")
     with open(output_path, "wb") as f:
         for i, chunk in enumerate(chunks, 1):
             print(f"  Chunk {i}/{len(chunks)} ({len(chunk):,} chars)...")
-            response = client.audio.speech.create(
-                model=MODEL,
-                voice=VOICE,
-                input=chunk,
-            )
+            kwargs = dict(model=model, voice=VOICE, input=chunk)
+            if use_instructions:
+                kwargs["instructions"] = INSTRUCTIONS
+            response = client.audio.speech.create(**kwargs)
             f.write(response.content)
 
 
 # ── Entry point ───────────────────────────────────────────────────────────────
 
 def main() -> None:
-    if len(sys.argv) != 2:
-        print("Usage: python generate_audio.py <stem>")
-        print("Example: python generate_audio.py Factfulness")
-        sys.exit(1)
+    import argparse
+    parser = argparse.ArgumentParser(description="Generate an MP3 audio summary using OpenAI TTS.")
+    parser.add_argument("stem", help="Book stem, e.g. Factfulness or The_Intelligent_Investor")
+    parser.add_argument("--legacy", action="store_true",
+                        help=f"Use {MODEL_LEGACY} instead of the default {MODEL_DEFAULT}")
+    args = parser.parse_args()
 
-    stem = sys.argv[1]
+    model = MODEL_LEGACY if args.legacy else MODEL_DEFAULT
+    stem = args.stem
     # Allow passing the full filename or stem
     stem = re.sub(r"_summary\.html$", "", stem)
     stem = re.sub(r"\.html$", "", stem)
@@ -231,7 +249,7 @@ def main() -> None:
     print(f"Script: {len(script):,} characters")
 
     chunks = chunk_text(script)
-    generate_audio(chunks, output_path)
+    generate_audio(chunks, output_path, model)
 
     size_kb = output_path.stat().st_size // 1024
     print(f"Done! Saved {size_kb:,} KB → {output_path}")

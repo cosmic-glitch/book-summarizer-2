@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Structure of Scientific Revolutions — Book Summary Pro</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      line-height: 1.7;
+      color: #222;
+      background: #fafafa;
+    }
+    .app-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #2c2c2c;
+      padding: 14px 24px;
+    }
+    .content {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 32px 20px 40px;
+    }
+    .app-nav .app-name {
+      font-size: 1.05em;
+      font-weight: bold;
+      color: #e8e0d0;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+    }
+    .app-nav .app-name:hover {
+      color: #d4a843;
+    }
+    .app-nav .back-link {
+      font-size: 0.9em;
+      color: #999;
+      text-decoration: none;
+    }
+    .app-nav .back-link:hover {
+      color: #d4a843;
+    }
+    h1 {
+      font-size: 1.8em;
+      border-bottom: 2px solid #333;
+      padding-bottom: 10px;
+      margin-bottom: 5px;
+    }
+    .subtitle {
+      font-size: 1.1em;
+      color: #444;
+      margin: 2px 0 0 0;
+      font-style: italic;
+    }
+    .author {
+      font-style: italic;
+      color: #777;
+      font-size: 0.95em;
+      margin-bottom: 40px;
+    }
+    h2 {
+      font-size: 1.3em;
+      margin-top: 48px;
+      color: #1a1a1a;
+      border-left: 4px solid #555;
+      padding-left: 12px;
+    }
+    p {
+      margin-bottom: 14px;
+      text-align: justify;
+    }
+    details.counter {
+      background: #f0ece4;
+      border-left: 4px solid #b8860b;
+      padding: 14px 18px;
+      margin: 20px 0 28px 0;
+      border-radius: 0 6px 6px 0;
+    }
+    details.counter summary {
+      font-weight: bold;
+      font-size: 0.95em;
+      color: #8b6914;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    details.counter summary::-webkit-details-marker {
+      display: none;
+    }
+    details.counter summary::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    details.counter[open] summary::before {
+      transform: rotate(90deg);
+    }
+    details.counter p {
+      margin-top: 12px;
+      margin-bottom: 10px;
+      color: #3a3a3a;
+    }
+    details.counter p:last-child {
+      margin-bottom: 0;
+    }
+    .quiz-wrapper {
+      margin-top: 48px;
+      background: #f5f5f0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 16px 20px;
+    }
+    .quiz-toggle {
+      font-weight: bold;
+      font-size: 1.05em;
+      cursor: pointer;
+      color: #2a5a2a;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .quiz-toggle::-webkit-details-marker { display: none; }
+    .quiz-toggle::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    .quiz-wrapper[open] .quiz-toggle::before {
+      transform: rotate(90deg);
+    }
+    .q-block {
+      margin: 24px 0;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    .q-block:last-of-type { border-bottom: none; }
+    .q-label {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .q-block label {
+      display: block;
+      padding: 6px 10px;
+      margin: 4px 0;
+      border-radius: 4px;
+      cursor: pointer;
+      line-height: 1.5;
+    }
+    .q-block label:hover { background: #e8e8e0; }
+    #score-btn {
+      display: block;
+      margin: 28px auto 0;
+      padding: 12px 32px;
+      font-family: Georgia, serif;
+      font-size: 1em;
+      background: #2a5a2a;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #score-btn:hover { background: #1e441e; }
+    #quiz-result {
+      margin-top: 24px;
+      padding: 18px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    #score-text {
+      font-size: 1.15em;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .review-item {
+      margin-bottom: 14px;
+      padding: 10px 12px;
+      border-radius: 4px;
+    }
+    .review-item.correct { background: #e6f4e6; }
+    .review-item.wrong { background: #fce8e8; }
+    .review-item .ri-q { font-weight: bold; margin-bottom: 4px; }
+    .review-item .ri-detail { font-size: 0.93em; color: #444; }
+  </style>
+</head>
+<body>
+
+<nav class="app-nav">
+  <a href="index.html" class="app-name">Book Summary Pro</a>
+  <a href="index.html" class="back-link">&larr; All Books</a>
+</nav>
+
+<div class="content">
+
+<h1>The Structure of Scientific Revolutions</h1>
+
+<p class="author">Kuhn, Thomas S.</p>
+
+<h2>Introductory Essay by Ian Hacking</h2>
+
+<p>The Introductory Essay by Ian Hacking sets the stage for understanding <b>The Structure of Scientific Revolutions</b> as a passionate and transformative work about how science progresses. Hacking emphasizes Kuhn’s original focus on the physical sciences of the mid-20th century and the radical shifts that have since occurred in fields like biotechnology and information science, which affects the extent to which the book’s theses apply today.</p><p>Key concepts introduced include the central notions of <b>normal science</b>, <b>puzzle-solving</b>, <b>paradigm</b>, <b>anomaly</b>, <b>crisis</b>, and scientific <b>revolutions</b>. Kuhn’s famous idea of <b>incommensurability</b>, meaning the fundamental incompatibility between successive paradigms that disrupts straightforward comparison and rational theory choice, is explained here. Hacking stresses Kuhn's nuanced view that progress in science is not simply linear toward truth but a replacement of less adequate worldviews with better ones. The sequence Kuhn proposed—normal science with a paradigm, encountering anomaly that leads to crisis and ends in revolution and a new paradigm—is described as both insightful and subject to controversy.</p><p>The essay discusses the historical context of Kuhn’s work, its initial reception, and its influence on the philosophy and sociology of science. It also cautions readers to carefully interpret Kuhn’s claims, especially given contemporary shifts in scientific fields and the popularization (and debasement) of terms like 'paradigm shift' in public discourse.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+<p>While Hacking presents Kuhn’s work as groundbreaking, some scholars argue that the book overemphasizes revolutions at the expense of cumulative scientific progress. Critics point out that Kuhn’s focus on physics may limit the applicability of his model to other sciences such as biology or social sciences, where paradigms are less clearly defined and change more continuously. Others caution that Kuhn’s notions of incommensurability and paradigm shifts can lead to a form of relativism that undermines rational theory choice and the objective basis of science. There is also debate about Kuhn's sidelining of experimental and instrumental novelty, emphasizing theory over practice. Finally, the popular use of 'paradigm shift' detached from Kuhn’s original meaning invites misinterpretations and superficial applications.</p>
+</details>
+
+<h2>Preface</h2>
+
+<p>The Preface offers a personal account by Kuhn on how exposure to the history and philosophy of science led him from theoretical physics to an in-depth study of scientific development. His surprise at historical scientific theories undermining traditional conceptions of science prompted a career shift and motivated the project culminating in this book. Kuhn acknowledges the interdisciplinary influences, ranging from psychology and philosophy to sociology, which shaped his approach.</p><p>He emphasizes the schematic and tentative nature of this essay, noting limitations in scope (mostly physical sciences), and anticipates a fuller treatment in a future expanded work. Key methodological concerns include the role of social, intellectual, and technological factors in scientific change, which are recognized but not fully explored here due to space constraints.</p><p>The preface highlights the collaborative and evolving nature of the project, thanking mentors, colleagues, students, and family for their support and intellectual contributions. It situates the work both as a historical study and a philosophical investigation into the nature of scientific knowledge, with the aim of urging a conceptual reorientation towards understanding scientific development.</p>
+
+<h2>I: Introduction: A Role for History</h2>
+
+<p>Chapter I, “Introduction: A Role for History,” critically examines the traditional, textbook-based image of science as linear accumulation of facts and theories. Kuhn argues that this portrayal misleads by ignoring the historical integrity and internal coherence of earlier scientific views, which were themselves scientific within their own contexts.</p><p>He points out the insufficiency of methodological prescriptions alone to decide among competing scientific views and stresses the arbitrary elements—personal, historical, and accidental—that influence scientific development. Scientists operate within frameworks that shape what questions are deemed legitimate and what techniques applicable, and these frameworks are deeply taught and institutionalized.</p><p>Kuhn introduces <b>normal science</b> as a tradition-bound, puzzle-solving activity that assumes the community’s current worldview is correct, suppressing fundamental novelties. When anomalies accumulate and resist resolution, the community faces <b>scientific revolutions</b>, involving wholesale theory replacement and dramatic shifts in standards, problems, and imagination.</p><p>The chapter foreshadows later analyses of the dynamics of normal science and revolutionary change and addresses concerns about mixing descriptive, sociological, historical, and normative philosophical claims, acknowledging the complexity and interconnectedness of these perspectives in scientific practice.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+<p>Some historians argue that portraying science as dominated by paradigms and revolutions underestimates the variety and messiness of scientific practice, including incremental changes, multiple coexisting traditions, and the role of social, economic, and political factors in shaping science. Others suggest that Kuhn’s emphasis on arbitrariness and the subjective element risks undermining the aim of science to objectively represent nature, and that the rigid distinction between normal and revolutionary science oversimplifies the fluid and continuous nature of many scientific advances. Moreover, the blending of historical description with normative claims can conflate what science is and what it ought to be, making Kuhn’s historiography less clear.</p>
+</details>
+
+<h2>II: The Route to Normal Science</h2>
+
+<p>Chapter II, “The Route to Normal Science,” articulates the concept of <b>normal science</b> as research conducted within the bounds of an accepted scientific achievement, or <b>paradigm</b>. The paradigm is characterized by two essential features: it is unprecedented enough to attract lasting adherents and is open-ended, providing a set of problems for further inquiry. This concept explains how mature scientific fields exhibit consensus and shared standards that define legitimate problems and methods.</p><p>Kuhn contrasts this with pre-paradigm periods, exemplified by the history of physical optics and electrical research before Newton and Franklin, marked by competing, incompatible schools with no consensus paradigm. During these periods, scientific inquiry is more dispersed, and the compilation of facts lacks coherence, resembling a natural history more than science proper.</p><p>The emergence of a paradigm brings a sharp narrowing and institutionalization of a scientific community, along with increased specialization, journal publication, and professional communication. Paradigms are thus crucial to the development of science as a coherent enterprise, enabling focused, cumulative research, whereas pre-paradigm periods are characterized by multiplicity, competition, and lack of agreed frameworks.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+<p>Some critics argue that Kuhn’s emphasis on paradigms and stages underplays the role of ongoing diversity and heterogeneity in science. They question the neat dichotomy between pre-paradigm and paradigm phases, noting that multiple schools or theories often coexist and interact even in mature sciences. Additionally, the paradigm concept risks obscuring sociopolitical influences on scientific consensus and the role of external factors. Others note that Kuhn’s use of paradigms as defining scientific communities can be sociologically difficult to operationalize, challenging the clarity and usefulness of the concept without more precise empirical elaboration.</p>
+</details>
+
+<h2>III: The Nature of Normal Science</h2>
+
+<p>Chapter III, “The Nature of Normal Science,” explores what scientists do when working under an accepted <b>paradigm</b>. Kuhn emphasizes that paradigms are not static patterns to be replicated but starting points for further articulation, extension, and detailed problem-solving. A new paradigm often begins as an incomplete set of successes, a promise to resolve acute problems, which normal science works to actualize.</p><p>Normal science largely consists of three problem classes: precise determination of significant facts, comparison of these facts with paradigm predictions, and theoretical articulation to resolve ambiguities and explore implications. These problems engage most scientists most of the time, and through them the paradigm’s promise is fulfilled and extended. Scientists resist new theories or phenomena that challenge the paradigm, demonstrating that normal science is conservative and aims at puzzle-solving within fixed conceptual commitments.</p><p>Besides laws and theories, normal science depends on a network of rules, including preferred instruments, methodologies, and even metaphysical commitments. Such rules structure the research problems and define acceptable solutions, supporting the puzzle-solving metaphor. Yet Kuhn argues that these rules are generated from and subordinate to paradigms, which guide research even when explicit rules are lacking.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+<p>Some commentators critique Kuhn’s characterization of normal science as too restrictive and theoretical, underestimating the creative and novel aspects of experimental, instrumental, and observational work. Historians of science have shown that experiments themselves can introduce significant novelty and that the interplay of theory and experimentation is more complex than Kuhn suggests. Furthermore, the treatment of metaphysical commitments as rigid rules may not capture the fluidity and contestation in scientists' conceptual frameworks. Finally, the analogy of normal science as puzzle-solving may underplay the diversity of scientific activity and motivation.</p>
+</details>
+
+<h2>IV: Normal Science as Puzzle-solving</h2>
+
+<p>Chapter IV, “Normal Science as Puzzle-solving,” draws a famous analogy equating normal scientific research problems to puzzles with known solutions and fixed rules. Kuhn highlights that normal science aims not at novelty but at extending, clarifying, and completing what is already known within the framework of an accepted paradigm. The expected outcomes are tightly bounded; failures to conform to expectations are seen as errors rather than scientific breakthroughs.</p><p>The motivation for tackling such problems lies in the challenge of solving the intricate technical, conceptual, and mathematical difficulties posed by the puzzle, not in discovering radical new phenomena or theories. This explains the devotion scientists show to incremental, detailed work such as building better instruments or refining calculations, tasks which nonetheless underpin scientific progress.</p><p>Kuhn stresses that puzzle-solving is governed by rules that limit acceptable solutions—a scientist cannot simply construct any explanation but must conform to the paradigm’s established laws, methodologies, and standards. These rules govern scientific concepts, instrumentation, and higher-level methodological commitments, forming the framework within which normal science operates.</p><p>Despite the apparent rigidity of these rules, Kuhn emphasizes that paradigms precede and generate rules; explicit formulations of rules may be absent, and the coherence of normal science ultimately depends on shared exemplars or models rather than abstract rules alone.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+<p>Critics argue that Kuhn’s puzzle analogy risks trivializing normal science and neglects the production of meaningful theoretical advances within 'normal' research. Some highlight the creativity involved in designing experiments and interpreting data even within paradigms. Indeed, technological innovations and experimental breakthroughs often emerge during so-called ‘normal’ phases. Furthermore, emphasizing rules and puzzle constraints may mask the flexibility scientists exhibit when addressing anomalies. The metaphor also undervalues the social dynamics and cognitive diversity in scientific communities.</p>
+</details>
+
+<h2>V: The Priority of Paradigms</h2>
+
+<p>Chapter V, “The Priority of Paradigms,” clarifies the distinction and relationship between <b>paradigms</b> and <b>rules</b> in scientific communities. Kuhn stresses that paradigms are not reducible sets of abstract rules but rather coherent wholes formed by shared exemplary problem-solutions, symbolic generalizations, metaphysical commitments, and values. These elements together guide research and problem-solving even without formally articulated rules.</p><p>Kuhn draws on linguistic philosophy, especially Wittgenstein’s concept of "family resemblance," to explain how scientists recognize and apply paradigms through resemblance to shared models rather than fixed rule application. Scientific education reinforces paradigms by immersing novices in exemplars and applications rather than abstract rules, resulting in tacit, intuitive mastery more than explicit knowledge of research rules.</p><p>Disagreements and debates about fundamentals typically occur during periods of crisis or pre-paradigm heterogeneity, while agreement and neglect of fundamental questions characterize periods of settled normal science. Kuhn also accounts for specialization within sciences as partial sharing of paradigms, with subspecialties having distinctive sets of paradigmatic exemplars and commitments.</p><p>Finally, Kuhn argues that paradigms, by their nature and mode of transmission, exert a form of scientific rationality that coexists with the limits of rule-based knowledge, emphasizing exemplars and implicit knowledge as central to scientific practice.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+<p>Some philosophers and historians argue that Kuhn’s diminished role for explicit rules obscures the importance of logical and methodological norms in guiding scientific practice. By privileging tacit knowledge and exemplars, Kuhn’s account risks relativism and makes scientific rationality appear subjective or community-dependent. Critics note that many scientists explicitly and critically engage with rules and logic, questioning whether exemplars alone suffice. Moreover, the broad and elastic usage of the term 'paradigm' may dilute its heuristic value, complicating empirical application and theory of science.</p>
+</details>
+
+<h2>VI: Anomaly and the Emergence of Scientific Discoveries</h2>
+
+<p>Chapter VI, “Anomaly and the Emergence of Scientific Discoveries,” focuses on the critical role of <b>anomalies</b>—phenomena or results that conflict with the expectations of an existing paradigm—in generating novel scientific discoveries. Kuhn defines discovery as a process initiated by recognizing an anomaly, followed by continued investigation and eventual assimilation into a revised or new paradigm.</p><p>The examples of oxygen, X-rays, and the Leyden jar illustrate different modes of discovery: extended conceptual assimilation requiring paradigm change (oxygen), accidental discovery triggering crisis (X-rays), and theory-induced discovery in a pre-paradigm context (Leyden jar). These examples highlight that discoveries are not instantaneous but extended episodes involving conceptual shifts and community acceptance.</p><p>Kuhn stresses that anomalies often remain unrecognized or are suppressed until the paradigm’s predictive framework is sufficiently precise to register them. Normal science’s detailed and rigid puzzle-solving thus inadvertently sets the stage for revolutionary discoveries. Resistance to anomalies initially shields paradigms but eventually promotes deep scrutiny, critical for revolutionary change.</p><p>The chapter also draws parallels from psychological experiments showing how perception is initially constrained by expectations and only adjusts, often painfully, to new categories or concepts, illustrating the cognitive dimension of scientific discovery.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+<p>Some scholars argue that Kuhn’s emphasis on anomalies as precursors to discovery underestimates the role of creativity, serendipity, and social factors influencing scientists’ readiness to attend to unexpected phenomena. Others point out that not all anomalies lead to paradigm change, and many are resolved within existing frameworks or ignored. The neat categorization of discoveries and their association with paradigm shifts can over-simplify the complex, contingent, and sometimes nonrational aspects of scientific innovation. Moreover, the psychological analogy may not capture the full social and institutional dynamics at play.</p>
+</details>
+
+<h2>VII: Crisis and the Emergence of Scientific Theories</h2>
+
+<p>Chapter VII, “Crisis and the Emergence of Scientific Theories,” addresses the larger-scale paradigm changes arising not only from discoveries but more profoundly from the invention of new scientific theories prompted by sustained crises. Kuhn illustrates how prolonged awareness of anomalies leads to a state of crisis, marked by professional insecurity and the search for new explanatory frameworks.</p><p>Selected historical crises—the disintegration of Ptolemaic astronomy before Copernicus, the problems faced by phlogiston chemistry before Lavoisier, and late 19th-century physics tensions leading to relativity—show how theories emerge in response to unsolvable problems within an existing paradigm. Crisis is characterized by failure of normal problem-solving, proliferation of competing articulations, and erosion of consensus.</p><p>Kuhn notes that such revolutions are not merely accumulative but involve reconstruction from new fundamentals, altering problems, methods, and goals. The analogy to a gestalt switch reflects the radical transformation scientists undergo in adopting new paradigms. The chapter also highlights that new theories sometimes had early anticipations and stresses the role of social, intellectual, and practical pressures in generating crises.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+<p>Some historians and philosophers argue that Kuhn’s crisis model may be too narrow or deterministic, neglecting instances where theoretical change arises gradually, from multiple influences, or without a clear pre-existing crisis. Others stress the role of non-epistemic factors such as institutional politics or personal ambition in theory change. The revolution-as-gestalt-switch metaphor has been criticized for implying abrupt, discontinuous breaks inconsistent with the often gradual and contested nature of scientific development. Additionally, the parallel drawn between major historical revolutions and smaller-scale theory changes can obscure important differences.</p>
+</details>
+
+<h2>VIII: The Response to Crisis</h2>
+
+<p>Chapter VIII, “The Response to Crisis,” explores scientists’ typical behavior when confronted with persistent anomalies and crisis. Kuhn rejects the idea that scientists simply discard theories upon falsification; instead, rejection only occurs when an alternative paradigm is available to replace the old one, making theory choice simultaneously an act of acceptance and rejection.</p><p>Kuhn argues that crises loosen normal research rules, creating a more open, debate-heavy atmosphere with competing articulations. Nevertheless, scientists strive to preserve paradigms so long as possible because their commitment to prevailing paradigms underpins normal science. Counterinstances (falsifications) themselves are constant, but science endures by treating many as puzzles, demonstrating the resilience of paradigms.</p><p>He highlights the psychological tension scientists face and underscores that major anomalies must be significant enough to induce crisis. Responses to crisis include intensified investigation, speculative theorizing, and sometimes recourse to philosophy, which can clarify problems not addressable by normal science.</p><p>Ultimately, crises prepare the ground for paradigm shifts, and while some new paradigms emerge early in crisis, others may arise only after prolonged uncertainty and extraordinary research.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+<p>Critics argue that Kuhn underestimates the diversity of responses to anomalies and crises among scientists—some may abandon paradigms without immediate alternatives, or continue working within crisis for long periods. Popperian philosophers suggest that falsification plays a more decisive role than Kuhn allows. Also, Kuhn’s account may attribute too much permanence and social cohesion to paradigms, downplaying internal dissent and diversity of scientific opinions even within ‘normal science.’ Furthermore, the idea that anomalies alone induce crisis oversimplifies the complex social and cognitive factors influencing scientific change.</p>
+</details>
+
+<h2>IX: The Nature and Necessity of Scientific Revolutions</h2>
+
+<p>Chapter IX, “The Nature and Necessity of Scientific Revolutions,” directly addresses what scientific revolutions are and why the term is appropriate. Kuhn compares scientific revolutions to political ones, highlighting that both arise from widespread recognition that current institutions (or paradigms) fail to address pressing problems and must be replaced by incompatible new frameworks.</p><p>He explains that paradigm shifts are necessarily extrainstitutional in nature, involving circular reasoning since proponents use their paradigms to defend themselves, leading to debates resolved more by persuasion than logic or empirical proof. Revolutions change not only ontology but also methods, problems, and standards of science, producing incommensurability between competing paradigms and making communication and comparison difficult.</p><p>Kuhn argues that scientific development is generally noncumulative; rather, new theories arise by replacing and conflicting with older ones, challenging the traditional view of science as steadily approximating truth. He critiques logical positivist claims of compatibility between successive theories, especially noting differences between Newtonian and Einsteinian mechanics that require reinterpretation of fundamental concepts.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+<p>Some philosophers affirm a more cumulative view of science, arguing that newer theories often subsume or approximate older ones and that scientific revolutions are less radical replacements and more paradigm refinements or expansions. Logical empiricists hold that scientific theories can be related via correspondence or limit relations, preserving rationality and progress. Critics also question Kuhn’s analogy with political revolutions, cautioning against conflating social/political dynamics with scientific theory change. Finally, some argue that apparent incommensurability and communication breakdowns can be overcome through translation and conceptual analysis.</p>
+</details>
+
+<h2>X: Revolutions as Changes of World View</h2>
+
+<p>Chapter X, “Revolutions as Changes of World View,” develops the idea that scientific revolutions involve profound transformations in the way scientists perceive and interact with their research world. Kuhn uses metaphorical and psychological experiments on perception to argue that paradigm changes alter what scientists 'see' even when looking at the same phenomena with the same instruments.</p><p>These shifts go beyond mere reinterpretation; they involve reeducation of perception and cognitive frameworks acquired through training and exemplars. Examples from astronomy, electricity, chemistry, and dynamics illustrate how objects and phenomena once seen and categorized in one way are perceived differently after a paradigm shift, effectively creating a new scientific world for practitioners.</p><p>Kuhn contrasts this view with traditional epistemology, which treats observations as fixed and paradigms merely as interpretive overlays. He argues for a more radical connection between experience, perception, and conceptual frameworks, suggesting that sensations and measurement themselves are paradigm-determined and thus vary between scientific communities.</p><p>The chapter acknowledges difficulties with these claims, noting the importance of shared neural and cultural factors while emphasizing the socially and historically constructed nature of scientific perception and knowledge.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+<p>Critics caution that Kuhn’s notion of 'different worlds' risks metaphysical confusion and relativism, challenging the objective reality of scientific observations. Many philosophers and scientists defend the idea that while theories influence interpretation, empirical data remain independent. Others argue that cognitive and perceptual psychology provides only limited support for Kuhn’s more radical claims. Additionally, Kuhn’s claim that scientists do not reinterpret observations but see fundamentally different things is contested as overstating the case; many consider paradigm change as better understood in terms of reinterpretation, theory-ladenness, and conceptual framework differences rather than distinct sensory worlds.</p>
+</details>
+
+<h2>XI: The Invisibility of Revolutions</h2>
+
+<p>Chapter XI, “The Invisibility of Revolutions,” examines why scientific revolutions, despite their profound impact, often remain invisible or disguised in scientific textbooks and popular narratives. Kuhn argues that textbooks, popularizations, and the philosophy of science focus on the stable outcomes of revolutions, presenting science as a smooth, linear, cumulative enterprise of fact and theory accumulation.</p><p>This selective portrayal omits or distorts the complexities, conflicts, and ruptures of actual scientific development, thereby creating an unhistorical and misleading image for students and the general public. Textbooks trace a chain of continuous progress, ignoring how past scientific problems, methods, and standards differed from today’s paradigms.</p><p>Kuhn illustrates these points with examples, including misrepresentations of Boyle’s chemical element concept as the origin of modern elements. The result is a persistent attribution of cumulative, incremental growth to science, despite the discontinuities and paradigm changes documented by historians.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+<p>Some historians and philosophers acknowledge Kuhn’s critique but argue that textbooks necessarily simplify for pedagogical clarity and that more nuanced, historically accurate treatments exist and are improving. Others suggest that the cognitive and practical efficiency of teaching a coherent, cumulative narrative outweighs concerns about historical fidelity. Moreover, revisionist histories themselves may run risks of overcomplicating or fragmenting the story of scientific development, making it less accessible. Finally, critics argue that the invisibility of revolutions is not unique to science but common to many disciplines.</p>
+</details>
+
+<h2>XII: The Resolution of Revolutions</h2>
+
+<p>Chapter XII, “The Resolution of Revolutions,” tackles how scientific communities transition from an old paradigm to a new one. Kuhn stresses that paradigm testing and acceptance occur as a communal process of competition between rival paradigms, not as isolated verification or falsification of a single theory.</p><p>He draws parallels and critiques to philosophical models of theory verification and falsification, arguing that both oversimplify the complex social and normative dimensions of paradigm choice. Kuhn highlights the role of persuasion, shared values, and nonlogically compelling arguments during revolutionary debates, noting that scientific decisions about paradigms incorporate personal, aesthetic, and social factors beyond empirical problem-solving.</p><p>Kuhn analyzes the difficulties of communication between proponents of incommensurable paradigms, likening it to translation between language communities. Conversion to a new paradigm is framed as a gestalt-like cognitive shift that cannot be forced by argument alone but involves socialization and reeducation.</p><p>The chapter concludes by emphasizing the community basis for scientific knowledge, the inevitability of disagreement and resistance, and the importance of communal consensus for progress and continuation of science as a coherent endeavor.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+<p>Critics question Kuhn’s emphasis on persuasion and social dynamics over rational criteria, suggesting that scientific theory choice involves more objective evaluation than Kuhn allows. Some argue that the translation metaphor exaggerates communication barriers and that scientific debates are often resolved through clarification and shared conceptual frameworks. Popperians uphold falsification as central, dismissing the notion of gestalt-like conversion as metaphysical. Others warn Kuhn’s community-centric approach risks exclusion and conformity pressures, suppressing individual critical thinking and alternative views. Finally, Kuhn’s portrayal of the scientific community as closing ranks after adoption of a paradigm is challenged as idealized and neglecting ongoing pluralism.</p>
+</details>
+
+<h2>XIII: Progress through Revolutions</h2>
+
+<p>Chapter XIII, “Progress through Revolutions,” addresses the problem of how scientific progress occurs despite periodic paradigm shifts and fundamental ruptures in continuity. Kuhn notes that ‘science’ is often defined in terms of observable progress, raising questions about the nature and direction of that progress given his model.</p><p>Kuhn compares scientific progress with that in other creative fields like art and theology, which historically emphasized cumulative improvement but ultimately experienced ruptures in style and orientation. He stresses the extraordinary insulation of scientific communities from lay society, the rigorous educational initiation, and shared standards as factors facilitating rapid problem solving and cumulative gains during periods of normal science.</p><p>Kuhn concedes that revolutions involve losses, narrowed scope, and increased specialization, but argues that the resulting new paradigms enable broader and deeper problem solving in the long run. He critiques goal-directed, teleological notions of scientific progress and truth, favoring an evolutionary model without a pre-established endpoint, analogous to Darwinian evolution.</p><p>Concluding, Kuhn stresses the importance of understanding both the special nature of scientific communities and the characteristics of nature that permit human knowledge to grow through these discontinuous but adaptive episodes.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+<p>Critics maintain that Kuhn underappreciates the role of cumulative knowledge and incremental advancement in science and that his rejection of scientific truth risks veering into relativism or skepticism. Others argue that Kuhn conflates epistemic progress with social or institutional change, neglecting the normative and methodological continuity in scientific development. The analogy with biological evolution is contested as inadequate since scientific theories have distinct epistemic criteria, and the notion of entire loss during revolution is challenged by examples of retention and refinement. Finally, some question Kuhn’s underplaying of external social, economic, and cultural influences on scientific progress.</p>
+</details>
+
+<h2>Postscript—1969</h2>
+
+<p>The Postscript (1969) reflects Kuhn’s matured views, addressing criticisms and clarifying ambiguities from the original book. He focuses on disentangling the concept of <b>paradigm</b> from scientific <b>community structure</b>, proposing to analyze communities first and then paradigms through shared commitments within these communities.</p><p>Kuhn distinguishes two senses of paradigm: the broader sociological constellation of beliefs, values, and techniques shared by a community, and the narrower set of concrete <b>exemplars</b> or problem-solutions serving as models for normal science puzzle-solving. He clarifies that the latter is philosophically the deeper concept, though it also caused the most misunderstandings and allegations of irrationality.</p><p>The Postscript elaborates that tacit knowledge embedded in exemplars is not subjective improvisation but a systematic, corrigible, and time-tested form of knowledge essential to scientific practice. Kuhn discusses the limits of rational argument in paradigm choice, the role of translation between incommensurable scientific language communities, and the communal and social nature of scientific knowledge and change.</p><p>Finally, Kuhn acknowledges the relativistic interpretations of his work but argues that scientific development is nevertheless progressive, marked by puzzle-solving and methodological advancement, highlighting the distinctive features that separate science from other human activities and calling for comparative studies of community dynamics.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+<p>Some critics view Kuhn’s postscript clarifications as insufficient to dispel concerns about the vagueness and multiplicity of paradigm meanings, leaving the concept too broad for empirical use. Philosophers caution that the emphasis on community and tacit knowledge may downplay individual critical reasoning and the possibility of objective progress. Others argue that Kuhn’s sociological framework risks relativism, conflating scientific truth with social consensus. The pragmatic but non-absolute nature of paradigm choice can undermine the ideal of rational, evidence-based theory evaluation. Additionally, some express concern that community boundaries and shared commitments are difficult to define and may mask internal diversity and conflict within science.</p>
+</details>
+
+<h2 id="quiz-heading">Comprehension Quiz</h2>
+
+<details id="quiz-section" class="quiz-wrapper">
+  <summary class="quiz-toggle">Take the Quiz</summary>
+
+  <form id="quiz-form">
+    <div class="q-block">
+      <p class="q-label">1. According to Kuhn, which sequence best describes the structure of scientific revolutions?</p>
+      <label><input type="radio" name="q1" value="a"> Normal science → Anomaly → Crisis → Revolution → New paradigm</label>
+      <label><input type="radio" name="q1" value="b"> Discovery → Peer review → Consensus → New theory</label>
+      <label><input type="radio" name="q1" value="c"> Experiment → Hypothesis → Evidence → Confirmation</label>
+      <label><input type="radio" name="q1" value="d"> Observation → Theory → Application → Textbook</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">2. What does Kuhn mean by &#x27;paradigm&#x27; in its original sense?</p>
+      <label><input type="radio" name="q2" value="a"> A theory universally accepted by all scientists</label>
+      <label><input type="radio" name="q2" value="b"> An exemplar or model scientific achievement shared by a community</label>
+      <label><input type="radio" name="q2" value="c"> A philosophical concept describing truth</label>
+      <label><input type="radio" name="q2" value="d"> Any new scientific discovery</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">3. How does Kuhn characterize &#x27;normal science&#x27;?</p>
+      <label><input type="radio" name="q3" value="a"> An activity aimed primarily at revolutionary breakthroughs</label>
+      <label><input type="radio" name="q3" value="b"> Puzzle-solving focused on extending and articulating an existing paradigm</label>
+      <label><input type="radio" name="q3" value="c"> Random exploratory experimentation without fixed rules</label>
+      <label><input type="radio" name="q3" value="d"> A social activity divorced from factual accuracy</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">4. Why does Kuhn argue that anomalies are crucial for scientific revolutions?</p>
+      <label><input type="radio" name="q4" value="a"> Because anomalies instantly falsify existing theories</label>
+      <label><input type="radio" name="q4" value="b"> Because anomalies signal where existing paradigms fail and trigger crisis and paradigm change</label>
+      <label><input type="radio" name="q4" value="c"> Because anomalies are usually ignored and unimportant</label>
+      <label><input type="radio" name="q4" value="d"> Because anomalies prove that all science is subjective</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">5. What is &#x27;incommensurability&#x27; as used by Kuhn?</p>
+      <label><input type="radio" name="q5" value="a"> The inability to compare scientific theories due to differences in language, standards, and worldview</label>
+      <label><input type="radio" name="q5" value="b"> A measure of experimental error</label>
+      <label><input type="radio" name="q5" value="c"> Equivalence of competing scientific theories</label>
+      <label><input type="radio" name="q5" value="d"> The gradual accumulation of scientific knowledge</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">6. According to Kuhn, what role do scientific communities play in paradigm shifts?</p>
+      <label><input type="radio" name="q6" value="a"> They have no influence on scientific development</label>
+      <label><input type="radio" name="q6" value="b"> They collectively validate and adopt new paradigms, determining scientific progress</label>
+      <label><input type="radio" name="q6" value="c"> They always reject paradigm changes</label>
+      <label><input type="radio" name="q6" value="d"> They promote scientific truths independent of social factors</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">7. In Kuhn’s view, why are scientific textbooks likely to obscure the reality of scientific revolutions?</p>
+      <label><input type="radio" name="q7" value="a"> Because they deliberately misinform for ideological reasons</label>
+      <label><input type="radio" name="q7" value="b"> Because they focus on settled knowledge and present science as cumulative and linear</label>
+      <label><input type="radio" name="q7" value="c"> Because they are written only for lay audiences</label>
+      <label><input type="radio" name="q7" value="d"> Because revolutions are too insignificant to mention</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">8. What does Kuhn say about scientific theory choice during revolutions?</p>
+      <label><input type="radio" name="q8" value="a"> It is a purely logical and empirical process</label>
+      <label><input type="radio" name="q8" value="b"> It is largely a persuasive, social process involving values, aesthetic judgment, and faith</label>
+      <label><input type="radio" name="q8" value="c"> It is random and subjective with no rational basis</label>
+      <label><input type="radio" name="q8" value="d"> It is resolved immediately by experimental proof</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">9. How does Kuhn describe scientific progress in light of his theory?</p>
+      <label><input type="radio" name="q9" value="a"> A steady linear approach to objective truth</label>
+      <label><input type="radio" name="q9" value="b"> An evolutionary process of replacement and refinement without a fixed goal</label>
+      <label><input type="radio" name="q9" value="c"> An illusion created by social consensus</label>
+      <label><input type="radio" name="q9" value="d"> A meaningless social construction</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">10. What is the function of &#x27;exemplars&#x27; in Kuhn’s concept of paradigms?</p>
+      <label><input type="radio" name="q10" value="a"> They serve as explicit rules and definitions</label>
+      <label><input type="radio" name="q10" value="b"> They are concrete problem-solutions modeling how to do science and learned through practice</label>
+      <label><input type="radio" name="q10" value="c"> They are the final scientific theories</label>
+      <label><input type="radio" name="q10" value="d"> They are administrative guidelines for scientists</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">11. Which best captures Kuhn’s view on the role of perception and experience in scientific revolutions?</p>
+      <label><input type="radio" name="q11" value="a"> All scientists perceive the world identically regardless of paradigm</label>
+      <label><input type="radio" name="q11" value="b"> Scientists’ perceptions are shaped by paradigms, leading to different phenomenological worlds after revolutions</label>
+      <label><input type="radio" name="q11" value="c"> Perception has no bearing on scientific theory</label>
+      <label><input type="radio" name="q11" value="d"> Scientific data are purely objective and free from interpretation</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">12. Why do scientists tend to resist abandoning a paradigm despite anomalies?</p>
+      <label><input type="radio" name="q12" value="a"> Because no alternative theories ever exist</label>
+      <label><input type="radio" name="q12" value="b"> Because adherence to a paradigm is necessary for normal puzzle-solving and scientific progress</label>
+      <label><input type="radio" name="q12" value="c"> Because scientists ignore evidence</label>
+      <label><input type="radio" name="q12" value="d"> Because anomalies are easily explained</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">13. What is the effect of specialization on Kuhn’s concept of paradigms?</p>
+      <label><input type="radio" name="q13" value="a"> It causes a unified monolithic science</label>
+      <label><input type="radio" name="q13" value="b"> It produces overlapping but non-coextensive paradigms in different subspecialties</label>
+      <label><input type="radio" name="q13" value="c"> It eliminates paradigm shifts</label>
+      <label><input type="radio" name="q13" value="d"> It makes all scientists see the same phenomena</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">14. According to Kuhn, how does a new paradigm initially emerge in relation to crisis?</p>
+      <label><input type="radio" name="q14" value="a"> Only after crisis is fully recognized and widespread</label>
+      <label><input type="radio" name="q14" value="b"> Often before crisis has fully developed or been explicitly recognized</label>
+      <label><input type="radio" name="q14" value="c"> Completely independent of crisis</label>
+      <label><input type="radio" name="q14" value="d"> Automatically when anomalies appear</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">15. How does Kuhn view the historical role of Darwin’s evolutionary theory compared to scientific revolutions?</p>
+      <label><input type="radio" name="q15" value="a"> Darwin’s theory fits neatly into Kuhn&#x27;s structure of scientific revolutions</label>
+      <label><input type="radio" name="q15" value="b"> Darwin’s revolution is not discussed in Structure and may not fully fit Kuhn’s model</label>
+      <label><input type="radio" name="q15" value="c"> Darwin’s theory is irrelevant to scientific development</label>
+      <label><input type="radio" name="q15" value="d"> Darwin’s revolution disproves Kuhn’s thesis</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">16. What does Kuhn mean by &#x27;progress away from&#x27; previous conceptions?</p>
+      <label><input type="radio" name="q16" value="a"> Science progresses toward a final, true theory</label>
+      <label><input type="radio" name="q16" value="b"> Science moves away from less adequate conceptions, not necessarily toward an ultimate truth</label>
+      <label><input type="radio" name="q16" value="c"> Science progresses backwards</label>
+      <label><input type="radio" name="q16" value="d"> Science is random and directionless</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">17. Which best summarizes Kuhn’s view on truth in science?</p>
+      <label><input type="radio" name="q17" value="a"> There is one objective, eternal truth that science progressively approaches</label>
+      <label><input type="radio" name="q17" value="b"> Truth is variable and tied to paradigms, making objective truth problematic</label>
+      <label><input type="radio" name="q17" value="c"> Truth is irrelevant to scientific practice</label>
+      <label><input type="radio" name="q17" value="d"> Truth is fully determined by experimental data</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">18. What metaphor does Kuhn use for paradigm shifts and changes in scientific perception?</p>
+      <label><input type="radio" name="q18" value="a"> A slow accumulation of bricks in a building</label>
+      <label><input type="radio" name="q18" value="b"> A gestalt switch or change in vision</label>
+      <label><input type="radio" name="q18" value="c"> A linear chain of proofs</label>
+      <label><input type="radio" name="q18" value="d"> A random walk through data</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">19. How are &#x27;paradigm change&#x27; and &#x27;scientific revolution&#x27; related according to Kuhn?</p>
+      <label><input type="radio" name="q19" value="a"> Paradigm change is a form of scientific revolution involving non-cumulative replacement</label>
+      <label><input type="radio" name="q19" value="b"> They are unrelated concepts</label>
+      <label><input type="radio" name="q19" value="c"> Scientific revolutions are gradual accumulative improvements</label>
+      <label><input type="radio" name="q19" value="d"> Paradigm change is a minor, normal adjustment</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">20. What role do textbooks play in scientific knowledge according to Kuhn?</p>
+      <label><input type="radio" name="q20" value="a"> They perfectly preserve the complex history of scientific change</label>
+      <label><input type="radio" name="q20" value="b"> They educate by presenting settled knowledge but obscure revolutionary ruptures</label>
+      <label><input type="radio" name="q20" value="c"> They primarily document failed theories</label>
+      <label><input type="radio" name="q20" value="d"> They are irrelevant to scientific education</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">21. Why can paradigm choice not be settled solely by logic and experiment?</p>
+      <label><input type="radio" name="q21" value="a"> Because experiments never refute theories</label>
+      <label><input type="radio" name="q21" value="b"> Because paradigms define different standards and problem sets making them incommensurable and leading to circular argumentation</label>
+      <label><input type="radio" name="q21" value="c"> Because scientists do not believe in logic</label>
+      <label><input type="radio" name="q21" value="d"> Because logic is irrelevant in science</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">22. How does Kuhn explain the social process of adopting a new paradigm?</p>
+      <label><input type="radio" name="q22" value="a"> Instant uniform acceptance by scientists</label>
+      <label><input type="radio" name="q22" value="b"> Gradual shift in professional allegiance aided by persuasion, demonstration of problem solving, and faith</label>
+      <label><input type="radio" name="q22" value="c"> Random chance decisions</label>
+      <label><input type="radio" name="q22" value="d"> Scientific revolutions impose themselves by authoritarian decree</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">23. What is Kuhn’s stance on scientific rationality and relativism in his theory?</p>
+      <label><input type="radio" name="q23" value="a"> Science is purely subjective and irrational</label>
+      <label><input type="radio" name="q23" value="b"> Scientific practice is rational but based on community values and conventions; it denies absolute, universal truths</label>
+      <label><input type="radio" name="q23" value="c"> Science is absolutely objective and free from interpretation</label>
+      <label><input type="radio" name="q23" value="d"> Relativism invalidates all scientific knowledge</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">24. In Kuhn’s view, how do scientific revolutions affect scientific communities?</p>
+      <label><input type="radio" name="q24" value="a"> Communities remain unchanged</label>
+      <label><input type="radio" name="q24" value="b"> They transform the group’s problem-field, standards, and shared knowledge, often leading to new specialized communities</label>
+      <label><input type="radio" name="q24" value="c"> They cause communities to break down permanently</label>
+      <label><input type="radio" name="q24" value="d"> They increase communication with lay audiences</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">25. Why does Kuhn argue that progress in science is almost impossible without revolutions?</p>
+      <label><input type="radio" name="q25" value="a"> Because normal science suppresses novelties</label>
+      <label><input type="radio" name="q25" value="b"> Because novelty and fundamental change require paradigm shifts that transform scientific frameworks</label>
+      <label><input type="radio" name="q25" value="c"> Because revolutions attract more funding</label>
+      <label><input type="radio" name="q25" value="d"> Because scientists prefer revolutions over steady work</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">26. What is the significance of &#x27;exemplars&#x27; in scientific education according to Kuhn?</p>
+      <label><input type="radio" name="q26" value="a"> They are secondary to abstract rules and definitions</label>
+      <label><input type="radio" name="q26" value="b"> They embody tacit knowledge critical to learning to see problems and solutions within a paradigm</label>
+      <label><input type="radio" name="q26" value="c"> They are merely historical curiosities</label>
+      <label><input type="radio" name="q26" value="d"> They confuse students</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">27. Which of the following best reflects Kuhn’s updated view on paradigms in the 1969 Postscript?</p>
+      <label><input type="radio" name="q27" value="a"> Paradigms should be abandoned as incoherent</label>
+      <label><input type="radio" name="q27" value="b"> Paradigms consist of multiple components including symbolic generalizations, models, values, and exemplars, and are embedded in scientific communities</label>
+      <label><input type="radio" name="q27" value="c"> Paradigms are only explicit rules for research</label>
+      <label><input type="radio" name="q27" value="d"> Paradigms are identical to scientific theories</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">28. How does Kuhn describe &#x27;conversion&#x27; in the context of paradigm shifts?</p>
+      <label><input type="radio" name="q28" value="a"> A purely logical process of adopting evidence</label>
+      <label><input type="radio" name="q28" value="b"> A gestalt-like cognitive shift that is not fully under conscious control and involves adopting a new way of seeing</label>
+      <label><input type="radio" name="q28" value="c"> An immediate consensus in the scientific community</label>
+      <label><input type="radio" name="q28" value="d"> A process identical to persuasion</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">29. According to Kuhn, what distinguishes scientific communities from other professional groups?</p>
+      <label><input type="radio" name="q29" value="a"> They rely exclusively on lay public opinion</label>
+      <label><input type="radio" name="q29" value="b"> They have highly structured education, shared puzzle-solving values, and insulation from non-specialist evaluations</label>
+      <label><input type="radio" name="q29" value="c"> They have no shared standards</label>
+      <label><input type="radio" name="q29" value="d"> Their members always agree on theory</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">30. What is Kuhn’s assessment of the relation between experimental novelty and theoretical novelty?</p>
+      <label><input type="radio" name="q30" value="a"> Experimental novelty alone explains major revolutions</label>
+      <label><input type="radio" name="q30" value="b"> Theory and experiment co-evolve; both are involved in revolutions and discoveries</label>
+      <label><input type="radio" name="q30" value="c"> Theoretical novelty has no impact without experiments</label>
+      <label><input type="radio" name="q30" value="d"> They are unrelated</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">31. Why does Kuhn compare scientific development to biological evolution?</p>
+      <label><input type="radio" name="q31" value="a"> Because science is goal-directed like biological evolution</label>
+      <label><input type="radio" name="q31" value="b"> Because science evolves through variation and selection without fixed goals or teleology</label>
+      <label><input type="radio" name="q31" value="c"> Because science involves genetic inheritance</label>
+      <label><input type="radio" name="q31" value="d"> Because all progress is inevitable</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">32. What is a key reason Kuhn gives for the conservatism of scientific communities toward anomalies?</p>
+      <label><input type="radio" name="q32" value="a"> Scientists fail to observe anomalies</label>
+      <label><input type="radio" name="q32" value="b"> The commitment to existing paradigms allows focused research and progress; abandoning a paradigm without replacement rejects science itself</label>
+      <label><input type="radio" name="q32" value="c"> Anomalies are generally unimportant</label>
+      <label><input type="radio" name="q32" value="d"> Funding constraints limit paradigm change</label>
+    </div>
+
+    <button type="button" id="score-btn" onclick="scoreQuiz()">Score My Answers</button>
+
+    <div id="quiz-result" style="display:none;">
+      <p id="score-text"></p>
+      <div id="answer-review"></div>
+    </div>
+
+  </form>
+</details>
+
+<script>
+(function() {
+  const answers = {
+    "q1": {
+        "correct": "a",
+        "explain": "Kuhn outlines the cycle beginning with normal science grounded in a paradigm, encountering anomalies, leading to crisis, culminating in a revolution that establishes a new paradigm."
+    },
+    "q2": {
+        "correct": "b",
+        "explain": "Kuhn’s original use of 'paradigm' refers to concrete exemplary problem-solutions and achievements shared within scientific communities, which guide normal science."
+    },
+    "q3": {
+        "correct": "b",
+        "explain": "Kuhn describes normal science as puzzle-solving within the confines of an accepted paradigm, focusing on articulating and extending existing knowledge."
+    },
+    "q4": {
+        "correct": "b",
+        "explain": "Anomalies reveal tensions or conflicts within the prevailing paradigm that cannot be resolved, leading to crisis and eventually revolutionary paradigm change."
+    },
+    "q5": {
+        "correct": "a",
+        "explain": "Incommensurability means that competing paradigms are so different in concepts and worldviews that direct comparison or evaluation is problematic."
+    },
+    "q6": {
+        "correct": "b",
+        "explain": "Scientific communities decide which paradigm to adopt, and these communal decisions critically shape scientific development and revolutions."
+    },
+    "q7": {
+        "correct": "b",
+        "explain": "Textbooks present the outcome of science’s most recent revolutions, portraying scientific progress as steady and cumulative, masking the ruptures and conflicts of revolutions."
+    },
+    "q8": {
+        "correct": "b",
+        "explain": "Kuhn argues that theory choice during revolutions involves persuasion and subjective elements, since competing paradigms are often incommensurable."
+    },
+    "q9": {
+        "correct": "b",
+        "explain": "Kuhn likens scientific development to evolutionary progression without an ultimate fixed truth, where progress occurs through revolutions and normal science alternately."
+    },
+    "q10": {
+        "correct": "b",
+        "explain": "Exemplars are concrete past problem solutions that scientists use as models for solving new problems within a paradigm, learned by direct practice."
+    },
+    "q11": {
+        "correct": "b",
+        "explain": "Kuhn argues that paradigms shape scientists’ perceptions and conceptualization, so that revolutions change the very world scientists experience."
+    },
+    "q12": {
+        "correct": "b",
+        "explain": "Scientists resist paradigm abandonment because paradigms underpin normal science; discarding one without a replacement invalidates the enterprise itself."
+    },
+    "q13": {
+        "correct": "b",
+        "explain": "Specialization leads to multiple related paradigms within a broad field, causing differentiated scientific communities with distinct exemplars and standards."
+    },
+    "q14": {
+        "correct": "b",
+        "explain": "New paradigms can first emerge early during a crisis or even before it becomes widespread, as individuals posit new frameworks."
+    },
+    "q15": {
+        "correct": "b",
+        "explain": "Darwin’s revolution is absent from Structure’s detailed discussion, and Kuhn’s model primarily reflects physical sciences, raising questions about its applicability."
+    },
+    "q16": {
+        "correct": "b",
+        "explain": "Kuhn argues that revolutions shift science away from obsolete frameworks toward better ones but do not necessarily approach a singular ‘truth.’"
+    },
+    "q17": {
+        "correct": "b",
+        "explain": "Kuhn questions simple correspondence theories of truth and emphasizes that truth claims are paradigm-dependent and open to interpretation."
+    },
+    "q18": {
+        "correct": "b",
+        "explain": "Kuhn likens paradigm shifts to the sudden change in perception characterized by gestalt switches, reflecting a change in how scientists see their world."
+    },
+    "q19": {
+        "correct": "a",
+        "explain": "Kuhn equates paradigm change with scientific revolution, highlighting the discontinuous, non-cumulative nature of such transformations."
+    },
+    "q20": {
+        "correct": "b",
+        "explain": "Textbooks present the current paradigm knowledge, facilitating education but distorting or omitting the history of revolutions."
+    },
+    "q21": {
+        "correct": "b",
+        "explain": "Since competing paradigms involve divergent standards and definitions, they cannot be fully evaluated or compared by the same logical framework leading to circular debates."
+    },
+    "q22": {
+        "correct": "b",
+        "explain": "Kuhn describes paradigm adoption as a gradual social process involving persuasion, accumulation of evidence, and individual conversions over time."
+    },
+    "q23": {
+        "correct": "b",
+        "explain": "Kuhn argues for a form of rationality grounded in shared community commitments, acknowledging limits of absolutes but affirming the rational pursuit of puzzle solving and progress."
+    },
+    "q24": {
+        "correct": "b",
+        "explain": "Scientific revolutions reshape the community’s shared commitments, redefine legitimate problems and solutions, and may foster specialization."
+    },
+    "q25": {
+        "correct": "b",
+        "explain": "Normal science is conservative and puzzle-solving; revolutions are needed to incorporate novel phenomena and theories otherwise incompatible with existing paradigms."
+    },
+    "q26": {
+        "correct": "b",
+        "explain": "Exemplars provide concrete problem-solving examples enabling novices to acquire tacit understanding and recognize analogous scientific situations."
+    },
+    "q27": {
+        "correct": "b",
+        "explain": "Kuhn clarifies that paradigms are complex constellations of shared commitments within communities, including rules, models, values, and exemplars."
+    },
+    "q28": {
+        "correct": "b",
+        "explain": "Conversion involves an often sudden and non-deliberative change in perception and commitment, distinct from rational persuasion alone."
+    },
+    "q29": {
+        "correct": "b",
+        "explain": "Scientific communities have rigorous education, common values emphasizing puzzle-solving, and professional judgment recognized within the group, distinguishing them organizationally and culturally."
+    },
+    "q30": {
+        "correct": "b",
+        "explain": "Kuhn stresses the intertwined emergence of unexpected phenomena and conceptual frameworks, both contributing to paradigm change."
+    },
+    "q31": {
+        "correct": "b",
+        "explain": "Kuhn likens scientific development to Darwinian evolution, emphasizing adaptation and selection without presuming predetermined goals."
+    },
+    "q32": {
+        "correct": "b",
+        "explain": "Paradigm adherence enables efficient problem-solving in normal science; discarding one without substituting another would undermine science’s coherence."
+    }
+};
+
+  window.scoreQuiz = function() {
+    const form = document.getElementById("quiz-form");
+    let correct = 0;
+    const total = Object.keys(answers).length;
+    let reviewHTML = "";
+
+    for (let i = 1; i <= total; i++) {
+      const key = "q" + i;
+      const selected = form.elements[key] ? form.elements[key].value : "";
+      const isCorrect = selected === answers[key].correct;
+      if (isCorrect) correct++;
+
+      const status = !selected ? "wrong" : (isCorrect ? "correct" : "wrong");
+      const icon = isCorrect ? "\u2705" : "\u274C";
+      const yourAnswer = selected ? selected.toUpperCase() : "No answer";
+      const correctAnswer = answers[key].correct.toUpperCase();
+
+      reviewHTML += '<div class="review-item ' + status + '">';
+      reviewHTML += '<div class="ri-q">' + icon + " Question " + i + "</div>";
+      reviewHTML += '<div class="ri-detail">';
+      if (!isCorrect) {
+        reviewHTML += "Your answer: " + yourAnswer + " &mdash; Correct answer: " + correctAnswer + "<br>";
+      }
+      reviewHTML += answers[key].explain;
+      reviewHTML += "</div></div>";
+    }
+
+    const pct = Math.round((correct / total) * 100);
+    let grade;
+    if (pct === 100) grade = "Perfect score!";
+    else if (pct >= 80) grade = "Great understanding!";
+    else if (pct >= 60) grade = "Good, but review the summaries above for the ones you missed.";
+    else grade = "Consider re-reading the summaries above and trying again.";
+
+    document.getElementById("score-text").textContent = correct + " / " + total + " (" + pct + "%) — " + grade;
+    document.getElementById("answer-review").innerHTML = reviewHTML;
+    document.getElementById("quiz-result").style.display = "block";
+    document.getElementById("quiz-result").scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+})();
+</script>
+
+</div><!-- .content -->
+
+</body>
+</html>

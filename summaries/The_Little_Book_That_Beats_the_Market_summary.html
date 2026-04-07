@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Little Book That Still Beats the Market — Book Summary Pro</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      line-height: 1.7;
+      color: #222;
+      background: #fafafa;
+    }
+    .app-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #2c2c2c;
+      padding: 14px 24px;
+    }
+    .content {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 32px 20px 40px;
+    }
+    .app-nav .app-name {
+      font-size: 1.05em;
+      font-weight: bold;
+      color: #e8e0d0;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+    }
+    .app-nav .app-name:hover {
+      color: #d4a843;
+    }
+    .app-nav .back-link {
+      font-size: 0.9em;
+      color: #999;
+      text-decoration: none;
+    }
+    .app-nav .back-link:hover {
+      color: #d4a843;
+    }
+    h1 {
+      font-size: 1.8em;
+      border-bottom: 2px solid #333;
+      padding-bottom: 10px;
+      margin-bottom: 5px;
+    }
+    .subtitle {
+      font-size: 1.1em;
+      color: #444;
+      margin: 2px 0 0 0;
+      font-style: italic;
+    }
+    .author {
+      font-style: italic;
+      color: #777;
+      font-size: 0.95em;
+      margin-bottom: 40px;
+    }
+    h2 {
+      font-size: 1.3em;
+      margin-top: 48px;
+      color: #1a1a1a;
+      border-left: 4px solid #555;
+      padding-left: 12px;
+    }
+    p {
+      margin-bottom: 14px;
+      text-align: justify;
+    }
+    details.counter {
+      background: #f0ece4;
+      border-left: 4px solid #b8860b;
+      padding: 14px 18px;
+      margin: 20px 0 28px 0;
+      border-radius: 0 6px 6px 0;
+    }
+    details.counter summary {
+      font-weight: bold;
+      font-size: 0.95em;
+      color: #8b6914;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    details.counter summary::-webkit-details-marker {
+      display: none;
+    }
+    details.counter summary::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    details.counter[open] summary::before {
+      transform: rotate(90deg);
+    }
+    details.counter p {
+      margin-top: 12px;
+      margin-bottom: 10px;
+      color: #3a3a3a;
+    }
+    details.counter p:last-child {
+      margin-bottom: 0;
+    }
+    .quiz-wrapper {
+      margin-top: 48px;
+      background: #f5f5f0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 16px 20px;
+    }
+    .quiz-toggle {
+      font-weight: bold;
+      font-size: 1.05em;
+      cursor: pointer;
+      color: #2a5a2a;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .quiz-toggle::-webkit-details-marker { display: none; }
+    .quiz-toggle::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    .quiz-wrapper[open] .quiz-toggle::before {
+      transform: rotate(90deg);
+    }
+    .q-block {
+      margin: 24px 0;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    .q-block:last-of-type { border-bottom: none; }
+    .q-label {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .q-block label {
+      display: block;
+      padding: 6px 10px;
+      margin: 4px 0;
+      border-radius: 4px;
+      cursor: pointer;
+      line-height: 1.5;
+    }
+    .q-block label:hover { background: #e8e8e0; }
+    #score-btn {
+      display: block;
+      margin: 28px auto 0;
+      padding: 12px 32px;
+      font-family: Georgia, serif;
+      font-size: 1em;
+      background: #2a5a2a;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #score-btn:hover { background: #1e441e; }
+    #quiz-result {
+      margin-top: 24px;
+      padding: 18px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    #score-text {
+      font-size: 1.15em;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .review-item {
+      margin-bottom: 14px;
+      padding: 10px 12px;
+      border-radius: 4px;
+    }
+    .review-item.correct { background: #e6f4e6; }
+    .review-item.wrong { background: #fce8e8; }
+    .review-item .ri-q { font-weight: bold; margin-bottom: 4px; }
+    .review-item .ri-detail { font-size: 0.93em; color: #444; }
+  </style>
+</head>
+<body>
+
+<nav class="app-nav">
+  <a href="index.html" class="app-name">Book Summary Pro</a>
+  <a href="index.html" class="back-link">&larr; All Books</a>
+</nav>
+
+<div class="content">
+
+<h1>The Little Book That Still Beats the Market</h1>
+
+<p class="author">Joel Greenblatt</p>
+
+<h2>Foreword</h2>
+
+<p>The Foreword introduces the author Joel Greenblatt as a highly capable and successful investor, distinct from typical investment authors who profit mainly from book sales. It emphasizes the simplicity and enduring validity of the book's approach to stock market investing, suggesting that while some people may quickly disregard it, those with patience can benefit significantly.</p><p>The Foreword highlights the progression in investment vehicles from mutual funds to index funds and positions Greenblatt’s approach as an "index-fund-plus" strategy, adding value by selectively including only quality businesses sold at low valuations.</p><p>Finally, it foreshadows that even if the formula becomes widespread, its advantage will diminish only partially, and the market as a whole will become more rational. The foreword encourages readers at all levels, from children to adults, to dive into the book.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+<p>While the Foreword optimistically suggests the formula’s persistence even if widely adopted, skeptics might argue that in highly efficient markets, widespread use of any formula could eliminate the arbitrage opportunity entirely, leaving little to no advantage.</p><p>Additionally, the "index-fund-plus" approach assumes that value investing styles consistently outperform, but critics note that value premiums can vary or reverse depending on market cycles, challenging the formula's long-term reliability.</p>
+</details>
+
+<h2>Introduction to the 2010 Edition</h2>
+
+<p>The 2010 Edition's Introduction recounts the unexpected success of the first edition, with wide sales and translations. The author expresses initial apprehension about readers potentially misapplying the "magic formula" due to data issues or calculation errors.</p><p>To mitigate this, a free resource website (magicformulainvesting.com) was established to offer reliable data and calculations, underscoring the importance of using proper tools to implement the strategy effectively.</p><p>The introduction stresses that investing is challenging, requiring a disciplined, long-term strategy that must resonate with the individual investor to maintain commitment through volatile periods. It also points out that the core lessons of the original book remain valid despite market changes.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+<p>Some investors might question the reliance on a specific website for implementing the magic formula, concerned about data transparency, accessibility, or the potential for over-reliance on an automated tool without understanding underlying principles.</p><p>Moreover, the emphasis on patience and discipline presupposes investors' behavioral consistency, which is often unrealistic; many investors may struggle emotionally and financially to adhere strictly to any long-term formula.</p>
+</details>
+
+<h2>Introduction to the Original Edition</h2>
+
+<p>This Introduction reveals the author's motivation in writing the book: to provide his children—and by extension, any reader—with an understandable and practical framework to successfully invest in the stock market.</p><p>He posits that despite the apparent simplicity of the formula and concepts, the results can be significant for beginners and seasoned investors alike if applied correctly, emphasizing self-reliance since professionals and academics typically cannot help individuals outperform the market.</p><p>The author previews the "magic formula" as a straightforward, logical tool that can outperform market averages with low risk, provided the user comprehends its rationale and maintains the effort.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+<p>While the promise that "you can learn to beat the market" is encouraging, it contrasts the prevailing Efficient Market Hypothesis which suggests that consistently outperforming market averages is unlikely due to market efficiency and competition.</p><p>The author's call to individual investors to do it themselves may overlook structural disadvantages individual investors face compared to professionals, such as access to information, trading costs, and behavioral biases.</p>
+</details>
+
+<h2>Chapter One</h2>
+
+<p>Chapter One presents a relatable story about Jason, a sixth-grader who operates a profitable gum-selling business. Through a conversation between the author and his son, the chapter explores fundamental investment concepts: profit calculation, estimating future earnings, and valuation.</p><p>The narrative introduces the concept of buying part ownership (shares) in a business and the importance of paying a reasonable price relative to expected profits, highlighting the time value of money and uncertainty about future earnings and risks.</p><p>Finally, it frames the challenge of valuing businesses and recognizing undervalued investment opportunities, setting up the premise for the magic formula and underscoring the need for belief and understanding in investment strategies.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+<p>The analogy with Jason’s gum business simplifies investment valuation but may understate complexities involved in real markets, such as fluctuating competition, macroeconomic shifts, and behavioral influences on pricing.</p><p>Also, the emphasis on believing the formula might be seen as an appeal to faith over empirical skepticism, potentially downplaying the need for critical analysis and diversification.</p>
+</details>
+
+<h2>Chapter Two</h2>
+
+<p>Chapter Two begins by illustrating the difficulty of saving money and the importance of doing so for future needs. It uses personal anecdotes to motivate reader engagement with saving behavior.</p><p>The chapter systematically discusses traditional options for money storage and growth: saving at home (mattress), bank deposits, corporate bonds, and government bonds. It highlights the trade-offs between risk, return, and liquidity, and introduces the concept of a baseline risk-free return, exemplified by the U.S. government bond rate.</p><p>This foundation establishes the minimum acceptable return that any attractive investment should exceed, setting up a benchmark against which other investment returns should be compared.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+<p>While establishing 6% as a minimum baseline return makes conceptual sense, critics might note that such a fixed rate assumption overlooks varying interest rate environments and inflation impacts, which can alter the risk-free rate substantially over time.</p><p>Moreover, the discussion largely ignores the potential benefits of diversified portfolios or equity investments that, while more volatile, may offer superior returns over the long term.</p>
+</details>
+
+<h2>Chapter Three</h2>
+
+<p>Chapter Three explores more engaging investment alternatives beyond saving and bonds, humorously dismissing gambling as an effective strategy.</p><p>It introduces the concept of investing directly in a business through ownership shares, using Jason’s matured gum shop business as an example. Details like share division, share price, and income statements are explained to illustrate how investors derive returns and how to assess the fairness of the price paid.</p><p>The chapter highlights the importance of earnings, business expenses, taxes, and the distinction between last year’s earnings and future potential, pointing to the complexities behind valuing stocks. It also underscores investment risks stemming from unpredictable earnings and market competition.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+<p>The focus on buying shares of well-understood businesses simplifies but may gloss over deeper market factors affecting stock prices, such as investor sentiment and macroeconomic variables.</p><p>The use of last year’s earnings as a valuation baseline is practical but might overlook fluctuations and cyclical effects, possibly misleading naïve investors.</p>
+</details>
+
+<h2>Chapter Four</h2>
+
+<p>Chapter Four investigates the volatility of stock prices compared to the relative stability of business values. Using well-known companies and the ‘‘Mr. Market’’ metaphor from Benjamin Graham, it illustrates that stock prices swing widely due to emotional investors, not always rational adjustments in company value.</p><p>It stresses the concept of a margin of safety—buying shares at a significant discount to intrinsic value to protect against errors in valuation or business setbacks. The chapter encourages patience and rationality when dealing with the stock market’s mood swings.</p><p>Yet, three critical challenges are highlighted: accurately valuing businesses, knowing whether those valuations are correct, and competing with many knowledgeable professional investors. Despite these, the chapter emphasizes persevering with logical, margin of safety–based investing.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+<p>Some practitioners argue that the margin of safety can be difficult to define or quantify in practice, especially in dynamic industries, and that Mr. Market’s emotional swings can sometimes last longer than investors’ patience.</p><p>The debate remains whether average investors can realistically outguess institutional investors and the market efficiently, given access to information and tools.</p>
+</details>
+
+<h2>Chapter Five</h2>
+
+<p>Chapter Five introduces two essential metrics for investing: earnings yield and return on capital. Using Jason’s Gum Shops, it shows that high earnings yield (earnings relative to price) indicates a bargain price, and high return on capital (earnings relative to invested capital) indicates a good business.</p><p>Through simple examples, it proves that a higher earnings yield is preferable and that a business earning a higher return on its capital is more desirable than one earning a low return, even if priced similarly.</p><p>Combining these two factors—the goodness of the business and the attractiveness of its price—is presented as the secret to achieving superior investment returns, which the magic formula formalizes to systematically select stocks.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+<p>While focusing on these two metrics gives clarity, some critics may assert that solely relying on historical earnings and return on capital might miss emerging risks or opportunities, such as intangible assets, technological disruption, or regulatory changes.</p><p>Also, the approach assumes consistent application of these metrics across industries, which may not always hold true.</p>
+</details>
+
+<h2>Chapter Six</h2>
+
+<p>Chapter Six formally introduces the magic formula, inspired by Benjamin Graham’s original formula that sought stocks priced below net liquidation value. Greenblatt explains that modern markets rarely present such extremely cheap stocks, prompting a new formula combining return on capital and earnings yield.</p><p>The chapter details how companies are ranked based on these two factors and how their combined rankings identify those with the best mix of being good businesses sold at bargain prices.</p><p>Historical testing over 17 years reveals striking outperformance of the magic formula portfolio versus the market, turning relatively modest investments into huge gains, thus validating the intuitive logic and empirical success of the formula.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+<p>Some may question the backtesting methodology and point out that past performance does not guarantee future results, especially given changing market conditions and increased awareness of such strategies.</p><p>Additionally, critics might note that practical considerations like transaction costs, taxes, and limits on liquidity could reduce real-world returns compared to the backtested figures.</p>
+</details>
+
+<h2>Chapter Seven</h2>
+
+<p>Chapter Seven examines possible critiques of the magic formula's performance and tests its robustness. It addresses concerns about small company size by limiting the universe to larger companies, finding that the formula retains strong performance.</p><p>Extensive testing over thousands of selections shows the results are unlikely due to luck, supporting the formula's validity. Further analysis dividing stocks into deciles by formula ranking reveals a clear gradient of returns, reinforcing the predictive power of the rankings.</p><p>The chapter also anticipates concerns about the formula’s future efficacy once widely adopted, noting that plenty of top-ranked stocks will always be available due to its ranking nature.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+<p>Despite these reassurances, the historic success does not assure future results, especially as market participants adopt similar strategies, potentially arbitraging away benefits.</p><p>The persistent underperformance periods could discourage investors, and the methodology’s assumption of stable factors may not hold in structural market shifts.</p>
+</details>
+
+<h2>Chapter Eight</h2>
+
+<p>Chapter Eight draws a parallel between the historical success yet eventual downfall of traditional British military tactics and the potential risks for the magic formula if it becomes widely used and arbitraged away.</p><p>The chapter highlights the erratic short-term performance of the formula, including months and years of underperformance, underscoring the difficulty investors face in adhering to a long-term strategy.</p><p>Examples from professional fund managers illustrate how clients often abandon successful strategies during downturns, emphasizing the necessity of belief and patience to achieve long-term success with the magic formula.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+<p>This candid admission of the formula’s flaws might discourage investors who prefer more consistent short-term returns, raising legitimate concerns about psychological and financial feasibility.</p><p>Additionally, critics might contend that the persistence of the magic formula’s efficacy amidst widespread availability is optimistic, given market efficiency considerations.</p>
+</details>
+
+<h2>Chapter Nine</h2>
+
+<p>Chapter Nine aims to ground confidence in the magic formula by focusing on timeless mathematical and logical principles. It states the formula systematically identifies above-average companies available at below-average prices, which is both sensible and reassuring.</p><p>The chapter revisits Jason’s business example to explain why companies that earn high returns on capital are special, likely possess competitive advantages, and can reinvest profits efficiently to sustain earnings growth.</p><p>It concedes that competition might erode these returns eventually but that the magic formula seeks companies with enduring advantages that prevent profits from being driven down to average levels, ensuring the portfolio consists of good businesses bought inexpensively.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+<p>One might argue that high return on capital does not always indicate sustainable competitive advantage, as market conditions and technological disruptions can quickly erode profitability.</p><p>Moreover, the assumption that markets misprice such companies sufficiently to provide bargains might not persist indefinitely.</p>
+</details>
+
+<h2>Chapter Ten</h2>
+
+<p>Chapter Ten shares a personal sailing anecdote to illustrate that loving an endeavor does not imply expertise, paralleling the challenges of stock investing.</p><p>It then presents enhanced performance data of the magic formula over various time horizons, notably how the strategy outperforms market averages with lower risk over three-year periods.</p><p>The chapter discusses the importance of a long investment horizon given the emotional volatility of Mr. Market, reassuring that despite short-term unpredictability, prices converge toward intrinsic value, rewarding patient investors.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+<p>While emphasizing long-term horizons is sound, many investors with shorter timelines or liquidity needs may find adhering to the formula challenging.</p><p>Also, the guarantee that Mr. Market will eventually correct prices assumes no systemic disruptions or persistent market inefficiencies.</p>
+</details>
+
+<h2>Chapter Eleven</h2>
+
+<p>Chapter Eleven addresses investors who reject formulas, advocating instead for individual stock picking with intelligence and discipline.</p><p>The chapter warns of the dangers of uninformed stock selection likened to reckless behavior in a dynamite factory and stresses that serious, knowledgeable research is required to successfully apply magic formula principles independently.</p><p>It emphasizes that while the formula uses last year’s earnings as a proxy for normal earnings, serious investors should estimate normalized earnings and own a concentrated portfolio of high-confidence picks.</p><p>For those less capable, combining magic formula rankings with subjective selections from top-ranked stocks is suggested as a compromise.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+<p>This chapter reveals the limits of formula-based investing for individual stocks, highlighting the complexity and expertise needed, which many investors lack.</p><p>Critics might observe that some investors will rely blindly on formulas without sufficient understanding, and those adept at analysis might still struggle with uncertainties inherent in forecasting.</p>
+</details>
+
+<h2>Chapter Twelve</h2>
+
+<p>Chapter Twelve discusses the harsh realities of Wall Street, uncovering that there is no external savior or magical solution, emphasizing personal responsibility in investing decisions.</p><p>The chapter critiques stockbrokers for conflicts of interest and mutual funds for high fees and difficulties in consistently outperforming the market post-costs.</p><p>It explains hedge funds' exclusivity and high fees, while recognizing the appeal of index funds for average returns with low fees, yet clarifies that beating the market remains elusive for most.</p><p>The author ultimately advocates the magic formula as the only realistic path to outperforming the market with low risk, accompanied by the caveat that understanding and belief in the formula are crucial.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+<p>The chapter downplays the potential value of professional managers and alternative investments, which some investors might consider important components to a diversified portfolio.</p><p>Also, it assumes investors possess or are willing to acquire the necessary discipline and understanding, which may not be universally true.</p>
+</details>
+
+<h2>Chapter Thirteen</h2>
+
+<p>Chapter Thirteen contemplates the use of wealth for meaningful purposes beyond personal gain, urging consideration of societal issues such as education reform.</p><p>It highlights the inefficiencies in public school systems compared to capitalist business processes, noting the lack of penalties and incentives leads to misallocation of resources.</p><p>The author draws analogy to "Just Broccoli" — a poor business — applying those lessons to advocate for reforms that would improve capital efficiency in education.</p><p>This broader perspective situates investment success within a wider social and economic context.</p>
+
+<h2>Step - by - Step Instructions</h2>
+
+<p>The Step-by-Step Instructions chapter provides practical guidelines for implementing the magic formula strategy in real life, replicating the tested successful approach.</p><p>Key aspects include diversifying in 20 to 30 stocks, staggered purchasing over a year, adhering to one-year holding periods with tax-aware selling strategies, and consistent rebalancing.</p><p>The chapter reviews available stock screening tools, recommending the author’s website for most accurate adherence to the formula, but offering general guidelines for others, including minimum return on assets, low price/earnings ratios, and sector/region exclusions.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+<p>Despite the instructions’ clarity, executing such a disciplined and time-intensive approach may be daunting for many investors.</p><p>Also, some may question the reliability and comprehensiveness of the tools and data sources, particularly for individual investors without access to professional platforms.</p>
+</details>
+
+<h2>Afterword to the 2010 Edition</h2>
+
+<p>The Afterword to the 2010 Edition reaffirms the fundamental principles and efficacy of the magic formula after five years, despite volatile markets and economic challenges.</p><p>It explains the importance of combining margin of safety with buying good businesses at bargain prices, inspired by Graham and Buffett, and how the magic formula operationalizes these ideas.</p><p>The author acknowledges the formula’s flaws: periods of underperformance and short-term unpredictability, but argues these are inherent to any successful long-term strategy and maintain that the formula still works as a logical, disciplined approach.</p><p>Finally, it cautions against selective picking of individual formula stocks since the portfolio works effectively on average like insurance, balancing out winners and losers.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+<p>The persistence of shortcomings such as multi-year underperformance may deter many investors and challenge the practical adoption of the formula.</p><p>And while advocating patience, some might note that the psychological burden and time commitment remain significant hurdles.</p>
+</details>
+
+<h2>Appendix</h2>
+
+<p>The Appendix offers advanced readers background and technical details on the magic formula, focusing on two key metrics: return on capital and earnings yield.</p><p>Return on capital is calculated as EBIT divided by tangible capital employed (net working capital plus net fixed assets), carefully excluding intangibles like goodwill and adjusting for differences in debt and tax rates to compare companies equitably.</p><p>Earnings yield is defined as EBIT divided by enterprise value (market value of equity plus net interest-bearing debt), chosen over simple P/E ratios to account for capital structure differences, improving valuation comparability.</p><p>The appendix also reviews academic criticisms of market-beating strategies and demonstrates that the magic formula’s tested methodology avoids common biases and consistently performs well, even against more complex models and in large-cap stocks.</p>
+
+<h2 id="quiz-heading">Comprehension Quiz</h2>
+
+<details id="quiz-section" class="quiz-wrapper">
+  <summary class="quiz-toggle">Take the Quiz</summary>
+
+  <form id="quiz-form">
+    <div class="q-block">
+      <p class="q-label">1. What is the primary concept behind Joel Greenblatt&#x27;s investment strategy in &quot;The Little Book That Still Beats the Market&quot;?</p>
+      <label><input type="radio" name="q1" value="a"> Buying good businesses at bargain prices using a formula.</label>
+      <label><input type="radio" name="q1" value="b"> Investing solely in index funds to match market returns.</label>
+      <label><input type="radio" name="q1" value="c"> Speculating in small-cap stocks based on rumors.</label>
+      <label><input type="radio" name="q1" value="d"> Timing the market to buy low and sell high.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">2. According to the book, why must an investment yield more than the 10-year U.S. government bond rate?</p>
+      <label><input type="radio" name="q2" value="a"> Because government bonds are risk-free, and investors need compensation for risk.</label>
+      <label><input type="radio" name="q2" value="b"> Because the government bonds always underperform stocks.</label>
+      <label><input type="radio" name="q2" value="c"> Because taxes on bonds are higher than on stocks.</label>
+      <label><input type="radio" name="q2" value="d"> Because bonds do not pay dividends.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">3. What does &#x27;Mr. Market&#x27; symbolize in the context of the book&#x27;s investment philosophy?</p>
+      <label><input type="radio" name="q3" value="a"> The stock market&#x27;s emotional and irrational pricing behavior.</label>
+      <label><input type="radio" name="q3" value="b"> An idealized rational investor.</label>
+      <label><input type="radio" name="q3" value="c"> A competitor trying to outperform you in investing.</label>
+      <label><input type="radio" name="q3" value="d"> The government’s regulation of the market.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">4. Why does the magic formula rank stocks combining return on capital and earnings yield rather than using just one metric?</p>
+      <label><input type="radio" name="q4" value="a"> Because combining both identifies good businesses at bargain prices for superior returns.</label>
+      <label><input type="radio" name="q4" value="b"> Because combining both increases the number of stocks to choose from.</label>
+      <label><input type="radio" name="q4" value="c"> Because earnings yield is unreliable alone due to tax distortions.</label>
+      <label><input type="radio" name="q4" value="d"> Because return on capital alone misses small companies.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">5. What challenge does the book warn about when investing according to the magic formula?</p>
+      <label><input type="radio" name="q5" value="a"> The strategy may underperform the market for extended periods, requiring patience and belief.</label>
+      <label><input type="radio" name="q5" value="b"> It requires insider trading to work effectively.</label>
+      <label><input type="radio" name="q5" value="c"> It involves investing only in very small and illiquid stocks.</label>
+      <label><input type="radio" name="q5" value="d"> It guarantees instant high returns with no risk.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">6. In applying the magic formula, why is holding a diversified portfolio of about 20-30 stocks recommended?</p>
+      <label><input type="radio" name="q6" value="a"> To reduce volatility and better capture the average performance promised by the formula.</label>
+      <label><input type="radio" name="q6" value="b"> Because owning a single stock eliminates market risk.</label>
+      <label><input type="radio" name="q6" value="c"> To follow the example of mutual funds exactly.</label>
+      <label><input type="radio" name="q6" value="d"> Because smaller portfolios increase tax liabilities.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">7. How does the book suggest dealing with stocks in taxable accounts when approaching the one-year holding mark?</p>
+      <label><input type="radio" name="q7" value="a"> Sell winners just after one year to get long-term capital gains and sell losers just before one year to use short-term losses advantageously.</label>
+      <label><input type="radio" name="q7" value="b"> Sell all stocks immediately after one year regardless of gain or loss.</label>
+      <label><input type="radio" name="q7" value="c"> Sell winners before one year and losers after one year.</label>
+      <label><input type="radio" name="q7" value="d"> Hold all stocks indefinitely, ignoring tax considerations.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">8. What is the significance of using EBIT/Enterprise Value instead of P/E ratio in the magic formula?</p>
+      <label><input type="radio" name="q8" value="a"> EBIT/EV accounts for debt and compares earnings to the full company value, providing a cleaner valuation metric.</label>
+      <label><input type="radio" name="q8" value="b"> P/E ratio ignores earnings entirely.</label>
+      <label><input type="radio" name="q8" value="c"> EBIT/EV inflates the valuation by excluding liabilities.</label>
+      <label><input type="radio" name="q8" value="d"> P/E is only used for bonds, not stocks.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">9. According to the Afterword, what role does the magic formula play concerning Mr. Market’s behavior?</p>
+      <label><input type="radio" name="q9" value="a"> The formula exploits Mr. Market’s emotional mispricings by systematically buying cheap, good companies.</label>
+      <label><input type="radio" name="q9" value="b"> It predicts Mr. Market&#x27;s mood swings with perfect accuracy.</label>
+      <label><input type="radio" name="q9" value="c"> It avoids any interaction with Mr. Market entirely by investing privately.</label>
+      <label><input type="radio" name="q9" value="d"> It relies on Mr. Market being rational at all times.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">10. Why does the author caution against selectively choosing only certain top-ranked magic formula stocks to avoid companies facing headwinds?</p>
+      <label><input type="radio" name="q10" value="a"> Because headwinds are common among value stocks and attempting to avoid them may lead to poor timing and incomplete diversification.</label>
+      <label><input type="radio" name="q10" value="b"> Because the formula purposely includes only companies in robust industries.</label>
+      <label><input type="radio" name="q10" value="c"> Because avoiding those companies would negate tax advantages.</label>
+      <label><input type="radio" name="q10" value="d"> Because all companies with headwinds are fraudulent.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">11. What is the main reason the author recommends that most individuals not pick individual stocks on their own?</p>
+      <label><input type="radio" name="q11" value="a"> Because estimating normalized earnings and confidently valuing companies several years ahead is very difficult.</label>
+      <label><input type="radio" name="q11" value="b"> Because the stock market is rigged against individuals.</label>
+      <label><input type="radio" name="q11" value="c"> Because individual stock picking always underperforms index funds.</label>
+      <label><input type="radio" name="q11" value="d"> Because the magic formula forbids individual selection.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">12. What analogy does the author use to explain why holding 5 to 8 individual stocks could be a safe approach for knowledgeable investors?</p>
+      <label><input type="radio" name="q12" value="a"> Investing in five to eight favorite local businesses after understanding their prospects is prudent diversification.</label>
+      <label><input type="radio" name="q12" value="b"> Gambling in a casino with five or eight favorites increases success.</label>
+      <label><input type="radio" name="q12" value="c"> Holding many stocks like an index fund spreads out risk perfectly.</label>
+      <label><input type="radio" name="q12" value="d"> Owning a single stock is safer than multiple stocks.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">13. What criticism of mutual funds does the author outline in Chapter Twelve?</p>
+      <label><input type="radio" name="q13" value="a"> High fees, inability to consistently beat markets, and poor predictive power from past performance data.</label>
+      <label><input type="radio" name="q13" value="b"> Lack of regulatory oversight.</label>
+      <label><input type="radio" name="q13" value="c"> Limited diversification and illiquidity.</label>
+      <label><input type="radio" name="q13" value="d"> Only available to institutional investors.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">14. Which of the following best summarizes the author’s view on hedge funds?</p>
+      <label><input type="radio" name="q14" value="a"> They charge high fees, are typically inaccessible to most investors, and finding consistently great managers is difficult.</label>
+      <label><input type="radio" name="q14" value="b"> They are the best option for all investors looking to beat the market.</label>
+      <label><input type="radio" name="q14" value="c"> They guarantee higher returns with no risk.</label>
+      <label><input type="radio" name="q14" value="d"> They are fully regulated and as accessible as mutual funds.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">15. According to Chapter Thirteen, what is a major societal issue the author connects to investment principles?</p>
+      <label><input type="radio" name="q15" value="a"> The inefficiency and lack of accountability in public education resembling an unprofitable business.</label>
+      <label><input type="radio" name="q15" value="b"> High taxes on capital gains.</label>
+      <label><input type="radio" name="q15" value="c"> Inequality in wealth distribution.</label>
+      <label><input type="radio" name="q15" value="d"> The need for more hedge funds.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">16. What is the recommended frequency for rebalancing stocks in the magic formula portfolio according to the Step-by-Step Instructions?</p>
+      <label><input type="radio" name="q16" value="a"> Add 5-7 new stocks every two to three months and sell stocks after holding them for one year.</label>
+      <label><input type="radio" name="q16" value="b"> Rebalance daily based on stock price movement.</label>
+      <label><input type="radio" name="q16" value="c"> Sell and buy stocks once every five years.</label>
+      <label><input type="radio" name="q16" value="d"> Never sell stocks; hold indefinitely.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">17. Why does the magic formula exclude utilities and financial stocks from its stock universe?</p>
+      <label><input type="radio" name="q17" value="a"> Because their financial structures distort earnings yield and return on capital comparisons used by the formula.</label>
+      <label><input type="radio" name="q17" value="b"> Because these sectors are too risky for investors.</label>
+      <label><input type="radio" name="q17" value="c"> Because they are always overpriced.</label>
+      <label><input type="radio" name="q17" value="d"> Because they do not pay dividends.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">18. What does the Afterword reveal about the magic formula’s performance during the 10-year period when the S&amp;P 500 was down?</p>
+      <label><input type="radio" name="q18" value="a"> The formula still managed to triple the money, dramatically outperforming the market.</label>
+      <label><input type="radio" name="q18" value="b"> The formula performed worse than the market due to economic conditions.</label>
+      <label><input type="radio" name="q18" value="c"> The formula only matches the market return during downturns.</label>
+      <label><input type="radio" name="q18" value="d"> Data for this period is not reliable.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">19. What is a significant practical limitation of implementing a long/short strategy using the magic formula’s top and bottom deciles, according to the Afterword?</p>
+      <label><input type="radio" name="q19" value="a"> It would result in large losses, including going broke around 2000, due to short-term divergences and volatility.</label>
+      <label><input type="radio" name="q19" value="b"> It is the most effective way to maximize returns with no risk.</label>
+      <label><input type="radio" name="q19" value="c"> It requires no capital and is risk-free.</label>
+      <label><input type="radio" name="q19" value="d"> It guarantees steady positive returns every year.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">20. What does the book state about the nature of risk when viewed through the magic formula’s investment outcomes?</p>
+      <label><input type="radio" name="q20" value="a"> The magic formula achieves better returns with less risk of losing money over the long term compared to market averages.</label>
+      <label><input type="radio" name="q20" value="b"> The formula always incurs higher risk than standard market indices.</label>
+      <label><input type="radio" name="q20" value="c"> Risk is not a concern when using the magic formula.</label>
+      <label><input type="radio" name="q20" value="d"> The formula increases volatility without any return benefit.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">21. Why does the magic formula avoid making predictions about future earnings?</p>
+      <label><input type="radio" name="q21" value="a"> Because future earnings are hard to predict reliably; instead, it uses last year’s earnings as a practical proxy.</label>
+      <label><input type="radio" name="q21" value="b"> Because last year’s earnings are always better indicators than any future estimates.</label>
+      <label><input type="radio" name="q21" value="c"> Because predictions are illegal for individual investors.</label>
+      <label><input type="radio" name="q21" value="d"> Because the magic formula is based on technical analysis.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">22. What is the role of high returns on capital in the magic formula’s selection process?</p>
+      <label><input type="radio" name="q22" value="a"> To identify businesses capable of efficiently reinvesting profits for growth, indicating durable competitive advantages.</label>
+      <label><input type="radio" name="q22" value="b"> To find companies with the most debt financing.</label>
+      <label><input type="radio" name="q22" value="c"> To select companies with the highest historical sales volume.</label>
+      <label><input type="radio" name="q22" value="d"> To filter for companies paying the highest dividends.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">23. According to the Appendix, what problem do standard P/E and E/P ratios have that EBIT/Enterprise Value solves?</p>
+      <label><input type="radio" name="q23" value="a"> P/E and E/P are distorted by varying debt and tax structures, while EBIT/EV neutralizes these differences.</label>
+      <label><input type="radio" name="q23" value="b"> P/E and E/P ignore earnings completely.</label>
+      <label><input type="radio" name="q23" value="c"> EBIT/EV is easier to calculate and more commonly used.</label>
+      <label><input type="radio" name="q23" value="d"> P/E and E/P do not vary with stock prices.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">24. What is the key reason, according to the book, that the magic formula might continue to work in the future?</p>
+      <label><input type="radio" name="q24" value="a"> Because it relies on universal principles of investing in good businesses at cheap prices, which persist despite market changes.</label>
+      <label><input type="radio" name="q24" value="b"> Because it depends on proprietary insider information.</label>
+      <label><input type="radio" name="q24" value="c"> Because it only invests in small, unknown companies.</label>
+      <label><input type="radio" name="q24" value="d"> Because it exploits daily market inefficiencies.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">25. How does the magic formula address the risk of investing in individual stocks with unpredictable earnings?</p>
+      <label><input type="radio" name="q25" value="a"> By selecting many stocks to diversify away individual company risk and relying on average portfolio performance.</label>
+      <label><input type="radio" name="q25" value="b"> By picking only the top-earning stock each year.</label>
+      <label><input type="radio" name="q25" value="c"> By timing the market to avoid risky periods.</label>
+      <label><input type="radio" name="q25" value="d"> By investing exclusively in bonds.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">26. What lesson does the author draw from the anecdote about the giant balloon?</p>
+      <label><input type="radio" name="q26" value="a"> Saving money wisely and investing are more valuable than impulsive or wasteful spending.</label>
+      <label><input type="radio" name="q26" value="b"> Weather balloons are a good investment.</label>
+      <label><input type="radio" name="q26" value="c"> Investing is unpredictable and not worth the effort.</label>
+      <label><input type="radio" name="q26" value="d"> Big assets always float away.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">27. Why does the author recommend gradually building the magic formula portfolio rather than buying all stocks at once?</p>
+      <label><input type="radio" name="q27" value="a"> To avoid market impact, manage risk, and leverage dollar-cost averaging over time.</label>
+      <label><input type="radio" name="q27" value="b"> Because the formula changes hourly.</label>
+      <label><input type="radio" name="q27" value="c"> Because stock brokers impose buying limits.</label>
+      <label><input type="radio" name="q27" value="d"> Because only five stocks are available each quarter.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">28. What is one reason the magic formula might select companies currently &quot;out of favor&quot;?</p>
+      <label><input type="radio" name="q28" value="a"> Because these stocks have depressed prices making them bargains, despite negative near-term outlooks.</label>
+      <label><input type="radio" name="q28" value="b"> Because it only chooses recent winners.</label>
+      <label><input type="radio" name="q28" value="c"> Because it avoids all volatile companies.</label>
+      <label><input type="radio" name="q28" value="d"> Because it selects companies with the highest market caps exclusively.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">29. How does the author suggest investors handle psychological challenges posed by the magic formula’s periods of underperformance?</p>
+      <label><input type="radio" name="q29" value="a"> By deeply believing in the formula and maintaining a long-term horizon despite short-term difficulties.</label>
+      <label><input type="radio" name="q29" value="b"> By abandoning the formula immediately after losses.</label>
+      <label><input type="radio" name="q29" value="c"> By frequently switching to trendy stocks for quick gains.</label>
+      <label><input type="radio" name="q29" value="d"> By doubling down aggressively on losing stocks.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">30. What did backtesting reveal about the magic formula’s performance for very large companies?</p>
+      <label><input type="radio" name="q30" value="a"> It performed robustly, outperforming other value strategies notably in the large-cap universe.</label>
+      <label><input type="radio" name="q30" value="b"> It failed to outperform due to high analyst coverage.</label>
+      <label><input type="radio" name="q30" value="c"> It only worked with small, illiquid stocks.</label>
+      <label><input type="radio" name="q30" value="d"> It was irrelevant because large stocks are always fairly priced.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">31. What is an important takeaway regarding past performance and stock fund selection discussed in Chapter Twelve?</p>
+      <label><input type="radio" name="q31" value="a"> Past good performance is not a reliable predictor of future fund performance.</label>
+      <label><input type="radio" name="q31" value="b"> Funds with the best past records always continue to do well.</label>
+      <label><input type="radio" name="q31" value="c"> Choosing funds randomly is as good as any method.</label>
+      <label><input type="radio" name="q31" value="d"> Fees have no impact on fund performance.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">32. How does the magic formula help investors avoid emotional mistakes in stock selection?</p>
+      <label><input type="radio" name="q32" value="a"> By providing a systematic, numbers-based approach that bypasses subjective biases and market moods.</label>
+      <label><input type="radio" name="q32" value="b"> By encouraging frequent trading to capitalize on emotions.</label>
+      <label><input type="radio" name="q32" value="c"> By focusing only on popular glamour stocks.</label>
+      <label><input type="radio" name="q32" value="d"> By using professional market timing tools.</label>
+    </div>
+
+    <button type="button" id="score-btn" onclick="scoreQuiz()">Score My Answers</button>
+
+    <div id="quiz-result" style="display:none;">
+      <p id="score-text"></p>
+      <div id="answer-review"></div>
+    </div>
+
+  </form>
+</details>
+
+<script>
+(function() {
+  const answers = {
+    "q1": {
+        "correct": "a",
+        "explain": "Greenblatt's strategy focuses on systematically buying high-quality companies at low valuations using earnings yield and return on capital."
+    },
+    "q2": {
+        "correct": "a",
+        "explain": "Since government bonds are considered risk-free, any riskier investment should offer a higher expected return."
+    },
+    "q3": {
+        "correct": "a",
+        "explain": "Mr. Market personifies the market’s emotional volatility, offering prices that swing irrationally."
+    },
+    "q4": {
+        "correct": "a",
+        "explain": "The dual ranking filters for financially sound companies that are priced attractively, enhancing investment quality."
+    },
+    "q5": {
+        "correct": "a",
+        "explain": "The formula works best over the long term, but investors must endure short-term volatility and underperformance."
+    },
+    "q6": {
+        "correct": "a",
+        "explain": "Diversification reduces risk and increases the chance that the overall portfolio matches historical average returns."
+    },
+    "q7": {
+        "correct": "a",
+        "explain": "This tax strategy maximizes after-tax returns by timing sales to optimize capital gains treatment."
+    },
+    "q8": {
+        "correct": "a",
+        "explain": "Using EBIT/EV standardizes comparisons across companies with different capital structure and tax rates."
+    },
+    "q9": {
+        "correct": "a",
+        "explain": "The formula seeks bargains when Mr. Market undervalues quality businesses driven by emotional swings."
+    },
+    "q10": {
+        "correct": "a",
+        "explain": "Many bargains are out of favor for reasons not easily predictable, so broad diversification reduces risk."
+    },
+    "q11": {
+        "correct": "a",
+        "explain": "Accurate earnings forecasts and valuations require expertise that most individuals lack."
+    },
+    "q12": {
+        "correct": "a",
+        "explain": "For well-understood companies, a small diversified portfolio can capture most benefits while reducing unnecessary complexity."
+    },
+    "q13": {
+        "correct": "a",
+        "explain": "Mutual funds charge fees and often fail to outperform the market net of costs, and past success is not a reliable indicator of future results."
+    },
+    "q14": {
+        "correct": "a",
+        "explain": "Hedge funds are exclusive, expensive, and it is hard to identify winners consistently."
+    },
+    "q15": {
+        "correct": "a",
+        "explain": "The author compares failing schools with businesses that fail to produce returns, advocating reform with accountability."
+    },
+    "q16": {
+        "correct": "a",
+        "explain": "Gradual investment over months and annual selling optimizes diversification and tax treatment."
+    },
+    "q17": {
+        "correct": "a",
+        "explain": "Utilities and financial companies’ accounting differ substantially, complicating uniform formula application."
+    },
+    "q18": {
+        "correct": "a",
+        "explain": "The formula greatly outperformed even during a generally declining market, showing resilience and value."
+    },
+    "q19": {
+        "correct": "a",
+        "explain": "Short-term movements can hurt such strategies devastatingly, making them risky despite theoretical appeal."
+    },
+    "q20": {
+        "correct": "a",
+        "explain": "Backtests showed the formula outperforms with fewer sizeable losses over rolling three-year periods."
+    },
+    "q21": {
+        "correct": "a",
+        "explain": "Using last year’s earnings avoids subjective and often inaccurate forecasts, enabling a rule-based approach."
+    },
+    "q22": {
+        "correct": "a",
+        "explain": "High return on capital indicates a company creates substantial profits relative to invested capital, often due to competitive advantages."
+    },
+    "q23": {
+        "correct": "a",
+        "explain": "EBIT/EV accounts for enterprise value including debt, controlling for capital structure effects on valuation."
+    },
+    "q24": {
+        "correct": "a",
+        "explain": "The formula is rooted in basic, timeless investment concepts that have historically generated superior returns."
+    },
+    "q25": {
+        "correct": "a",
+        "explain": "Diversification reduces unsystematic risk and helps the formula deliver consistent average returns across its portfolio."
+    },
+    "q26": {
+        "correct": "a",
+        "explain": "The story illustrates the importance of saving for the future and avoiding frivolous expenses."
+    },
+    "q27": {
+        "correct": "a",
+        "explain": "Phasing purchases helps reduce timing risk and avoids moving prices against the investor."
+    },
+    "q28": {
+        "correct": "a",
+        "explain": "Value investing often involves buying companies undervalued due to temporary problems or negative sentiment."
+    },
+    "q29": {
+        "correct": "a",
+        "explain": "Long-term conviction and patience are essential to realizing the formula’s proven benefits."
+    },
+    "q30": {
+        "correct": "a",
+        "explain": "The formula’s focus on earnings and return on capital provided superior selection even among large-cap firms."
+    },
+    "q31": {
+        "correct": "a",
+        "explain": "Investment returns vary and past success does not guarantee future results."
+    },
+    "q32": {
+        "correct": "a",
+        "explain": "The formula’s mechanical method limits emotional decision-making common in investing."
+    }
+};
+
+  window.scoreQuiz = function() {
+    const form = document.getElementById("quiz-form");
+    let correct = 0;
+    const total = Object.keys(answers).length;
+    let reviewHTML = "";
+
+    for (let i = 1; i <= total; i++) {
+      const key = "q" + i;
+      const selected = form.elements[key] ? form.elements[key].value : "";
+      const isCorrect = selected === answers[key].correct;
+      if (isCorrect) correct++;
+
+      const status = !selected ? "wrong" : (isCorrect ? "correct" : "wrong");
+      const icon = isCorrect ? "\u2705" : "\u274C";
+      const yourAnswer = selected ? selected.toUpperCase() : "No answer";
+      const correctAnswer = answers[key].correct.toUpperCase();
+
+      reviewHTML += '<div class="review-item ' + status + '">';
+      reviewHTML += '<div class="ri-q">' + icon + " Question " + i + "</div>";
+      reviewHTML += '<div class="ri-detail">';
+      if (!isCorrect) {
+        reviewHTML += "Your answer: " + yourAnswer + " &mdash; Correct answer: " + correctAnswer + "<br>";
+      }
+      reviewHTML += answers[key].explain;
+      reviewHTML += "</div></div>";
+    }
+
+    const pct = Math.round((correct / total) * 100);
+    let grade;
+    if (pct === 100) grade = "Perfect score!";
+    else if (pct >= 80) grade = "Great understanding!";
+    else if (pct >= 60) grade = "Good, but review the summaries above for the ones you missed.";
+    else grade = "Consider re-reading the summaries above and trying again.";
+
+    document.getElementById("score-text").textContent = correct + " / " + total + " (" + pct + "%) — " + grade;
+    document.getElementById("answer-review").innerHTML = reviewHTML;
+    document.getElementById("quiz-result").style.display = "block";
+    document.getElementById("quiz-result").scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+})();
+</script>
+
+</div><!-- .content -->
+
+</body>
+</html>

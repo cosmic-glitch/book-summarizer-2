@@ -2,3 +2,4 @@ books/
 temp/
 .vercel
 .env
+.DS_Store

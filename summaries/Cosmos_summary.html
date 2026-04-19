@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cosmos &mdash; Book Summary Pro</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      line-height: 1.7;
+      color: #222;
+      background: #fafafa;
+    }
+    .app-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #2c2c2c;
+      padding: 14px 24px;
+    }
+    .content {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 32px 20px 40px;
+    }
+    .app-nav .app-name {
+      font-size: 1.05em;
+      font-weight: bold;
+      color: #e8e0d0;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+    }
+    .app-nav .app-name:hover {
+      color: #d4a843;
+    }
+    .app-nav .back-link {
+      font-size: 0.9em;
+      color: #999;
+      text-decoration: none;
+    }
+    .app-nav .back-link:hover {
+      color: #d4a843;
+    }
+    h1 {
+      font-size: 1.8em;
+      border-bottom: 2px solid #333;
+      padding-bottom: 10px;
+      margin-bottom: 5px;
+    }
+    .subtitle {
+      font-size: 1.1em;
+      color: #444;
+      margin: 2px 0 0 0;
+      font-style: italic;
+    }
+    .author {
+      font-style: italic;
+      color: #777;
+      font-size: 0.95em;
+      margin-bottom: 40px;
+    }
+    h2 {
+      font-size: 1.3em;
+      margin-top: 48px;
+      color: #1a1a1a;
+      border-left: 4px solid #555;
+      padding-left: 12px;
+    }
+    p {
+      margin-bottom: 14px;
+      text-align: justify;
+    }
+    details.counter {
+      background: #f0ece4;
+      border-left: 4px solid #b8860b;
+      padding: 14px 18px;
+      margin: 20px 0 28px 0;
+      border-radius: 0 6px 6px 0;
+    }
+    details.counter summary {
+      font-weight: bold;
+      font-size: 0.95em;
+      color: #8b6914;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    details.counter summary::-webkit-details-marker {
+      display: none;
+    }
+    details.counter summary::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    details.counter[open] summary::before {
+      transform: rotate(90deg);
+    }
+    details.counter p {
+      margin-top: 12px;
+      margin-bottom: 10px;
+      color: #3a3a3a;
+    }
+    details.counter p:last-child {
+      margin-bottom: 0;
+    }
+    .quiz-wrapper {
+      margin-top: 48px;
+      background: #f5f5f0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 16px 20px;
+    }
+    .quiz-toggle {
+      font-weight: bold;
+      font-size: 1.05em;
+      cursor: pointer;
+      color: #2a5a2a;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .quiz-toggle::-webkit-details-marker { display: none; }
+    .quiz-toggle::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    .quiz-wrapper[open] .quiz-toggle::before {
+      transform: rotate(90deg);
+    }
+    .q-block {
+      margin: 24px 0;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    .q-block:last-of-type { border-bottom: none; }
+    .q-label {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .q-block label {
+      display: block;
+      padding: 6px 10px;
+      margin: 4px 0;
+      border-radius: 4px;
+      cursor: pointer;
+      line-height: 1.5;
+    }
+    .q-block label:hover { background: #e8e8e0; }
+    #score-btn {
+      display: block;
+      margin: 28px auto 0;
+      padding: 12px 32px;
+      font-family: Georgia, serif;
+      font-size: 1em;
+      background: #2a5a2a;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #score-btn:hover { background: #1e441e; }
+    #quiz-result {
+      margin-top: 24px;
+      padding: 18px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    #score-text {
+      font-size: 1.15em;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .review-item {
+      margin-bottom: 14px;
+      padding: 10px 12px;
+      border-radius: 4px;
+    }
+    .review-item.correct { background: #e6f4e6; }
+    .review-item.wrong { background: #fce8e8; }
+    .review-item .ri-q { font-weight: bold; margin-bottom: 4px; }
+    .review-item .ri-detail { font-size: 0.93em; color: #444; }
+  </style>
+</head>
+<body>
+
+<nav class="app-nav">
+  <a href="index.html" class="app-name">Book Summary Pro</a>
+  <a href="index.html" class="back-link">&larr; All Books</a>
+</nav>
+
+<div class="content">
+
+<h1>Cosmos</h1>
+<p class="author">Carl Sagan</p>
+
+<h2>Chapter I: The Shores of the Cosmic Ocean</h2>
+
+<p>Sagan opens with a sweeping imaginative descent from the largest scales of the universe down to our own planet, inviting the reader to see the Earth from a <b>cosmic perspective</b>. He argues that two disciplines of mind are essential for exploring the Cosmos: <i>imagination</i>, which carries us to worlds that never were, and <i>skepticism</i>, which allows us to test our speculations against evidence. The Cosmos, he insists, is knowable, and our recent ability to explore it is the culmination of a million years of patient human observation.</p>
+
+<p>The chapter's centerpiece is the story of <b>Eratosthenes of Alexandria</b>, who around 240 B.C. deduced the circumference of the Earth from nothing more than sticks, shadows, and simple geometry. By noting that at noon on the summer solstice a vertical stick cast no shadow at Syene but did cast one in Alexandria, he reasoned that the Earth's surface must be curved and computed its circumference to within a few percent of the modern value. Sagan uses Eratosthenes as the emblem of how much can be learned by combining careful observation with the courage to draw bold conclusions.</p>
+
+<p>He then reconstructs the lost grandeur of the <b>Library of Alexandria</b>, the first true research institute in history, where scholars such as Hipparchus, Euclid, Archimedes, Aristarchus and Hypatia worked on the full breadth of human knowledge. The word <i>Cosmos</i> itself, Sagan notes, is a Greek term for the order of the universe, implying the deep interconnectedness of all things. The chapter closes with the Big Bang as the origin of that Cosmos and frames the whole book as a journey from that first moment of cosmic time to the present, where human beings, descendants of the Big Bang, have begun to ask where they came from.</p>
+
+<h2>Chapter II: One Voice in the Cosmic Fugue</h2>
+
+<p>Sagan turns from the stars to the question of life, framing terrestrial biology as just one voice in a possible cosmic chorus. He introduces evolution by <b>natural selection</b> through a memorable example: the <i>Heike crab</i> of Japan, whose shells, over centuries, came to resemble the faces of drowned samurai because fishermen tossed back any crab whose carapace bore even a hint of a human visage. This is artificial selection, and he argues that it differs only in the agent of selection, not in principle, from the natural version described by Darwin and Wallace. Given time &mdash; billions of years of deaths and survivals &mdash; the slow accumulation of tiny favorable mutations produces all the beauty and diversity of the living world.</p>
+
+<p>He then traces the history of life on Earth, from the first self-replicating molecules in a warm primordial broth roughly four billion years ago, through the evolution of cells, the invention of sex about two billion years ago, the oxygen crisis produced by photosynthesis, and the Cambrian explosion of complex body plans. At every level &mdash; from the <b>DNA ladder</b> carrying instructions a billion nucleotides long, to the <b>enzymes</b> working like assembly-line workers inside each cell &mdash; he stresses that we are machines of extraordinary subtlety, built by blind processes but running on universal chemistry.</p>
+
+<p>The chapter ends with speculation about life elsewhere. Sagan describes Stanley Miller's classic <i>spark-discharge experiment</i>, in which the building blocks of life formed easily from simulated early-Earth gases, and argues that this chemistry should be widespread. He playfully imagines the "sinkers," "floaters" and "hunters" he and E. E. Salpeter sketched for a Jovian atmosphere, but concludes that we cannot know what extraterrestrial life looks like until we find it. The search, he says, will <i>deprovincialize</i> biology by giving us more than a single data point.</p>
+
+<h2>Chapter III: The Harmony of Worlds</h2>
+
+<p>This chapter is a dual biography of <b>Johannes Kepler</b> and <b>Isaac Newton</b>, framed as the transition from mystical to mathematical astronomy. Sagan first spends pages demolishing <b>astrology</b> as a pseudoscience: he points out that the horoscope columns of the <i>New York Post</i> and <i>Daily News</i> contradict one another on the same day; that identical twins share charts but have wildly different lives; and that astrologers cannot reliably predict personalities of people they know nothing about. Yet he treats astrology as a historically important <i>parent</i> of astronomy, noting that Ptolemy, the great codifier of the Earth-centered universe, was both astronomer and astrologer.</p>
+
+<p>Kepler is presented as a man torn between his Pythagorean love of perfect forms and his fidelity to Tycho Brahe's observations. He spent years trying to fit Mars into circular orbits, until a residual discrepancy of just eight minutes of arc forced him to abandon circles for ellipses. From that surrender to data flowed his three <b>laws of planetary motion</b>. Kepler, Sagan writes, <i>"preferred the hard truth to his dearest illusions,"</i> and in doing so made astronomy a part of physics. The chapter also lingers on Kepler's personal tragedies &mdash; the Thirty Years' War, his mother's trial for witchcraft &mdash; and on his <i>Somnium</i>, arguably the first work of science fiction.</p>
+
+<p>Newton then enters as the man who turned Kepler's empirical laws into a universal theory. From the inverse-square law of gravitation he derived not only Kepler's results but the entire "System of the World." Sagan highlights Newton's strange personal mysticism &mdash; his alchemy, his Judaic unitarianism, his possible mercury poisoning &mdash; and insists that the tension between rationalism and mysticism was the <i>engine</i> of his creativity rather than an embarrassment to it. With Kepler and Newton, Sagan says, humanity discovered that the same simple laws apply everywhere in the Cosmos.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Sagan's framing of Kepler as the "first astrophysicist" and Ptolemy as a millennium-long impediment is cleaner than the historical record. Scholars such as <b>Owen Gingerich</b> have argued that Ptolemy's geocentric model was a genuinely predictive scientific achievement that fit the available data better than early Copernican models and that its longevity was not mere ecclesiastical stubbornness. Likewise, historians including <b>I. Bernard Cohen</b> and <b>Bruce Stephenson</b> have emphasized that Kepler's elliptical breakthrough depended on theological and harmonic commitments that Sagan paints as mere obstacles; the same mystical drive he credits Newton for pushed Kepler toward his laws in the first place.</p>
+  <p>On astrology, Sagan's critique is directed at the newspaper-horoscope version and is entirely sound there, but it does not engage the more sophisticated claim &mdash; defended by some historians of science &mdash; that medieval astrology was the <b>statistical</b> and <b>mathematical</b> matrix within which astronomy developed. Dismissing the pseudoscience without crediting its role as a patron of observation is a common simplification in popular science writing.</p>
+</details>
+
+<h2>Chapter IV: Heaven and Hell</h2>
+
+<p>Sagan uses the planet Venus as a cautionary tale about planetary climate. He opens with the 1908 <b>Tunguska event</b> in Siberia, where a cometary fragment flattened two thousand square kilometers of forest without leaving a crater, and uses it to argue that cosmic catastrophe remains a real, if rare, feature of Earth history. Comets, he explains, are icy snowballs from a vast spherical reservoir at the edge of the solar system; their apparent omens of doom through history are superstitions built on the real but extraordinary fact that they occasionally collide with planets.</p>
+
+<p>Venus, long imagined as a swampy Earth-twin hidden under clouds, turns out to be a hellscape with a surface temperature of 480&deg;C, 90 atmospheres of pressure, and continuous rain of sulfuric acid that never reaches the ground. The cause is a <b>runaway greenhouse effect</b>: Venus' thick carbon dioxide atmosphere is opaque to the infrared radiation the hot surface tries to emit, so heat accumulates until the surface balances the sunlight absorbed. Sagan uses the Venus story to frame a <i>comparative planetology</i> in which Earth can be understood only alongside its siblings.</p>
+
+<p>The chapter's moral punch arrives near the end: by burning fossil fuels and releasing carbon dioxide, by destroying forests and brightening the land, humans are perturbing Earth's climate <i>simultaneously</i> in the direction of a Venus-like greenhouse and a colder ice-age albedo. Sagan wrote this in 1980, before climate science was a mainstream public issue, and his warning is explicit: even a one- or two-degree rise in global temperature could have catastrophic consequences, and our understanding of planetary climate is in its infancy. He also recounts the Velikovsky affair as an example of how science, while obliged to take strange hypotheses seriously, must ultimately subject them to rigorous evidence.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Sagan's greenhouse warning has been dramatically vindicated by subsequent climate science, but his symmetric treatment of <b>albedo cooling</b> and <b>CO&#8322; warming</b> as roughly balanced risks now looks dated. Modern climatology &mdash; informed by decades of satellite data and more sophisticated general circulation models &mdash; is much more confident that anthropogenic greenhouse forcing dominates albedo effects, and that the risk is specifically of warming, not of a possible runaway cooling. The "we simply don't know" tone of the chapter reflects the genuine uncertainty of 1980 but would be inappropriate today.</p>
+  <p>Sagan's defense of Velikovsky &mdash; that science must tolerate unorthodox ideas &mdash; has also been criticized. <b>Philip Morrison</b> and others have argued that Velikovsky's hypotheses violated so many independent physical laws that their suppression was not an ideological failing of science but a reasonable defensive reaction against pseudoscience dressed in a scholarly register.</p>
+</details>
+
+<h2>Chapter V: Blues for a Red Planet</h2>
+
+<p>This chapter is a meditation on Mars as a mirror for human hopes and a case study in how preconceptions can warp observation. Sagan recounts the saga of <b>Percival Lowell</b>, the wealthy Bostonian who spent his life mapping <i>canali</i> &mdash; "channels" in Italian, mistranslated to "canals" &mdash; that did not actually exist. Lowell's linework of a dying Martian civilization was so vivid that it inspired Edgar Rice Burroughs' Barsoom novels, which in turn seeded the boyhood imagination of Sagan himself. Yet when Mariner 9 and the Viking orbiters finally photographed Mars at high resolution, no trace of the canals could be found. Sagan suggests the canals were a malfunction of <i>the hand/eye/brain combination</i> under difficult seeing conditions &mdash; the intelligence, as he puts it, was on the wrong side of the telescope.</p>
+
+<p>He then describes the <b>Viking missions</b>, for which he was a member of the imaging team, and walks through the tortured selection of landing sites for spacecraft that could not be too high, too windy, too rough or too soft. Viking's biology experiments returned ambiguous results: two of three experiments met their pre-launch criteria for detecting life, but the absence of any organic molecules in the soil &mdash; less than on the Moon &mdash; made the case doubtful. Subsequent laboratory work by <b>Banin and Rishpon</b> showed that montmorillonite clays could mimic the apparent biology. The Viking life detection was, Sagan concludes, not compelling, though not definitively negative either.</p>
+
+<p>The chapter closes by asking what to do with Mars if it proves lifeless. Sagan introduces the idea of <b>terraforming</b>: darkening the polar caps with engineered plants to release trapped CO&#8322;, thickening the atmosphere, eventually building canal networks to irrigate the equator. In a final ironic twist, Lowell's vision might yet come true &mdash; only the Martians who build the canals will be <i>us</i>. He also injects a moral principle: <i>if there is life on Mars, we should do nothing with Mars</i>, because the existence of an independent biology is a treasure that must supersede any possible use of the planet.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The ethics of <b>terraforming</b> have been extensively debated since Sagan wrote this chapter. Philosophers such as <b>Robert Sparrow</b> and <b>Christopher McKay</b> have argued that even a lifeless Mars might have intrinsic value as a pristine geological laboratory, and that the casual assumption that a dead world is ours to remake reflects exactly the kind of anthropocentric framing Sagan himself criticizes elsewhere. Sagan's "no life, no problem" rule is cleaner than contemporary environmental ethics allows.</p>
+  <p>On the Viking life-detection results, a minority view championed by <b>Gilbert Levin</b> (principal investigator of the Labeled Release experiment) has persisted to the present: Levin continued to argue until his death in 2021 that the positive signals were evidence of Martian microbial life and that the clay-mimicry explanation never fully accounted for the temperature-dependence of the signal. The matter is not as closed as Sagan's chapter implies.</p>
+</details>
+
+<h2>Chapter VI: Travelers' Tales</h2>
+
+<p>Sagan draws an extended parallel between the Voyager missions to the outer planets and the seaborne voyages of exploration of the 15th to 17th centuries, using seventeenth-century <b>Holland</b> and the life of <b>Christiaan Huygens</b> as a bridge. Holland, he argues, was the most intellectually open nation of its time: tolerant of heterodoxy, committed to exploration, a refuge for Descartes, Spinoza and the exiled Galileo. In that setting, the Huygens family produced a polymath who discovered Saturn's rings, discovered Titan, invented the pendulum clock, contributed the wave theory of light, and wrote one of the earliest speculative books on extraterrestrial life, <i>The Celestial Worlds Discover'd</i>.</p>
+
+<p>The heart of the chapter is a logbook-style account of what <b>Voyager 2</b> saw at Jupiter on its 1979 encounter. Sagan marvels at the Great Red Spot, at Europa's crisscrossing lineations, at Ganymede and Callisto. But the star of the show is <b>Io</b>, where navigation-team member <b>Linda Morabito</b> spotted a plume rising from the limb and, in that moment, Voyager discovered the first active volcanoes beyond Earth. The volcanoes had been <i>predicted</i> by Peale and colleagues on the basis of tidal heating by Jupiter and Europa &mdash; a rare case of a bold prediction being confirmed within weeks of publication.</p>
+
+<p>Sagan ends with Titan and the rings of Saturn as the next objectives, and uses the chapter's whole structure to argue that the Voyagers are the lineal descendants of Huygens' pendulum-making, Dutch cartography and Galileo's telescope: they are caravels bound for the stars, and the age of exploration never ended.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Sagan's portrait of the Dutch Golden Age as a shining counterexample to intolerant Europe glosses over a less flattering reality. The Dutch Republic's prosperity depended heavily on the <b>Dutch East India Company</b> (VOC), which enforced monopolies through military violence in the Spice Islands, participated actively in the Atlantic slave trade, and committed well-documented atrocities such as the 1621 Banda massacre. Historians including <b>Jonathan Israel</b> and <b>Pepijn Brandon</b> have stressed that Holland's intellectual openness co-existed with, and was partly funded by, systems of colonial coercion. Sagan mentions slavery in the book when convenient to his thesis about ancient Greece but elides it when praising early-modern Holland.</p>
+  <p>The "heroic individual astronomer" framing &mdash; Huygens personally discovers Titan, Morabito personally discovers volcanoes &mdash; is also characteristic of popular science writing. Sociologists of science such as <b>Bruno Latour</b> have pointed out that discoveries of this kind depend on enormous collaborative networks (instrument builders, data pipeline engineers, mission managers) that tend to vanish behind the narrative of the lone observer with a sharp eye.</p>
+</details>
+
+<h2>Chapter VII: The Backbone of Night</h2>
+
+<p>The title comes from the <b>!Kung</b> of the Kalahari, who call the Milky Way "the backbone of night" because they believe it holds the darkness up. Sagan uses their elegant metaphor to frame the central question of the chapter: what are the stars, and how did humans come to know? He traces a speculative journey from imagined hunter-gatherer campfire musings ("the stars are campfires") through the Greek gods of Homer to the <b>Ionian Awakening</b> of the 6th century B.C., where for the first time in recorded history a community of thinkers attempted to understand nature without invoking the gods.</p>
+
+<p>He lingers lovingly on the Ionian scientists: <b>Thales</b>, who thought everything was once water but "left Marduk out"; <b>Anaximander</b>, who proposed that humans descended from fish-like ancestors; <b>Empedocles</b>, who proved the existence of air with a kitchen ladle; <b>Democritus</b>, who invented the word "atom" and thought the Milky Way was composed of unresolved stars two thousand years before the telescope; and <b>Anaxagoras</b>, who held that the Sun is a red-hot stone and was imprisoned for impiety. Against them he sets <b>Pythagoras</b> and his followers, whom he blames for a mystical counter-tradition that privileged pure reason over experiment, kept sacred knowledge within an elite cult, and set back the science of antiquity.</p>
+
+<p>Sagan's striking thesis is that the Ionian science was killed not primarily by religion but by <b>slavery</b>: because manual work was the province of slaves, free citizens (the only ones with the leisure to do science) came to regard experimental tinkering as beneath them. The distaste for getting one's hands dirty propagated forward through Plato and Aristotle, and with it the empirical tradition died for nearly two millennia. Aristarchus's heliocentric model, which <i>already existed</i> in 280 B.C., simply sank without trace until Copernicus.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The "slavery killed Greek science" thesis that Sagan borrows from <b>Benjamin Farrington</b> is provocative but has been substantially criticized by historians of ancient science. <b>G.E.R. Lloyd</b>, among others, has pointed out that China had an equally extensive (though differently organized) system of bonded labor and developed its own sophisticated science and technology; that Hellenistic Alexandria, at the height of Greek experimental science, had <i>more</i> slavery than earlier Ionia, not less; and that the decline of the empirical tradition tracks more closely with political fragmentation and Christianization than with slaveholding per se.</p>
+  <p>Sagan's dichotomy between "good" Ionians and "bad" Pythagoreans also simplifies the actual transmission of Greek science. Pythagorean mathematical mysticism produced, as Sagan himself concedes elsewhere, the certainty of mathematical proof and the insistence that nature is written in the language of mathematics &mdash; without which Kepler and Galileo would have had no tradition to stand on. The villainy of Plato is likewise overstated; the <i>Academy</i> preserved geometry and astronomy for centuries.</p>
+</details>
+
+<h2>Chapter VIII: Travels in Space and Time</h2>
+
+<p>This is Sagan's chapter on <b>relativity</b> and interstellar travel. He introduces Einstein as a Tuscan teenager on a bicycle, wondering what the world would look like if he could ride a beam of light. From that child's question came <b>special relativity</b>, which Sagan summarizes through its two commandments: the speed of light is the same for all observers, and no material object can exceed it. He illustrates time dilation, length contraction and mass increase by imagining a world where the speed limit is forty kilometers per hour, following a thought experiment borrowed from George Gamow.</p>
+
+<p>He then surveys designs for starships that could actually make use of these effects: the never-built nuclear-pulse <i>Project Orion</i>, the fusion-powered <i>Project Daedalus</i> of the British Interplanetary Society, and Robert Bussard's interstellar ramjet. None of these, he concedes, will be built in the twentieth century, but all are physically possible. With continuous 1g acceleration and deceleration, a relativistic starship could in principle reach the center of the Galaxy in twenty-one years of shipboard time &mdash; though thirty thousand years would have elapsed on Earth.</p>
+
+<p>The chapter's most evocative section is Sagan's speculative tour of <i>alternative histories</i>. If the Ionian tradition had not been cut short, he muses, the Industrial Revolution might have happened a thousand years earlier and the first starship might already have been launched, its prow emblazoned with a dodecahedron and the name <i>Starship Theodorus of the Planet Earth</i>. He uses this counterfactual to drive home the power of small historical accidents (a virus in Franklin Roosevelt's childhood, a sperm cell among hundreds of millions) to shape the later trajectory of civilizations.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The <b>Bussard ramjet</b> concept that Sagan presents as plausible-in-principle has since been largely abandoned on physical grounds. <b>T.A. Heppenheimer</b> and others showed in the late 1970s that the drag produced by scooping interstellar hydrogen at relativistic speeds would exceed the thrust from fusing it &mdash; the ramjet would function as a brake, not an engine. Sagan either didn't know this or downplayed it.</p>
+  <p>Sagan's counterfactual that the Ionian awakening was one lucky break away from producing Einstein five hundred years earlier is a characteristic piece of "what if history had continued the good parts" storytelling. Historians of technology such as <b>Joel Mokyr</b> and <b>Ian Morris</b> have argued that the Industrial Revolution depended on a specific confluence of coal, labor markets, property law, Atlantic trade networks and particular scientific cultures that no ancient Mediterranean society came close to possessing, regardless of what happened to the Library of Alexandria.</p>
+</details>
+
+<h2>Chapter IX: The Lives of the Stars</h2>
+
+<p>Sagan opens with one of his most famous lines: <i>"If you wish to make an apple pie from scratch, you must first invent the universe."</i> The chapter traces the atoms of a pie through ninety successive bisections down to the atomic scale, then opens out to the infinities of the googol and the googolplex, and uses those contrasting scales to motivate a tour of stellar nucleosynthesis. Every atom heavier than hydrogen and helium, he argues, was forged in the interior of a star &mdash; the <b>nitrogen in our DNA, the calcium in our teeth, the iron in our blood, the carbon in our apple pies</b> were all cooked in stellar furnaces. In his most-quoted phrase: <i>we are made of starstuff</i>.</p>
+
+<p>He then walks through the life cycle of stars by mass. A Sun-like star spends billions of years converting hydrogen into helium via fusion, then swells into a red giant, sheds its outer layers as a planetary nebula, and cools into a white dwarf. A more massive star runs through its fuel faster, builds progressively heavier elements up to iron, and dies in a <b>supernova</b> explosion that flings most of its material back into the interstellar medium, seeding the next generation of stars and planets. Sagan recounts the 1054 Crab supernova, recorded in Chinese chronicles and perhaps commemorated on an Anasazi cliff overhang in New Mexico, to show that human beings have witnessed these events within historical memory.</p>
+
+<p>The heaviest stars collapse past the neutron-star stage into <b>black holes</b>, regions of space where gravity is so intense that not even light can escape. Sagan introduces them with a whimsical fable about a gravity dial that gradually bends the beam of light into a circle around a Cheshire cat, and walks the reader through the observational case for Cygnus X-1. The chapter closes with the thematic insistence that life on Earth is bound to the lives of stars in every possible way: the atoms of our bodies, the energy of our food, the mutations that drive evolution (from cosmic rays born in supernovae), and possibly even the planetary extinctions that shaped the biosphere.</p>
+
+<h2>Chapter X: The Edge of Forever</h2>
+
+<p>Sagan moves from the lives of individual stars to the structure and fate of the universe as a whole. He explains how galaxies condensed from slight overdensities in the early universe, how spiral and elliptical forms arose from differences in angular momentum, and how galaxies collide, merge, cannibalize one another, and occasionally blow themselves up as <b>quasars</b>. He is careful to note that despite the order and beauty of the large-scale Cosmos, the universe is also extraordinarily violent; every quasar explosion may wipe out millions of worlds, and the universe "seems neither benign nor hostile, merely indifferent."</p>
+
+<p>The central technical idea is the <b>Doppler red shift</b>. He tells the unlikely story of <b>Milton Humason</b>, a mule-team driver who rose to become one of the most skilled observers at Mount Wilson and, working with Hubble, discovered that the more distant a galaxy, the faster it recedes &mdash; evidence for an expanding universe and, running the tape backward, for a <b>Big Bang</b>. The cosmic microwave background, the relic radiation of that explosion, provides independent confirmation.</p>
+
+<p>Sagan then explores two possibilities: an <i>open</i> universe that expands forever until all matter decays, or a <i>closed</i> universe that eventually collapses and possibly bounces into another Big Bang. He notes, with admiration, that only Hindu cosmology among the world's religions comes close to the scientific time scales of billions of years and cycles upon cycles. The chapter closes with a dizzying analogy in which we may be flat creatures on the curved surface of a four-dimensional hypersphere, and with the speculative "universes within universes" idea that elementary particles might themselves be closed universes at another level of scale.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Sagan's sympathetic treatment of the <b>oscillating (bouncing) universe</b> reflected live scientific debate in 1980 but is now strongly disfavored. Observations in the late 1990s by the <b>Supernova Cosmology Project</b> and <b>High-Z Supernova Search Team</b> showed that cosmic expansion is not slowing but accelerating, driven by what we now call dark energy. In the most widely accepted current model, the universe will expand forever and no "big crunch" is coming. Sagan's 50/50 framing between eternal expansion and cyclic collapse was reasonable at the time but is not representative of current cosmology.</p>
+  <p>Sagan also gives surprisingly respectful airtime to <b>Halton Arp</b>'s claim that quasar red shifts are not cosmological. That view, which would have undermined the entire expanding-universe picture, has failed virtually every subsequent observational test, and modern astronomers almost unanimously reject it. Sagan's willingness to entertain it reflects the epistemological generosity he consistently urges &mdash; but also the genuine uncertainty of the era.</p>
+</details>
+
+<h2>Chapter XI: The Persistence of Memory</h2>
+
+<p>This chapter is about information and its storage: in genes, in brains, and in libraries. Sagan begins with the <b>whales</b>, whom he treats as a model alien intelligence already present on Earth &mdash; mammals with long childhoods, complex songs rich in bits of information, and a global ocean-spanning communications network that humans have silenced with the noise of our engines. He uses the whales to argue that communication with extraterrestrial intelligence should begin at home: <i>would not a good beginning be improved communication with terrestrial intelligence?</i></p>
+
+<p>He then constructs a three-tier hierarchy of information storage. <b>Genes</b> hold a few billion bits of very ancient, very slowly updated information. <b>Brains</b> hold about 10<sup>14</sup> bits in some hundred trillion neural connections, and are far more plastic. And <b>libraries</b> &mdash; our communal, externalized memory &mdash; hold some 10<sup>16</sup> or 10<sup>17</sup> bits across the great collections of the world. The invention of writing, Sagan says, was perhaps the greatest of all human inventions, because it "breaks the shackles of time" and lets dead ancestors speak silently inside our heads. He ends with an impassioned argument that the health of a civilization can be measured by how well it supports its libraries.</p>
+
+<p>Along the way he introduces Paul MacLean's <b>triune brain</b> model, in which a reptilian R-complex (aggression, territoriality, ritual) is overlaid by a mammalian limbic system (emotions, care for young) and a primate cerebral cortex (reason, language, culture). This model becomes a recurring device for much of the rest of the book, used in Chapter XIII to explain the persistent pull of warlike behaviors even in technologically advanced civilizations.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>MacLean's <b>triune brain</b>, which Sagan adopted with enthusiasm in <i>The Dragons of Eden</i> and uses throughout <i>Cosmos</i>, has since been substantially discredited in neuroscience. Comparative neuroanatomists such as <b>Terrence Deacon</b> and <b>Georg Striedter</b> have shown that the "reptilian brain" is not a preserved relic at all &mdash; reptiles and birds have complex forebrain structures, limbic-like circuitry exists outside mammals, and brain evolution is not a tidy layering of newer parts on top of older ones. The triune model persists in popular writing partly because it makes for compelling metaphor, but specialists largely consider it obsolete.</p>
+  <p>Sagan's estimate of brain information content at 10<sup>14</sup> bits &mdash; one bit per synapse &mdash; is also recognized as extremely rough; modern neuroscience suggests synapses encode analog strengths and that memory is distributed across circuit patterns in ways that resist simple bit-counting. The broader claim about libraries vs. brains vs. genes remains rhetorically useful, but the numbers should not be taken literally.</p>
+</details>
+
+<h2>Chapter XII: Encyclopaedia Galactica</h2>
+
+<p>This is the chapter on the <b>Search for Extraterrestrial Intelligence (SETI)</b>. Sagan opens with the decipherment of Egyptian hieroglyphics by <b>Jean-Fran&ccedil;ois Champollion</b>, using the Rosetta Stone as a model for the challenge of decoding any message from another civilization. He argues that the interstellar Rosetta Stone already exists: the laws of physics and mathematics are the same throughout the universe, so any technical civilization will share a common ground of discourse with any other, no matter how biologically alien.</p>
+
+<p>The technical heart of the chapter is the <b>Drake equation</b>, N = N*&middot;f<sub>p</sub>&middot;n<sub>e</sub>&middot;f<sub>l</sub>&middot;f<sub>i</sub>&middot;f<sub>c</sub>&middot;f<sub>L</sub>, which breaks the estimate of the number of communicating civilizations in the galaxy into a product of successively less certain factors. Sagan walks through each factor and shows that the result is dominated not by astronomy or biology but by <b>f<sub>L</sub></b>, the fraction of a planetary lifetime during which a technological society survives. If even 1% of civilizations learn to live with their own weapons, the galaxy should contain millions of them; if none do, we may be alone. The receipt of a single message, he argues, would therefore be "a profoundly hopeful sign" because it would prove survival is possible.</p>
+
+<p>The chapter's most unsettling material is Sagan's survey of what happens when civilizations of very different technological levels actually meet. The <b>Count of La P&eacute;rouse</b>'s 1786 encounter with the Tlingit of Alaska was largely peaceable and left an accurate oral tradition; the 1521 encounter between Cort&eacute;s and the Aztecs was a total extermination of a civilization only a few centuries behind its invaders. Sagan uses these as calibrations of what first contact might be like, and argues &mdash; against the science fiction stereotype &mdash; that any civilization capable of reaching us must have survived long enough to learn to live with its own technology, and is therefore more likely to resemble the gentle La P&eacute;rouse than the predatory Cort&eacute;s.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The <b>Drake equation</b> is better understood as a pedagogical framework than as a predictive calculation. Critics including <b>Michael Crichton</b> (in a famous lecture) and more recently <b>Adam Frank</b> have pointed out that multiplying together factors whose uncertainties span many orders of magnitude can produce essentially any answer the user wants. Sagan's confident middle-ground estimates in the millions reflect his temperamental optimism rather than any empirical constraint. The <b>Fermi paradox</b> &mdash; if they are so numerous, where are they? &mdash; has only deepened since 1980 with decades of negative results from radio searches.</p>
+  <p>Sagan's inference that any spacefaring civilization must be benign because it has survived itself is also a non-sequitur that other thinkers have pushed back on. Stephen Hawking, Liu Cixin (in <i>The Three-Body Problem</i> and its "dark forest" hypothesis), and strategic theorists have argued the opposite: a civilization that survives into interstellar maturity may do so precisely by pre-emptively eliminating potential rivals. There is no logical guarantee that survival requires benevolence.</p>
+</details>
+
+<h2>Chapter XIII: Who Speaks for Earth?</h2>
+
+<p>The book's closing chapter is a direct plea against nuclear war. Sagan lays out, in harrowing detail, the physical consequences of a full nuclear exchange &mdash; the blast and firestorm and prompt radiation, the fallout and ozone destruction, the ecological cascade, the epidemics in radiation-immunosuppressed survivors, the plausibility of a cooling "nuclear winter" from dust injected into the atmosphere. Citing <b>L.F. Richardson's</b> statistical studies of war, he argues that war is best understood as a continuum with murder, driven by the same reptilian rages, and that the combination of ancient hatreds with megaton weapons makes civilizational self-destruction a real and calculable risk.</p>
+
+<p>He contrasts the $153 billion annual U.S. defense budget with the $18 million budget of the Arms Control and Disarmament Agency, and argues that a rational civilization would study the causes of war the way microbiologists study disease. He is cautiously hopeful: slavery has been largely abolished, colonial wars are more readily stopped by their own aggressor publics, women are slowly entering political and economic power. A new <i>planetary consciousness</i> is emerging that may yet outrun the weapons.</p>
+
+<p>The chapter ends at the ruins of the <b>Library of Alexandria</b> and the murder of <b>Hypatia</b>, which Sagan treats as a warning from history: a brilliant scientific civilization once existed, and it was destroyed from within when it failed to democratize its knowledge, to question slavery, or to build popular constituencies for learning. The book's final pages pull back to the cosmic perspective: we are <i>starstuff pondering the stars</i>, the local embodiment of a Cosmos grown self-aware, and our obligation to survive is owed not just to ourselves but to the universe that produced us. <i>We speak for Earth.</i></p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Sagan's hopeful reading of the <b>Hypatia</b> story has been challenged by historians of late antiquity. Specialists such as <b>Maria Dzielska</b>, in her biography <i>Hypatia of Alexandria</i>, have shown that Hypatia was killed primarily because of a political feud between the Roman prefect Orestes and Patriarch Cyril, not because she represented "science" against "religion"; the Alexandrian Library had already been substantially destroyed centuries earlier; and Hypatia herself taught a kind of Neoplatonic philosophy that was as mystical as it was mathematical. The clean "martyr of science vs. fanatics" narrative that Sagan deploys is closer to an Enlightenment myth than to the historical record.</p>
+  <p>Sagan's citation of <b>James Prescott's</b> cross-cultural statistical study linking infant physical affection, sexual liberty, and nonviolence has also not held up well. The original Prescott correlations have been criticized by anthropologists for selection bias in the sample of preindustrial societies used and for confusing correlation with causation; the 125,000-to-1 probability figure Sagan quotes depends on questionable independence assumptions. The broader humanistic point about child-rearing and violence is plausible, but the specific statistics should be read with skepticism.</p>
+</details>
+
+<h2 id="quiz-heading">Comprehension Quiz</h2>
+
+<details id="quiz-section" class="quiz-wrapper">
+  <summary class="quiz-toggle">Take the Quiz</summary>
+
+  <form id="quiz-form">
+
+    <div class="q-block">
+      <p class="q-label">1. According to Chapter I, how did Eratosthenes determine the circumference of the Earth?</p>
+      <label><input type="radio" name="q1" value="a"> By timing a lunar eclipse from two different cities</label>
+      <label><input type="radio" name="q1" value="b"> By measuring the angle of shadows cast by vertical sticks in Alexandria and Syene at noon on the summer solstice</label>
+      <label><input type="radio" name="q1" value="c"> By sailing along the coast of Africa and measuring the curvature of the horizon</label>
+      <label><input type="radio" name="q1" value="d"> By triangulating from the positions of three bright stars</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">2. What is Sagan's point in telling the story of the Heike crab in Chapter II?</p>
+      <label><input type="radio" name="q2" value="a"> That Japanese folklore has preserved accurate scientific observations</label>
+      <label><input type="radio" name="q2" value="b"> That crabs can evolve camouflage in response to predators</label>
+      <label><input type="radio" name="q2" value="c"> That artificial selection by humans shows how natural selection can produce the apparent design of organisms</label>
+      <label><input type="radio" name="q2" value="d"> That extinction is the normal fate of species</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">3. What decisive observation finally forced Kepler to abandon circular planetary orbits?</p>
+      <label><input type="radio" name="q3" value="a"> Galileo's discovery of the phases of Venus</label>
+      <label><input type="radio" name="q3" value="b"> An eight-minute-of-arc discrepancy between Mars's predicted and observed positions</label>
+      <label><input type="radio" name="q3" value="c"> The discovery of the moons of Jupiter</label>
+      <label><input type="radio" name="q3" value="d"> The failure of his nested platonic solids to match measured planetary distances</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">4. Why is Venus's surface so hot (about 480&deg;C), according to Chapter IV?</p>
+      <label><input type="radio" name="q4" value="a"> It is much closer to the Sun than Earth is</label>
+      <label><input type="radio" name="q4" value="b"> Active volcanism continuously heats the surface</label>
+      <label><input type="radio" name="q4" value="c"> A runaway greenhouse effect: CO&#8322; in the atmosphere traps infrared radiation from the surface</label>
+      <label><input type="radio" name="q4" value="d"> Tidal heating from the Sun's gravity</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">5. What does Sagan conclude about Percival Lowell's Martian canals?</p>
+      <label><input type="radio" name="q5" value="a"> They were real but have since been eroded by dust storms</label>
+      <label><input type="radio" name="q5" value="b"> They were an artifact of the hand/eye/brain under difficult seeing conditions &mdash; the intelligence was on the wrong side of the telescope</label>
+      <label><input type="radio" name="q5" value="c"> They were faked by Lowell to attract funding</label>
+      <label><input type="radio" name="q5" value="d"> Mariner 9 confirmed most of them as dried riverbeds</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">6. What was the key surprise discovery at Jupiter's moon Io during the Voyager encounter?</p>
+      <label><input type="radio" name="q6" value="a"> Evidence of liquid water beneath its surface</label>
+      <label><input type="radio" name="q6" value="b"> An underground ocean of ammonia</label>
+      <label><input type="radio" name="q6" value="c"> Active volcanoes &mdash; the first ever seen beyond Earth</label>
+      <label><input type="radio" name="q6" value="d"> An atmosphere as dense as Mars's</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">7. According to Chapter VI, Christiaan Huygens discovered which of the following?</p>
+      <label><input type="radio" name="q7" value="a"> The rings of Jupiter and the volcanoes of Io</label>
+      <label><input type="radio" name="q7" value="b"> Saturn's rings and its largest moon Titan</label>
+      <label><input type="radio" name="q7" value="c"> Uranus and Neptune</label>
+      <label><input type="radio" name="q7" value="d"> The moons of Mars</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">8. What does Sagan argue was the main cause of the decline of ancient Greek science?</p>
+      <label><input type="radio" name="q8" value="a"> The destruction of the Library of Alexandria by Christians</label>
+      <label><input type="radio" name="q8" value="b"> The rise of Roman military power</label>
+      <label><input type="radio" name="q8" value="c"> A slave economy that made free citizens disdain experimental manual work</label>
+      <label><input type="radio" name="q8" value="d"> The intellectual failings of Aristarchus and Democritus</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">9. Which Ionian thinker did Sagan credit with inventing the word "atom" and arguing that the Milky Way was composed of unresolved stars?</p>
+      <label><input type="radio" name="q9" value="a"> Thales of Miletus</label>
+      <label><input type="radio" name="q9" value="b"> Pythagoras of Samos</label>
+      <label><input type="radio" name="q9" value="c"> Democritus of Abdera</label>
+      <label><input type="radio" name="q9" value="d"> Aristotle of Stagira</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">10. In Chapter VIII, what does Sagan claim about traveling at close to the speed of light?</p>
+      <label><input type="radio" name="q10" value="a"> It is forbidden by the physics of relativity and will never be possible</label>
+      <label><input type="radio" name="q10" value="b"> Time dilation would let a traveler reach distant stars in a reasonable shipboard time, though vastly more time would pass on Earth</label>
+      <label><input type="radio" name="q10" value="c"> The traveler would age faster than those left behind</label>
+      <label><input type="radio" name="q10" value="d"> Information could be sent back to Earth faster than light</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">11. What does Sagan mean by the phrase "we are made of starstuff" in Chapter IX?</p>
+      <label><input type="radio" name="q11" value="a"> That cosmic rays are constantly passing through our bodies</label>
+      <label><input type="radio" name="q11" value="b"> That life on Earth is powered by sunlight</label>
+      <label><input type="radio" name="q11" value="c"> That every element heavier than hydrogen and helium in our bodies was forged inside stars and released by supernovae</label>
+      <label><input type="radio" name="q11" value="d"> That the Earth condensed out of interstellar gas and dust</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">12. What is the fate Sagan describes for a star much more massive than the Sun after its supernova phase?</p>
+      <label><input type="radio" name="q12" value="a"> It becomes a red giant, then a white dwarf</label>
+      <label><input type="radio" name="q12" value="b"> It reignites hydrogen fusion and starts a new life cycle</label>
+      <label><input type="radio" name="q12" value="c"> Its remnant collapses into a black hole from which not even light can escape</label>
+      <label><input type="radio" name="q12" value="d"> It disperses completely into the interstellar medium, leaving nothing behind</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">13. What discovery by Hubble and Humason is the main observational evidence for the Big Bang that Sagan presents in Chapter X?</p>
+      <label><input type="radio" name="q13" value="a"> The cosmic microwave background radiation</label>
+      <label><input type="radio" name="q13" value="b"> The red shift of galaxies proportional to their distance, implying an expanding universe</label>
+      <label><input type="radio" name="q13" value="c"> The existence of quasars at the edge of the observable universe</label>
+      <label><input type="radio" name="q13" value="d"> The observed abundance of helium in stars</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">14. In Chapter XI, Sagan describes the brain as storing roughly how many bits of information, via how many neural connections?</p>
+      <label><input type="radio" name="q14" value="a"> 10<sup>9</sup> bits in a billion neurons</label>
+      <label><input type="radio" name="q14" value="b"> 10<sup>14</sup> bits in about a hundred trillion neural connections</label>
+      <label><input type="radio" name="q14" value="c"> 10<sup>20</sup> bits in a billion trillion synapses</label>
+      <label><input type="radio" name="q14" value="d"> 10<sup>5</sup> bits in the cerebral cortex alone</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">15. How does Sagan say modern commercial shipping has affected whale communication?</p>
+      <label><input type="radio" name="q15" value="a"> It has had little effect because whales communicate at very low frequencies</label>
+      <label><input type="radio" name="q15" value="b"> It has cut the effective communication range from thousands of kilometers down to a few hundred, largely silencing a global network</label>
+      <label><input type="radio" name="q15" value="c"> It has taught whales to imitate the sounds of ship engines</label>
+      <label><input type="radio" name="q15" value="d"> It has had no measurable effect on whales at all</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">16. In the Drake equation as Sagan presents it, which factor dominates the uncertainty in the number of communicating civilizations?</p>
+      <label><input type="radio" name="q16" value="a"> N*, the number of stars in the galaxy</label>
+      <label><input type="radio" name="q16" value="b"> f<sub>p</sub>, the fraction of stars with planets</label>
+      <label><input type="radio" name="q16" value="c"> f<sub>L</sub>, the fraction of a planet's lifetime during which a technological civilization survives</label>
+      <label><input type="radio" name="q16" value="d"> n<sub>e</sub>, the number of Earth-like planets per system</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">17. Sagan uses the first-contact stories of La P&eacute;rouse with the Tlingit and Cort&eacute;s with the Aztecs to illustrate what?</p>
+      <label><input type="radio" name="q17" value="a"> That contact between civilizations is always peaceable when both sides are rational</label>
+      <label><input type="radio" name="q17" value="b"> That first contact between societies of different technological levels can range from largely benign to total extermination, calibrating our expectations for alien contact</label>
+      <label><input type="radio" name="q17" value="c"> That oral traditions are more reliable than written history</label>
+      <label><input type="radio" name="q17" value="d"> That ancient civilizations always mistook Europeans for gods</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">18. In Chapter XIII, what does Sagan conclude must happen for humanity to survive the age of nuclear weapons?</p>
+      <label><input type="radio" name="q18" value="a"> A single world government must be imposed by force</label>
+      <label><input type="radio" name="q18" value="b"> Science and technology must be slowed down to give ethics time to catch up</label>
+      <label><input type="radio" name="q18" value="c"> Our loyalties must broaden from family and nation to the whole human species and the planet, and we must be willing to restructure our institutions accordingly</label>
+      <label><input type="radio" name="q18" value="d"> We must abandon space exploration until Earth's problems are solved</label>
+    </div>
+
+    <button type="button" id="score-btn" onclick="scoreQuiz()">Score My Answers</button>
+
+    <div id="quiz-result" style="display:none;">
+      <p id="score-text"></p>
+      <div id="answer-review"></div>
+    </div>
+
+  </form>
+</details>
+
+<script>
+(function() {
+  const answers = {
+    q1: { correct: "b", explain: "Eratosthenes compared shadow lengths at Alexandria and Syene at noon on the summer solstice, reasoning that the difference required a curved Earth, and computed the circumference to within a few percent." },
+    q2: { correct: "c", explain: "The fishermen's habit of throwing back crabs whose shells resembled samurai faces is presented as a direct analogue of natural selection &mdash; with humans as the selective agent." },
+    q3: { correct: "b", explain: "Kepler found that his best circular fit to Mars's orbit left a residual discrepancy of eight minutes of arc with Tycho's observations; his refusal to ignore that gap led him to the ellipse." },
+    q4: { correct: "c", explain: "Sunlight reaches Venus's surface through the atmosphere, but the resulting infrared radiation cannot escape through the dense CO&#8322;, producing a runaway greenhouse effect." },
+    q5: { correct: "b", explain: "When high-resolution spacecraft imagery arrived, no correlation was found between Lowell's canals and any actual features; Sagan concludes the canals were a perceptual artifact." },
+    q6: { correct: "c", explain: "Linda Morabito spotted a plume rising from Io's limb in navigation images; it turned out to be the first active extraterrestrial volcano ever observed, tidally powered by Jupiter and Europa." },
+    q7: { correct: "b", explain: "Huygens was the first to correctly explain the rings of Saturn and the first to discover Titan, its largest moon &mdash; a central achievement of seventeenth-century Dutch astronomy." },
+    q8: { correct: "c", explain: "Sagan follows Benjamin Farrington in arguing that because manual work was done by slaves, free citizens came to regard experimental science as beneath them, killing the Ionian empirical tradition." },
+    q9: { correct: "c", explain: "Democritus coined the word 'atom' (Greek for 'unable to be cut') and argued that the Milky Way was composed of unresolved stars, two thousand years before telescopes confirmed it." },
+    q10: { correct: "b", explain: "Special relativity's time dilation lets shipboard clocks run slowly relative to Earth clocks; a relativistic starship could cross the galaxy in years of ship time while millennia pass at home." },
+    q11: { correct: "c", explain: "The heavy elements in our bodies &mdash; carbon, nitrogen, oxygen, iron and the rest &mdash; were all synthesized in stellar interiors and released into the interstellar medium by supernovae." },
+    q12: { correct: "c", explain: "Stars much more massive than the Sun end as black holes after their supernova phase; lesser stars end as white dwarfs or neutron stars depending on remnant mass." },
+    q13: { correct: "b", explain: "Hubble and Humason found that the red shift of distant galaxies is proportional to their distance, implying a uniform expansion of the universe &mdash; which running backward gives a Big Bang." },
+    q14: { correct: "b", explain: "Sagan gives the canonical estimate of about 10<sup>14</sup> bits across a hundred trillion synaptic connections &mdash; roughly one bit per connection &mdash; though he warns that not all bits are equal." },
+    q15: { correct: "b", explain: "Sagan argues that the rise of steam and commercial shipping has raised the ocean noise floor enough to cut whale communication ranges from thousands of kilometers to a few hundred." },
+    q16: { correct: "c", explain: "The astronomical and biological factors are all reasonably bounded; the wildly uncertain term is f<sub>L</sub>, which depends on whether technological civilizations can survive their own weapons." },
+    q17: { correct: "b", explain: "The La P&eacute;rouse/Tlingit contact was peaceable and preserved accurately in oral tradition; the Cort&eacute;s/Aztec contact was total extermination. Sagan uses the pair to show the range of plausible first-contact outcomes." },
+    q18: { correct: "c", explain: "Sagan argues explicitly that survival requires broadening loyalty to the species and planet, and a willingness to restructure economic, political and religious institutions rather than treat them as unchangeable." },
+  };
+
+  window.scoreQuiz = function() {
+    const form = document.getElementById("quiz-form");
+    let correct = 0;
+    const total = Object.keys(answers).length;
+    let reviewHTML = "";
+
+    for (let i = 1; i <= total; i++) {
+      const key = "q" + i;
+      const selected = form.elements[key] ? form.elements[key].value : "";
+      const isCorrect = selected === answers[key].correct;
+      if (isCorrect) correct++;
+
+      const status = !selected ? "wrong" : (isCorrect ? "correct" : "wrong");
+      const icon = isCorrect ? "\u2705" : "\u274C";
+      const yourAnswer = selected ? selected.toUpperCase() : "No answer";
+      const correctAnswer = answers[key].correct.toUpperCase();
+
+      reviewHTML += '<div class="review-item ' + status + '">';
+      reviewHTML += '<div class="ri-q">' + icon + " Question " + i + "</div>";
+      reviewHTML += '<div class="ri-detail">';
+      if (!isCorrect) {
+        reviewHTML += "Your answer: " + yourAnswer + " &mdash; Correct answer: " + correctAnswer + "<br>";
+      }
+      reviewHTML += answers[key].explain;
+      reviewHTML += "</div></div>";
+    }
+
+    const pct = Math.round((correct / total) * 100);
+    let grade;
+    if (pct === 100) grade = "Perfect score!";
+    else if (pct >= 80) grade = "Great understanding!";
+    else if (pct >= 60) grade = "Good, but review the summaries above for the ones you missed.";
+    else grade = "Consider re-reading the summaries above and trying again.";
+
+    document.getElementById("score-text").textContent = correct + " / " + total + " (" + pct + "%) \u2014 " + grade;
+    document.getElementById("answer-review").innerHTML = reviewHTML;
+    document.getElementById("quiz-result").style.display = "block";
+    document.getElementById("quiz-result").scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+})();
+</script>
+
+</div><!-- .content -->
+
+</body>
+</html>

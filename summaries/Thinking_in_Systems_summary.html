@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thinking in Systems — Book Summary Pro</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      line-height: 1.7;
+      color: #222;
+      background: #fafafa;
+    }
+    .app-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #2c2c2c;
+      padding: 14px 24px;
+    }
+    .content {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 32px 20px 40px;
+    }
+    .app-nav .app-name {
+      font-size: 1.05em;
+      font-weight: bold;
+      color: #e8e0d0;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+    }
+    .app-nav .app-name:hover {
+      color: #d4a843;
+    }
+    .app-nav .back-link {
+      font-size: 0.9em;
+      color: #999;
+      text-decoration: none;
+    }
+    .app-nav .back-link:hover {
+      color: #d4a843;
+    }
+    h1 {
+      font-size: 1.8em;
+      border-bottom: 2px solid #333;
+      padding-bottom: 10px;
+      margin-bottom: 5px;
+    }
+    .subtitle {
+      font-size: 1.1em;
+      color: #444;
+      margin: 2px 0 0 0;
+      font-style: italic;
+    }
+    .author {
+      font-style: italic;
+      color: #777;
+      font-size: 0.95em;
+      margin-bottom: 40px;
+    }
+    h2 {
+      font-size: 1.3em;
+      margin-top: 48px;
+      color: #1a1a1a;
+      border-left: 4px solid #555;
+      padding-left: 12px;
+    }
+    p {
+      margin-bottom: 14px;
+      text-align: justify;
+    }
+    details.counter {
+      background: #f0ece4;
+      border-left: 4px solid #b8860b;
+      padding: 14px 18px;
+      margin: 20px 0 28px 0;
+      border-radius: 0 6px 6px 0;
+    }
+    details.counter summary {
+      font-weight: bold;
+      font-size: 0.95em;
+      color: #8b6914;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    details.counter summary::-webkit-details-marker {
+      display: none;
+    }
+    details.counter summary::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    details.counter[open] summary::before {
+      transform: rotate(90deg);
+    }
+    details.counter p {
+      margin-top: 12px;
+      margin-bottom: 10px;
+      color: #3a3a3a;
+    }
+    details.counter p:last-child {
+      margin-bottom: 0;
+    }
+    .quiz-wrapper {
+      margin-top: 48px;
+      background: #f5f5f0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 16px 20px;
+    }
+    .quiz-toggle {
+      font-weight: bold;
+      font-size: 1.05em;
+      cursor: pointer;
+      color: #2a5a2a;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .quiz-toggle::-webkit-details-marker { display: none; }
+    .quiz-toggle::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    .quiz-wrapper[open] .quiz-toggle::before {
+      transform: rotate(90deg);
+    }
+    .q-block {
+      margin: 24px 0;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    .q-block:last-of-type { border-bottom: none; }
+    .q-label {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .q-block label {
+      display: block;
+      padding: 6px 10px;
+      margin: 4px 0;
+      border-radius: 4px;
+      cursor: pointer;
+      line-height: 1.5;
+    }
+    .q-block label:hover { background: #e8e8e0; }
+    #score-btn {
+      display: block;
+      margin: 28px auto 0;
+      padding: 12px 32px;
+      font-family: Georgia, serif;
+      font-size: 1em;
+      background: #2a5a2a;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #score-btn:hover { background: #1e441e; }
+    #quiz-result {
+      margin-top: 24px;
+      padding: 18px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    #score-text {
+      font-size: 1.15em;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .review-item {
+      margin-bottom: 14px;
+      padding: 10px 12px;
+      border-radius: 4px;
+    }
+    .review-item.correct { background: #e6f4e6; }
+    .review-item.wrong { background: #fce8e8; }
+    .review-item .ri-q { font-weight: bold; margin-bottom: 4px; }
+    .review-item .ri-detail { font-size: 0.93em; color: #444; }
+  </style>
+</head>
+<body>
+
+<nav class="app-nav">
+  <a href="index.html" class="app-name">Book Summary Pro</a>
+  <a href="index.html" class="back-link">&larr; All Books</a>
+</nav>
+
+<div class="content">
+
+<h1>Thinking in Systems</h1>
+<p class="subtitle">A Primer</p>
+<p class="author">Donella H. Meadows</p>
+
+<h2>A Note from the Author</h2>
+
+<p>Meadows frames the book as a <b>practical distillation</b> of three decades of work in <b>system dynamics</b>, especially the MIT tradition founded by <b>Jay Forrester</b>. She emphasizes that the ideas here were not invented by one person but assembled from a broad intellectual community of modelers, teachers, and practitioners who learned by tracing how structures generate recurring patterns of behavior.</p>
+
+<p>She also insists that <b>systems thinking</b> is larger than any one school. Alongside modelers, she credits philosophers, ecologists, economists, executives, and older wisdom traditions that learned to think in wholes long before computer simulation existed. The point is that systems thinking is valuable precisely because it can travel across disciplines, cultures, and historical moments without losing its core concern for <i>patterns, interdependence, and consequence</i>.</p>
+
+<p>At the same time, Meadows warns that the book is <b>biased and incomplete</b> in the honest sense: it teaches the core language she finds most useful for solving real problems, not the entire frontier of abstract theory. Her goal is modest but ambitious&mdash;to give readers enough conceptual grip to understand <b>complex systems</b> and act more intelligently within them, even if this primer is their only formal exposure to the field.</p>
+
+<h2>A Note from the Editor</h2>
+
+<p>Diana Wright explains that the manuscript was essentially completed in 1993, circulated informally for years, and published only after Meadows died unexpectedly in 2001. The note presents the book as both an unfinished inheritance and a timely intervention: Meadows had already become one of the clearest public interpreters of systemic risk, and her unfinished primer still offered a rare way to make complex thinking accessible.</p>
+
+<p>The editor connects this manuscript to <i>The Limits to Growth</i> and Meadows's wider body of work on <b>environmental, economic, and social interdependence</b>. Wright argues that the crises filling modern headlines&mdash;resource strain, climate disruption, institutional fragility, and growth-driven instability&mdash;all reinforce Meadows's claim that isolated fixes are inadequate because the real drivers sit inside the structure of whole systems.</p>
+
+<p>The note therefore invites the reader to reinterpret daily events as symptoms of deeper design. Once someone starts seeing trends, feedbacks, and structural causes rather than disconnected episodes, systems thinking stops looking like a technical specialty and becomes a more useful way to live, govern, and decide.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Wright's framing leans heavily on the legacy of <b><i>The Limits to Growth</i></b>, but that tradition remains debated. Critics such as <b>Julian Simon</b> and later techno-optimist economists argued that <b>innovation, substitution, and price signals</b> can loosen apparent physical limits for long stretches of time, meaning that systemic warnings are often directionally valuable without being precise forecasts.</p>
+  <p>Even so, the editor's broader claim is harder to dismiss: whether one is optimistic or pessimistic about growth, modern problems do involve tightly coupled systems whose feedbacks make simple, one-variable policy narratives unreliable.</p>
+</details>
+
+<h2>Introduction: The Systems Lens</h2>
+
+<p>The introduction defines a <b>systems lens</b> as a way of seeing beyond single events and isolated problems to the <b>structure</b> that keeps producing them. Meadows adopts Russell Ackoff's idea that leaders do not manage neat problems but <i>messes</i>&mdash;bundles of interdependent difficulties that change while we are trying to solve them. Systems thinking matters because complex situations do not yield their logic when we look only at the latest headline, failure, or villain.</p>
+
+<p>Her central promise is that once people learn to connect <b>structure and behavior</b>, they begin to understand why familiar efforts so often backfire. The same lens that explains why a slinky ripples, why a market booms and crashes, or why an organization keeps recreating the same conflict can also reveal where redesign is possible. Systems thinking therefore joins intuition to discipline: it asks readers to notice patterns over time, explore interconnections, and test <i>what-if</i> possibilities before acting.</p>
+
+<p>Meadows also positions the book as deliberately approachable. Rather than treating systems analysis as a specialist domain, she argues that ordinary people already think systemically whenever they recognize that outcomes emerge from relationships, delays, habits, and incentives. The lens simply sharpens that instinct and makes it usable for diagnosing failure, imagining alternatives, and choosing more durable interventions.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The systems lens is powerful, but it can be overextended. Some critics in <b>political economy</b> warn that explaining outcomes structurally can blur the role of <b>power, strategy, and deliberate exploitation</b>, as if harmful outcomes were always emergent rather than sometimes intentionally maintained.</p>
+  <p>A useful balance is to treat systems thinking as a complement to agency-centered analysis. Structures matter enormously, but so do the actors who write rules, control information, and benefit from the way a system currently behaves.</p>
+</details>
+
+<h2>One. The Basics</h2>
+
+<p>Meadows begins with the foundational claim that every <b>system</b> consists of <b>elements</b>, <b>interconnections</b>, and a <b>function or purpose</b>. The purpose is often the hardest part to see, because it must be inferred from behavior rather than from slogans. This is why two organizations with similar parts can behave very differently: the connections among the parts, and the real goal those connections serve, matter more than a static inventory of components.</p>
+
+<p>From there she introduces <b>stocks and flows</b>. Stocks are the accumulated states of a system&mdash;water in a tub, money in a bank account, trees in a forest, confidence in an institution. Flows are the rates that fill or drain those stocks. Because stocks preserve the history of prior flows, they create <i>memory</i>. That simple idea explains why systems do not instantly obey new commands: changing a flow changes a trajectory, not the past that has already accumulated in the stock.</p>
+
+<p>The chapter then develops the grammar of <b>feedback loops</b>. <b>Balancing loops</b> push a system toward a target, like a thermostat or cooling coffee. <b>Reinforcing loops</b> amplify change, as with compound interest, population growth, or arms races. Once readers see feedback, Meadows argues, they stop obsessing over blame and start asking the more generative question: <i>what structure is causing this behavior to reproduce itself?</i></p>
+
+<h2>Two. A Brief Visit to the Systems Zoo</h2>
+
+<p>This chapter walks through a series of recurring <b>behavior patterns</b> that arise from simple structures. Meadows uses small, legible models&mdash;thermostats, inventories, populations, resource stocks, and production systems&mdash;to show how combinations of reinforcing and balancing loops create growth, decline, oscillation, overshoot, and stabilization. The point is not that all systems are simple, but that many confusing real-world outcomes are built from a limited repertoire of underlying moves.</p>
+
+<p>A key lesson is that exponential growth never acts alone for long in the physical world. Any growing stock eventually encounters a <b>constraint</b>, whether through depleted resources, crowding, slower productivity, or delayed corrective action. The resulting behavior can vary widely: a system may settle into equilibrium, overshoot and oscillate, or collapse after growing past its limits. Meadows repeatedly asks the reader to shift attention from visible outcomes to the loop structure underneath them.</p>
+
+<p>The chapter also models good analytical habits. Meadows urges readers to test assumptions instead of falling in love with curves on a graph: Are the driving factors likely to behave this way? If they do, will the system react as assumed? What is driving the driving factors? Those questions turn systems thinking from diagram worship into disciplined inquiry about causation, sensitivity, and hidden dependence.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Because these models are intentionally stripped down, they can understate how much <b>institutions, culture, and technological adaptation</b> alter real trajectories. Thinkers such as <b>Ester Boserup</b> and later innovation theorists have argued that scarcity can stimulate new techniques, new rules, and new substitutions rather than producing a fixed, model-predicted crisis path.</p>
+  <p>That does not invalidate Meadows's structural logic. It means the analyst must be careful about what is treated as constant and what is allowed to evolve inside the model itself.</p>
+</details>
+
+<h2>Three. Why Systems Work So Well</h2>
+
+<p>After explaining how systems behave, Meadows turns to why many of them function surprisingly well. Her first answer is <b>resilience</b>&mdash;the capacity to absorb disturbance, recover, and continue operating. Resilience depends less on maximum efficiency than on <b>redundancy, diversity, and slack</b>. Systems that keep a margin for error can adapt when conditions change; systems optimized too tightly for one outcome become brittle.</p>
+
+<p>Her second answer is <b>self-organization</b>, the ability of a living or social system to create new structure, learn new rules, and generate new forms of behavior. This is what allows evolution, learning, innovation, and institutional redesign. A system capable of self-organization is not merely defending a prior equilibrium; it is capable of becoming something new when pressure or opportunity demands it.</p>
+
+<p>The third answer is <b>hierarchy</b>. Properly functioning hierarchies allow subsystems to regulate themselves while also serving a larger whole. In Meadows's account, good hierarchy is neither rigid domination nor chaotic decentralization. It is an arrangement that preserves enough autonomy for local intelligence to work while providing enough coordination for the whole system to remain coherent. The chapter therefore becomes an implicit warning against one-dimensional optimization: when people chase output alone, they often sacrifice resilience, learning, and healthy nesting.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Meadows treats hierarchy as one of nature's elegant inventions, but later work on <b>polycentric governance</b>&mdash;especially by <b>Elinor Ostrom</b>&mdash;suggests that durable coordination often depends on overlapping centers of authority rather than clean top-down nesting. In practice, what looks like hierarchy may work best when it leaves room for negotiation, local knowledge, and contestation.</p>
+  <p>There is also a real trade-off between <b>resilience and efficiency</b>. Buffers, redundancy, and spare capacity make systems safer, but they can look wasteful to organizations under short-term performance pressure, which is precisely why resilience is so often underinvested in.</p>
+</details>
+
+<h2>Four. Why Systems Surprise Us</h2>
+
+<p>This chapter explains that systems are not mysterious because they are magical; they are surprising because human beings routinely misread them. Meadows highlights several recurring reasons: we focus on <b>events instead of behavior over time</b>, draw boundaries that are too narrow, overlook <b>nonlinearities</b>, underestimate <b>delays</b>, and assume actors are optimizing for the good of the whole when they are usually acting from <b>bounded rationality</b> inside local information and incentives.</p>
+
+<p>A major theme is that structure and behavior must be read together. Diagrams without time patterns become static abstractions; time series without structural thinking become shallow storytelling. Systems thinking moves back and forth between the two so that analysts can see when a balancing loop is taking over from a reinforcing one, when a delay is setting up oscillation, or when a boundary choice is hiding the source of a problem by assigning it to some external cause.</p>
+
+<p>Meadows's broader claim is epistemic as much as technical: the world is larger than our model of it. That is why humility matters. When people react to complex systems as if they were simple machines, they produce policy overconfidence, mistimed corrections, and moral narratives that punish the visible symptom while leaving the generative structure untouched.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Bounded rationality explains a great deal, but it does not explain everything. Some system failures reflect not confusion but <b>strategic manipulation</b>, entrenched interests, or asymmetric power. Analysts influenced by <b>public choice theory</b> or critical political economy would argue that some damaging patterns persist because they advantage specific actors, not merely because the system is hard to understand.</p>
+  <p>Even so, Meadows's warning stands: whether dysfunction comes from confusion or self-interest, delays, nonlinearities, and false boundaries still make intervention harder than event-level thinking suggests.</p>
+</details>
+
+<h2>Five. System Traps . . . and Opportunities</h2>
+
+<p>Meadows now turns from generic difficulty to recurring <b>archetypes</b> of failure. She shows how many stubborn public and organizational problems arise from a handful of structural patterns. <b>Policy resistance</b> appears when multiple actors pull the same system toward conflicting goals and neutralize one another. The <b>tragedy of the commons</b> emerges when users capture benefits privately while passing depletion costs to the whole. <b>Drift to low performance</b> sets in when standards quietly fall with results instead of disciplining them.</p>
+
+<p>She then traces more aggressive reinforcing traps. <b>Escalation</b> occurs when rivals define success relative to one another and keep raising the stakes. <b>Success to the successful</b> compounds early advantage into exclusion. <b>Shifting the burden</b> describes the logic of addiction: a quick symptomatic fix relieves pressure today while weakening the system's own capacity to solve the underlying problem tomorrow. <b>Rule beating</b> and <b>seeking the wrong goal</b> show two different ways metrics and rules distort behavior&mdash;either by being gamed or by being followed too literally.</p>
+
+<p>The title's second half matters as much as the first. Meadows insists these traps are also <b>opportunities</b> because structural diagnosis points toward structural remedies: reconnect users to consequences, keep standards absolute, diversify instead of concentrating success, strengthen the system's own self-maintenance, redesign rules using feedback from evasion, and choose indicators that track the real welfare of the whole system rather than a convenient proxy.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The chapter's archetypes are memorable precisely because they compress messy history into reusable patterns, but that compression can conceal important institutional detail. For example, commons dilemmas are not solved only by privatization or central regulation; <b>Elinor Ostrom</b> showed that many communities govern common resources effectively through <b>local norms, monitoring, and shared sanctioning</b> that are neither purely market nor purely state solutions.</p>
+  <p>Likewise, Meadows's critique of bad indicators anticipates <b>Goodhart's Law</b> and <b>Campbell's Law</b>, but in practice better metrics do not solve everything. Indicators work only when the surrounding institutions are legitimate enough to enforce them without generating new distortions.</p>
+</details>
+
+<h2>Six. Leverage Points&mdash;Places to Intervene in a System</h2>
+
+<p>This chapter offers Meadows's most famous framework: a ranking of <b>leverage points</b> from shallow interventions to deep ones. Changing <b>numbers</b>&mdash;tax rates, subsidies, standards, quotas&mdash;is usually the weakest move, even though it is politically popular because it is visible and administratively familiar. More powerful are changes to <b>buffers</b>, <b>stock-and-flow structures</b>, <b>delays</b>, and the relative strength of balancing and reinforcing feedback loops.</p>
+
+<p>Deeper leverage lies in the informational and institutional architecture of a system. <b>Information flows</b>, <b>rules</b>, and the system's capacity for <b>self-organization</b> often matter more than the parameters people normally fight over. Deeper still are <b>goals</b>, because a system will faithfully reorganize itself around whatever purpose it is actually pursuing. And deeper than goals are <b>paradigms</b>&mdash;the shared assumptions out of which goals, rules, and structures arise in the first place.</p>
+
+<p>At the top of the hierarchy sits <b>transcending paradigms</b>. Meadows does not mean adopting one final worldview that defeats all others. She means learning to hold mental models lightly, to see them as models, and therefore to stay flexible enough to redesign a system without worshipping any one ideology. The chapter is both analytic and political: it explains why so many interventions disappoint and why the most powerful changes often require rethinking what a system is for and how reality is being interpreted.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The leverage-point ranking is illuminating, but it can invite an overly tidy view of change. In real institutions, so-called <b>shallow interventions</b> such as taxes, disclosure rules, or reporting requirements can trigger deeper shifts in norms, coalitions, and expectations. Policy historians often find that structural change is <i>sequenced</i>, not simply chosen from a ranked menu.</p>
+  <p>Still, Meadows's core warning remains persuasive: people are drawn toward parameter changes because they are easier to debate, while neglecting information, goals, and paradigms that more profoundly shape behavior.</p>
+</details>
+
+<h2>Seven. Living in a World of Systems</h2>
+
+<p>The concluding chapter turns systems thinking from an analytical toolkit into an ethic of practice. Meadows argues that living well in a complex world requires more than technical competence. It requires <b>mental flexibility</b>, willingness to redraw boundaries, and the humility to admit that one's current model is partial. Systems are not conquered by certainty; they are navigated by learning, adjusting, and listening.</p>
+
+<p>She therefore emphasizes practical disciplines: <b>honor and distribute information</b>, use language carefully, make <b>feedback policies for feedback systems</b>, and design institutions so responsibility sits within the system rather than being offloaded to convenient scapegoats. She also urges readers to widen their time horizon and their circle of concern, because short-term local optimization repeatedly destroys the conditions that make larger wholes viable.</p>
+
+<p>The chapter ends with a moral rather than a technical note. Meadows advocates working for the <b>good of the whole</b> while preserving what she calls the <b>goal of goodness</b>. Systems thinking, in her hands, is not a recipe for control. It is a disciplined reminder that complexity should make people more careful, more curious, and more humane.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The chapter's language of humility and wholeness is attractive, but democratic theorists would note that appeals to the <b>good of the whole</b> can conceal real conflicts over power, representation, and distribution. A system may have multiple legitimate goals, not one neutral collective interest waiting to be discovered.</p>
+  <p>That said, Meadows's practical posture remains valuable. Even when conflicts cannot be dissolved, clearer feedback, broader information, and longer time horizons usually improve the quality of disagreement and the design of institutions that must live with it.</p>
+</details>
+
+<!-- After all chapters, the quiz: -->
+<h2 id="quiz-heading">Comprehension Quiz</h2>
+
+<details id="quiz-section" class="quiz-wrapper">
+  <summary class="quiz-toggle">Take the Quiz</summary>
+
+  <form id="quiz-form">
+
+    <div class="q-block">
+      <p class="q-label">1. What does Meadows present as the book's main purpose in the author's note?</p>
+      <label><input type="radio" name="q1" value="a"> To provide a mathematically complete history of system dynamics</label>
+      <label><input type="radio" name="q1" value="b"> To defend one school of thought against all rivals</label>
+      <label><input type="radio" name="q1" value="c"> To give readers a practical ability to understand and deal with complex systems</label>
+      <label><input type="radio" name="q1" value="d"> To prove that abstract theory is more useful than applied analysis</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">2. Why does the editor argue that Meadows's manuscript remained worth publishing years after it was drafted?</p>
+      <label><input type="radio" name="q2" value="a"> Because the technical models had been updated with new equations</label>
+      <label><input type="radio" name="q2" value="b"> Because modern environmental, political, and economic crises make systems thinking even more relevant</label>
+      <label><input type="radio" name="q2" value="c"> Because it serves mainly as a biography of Meadows's career</label>
+      <label><input type="radio" name="q2" value="d"> Because it replaces <i>The Limits to Growth</i> with a simpler argument about markets</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">3. What is the central promise of the systems lens in the introduction?</p>
+      <label><input type="radio" name="q3" value="a"> It predicts exact future events from current data</label>
+      <label><input type="radio" name="q3" value="b"> It replaces ordinary intuition with purely technical expertise</label>
+      <label><input type="radio" name="q3" value="c"> It shifts attention from isolated events to structures that generate recurring behavior</label>
+      <label><input type="radio" name="q3" value="d"> It proves that every problem has a single hidden cause</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">4. In Meadows's terminology, what is a <b>stock</b>?</p>
+      <label><input type="radio" name="q4" value="a"> A one-time event that disrupts a system</label>
+      <label><input type="radio" name="q4" value="b"> An accumulated condition that changes through inflows and outflows</label>
+      <label><input type="radio" name="q4" value="c"> A rule that keeps a system at equilibrium</label>
+      <label><input type="radio" name="q4" value="d"> A graph that displays short-term variability</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">5. Which statement best distinguishes <b>balancing</b> and <b>reinforcing</b> feedback loops?</p>
+      <label><input type="radio" name="q5" value="a"> Balancing loops amplify change, while reinforcing loops seek a goal</label>
+      <label><input type="radio" name="q5" value="b"> Balancing loops only exist in mechanical systems, while reinforcing loops only exist in social systems</label>
+      <label><input type="radio" name="q5" value="c"> Balancing loops push toward stability, while reinforcing loops compound change in the same direction</label>
+      <label><input type="radio" name="q5" value="d"> Balancing loops track stocks, while reinforcing loops ignore them</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">6. What is one of the main lessons of the “systems zoo”?</p>
+      <label><input type="radio" name="q6" value="a"> Exponential growth can continue indefinitely if decision makers stay confident</label>
+      <label><input type="radio" name="q6" value="b"> Simple feedback structures can generate recurring patterns such as overshoot, oscillation, and collapse</label>
+      <label><input type="radio" name="q6" value="c"> Only computer simulations can reveal system behavior</label>
+      <label><input type="radio" name="q6" value="d"> Real systems never resemble simple models closely enough to be useful</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">7. Which question does Meadows recommend asking to test a model rather than merely admiring its graph?</p>
+      <label><input type="radio" name="q7" value="a"> Who should be blamed if the forecast fails?</label>
+      <label><input type="radio" name="q7" value="b"> What is driving the driving factors?</label>
+      <label><input type="radio" name="q7" value="c"> How can the variables be made more complicated?</label>
+      <label><input type="radio" name="q7" value="d"> Which assumptions can be ignored because the trend looks plausible?</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">8. According to Chapter Three, which trio helps explain why systems can work well?</p>
+      <label><input type="radio" name="q8" value="a"> Precision, speed, and centralization</label>
+      <label><input type="radio" name="q8" value="b"> Resilience, self-organization, and hierarchy</label>
+      <label><input type="radio" name="q8" value="c"> Competition, punishment, and scarcity</label>
+      <label><input type="radio" name="q8" value="d"> Prediction, control, and uniformity</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">9. Why can aggressive efficiency make a system less resilient?</p>
+      <label><input type="radio" name="q9" value="a"> It removes buffers, diversity, and spare capacity that help systems absorb shocks</label>
+      <label><input type="radio" name="q9" value="b"> It always increases reinforcing loops beyond repair</label>
+      <label><input type="radio" name="q9" value="c"> It turns every hierarchy into a monopoly</label>
+      <label><input type="radio" name="q9" value="d"> It eliminates the need for feedback</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">10. Why do systems often surprise people, according to Meadows?</p>
+      <label><input type="radio" name="q10" value="a"> Because most systems are random and causally opaque</label>
+      <label><input type="radio" name="q10" value="b"> Because people focus on short-term events and overlook delays, nonlinearities, and boundaries</label>
+      <label><input type="radio" name="q10" value="c"> Because actors usually know the whole system but disagree about values</label>
+      <label><input type="radio" name="q10" value="d"> Because feedback loops only matter in biological systems</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">11. Which response best addresses a <b>tragedy of the commons</b>?</p>
+      <label><input type="radio" name="q11" value="a"> Hide information about the resource so users do not panic</label>
+      <label><input type="radio" name="q11" value="b"> Restore a feedback link through regulation, privatization, or another way of making users face consequences</label>
+      <label><input type="radio" name="q11" value="c"> Lower performance standards so overuse looks acceptable</label>
+      <label><input type="radio" name="q11" value="d"> Encourage competitors to escalate faster so the resource is consumed efficiently</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">12. What defines the trap of <b>shifting the burden</b>?</p>
+      <label><input type="radio" name="q12" value="a"> A system keeps multiple goals in balance</label>
+      <label><input type="radio" name="q12" value="b"> A quick symptomatic fix weakens the system's own capacity and creates growing dependency</label>
+      <label><input type="radio" name="q12" value="c"> A successful actor is rewarded with more responsibility</label>
+      <label><input type="radio" name="q12" value="d"> A rule is followed exactly even though it is unpopular</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">13. Which leverage point is generally deeper and more powerful than changing parameters such as taxes or quotas?</p>
+      <label><input type="radio" name="q13" value="a"> Changing a system's goals or paradigms</label>
+      <label><input type="radio" name="q13" value="b"> Re-labeling the stock variables</label>
+      <label><input type="radio" name="q13" value="c"> Increasing the number of examples in a report</label>
+      <label><input type="radio" name="q13" value="d"> Removing all delays from the model diagram</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">14. What does it mean to <b>transcend paradigms</b>?</p>
+      <label><input type="radio" name="q14" value="a"> To find the one final ideology that should govern every system</label>
+      <label><input type="radio" name="q14" value="b"> To reject all models as useless</label>
+      <label><input type="radio" name="q14" value="c"> To hold mental models lightly and remain flexible about redesigning systems</label>
+      <label><input type="radio" name="q14" value="d"> To focus only on quantitative indicators</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">15. Which attitude best captures Meadows's guidance for living in a world of systems?</p>
+      <label><input type="radio" name="q15" value="a"> Master every variable before acting</label>
+      <label><input type="radio" name="q15" value="b"> Rely on technocratic control and ignore intuition</label>
+      <label><input type="radio" name="q15" value="c"> Practice humility, protect information flows, and keep learning</label>
+      <label><input type="radio" name="q15" value="d"> Avoid feedback because it complicates decision making</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">16. When Meadows says to locate responsibility within the system, what is she encouraging?</p>
+      <label><input type="radio" name="q16" value="a"> Blaming the most visible individual in any crisis</label>
+      <label><input type="radio" name="q16" value="b"> Designing systems so actors experience the consequences of their actions through feedback</label>
+      <label><input type="radio" name="q16" value="c"> Removing accountability from institutions entirely</label>
+      <label><input type="radio" name="q16" value="d"> Treating every outcome as morally neutral</label>
+    </div>
+
+    <button type="button" id="score-btn" onclick="scoreQuiz()">Score My Answers</button>
+
+    <div id="quiz-result" style="display:none;">
+      <p id="score-text"></p>
+      <div id="answer-review"></div>
+    </div>
+
+  </form>
+</details>
+
+<script>
+(function() {
+  const answers = {
+    q1: { correct: "c", explain: "Meadows explicitly says the book aims to give readers a basic working ability to understand and handle complex systems, not to exhaust the field." },
+    q2: { correct: "b", explain: "The editor links the manuscript to ongoing interconnected crises and argues that systems thinking is increasingly necessary for understanding them." },
+    q3: { correct: "c", explain: "The introduction argues that systems thinking helps readers see the structures and interconnections behind recurring outcomes rather than focusing only on events." },
+    q4: { correct: "b", explain: "Stocks are the stored or accumulated parts of a system, and flows are the rates that fill or drain them." },
+    q5: { correct: "c", explain: "Balancing loops reduce discrepancies and stabilize a system, while reinforcing loops magnify growth or decline." },
+    q6: { correct: "b", explain: "The chapter shows that many complex-looking outcomes arise from a limited set of feedback structures that recur across domains." },
+    q7: { correct: "b", explain: "Meadows stresses that modelers should ask what lies behind the assumed drivers instead of treating them as fixed givens." },
+    q8: { correct: "b", explain: "Meadows highlights resilience, self-organization, and hierarchy as major sources of systemic robustness and adaptability." },
+    q9: { correct: "a", explain: "The chapter argues that systems optimized narrowly for output often become brittle because they sacrifice the slack that supports recovery." },
+    q10: { correct: "b", explain: "Meadows argues that surprise usually comes from limits in our models and perception, not from systems being causeless." },
+    q11: { correct: "b", explain: "Meadows says commons problems improve when users are reconnected to the condition of the resource through credible feedback and governance." },
+    q12: { correct: "b", explain: "In shifting the burden, short-term relief displaces deeper repair and gradually erodes the original system's self-maintaining ability." },
+    q13: { correct: "a", explain: "Meadows argues that goals and paradigms shape the rest of the system, making them far more powerful than parameter tweaks." },
+    q14: { correct: "c", explain: "For Meadows, transcending paradigms means recognizing that every worldview is partial and staying open enough to revise it." },
+    q15: { correct: "c", explain: "The closing chapter emphasizes humility, better information, broader responsibility, and continual learning rather than rigid control." },
+    q16: { correct: "b", explain: "She wants systems designed so feedback and consequences sit where decisions are made, instead of being displaced onto outsiders or scapegoats." },
+  };
+
+  window.scoreQuiz = function() {
+    const form = document.getElementById("quiz-form");
+    let correct = 0;
+    const total = Object.keys(answers).length;
+    let reviewHTML = "";
+
+    for (let i = 1; i <= total; i++) {
+      const key = "q" + i;
+      const selected = form.elements[key] ? form.elements[key].value : "";
+      const isCorrect = selected === answers[key].correct;
+      if (isCorrect) correct++;
+
+      const status = !selected ? "wrong" : (isCorrect ? "correct" : "wrong");
+      const icon = isCorrect ? "\u2705" : "\u274C";
+      const yourAnswer = selected ? selected.toUpperCase() : "No answer";
+      const correctAnswer = answers[key].correct.toUpperCase();
+
+      reviewHTML += '<div class="review-item ' + status + '">';
+      reviewHTML += '<div class="ri-q">' + icon + " Question " + i + "</div>";
+      reviewHTML += '<div class="ri-detail">';
+      if (!isCorrect) {
+        reviewHTML += "Your answer: " + yourAnswer + " &mdash; Correct answer: " + correctAnswer + "<br>";
+      }
+      reviewHTML += answers[key].explain;
+      reviewHTML += "</div></div>";
+    }
+
+    const pct = Math.round((correct / total) * 100);
+    let grade;
+    if (pct === 100) grade = "Perfect score!";
+    else if (pct >= 80) grade = "Great understanding!";
+    else if (pct >= 60) grade = "Good, but review the summaries above for the ones you missed.";
+    else grade = "Consider re-reading the summaries above and trying again.";
+
+    document.getElementById("score-text").textContent = correct + " / " + total + " (" + pct + "%) \u2014 " + grade;
+    document.getElementById("answer-review").innerHTML = reviewHTML;
+    document.getElementById("quiz-result").style.display = "block";
+    document.getElementById("quiz-result").scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+})();
+</script>
+
+</div><!-- .content -->
+
+</body>
+</html>

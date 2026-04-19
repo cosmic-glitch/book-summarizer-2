@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Win Friends and Influence People — Book Summary Pro</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      line-height: 1.7;
+      color: #222;
+      background: #fafafa;
+    }
+    .app-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #2c2c2c;
+      padding: 14px 24px;
+    }
+    .content {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 32px 20px 40px;
+    }
+    .app-nav .app-name {
+      font-size: 1.05em;
+      font-weight: bold;
+      color: #e8e0d0;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+    }
+    .app-nav .app-name:hover {
+      color: #d4a843;
+    }
+    .app-nav .back-link {
+      font-size: 0.9em;
+      color: #999;
+      text-decoration: none;
+    }
+    .app-nav .back-link:hover {
+      color: #d4a843;
+    }
+    h1 {
+      font-size: 1.8em;
+      border-bottom: 2px solid #333;
+      padding-bottom: 10px;
+      margin-bottom: 5px;
+    }
+    .subtitle {
+      font-size: 1.1em;
+      color: #444;
+      margin: 2px 0 0 0;
+      font-style: italic;
+    }
+    .author {
+      font-style: italic;
+      color: #777;
+      font-size: 0.95em;
+      margin-bottom: 40px;
+    }
+    h2 {
+      font-size: 1.3em;
+      margin-top: 48px;
+      color: #1a1a1a;
+      border-left: 4px solid #555;
+      padding-left: 12px;
+    }
+    p {
+      margin-bottom: 14px;
+      text-align: justify;
+    }
+    details.counter {
+      background: #f0ece4;
+      border-left: 4px solid #b8860b;
+      padding: 14px 18px;
+      margin: 20px 0 28px 0;
+      border-radius: 0 6px 6px 0;
+    }
+    details.counter summary {
+      font-weight: bold;
+      font-size: 0.95em;
+      color: #8b6914;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    details.counter summary::-webkit-details-marker {
+      display: none;
+    }
+    details.counter summary::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    details.counter[open] summary::before {
+      transform: rotate(90deg);
+    }
+    details.counter p {
+      margin-top: 12px;
+      margin-bottom: 10px;
+      color: #3a3a3a;
+    }
+    details.counter p:last-child {
+      margin-bottom: 0;
+    }
+    .quiz-wrapper {
+      margin-top: 48px;
+      background: #f5f5f0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 16px 20px;
+    }
+    .quiz-toggle {
+      font-weight: bold;
+      font-size: 1.05em;
+      cursor: pointer;
+      color: #2a5a2a;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .quiz-toggle::-webkit-details-marker { display: none; }
+    .quiz-toggle::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    .quiz-wrapper[open] .quiz-toggle::before {
+      transform: rotate(90deg);
+    }
+    .q-block {
+      margin: 24px 0;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    .q-block:last-of-type { border-bottom: none; }
+    .q-label {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .q-block label {
+      display: block;
+      padding: 6px 10px;
+      margin: 4px 0;
+      border-radius: 4px;
+      cursor: pointer;
+      line-height: 1.5;
+    }
+    .q-block label:hover { background: #e8e8e0; }
+    #score-btn {
+      display: block;
+      margin: 28px auto 0;
+      padding: 12px 32px;
+      font-family: Georgia, serif;
+      font-size: 1em;
+      background: #2a5a2a;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #score-btn:hover { background: #1e441e; }
+    #quiz-result {
+      margin-top: 24px;
+      padding: 18px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    #score-text {
+      font-size: 1.15em;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .review-item {
+      margin-bottom: 14px;
+      padding: 10px 12px;
+      border-radius: 4px;
+    }
+    .review-item.correct { background: #e6f4e6; }
+    .review-item.wrong { background: #fce8e8; }
+    .review-item .ri-q { font-weight: bold; margin-bottom: 4px; }
+    .review-item .ri-detail { font-size: 0.93em; color: #444; }
+  </style>
+</head>
+<body>
+
+<nav class="app-nav">
+  <a href="index.html" class="app-name">Book Summary Pro</a>
+  <a href="index.html" class="back-link">&larr; All Books</a>
+</nav>
+
+<div class="content">
+
+<h1>How to Win Friends and Influence People</h1>
+<p class="author">Dale Carnegie</p>
+
+<h2>A Foreword by the Publisher</h2>
+
+<p>The publisher's foreword frames this edition as an attempt to preserve Carnegie's original voice. Rather than modernizing examples or trimming material, it argues that readers should encounter the book in the fuller, unrevised form that originally circulated, including Parts 5 and 6 that later editions often omit.</p>
+
+<p>That claim does more than introduce the text; it also prepares the reader for historically specific language, assumptions, and anecdotes. The foreword suggests that <b>authenticity</b> is part of the educational value, because Carnegie's method is supposed to be understood not only as advice but as a document of how twentieth-century American self-help originally framed <b>influence</b>, <b>leadership</b>, and <b>social skill</b>.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Textual fidelity is not automatically the same thing as interpretive superiority. Editors who modernize wording or remove dated examples sometimes argue, in line with <b>inclusive editing</b> and <b>reader-response</b> approaches, that clarity and accessibility can preserve a work's usefulness even while changing its surface form.</p>
+</details>
+
+
+<h2>Introduction: “A Shortcut to Distinction” by Lowell Thomas</h2>
+
+<p>Lowell Thomas opens with the spectacle of thousands of adults crowding into a New York ballroom to hear Carnegie's course, using the scene to make one point unmistakable: people are hungry for <b>practical human-relations training</b>. Formal schooling may produce credentials, but Thomas argues that it often neglects the applied skills that matter in careers and public life&mdash;<b>speaking clearly</b>, <b>winning cooperation</b>, and <b>influencing others without alienating them</b>.</p>
+
+<p>The introduction also acts as social proof for Carnegie's authority. Thomas links the course to executives, professionals, and civic leaders who believed that technical ability alone was not enough, framing Carnegie's teaching as a missing bridge between knowledge and advancement. Before the book even begins, the reader is encouraged to see social effectiveness not as a soft extra but as a major form of <b>economic and professional leverage</b>.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Thomas's argument relies heavily on vivid anecdotes and the aura of successful attendees, which can overstate how much career advancement depends on charm or speaking ability alone. Modern research on <b>human capital</b> and <b>labor-market inequality</b> shows that outcomes also depend on credentials, networks, discrimination, and organizational structure&mdash;not just interpersonal polish.</p>
+</details>
+
+
+<h2>Preface: “How This Book Was Written – And Why” by Dale Carnegie</h2>
+
+<p>In the preface, Carnegie explains that the book grew out of years of teaching adults who cared less about abstract theory than about solving daily problems with bosses, employees, customers, friends, and family. He presents the text as a distilled handbook assembled from observation, classroom experiments, biographical reading, and repeated testing with students who reported back on what actually changed behavior in the real world.</p>
+
+<p>That origin story matters because it defines the book's method. Carnegie is not trying to produce a philosophical treatise about morality or a laboratory science of personality; he is trying to create a set of <b>usable habits</b>. The emphasis on rereading, underlining, reviewing, and practicing shows that he thinks success in human relations comes less from memorizing principles than from turning them into a <b>disciplined routine of attention</b>.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The preface gives the book an empirical flavor, but most of the evidence is anecdotal and classroom-based rather than experimental. Later social psychology supports parts of Carnegie's program, yet scholars such as <b>Daniel Kahneman</b> and <b>Richard Nisbett</b> also show how easily humans overgeneralize from memorable stories.</p>
+</details>
+
+
+<h2>“If You Want to Gather Honey, Don’t Kick Over the Beehive”</h2>
+
+<p>The first core chapter attacks the impulse to blame. Carnegie begins with criminals and controversial public figures who almost never think of themselves as villains, then generalizes the pattern: <b>criticism</b> usually provokes self-justification rather than reform. People protect their self-image first, and when they feel attacked they spend their energy defending identity instead of re-examining behavior.</p>
+
+<p>From that observation Carnegie draws one of the book's foundational rules: <b>don't criticize, condemn, or complain</b>. He does not deny that people make mistakes; instead, he argues that fault-finding is usually a strategically bad way to change them. The chapter therefore establishes the emotional logic behind the entire book: if a reader wants influence, the first task is to stop triggering the other person's pride and resentment.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Carnegie is right that moralistic scolding often backfires, but the chapter can sound as if all criticism is counterproductive. Research on <b>constructive feedback</b> and <b>accountability</b> suggests the real issue is not whether criticism exists, but whether it is specific, fair, and paired with a path to improvement.</p>
+</details>
+
+
+<h2>The Big Secret of Dealing with People</h2>
+
+<p>Carnegie's "big secret" is blunt: the only dependable way to get someone to do something is to make that person <b>want</b> to do it. Coercion can produce temporary obedience, but it breeds resistance, evasion, or resentment. Durable influence begins when a request is translated into the language of the other person's motives.</p>
+
+<p>The chapter narrows those motives to a powerful psychological core&mdash;the desire for <b>importance</b>, <b>recognition</b>, and <b>sincere appreciation</b>. Carnegie sharply distinguishes appreciation from flattery: flattery is self-serving and transparent, whereas honest appreciation identifies something genuinely admirable in the other person. That distinction matters because Part 1 is moving from what not to do in the previous chapter to what positive emotional fuel should replace it.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The desire to feel important is real, but modern motivation theory complicates Carnegie's picture. <b>Edward Deci</b> and <b>Richard Ryan</b> argue in <b>self-determination theory</b> that people are also driven by autonomy, competence, and relatedness, so praise alone does not explain why effort and commitment appear.</p>
+</details>
+
+
+<h2>“He Who Can Do This Has the Whole World with Him. He Who Cannot, Walks a Lonely Way”</h2>
+
+<p>Building on the previous chapter's focus on desire, Carnegie argues that persuasion starts when a reader stops talking about personal wishes and starts from the other person's incentives. His fishing metaphor makes the idea memorable: the angler baits the hook with what the fish wants, not with the angler's favorite food. In human terms, that means framing proposals around <b>the other person's goals</b>, fears, pride, or curiosity.</p>
+
+<p>The practical rule is to <b>arouse in the other person an eager want</b>. Carnegie treats this not as manipulation-by-trick but as disciplined perspective-taking: one must ask what outcome would make cooperation feel attractive from the other side. The chapter is important because it converts the book's early emotional insights into a reusable persuasion method that will later reappear in conversations, negotiations, letters, and domestic life.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>This principle is powerful, but it sits close to the line between persuasion and manipulation. Modern negotiation writers such as <b>Roger Fisher</b> and <b>William Ury</b> emphasize mutual gains and transparent interests precisely because "arousing want" can become ethically suspect when the persuader understands the other's incentives better than the other person does.</p>
+</details>
+
+
+<h2>Nine Suggestions on How to Get the Most Out of This Book</h2>
+
+<p>Carnegie temporarily stops teaching social rules and teaches a method for learning them. He insists that readers should approach the book as a <b>working manual</b>, not a one-time read: reread chapters, underline useful lines, review them monthly, and pause often to ask how each principle could be applied to actual problems. Improvement in human relations, he argues, is more like athletic training than like passive information intake.</p>
+
+<p>The chapter also recognizes that new habits are hard precisely because the old reactions&mdash;defensiveness, criticism, self-centered talk&mdash;are automatic. Carnegie therefore recommends accountability, repetition, and deliberate experimentation until the principles become second nature. In effect, he turns the book into a program of <b>behavioral rehearsal</b>, which is why the later chapters repeatedly sound as though they expect daily practice rather than occasional inspiration.</p>
+
+
+<h2>Do This and You’ll Be Welcome Anywhere</h2>
+
+<p>The first chapter of Part 2 argues that social attractiveness begins with <b>genuine interest in other people</b>. Carnegie contrasts that with the common habit of trying to be interesting. His point is that warmth is usually won not by dazzling performance but by signaling that another person's life, preferences, and concerns are worth attention.</p>
+
+<p>Because the rule asks for genuine interest rather than a conversational trick, it sets the tone for the rest of Part 2. Smiling, remembering names, listening, and talking in terms of others' interests all become believable only if they are supported by a real willingness to leave the ego at the center. Carnegie's claim is that people can usually sense the difference between curiosity that is alive and courtesy that is merely ceremonial.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The chapter assumes that readers can simply choose to be genuinely interested, but in practice curiosity can become another networking performance. Contemporary work on <b>authenticity</b> and <b>impression management</b> suggests that interest builds trust only when it is not obviously instrumental.</p>
+</details>
+
+
+<h2>A Simple Way To Make A Good First Impression</h2>
+
+<p>Carnegie's next recommendation is disarmingly simple: <b>smile</b>. He treats a smile as a low-cost signal that tells others they are welcome, safe, and worth engaging. In that sense, the chapter is less about facial expression than about the emotional climate one person creates on contact.</p>
+
+<p>The deeper idea is that first impressions are shaped by mood contagion. A warm tone over the telephone, an open face in a meeting, or an expression of gladness at seeing someone can make later interaction easier because it removes needless friction at the very beginning. Carnegie uses the chapter to show that influence often starts before any argument or request is made, in the quick social cues that tell people how to interpret your presence.</p>
+
+
+<h2>If You Don’t Do This, You Are Headed for Trouble</h2>
+
+<p>This chapter treats a person's <b>name</b> as a compressed form of identity. Carnegie argues that remembering and using names carefully is not a minor social refinement but a concrete way to show that someone has not been blurred into the crowd. Because people attach pride and memory to their own names, attention here creates disproportionate goodwill.</p>
+
+<p>The chapter also broadens Carnegie's larger theory of importance. If the previous chapters showed that people want appreciation, this one shows how appreciation often begins with accurate recognition. Remembering names, spelling them correctly, and pronouncing them respectfully all communicate that the other person is not interchangeable. That is why such a small behavioral detail becomes, in Carnegie's system, a serious instrument of <b>relationship-building</b>.</p>
+
+
+<h2>An Easy Way to Become a Good Conversationalist</h2>
+
+<p>Carnegie reverses the usual picture of what makes a strong talker. A good conversationalist, he argues, is often a <b>good listener</b>&mdash;someone who can draw others out, ask real questions, and let them expand on their own experience. People often leave such conversations feeling that they met a fascinating person, even when that person said comparatively little.</p>
+
+<p>The reason is consistent with everything that came before: people enjoy spaces where their ideas are treated as worth hearing. By encouraging others to talk about themselves, the speaker reduces ego competition and creates a feeling of ease. The chapter therefore reinforces Part 2's basic lesson that likability often comes less from broadcasting personality than from demonstrating attentive interest in someone else's.</p>
+
+
+<h2>How to Interest People</h2>
+
+<p>The chapter on interest pushes listening one step further. Carnegie argues that if a reader wants attention, the safest route is to <b>talk in terms of the other person's interests</b>. That may require preparation, research, or curiosity, as in his examples of leaders who study what matters to a guest before meeting them.</p>
+
+<p>What looks like charisma, in Carnegie's telling, is often disciplined relevance. Rather than forcing people into topics that flatter the speaker, effective social actors translate conversation into the subjects the other person already values. This chapter connects neatly with the earlier lessons on names and listening: once a reader knows what another person cares about, it becomes easier to make interaction feel personal rather than generic.</p>
+
+
+<h2>How To Make People Like You Instantly</h2>
+
+<p>The final chapter in Part 2 condenses the whole section into one commanding idea: <b>make the other person feel important&mdash;and do it sincerely</b>. Carnegie returns to the difference between honest appreciation and flattery, insisting that admiration only works when it points to something specific and true. The goal is not to manipulate vanity with empty compliments but to notice merits that people rarely hear acknowledged.</p>
+
+<p>Placed at the end of Part 2, the chapter functions as a synthesis. Genuine interest, smiling, remembering names, listening, and speaking to others' interests are all practical ways of delivering the same deeper message: <i>you matter</i>. Carnegie treats this recognition of importance as one of the strongest social forces in the book, because it answers a psychological hunger that criticism and indifference consistently frustrate.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Modern feedback research largely supports the power of recognition, but it also shows the danger of praise that is vague or manipulative. <b>Kim Scott</b>'s work on <b>radical candor</b>, for example, stresses that appreciation builds trust only when it feels specific, truthful, and connected to genuine care rather than to influence tactics alone.</p>
+</details>
+
+
+<h2>You Can’t Win an Argument</h2>
+
+<p>Part 3 begins by challenging the fantasy that arguments produce tidy victories. Carnegie argues that even when one person wins on the facts, the loser often keeps wounded pride and hardened resistance. Because disagreement easily becomes a status contest, triumph in argument can damage the very relationship on which future influence depends.</p>
+
+<p>The chapter's rule&mdash;<b>the only way to get the best of an argument is to avoid it</b>&mdash;is really a strategic instruction about where persuasion happens. Carnegie does not mean that readers should abandon all conviction; he means that people are rarely reasoned out of a position while they are busy defending themselves. The practical implication is that influence must start earlier, with tone, curiosity, and common ground rather than verbal conquest.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Carnegie sometimes pushes this lesson so far that disagreement sounds almost always counterproductive. Yet deliberative theorists and scholars of <b>constructive conflict</b> note that principled disagreement is often necessary for truth-seeking, accountability, and democratic decision-making; the key issue is how the disagreement is structured, not whether it exists.</p>
+</details>
+
+
+<h2>A Sure Way of Making Enemies – and How to Avoid It</h2>
+
+<p>This chapter gives a verbal rule for avoiding needless fights: <b>show respect for the other person's opinions</b> and never begin by telling someone flatly that he or she is wrong. Carnegie understands such statements as identity threats. Once a person feels publicly corrected or belittled, the conversation stops being about evidence and starts being about self-defense.</p>
+
+<p>His alternative is rhetorical humility&mdash;phrases like "I may be mistaken" or "let's examine the facts together." These formulations do not surrender judgment; they lower the emotional stakes so that a difference can be explored without humiliating anyone. The chapter therefore turns the previous warning against arguments into a concrete language habit designed to reduce <b>defensiveness</b>.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>In everyday persuasion this advice is often wise, but there are settings where direct correction matters. In medicine, engineering, and law, excessive softness can blur responsibility or delay needed action, so the challenge is balancing <b>clarity</b> with <b>respect</b> rather than replacing one with the other.</p>
+</details>
+
+
+<h2>If You’re Wrong, Admit It</h2>
+
+<p>Carnegie's advice here is counterintuitive but psychologically sharp: when a reader is clearly at fault, it is better to <b>admit it quickly and emphatically</b> than to force the other person to prosecute the case. A candid admission interrupts escalation because it removes the satisfaction of attack and often evokes a more generous response than denial would.</p>
+
+<p>The chapter is also about control. By naming the mistake first, a person shows honesty, reduces suspense, and keeps the situation from spiraling into a larger struggle over credibility. Carnegie's point is not that one should accept false blame, but that once the facts are clear, self-justification usually costs more than it saves.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Fast admissions can be disarming, but they are not costless in every environment. In highly adversarial workplaces or legal settings, unqualified confession may create risks that require more careful language, which is why modern conflict advisers often pair accountability with attention to <b>context</b>, <b>documentation</b>, and <b>power asymmetry</b>.</p>
+</details>
+
+
+<h2>The High Road to a Man’s Reason</h2>
+
+<p>Carnegie's "high road" is simple: <b>begin in a friendly way</b>. He repeats the honey metaphor from Part 1 to argue that warmth softens resistance before logic even enters the scene. A hostile opening makes people brace for conflict; a cordial opening makes it easier for them to hear inconvenient information without treating it as an attack.</p>
+
+<p>This rule is more than etiquette. Carnegie is claiming that the route to reason is partly emotional: people become rationally available when they are not busy protecting dignity. That idea links the chapter to the previous ones on arguments and respect for opinion, because the persuasive force of a message is shaped by the relational atmosphere in which it arrives.</p>
+
+
+<h2>The Secret of Socrates</h2>
+
+<p>Drawing on the classical image of Socrates, Carnegie recommends getting the other person saying <b>"yes, yes"</b> early in the conversation. The tactic works by starting with points of agreement rather than with the final disputed conclusion. Small affirmations create a sense of shared direction and make later resistance less abrupt.</p>
+
+<p>What Carnegie values here is conversational momentum. Once people have publicly agreed with a series of premises, they are less likely to reverse course dramatically unless they want to contradict their own earlier statements. The chapter therefore adds a sequencing principle to Part 3: influence often depends not only on what one says, but on the order in which agreement is built.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Modern psychologists would note that this tactic overlaps with <b>commitment and consistency</b>, a theme later developed by <b>Robert Cialdini</b>. That is precisely why the method can feel manipulative if used mechanically, especially when a speaker guides someone toward agreement without fully surfacing the real stakes.</p>
+</details>
+
+
+<h2>The Safety Valve in Handling Complaints</h2>
+
+<p>When people complain, Carnegie argues, they usually need more than a technical answer; they need a chance to release pressure. The "safety valve" is to <b>let the other person do a great deal of the talking</b>. Complaints lose heat when the speaker feels heard, and useful facts often emerge only after that emotional ventilation has happened.</p>
+
+<p>The chapter fits naturally after the earlier warnings against argument. Interrupting, correcting, or defending too quickly only convinces the other person that the listener cares more about self-protection than about understanding the problem. Carnegie's advice is therefore practical empathy: listen long enough for both emotion and information to surface before attempting a solution.</p>
+
+
+<h2>How to Get Co-operation</h2>
+
+<p>Carnegie next argues that people commit more fully to plans they can partly own. His rule is to <b>let the other fellow feel that the idea is his</b>, which means giving room for contribution, discovery, and face-saving authorship rather than insisting on personal credit. Even good ideas meet resistance when they arrive wrapped in someone else's ego.</p>
+
+<p>This chapter extends the book's repeated emphasis on importance. Cooperation rises when people experience themselves not as tools executing another person's will but as agents participating in a shared outcome. Carnegie is effectively recommending a leadership style that hides domination and replaces it with involvement, making agreement feel self-generated rather than imposed.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The method can be collaborative, but it can also slip into concealed manipulation if a leader pretends an idea originated elsewhere merely to secure compliance. Modern management thought places growing weight on <b>psychological safety</b> and <b>shared accountability</b>, which require real participation, not just the appearance of ownership.</p>
+</details>
+
+
+<h2>A Formula That Will Work Wonders for You</h2>
+
+<p>The "formula" in this short chapter is a disciplined version of empathy: <b>honestly try to see things from the other person's point of view</b>. Carnegie presents this as a practical shortcut to understanding action. People behave as they do for reasons that usually make sense from inside their own circumstances, even when those reasons are invisible or unattractive from the outside.</p>
+
+<p>Because it forces the reader to suspend self-centered interpretation, the chapter quietly unifies much of the book. Avoiding criticism, arousing eager want, listening well, and reducing argument all depend on this same mental move. Carnegie treats perspective-taking not as sentimental kindness but as a hard-edged advantage in dealing with human beings.</p>
+
+
+<h2>What Everybody Wants</h2>
+
+<p>This chapter proposes that what nearly everybody wants in conflict is not immediate agreement but sympathetic recognition. Carnegie recommends language that effectively says: <b>I don't blame you for feeling as you do</b>. Such statements validate the emotional logic of the other person's position without necessarily conceding the substantive issue.</p>
+
+<p>The strategic power of sympathy is that it reduces loneliness and combativeness at the same time. Once people feel their feelings make sense to someone else, they become easier to calm and easier to guide. Carnegie is once again showing that persuasion usually begins by satisfying a basic social need&mdash;the need to feel understood&mdash;before attempting to redirect behavior.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Validation is useful, but it can become a substitute for responsibility if it ends at soothing language. Therapists and conflict researchers often distinguish between <b>empathic acknowledgement</b> and <b>agreement</b>; the former can calm a situation, but lasting resolution usually requires concrete follow-through as well.</p>
+</details>
+
+
+<h2>An Appeal That Everybody Likes</h2>
+
+<p>Carnegie argues that most people prefer to see themselves as decent, fair, and principled, even when mixed motives are clearly present. Because of that, a persuasive request should often <b>appeal to nobler motives</b>&mdash;the version of the self that wants to act generously, honorably, or publicly well.</p>
+
+<p>The chapter does not deny self-interest; instead, it claims that self-image shapes action just as powerfully as material incentive. By framing a request in terms that allow someone to behave nobly, a persuader activates pride on the side of cooperation rather than on the side of refusal. In Carnegie's system, effective influence frequently works by recruiting the other person's preferred moral identity.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Appealing to virtue can be elegant, but it is not universally sufficient. Behavioral economists and negotiation scholars repeatedly find that material incentives, constraints, and reputational calculations can dominate lofty framing, so noble language works best when it matches real interests rather than trying to replace them.</p>
+</details>
+
+
+<h2>The Movies Do It. Radio Does It. Why Don’t You Do It?</h2>
+
+<p>Here Carnegie shifts from verbal logic to vivid presentation. His rule is to <b>dramatize your ideas</b>, because flat explanation is easily ignored while concrete demonstration captures attention. The claim is not that substance is irrelevant, but that substance often needs form to become memorable.</p>
+
+<p>This chapter anticipates later insights about narrative and salience. A rumor, complaint, or proposal can gather force when people can see it, imagine it, or feel it. Carnegie treats dramatization as the persuasive equivalent of turning up the contrast on a message so that it competes successfully for attention in a crowded social field.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The danger of dramatization is that vividness can outrun truth. Work on <b>availability bias</b> associated with <b>Tversky</b> and <b>Kahneman</b> shows that dramatic examples often feel more representative than they really are, which is why persuasive storytelling must be handled with care.</p>
+</details>
+
+
+<h2>When Nothing Else Works, Try This</h2>
+
+<p>Carnegie's last rule in Part 3 is to <b>throw down a challenge</b>. When ordinary requests fail, competition, standards, pride, or the chance to prove oneself can unlock energy that duty alone could not. The chapter assumes that many people want not just comfort or approval but the thrill of being tested.</p>
+
+<p>This ending is revealing. After chapters on tact, sympathy, and indirect influence, Carnegie concludes with a more muscular appeal to ambition and self-respect. A challenge works because it reframes effort as an opportunity to display strength, competence, or courage rather than as mere obedience to someone else's demand.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Challenge can be highly motivating, but contemporary organizational research also shows its limits. In anxious or unequal settings, constant challenge can trigger burnout, threat responses, or unhealthy competition, especially when collaboration would be more productive than contest.</p>
+</details>
+
+
+<h2>If You Must Find Fault, This Is the Way to Begin</h2>
+
+<p>Part 4 opens with a rule for correction: <b>begin with praise and honest appreciation</b>. Carnegie's point is not that criticism should be disguised with insincerity, but that people can hear unwelcome feedback more clearly after their existing strengths have been recognized. Praise lowers defensiveness because it signals that the relationship is not defined entirely by fault.</p>
+
+<p>The chapter also shows how correction can preserve momentum instead of freezing it. If people believe their good work is seen, they are more likely to experience criticism as refinement rather than condemnation. In Carnegie's framework, the most effective path to change starts by stabilizing dignity before introducing deficiency.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>This advice can become formulaic when reduced to a mechanical "compliment sandwich." Modern feedback research suggests that praise only helps when it is specific and credible; otherwise recipients often hear it as a prelude to criticism and discount it immediately.</p>
+</details>
+
+
+<h2>How to Criticize – and Not Be Hated for It</h2>
+
+<p>Carnegie's second rule for change is to <b>call attention to mistakes indirectly</b>. The logic is straightforward: direct accusation invites resistance, while tactful example, suggestion, or self-correcting context can let the other person notice the problem without losing face. Subtlety can therefore be more effective than confrontation.</p>
+
+<p>This chapter extends the emphasis on dignity that began Part 4. Carnegie thinks people change more readily when they do not feel pinned to the wall. Indirect correction offers them an escape route from embarrassment, which in turn makes compliance feel less like defeat and more like self-respect.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Indirectness can preserve harmony, but it can also create ambiguity. In fast-moving or high-stakes environments, people sometimes need explicit expectations rather than hints, so the best approach depends on whether the main problem is defensiveness or confusion.</p>
+</details>
+
+
+<h2>Talk About Your Own Mistakes First</h2>
+
+<p>Before correcting someone else, Carnegie recommends admitting one's own mistakes first. This move lowers hierarchy and communicates that error is a common human pattern rather than a stain unique to the other person. The result is a conversation that feels more like shared learning than like one-sided judgment.</p>
+
+<p>The chapter also gives the critic a more credible moral position. A person who acknowledges personal fallibility appears less self-righteous and more trustworthy. Carnegie is essentially arguing that humility is persuasive because it makes correction easier to accept without surrendering self-respect.</p>
+
+
+<h2>No One Likes To Take Orders</h2>
+
+<p>This short chapter turns feedback into collaboration by advising readers to <b>ask questions instead of giving direct orders</b>. Questions preserve a sense of agency. They invite thought, sometimes improve the plan itself, and make obedience feel more like participation than submission.</p>
+
+<p>The idea connects directly with earlier chapters on eager want and idea ownership. A direct order makes the other person's will irrelevant; a well-placed question lets that will remain active. Carnegie treats that distinction as crucial because people resist domination even when they would have agreed to the same action if it had been framed less coercively.</p>
+
+
+<h2>Let the Other Man Save His Face</h2>
+
+<p>Carnegie argues that one of the cruelest avoidable mistakes in leadership is to humiliate people when they fail. Even if correction, dismissal, or reassignment is necessary, the other person should be allowed to <b>save face</b>. Public embarrassment lingers long after the formal problem is solved.</p>
+
+<p>The chapter makes explicit a theme that has run through the book from the beginning: human beings defend dignity as fiercely as they defend interest. A manager who ignores that fact may win the immediate point yet damage morale, loyalty, and trust. Letting someone preserve honor is therefore not mere sentimentality; it is a practical recognition of how social identity works.</p>
+
+
+<h2>How to Spur Men on to Success</h2>
+
+<p>Here Carnegie embraces positive reinforcement. Rather than dwelling on failures, he advises leaders to <b>praise the slightest improvement and praise every improvement</b>. Recognition, in his view, does not merely reward progress; it helps create more of it by giving people evidence that effort is visible and worthwhile.</p>
+
+<p>This chapter fits naturally with Carnegie's larger concern for importance. When people are noticed for movement in the right direction, they gain courage to continue. The lesson is that confidence often grows socially: improvement feels more possible when a respected observer names it as real.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Later psychology supports the motivational value of reinforcement, but it also warns against praise that is empty or person-centered. Researchers such as <b>Carol Dweck</b> distinguish between praise that encourages process and growth and praise that can create fragility or performance anxiety when it becomes indiscriminate.</p>
+</details>
+
+
+<h2>Give A Dog A Good Name</h2>
+
+<p>Carnegie's next rule is to <b>give a man a fine reputation to live up to</b>. The chapter assumes that people often rise toward the identity that others credibly ascribe to them. When someone is treated as careful, dependable, or capable, that image can become a quiet standard governing future behavior.</p>
+
+<p>This is one of Carnegie's clearest statements about the social power of labels. Reputation is not just description; it can be instruction. By assigning an honorable identity, a leader gives the other person something attractive to inhabit, making reform feel like consistency with a better self rather than capitulation to criticism.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Expectation effects are real, but they are not magic. Studies associated with <b>Rosenthal</b> and <b>Jacobson</b> suggest that high expectations can matter, yet later research shows those effects depend heavily on context, credibility, and broader structure.</p>
+</details>
+
+
+<h2>Make The Fault Seem Easy To Correct</h2>
+
+<p>Carnegie advises readers to use <b>encouragement</b> and to make the desired improvement seem attainable. Shame convinces people that change is beyond them; encouragement suggests the opposite. A person who believes a weakness can be corrected is far more likely to attempt correction in the first place.</p>
+
+<p>The chapter's logic is practical rather than sentimental. If a leader wants action, the leader must keep difficulty from hardening into hopelessness. By shrinking the psychological size of the problem, Carnegie makes persistence easier. The instruction is not to lie about effort, but to present progress as within reach so that initiative does not collapse under fear.</p>
+
+
+<h2>Making People Glad To Do What You Want</h2>
+
+<p>The final chapter of Part 4 combines the earlier rules into a general formula for requests. A reader should be sincere, know clearly what outcome is wanted, see the situation from the other person's point of view, and frame the proposal so that cooperation appears attractive rather than burdensome. In short, effective direction is sold as a benefit, not delivered as a bare command.</p>
+
+<p>This chapter works as a synthesis because it shows that Carnegie's entire program is cumulative. Appreciation, empathy, face-saving, and agency are not separate tricks; they are ingredients in making cooperation feel both rational and dignified. A person becomes "glad" to do what is asked when the request honors interest and self-respect at the same time.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The formula is powerful when interests can genuinely be aligned, but not every situation is win-win. Modern organizational analysis emphasizes that some conflicts are rooted in incompatible incentives or unequal power, where better framing helps but does not remove the underlying tension.</p>
+</details>
+
+
+<h2>Part 5 – Letters That Produced Miraculous Results</h2>
+
+<p>Part 5 applies Carnegie's principles to the written word. The sample letters work, he argues, because they avoid the usual mistake of talking about the writer's needs first. Instead they speak to the reader's importance, convenience, pride, or desire to be helpful, and they make replying feel easy and meaningful.</p>
+
+<p>The chapter therefore proves that Carnegie's method is not limited to face-to-face charm. Whether one is asking for information, collecting payment, calming resentment, or winning cooperation, the same laws hold: focus on the other person's viewpoint, be tactful, and give the reader a psychologically satisfying reason to act. The large jumps in response rates matter less as scientific proof than as illustrations of how much <b>phrasing</b> shapes willingness.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>These examples show the craft of persuasive writing, but they should not be romanticized as neutral technique. Modern marketing and behavioral science both demonstrate that well-targeted copy can cross from courtesy into manipulation, especially when it exploits attention, status, or guilt more effectively than the reader can resist.</p>
+</details>
+
+
+<h2>How to Dig Your Marital Grave in the Quickest Possible Way</h2>
+
+<p>Part 6 opens by identifying <b>nagging</b> as a fast solvent of affection. Carnegie portrays repeated complaint not as useful correction but as an atmosphere of surveillance that makes home feel like a place of tension rather than rest. When fault-finding becomes chronic, even love and luxury do not protect a relationship from corrosion.</p>
+
+<p>The chapter simply extends the first rule of the book into marriage. Criticism and complaint, which already failed in business and friendship, do not suddenly become effective in intimate life. Carnegie's larger point is that domestic peace depends on restraint: if a spouse feels constantly monitored, goodwill drains away and every small irritation becomes evidence of disrespect.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>This chapter names a real relational danger, but it frames the issue in a strongly gendered and one-sided way. Contemporary couples research, especially by <b>John Gottman</b>, distinguishes destructive criticism from legitimate attempts to address unmet needs, and many repeated complaints arise from unequal labor or unresolved conflict rather than from mere temperament.</p>
+</details>
+
+
+<h2>Love and Let Live</h2>
+
+<p>Carnegie's second home-life rule is <b>don't try to make your partner over</b>. He argues that many marriages suffer because one person treats the other as a project for improvement instead of as a person to be accepted. The Disraeli example is meant to show that affection often lasts when people stop waging war against harmless quirks.</p>
+
+<p>The chapter does not celebrate indifference. Rather, it suggests that peace depends on knowing where to stop interfering. A happy home, in Carnegie's telling, is one where admiration and tolerance outweigh corrective ambition, allowing individuality to survive inside commitment.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Acceptance is indeed protective, but the chapter can oversimplify by treating change efforts as almost always destructive. Modern relationship research suggests stable partnerships require both <b>acceptance</b> and <b>negotiation</b>; some patterns genuinely need revision, and refusing to address them can be as harmful as overcontrol.</p>
+</details>
+
+
+<h2>Do This and You’ll Be Looking Up the Time-Tables to Reno</h2>
+
+<p>This chapter's rule is blunt: <b>don't criticize</b> your spouse. Carnegie treats domestic criticism as uniquely damaging because the home is supposed to be a refuge from public struggle. When marriage becomes another site of constant correction, partners stop feeling safe enough to be generous with each other.</p>
+
+<p>The chapter's use of <i>Father Forgets</i> broadens the point beyond marriage to family life more generally. People who would never speak harshly to outsiders often unload impatience on those closest to them. Carnegie sees that reversal as tragic because intimacy raises the cost of contempt: the closer the relationship, the more deeply repeated criticism cuts.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The core warning is sound, but a ban on criticism is too absolute. Therapists often distinguish <b>complaint</b> about a specific behavior from <b>global criticism</b> of the person; the former can be necessary for repair, while the latter is what corrodes trust.</p>
+</details>
+
+
+<h2>A Quick Way to Make Everybody Happy</h2>
+
+<p>Carnegie answers domestic criticism with its opposite: <b>give honest appreciation</b>. He argues that spouses too often leave each other's efforts unnoticed, especially once familiarity turns care into assumption. The antidote is deliberate gratitude for qualities, labor, and gestures that would otherwise disappear into routine.</p>
+
+<p>Placed after the chapter on criticism, the logic is clear. Marriage improves when attention shifts from defects to valuables. Carnegie's version is filtered through the gender norms of his time, yet the deeper point is broader: affection stays alive when partners feel seen not merely as household fixtures but as people whose presence and effort still matter.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>This chapter contains a dated emphasis on appearance and conventional gender roles, which narrows the meaning of appreciation. Contemporary relationship research stresses that gratitude works best when it notices the full range of a partner's contributions&mdash;emotional, practical, intellectual, and financial&mdash;rather than reproducing a single script of flattery.</p>
+</details>
+
+
+<h2>They Mean So Much to a Woman</h2>
+
+<p>Carnegie next argues that <b>little attentions</b> carry enormous emotional weight. Flowers, remembered anniversaries, a thoughtful phone call, or a small act of daily consideration function as evidence that love is active in the present rather than stored in the past. The point is not the material size of the gesture but the meaning of remembered care.</p>
+
+<p>This is one of the book's clearest defenses of everyday maintenance. Grand declarations are too infrequent to sustain a shared life; relationships are kept alive by repeated signs that one partner is mentally present to the other. Carnegie therefore treats attentiveness as a daily discipline of affection, not as an optional decorative extra.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The gendered title is dated, and modern relationship theory would frame the lesson more symmetrically. What matters is not that women uniquely value small gestures, but that most people respond to <b>responsiveness</b> and <b>thoughtful attunement</b>, even if the preferred gestures differ by person.</p>
+</details>
+
+
+<h2>If You Want to be Happy, Don’t Neglect This One</h2>
+
+<p>Here Carnegie elevates <b>courtesy</b> inside marriage. His claim is that many people conserve manners for strangers while becoming careless, abrupt, or rude at home. Because spouses experience one another at close range every day, small discourtesies accumulate into a steady sense of disrespect.</p>
+
+<p>The chapter reframes politeness as something deeper than surface refinement. Courtesy means treating intimacy not as a license for carelessness but as a reason for extra consideration. In Carnegie's system, lasting affection depends not only on big sacrifices but on the daily refusal to be casually harsh with the people nearest to us.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Courtesy helps, but it is not sufficient. A relationship can be outwardly polite and still be unfair, emotionally distant, or conflict-avoidant, which is why modern therapists often pair civility with direct discussion of needs, boundaries, and shared responsibilities.</p>
+</details>
+
+
+<h2>Don’t Be a “Marriage Illiterate”</h2>
+
+<p>The final substantive chapter argues that marriage can fail because partners remain uneducated about sex, intimacy, and physical compatibility. Carnegie presents this as a neglected but decisive area of domestic life, claiming that silence, ignorance, and embarrassment allow preventable friction to harden into unhappiness. His practical recommendation is to learn from serious books instead of treating the subject as unmentionable.</p>
+
+<p>In context, the chapter completes Part 6 by extending Carnegie's broader theory of relationships into an especially taboo domain. Just as conversation, appreciation, and courtesy require skill, he argues that intimate life also benefits from knowledge, candor, and deliberate attention. The underlying message is that a marriage should not be left to instinct alone when education could reduce suffering.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The chapter is unusually forward-looking for its era, but many of its authorities and assumptions are now dated. Contemporary sex therapy and relationship science place greater emphasis on <b>communication</b>, <b>consent</b>, <b>sexual diversity</b>, and the work of writers such as <b>Emily Nagoski</b> and clinicians influenced by <b>Masters and Johnson</b> rather than on a single normative model of adjustment.</p>
+</details>
+
+<h2 id="quiz-heading">Comprehension Quiz</h2>
+
+<details id="quiz-section" class="quiz-wrapper">
+  <summary class="quiz-toggle">Take the Quiz</summary>
+
+  <form id="quiz-form">
+
+    <div class="q-block">
+      <p class="q-label">1. What does the publisher's foreword claim makes this edition distinctive?</p>
+      <label><input type="radio" name="q1" value="a"> It abridges outdated material for modern readers.</label>
+      <label><input type="radio" name="q1" value="b"> It preserves Carnegie's original, unrevised text, including Parts 5 and 6.</label>
+      <label><input type="radio" name="q1" value="c"> It replaces the author's stories with modern case studies.</label>
+      <label><input type="radio" name="q1" value="d"> It focuses only on the business portions of the book.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">2. In Lowell Thomas's introduction, why were thousands flocking to Carnegie's lectures?</p>
+      <label><input type="radio" name="q2" value="a"> They wanted literary criticism and cultural commentary.</label>
+      <label><input type="radio" name="q2" value="b"> They wanted practical skill in speaking and dealing with people.</label>
+      <label><input type="radio" name="q2" value="c"> They wanted formal university credentials.</label>
+      <label><input type="radio" name="q2" value="d"> They wanted investment advice during the depression.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">3. How does Carnegie say readers should use the book?</p>
+      <label><input type="radio" name="q3" value="a"> Read it once for entertainment and move on.</label>
+      <label><input type="radio" name="q3" value="b"> Memorize quotations without changing behavior.</label>
+      <label><input type="radio" name="q3" value="c"> Re-read, mark, review, and apply it as a working handbook.</label>
+      <label><input type="radio" name="q3" value="d"> Skip directly to the chapters that feel easiest.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">4. According to 'If You Want to Gather Honey, Don't Kick Over the Beehive,' what usually happens when people are harshly criticized?</p>
+      <label><input type="radio" name="q4" value="a"> They instantly reform.</label>
+      <label><input type="radio" name="q4" value="b"> They become more creative.</label>
+      <label><input type="radio" name="q4" value="c"> They defend themselves and rationalize their behavior.</label>
+      <label><input type="radio" name="q4" value="d"> They forget the incident quickly.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">5. What is Carnegie's 'big secret' of dealing with people?</p>
+      <label><input type="radio" name="q5" value="a"> Speak louder than everyone else.</label>
+      <label><input type="radio" name="q5" value="b"> Make the other person want to act.</label>
+      <label><input type="radio" name="q5" value="c"> Hide your motives completely.</label>
+      <label><input type="radio" name="q5" value="d"> Rely on status and authority.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">6. In 'The Big Secret of Dealing with People,' what should replace flattery?</p>
+      <label><input type="radio" name="q6" value="a"> Silence.</label>
+      <label><input type="radio" name="q6" value="b"> Sarcasm.</label>
+      <label><input type="radio" name="q6" value="c"> Honest and sincere appreciation.</label>
+      <label><input type="radio" name="q6" value="d"> Competitive pressure.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">7. What does the fishing metaphor in 'He Who Can Do This...' teach?</p>
+      <label><input type="radio" name="q7" value="a"> People dislike clear goals.</label>
+      <label><input type="radio" name="q7" value="b"> Persuasion begins with what you want most.</label>
+      <label><input type="radio" name="q7" value="c"> Persuasion begins with what the other person wants.</label>
+      <label><input type="radio" name="q7" value="d"> Good influence requires mystery.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">8. What is the main point of the 'Nine Suggestions' chapter?</p>
+      <label><input type="radio" name="q8" value="a"> Human relations cannot really be learned.</label>
+      <label><input type="radio" name="q8" value="b"> The principles work only if they are repeatedly reviewed and practiced.</label>
+      <label><input type="radio" name="q8" value="c"> Only extroverts can benefit from the book.</label>
+      <label><input type="radio" name="q8" value="d"> Social skill is mostly innate.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">9. According to Part 2's first rule, what makes someone welcome anywhere?</p>
+      <label><input type="radio" name="q9" value="a"> Showing off expertise.</label>
+      <label><input type="radio" name="q9" value="b"> Genuine interest in other people.</label>
+      <label><input type="radio" name="q9" value="c"> Dominating the room.</label>
+      <label><input type="radio" name="q9" value="d"> Avoiding all questions.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">10. What simple first-impression tool does Carnegie recommend?</p>
+      <label><input type="radio" name="q10" value="a"> A firm debate.</label>
+      <label><input type="radio" name="q10" value="b"> A smile.</label>
+      <label><input type="radio" name="q10" value="c"> An impressive résumé.</label>
+      <label><input type="radio" name="q10" value="d"> A long personal story.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">11. Why does Carnegie stress remembering names?</p>
+      <label><input type="radio" name="q11" value="a"> It proves social rank.</label>
+      <label><input type="radio" name="q11" value="b"> It saves time in meetings.</label>
+      <label><input type="radio" name="q11" value="c"> A person's name is deeply tied to identity and importance.</label>
+      <label><input type="radio" name="q11" value="d"> It makes you sound formal.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">12. What defines a good conversationalist in Carnegie's view?</p>
+      <label><input type="radio" name="q12" value="a"> Talking constantly.</label>
+      <label><input type="radio" name="q12" value="b"> Quoting books.</label>
+      <label><input type="radio" name="q12" value="c"> Listening well and drawing others out.</label>
+      <label><input type="radio" name="q12" value="d"> Winning every topic.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">13. How does Carnegie say you should interest people?</p>
+      <label><input type="radio" name="q13" value="a"> Talk about yourself first.</label>
+      <label><input type="radio" name="q13" value="b"> Shift topics quickly.</label>
+      <label><input type="radio" name="q13" value="c"> Talk in terms of their interests.</label>
+      <label><input type="radio" name="q13" value="d"> Avoid preparation.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">14. What is the core lesson of 'How To Make People Like You Instantly'?</p>
+      <label><input type="radio" name="q14" value="a"> Correct others quickly.</label>
+      <label><input type="radio" name="q14" value="b"> Make people feel important sincerely.</label>
+      <label><input type="radio" name="q14" value="c"> Be mysterious and hard to read.</label>
+      <label><input type="radio" name="q14" value="d"> Never compliment strangers.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">15. How does Carnegie say to get the best of an argument?</p>
+      <label><input type="radio" name="q15" value="a"> Gather more witnesses.</label>
+      <label><input type="radio" name="q15" value="b"> Win publicly.</label>
+      <label><input type="radio" name="q15" value="c"> Avoid the argument.</label>
+      <label><input type="radio" name="q15" value="d"> End it with a challenge.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">16. What kind of language reduces resistance when you disagree?</p>
+      <label><input type="radio" name="q16" value="a"> 'You are obviously wrong.'</label>
+      <label><input type="radio" name="q16" value="b"> 'Let me finish.'</label>
+      <label><input type="radio" name="q16" value="c"> Humble language that respects the other person's opinion.</label>
+      <label><input type="radio" name="q16" value="d"> 'Everyone knows this.'</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">17. If you are clearly wrong, what should you do?</p>
+      <label><input type="radio" name="q17" value="a"> Change the subject.</label>
+      <label><input type="radio" name="q17" value="b"> Admit it quickly and emphatically.</label>
+      <label><input type="radio" name="q17" value="c"> Wait for more evidence first.</label>
+      <label><input type="radio" name="q17" value="d"> Blame the circumstances.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">18. What is the 'high road' to reason?</p>
+      <label><input type="radio" name="q18" value="a"> Begin in a friendly way.</label>
+      <label><input type="radio" name="q18" value="b"> Use statistics first.</label>
+      <label><input type="radio" name="q18" value="c"> Stay silent.</label>
+      <label><input type="radio" name="q18" value="d"> Demand a decision immediately.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">19. What is the 'secret of Socrates'?</p>
+      <label><input type="radio" name="q19" value="a"> Keep your real goal hidden forever.</label>
+      <label><input type="radio" name="q19" value="b"> Get the other person saying 'yes' early.</label>
+      <label><input type="radio" name="q19" value="c"> Use technical jargon.</label>
+      <label><input type="radio" name="q19" value="d"> Avoid all small talk.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">20. When handling complaints, what serves as the 'safety valve'?</p>
+      <label><input type="radio" name="q20" value="a"> Immediate rebuttal.</label>
+      <label><input type="radio" name="q20" value="b"> Letting the other person talk.</label>
+      <label><input type="radio" name="q20" value="c"> Escalating quickly.</label>
+      <label><input type="radio" name="q20" value="d"> Giving a lecture.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">21. How do you increase cooperation, according to Carnegie?</p>
+      <label><input type="radio" name="q21" value="a"> Take full public credit.</label>
+      <label><input type="radio" name="q21" value="b"> Let the other person feel the idea is theirs.</label>
+      <label><input type="radio" name="q21" value="c"> Offer vague praise only.</label>
+      <label><input type="radio" name="q21" value="d"> Avoid asking for input.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">22. What is Carnegie's 'formula that will work wonders'?</p>
+      <label><input type="radio" name="q22" value="a"> Repeat yourself until the point lands.</label>
+      <label><input type="radio" name="q22" value="b"> View the situation honestly from the other person's perspective.</label>
+      <label><input type="radio" name="q22" value="c"> Speak more formally than usual.</label>
+      <label><input type="radio" name="q22" value="d"> End with a threat.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">23. What does Carnegie say 'everybody wants' in conflict?</p>
+      <label><input type="radio" name="q23" value="a"> Legal proof.</label>
+      <label><input type="radio" name="q23" value="b"> Public applause.</label>
+      <label><input type="radio" name="q23" value="c"> Sympathetic recognition of their feelings.</label>
+      <label><input type="radio" name="q23" value="d"> Total silence.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">24. Why appeal to 'nobler motives'?</p>
+      <label><input type="radio" name="q24" value="a"> People like to see themselves as decent and principled.</label>
+      <label><input type="radio" name="q24" value="b"> Money never matters.</label>
+      <label><input type="radio" name="q24" value="c"> Facts are always weak.</label>
+      <label><input type="radio" name="q24" value="d"> Shame works best on everyone.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">25. What does the chapter on movies and radio tell the reader to do?</p>
+      <label><input type="radio" name="q25" value="a"> Shorten every message.</label>
+      <label><input type="radio" name="q25" value="b"> Dramatize ideas.</label>
+      <label><input type="radio" name="q25" value="c"> Avoid examples.</label>
+      <label><input type="radio" name="q25" value="d"> Hide evidence.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">26. When other methods fail, what may unlock effort?</p>
+      <label><input type="radio" name="q26" value="a"> More criticism.</label>
+      <label><input type="radio" name="q26" value="b"> A challenge.</label>
+      <label><input type="radio" name="q26" value="c"> Less clarity.</label>
+      <label><input type="radio" name="q26" value="d"> Indifference.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">27. If you must find fault, how should you begin?</p>
+      <label><input type="radio" name="q27" value="a"> With a list of errors.</label>
+      <label><input type="radio" name="q27" value="b"> With praise and honest appreciation.</label>
+      <label><input type="radio" name="q27" value="c"> With a warning.</label>
+      <label><input type="radio" name="q27" value="d"> With an apology only.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">28. How can you criticize without being hated?</p>
+      <label><input type="radio" name="q28" value="a"> By embarrassing people publicly.</label>
+      <label><input type="radio" name="q28" value="b"> By calling attention to mistakes indirectly.</label>
+      <label><input type="radio" name="q28" value="c"> By repeating the rule louder.</label>
+      <label><input type="radio" name="q28" value="d"> By ignoring the issue altogether.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">29. Why talk about your own mistakes first?</p>
+      <label><input type="radio" name="q29" value="a"> It makes the issue disappear.</label>
+      <label><input type="radio" name="q29" value="b"> It lowers defensiveness and hierarchy.</label>
+      <label><input type="radio" name="q29" value="c"> It avoids all standards.</label>
+      <label><input type="radio" name="q29" value="d"> It proves you are perfect now.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">30. What is better than giving direct orders?</p>
+      <label><input type="radio" name="q30" value="a"> Ask questions.</label>
+      <label><input type="radio" name="q30" value="b"> Send memos only.</label>
+      <label><input type="radio" name="q30" value="c"> Wait for failure.</label>
+      <label><input type="radio" name="q30" value="d"> Offer no guidance.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">31. Why let the other person save face?</p>
+      <label><input type="radio" name="q31" value="a"> It keeps results secret.</label>
+      <label><input type="radio" name="q31" value="b"> It protects dignity and future goodwill.</label>
+      <label><input type="radio" name="q31" value="c"> It eliminates all consequences.</label>
+      <label><input type="radio" name="q31" value="d"> It proves you were wrong.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">32. How does Carnegie say to spur improvement?</p>
+      <label><input type="radio" name="q32" value="a"> Focus on failure.</label>
+      <label><input type="radio" name="q32" value="b"> Praise the slightest improvement.</label>
+      <label><input type="radio" name="q32" value="c"> Compare people harshly.</label>
+      <label><input type="radio" name="q32" value="d"> Raise your voice.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">33. What does it mean to 'give a dog a good name'?</p>
+      <label><input type="radio" name="q33" value="a"> Use humor often.</label>
+      <label><input type="radio" name="q33" value="b"> Give someone a fine reputation to live up to.</label>
+      <label><input type="radio" name="q33" value="c"> Rename the project.</label>
+      <label><input type="radio" name="q33" value="d"> Avoid all labels.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">34. How do you make a fault seem easier to correct?</p>
+      <label><input type="radio" name="q34" value="a"> By emphasizing how hard it is.</label>
+      <label><input type="radio" name="q34" value="b"> By using encouragement.</label>
+      <label><input type="radio" name="q34" value="c"> By delaying feedback.</label>
+      <label><input type="radio" name="q34" value="d"> By making it public.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">35. What makes people glad to do what you want?</p>
+      <label><input type="radio" name="q35" value="a"> Confusing them.</label>
+      <label><input type="radio" name="q35" value="b"> Showing the request from their side and making cooperation attractive.</label>
+      <label><input type="radio" name="q35" value="c"> Demanding speed at all costs.</label>
+      <label><input type="radio" name="q35" value="d"> Using only written orders.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">36. What do the successful letters in Part 5 have in common?</p>
+      <label><input type="radio" name="q36" value="a"> They center the writer's frustrations.</label>
+      <label><input type="radio" name="q36" value="b"> They focus on the recipient's interests and importance.</label>
+      <label><input type="radio" name="q36" value="c"> They rely on legal threats.</label>
+      <label><input type="radio" name="q36" value="d"> They avoid making any request at all.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">37. In Carnegie's view, what quickly damages married life?</p>
+      <label><input type="radio" name="q37" value="a"> Shared routines.</label>
+      <label><input type="radio" name="q37" value="b"> Nagging.</label>
+      <label><input type="radio" name="q37" value="c"> Separate hobbies.</label>
+      <label><input type="radio" name="q37" value="d"> Serious reading.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">38. What is the lesson of 'Love and Let Live'?</p>
+      <label><input type="radio" name="q38" value="a"> Correct every quirk you dislike.</label>
+      <label><input type="radio" name="q38" value="b"> Let your partner remain themselves.</label>
+      <label><input type="radio" name="q38" value="c"> Avoid all home conversation.</label>
+      <label><input type="radio" name="q38" value="d"> Compete for status inside marriage.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">39. According to the 'Reno' chapter, what habit corrodes family life?</p>
+      <label><input type="radio" name="q39" value="a"> Courtesy.</label>
+      <label><input type="radio" name="q39" value="b"> Criticism.</label>
+      <label><input type="radio" name="q39" value="c"> Humor.</label>
+      <label><input type="radio" name="q39" value="d"> Planning.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">40. What is Carnegie's 'quick way to make everybody happy' at home?</p>
+      <label><input type="radio" name="q40" value="a"> Honest appreciation.</label>
+      <label><input type="radio" name="q40" value="b"> More rules.</label>
+      <label><input type="radio" name="q40" value="c"> Hidden resentment.</label>
+      <label><input type="radio" name="q40" value="d"> Financial lectures.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">41. What do 'little attentions' mainly communicate?</p>
+      <label><input type="radio" name="q41" value="a"> Expense.</label>
+      <label><input type="radio" name="q41" value="b"> Control.</label>
+      <label><input type="radio" name="q41" value="c"> Thoughtful ongoing care.</label>
+      <label><input type="radio" name="q41" value="d"> Social ambition.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">42. What does the courtesy chapter argue people often do wrong?</p>
+      <label><input type="radio" name="q42" value="a"> They are too polite to strangers.</label>
+      <label><input type="radio" name="q42" value="b"> They treat family more rudely than outsiders.</label>
+      <label><input type="radio" name="q42" value="c"> They spend too much time apologizing.</label>
+      <label><input type="radio" name="q42" value="d"> They avoid all habits.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">43. What makes someone 'marriage illiterate' in Carnegie's sense?</p>
+      <label><input type="radio" name="q43" value="a"> Forgetting dates only.</label>
+      <label><input type="radio" name="q43" value="b"> Ignoring practical knowledge about intimacy and compatibility.</label>
+      <label><input type="radio" name="q43" value="c"> Avoiding travel.</label>
+      <label><input type="radio" name="q43" value="d"> Reading too much psychology.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">44. Across the book, what recurring human need drives much of Carnegie's advice?</p>
+      <label><input type="radio" name="q44" value="a"> The need for secrecy.</label>
+      <label><input type="radio" name="q44" value="b"> The need to feel important.</label>
+      <label><input type="radio" name="q44" value="c"> The need for speed.</label>
+      <label><input type="radio" name="q44" value="d"> The need for solitude.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">45. Which sequence best captures Part 2's logic?</p>
+      <label><input type="radio" name="q45" value="a"> Debate, criticize, correct, repeat.</label>
+      <label><input type="radio" name="q45" value="b"> Interest, smile, names, listening, interests, sincere importance.</label>
+      <label><input type="radio" name="q45" value="c"> Silence, mystery, challenge, authority.</label>
+      <label><input type="radio" name="q45" value="d"> Data, charts, lectures, rules.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">46. What is Part 3 mainly about?</p>
+      <label><input type="radio" name="q46" value="a"> Winning people over without triggering resistance.</label>
+      <label><input type="radio" name="q46" value="b"> Writing letters only.</label>
+      <label><input type="radio" name="q46" value="c"> Household budgeting.</label>
+      <label><input type="radio" name="q46" value="d"> Avoiding all disagreement forever.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">47. What is Part 4 mainly about?</p>
+      <label><input type="radio" name="q47" value="a"> Replacing managers.</label>
+      <label><input type="radio" name="q47" value="b"> Changing people without giving offense or arousing resentment.</label>
+      <label><input type="radio" name="q47" value="c"> Selecting friends carefully.</label>
+      <label><input type="radio" name="q47" value="d"> Avoiding praise.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">48. What does Part 5 show?</p>
+      <label><input type="radio" name="q48" value="a"> Written communication follows the same human-relations principles as speech.</label>
+      <label><input type="radio" name="q48" value="b"> Letters are less persuasive than conversation.</label>
+      <label><input type="radio" name="q48" value="c"> Style matters more than substance in every case.</label>
+      <label><input type="radio" name="q48" value="d"> Only salespeople need tact in writing.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">49. What theme ties most of Part 6 together?</p>
+      <label><input type="radio" name="q49" value="a"> Use bigger gestures and stronger authority.</label>
+      <label><input type="radio" name="q49" value="b"> Reduce criticism and increase appreciation, courtesy, and attentiveness.</label>
+      <label><input type="radio" name="q49" value="c"> Keep work and home completely separate.</label>
+      <label><input type="radio" name="q49" value="d"> Avoid discussing intimacy.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">50. What is Carnegie's overall theory of influence?</p>
+      <label><input type="radio" name="q50" value="a"> People change mostly when overpowered.</label>
+      <label><input type="radio" name="q50" value="b"> People are easiest to move when their dignity, interests, and feelings are respected.</label>
+      <label><input type="radio" name="q50" value="c"> Facts alone always win.</label>
+      <label><input type="radio" name="q50" value="d"> Distance creates authority.</label>
+    </div>
+
+    <button type="button" id="score-btn" onclick="scoreQuiz()">Score My Answers</button>
+
+    <div id="quiz-result" style="display:none;">
+      <p id="score-text"></p>
+      <div id="answer-review"></div>
+    </div>
+
+  </form>
+</details>
+
+<script>
+(function() {
+  const answers = {
+    "q1": {
+        "correct": "b",
+        "explain": "The foreword emphasizes that this edition keeps Carnegie's fuller original text rather than trimming or modernizing it."
+    },
+    "q2": {
+        "correct": "b",
+        "explain": "Thomas presents Carnegie's popularity as evidence that adults strongly wanted practical training in communication and influence."
+    },
+    "q3": {
+        "correct": "c",
+        "explain": "The preface and the 'Nine Suggestions' chapter both treat the book as a manual that only works through repeated review and use."
+    },
+    "q4": {
+        "correct": "c",
+        "explain": "Carnegie's central point is that criticism usually triggers self-justification rather than genuine change."
+    },
+    "q5": {
+        "correct": "b",
+        "explain": "Carnegie argues that durable influence comes from making the other person want the outcome, not from forcing obedience."
+    },
+    "q6": {
+        "correct": "c",
+        "explain": "He distinguishes sincere appreciation from flattery by insisting that appreciation must be truthful and other-focused."
+    },
+    "q7": {
+        "correct": "c",
+        "explain": "The metaphor shows that effective persuasion starts from the other person's incentives rather than your own wishes."
+    },
+    "q8": {
+        "correct": "b",
+        "explain": "Carnegie explicitly presents review, rehearsal, and application as the way ideas become habits."
+    },
+    "q9": {
+        "correct": "b",
+        "explain": "The chapter argues that real curiosity about others is more attractive than trying to impress them."
+    },
+    "q10": {
+        "correct": "b",
+        "explain": "Carnegie treats a smile as a quick signal of warmth and welcome that lowers friction immediately."
+    },
+    "q11": {
+        "correct": "c",
+        "explain": "He argues that careful attention to names shows that the other person is recognized as a distinct individual."
+    },
+    "q12": {
+        "correct": "c",
+        "explain": "For Carnegie, the best conversationalists create space for others to feel heard rather than competing for airtime."
+    },
+    "q13": {
+        "correct": "c",
+        "explain": "The chapter argues that relevance to the other person's interests is the surest path to engagement."
+    },
+    "q14": {
+        "correct": "b",
+        "explain": "Carnegie presents sincere recognition of another person's importance as the capstone of Part 2."
+    },
+    "q15": {
+        "correct": "c",
+        "explain": "His point is that arguments usually harden resistance, so avoiding them is often the only real 'win.'"
+    },
+    "q16": {
+        "correct": "c",
+        "explain": "Carnegie advises readers to disagree with humility so the other person does not feel humiliated into defending a position."
+    },
+    "q17": {
+        "correct": "b",
+        "explain": "He argues that prompt admission usually disarms attack better than denial or excuse-making."
+    },
+    "q18": {
+        "correct": "a",
+        "explain": "Carnegie believes warmth and friendliness make people more receptive to reason than a hostile opening does."
+    },
+    "q19": {
+        "correct": "b",
+        "explain": "The chapter recommends building agreement through early affirmations before moving to the harder conclusion."
+    },
+    "q20": {
+        "correct": "b",
+        "explain": "Carnegie argues that complaints cool down when people feel heard and are allowed to release pressure."
+    },
+    "q21": {
+        "correct": "b",
+        "explain": "People cooperate more readily when they can experience agency and ownership instead of feeling dominated."
+    },
+    "q22": {
+        "correct": "b",
+        "explain": "The chapter presents perspective-taking as the unifying practical advantage behind much of Carnegie's advice."
+    },
+    "q23": {
+        "correct": "c",
+        "explain": "He emphasizes that people calm down when they feel understood before they feel corrected."
+    },
+    "q24": {
+        "correct": "a",
+        "explain": "Carnegie argues that requests often succeed when they align with the other person's preferred moral self-image."
+    },
+    "q25": {
+        "correct": "b",
+        "explain": "The chapter says vivid presentation helps ideas break through where flat explanation is ignored."
+    },
+    "q26": {
+        "correct": "b",
+        "explain": "Carnegie ends Part 3 by arguing that challenge can awaken pride, energy, and determination."
+    },
+    "q27": {
+        "correct": "b",
+        "explain": "He believes criticism lands more effectively after the other person's existing strengths have been honestly acknowledged."
+    },
+    "q28": {
+        "correct": "b",
+        "explain": "Indirect correction can help the other person notice the issue without feeling cornered or humiliated."
+    },
+    "q29": {
+        "correct": "b",
+        "explain": "Admitting your own errors first makes feedback feel less self-righteous and more collaborative."
+    },
+    "q30": {
+        "correct": "a",
+        "explain": "Questions preserve agency and make people more likely to participate in the solution rather than resist it."
+    },
+    "q31": {
+        "correct": "b",
+        "explain": "Carnegie treats dignity as central to future morale, trust, and willingness to cooperate."
+    },
+    "q32": {
+        "correct": "b",
+        "explain": "The chapter argues that visible recognition of progress helps create more progress."
+    },
+    "q33": {
+        "correct": "b",
+        "explain": "Carnegie believes honorable labels can shape future behavior by giving people an attractive identity to inhabit."
+    },
+    "q34": {
+        "correct": "b",
+        "explain": "Encouragement reduces helplessness and helps the other person believe improvement is attainable."
+    },
+    "q35": {
+        "correct": "b",
+        "explain": "The closing chapter of Part 4 synthesizes Carnegie's method into sincere, interest-aware, dignity-preserving requests."
+    },
+    "q36": {
+        "correct": "b",
+        "explain": "Part 5 shows that written persuasion works best when it begins from the reader's viewpoint rather than the writer's needs."
+    },
+    "q37": {
+        "correct": "b",
+        "explain": "The first chapter of Part 6 presents nagging as a repeated form of complaint that drains goodwill from home life."
+    },
+    "q38": {
+        "correct": "b",
+        "explain": "Carnegie argues that trying to remake a spouse often destroys the tolerance that makes affection durable."
+    },
+    "q39": {
+        "correct": "b",
+        "explain": "This chapter extends the book's larger anti-criticism lesson into marriage and family life."
+    },
+    "q40": {
+        "correct": "a",
+        "explain": "He argues that gratitude and appreciation correct the tendency to take a spouse's efforts for granted."
+    },
+    "q41": {
+        "correct": "c",
+        "explain": "Small gestures matter because they show active remembrance and continuing care, not because they are expensive."
+    },
+    "q42": {
+        "correct": "b",
+        "explain": "Carnegie's point is that people often reserve manners for strangers and neglect them with those closest to them."
+    },
+    "q43": {
+        "correct": "b",
+        "explain": "The final chapter argues that silence and ignorance about sexual and marital adjustment can damage a marriage."
+    },
+    "q44": {
+        "correct": "b",
+        "explain": "Again and again Carnegie returns to recognition, dignity, and the desire to matter as central drivers of behavior."
+    },
+    "q45": {
+        "correct": "b",
+        "explain": "Part 2 progressively builds likability from attention and warmth toward sincere recognition of the other person's importance."
+    },
+    "q46": {
+        "correct": "a",
+        "explain": "Part 3 focuses on persuasion methods that reduce defensiveness and make agreement easier to accept."
+    },
+    "q47": {
+        "correct": "b",
+        "explain": "Part 4 translates Carnegie's earlier human-relations principles into concrete methods for correction and leadership."
+    },
+    "q48": {
+        "correct": "a",
+        "explain": "The letters chapter extends Carnegie's core ideas into correspondence rather than introducing a separate theory."
+    },
+    "q49": {
+        "correct": "b",
+        "explain": "Part 6 repeatedly argues that home life improves when criticism is restrained and care is shown through appreciation, courtesy, and thoughtful attention."
+    },
+    "q50": {
+        "correct": "b",
+        "explain": "Across the whole book, Carnegie treats respect for ego, interest, and feeling as the practical foundation of influence."
+    }
+};
+
+  window.scoreQuiz = function() {
+    const form = document.getElementById("quiz-form");
+    let correct = 0;
+    const total = Object.keys(answers).length;
+    let reviewHTML = "";
+
+    for (let i = 1; i <= total; i++) {
+      const key = "q" + i;
+      const selected = form.elements[key] ? form.elements[key].value : "";
+      const isCorrect = selected === answers[key].correct;
+      if (isCorrect) correct++;
+
+      const status = !selected ? "wrong" : (isCorrect ? "correct" : "wrong");
+      const icon = isCorrect ? "✅" : "❌";
+      const yourAnswer = selected ? selected.toUpperCase() : "No answer";
+      const correctAnswer = answers[key].correct.toUpperCase();
+
+      reviewHTML += '<div class="review-item ' + status + '">';
+      reviewHTML += '<div class="ri-q">' + icon + " Question " + i + "</div>";
+      reviewHTML += '<div class="ri-detail">';
+      if (!isCorrect) {
+        reviewHTML += "Your answer: " + yourAnswer + " &mdash; Correct answer: " + correctAnswer + "<br>";
+      }
+      reviewHTML += answers[key].explain;
+      reviewHTML += "</div></div>";
+    }
+
+    const pct = Math.round((correct / total) * 100);
+    let grade;
+    if (pct === 100) grade = "Perfect score!";
+    else if (pct >= 80) grade = "Great understanding!";
+    else if (pct >= 60) grade = "Good, but review the summaries above for the ones you missed.";
+    else grade = "Consider re-reading the summaries above and trying again.";
+
+    document.getElementById("score-text").textContent = correct + " / " + total + " (" + pct + "%) — " + grade;
+    document.getElementById("answer-review").innerHTML = reviewHTML;
+    document.getElementById("quiz-result").style.display = "block";
+    document.getElementById("quiz-result").scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+})();
+</script>
+
+</div><!-- .content -->
+
+</body>
+</html>

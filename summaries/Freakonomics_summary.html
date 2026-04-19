@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Freakonomics — Book Summary Pro</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      line-height: 1.7;
+      color: #222;
+      background: #fafafa;
+    }
+    .app-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #2c2c2c;
+      padding: 14px 24px;
+    }
+    .content {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 32px 20px 40px;
+    }
+    .app-nav .app-name {
+      font-size: 1.05em;
+      font-weight: bold;
+      color: #e8e0d0;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+    }
+    .app-nav .app-name:hover {
+      color: #d4a843;
+    }
+    .app-nav .back-link {
+      font-size: 0.9em;
+      color: #999;
+      text-decoration: none;
+    }
+    .app-nav .back-link:hover {
+      color: #d4a843;
+    }
+    h1 {
+      font-size: 1.8em;
+      border-bottom: 2px solid #333;
+      padding-bottom: 10px;
+      margin-bottom: 5px;
+    }
+    .subtitle {
+      font-size: 1.1em;
+      color: #444;
+      margin: 2px 0 0 0;
+      font-style: italic;
+    }
+    .author {
+      font-style: italic;
+      color: #777;
+      font-size: 0.95em;
+      margin-bottom: 40px;
+    }
+    h2 {
+      font-size: 1.3em;
+      margin-top: 48px;
+      color: #1a1a1a;
+      border-left: 4px solid #555;
+      padding-left: 12px;
+    }
+    p {
+      margin-bottom: 14px;
+      text-align: justify;
+    }
+    details.counter {
+      background: #f0ece4;
+      border-left: 4px solid #b8860b;
+      padding: 14px 18px;
+      margin: 20px 0 28px 0;
+      border-radius: 0 6px 6px 0;
+    }
+    details.counter summary {
+      font-weight: bold;
+      font-size: 0.95em;
+      color: #8b6914;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    details.counter summary::-webkit-details-marker {
+      display: none;
+    }
+    details.counter summary::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    details.counter[open] summary::before {
+      transform: rotate(90deg);
+    }
+    details.counter p {
+      margin-top: 12px;
+      margin-bottom: 10px;
+      color: #3a3a3a;
+    }
+    details.counter p:last-child {
+      margin-bottom: 0;
+    }
+    .quiz-wrapper {
+      margin-top: 48px;
+      background: #f5f5f0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 16px 20px;
+    }
+    .quiz-toggle {
+      font-weight: bold;
+      font-size: 1.05em;
+      cursor: pointer;
+      color: #2a5a2a;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .quiz-toggle::-webkit-details-marker { display: none; }
+    .quiz-toggle::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    .quiz-wrapper[open] .quiz-toggle::before {
+      transform: rotate(90deg);
+    }
+    .q-block {
+      margin: 24px 0;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    .q-block:last-of-type { border-bottom: none; }
+    .q-label {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .q-block label {
+      display: block;
+      padding: 6px 10px;
+      margin: 4px 0;
+      border-radius: 4px;
+      cursor: pointer;
+      line-height: 1.5;
+    }
+    .q-block label:hover { background: #e8e8e0; }
+    #score-btn {
+      display: block;
+      margin: 28px auto 0;
+      padding: 12px 32px;
+      font-family: Georgia, serif;
+      font-size: 1em;
+      background: #2a5a2a;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #score-btn:hover { background: #1e441e; }
+    #quiz-result {
+      margin-top: 24px;
+      padding: 18px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    #score-text {
+      font-size: 1.15em;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .review-item {
+      margin-bottom: 14px;
+      padding: 10px 12px;
+      border-radius: 4px;
+    }
+    .review-item.correct { background: #e6f4e6; }
+    .review-item.wrong { background: #fce8e8; }
+    .review-item .ri-q { font-weight: bold; margin-bottom: 4px; }
+    .review-item .ri-detail { font-size: 0.93em; color: #444; }
+  </style>
+</head>
+<body>
+
+<nav class="app-nav">
+  <a href="index.html" class="app-name">Book Summary Pro</a>
+  <a href="index.html" class="back-link">&larr; All Books</a>
+</nav>
+
+<div class="content">
+
+<h1>Freakonomics</h1>
+<p class="subtitle">A Rogue Economist Explores the Hidden Side of Everything</p>
+<p class="author">Steven D. Levitt and Stephen J. Dubner</p>
+
+<h2>Introduction: The Hidden Side of Everything</h2>
+
+<p>The book opens by revisiting the American crime panic of the early 1990s, when pundits, politicians, and criminologists confidently predicted an era of <b>superpredators</b> and escalating urban chaos. Instead, violent crime fell sharply and persistently. Levitt and Dubner use that reversal to introduce one of the book’s recurring claims: <b>conventional wisdom</b> is often built from plausible stories rather than careful measurement. The introduction therefore frames the project not as a collection of clever anecdotes but as an exercise in testing widely believed explanations against data.</p>
+
+<p>The authors present economics less as a discipline about inflation, taxes, or stock markets than as a <b>toolkit for explaining incentives and hidden behavior</b>. They argue that seemingly baffling outcomes often become clearer once the right variables are measured and the right incentives are identified. In this frame, Norma McCorvey, the woman behind <i>Roe v. Wade</i>, ends up mattering more to the crime drop than the comforting explanations that dominated headlines, and even figures like Oscar Danilo Blandon can set off large downstream effects that conventional commentary overlooks.</p>
+
+<p>The introduction also establishes the book’s broader method: distrust easy narratives, pay attention to <b>information asymmetry</b>, and use data to distinguish what merely sounds right from what is actually true. Levitt and Dubner cast themselves as heirs to Adam Smith’s effort to study how self-interest, institutions, and social norms interact in the real world. Their promise is not a single grand theory but a series of odd questions whose answers reveal how much of everyday life is organized by incentives, misdirection, and measurement.</p>
+
+<h2>Chapter 1: What Do Schoolteachers and Sumo Wrestlers Have in Common?</h2>
+
+<p>This chapter introduces <b>incentives</b> as the book’s central analytical lens. The authors begin with the famous Israeli day-care study in which a small fine for late pickup caused lateness to increase rather than fall. Their point is that incentives do not work in a vacuum: a purely financial penalty can crowd out a previously active <b>moral</b> or <b>social</b> incentive. Once parents interpreted lateness as something that could simply be purchased, the behavior became easier to justify. That example prepares the reader for a broader claim that people respond not just to rewards and punishments, but to how those rewards and punishments are framed.</p>
+
+<p>Levitt then turns to <b>teacher cheating</b> in the Chicago Public Schools. High-stakes testing created strong rewards for score improvement and weak oversight against manipulation, so Levitt and his collaborators searched for suspicious answer strings, improbable jumps in performance, and classrooms whose gains vanished the next year. Their statistical method identified teachers who likely altered answer sheets after the test, and later retesting confirmed the pattern: suspected classrooms collapsed when teachers could no longer touch the exams. The chapter’s subtler point is that the same data can also identify genuinely <i>effective</i> teachers, whose students improve in ways consistent with real learning rather than answer tampering.</p>
+
+<p>The sumo section extends the same logic to a very different institution. Wrestlers who entered the final day with a <b>7&ndash;7 record</b> won far more often than expected against opponents who were already safe at <b>8&ndash;6</b>, and then underperformed in later rematches, suggesting a reciprocal deal. The chapter closes with Paul Feldman’s office bagel business, which shows that small-scale cheating is ordinary and highly sensitive to context. Across schools, sports, and office kitchens, the underlying lesson is the same: when the payoff is sharp enough and monitoring is weak enough, many people will try to beat the system.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The chapter’s statistical evidence is compelling, but it still relies on <b>inference</b> rather than direct observation. Suspicious answer patterns can strongly suggest cheating without proving intent in every case, and sumo match data reveal collusive tendencies more clearly than they identify individual conspirators. More broadly, incentive-based explanations may understate cultural, institutional, and ethical forces that also shape whether cheating becomes normalized or stigmatized.</p>
+</details>
+
+<h2>Chapter 2: How Is the Ku Klux Klan Like a Group of Real-Estate Agents?</h2>
+
+<p>The common thread between these seemingly unrelated subjects is <b>information asymmetry</b>: one party knows more than another and can convert that advantage into power. The Ku Klux Klan’s secrecy, rituals, passwords, costumes, and private language magnified its authority by making it appear omniscient and untouchable. Stetson Kennedy’s anti-Klan work matters in this account because exposing that hidden machinery weakened the Klan’s mystique. Once secret knowledge becomes public knowledge, terror loses part of its force.</p>
+
+<p>The same logic applies, in a more mundane form, to the housing market. Real-estate agents know more than their clients about pricing, timing, buyer psychology, and comparable sales. Levitt’s key insight is that commission structures <b>do not perfectly align</b> agent incentives with seller interests: an extra $10,000 on the sale price means a great deal to the homeowner but only a modest increment to the agent. Data from Chicago-area sales show that agents keep their own homes on the market longer and sell them for more, while nudging clients to take acceptable offers quickly. The chapter argues that this is not a story about uniquely evil agents but about ordinary people responding predictably to skewed incentives.</p>
+
+<p>Levitt and Dubner widen the lens from the Klan and Realtors to a broader class of experts: funeral directors, car dealers, doctors, and others who can turn superior knowledge into fear, urgency, or dependence. They also note that the <b>Internet</b> partially reverses this imbalance by lowering the cost of comparison shopping and making hidden price information easier to access. The deeper claim is that much of social life depends on the gap between what one side knows and what the other side can verify&mdash;and that many institutions survive by keeping that gap intact.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>This framework is illuminating, but it can flatten important differences. The Klan’s power did not stem from secrecy alone; it also rested on <b>violence, political protection, and structural racism</b>. Likewise, many real-estate agents face reputational pressure, repeat-business incentives, and legal constraints that partially offset the misalignment Levitt highlights. Information asymmetry is a powerful concept, but it is not the whole story in either case.</p>
+</details>
+
+<h2>Chapter 3: Why Do Drug Dealers Still Live with Their Moms?</h2>
+
+<p>This chapter begins by attacking the machinery of <b>conventional wisdom</b> itself. Experts and journalists, the authors argue, often cooperate in producing narratives that are vivid, emotionally satisfying, and poorly grounded. To get past that pattern, Levitt relies on unusual data obtained by Sudhir Venkatesh, who embedded himself in a Chicago housing project and gained access to the ledgers of a crack gang. Those records let the authors analyze a gang as if it were any other hierarchical firm, with revenue, compensation, operating costs, and promotion incentives.</p>
+
+<p>The gang looks less like a cinematic underworld empire than a brutally unequal corporation. At the top, J. T. and the organization’s senior leadership make real money; below them, the street-level sellers earn <b>very little</b>, often about what a miserable legal job would pay and sometimes less. Their working conditions are far worse: constant exposure to arrest, assault, and death, plus the risk of internal punishment. Levitt and Dubner emphasize that the famous riddle has a simple answer: most drug dealers still live with their mothers because they are not rich. The money is concentrated at the top of the pyramid.</p>
+
+<p>The chapter’s larger argument is that crack dealing resembles a <b>tournament labor market</b>. People tolerate terrible pay and terrifying risks because the rare winners are highly visible and richly rewarded, much like aspirants in sports or entertainment. In neighborhoods where legitimate mobility has narrowed, that structure becomes perversely attractive. The rise of crack then transforms gangs from loosely organized street groups into commercial enterprises that intensify neighborhood violence, reverse social progress, and help set up the crime crisis that the next chapter revisits.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The gang ledgers are extraordinarily revealing, but they come from a <b>specific organization in a specific time and place</b>. Other gangs, markets, and cities may look different. In addition, the tournament model can make participation sound more voluntary and strategic than it often is; coercion, trauma, segregation, and the collapse of legitimate opportunity constrain choice in ways that a purely economic description can understate.</p>
+</details>
+
+<h2>Chapter 4: Where Have All the Criminals Gone?</h2>
+
+<p>Levitt opens this chapter with Nicolae Ceaușescu’s abortion ban in Romania to show how a policy can reshape an entire cohort’s life chances. The children born after the ban were more likely to grow up in deprivation and more likely to struggle educationally, economically, and criminally. That Romanian case serves as a mirror image for the United States: if forced births under harsh conditions can increase later disorder, then expanded abortion access might reduce the number of children most likely to become high-risk adolescents and young adults many years later.</p>
+
+<p>The chapter then revisits the American crime drop of the 1990s. Levitt argues that the popular explanations&mdash;the booming economy, gun control, or celebrated innovations in policing&mdash;are incomplete or overstated. His preferred account emphasizes <b>four main drivers</b>: more police, more prisoners, the waning crack epidemic, and <b>legalized abortion</b>. The last of these matters most for the chapter’s logic because it dramatizes the book’s fondness for distant causes: the most important explanation may be the one that feels least emotionally satisfying and least visible in ordinary political debate.</p>
+
+<p>The authors do not present the abortion-crime link as a moral endorsement of abortion. Instead, they insist on separating descriptive analysis from ethical judgment. That move allows them to pose a disturbing claim in plain economic terms: when women gained more ability to avoid births under adverse conditions, later crime fell because fewer of the most vulnerable children were born into the highest-risk circumstances. The chapter closes by acknowledging how unsettling that conclusion feels and by shifting the reader toward the next question: if early conditions matter so much, what exactly can parents control once a child arrives?</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>This is the book’s most controversial argument, and the controversy is substantial. Later researchers have challenged the <b>measurement, timing, and causal interpretation</b> of the abortion-crime link, while others emphasize roles for lead exposure, localized policing changes, incarceration policy, and broader social shifts. Even if the timing patterns are suggestive, the evidence does not eliminate alternative explanations, and the ethical implications remain contested no matter how clinically the argument is framed.</p>
+</details>
+
+<h2>Chapter 5: What Makes a Perfect Parent?</h2>
+
+<p>The authors begin by treating the parenting industry with open skepticism. Expert advice, they argue, often swings between incompatible certainties while profiting from parental fear. Instead of relying on intuition, Levitt looks to the <b>Early Childhood Longitudinal Study</b>, a large dataset that tracks children’s early test scores alongside family background, home environment, and parental behavior. This lets him separate variables that merely coexist from those that remain predictive after other factors are held constant.</p>
+
+<p>One of the chapter’s most important findings is that the black-white test score gap at school entry shrinks dramatically once a few background variables are controlled for, especially parental education, family socioeconomic status, and the mother’s age at first birth. More broadly, the data suggest that some factors are strongly correlated with early achievement: having <b>educated parents</b>, growing up in a high-status household, being born at healthier weight, having English spoken at home, and living in a home with many books. Other factors that parents obsess over&mdash;such as museum visits, daily reading rituals, staying home rather than working, or constant efforts at enrichment&mdash;do not show the same statistical power in the dataset.</p>
+
+<p>The authors boil this down into one of the chapter’s most memorable distinctions: what matters most is often what parents <b>are</b>, not what they <b>do</b>. Books in the home, for example, are interpreted less as magical causes of intelligence than as indicators of the kind of household that values learning. In the same spirit, moving to a better neighborhood or sending a child to Head Start does not automatically generate better outcomes in the way many parents hope. The chapter repeatedly pushes the reader away from technique fetishism and toward deeper structural traits.</p>
+
+<p>At the same time, the book does not conclude that parents are irrelevant. Rather, it argues that many decisive parental influences are already in place before anyone buys a parenting manual: education, stability, habits of thought, and the broader environment a child inherits. Adoption studies reinforce that message by showing that genetics and early background strongly shape test performance, while adoptive parents still matter later by helping children achieve more favorable adult outcomes than raw early predictors would suggest. The effect is to humble, not abolish, parental agency.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The chapter’s use of regression analysis is valuable, but the conclusions can sound stronger than the underlying evidence warrants. Observational data on <b>early test scores</b> may miss later benefits from high-quality preschool, rich language exposure, or targeted interventions, and subsequent research has found causal gains from some forms of intensive early-childhood support. In other words, the chapter correctly warns against panic-driven micromanagement, but it may understate how much specific practices can matter under the right conditions.</p>
+</details>
+
+<h2>Chapter 6: Perfect Parenting, Part II; or: Would a Roshanda by Any Other Name Smell as Sweet?</h2>
+
+<p>This chapter takes up one of the most intimate ways parents try to shape destiny: naming a child. The opening stories of <b>Winner</b> and <b>Loser Lane</b>, and of a teenager named Temptress, dramatize the temptation to believe that a name can script a life. Levitt and Dubner quickly complicate that intuition. If a badly chosen name correlates with later trouble, is the name itself doing causal work, or is it simply revealing the social world from which the child comes?</p>
+
+<p>Using Roland Fryer’s analysis of California birth records, the authors show that distinctively black naming patterns widened sharply in the 1970s, likely alongside the cultural self-assertion of the <b>Black Power</b> era. These names, on average, are associated with mothers who are younger, poorer, less educated, and more likely to be unmarried. Fryer interprets naming as a form of community signaling: in some contexts, giving a child a superblack name says something about identity, solidarity, and belonging. The chapter therefore treats names as cultural markers rather than random labels.</p>
+
+<p>When Levitt links birth records to later outcomes, he finds that people with distinctively black names do, on average, fare worse on several life indicators&mdash;but he argues that the <b>name is not the cause</b>. A boy named DeShawn and a boy named Jake who are born into the same circumstances would be expected to do roughly the same. The name is an indicator of background, not a mechanism of destiny. The same signaling logic appears in white naming patterns, where high-status names diffuse downward through the socioeconomic ladder and lose prestige once they become too common.</p>
+
+<p>That conclusion ties the chapter back to the previous one. Just as books in the house signal something important about the household, names signal parental aspirations, status anxieties, cultural loyalties, and expectations for the future. Levitt and Dubner therefore recast naming as a form of revealed preference. Parents choose names not because names literally manufacture success, but because names let them announce what kind of family they think they are&mdash;or hope to become.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The claim that names are mostly <b>signals rather than causes</b> is persuasive at the long-run level, but it risks minimizing discrimination at important decision points. Audit studies of résumés and callbacks suggest that names can trigger bias even when qualifications are held constant. A balanced reading is that Levitt is probably right about names not determining destiny by themselves, while critics are also right that marker-based discrimination can still impose real short-term costs.</p>
+</details>
+
+<h2>Epilogue: Two Paths to Harvard</h2>
+
+<p>The epilogue argues that <i>Freakonomics</i> does not offer a moral theory so much as a habit of mind. The reader is encouraged to become more skeptical of stories that feel emotionally neat, more curious about the incentives behind behavior, and more willing to search for hidden variables that connect distant causes to visible effects. Levitt and Dubner suggest that this way of thinking will not necessarily make anyone richer or happier, but it can make the world look less mystifying and less obedient to slogans.</p>
+
+<p>The chapter also returns to parenting and randomness. Some features of life are heavily shaped by background, but outcomes still refuse to follow simple scripts. The epilogue’s stark contrast between <b>Roland Fryer Jr.</b>, who rose from severe adversity to become a Harvard economist, and <b>Ted Kaczynski</b>, who traveled from a more conventionally advantaged upbringing to catastrophe, is meant to puncture easy determinism. The same lesson that ran through the parenting chapters reappears here: social science can identify patterns, but individual lives always retain unpredictability.</p>
+
+<p>As a closing gesture, the book reframes economics as a disciplined form of curiosity. The real achievement of the preceding chapters is not any one answer about crime, names, gangs, or Realtors, but the demonstration that strange questions can expose ordinary illusions. The book ends, fittingly, not with a master doctrine, but with an invitation to keep asking better questions.</p>
+
+<h2 id="quiz-heading">Comprehension Quiz</h2>
+
+<details id="quiz-section" class="quiz-wrapper">
+  <summary class="quiz-toggle">Take the Quiz</summary>
+
+  <form id="quiz-form">
+
+    <div class="q-block">
+      <p class="q-label">1. Which idea does the introduction identify as the book’s main tool for explaining puzzling behavior?</p>
+      <label><input type="radio" name="q1" value="a"> Literary symbolism is the best guide to social life.</label>
+      <label><input type="radio" name="q1" value="b"> Incentives help explain how people actually behave.</label>
+      <label><input type="radio" name="q1" value="c"> Historical cycles make individual choices irrelevant.</label>
+      <label><input type="radio" name="q1" value="d"> Moral clarity always predicts economic outcomes.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">2. Why did the day-care fine in Chapter 1 increase lateness instead of reducing it?</p>
+      <label><input type="radio" name="q2" value="a"> Parents assumed the fine would only be temporary.</label>
+      <label><input type="radio" name="q2" value="b"> Teachers started dismissing children earlier than before.</label>
+      <label><input type="radio" name="q2" value="c"> The fine turned a moral obligation into a price some parents were willing to pay.</label>
+      <label><input type="radio" name="q2" value="d"> The study measured the wrong day-care centers.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">3. What pattern most strongly suggested teacher cheating in Chicago?</p>
+      <label><input type="radio" name="q3" value="a"> Suspiciously similar answer strings and score jumps that vanished on retest.</label>
+      <label><input type="radio" name="q3" value="b"> Teachers giving students more homework than usual.</label>
+      <label><input type="radio" name="q3" value="c"> Schools replacing written exams with oral exams.</label>
+      <label><input type="radio" name="q3" value="d"> Students complaining that the tests were too difficult.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">4. Which finding most strongly supports the claim that top-level sumo bouts were sometimes rigged?</p>
+      <label><input type="radio" name="q4" value="a"> Wrestlers with 7&ndash;7 records won unusually often against 8&ndash;6 opponents and then underperformed in later rematches.</label>
+      <label><input type="radio" name="q4" value="b"> Wrestlers from the same stable always fought each other on the final day.</label>
+      <label><input type="radio" name="q4" value="c"> Sumo wrestlers earned far less than most professional athletes.</label>
+      <label><input type="radio" name="q4" value="d"> Fans preferred shorter matches to longer ones.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">5. What is the main reason real-estate agents may push clients to sell too quickly?</p>
+      <label><input type="radio" name="q5" value="a"> Agents are legally barred from delaying sales.</label>
+      <label><input type="radio" name="q5" value="b"> Their extra payoff from a meaningfully higher sale price is small relative to the client’s.</label>
+      <label><input type="radio" name="q5" value="c"> Buyers refuse to negotiate with licensed agents.</label>
+      <label><input type="radio" name="q5" value="d"> Most homes lose value after ten days on the market.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">6. In the Klan section, what did Stetson Kennedy’s work mainly accomplish?</p>
+      <label><input type="radio" name="q6" value="a"> He taught Klan members better security practices.</label>
+      <label><input type="radio" name="q6" value="b"> He increased the Klan’s recruitment among rural workers.</label>
+      <label><input type="radio" name="q6" value="c"> He exposed secret knowledge that helped puncture the Klan’s mystique.</label>
+      <label><input type="radio" name="q6" value="d"> He proved that the Klan had no political influence at all.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">7. Why do most street-level drug dealers still live with their mothers?</p>
+      <label><input type="radio" name="q7" value="a"> They are forced by gang rules to live with relatives.</label>
+      <label><input type="radio" name="q7" value="b"> Their earnings are low while the gang’s top leadership captures most of the money.</label>
+      <label><input type="radio" name="q7" value="c"> They usually invest their profits in college tuition.</label>
+      <label><input type="radio" name="q7" value="d"> They are all under eighteen years old.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">8. Which combination does Levitt argue best explains the 1990s crime decline?</p>
+      <label><input type="radio" name="q8" value="a"> Better television programming, more museums, and lower taxes.</label>
+      <label><input type="radio" name="q8" value="b"> A stronger economy, gun control, and campaign-finance reform.</label>
+      <label><input type="radio" name="q8" value="c"> More police, more prisoners, the waning crack epidemic, and legalized abortion.</label>
+      <label><input type="radio" name="q8" value="d"> Smaller families, longer school days, and stricter zoning.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">9. Which statement best captures the parenting argument in Chapter 5?</p>
+      <label><input type="radio" name="q9" value="a"> Parenting technique matters far more than family background.</label>
+      <label><input type="radio" name="q9" value="b"> Parents matter mainly through who they are and the conditions they create, not just through obsessive techniques.</label>
+      <label><input type="radio" name="q9" value="c"> Parents have almost no influence on children at any stage of life.</label>
+      <label><input type="radio" name="q9" value="d"> Test scores are determined only by neighborhood wealth.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">10. According to the ECLS findings, which factor was more of an indicator than a guaranteed cause of higher test scores?</p>
+      <label><input type="radio" name="q10" value="a"> A child having many books in the home.</label>
+      <label><input type="radio" name="q10" value="b"> A child attending fewer than five days of school.</label>
+      <label><input type="radio" name="q10" value="c"> A child never speaking English at home.</label>
+      <label><input type="radio" name="q10" value="d"> A child changing schools every semester.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">11. Which of the following did the chapter identify as <i>not</i> strongly correlated with early test scores?</p>
+      <label><input type="radio" name="q11" value="a"> Highly educated parents.</label>
+      <label><input type="radio" name="q11" value="b"> Many books in the home.</label>
+      <label><input type="radio" name="q11" value="c"> The mother being thirty or older at first birth.</label>
+      <label><input type="radio" name="q11" value="d"> Parents reading to the child nearly every day.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">12. What is the chapter’s main conclusion about distinctively black names such as DeShawn or Imani?</p>
+      <label><input type="radio" name="q12" value="a"> They automatically cause lower lifetime earnings.</label>
+      <label><input type="radio" name="q12" value="b"> They are mostly indicators of social background rather than independent causes of outcomes.</label>
+      <label><input type="radio" name="q12" value="c"> They disappeared after the 1970s.</label>
+      <label><input type="radio" name="q12" value="d"> They became common only because of television celebrities.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">13. How do naming fashions typically move through status groups in the book’s account?</p>
+      <label><input type="radio" name="q13" value="a"> Low-status families invent names first and elites copy them decades later.</label>
+      <label><input type="radio" name="q13" value="b"> Government agencies periodically assign names to newborns.</label>
+      <label><input type="radio" name="q13" value="c"> High-status names spread downward over time, after which elites often abandon them.</label>
+      <label><input type="radio" name="q13" value="d"> Naming patterns stay fixed for centuries once established.</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">14. What does the epilogue’s contrast between Roland Fryer Jr. and Ted Kaczynski mainly illustrate?</p>
+      <label><input type="radio" name="q14" value="a"> Harvard admits students only from extreme backgrounds.</label>
+      <label><input type="radio" name="q14" value="b"> Individual outcomes can defy simple stories about parenting and background.</label>
+      <label><input type="radio" name="q14" value="c"> Economists are better parents than mathematicians.</label>
+      <label><input type="radio" name="q14" value="d"> Crime statistics are more important than educational outcomes.</label>
+    </div>
+
+    <button type="button" id="score-btn" onclick="scoreQuiz()">Score My Answers</button>
+
+    <div id="quiz-result" style="display:none;">
+      <p id="score-text"></p>
+      <div id="answer-review"></div>
+    </div>
+
+  </form>
+</details>
+
+<script>
+(function() {
+  const answers = {
+    q1: { correct: "b", explain: "The introduction frames incentives as the core tool for explaining hidden behavior and testing conventional wisdom." },
+    q2: { correct: "c", explain: "The fine replaced moral and social pressure with a simple price, making lateness easier for some parents to justify." },
+    q3: { correct: "a", explain: "Levitt's method looked for improbable answer patterns and one-year score spikes that disappeared when students were retested." },
+    q4: { correct: "a", explain: "The strongest evidence was the abnormal success of 7&ndash;7 wrestlers in crucial matches followed by weaker results in later rematches, which suggests quid pro quo collusion." },
+    q5: { correct: "b", explain: "A higher sale price matters a lot to the client but adds only a small marginal commission for the agent, weakening the incentive to hold out." },
+    q6: { correct: "c", explain: "By exposing secret rituals, jargon, and passwords, Kennedy reduced the information gap that helped sustain the Klan's aura of power." },
+    q7: { correct: "b", explain: "The gang's leadership earned the big money, while most street sellers made little and faced enormous risks." },
+    q8: { correct: "c", explain: "Levitt's four-factor account highlights more police, more prisoners, the waning crack epidemic, and legalized abortion." },
+    q9: { correct: "b", explain: "Chapter 5 argues that parents matter deeply, but mostly through their traits, resources, and environments rather than through every technique they obsess over." },
+    q10: { correct: "a", explain: "The chapter treats books in the home mainly as an indicator of the kind of household a child comes from, not as a guaranteed causal lever by themselves." },
+    q11: { correct: "d", explain: "Daily reading sounded important, but in the ECLS analysis it was not one of the factors most strongly correlated with early test scores once other variables were controlled for." },
+    q12: { correct: "b", explain: "Levitt argues that names like DeShawn and Imani mostly reveal background conditions rather than independently causing worse outcomes." },
+    q13: { correct: "c", explain: "The book argues that high-status names often spread downward through the social hierarchy and lose prestige once they become common." },
+    q14: { correct: "b", explain: "The Fryer-Kaczynski contrast shows that life outcomes do not follow neat deterministic stories about family background." },
+  };
+
+  window.scoreQuiz = function() {
+    const form = document.getElementById("quiz-form");
+    let correct = 0;
+    const total = Object.keys(answers).length;
+    let reviewHTML = "";
+
+    for (let i = 1; i <= total; i++) {
+      const key = "q" + i;
+      const selected = form.elements[key] ? form.elements[key].value : "";
+      const isCorrect = selected === answers[key].correct;
+      if (isCorrect) correct++;
+
+      const status = !selected ? "wrong" : (isCorrect ? "correct" : "wrong");
+      const icon = isCorrect ? "\u2705" : "\u274C";
+      const yourAnswer = selected ? selected.toUpperCase() : "No answer";
+      const correctAnswer = answers[key].correct.toUpperCase();
+
+      reviewHTML += '<div class="review-item ' + status + '">';
+      reviewHTML += '<div class="ri-q">' + icon + " Question " + i + "</div>";
+      reviewHTML += '<div class="ri-detail">';
+      if (!isCorrect) {
+        reviewHTML += "Your answer: " + yourAnswer + " &mdash; Correct answer: " + correctAnswer + "<br>";
+      }
+      reviewHTML += answers[key].explain;
+      reviewHTML += "</div></div>";
+    }
+
+    const pct = Math.round((correct / total) * 100);
+    let grade;
+    if (pct === 100) grade = "Perfect score!";
+    else if (pct >= 80) grade = "Great understanding!";
+    else if (pct >= 60) grade = "Good, but review the summaries above for the ones you missed.";
+    else grade = "Consider re-reading the summaries above and trying again.";
+
+    document.getElementById("score-text").textContent = correct + " / " + total + " (" + pct + "%) \u2014 " + grade;
+    document.getElementById("answer-review").innerHTML = reviewHTML;
+    document.getElementById("quiz-result").style.display = "block";
+    document.getElementById("quiz-result").scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+})();
+</script>
+
+</div><!-- .content -->
+
+</body>
+</html>

@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why Nations Fail — Book Summary Pro</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      line-height: 1.7;
+      color: #222;
+      background: #fafafa;
+    }
+    .app-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #2c2c2c;
+      padding: 14px 24px;
+    }
+    .content {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 32px 20px 40px;
+    }
+    .app-nav .app-name {
+      font-size: 1.05em;
+      font-weight: bold;
+      color: #e8e0d0;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+    }
+    .app-nav .app-name:hover {
+      color: #d4a843;
+    }
+    .app-nav .back-link {
+      font-size: 0.9em;
+      color: #999;
+      text-decoration: none;
+    }
+    .app-nav .back-link:hover {
+      color: #d4a843;
+    }
+    h1 {
+      font-size: 1.8em;
+      border-bottom: 2px solid #333;
+      padding-bottom: 10px;
+      margin-bottom: 5px;
+    }
+    .subtitle {
+      font-size: 1.1em;
+      color: #444;
+      margin: 2px 0 0 0;
+      font-style: italic;
+    }
+    .author {
+      font-style: italic;
+      color: #777;
+      font-size: 0.95em;
+      margin-bottom: 40px;
+    }
+    h2 {
+      font-size: 1.3em;
+      margin-top: 48px;
+      color: #1a1a1a;
+      border-left: 4px solid #555;
+      padding-left: 12px;
+    }
+    p {
+      margin-bottom: 14px;
+      text-align: justify;
+    }
+    details.counter {
+      background: #f0ece4;
+      border-left: 4px solid #b8860b;
+      padding: 14px 18px;
+      margin: 20px 0 28px 0;
+      border-radius: 0 6px 6px 0;
+    }
+    details.counter summary {
+      font-weight: bold;
+      font-size: 0.95em;
+      color: #8b6914;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    details.counter summary::-webkit-details-marker {
+      display: none;
+    }
+    details.counter summary::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    details.counter[open] summary::before {
+      transform: rotate(90deg);
+    }
+    details.counter p {
+      margin-top: 12px;
+      margin-bottom: 10px;
+      color: #3a3a3a;
+    }
+    details.counter p:last-child {
+      margin-bottom: 0;
+    }
+    .quiz-wrapper {
+      margin-top: 48px;
+      background: #f5f5f0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 16px 20px;
+    }
+    .quiz-toggle {
+      font-weight: bold;
+      font-size: 1.05em;
+      cursor: pointer;
+      color: #2a5a2a;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .quiz-toggle::-webkit-details-marker { display: none; }
+    .quiz-toggle::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    .quiz-wrapper[open] .quiz-toggle::before {
+      transform: rotate(90deg);
+    }
+    .q-block {
+      margin: 24px 0;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    .q-block:last-of-type { border-bottom: none; }
+    .q-label {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .q-block label {
+      display: block;
+      padding: 6px 10px;
+      margin: 4px 0;
+      border-radius: 4px;
+      cursor: pointer;
+      line-height: 1.5;
+    }
+    .q-block label:hover { background: #e8e8e0; }
+    #score-btn {
+      display: block;
+      margin: 28px auto 0;
+      padding: 12px 32px;
+      font-family: Georgia, serif;
+      font-size: 1em;
+      background: #2a5a2a;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #score-btn:hover { background: #1e441e; }
+    #quiz-result {
+      margin-top: 24px;
+      padding: 18px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    #score-text {
+      font-size: 1.15em;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .review-item {
+      margin-bottom: 14px;
+      padding: 10px 12px;
+      border-radius: 4px;
+    }
+    .review-item.correct { background: #e6f4e6; }
+    .review-item.wrong { background: #fce8e8; }
+    .review-item .ri-q { font-weight: bold; margin-bottom: 4px; }
+    .review-item .ri-detail { font-size: 0.93em; color: #444; }
+  </style>
+</head>
+<body>
+
+<nav class="app-nav">
+  <a href="index.html" class="app-name">Book Summary Pro</a>
+  <a href="index.html" class="back-link">&larr; All Books</a>
+</nav>
+
+<div class="content">
+
+<h1>Why Nations Fail</h1>
+<p class="subtitle">The Origins of Power, Prosperity, and Poverty</p>
+<p class="author">Daron Acemoglu and James A. Robinson</p>
+
+<h2>Preface</h2>
+
+<p>The <i>Preface</i> introduces <b>Why Nations Fail</b> as a book about a central puzzle in world history: why some societies become rich and stable while others remain poor and unstable. The authors argue that the answer is not geography, culture, or simple ignorance, but the kind of <b>institutions</b> a society builds. Their core claim is that <b>inclusive institutions</b> &mdash; systems that broadly distribute political power and protect economic opportunity &mdash; encourage investment, innovation, and long-run growth, while <b>extractive institutions</b> concentrate power and wealth in the hands of a few and block development.</p>
+
+<p>The preface also frames the book as an attempt to connect many examples across time and place into a single explanation. The authors draw on history, economics, and political science to show that prosperity is usually produced by political choices, not by inevitable natural advantages. They emphasize that political power shapes economic rules, and that when elites fear losing control, they often resist reforms even when those reforms would benefit society as a whole. In this view, economic stagnation is often the result of deliberate institutional arrangements rather than accidental failure.</p>
+
+<p>A further theme is that nations do not change simply because rulers or experts decide to improve policy. The authors stress that major shifts in prosperity usually follow moments of political conflict, crisis, or revolution, when existing power structures are disrupted. This sets up the book's broader argument that durable development requires not only markets, but also a <b>pluralistic</b> political order and a state capable of enforcing rules fairly. The preface therefore prepares the reader for a historical narrative in which power and prosperity are inseparable.</p>
+
+<p>The preface also positions the book as a challenge to easy explanations of global inequality. It invites readers to look beyond short-term policy advice and ask how institutions came to be, who benefits from them, and why they persist. By doing so, the authors signal that the book will focus less on isolated national traits and more on the deep political roots of wealth and poverty.</p>
+
+<h2>Chapter 1: So Close and Yet So Different</h2>
+
+<p>Chapter 1 opens with a simple comparison: two cities called <b>Nogales</b>, separated by a fence, share the same climate, disease environment, language, food, and family ties, yet live under very different levels of prosperity. On the U.S. side, <b>Nogales, Arizona</b> benefits from schools, public services, infrastructure, law and order, and a political system in which residents can vote out leaders. On the Mexican side, <b>Nogales, Sonora</b> faces lower incomes, weaker public services, more crime, and more corruption. The authors use this contrast to argue that geography and culture alone cannot explain why one side is richer than the other.</p>
+
+<p>Their central claim is that the decisive difference is <b>institutions</b> &mdash; the rules and organizations that shape incentives. In the United States, people have broad access to education, markets, and political participation, so they can work, invest, and innovate with greater confidence. In Mexico, especially under the long rule of the <b>PRI</b>, political power was more concentrated and public institutions were less responsive, which made economic opportunity more limited and less secure. The chapter therefore introduces the book’s main framework: prosperity grows where <b>inclusive institutions</b> create broad opportunity, while poverty persists where <b>extractive institutions</b> allow elites to capture wealth and power.</p>
+
+<p>The chapter also extends this contrast beyond the border town to the broader history of the Americas. The authors say that the different fortunes of North and Latin America began in the <b>colonial period</b>, when European powers built colonies with different political and economic structures. Those early choices, they argue, set societies on divergent paths that continued long after formal colonial rule ended. In this way, the chapter turns a local comparison into a larger historical argument: present-day inequality is not accidental, but the result of long-running institutional patterns that shape who gets power, who gets opportunity, and who benefits from growth.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>A more cautious reading would say that <b>institutions</b> matter enormously but do not operate alone. Scholars often note that geography, state capacity, trade access, historical shocks, and cultural change can also influence development, sometimes interacting with institutions rather than merely following from them. Even in the Nogales example, differences in local governance, crime, border enforcement, migration, and investment flows may help explain the gap alongside the broader national institutions the authors emphasize.</p>
+  <p>Another credible objection is that the book’s broad distinction between <b>inclusive</b> and <b>extractive</b> systems can sometimes compress very complex histories into a single explanatory thread. Critics argue that some societies have grown under mixed or imperfect institutions, and that policy learning, technological diffusion, and international conditions can also produce major changes in living standards. The chapter’s power lies in its clarity, but its explanatory force is strongest when read as a framework that highlights political incentives rather than as a complete theory of development.</p>
+</details>
+
+<h2>Chapter 2: Theories That Don't Work</h2>
+
+<p>This chapter argues against common explanations for why some places became rich and others poor. The authors reject the idea that geography, climate, culture, or ignorance by rulers can by themselves explain long-run development. Instead, they claim that what mattered most was the kind of <b>institutions</b> Europeans created when they expanded abroad&mdash;especially whether those institutions were built for <b>extraction</b> or for broad participation. The examples from the Americas are meant to show that Europeans did not simply bring prosperity or failure with them; they adapted to local conditions in ways that let them seize wealth and labor where they could, and that choice shaped development for centuries.</p>
+
+<p>The Spanish conquest is presented as the clearest case of <b>extractive institutions</b>. In Mexico, Peru, and much of South America, Spaniards first captured indigenous rulers and then used institutions such as the <b>encomienda</b>, <b>mita</b>, <b>repartimiento</b>, and <b>trajin</b> to force indigenous people to provide tribute, labor, and goods. These systems enriched the conquerors and the Spanish Crown while driving local living standards down to subsistence. The point is not just that conquest was violent; it is that violence was organized into durable rules and incentives that made exploitation systematic and self-reinforcing.</p>
+
+<p>The chapter then contrasts this with English colonization in North America, especially Jamestown. The English initially tried to copy the Spanish model&mdash;capture local leaders, extract food, and search for gold&mdash;but they failed because the local societies did not have the dense populations, precious metals, or centralized structures that made Spanish coercion profitable. In Virginia, the colonists eventually had to work themselves, and survival required a very different colony. This difference supports the authors' larger claim that colonies developed according to the incentives created by local conditions and the institutions those conditions encouraged, not according to any simple national character or civilizational superiority.</p>
+
+<p>The broader lesson is that colonization left a durable institutional legacy. Where Europeans could exploit labor and wealth, they built highly unequal societies designed to transfer income upward. Where they could not, they were more likely to create institutions that included settlers themselves and eventually encouraged broader development. Chapter 2 therefore sets up the book's central framework: long-run prosperity depends on whether political and economic institutions are <b>inclusive</b> enough to distribute power and incentives broadly, or <b>extractive</b> enough to concentrate them in a narrow elite.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>A more cautious reading would note that the authors deliberately simplify a very complex history. Geography, disease environments, access to trade, state capacity, and global market opportunities all affected colonial outcomes too, and in many cases they interacted with institutions rather than being separate from them. Some historians would also argue that Spain and England are not always clean opposites: English colonies in the Caribbean and the American South were deeply extractive, while some Spanish territories developed institutions that later supported local autonomy. The chapter's strength is its framework, but its examples are best seen as broad patterns rather than as complete explanations of every case.</p>
+</details>
+
+<h2>Chapter 3: The Making of Prosperity and Poverty</h2>
+
+<p>This chapter argues that prosperity and poverty are not mainly determined by geography or culture, but by <b>institutions</b>&mdash;the rules shaping incentives, opportunity, and power. The authors build this claim by comparing the early English colonies in North America with Spanish colonies farther south. In places like Virginia, Maryland, and Carolina, the colonizers initially tried to impose coercive, hierarchical systems modeled on slavery or manorial rule, but these systems repeatedly failed because settlers had alternatives: they could move away, claim land on the frontier, or demand better terms. To keep colonies viable, English authorities had to grant settlers land, assemblies, and political voice, gradually producing broader participation and stronger property rights.</p>
+
+<p>By contrast, the Spanish empire in Mexico and South America developed extractive systems built around forced labor, monopoly, and concentrated political power. These institutions persisted after independence because elites used constitutions, military power, and coups to protect their privileges. The result was instability, weak state capacity, insecure property rights, and economic systems that favored a narrow elite rather than broad-based growth. The chapter emphasizes that once such institutional patterns are established, they tend to reproduce themselves, because those who benefit from them have every reason to block change. This is why the United States and Mexico diverged so sharply, even though both were part of the same continent and later the same global economy.</p>
+
+<p>The authors then link these institutional differences to modern outcomes in innovation and finance. In the United States, broad political rights helped create economic institutions that allowed people from modest backgrounds to patent inventions, start firms, and obtain credit. In Mexico, by contrast, political power was more concentrated, so banking and business often became channels for monopoly and favoritism rather than competition. The chapter uses figures such as <b>Thomas Edison</b>, <b>Bill Gates</b>, and <b>Carlos Slim</b> to show how the same talent and ambition can lead to very different results depending on whether institutions reward creativity and entry or protect insiders. The core message is that individual success still matters, but institutions determine whether many people can turn ideas into prosperity.</p>
+
+<p>This chapter also introduces the book’s broader theory of world inequality: <b>political institutions</b> shape <b>economic institutions</b>, and those economic institutions determine whether societies generate inclusive growth or persistent poverty. The authors argue that this process is <i>path-dependent</i>&mdash;historical choices create durable institutions, and later opportunities tend to be filtered through them rather than replacing them outright. That is why the same country can experience long periods of instability or stagnation, while another builds a more self-correcting political system. The chapter ends by framing the rest of the book around this idea: to understand why nations fail or succeed, one must study how power is organized, who controls it, and whether institutions distribute opportunity broadly or concentrate it in the hands of a few.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>A credible alternative view is that geography, disease burden, natural resources, and international trade conditions do matter substantially, even if they do not fully determine outcomes. Tropical disease can reduce productivity, resource windfalls can strengthen elites, and access to markets can shape the speed of development. Many historians and economists would also say that institutions themselves are partly influenced by geography and by global power relations, so the book may place too much explanatory weight on political arrangements alone. Still, the authors’ point is that these factors matter most insofar as they are filtered through institutions that decide who gains from them and who has the power to respond.</p>
+</details>
+
+<h2>Chapter 4: Small Differences and Critical Junctures: The Weight of History</h2>
+
+<p>This chapter argues that the rich-poor divide cannot be explained by simple <b>geography</b>. The authors use examples like Nogales, Korea, and Germany to show that places with nearly identical climates, diseases, and natural conditions can produce radically different living standards once they fall under different political and economic systems. They also point out that history contains many reversals of fortune: tropical regions were once home to some of the world’s most advanced civilizations, while many temperate regions were comparatively undeveloped. The lesson is that location alone does not determine prosperity.</p>
+
+<p>They also reject versions of the geography argument that focus on <b>agriculture</b> or the availability of plants and animals. Even if some regions had better domesticable species or soil conditions, that does not explain why modern income gaps are so large or why some countries failed to adopt industrial technologies when they were available. What matters more is whether societies create incentives for investment, innovation, and broad participation in economic life. In other words, productivity depends less on land itself than on the <b>institutions</b> governing land, labor, and technology.</p>
+
+<p>The chapter then turns to the <b>culture hypothesis</b>, which claims that values, religion, or work ethic explain wealth and poverty. The authors argue that culture often reflects underlying institutions rather than causing them. Trust, cooperation, and attitudes toward work can be shaped by whether people live under secure property rights, impartial law, and a state that protects or predates on them. Examples from Kongo, the Middle East, China, and Latin America are used to show that when incentives change, behavior and even culture can change as well.</p>
+
+<p>Finally, the chapter rejects the <b>ignorance hypothesis</b>, the idea that poverty persists because leaders and economists simply do not know the right policies. The authors contend that bad policies are usually chosen not by mistake but because they serve the interests of powerful elites. Governments often understand that certain policies reduce growth, yet adopt them anyway because those policies help maintain political control. The deeper explanation for world inequality, then, is <b>politics</b>&mdash;who holds power, how that power is constrained, and whether institutions are <b>inclusive</b> or <b>extractive</b>.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>A more cautious reading would say the chapter rightly shows that geography, culture, and policy advice are <i>not sufficient</i> explanations, but they may still matter in limited ways. Disease burdens, trade routes, natural-resource endowments, and social norms can influence how institutions evolve, even if they do not fully determine outcomes. Likewise, some economists would argue that ignorance and poor state capacity can interact with political incentives, so that bad policy is not always simply a deliberate choice by elites. The chapter’s strength is that it puts <b>institutions</b> at the center, though real-world development is often shaped by several causes at once.</p>
+</details>
+
+<h2>Chapter 5: "I've Seen the Future, and It Works": Growth Under Extractive Institutions</h2>
+
+<p>This chapter argues that even when a society has plenty of talent and some economic growth, that growth is usually fragile unless it rests on <b>inclusive institutions</b>. Under <b>extractive institutions</b>, elites may still foster growth when it serves their interests, but they do so in ways that remain narrow, unstable, and often temporary. The authors stress that technology alone is never enough: growth also depends on education, skills, and the ability of broad segments of society to use and improve new ideas. Where schools are absent or poorly run, a country wastes its human potential and loses the chance to produce the next generation of innovators and skilled workers.</p>
+
+<p>The chapter links this to the deeper relationship between <b>political institutions</b> and <b>economic institutions</b>. If political power is concentrated and unconstrained, elites can impose economic rules that enrich themselves, as in <b>Kongo</b>, <b>colonial Latin America</b>, or <b>North Korea</b>. The result is a self-reinforcing cycle: extractive politics create extractive economics, and extractive economics then strengthen the ruling group. By contrast, <b>inclusive political institutions</b> combine broad participation with state centralization, making it harder for any narrow group to monopolize power while still allowing the state to maintain order and support markets.</p>
+
+<p>A major theme is <b>creative destruction</b>&mdash;the process by which growth replaces old sectors, old skills, and old privileges with new ones. This is what makes growth politically dangerous. Landowners, monopolists, artisans, and rulers often resist industrialization not because they misunderstand its benefits, but because they expect to lose income, status, or control. The chapter uses the <b>Luddites</b>, the defeated aristocracies of nineteenth-century Europe, and the blocked industrialization of <b>Austria-Hungary</b> and <b>Russia</b> to show that powerful groups can and do stand in the way of prosperity when growth threatens their position.</p>
+
+<p>The chapter also explains why some extractive regimes still manage to grow for a while. In places like the <b>Soviet Union</b>, <b>Barbados</b>, <b>Cuba</b>, or <b>South Korea</b> under military rule, elites or the state could direct resources into productive uses without giving up control. But such growth is usually limited because it lacks broad innovation, depends on centralized coercion, and eventually runs into political resistance or stagnation. The broader conclusion is that lasting prosperity requires more than occasional growth spurts: it requires institutions that let many people participate, invest, and innovate without fear that their gains will simply be seized by those in power.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>A plausible alternative view is that some forms of <b>state-led development</b> can sustain growth for longer than the chapter suggests, especially when a strong state can coordinate investment, build infrastructure, and protect long-term industrial policy. East Asian cases are often cited to argue that authoritarian or semi-authoritarian regimes can sometimes generate durable prosperity before democratization. Even so, the authors would respond that these cases remain exceptional and that the central question is whether such growth can eventually be broadened and protected by more <b>inclusive political institutions</b>.</p>
+</details>
+
+<h2>Chapter 6: Drifting Apart</h2>
+
+<p>This chapter explains how <b>institutional drift</b> can make societies slowly move apart even when the differences are initially tiny. The authors use medieval Europe to show that England and Eastern Europe were not dramatically different at first, but that small shifts in the balance of power&mdash;such as who had more bargaining power after the Black Death&mdash;set them on very different paths. In England, labor scarcity strengthened peasants enough to weaken <b>feudal obligations</b> and push wages up; in Eastern Europe, by contrast, landlords used the same labor shortage to tighten control and expand <b>serfdom</b>. The key idea is that institutions do not change in a vacuum: when a major shock hits, existing power relations determine whether society becomes more inclusive or more extractive.</p>
+
+<p>The authors then connect this to the broader framework of <b>critical junctures</b>&mdash;major disruptions that can redirect history. A critical juncture does not produce the same outcome everywhere; instead, it amplifies prior institutional differences. This is why the Black Death led to freer labor markets in England but to the <b>Second Serfdom</b> in the East, and why the rise of Atlantic trade strengthened Parliament in England while reinforcing royal power in Spain and France. The same logic later helps explain why the <b>Glorious Revolution</b> mattered so much: it was not just a political event, but the moment when a coalition able to constrain the monarchy created more <b>inclusive political institutions</b> and, in turn, more inclusive economic rules.</p>
+
+<p>The chapter also extends the argument globally. It claims that the Industrial Revolution did not spread evenly because countries entered the modern era with different institutional starting points. Places with stronger constraints on rulers and broader access to political power&mdash;such as England and some settler colonies&mdash;were better able to adopt and profit from new technologies. By contrast, regions where <b>extractive institutions</b> remained powerful&mdash;including much of Eastern Europe, Latin America, Africa, China, and India&mdash;were less able to transform new opportunities into broad-based prosperity. The authors emphasize that this divergence was not destiny in any simple sense; it was the product of earlier drift, later shocks, and the coalitions that emerged when those shocks arrived.</p>
+
+<p>The chapter's larger lesson is that history is <i>contingent</i> but not random. Small differences can accumulate over time, and then a critical juncture can make those differences decisive. This is why the authors keep returning to examples like England's escape from feudalism, the survival of the Spanish Armada, and Japan's later Meiji Restoration: each shows how institutions shape the range of possible responses to crisis. Once a society is on a path toward inclusive institutions, growth and innovation become more likely; once extractive institutions are entrenched, shocks often deepen inequality instead.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>A more skeptical reading would note that the chapter may sometimes compress complex history into a single institutional story. Many historians would argue that <b>demography</b>, <b>military competition</b>, <b>state capacity</b>, disease, ecology, and global commerce all interacted with institutions rather than merely being filtered through them. For example, the decline of serfdom in Western Europe was not only a political bargain after the plague; it was also shaped by urbanization, monetization, and changing military and fiscal needs. The book's framework is powerful, but it is intentionally broad, and some scholars would say it underplays these other causal forces.</p>
+</details>
+
+<h2>Chapter 7: The Turning Point</h2>
+
+<p>This chapter extends the book’s central argument that <b>institutions</b> &mdash; not geography, culture, or ignorance &mdash; explain why some societies become prosperous while others remain poor. The authors use Japan, South Korea, Taiwan, and China to show that rapid growth often begins only after a society makes a decisive institutional shift, especially toward more <b>inclusive economic institutions</b>. But they also stress the reverse pattern: growth can stop abruptly when institutions become more extractive again, or when extractive systems run into their own limits. In this sense, the chapter is about a <i>turning point</i> &mdash; the moment when political centralization and institutional change can produce either a burst of growth or a dead end.</p>
+
+<p>The chapter’s historical case studies show how <b>extractive institutions</b> can generate limited prosperity when they impose order and centralize power, but cannot sustain innovation. In the Ottoman Middle East, the state created taxation, law, and control over commerce, yet these arrangements were highly coercive and left property rights insecure, so the region stagnated. In the Kuba Kingdom under King Shyaam, a political revolution created a centralized state, which then reorganized agriculture and raised output. Likewise, the Soviet Union achieved impressive growth by command, coercion, and forced industrialization, but because the system suppressed incentives and resisted <b>creative destruction</b>, growth eventually slowed and collapsed. The broader lesson is that extractive systems can move resources around and sometimes produce short bursts of expansion, but they cannot generate the continuous technological change needed for long-run growth.</p>
+
+<p>A major purpose of the chapter is to show that even major historical transitions can begin from political changes rather than from new technology alone. The authors argue that the <b>Neolithic Revolution</b> did not start simply because people discovered better plants and animals; it also required settled life, stronger rules over property, and some group able to enforce order and extract surplus. The Natufian societies of the Middle East are used to illustrate this idea. Before full farming, they already showed signs of hierarchy, storage, trade, and elite burial practices, suggesting that a form of <b>political centralization</b> had emerged first. Farming then became possible because these institutions helped manage conflict, ownership, and settlement.</p>
+
+<p>The chapter therefore connects very different episodes &mdash; Japan’s modernization, Ottoman stagnation, Soviet industrialization, Kuba state-building, and early agriculture &mdash; through one common framework: societies change course when <b>critical junctures</b> create openings for new institutions. Sometimes those institutions become more inclusive and set off sustained growth; sometimes they become more centralized but remain extractive, producing only temporary gains. The authors’ larger claim is that the path from poverty to prosperity depends on whether political power is constrained and broadened enough to allow innovation, or whether it is concentrated in ways that ultimately block it.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>A cautious reader might note that the chapter can sometimes make state centralization sound more straightforwardly beneficial than it really is. Historians and archaeologists often debate how much order, hierarchy, or settlement came from deliberate institutional design versus gradual adaptation, ecological pressure, or trade opportunities. In addition, some scholars argue that extractive regimes can sometimes sustain substantial growth for longer than the book allows, especially when they can mobilize large-scale investment or borrow foreign technology without immediately liberalizing politics.</p>
+</details>
+
+<h2>Chapter 8: Not on Our Turf: Barriers to Development</h2>
+
+<p>This chapter extends the book’s central argument from the Middle East, Mesoamerica, and Europe to show that early economic growth often depended on <b>extractive institutions</b>&mdash;systems that centralized power, enabled elites to take surplus, and could produce prosperity without broad-based development. In the case of the <b>Natufians</b>, the authors argue that sedentarism and then farming were not simply the result of climate or available species. Instead, small but important institutional changes allowed political elites to take advantage of the <b>Long Summer</b>, and those changes helped trigger the transition to settled life and agriculture. The result was growth, but growth that rested on coercion and hierarchy rather than durable innovation.</p>
+
+<p>The chapter then turns to the <b>Maya</b> as a dramatic example of why growth under extractive institutions is fragile. Maya city-states built advanced cities, writing systems, monuments, and trade networks, but their political order concentrated power in divine rulers and elite factions. That structure generated wealth and state centralization, yet it also encouraged competition among elites, warfare, and repeated instability. As the struggle to control extraction intensified, the system unraveled: rulers disappeared, monuments ceased, cities were abandoned, and population declined. The authors use this collapse to show that extractive systems may support impressive achievements for a time, but they contain the seeds of their own destruction.</p>
+
+<p>The broader lesson is that <b>extractive growth</b> has two built-in limits. First, it usually lacks <b>creative destruction</b>, so it produces little sustained technological progress. Second, it creates powerful incentives for internal conflict, because those excluded from power have strong reasons to try to overthrow the ruling elite. The chapter closes by linking this pattern to other historical cases already discussed&mdash;such as Rome, Venice, and the Soviet Union&mdash;and by preparing the ground for the next chapters on Europe after Rome’s fall. The authors’ point is that development depends not just on starting to grow, but on whether institutions allow growth to continue without being captured, blocked, or undone.</p>
+
+<h2>Chapter 9: Reversing Development</h2>
+
+<p>Chapter 9 argues that England’s path toward prosperity was not the result of geography or culture, but of a long struggle over <b>political institutions</b>. The central idea is that <b>inclusive institutions</b> emerged only after centuries of conflict gradually weakened monarchy and empowered broader groups in society. Early landmarks such as the <b>Magna Carta</b> and the first <b>Parliament</b> did not create democracy, but they began a slow shift away from pure royal power. The Tudors then centralized the state, which paradoxically made it easier for elites and later merchants, gentry, and manufacturers to demand a voice in how that power was used.</p>
+
+<p>The chapter’s key mechanism is the defeat of <b>absolutism</b> in the <b>Glorious Revolution</b> of 1688. After Parliament replaced James II with William and Mary, political authority moved decisively toward Parliament, which meant that property rights became more secure, arbitrary taxation became harder, and the economy became more open to new entrants. This mattered because it reduced the ability of entrenched elites to block <b>creative destruction</b>&mdash;the process by which new technologies and firms replace old ones. In the authors’ telling, that shift helped create the conditions for the <b>Industrial Revolution</b>: more reliable finance, better infrastructure, fewer monopolies, and stronger incentives for inventors such as James Watt, Arkwright, and Hargreaves.</p>
+
+<p>The chapter also emphasizes that England’s breakthrough was made possible by a broad coalition of interests. Merchants involved in Atlantic trade, industrialists, commercial farmers, and political reformers all had reasons to oppose Stuart absolutism, and this diversity prevented any single faction from dominating once Parliament became stronger. As a result, England developed a more <b>pluralistic</b> political order, one in which petitions, parliamentary bargaining, and competing interests could shape policy. The authors present this as the institutional foundation for sustained growth: once powerful groups could no longer easily shut out rivals, innovation spread faster and economic change became self-reinforcing.</p>
+
+<p>At the same time, the chapter treats this outcome as <i>contingent rather than inevitable</i>. The same conflicts could have ended in another dictatorship, as happened under Cromwell, or in renewed absolutism under the Stuarts. England’s success therefore depended on a particular sequence of institutional drift, state centralization, and political crisis. The result was not full democracy, but a system restrictive enough to remain oligarchic while still open enough to let new economic actors enter, innovate, and challenge older elites.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>A common alternative view is that England’s industrial takeoff owed at least as much to factors the authors downplay, such as coal deposits, colonial profits, scientific culture, and a favorable legal environment. Historians also note that Parliament itself was still highly oligarchic after 1688, so calling the regime fully inclusive can overstate how broadly power was actually shared. The authors’ institutional explanation is influential because it highlights why innovation was permitted, but it is strongest when treated as part of a larger story rather than the only cause.</p>
+</details>
+
+<h2>Chapter 10: The Diffusion of Prosperity</h2>
+
+<p>Chapter 10 argues that the spread of prosperity during the nineteenth century depended less on technology itself than on whether societies had <b>inclusive institutions</b> capable of allowing people to adopt, adapt, and profit from new inventions. The authors build directly on the previous chapters’ theme: when a <b>critical juncture</b> such as the <b>Industrial Revolution</b> arrives, countries do not all respond the same way. Some states encourage innovation, broader education, and investment; others fear the political consequences of change and block it. In this view, the decisive issue is whether ruling elites see new technologies as a source of shared growth or as a threat to their power.</p>
+
+<p>To show this, the chapter contrasts places that embraced innovation with places that resisted it. In the <b>Ottoman Empire</b>, the printing press was delayed for centuries because rulers and religious authorities feared the spread of ideas and the weakening of elite control over knowledge. In <b>Russia</b> and <b>Austro-Hungary</b>, rulers such as Peter the Great, Francis I, and Nicholas I sometimes centralized the state, but they did so in deeply <b>absolutist</b> ways that preserved serfdom, restricted trade, and even blocked railways and factories. The authors’ point is that <b>political centralization</b> by itself is not enough; if it is not constrained by pluralistic institutions, it can simply strengthen extraction and keep societies poor.</p>
+
+<p>The chapter also shows that similar patterns appeared outside Europe. In <b>China</b>, the state had long been centralized and technologically advanced, but under the Ming and Qing dynasties it increasingly feared overseas commerce and banned private trade, shipping, and shipbuilding when rulers thought merchants might become politically dangerous. In <b>Ethiopia</b>, absolutism produced extreme insecurity of property rights, while in <b>Somalia</b> the deeper problem was the absence of a strong centralized state at all, making sustained industrialization nearly impossible. Across these cases, the authors argue, prosperity spread only where institutions allowed <b>creative destruction</b> &mdash; the process by which new economic winners replace old elites without those elites being able to stop change.</p>
+
+<p>The broader lesson is that the diffusion of prosperity was not automatic and not primarily driven by geography, culture, or a lack of technical knowledge. It depended on whether societies could build institutions that made the gains from innovation broadly available while limiting the ability of narrow elites to block them. Where rulers feared losing power, they often chose stagnation over growth. Where institutions forced elites to share power or accept competition, industrialization could take root and generate sustained development.</p>
+
+<h2>Chapter 11: The Virtuous Circle</h2>
+
+<p>Chapter 11 argues that the reverse of extractive domination is not simply the absence of coercion, but a reinforcing <b>virtuous circle</b> between <b>inclusive institutions</b>, <b>political centralization</b>, and broad participation in power. Where earlier chapters showed how extractive systems block innovation and lock societies into stagnation, this chapter explains how some societies escaped that trap: when power became more widely shared and constrained, elites found it harder to monopolize resources, and ordinary people gained stronger incentives to invest, innovate, and organize economically. The result was not just a one-time reform, but a self-reinforcing process in which better institutions generated more prosperity, and prosperity in turn strengthened those institutions.</p>
+
+<p>The authors stress that this circle is especially important because inclusive institutions do not emerge automatically from wealth or cultural virtue. They usually arise when existing elites are challenged and when political competition prevents any one group from permanently dominating the state. Once a society has enough central authority to enforce law and order, but also enough pluralism to prevent abuse, it can protect <b>property rights</b>, support markets, and encourage <b>creative destruction</b>&mdash;the process in which new technologies and firms replace old ones. This is why the Industrial Revolution mattered so much: societies with inclusive institutions could absorb it and grow, while societies with extractive institutions either blocked it or lacked the state capacity to benefit from it.</p>
+
+<p>The chapter therefore links prosperity to a distinctive balance: not weak government, but a government strong enough to provide order and public goods, yet constrained enough that it cannot simply loot the economy or suppress new entrants. In this view, inclusive institutions create a stable environment for long-run development because they lower the risk that success will be seized by a narrow elite. Over time, this makes it easier for citizens to trust the rules, accumulate capital, and support further institutional improvement. The broader lesson is that enduring prosperity comes from political systems that allow power to be contested and shared rather than frozen in the hands of a few.</p>
+
+<p>Read alongside the Somalia example in the previous section, the chapter highlights a contrast between societies that never achieved reliable central authority and those that built it under restraints. In both cases, the crucial issue is not simply whether the state exists, but whether it can enforce rules in a way that benefits society broadly. The authors use this framework to explain why some countries moved onto a path of cumulative growth after major historical turning points, while others remained stuck in cycles of insecurity, underinvestment, and poverty.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>A credible alternative view is that the <b>virtuous circle</b> is real but not always sufficient on its own: some societies have had periods of broader participation or partial political reform without achieving durable prosperity, because geography, external shocks, war, or weak administrative capacity still constrained growth. Critics also argue that the book can understate the role of state-building from above&mdash;for example, some effective modern states initially expanded power quite sharply before later becoming more accountable. From this perspective, inclusive institutions may be a major ingredient of development, but not the only path, and the timing and sequence of reform may matter more than the theory sometimes suggests.</p>
+</details>
+
+<h2>Chapter 12: The Vicious Circle</h2>
+
+<p>Chapter 12 argues that European expansion did not merely add to global wealth; in many places it <b>reversed development</b> by imposing or strengthening <b>extractive institutions</b>. In Southeast Asia, Dutch colonial power disrupted promising commercial states, pushing societies inward and making them more absolutist. The same pattern appeared in Africa, where the growth of the Atlantic slave trade transformed warfare, law, and political authority into tools for capturing and selling people. Instead of building inclusive markets and states, many societies were pulled into a destructive cycle in which violence, coercion, and state breakdown reinforced one another.</p>
+
+<p>The chapter shows that the slave trade was not a side effect of poverty but a major cause of it. European demand for slaves, especially for plantation colonies in the Americas, intensified warfare and raiding in West and Central Africa, while firearms imported in exchange for slaves made conflict even worse. Some states became more centralized only in the narrow sense that they organized around slaving, but this was a deeply extractive form of power. Other institutions&mdash;including courts, religion, and local authority&mdash;were distorted to serve the trade. The result was demographic collapse, social disruption, and political decay, followed by the persistence of slavery even after the Atlantic trade was formally abolished.</p>
+
+<p>The chapter then turns to the idea of a <b>dual economy</b>, which development economists like <b>Arthur Lewis</b> used to describe a modern sector alongside a backward traditional one. Acemoglu and Robinson argue that South Africa shows why this framework is incomplete if it treats backwardness as natural. In the nineteenth century, African farmers in places such as the Ciskei and Transkei were becoming more productive, buying land, adopting plows, and weakening the power of chiefs. But white settlers and mining interests reversed these gains through land dispossession, labor coercion, job reservation, and segregated education. The famous South African dual economy was therefore not an inevitable stage of development; it was deliberately created to supply cheap black labor and protect white privilege.</p>
+
+<p>The broader lesson is that development and underdevelopment can be produced together. European commercial and colonial expansion helped some parts of the world build more inclusive institutions, as seen in earlier chapters on Britain, but elsewhere the same expansion destroyed indigenous commercial paths and locked societies into extractive arrangements. Chapter 12 therefore deepens the book’s central argument: whether a country prospers depends not on geography, culture, or technology alone, but on the political power behind its institutions and on whether those institutions allow broad participation rather than concentrated extraction.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p><i>A careful alternative view</i> is that the authors sometimes give too much causal weight to colonial extraction alone. In some regions, local elites actively collaborated in slaving, taxation, and coercion, and those domestic choices also mattered. Likewise, not every precolonial society was on the cusp of inclusive growth, and colonial rule interacted with preexisting hierarchies rather than simply creating them from scratch. Even so, the chapter’s main claim remains strong: external expansion usually magnified coercive institutions and made later development much harder.</p>
+</details>
+
+<h2>Chapter 13: Why Nations Fail Today</h2>
+
+<p>Chapter 13 argues that nations still fail today for the same basic reason traced throughout the book: <b>inclusive institutions</b> are weak, while <b>extractive institutions</b> remain powerful enough to block broad-based economic and political change. The authors stress that poor countries are not condemned by geography, culture, or a lack of talent. Rather, development stalls when elites can use political control, coercive power, or legal exclusion to preserve their advantages and prevent <b>creative destruction</b> from threatening their position. Where such elites cannot be displaced, growth may occur only in narrow, controlled forms that leave most people excluded.</p>
+
+<p>The chapter extends the book’s earlier logic about <b>virtuous</b> and <b>vicious circles</b>. Inclusive institutions tend to reinforce themselves because they spread rights, make law more impersonal, and allow more people to invest, innovate, and participate in politics. Extractive regimes do the opposite: they concentrate power, fear disruption, and often suppress markets, education, and opposition. As a result, even when new opportunities arise, such as new technologies or foreign investment, the benefits are captured by a small elite unless institutions allow them to diffuse through society.</p>
+
+<p>A central message of the chapter is that modern poverty is not simply a leftover from the past; it is actively maintained by current political arrangements. The authors point to countries where rulers or dominant groups avoid reforms that would weaken their control, even if those reforms could raise national income. In their framework, meaningful change usually requires not just better economic policy but a shift in <b>political power</b>&mdash;because without changes in who rules and who can contest rule, extractive institutions tend to reproduce themselves.</p>
+
+<p>The chapter therefore serves as a bridge from historical examples to the contemporary world. It suggests that the same institutional pattern seen in colonial America, Australia, France, and Japan still explains why some states prosper while others remain trapped in poverty. The specific form of extraction may differ today, but the underlying mechanism is familiar: when power is narrow and unaccountable, institutions are designed to protect the few rather than enable the many.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>A more skeptical view would say that the chapter gives too much explanatory weight to institutions alone. Many scholars argue that <i>state capacity</i>, war, external trade shocks, natural resources, disease burdens, and international dependency also shape long-run development in ways that cannot be reduced neatly to inclusive versus extractive rules. Others would add that institutions themselves are often outcomes of deeper social, technological, or geopolitical forces, so the causal story may run in more directions than the chapter suggests.</p>
+</details>
+
+<h2>Chapter 14: Breaking the Mold</h2>
+
+<p>Chapter 14 argues that industrialization did not spread simply because technology was available; it spread where <b>political institutions</b> were able to accommodate and protect it. In Britain’s case, the <b>Glorious Revolution</b> had already weakened absolutism and created a more <b>pluralistic</b> system, so the new industrial economy could expand without being blocked by a narrow elite. By contrast, in much of Eastern Europe, the Ottoman Empire, and parts of Asia, rulers and landed elites saw industrialization as a threat to their wealth and power. They resisted it, or adapted only minimally, because <b>creative destruction</b> would have undermined their rents, privileges, and control over labor.</p>
+
+<p>The chapter uses the <b>French Revolution</b> and the <b>Meiji Restoration</b> as examples of how a political upheaval could break an old institutional mold and create space for industrial growth. France moved away from absolutism and, through revolutionary conquest, exported reforms to nearby regions. Japan followed a similar pattern when reform-minded regional elites overthrew the shogunate and centralized power under the Meiji state. Meanwhile, China, the Ottoman Empire, Russia, Austria-Hungary, and much of Africa remained trapped in more <b>extractive</b> arrangements. In Africa, the slave trade intensified extraction and disrupted development rather than promoting broad-based growth.</p>
+
+<p>The chapter’s core message is that the world’s nineteenth-century divergence was not accidental: countries that already had or acquired <b>inclusive institutions</b> were better able to exploit industrial opportunities, while those dominated by absolutist or extractive coalitions fell behind. Industrialization therefore widened global inequality by rewarding societies that could support innovation, investment, and broad participation. The result, the authors argue, is that today’s rich countries are largely those that joined the industrial transformation early, while poorer countries are often those whose institutions prevented or distorted it.</p>
+
+<h2>Chapter 15: Understanding Prosperity and Poverty</h2>
+
+<p>Chapter 15 argues that prosperity and poverty are not mainly the result of geography, culture, or simple policy mistakes, but of the long-run interaction between <b>inclusive</b> and <b>extractive institutions</b>. Building on the earlier discussion of Britain and the United States, the authors say that once a society develops more inclusive political rules and more open economic markets, those institutions tend to reinforce one another through a <b>virtuous circle</b>. Inclusive politics make it harder for rulers to grab power or destroy the rule of law, while inclusive economics spread resources more widely and reduce the gains from political domination. As a result, societies can move gradually toward broader participation rather than repeatedly collapsing back into authoritarian control.</p>
+
+<p>The chapter emphasizes that this process usually unfolds through <b>gradual reform</b>, not one decisive breakthrough. In Britain, for example, limited reforms such as the <b>First Reform Act</b> created pressures for further democratization, while the expansion of markets and the decline of serf-like relations reduced the elite’s incentive to repress demands for change. The same logic explains why the United States was able to confront monopolies through <b>antitrust laws</b>, the <b>muckrakers</b>, and later the Roosevelt-era reforms without destroying the basic constitutional order. Because power was already dispersed, elites had to compromise rather than resort to outright force, and the system could correct itself when new threats appeared.</p>
+
+<p>The chapter contrasts this with societies trapped in a <b>vicious circle</b>, where extractive political power breeds extractive economic rules, and those economic rules then reinforce the ruling elite. Examples from Sierra Leone, Guatemala, Zimbabwe, and the U.S. South show how old elites can survive by changing the form of extraction&mdash;from colonial rule to postcolonial dictatorship, from slavery to <b>Jim Crow</b>, or from encomienda to land grabs and forced labor. In these cases, even when rulers change, the basic structure does not. The same narrow groups keep control, while ordinary people lose incentives to invest, innovate, or participate fully in political life.</p>
+
+<p>The broader lesson is that institutions persist because they alter the balance of power. Inclusive institutions lower the rewards of domination and make abuses harder to carry out; extractive institutions do the opposite, concentrating wealth, weakening checks on rulers, and making conflict more likely. Chapter 15 therefore ties together the book’s central argument: rich nations are not rich because they found the right culture or had the right geography, but because they managed, often after long struggles, to build institutions that constrained elites and allowed broad participation. Where that process fails, poverty and instability are usually the result.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>A careful reader might note that the authors’ institutional framework, while powerful, can sometimes underplay other causes of development such as state capacity, war, international trade, public health, or technological diffusion. Historians and political economists also debate whether the distinction between <b>inclusive</b> and <b>extractive</b> institutions is always as clear-cut as the book suggests, since many countries contain mixtures of both, and some states achieve rapid growth under quite authoritarian systems for significant periods. The chapter’s main claim remains persuasive as a broad explanation, but it is best read as a strong framework rather than a single-factor theory of history.</p>
+</details>
+
+<h2 id="quiz-heading">Comprehension Quiz</h2>
+
+<details id="quiz-section" class="quiz-wrapper">
+  <summary class="quiz-toggle">Take the Quiz</summary>
+
+  <form id="quiz-form">
+
+    <div class="q-block">
+      <p class="q-label">1. According to the book’s central argument, what best explains why some nations become rich and stable while others remain poor and unstable?</p>
+      <label><input type="radio" name="q1" value="a"> Climate and geography</label>
+      <label><input type="radio" name="q1" value="b"> Culture and religion</label>
+      <label><input type="radio" name="q1" value="c"> The inclusiveness or extractiveness of institutions</label>
+      <label><input type="radio" name="q1" value="d"> The amount of natural resources</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">2. In the Nogales example, why do the authors say geography and culture cannot fully explain the prosperity gap?</p>
+      <label><input type="radio" name="q2" value="a"> Both sides have very different climates and languages</label>
+      <label><input type="radio" name="q2" value="b"> The two cities share the same physical and cultural environment but differ in institutions</label>
+      <label><input type="radio" name="q2" value="c"> Mexican laws are identical to U.S. laws</label>
+      <label><input type="radio" name="q2" value="d"> Nogales, Arizona has no public services</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">3. What colonial system in Spanish America is presented as a clear example of extractive institutions?</p>
+      <label><input type="radio" name="q3" value="a"> Town meetings and local voting rights</label>
+      <label><input type="radio" name="q3" value="b"> Encomienda, mita, repartimiento, and trajin</label>
+      <label><input type="radio" name="q3" value="c"> Free land grants to all settlers</label>
+      <label><input type="radio" name="q3" value="d"> Independent merchant guilds</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">4. Why did English colonization in North America differ from the Spanish model in the authors&#x27; account?</p>
+      <label><input type="radio" name="q4" value="a"> The English were morally opposed to profit</label>
+      <label><input type="radio" name="q4" value="b"> English settlers could not profit as easily from coercing dense indigenous populations</label>
+      <label><input type="radio" name="q4" value="c"> Spain banned all coercive labor systems</label>
+      <label><input type="radio" name="q4" value="d"> The English had more precious metals than the Spanish</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">5. What does Chapter 3 argue about the long-term divergence between the United States and Mexico?</p>
+      <label><input type="radio" name="q5" value="a"> It was caused mainly by separate languages</label>
+      <label><input type="radio" name="q5" value="b"> It resulted from different colonial institutions that persisted after independence</label>
+      <label><input type="radio" name="q5" value="c"> It was determined by modern foreign aid policies</label>
+      <label><input type="radio" name="q5" value="d"> It was caused by identical institutions but different weather</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">6. Which of the following is closest to the book’s rejection of the geography hypothesis?</p>
+      <label><input type="radio" name="q6" value="a"> Geography never matters in any way</label>
+      <label><input type="radio" name="q6" value="b"> Geography explains all income differences through soil quality alone</label>
+      <label><input type="radio" name="q6" value="c"> Geography may matter, but it does not by itself explain the huge and persistent gaps in prosperity</label>
+      <label><input type="radio" name="q6" value="d"> Geography only matters in tropical regions</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">7. What do the authors mean by creative destruction?</p>
+      <label><input type="radio" name="q7" value="a"> Destroying infrastructure to lower taxes</label>
+      <label><input type="radio" name="q7" value="b"> The replacement of old firms, sectors, and elites by new ones through innovation</label>
+      <label><input type="radio" name="q7" value="c"> Military conquest of neighboring states</label>
+      <label><input type="radio" name="q7" value="d"> The disappearance of all government regulation</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">8. Why do elites often resist economic growth in the authors’ framework?</p>
+      <label><input type="radio" name="q8" value="a"> Because growth always lowers all incomes</label>
+      <label><input type="radio" name="q8" value="b"> Because growth can threaten their income, status, or control</label>
+      <label><input type="radio" name="q8" value="c"> Because they do not understand markets at all</label>
+      <label><input type="radio" name="q8" value="d"> Because they want to expand education for everyone</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">9. What happened to labor relations in England after the Black Death, according to Chapter 6?</p>
+      <label><input type="radio" name="q9" value="a"> Peasants lost all bargaining power and serfdom expanded dramatically</label>
+      <label><input type="radio" name="q9" value="b"> Labor scarcity strengthened peasants and weakened feudal obligations</label>
+      <label><input type="radio" name="q9" value="c"> The monarchy abolished all markets</label>
+      <label><input type="radio" name="q9" value="d"> Landlords left the countryside entirely</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">10. How does Chapter 6 explain the difference between England and Eastern Europe after the Black Death?</p>
+      <label><input type="radio" name="q10" value="a"> England had no feudal system while Eastern Europe did</label>
+      <label><input type="radio" name="q10" value="b"> Different power balances led England toward freer labor and Eastern Europe toward deeper serfdom</label>
+      <label><input type="radio" name="q10" value="c"> Eastern Europe industrialized earlier than England</label>
+      <label><input type="radio" name="q10" value="d"> The same institutions produced opposite outcomes by chance</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">11. What was the political significance of the Glorious Revolution in the authors’ account?</p>
+      <label><input type="radio" name="q11" value="a"> It restored absolute monarchy in England</label>
+      <label><input type="radio" name="q11" value="b"> It shifted power toward Parliament and made institutions more inclusive</label>
+      <label><input type="radio" name="q11" value="c"> It eliminated markets in favor of state planning</label>
+      <label><input type="radio" name="q11" value="d"> It ended trade with the Atlantic world</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">12. Why do the authors say extractive regimes can sometimes produce growth for a time?</p>
+      <label><input type="radio" name="q12" value="a"> Because they always create strong incentives for broad innovation</label>
+      <label><input type="radio" name="q12" value="b"> Because elites or states can direct resources coercively into productive uses</label>
+      <label><input type="radio" name="q12" value="c"> Because they eliminate all social conflict permanently</label>
+      <label><input type="radio" name="q12" value="d"> Because they guarantee free competition</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">13. What is the key limitation of growth under extractive institutions?</p>
+      <label><input type="radio" name="q13" value="a"> It tends to be too decentralized</label>
+      <label><input type="radio" name="q13" value="b"> It depends on continuous creative destruction and broad participation, which extraction blocks</label>
+      <label><input type="radio" name="q13" value="c"> It always produces democracy</label>
+      <label><input type="radio" name="q13" value="d"> It only works in agricultural societies</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">14. What do the Maya case study and similar examples show in the book?</p>
+      <label><input type="radio" name="q14" value="a"> Extractive systems can support impressive achievements but are fragile and prone to collapse</label>
+      <label><input type="radio" name="q14" value="b"> All centralized states are doomed to fail immediately</label>
+      <label><input type="radio" name="q14" value="c"> Growth always comes from geographic luck</label>
+      <label><input type="radio" name="q14" value="d"> Writing systems prevent political conflict</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">15. Why did the printing press spread slowly in the Ottoman Empire, according to Chapter 10?</p>
+      <label><input type="radio" name="q15" value="a"> The Ottomans lacked any written language</label>
+      <label><input type="radio" name="q15" value="b"> Rulers and religious authorities feared the political consequences of wider access to ideas</label>
+      <label><input type="radio" name="q15" value="c"> Paper was unavailable everywhere in the empire</label>
+      <label><input type="radio" name="q15" value="d"> The empire had already industrialized fully</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">16. What is the difference between a virtuous circle and a vicious circle in the book?</p>
+      <label><input type="radio" name="q16" value="a"> A virtuous circle weakens institutions, while a vicious circle strengthens them</label>
+      <label><input type="radio" name="q16" value="b"> A virtuous circle reinforces inclusive institutions, while a vicious circle reinforces extractive ones</label>
+      <label><input type="radio" name="q16" value="c"> Both terms mean the same thing</label>
+      <label><input type="radio" name="q16" value="d"> A virtuous circle is purely economic and a vicious circle is purely cultural</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">17. How does the book explain the Atlantic slave trade’s effect on Africa?</p>
+      <label><input type="radio" name="q17" value="a"> It had little impact because African states were already industrialized</label>
+      <label><input type="radio" name="q17" value="b"> It reduced conflict and promoted legal equality</label>
+      <label><input type="radio" name="q17" value="c"> It intensified warfare, extraction, and political decay</label>
+      <label><input type="radio" name="q17" value="d"> It mainly benefited peasant farmers</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">18. What is the main lesson of the South African dual economy example?</p>
+      <label><input type="radio" name="q18" value="a"> Backwardness was natural and unavoidable</label>
+      <label><input type="radio" name="q18" value="b"> The dual economy was deliberately created through dispossession and coercion</label>
+      <label><input type="radio" name="q18" value="c"> Mining always creates equality</label>
+      <label><input type="radio" name="q18" value="d"> African farmers refused to adopt new technologies</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">19. What does Chapter 13 say is the main reason nations fail today?</p>
+      <label><input type="radio" name="q19" value="a"> They lack any technology at all</label>
+      <label><input type="radio" name="q19" value="b"> Inclusive institutions are weak and extractive elites remain powerful</label>
+      <label><input type="radio" name="q19" value="c"> Their geography is permanently hostile</label>
+      <label><input type="radio" name="q19" value="d"> Their people are less intelligent</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">20. According to the book, what makes prosperity spread after industrialization?</p>
+      <label><input type="radio" name="q20" value="a"> Technological knowledge automatically spreads everywhere</label>
+      <label><input type="radio" name="q20" value="b"> Only societies with inclusive institutions can adopt and benefit from new technologies broadly</label>
+      <label><input type="radio" name="q20" value="c"> Geography alone determines who industrializes</label>
+      <label><input type="radio" name="q20" value="d"> Industrialization succeeds only under absolute monarchy</label>
+    </div>
+
+    <button type="button" id="score-btn" onclick="scoreQuiz()">Score My Answers</button>
+
+    <div id="quiz-result" style="display:none;">
+      <p id="score-text"></p>
+      <div id="answer-review"></div>
+    </div>
+
+  </form>
+</details>
+
+<script>
+(function() {
+  const answers = {
+    "q1": {
+        "correct": "c",
+        "explain": "The authors argue that inclusive institutions broaden opportunity and power, while extractive institutions concentrate them and hinder development."
+    },
+    "q2": {
+        "correct": "b",
+        "explain": "The two towns share climate, disease environment, language, and family ties, so the key difference is the political-economic institutions on each side of the border."
+    },
+    "q3": {
+        "correct": "b",
+        "explain": "The summary identifies these forced-labor and tribute systems as mechanisms that organized exploitation into durable institutions."
+    },
+    "q4": {
+        "correct": "b",
+        "explain": "The English initially tried extraction, but local conditions made it less profitable, so they had to rely more on working and governing settlers themselves."
+    },
+    "q5": {
+        "correct": "b",
+        "explain": "The chapter says colonial institutional choices created durable paths that continued to shape politics and economics after independence."
+    },
+    "q6": {
+        "correct": "c",
+        "explain": "The authors reject geography as a sufficient explanation, while allowing that it can still influence development indirectly."
+    },
+    "q7": {
+        "correct": "b",
+        "explain": "Creative destruction is the process in which new technologies and firms displace existing economic and political interests."
+    },
+    "q8": {
+        "correct": "b",
+        "explain": "The book argues that elites often oppose reforms when innovation would weaken their privileges or power."
+    },
+    "q9": {
+        "correct": "b",
+        "explain": "The labor shortage increased workers’ bargaining power in England, helping erode feudal institutions."
+    },
+    "q10": {
+        "correct": "b",
+        "explain": "The same shock had different effects because existing elites and workers had different levels of bargaining power."
+    },
+    "q11": {
+        "correct": "b",
+        "explain": "The Glorious Revolution constrained the monarchy, strengthened Parliament, and helped secure property rights and entry for new economic actors."
+    },
+    "q12": {
+        "correct": "b",
+        "explain": "Extractive systems can force investment and industrialization, but usually in limited and unsustainable ways."
+    },
+    "q13": {
+        "correct": "b",
+        "explain": "The authors argue that extractive systems cannot sustain the ongoing innovation needed for long-run prosperity."
+    },
+    "q14": {
+        "correct": "a",
+        "explain": "The Maya developed advanced cities and trade, but concentrated power and elite conflict helped drive their collapse."
+    },
+    "q15": {
+        "correct": "b",
+        "explain": "The chapter says elites delayed the printing press because they worried it would weaken control over knowledge and power."
+    },
+    "q16": {
+        "correct": "b",
+        "explain": "Inclusive institutions can become self-reinforcing, while extractive institutions tend to reproduce themselves and block change."
+    },
+    "q17": {
+        "correct": "c",
+        "explain": "The authors argue that European demand for slaves turned violence and coercion into a destructive cycle that undermined development."
+    },
+    "q18": {
+        "correct": "b",
+        "explain": "The chapter argues that white settlers and mining interests reversed gains by African farmers and constructed a racially extractive system."
+    },
+    "q19": {
+        "correct": "b",
+        "explain": "The chapter argues that modern poverty persists when elites can block broad-based political and economic change."
+    },
+    "q20": {
+        "correct": "b",
+        "explain": "The authors claim that prosperity spread where institutions allowed people to adopt, adapt, and profit from innovation rather than fear it."
+    }
+};
+
+  window.scoreQuiz = function() {
+    const form = document.getElementById("quiz-form");
+    let correct = 0;
+    const total = Object.keys(answers).length;
+    let reviewHTML = "";
+
+    for (let i = 1; i <= total; i++) {
+      const key = "q" + i;
+      const selected = form.elements[key] ? form.elements[key].value : "";
+      const isCorrect = selected === answers[key].correct;
+      if (isCorrect) correct++;
+
+      const status = !selected ? "wrong" : (isCorrect ? "correct" : "wrong");
+      const icon = isCorrect ? "\u2705" : "\u274C";
+      const yourAnswer = selected ? selected.toUpperCase() : "No answer";
+      const correctAnswer = answers[key].correct.toUpperCase();
+
+      reviewHTML += '<div class="review-item ' + status + '">';
+      reviewHTML += '<div class="ri-q">' + icon + " Question " + i + "</div>";
+      reviewHTML += '<div class="ri-detail">';
+      if (!isCorrect) {
+        reviewHTML += "Your answer: " + yourAnswer + " &mdash; Correct answer: " + correctAnswer + "<br>";
+      }
+      reviewHTML += answers[key].explain;
+      reviewHTML += "</div></div>";
+    }
+
+    const pct = Math.round((correct / total) * 100);
+    let grade;
+    if (pct === 100) grade = "Perfect score!";
+    else if (pct >= 80) grade = "Great understanding!";
+    else if (pct >= 60) grade = "Good, but review the summaries above for the ones you missed.";
+    else grade = "Consider re-reading the summaries above and trying again.";
+
+    document.getElementById("score-text").textContent = correct + " / " + total + " (" + pct + "%) — " + grade;
+    document.getElementById("answer-review").innerHTML = reviewHTML;
+    document.getElementById("quiz-result").style.display = "block";
+    document.getElementById("quiz-result").scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+})();
+</script>
+
+
+</div><!-- .content -->
+
+</body>
+</html>

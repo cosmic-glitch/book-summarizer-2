@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Vital Question — Book Summary Pro</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      line-height: 1.7;
+      color: #222;
+      background: #fafafa;
+    }
+    .app-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #2c2c2c;
+      padding: 14px 24px;
+    }
+    .content {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 32px 20px 40px;
+    }
+    .app-nav .app-name {
+      font-size: 1.05em;
+      font-weight: bold;
+      color: #e8e0d0;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+    }
+    .app-nav .app-name:hover {
+      color: #d4a843;
+    }
+    .app-nav .back-link {
+      font-size: 0.9em;
+      color: #999;
+      text-decoration: none;
+    }
+    .app-nav .back-link:hover {
+      color: #d4a843;
+    }
+    h1 {
+      font-size: 1.8em;
+      border-bottom: 2px solid #333;
+      padding-bottom: 10px;
+      margin-bottom: 5px;
+    }
+    .subtitle {
+      font-size: 1.1em;
+      color: #444;
+      margin: 2px 0 0 0;
+      font-style: italic;
+    }
+    .author {
+      font-style: italic;
+      color: #777;
+      font-size: 0.95em;
+      margin-bottom: 40px;
+    }
+    h2 {
+      font-size: 1.3em;
+      margin-top: 48px;
+      color: #1a1a1a;
+      border-left: 4px solid #555;
+      padding-left: 12px;
+    }
+    p {
+      margin-bottom: 14px;
+      text-align: justify;
+    }
+    details.counter {
+      background: #f0ece4;
+      border-left: 4px solid #b8860b;
+      padding: 14px 18px;
+      margin: 20px 0 28px 0;
+      border-radius: 0 6px 6px 0;
+    }
+    details.counter summary {
+      font-weight: bold;
+      font-size: 0.95em;
+      color: #8b6914;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    details.counter summary::-webkit-details-marker {
+      display: none;
+    }
+    details.counter summary::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    details.counter[open] summary::before {
+      transform: rotate(90deg);
+    }
+    details.counter p {
+      margin-top: 12px;
+      margin-bottom: 10px;
+      color: #3a3a3a;
+    }
+    details.counter p:last-child {
+      margin-bottom: 0;
+    }
+    .quiz-wrapper {
+      margin-top: 48px;
+      background: #f5f5f0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 16px 20px;
+    }
+    .quiz-toggle {
+      font-weight: bold;
+      font-size: 1.05em;
+      cursor: pointer;
+      color: #2a5a2a;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .quiz-toggle::-webkit-details-marker { display: none; }
+    .quiz-toggle::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    .quiz-wrapper[open] .quiz-toggle::before {
+      transform: rotate(90deg);
+    }
+    .q-block {
+      margin: 24px 0;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    .q-block:last-of-type { border-bottom: none; }
+    .q-label {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .q-block label {
+      display: block;
+      padding: 6px 10px;
+      margin: 4px 0;
+      border-radius: 4px;
+      cursor: pointer;
+      line-height: 1.5;
+    }
+    .q-block label:hover { background: #e8e8e0; }
+    #score-btn {
+      display: block;
+      margin: 28px auto 0;
+      padding: 12px 32px;
+      font-family: Georgia, serif;
+      font-size: 1em;
+      background: #2a5a2a;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #score-btn:hover { background: #1e441e; }
+    #quiz-result {
+      margin-top: 24px;
+      padding: 18px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    #score-text {
+      font-size: 1.15em;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .review-item {
+      margin-bottom: 14px;
+      padding: 10px 12px;
+      border-radius: 4px;
+    }
+    .review-item.correct { background: #e6f4e6; }
+    .review-item.wrong { background: #fce8e8; }
+    .review-item .ri-q { font-weight: bold; margin-bottom: 4px; }
+    .review-item .ri-detail { font-size: 0.93em; color: #444; }
+  </style>
+</head>
+<body>
+
+<nav class="app-nav">
+  <a href="index.html" class="app-name">Book Summary Pro</a>
+  <a href="index.html" class="back-link">&larr; All Books</a>
+</nav>
+
+<div class="content">
+
+<h1>The Vital Question</h1>
+<p class="subtitle">Why Is Life the Way It Is?</p>
+<p class="author">Nick Lane</p>
+
+<h2>Introduction: Why Is Life the Way It Is?</h2>
+
+<p>Lane opens by identifying what he calls a <b>black hole at the heart of biology</b>: all complex life shares a common ancestor, yet that ancestor appears only once in the history of the planet. Bacteria arose early and remained enormously successful, but they never crossed into the same kind of structural complexity seen in animals, plants, fungi, and protists. The author treats this as the book’s guiding puzzle: why do all <b>eukaryotes</b> inherit such a distinctive package of traits &mdash; a nucleus, sex, elaborate internal architecture, and even programmed death &mdash; when bacteria and archaea do not independently evolve close equivalents?</p>
+
+<p>He argues that modern biology often answers detailed mechanistic questions while leaving the deepest historical one untouched. For Lane, understanding disease, evolution, and even the prospects for life elsewhere depends on asking why cells came to work this way in the first place. The introduction therefore lays out the book’s central hypothesis: the rise of complex life was tied to a singular <b>endosymbiosis</b> between an archaeal host and the bacterium that became the <b>mitochondrion</b>, and the common thread linking the book’s chapters will be <b>energy</b> &mdash; especially the power stored in proton gradients across membranes.</p>
+
+<h2>Chapter 1: What Is Life?</h2>
+
+<p>Lane begins with the search for extraterrestrial life to make an uncomfortable point: questions about aliens are really questions about Earth, because biology still lacks a predictive theory of why life takes its observed form. He reviews the broad history of life and emphasizes the asymmetry between the two great kinds of cells. <b>Prokaryotes</b> &mdash; bacteria and archaea &mdash; dominate Earth in biochemical versatility, yet all visibly complex organisms descend from one eukaryotic lineage. That fact makes complexity <b>monophyletic</b>, not a repeated evolutionary outcome.</p>
+
+<p>The chapter presses hard against the old idea that a rise in <b>oxygen</b> simply liberated complexity. If oxygen alone were the decisive trigger, Lane argues, many bacterial lineages should have independently become larger and more intricate once oxygen accumulated in the atmosphere and oceans. Instead, the planet shows billions of years of bacterial success followed by one rare transition to eukaryotic complexity. By the end of the chapter, he has reframed the question of life from “What are the ingredients?” to “Why did only one lineage escape the bacterial condition?”</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Lane’s critique of oxygen-centered explanations is sharp, but many evolutionary biologists would treat <b>oxygen</b> as <b>necessary but not sufficient</b>, not as a complete rival theory. On that view, ecological changes, new predator-prey dynamics, and contingent genomic innovations could have made the eukaryotic transition extraordinarily rare without implying that oxygen should have produced multiple independent bacterial-to-animal trajectories.</p>
+</details>
+
+<h2>Chapter 2: What Is Living?</h2>
+
+<p>Where the first chapter asks about life’s large-scale pattern, the second asks what it means to be <b>alive</b> rather than merely organized. Lane uses viruses, spores, membranes, and thermodynamics to argue that living systems cannot be defined only by inheritance or structure. Living requires a continuous traffic with the environment: food, electrons, waste, and the maintenance of delicate internal order. In that sense, life is never a static thing; it is a process of staying away from equilibrium for as long as energy continues to flow.</p>
+
+<p>The chapter’s core claim is that all known life runs on the same fundamental logic. <b>Redox chemistry</b> moves electrons; electron flow is coupled to <b>proton gradients</b> across membranes; and those gradients drive the universal turbine-like enzyme <b>ATP synthase</b>. Building on Chapter 1’s question about the singular path to complexity, Lane now identifies the most ancient common machinery behind all cells. Life, in his telling, is inseparable from electrons falling toward lower-energy states and from membranes converting that fall into usable work.</p>
+
+<h2>Chapter 3: Energy at Life’s Origin</h2>
+
+<p>Lane next turns from living cells to the problem of the first cells. He dismisses simple “primordial soup” imagery as inadequate because life needs more than a stockpile of molecules. It requires a steady source of <b>reactive carbon</b>, a reliable input of <b>free energy</b>, catalysts to channel reactions, compartments that keep chemistry from dispersing, waste disposal, and eventually heredity. The key challenge is not merely making organic molecules, but sustaining a proto-metabolism robust enough to keep generating more of them.</p>
+
+<p>The chapter argues that <b>alkaline hydrothermal vents</b> best satisfy these conditions. In Lane’s account, vents offer hydrogen-rich fluids, carbon dioxide from the ocean, mineral catalysts, microporous rock compartments, and naturally occurring proton gradients. These conditions could have driven the reduction of CO<sub>2</sub> to simple organics in a way that resembles the core biochemistry of modern autotrophs. Building on Chapter 2’s emphasis on electrons and protons, Lane presents the origin of life as a geochemical energy problem before it became a genetic one.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The <b>alkaline hydrothermal vent</b> model is influential, but it is not a settled consensus. Researchers working on <b>RNA world</b> scenarios, wet-dry cycling, or prebiotic surface chemistry argue that some crucial molecules and polymers may form more readily outside submarine vents, so the origin-of-life field still lacks a single experimentally decisive winner.</p>
+</details>
+
+<h2>Chapter 4: The Emergence of Cells</h2>
+
+<p>Having argued that natural proton gradients could power prebiotic chemistry, Lane asks how true cells emerged from that setting. He uses conserved genes, universal bioenergetics, and the contrast between bacterial and archaeal membranes to suggest that the last universal common ancestor, or <b>LUCA</b>, was already strongly <b>chemiosmotic</b>. Rather than inventing modern respiration from scratch, the earliest cells may have sat within natural proton gradients and exploited them using simple proteins such as ATP synthase and related ion-translocating enzymes.</p>
+
+<p>The chapter’s distinctive idea is that early membranes had to be relatively <b>leaky</b>. A tightly sealed membrane would have destroyed the advantage of living in a natural proton gradient, whereas a leaky membrane could let that external disequilibrium do useful work. From there, selection for sodium-proton exchange and active pumping let cells internalize power generation and gradually sever their dependence on vents. Building directly on Chapter 3, Lane presents the divergence of bacteria and archaea as a story about membrane chemistry, ion gradients, and how life learned to carry its energy source with it.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The reconstruction of a <b>leaky LUCA</b> powered by natural gradients is elegant, but it remains an inference from modern cells and geochemical analogy rather than a direct historical record. Some origin-of-life researchers agree with the chemiosmotic emphasis while remaining skeptical that the exact membrane properties, ion couplings, and order of innovations can be recovered with such specificity.</p>
+</details>
+
+<h2>Chapter 5: The Origin of Complex Cells</h2>
+
+<p>Lane now arrives at the book’s central argumentative summit. He reviews common explanations for the rise of eukaryotes &mdash; especially the loss of the cell wall and the emergence of <b>phagocytosis</b> &mdash; and argues that none of them explains why complexity appeared only once. Bacteria can lose their walls without becoming dynamic predators, and many complex eukaryotes still possess cell walls. The real asymmetry, he says, is not one of basic cellular architecture alone but of <b>bioenergetic capacity</b>.</p>
+
+<p>The chapter introduces the book’s signature concept, <b>energy per gene</b>. Prokaryotes respire across their outer surface, so their energetic capacity scales with membrane area and quickly hits a ceiling as cells get larger. Eukaryotes broke that constraint by acquiring <b>mitochondria</b>, which brought thousands of internal respiratory membranes into the cell. A eukaryote can therefore support a much larger genome, more proteins, more regulation, and a more dynamic internal skeleton without starving each gene of energy. In Lane’s framing, mitochondria do not merely decorate a pre-existing complex cell; they make complexity economically possible.</p>
+
+<p>That energetic surplus helps explain why eukaryotes can accumulate new genes, shift genes from the endosymbiont to the nucleus, and experiment with structures that bacteria cannot sustain at scale. Building on the membrane constraints of Chapter 4, Lane argues that the singular origin of eukaryotes follows naturally from a singular successful endosymbiosis. Once a cell could carry many tiny powerhouses inside itself, the path opened to the nucleus, trafficking systems, shape-changing behavior, and the rest of the eukaryotic toolkit.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>Lane’s <b>energy per gene</b> argument is one of the book’s most famous claims, but it is also debated. Critics note that the size of the energetic gulf depends on how metabolism, scaling, and gene counts are compared, and discoveries around <b>Asgard archaea</b> have strengthened the view that some host-side complexity may have preceded fully modern mitochondria. The broad importance of bioenergetics is widely respected; the exact sequence of events remains contested.</p>
+</details>
+
+<h2>Chapter 6: Sex and the Origins of Death</h2>
+
+<p>Once Lane has established a cell within a cell, he asks how that unstable partnership could generate the universal features of eukaryotes. One major answer is <b>genomic conflict</b>. The bacterial endosymbiont brought with it mobile genetic elements and <b>introns</b>, turning the host genome into a far messier place than prokaryotic genomes had been. Lane argues that the <b>nucleus</b> arose as a solution to this crisis: transcription and splicing could happen in one compartment, while translation stayed outside, protecting ribosomes from unprocessed RNA.</p>
+
+<p>The chapter also argues that <b>sex</b> arose early, not late. Large, unstable genomes in small populations are vulnerable to mutational meltdown, and recombination provides a way to preserve function while permitting innovation. Because all major eukaryotic groups appear to share core sexual machinery, Lane treats sex as part of the original eukaryotic package rather than as a later embellishment. In his account, a cell energized by mitochondria gained the freedom to expand genetically, but it also inherited the burden of managing much more error-prone heredity.</p>
+
+<p>From there, Lane extends the same logic to <b>two sexes</b>, <b>uniparental inheritance</b> of mitochondria, and the division between <b>germline and soma</b>. If mitochondria from both parents competed inside one cell, selfish lineages could spread even when they harmed the larger organism. Restricting inheritance to one parent helps selection eliminate bad mitochondria; setting aside a protected germline helps preserve mitochondrial quality across generations. Building on Chapter 5, the chapter presents sex, mortality, and the sacrifice of the body as downstream consequences of the energetic windfall and internal tensions created by endosymbiosis.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The origins of <b>sex</b>, <b>mating types</b>, and the <b>germline</b> remain among the most contested problems in evolution. <b>Red Queen</b> parasite models, <b>DNA repair</b> models, and ecological explanations all illuminate part of the evidence, so many researchers would treat mitochondrial conflict as a major contributor rather than a single master explanation for every universal eukaryotic trait Lane groups together here.</p>
+</details>
+
+<h2>Chapter 7: The Power and the Glory</h2>
+
+<p>The final main chapter turns from ancient transitions to present-day physiology. Lane describes mitochondria as literal and figurative <b>mosaics</b>: their respiratory complexes are assembled from proteins encoded partly in mitochondrial DNA and partly in the nucleus. Electron transfer depends on exquisite physical spacing, so even very small mismatches between subunits can impair respiration. This means that every eukaryotic cell depends on a constantly negotiated partnership between two genomes that evolve at different rates and are inherited in different ways.</p>
+
+<p>That arrangement explains, for Lane, why mitochondrial problems radiate outward into disease, infertility, hybrid breakdown, and <b>apoptosis</b>. When mismatched components slow electron flow, the respiratory chain becomes over-reduced, <b>free radicals</b> accumulate, cytochrome c is released, and the cell can be pushed into controlled self-destruction. He also emphasizes the asymmetry of maternal inheritance: because mitochondrial genes pass mainly through mothers, selection has limited power to remove variants that harm males, a theme that links metabolism to sex differences and reproductive trade-offs.</p>
+
+<p>Yet Lane does not present free radicals only as damage. Building on Chapter 6’s emphasis on conflict and control, he shows how reactive oxygen species can also act as local signals that tune mitochondrial biogenesis, energy demand, and cellular decision-making. The chapter closes the book’s loop by bringing the ancient logic of proton gradients and endosymbiosis into everyday physiology: ageing, disease, development, and even athletic capacity still bear the mark of the bargain struck when one cell took up residence inside another.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The chapter’s account of <b>free radicals</b> and mitochondrial control is rich, but the older <b>free-radical theory of ageing</b> no longer commands universal support. Ageing is shaped by many interacting processes &mdash; including proteostasis, nutrient sensing, stem-cell dynamics, inflammation, and DNA damage &mdash; so many biologists would treat mitochondrial ROS as one important signaling and damage pathway within a broader causal network.</p>
+</details>
+
+<h2>Epilogue: From the Deep</h2>
+
+<p>Lane ends with the strange case of <i>Parakaryon myojinensis</i>, a deep-sea cell that looks tantalizingly intermediate between a prokaryote and a eukaryote. It has internal membranes and apparent endosymbionts, yet lacks the clean, canonical organization of known eukaryotes. The specimen becomes a narrative mirror of the book’s larger question: if complexity arose only once, what would an incomplete or alternative transition even look like? The epilogue uses that ambiguity to revisit the rarity and difficulty of the eukaryotic leap.</p>
+
+<p>Lane’s tentative conclusion is that the deep-sea organism may represent a peculiar modern echo of the ancient problem rather than a fully fledged new domain of life. More importantly, he reiterates the book’s broad claim that all life is fundamentally <b>chemiosmotic</b> and that complex life depends on the rare success of a <b>cell within a cell</b>. By the end, the “vital question” is answered not with a single magical invention, but with a chain of energetic constraints and opportunities that runs from hydrothermal vents to mitochondria, sex, death, and the possibility that complex life may be uncommon in the universe.</p>
+
+<details class="counter">
+  <summary>Counterpoints</summary>
+  <p>The epilogue’s deep-sea organism is fascinating, but without a genome sequence it cannot bear much interpretive weight. It may be an artefact of preparation, a highly derived eukaryote, or an unusual symbiosis that says little about the original rise of eukaryotes, so the chapter’s strongest conclusion is really about the <i>possibility</i> of repeated transitions rather than their demonstration.</p>
+</details>
+
+<h2 id="quiz-heading">Comprehension Quiz</h2>
+
+<details id="quiz-section" class="quiz-wrapper">
+  <summary class="quiz-toggle">Take the Quiz</summary>
+
+  <form id="quiz-form">
+    <div class="q-block">
+      <p class="q-label">1. What puzzle does Lane place at the center of the book?</p>
+      <label><input type="radio" name="q1" value="a"> Why viruses are hard to classify as living</label>
+      <label><input type="radio" name="q1" value="b"> Why complex life arose only once and shares traits absent in bacteria</label>
+      <label><input type="radio" name="q1" value="c"> Why photosynthesis evolved before respiration</label>
+      <label><input type="radio" name="q1" value="d"> Why multicellular life always requires chloroplasts</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">2. Why does Lane think oxygen alone cannot fully explain eukaryotic complexity?</p>
+      <label><input type="radio" name="q2" value="a"> Oxygen appeared only after eukaryotes already existed in large numbers</label>
+      <label><input type="radio" name="q2" value="b"> Oxygen is irrelevant to metabolism in all cells</label>
+      <label><input type="radio" name="q2" value="c"> If oxygen were sufficient, many bacterial lineages should have become complex independently</label>
+      <label><input type="radio" name="q2" value="d"> Oxygen can power only fermentation, not respiration</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">3. According to Chapter 2, what core mechanism unites all known life?</p>
+      <label><input type="radio" name="q3" value="a"> Redox reactions that generate proton gradients used by ATP synthase</label>
+      <label><input type="radio" name="q3" value="b"> DNA replication driven directly by sunlight</label>
+      <label><input type="radio" name="q3" value="c"> Cell walls made from the same polymer in all domains</label>
+      <label><input type="radio" name="q3" value="d"> Viral infection as the primary source of ATP</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">4. Which environment does Lane present as the strongest setting for life’s origin?</p>
+      <label><input type="radio" name="q4" value="a"> Dry desert salt flats exposed to intense ultraviolet light</label>
+      <label><input type="radio" name="q4" value="b"> Frozen polar lakes with no chemical gradients</label>
+      <label><input type="radio" name="q4" value="c"> Alkaline hydrothermal vents</label>
+      <label><input type="radio" name="q4" value="d"> The upper atmosphere around lightning storms</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">5. Why are alkaline hydrothermal vents so important in Lane’s argument?</p>
+      <label><input type="radio" name="q5" value="a"> They provide reactive carbon, energy gradients, catalysts, and compartments together</label>
+      <label><input type="radio" name="q5" value="b"> They are the only places on Earth where oxygen has ever existed</label>
+      <label><input type="radio" name="q5" value="c"> They create ready-made chromosomes and ribosomes</label>
+      <label><input type="radio" name="q5" value="d"> They eliminate the need for membranes or waste products</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">6. In Lane’s model of early cells, why must the first membranes be relatively leaky?</p>
+      <label><input type="radio" name="q6" value="a"> Leakiness keeps genes from mutating</label>
+      <label><input type="radio" name="q6" value="b"> Leakiness lets cells exploit natural proton gradients in vents</label>
+      <label><input type="radio" name="q6" value="c"> Leakiness makes phagocytosis easier</label>
+      <label><input type="radio" name="q6" value="d"> Leakiness prevents ATP synthase from evolving</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">7. What innovation lets cells eventually become independent of hydrothermal vents?</p>
+      <label><input type="radio" name="q7" value="a"> The loss of all ion gradients</label>
+      <label><input type="radio" name="q7" value="b"> The evolution of active ion pumping and better internalized chemiosmosis</label>
+      <label><input type="radio" name="q7" value="c"> A universal switch from protons to chlorophyll</label>
+      <label><input type="radio" name="q7" value="d"> Complete abandonment of membranes</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">8. What does the phrase <i>energy per gene</i> explain in Chapter 5?</p>
+      <label><input type="radio" name="q8" value="a"> Why bacteria have more genes than eukaryotes</label>
+      <label><input type="radio" name="q8" value="b"> Why prokaryotes remain structurally simple while eukaryotes can support far greater complexity</label>
+      <label><input type="radio" name="q8" value="c"> Why chloroplasts replaced mitochondria in animals</label>
+      <label><input type="radio" name="q8" value="d"> Why every gene requires its own membrane</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">9. Why are mitochondria decisive for Lane’s explanation of complex cells?</p>
+      <label><input type="radio" name="q9" value="a"> They remove the need for DNA in the nucleus</label>
+      <label><input type="radio" name="q9" value="b"> They turn respiration into an internal, massively multiplied source of power</label>
+      <label><input type="radio" name="q9" value="c"> They make cell walls unnecessary in every lineage</label>
+      <label><input type="radio" name="q9" value="d"> They prevent lateral gene transfer entirely</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">10. How does Lane connect introns to the origin of the nucleus?</p>
+      <label><input type="radio" name="q10" value="a"> Introns forced cells to separate splicing and translation into different compartments</label>
+      <label><input type="radio" name="q10" value="b"> Introns directly became mitochondria</label>
+      <label><input type="radio" name="q10" value="c"> Introns made ATP synthase unnecessary</label>
+      <label><input type="radio" name="q10" value="d"> Introns allowed bacteria to engulf archaea</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">11. Why does Lane argue that sex evolved very early in eukaryotes?</p>
+      <label><input type="radio" name="q11" value="a"> Because early eukaryotes had no mitochondria and needed a substitute</label>
+      <label><input type="radio" name="q11" value="b"> Because recombination helped large, unstable genomes avoid mutational collapse</label>
+      <label><input type="radio" name="q11" value="c"> Because sex is required before any cell can make ATP</label>
+      <label><input type="radio" name="q11" value="d"> Because only sexual cells can build membranes</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">12. What is the evolutionary point of uniparental mitochondrial inheritance in Lane’s account?</p>
+      <label><input type="radio" name="q12" value="a"> It increases competition among mitochondrial lineages inside each cell</label>
+      <label><input type="radio" name="q12" value="b"> It guarantees that fathers contribute more mitochondrial DNA than mothers</label>
+      <label><input type="radio" name="q12" value="c"> It reduces internal conflict and helps selection remove bad mitochondria between generations</label>
+      <label><input type="radio" name="q12" value="d"> It makes meiosis unnecessary</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">13. Why are mitochondrial and nuclear genes such a delicate combination?</p>
+      <label><input type="radio" name="q13" value="a"> They never encode parts of the same machinery</label>
+      <label><input type="radio" name="q13" value="b"> Respiratory complexes depend on precisely matched subunits encoded by both genomes</label>
+      <label><input type="radio" name="q13" value="c"> Nuclear genes change too slowly to affect mitochondria</label>
+      <label><input type="radio" name="q13" value="d"> Mitochondria no longer participate in respiration</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">14. In Chapter 7, what can free radicals do besides causing damage?</p>
+      <label><input type="radio" name="q14" value="a"> They can serve as local signals for apoptosis or mitochondrial biogenesis</label>
+      <label><input type="radio" name="q14" value="b"> They can replace ATP as the universal energy currency</label>
+      <label><input type="radio" name="q14" value="c"> They can eliminate the need for oxygen entirely</label>
+      <label><input type="radio" name="q14" value="d"> They can force all cells to become multicellular</label>
+    </div>
+
+    <div class="q-block">
+      <p class="q-label">15. What broader conclusion does the epilogue draw from the ambiguous deep-sea cell?</p>
+      <label><input type="radio" name="q15" value="a"> Complex life probably emerges easily wherever there is seawater</label>
+      <label><input type="radio" name="q15" value="b"> The specimen proves that eukaryotes evolved many times independently</label>
+      <label><input type="radio" name="q15" value="c"> The specimen shows that mitochondria are unrelated to complexity</label>
+      <label><input type="radio" name="q15" value="d"> Rare cell-within-cell transitions may be the key reason complex life is uncommon</label>
+    </div>
+
+    <button type="button" id="score-btn" onclick="scoreQuiz()">Score My Answers</button>
+
+    <div id="quiz-result" style="display:none;">
+      <p id="score-text"></p>
+      <div id="answer-review"></div>
+    </div>
+
+  </form>
+</details>
+
+<script>
+(function() {
+  const answers = {
+    q1: { correct: "b", explain: "Lane frames the core mystery as why complex life appeared only once and why all eukaryotes share a suite of traits absent in bacteria." },
+    q2: { correct: "c", explain: "His point is that oxygen may matter, but if it were the whole explanation, multiple bacterial lineages should have independently crossed into comparable complexity." },
+    q3: { correct: "a", explain: "The chapter presents life as universally chemiosmotic: electrons move through redox reactions, protons are pumped across membranes, and ATP synthase converts that gradient into ATP." },
+    q4: { correct: "c", explain: "Lane argues that alkaline hydrothermal vents best combine the right carbon sources, energy gradients, catalysts, and compartments." },
+    q5: { correct: "a", explain: "Their importance lies in offering several necessities at once: carbon, energy, catalytic surfaces, and natural compartmentalization." },
+    q6: { correct: "b", explain: "In Lane's model, early cells exploit external proton gradients, which works only if membranes are permeable enough for that disequilibrium to matter." },
+    q7: { correct: "b", explain: "Cells become independent when they can generate and manage their own ion gradients instead of depending on vent chemistry alone." },
+    q8: { correct: "b", explain: "Energy per gene is Lane's way of describing why prokaryotes hit a complexity ceiling while mitochondria let eukaryotes support far larger and more dynamic genomes." },
+    q9: { correct: "b", explain: "Mitochondria internalize respiration on many membranes, creating a huge energetic surplus that can support complex cell architecture." },
+    q10: { correct: "a", explain: "Lane connects invading introns to the need to keep RNA processing away from ribosomes, which helps explain nucleus-cytosol compartmentalization." },
+    q11: { correct: "b", explain: "He argues that recombination is an early solution to the instability of large, intron-heavy, mutation-prone eukaryotic genomes." },
+    q12: { correct: "c", explain: "Passing mitochondria mainly through one parent reduces competition between mitochondrial lineages and helps selection act on mitochondrial quality." },
+    q13: { correct: "b", explain: "Respiratory machinery is a mosaic built from both genomes, so incompatibilities can directly impair electron transfer and energy production." },
+    q14: { correct: "a", explain: "Lane stresses that reactive oxygen species are not only damaging by-products; they can also act as signals that trigger apoptosis or stimulate mitochondrial growth." },
+    q15: { correct: "d", explain: "The epilogue reinforces the idea that successful endosymbiotic transitions are rare, which may be why complex life is uncommon even if simple life is not." },
+  };
+
+  window.scoreQuiz = function() {
+    const form = document.getElementById("quiz-form");
+    let correct = 0;
+    const total = Object.keys(answers).length;
+    let reviewHTML = "";
+
+    for (let i = 1; i <= total; i++) {
+      const key = "q" + i;
+      const selected = form.elements[key] ? form.elements[key].value : "";
+      const isCorrect = selected === answers[key].correct;
+      if (isCorrect) correct++;
+
+      const status = !selected ? "wrong" : (isCorrect ? "correct" : "wrong");
+      const icon = isCorrect ? "\u2705" : "\u274C";
+      const yourAnswer = selected ? selected.toUpperCase() : "No answer";
+      const correctAnswer = answers[key].correct.toUpperCase();
+
+      reviewHTML += '<div class="review-item ' + status + '">';
+      reviewHTML += '<div class="ri-q">' + icon + " Question " + i + "</div>";
+      reviewHTML += '<div class="ri-detail">';
+      if (!isCorrect) {
+        reviewHTML += "Your answer: " + yourAnswer + " &mdash; Correct answer: " + correctAnswer + "<br>";
+      }
+      reviewHTML += answers[key].explain;
+      reviewHTML += "</div></div>";
+    }
+
+    const pct = Math.round((correct / total) * 100);
+    let grade;
+    if (pct === 100) grade = "Perfect score!";
+    else if (pct >= 80) grade = "Great understanding!";
+    else if (pct >= 60) grade = "Good, but review the summaries above for the ones you missed.";
+    else grade = "Consider re-reading the summaries above and trying again.";
+
+    document.getElementById("score-text").textContent = correct + " / " + total + " (" + pct + "%) — " + grade;
+    document.getElementById("answer-review").innerHTML = reviewHTML;
+    document.getElementById("quiz-result").style.display = "block";
+    document.getElementById("quiz-result").scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+})();
+</script>
+
+</div>
+
+</body>
+</html>

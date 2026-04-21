@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Little Book of Common Sense Investing — Book Summary Pro</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      line-height: 1.7;
+      color: #222;
+      background: #fafafa;
+    }
+    .app-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #2c2c2c;
+      padding: 14px 24px;
+    }
+    .content {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 32px 20px 40px;
+    }
+    .app-nav .app-name {
+      font-size: 1.05em;
+      font-weight: bold;
+      color: #e8e0d0;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+    }
+    .app-nav .app-name:hover {
+      color: #d4a843;
+    }
+    .app-nav .back-link {
+      font-size: 0.9em;
+      color: #999;
+      text-decoration: none;
+    }
+    .app-nav .back-link:hover {
+      color: #d4a843;
+    }
+    h1 {
+      font-size: 1.8em;
+      border-bottom: 2px solid #333;
+      padding-bottom: 10px;
+      margin-bottom: 5px;
+    }
+    .subtitle {
+      font-size: 1.1em;
+      color: #444;
+      margin: 2px 0 0 0;
+      font-style: italic;
+    }
+    .author {
+      font-style: italic;
+      color: #777;
+      font-size: 0.95em;
+      margin-bottom: 40px;
+    }
+    h2 {
+      font-size: 1.3em;
+      margin-top: 48px;
+      color: #1a1a1a;
+      border-left: 4px solid #555;
+      padding-left: 12px;
+    }
+    p {
+      margin-bottom: 14px;
+      text-align: justify;
+    }
+    details.counter {
+      background: #f0ece4;
+      border-left: 4px solid #b8860b;
+      padding: 14px 18px;
+      margin: 20px 0 28px 0;
+      border-radius: 0 6px 6px 0;
+    }
+    details.counter summary {
+      font-weight: bold;
+      font-size: 0.95em;
+      color: #8b6914;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    details.counter summary::-webkit-details-marker {
+      display: none;
+    }
+    details.counter summary::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    details.counter[open] summary::before {
+      transform: rotate(90deg);
+    }
+    details.counter p {
+      margin-top: 12px;
+      margin-bottom: 10px;
+      color: #3a3a3a;
+    }
+    details.counter p:last-child {
+      margin-bottom: 0;
+    }
+    .quiz-wrapper {
+      margin-top: 48px;
+      background: #f5f5f0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 16px 20px;
+    }
+    .quiz-toggle {
+      font-weight: bold;
+      font-size: 1.05em;
+      cursor: pointer;
+      color: #2a5a2a;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .quiz-toggle::-webkit-details-marker { display: none; }
+    .quiz-toggle::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    .quiz-wrapper[open] .quiz-toggle::before {
+      transform: rotate(90deg);
+    }
+    .q-block {
+      margin: 24px 0;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    .q-block:last-of-type { border-bottom: none; }
+    .q-label {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .q-block label {
+      display: block;
+      padding: 6px 10px;
+      margin: 4px 0;
+      border-radius: 4px;
+      cursor: pointer;
+      line-height: 1.5;
+    }
+    .q-block label:hover { background: #e8e8e0; }
+    #score-btn {
+      display: block;
+      margin: 28px auto 0;
+      padding: 12px 32px;
+      font-family: Georgia, serif;
+      font-size: 1em;
+      background: #2a5a2a;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #score-btn:hover { background: #1e441e; }
+    #quiz-result {
+      margin-top: 24px;
+      padding: 18px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    #score-text {
+      font-size: 1.15em;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .review-item {
+      margin-bottom: 14px;
+      padding: 10px 12px;
+      border-radius: 4px;
+    }
+    .review-item.correct { background: #e6f4e6; }
+    .review-item.wrong { background: #fce8e8; }
+    .review-item .ri-q { font-weight: bold; margin-bottom: 4px; }
+    .review-item .ri-detail { font-size: 0.93em; color: #444; }
+  </style>
+</head>
+<body>
+
+<nav class="app-nav">
+  <a href="index.html" class="app-name">Book Summary Pro</a>
+  <a href="index.html" class="back-link">&larr; All Books</a>
+</nav>
+
+<div class="content">
+
+<h1>The Little Book of Common Sense Investing</h1>
+<p class="subtitle">The Only Way to Guarantee Your Fair Share of Stock Market Returns</p>
+<p class="author">John C. Bogle</p>
+
+<h2>Introduction: Don't Allow a Winner's Game to Become a Loser's Game</h2>
+
+<p>The winning strategy for investing in stocks is to own all of the nation's publicly held businesses at very low cost, thereby capturing almost the entire return those businesses generate through dividends and earnings growth. The best implementation of this strategy is the <b>traditional index fund (TIF)</b>&mdash;a broadly diversified, low-cost portfolio that simply holds the entire stock market and does so forever. The TIF eliminates the risk of picking individual stocks, the risk of overweighting certain sectors, and the risk of manager selection. Only <b>market risk</b> remains.</p>
+
+<p>The power of <b>compounding returns</b> is extraordinary: at 7% annually, each dollar invested grows to $2 in a decade, $4 in two decades, $7.50 in three decades, and $30 in five decades. However, this miracle works in reverse for costs. The financial system extracts roughly $565 billion per year from investors. Before costs, beating the market is a zero-sum game; after costs, it becomes a loser's game&mdash;the financial croupiers always win. Investors as a group earn the market's return, and after paying intermediaries, net returns inevitably fall short by the full amount of those costs.</p>
+
+<p>Equity index fund assets rose 168-fold from $28 billion to $4.6 trillion between 1994 and 2017, as the index revolution transformed how Americans invest. This 10th Anniversary Edition adds new chapters on dividends, asset allocation, and retirement planning, but its central message remains unchanged: get out of the casino, stop paying unnecessary costs, and earn your fair share of whatever returns business enterprises generate.</p>
+
+<h2>Chapter One: A Parable&mdash;The Gotrocks Family</h2>
+
+<p>An imagined family, the Gotrocks, owns 100% of every U.S. stock and reaps 100% of all corporate earnings and dividends each year. Their wealth compounds steadily&mdash;a winner's game. Then "Helpers" arrive: brokers who charge commissions to rearrange ownership among family members, money managers who charge advisory fees to pick stocks, and consultants who charge to evaluate the managers. Each layer of Helpers consumes a share of the family's returns. Taxes on trading further reduce their wealth. What began as a 100% share of the corporate pie shrinks to 60%.</p>
+
+<p>The family's wisest member finally speaks: "Get rid of all your brokers, money managers, and consultants. Then your family will again reap 100% of however large a pie corporate America bakes." They follow his advice, return to holding all stocks passively&mdash;and that is exactly what an index fund does. Warren Buffett's formulation captures the moral: <i>"For investors as a whole, returns decrease as motion increases."</i> The profound conflict of interest between the investment business and the investors it serves can only be resolved by eliminating unnecessary intermediation.</p>
+
+<h2>Chapter Two: Rational Exuberance&mdash;Shareholder Gains Must Match Business Gains</h2>
+
+<p>Over the long term, the returns earned by stock market investors must match the returns generated by the businesses underlying the stocks. The total return on stocks consists of two components: <b>investment return</b> (the initial dividend yield plus subsequent earnings growth) and <b>speculative return</b> (changes in the price/earnings ratio). From 1900 to 2016, the average annual total return on stocks was 9.5%&mdash;almost entirely from investment return (9.0%), with speculation contributing only 0.5 percentage points. Each dollar invested in 1900 grew to $43,650 by 2016.</p>
+
+<p>While investment returns have been remarkably steady decade by decade (generally 8-13% annually), speculative returns swing wildly. P/E ratios expand and contract with investor emotions&mdash;greed, hope, and fear&mdash;producing large swings in market return relative to business return. But these divergences are temporary. <b>Reversion to the mean (RTM)</b> reliably pulls P/E ratios back toward historical norms over time, and every decade of significantly negative speculative return has historically been followed by a decade of recovery.</p>
+
+<p>The stock market consists of two games: the <b>"real market"</b>, where corporations compete and generate actual earnings and dividends, and the <b>"expectations market"</b>, where investors speculate about what other investors will expect. The expectations market is "a giant distraction to the business of investing." In the long run, it is economics&mdash;dividend yields and earnings growth&mdash;that determines investment outcomes, not the short-term noise of changing P/E multiples. As Benjamin Graham observed, in the short run the market is a voting machine; in the long run, it is a weighing machine.</p>
+
+<h2>Chapter Three: Cast Your Lot with Business&mdash;Win by Keeping It Simple</h2>
+
+<p>Owning all U.S. businesses is accomplished most simply through a <b>total stock market index fund</b>. The S&P 500 Index, representing approximately 85% of U.S. market capitalization, and the broader Dow Jones Wilshire Total Stock Market Index, which includes all 3,599+ publicly traded U.S. companies, track each other with near-perfect precision (correlation of 0.99 since 1926). From 1926 through 2016, the S&P 500 earned 10.0% annually and the Total Stock Market Index earned 9.8%&mdash;an essentially indistinguishable difference. Occam's razor applies: when there are multiple solutions to a problem, choose the simplest one.</p>
+
+<p>The SPIVA (Standard & Poor's Indices versus Active) report provides comprehensive evidence of index superiority. Over the 15-year period from 2001 to 2016, an astonishing 90% of actively managed mutual funds underperformed their relevant benchmark indexes across all nine style categories (large-, mid-, and small-cap, each sorted by growth, core, and value). The S&P 500 outpaced 97% of large-cap core active funds over this period. Index fund superiority is consistent and overwhelming.</p>
+
+<p>The long-term record of the world's first index mutual fund (now the Vanguard 500 Index Fund) is concrete evidence of what this strategy delivers: $15,000 invested at the initial offering in August 1976 grew to $913,340 by September 2016&mdash;a 40-year compound annual return of 10.9%. However, with today's lower dividend yields, slower expected earnings growth, and elevated market valuations, future returns will almost certainly fall well below that historical rate.</p>
+
+<h2>Chapter Four: How Most Investors Turn a Winner's Game into a Loser's Game</h2>
+
+<p>The <b>"relentless rules of humble arithmetic"</b> govern investing with mathematical certainty. Investors as a group earn the market's gross return before costs. After the deduction of all costs&mdash;management fees, operating expenses, sales loads, and portfolio transaction costs&mdash;investors' collective net returns must fall short of the market return by exactly the total amount of those costs. This is not a theory; it is arithmetic. Before costs, beating the market is a zero-sum game. After costs, it is a loser's game.</p>
+
+<p>The all-in annual cost of owning an actively managed equity mutual fund reaches 2-3%: the expense ratio averages about 1.3% (0.8% asset-weighted), sales charges amortize to roughly 0.5-1.0% annually depending on holding period, and hidden portfolio turnover costs add another estimated 1%. These costs are relentless and compound over time. Assuming a 7% gross market return and 2% annual costs, a $10,000 investment over 50 years grows to $294,600 in an index fund (no costs) versus only $114,700 in the average fund. The $179,900 difference&mdash;61% of potential wealth&mdash;is consumed by the tyranny of compounding costs. The investor put up 100% of the capital, assumed 100% of the risk, and kept less than 40% of the potential return.</p>
+
+<p>The financial intermediation system has created enormous fortunes for those who manage other people's money. Their self-interest compels them to obscure this reality. Yet the arithmetic is undeniable: fund managers as a group are smart, experienced, and honest, but they compete with each other&mdash;when one buys, another sells. There is no aggregate gain; there is only the shared loss equal to the transaction costs paid to financial intermediaries.</p>
+
+<h2>Chapter Five: Focus on the Lowest-Cost Funds</h2>
+
+<p><b>Fund performance comes and goes. Costs go on forever.</b> While past performance provides no reliable guide to future results, costs persist and compound. An analysis of equity mutual funds over 25 years (1991-2016) shows that funds in the lowest-cost quartile earned a net annual return of 9.4% versus 8.3% for the highest-cost quartile&mdash;a 1.1-percentage-point annual advantage arising almost entirely from lower costs. Compounded over 25 years, the cumulative difference is staggering: 855% for the lowest-cost funds versus 632% for the highest-cost funds, a superiority of over 35%.</p>
+
+<p>When all-in costs (expense ratios plus estimated turnover costs) are calculated, the lowest-cost quartile of active funds carries total annual costs of about 0.91%, while the highest-cost quartile carries 2.34%. The gross returns before costs are virtually identical across all four quartiles (ranging from 10.3% to 10.6%)&mdash;confirming that costs, not manager skill, explain virtually all the return differences. Higher-cost funds also carry higher risk, further widening their risk-adjusted return disadvantage.</p>
+
+<p>The S&P 500 index fund&mdash;with all-in costs of just 0.08%&mdash;outperforms even the lowest-cost quartile of active funds. Its gross return of 9.2% compounded to a net return of 9.1%, and its lower volatility produced a risk-adjusted return also of 9.1%. Morningstar's conclusion: "In every single time period and data point tested, low-cost funds beat high-cost funds. Expense ratios are strong predictors of performance. Investors should make expense ratios a primary test in fund selection." If managers take nothing, investors receive everything&mdash;the full market return.</p>
+
+<h2>Chapter Six: Dividends Are the Investor's (Best?) Friend</h2>
+
+<p><b>Dividend yields</b> are a vital component of long-term stock market returns. Since 1926, dividends have contributed an average annual return of 4.2%, accounting for 42% of the S&P 500's total return of 10.0% for the period. The power of reinvested dividends is almost beyond comprehension: a $10,000 investment in the S&P 500 in January 1926, with dividends reinvested, grew to $59.1 million by 2017. Without dividend reinvestment, the same investment grew to only $1.7 million&mdash;a gap of $57.4 million created entirely by compounding dividend income.</p>
+
+<p>Despite this importance, actively managed mutual funds effectively confiscate dividend income through their expense structures. Management fees are based on fund assets, not dividend income. When dividend yields are low (as in recent years), fund expenses consume a staggering proportion of income. In actively managed growth funds, expenses consumed 100% of fund dividend income in 2016; in value funds, 58%. In contrast, a low-cost growth index fund consumed just 4% of dividend income, and a low-cost value index fund consumed only 2%. This structural misalignment between fund advisor incentives and shareholder income interests is rarely disclosed clearly to investors.</p>
+
+<h2>Chapter Seven: The Grand Illusion</h2>
+
+<p>The reported fund return is not the return earned by the typical fund investor. Funds calculate and report time-weighted returns&mdash;the change in asset value per share. But investors earn dollar-weighted returns, which account for the timing and magnitude of their cash flows into and out of funds. The pattern is consistent: investors pour money into funds after strong performance and withdraw after poor performance, almost always at the wrong time. Over 25 years (1991-2016), while the S&P 500 earned 9.1% annually and the average equity fund earned 7.8%, the average fund <i>investor</i> earned only 6.3%&mdash;trailing the fund itself by an additional 1.5 percentage points per year.</p>
+
+<p>On a $10,000 initial investment over 25 years, this produces stark results: the index fund investor earned a nominal profit of $73,100; the average fund investor earned just $36,100&mdash;less than 50% of what was available. After adjusting for 2.7% average annual inflation, the real profit was $34,500 for the index fund investor versus only $14,400 for the average fund investor. These penalties compound over time.</p>
+
+<p>Two forces drive this shortfall: <b>counterproductive timing</b> and <b>adverse fund selection</b>. Investors invested only $18 billion in equity funds in 1990 when stocks were cheap, but poured $420 billion in at the 1999-2000 peak. They simultaneously selected the hottest, most aggressive growth funds&mdash;pouring 95% of new money into those funds at the peak. The fund industry amplified this pattern by introducing and heavily advertising new speculative funds precisely when they were most likely to disappoint. The index fund eliminates these temptations by removing the illusion of choice and the emotional cycle of greed and fear.</p>
+
+<h2>Chapter Eight: Taxes Are Costs, Too</h2>
+
+<p>Income taxes represent another layer of costs that systematically erode the returns of actively managed fund investors. The average actively managed equity fund turns over 78% of its portfolio annually&mdash;an average stock holding period of just 19 months, versus six years in the 1945-1965 era. This frenetic trading generates substantial capital gains distributions, typically taxed at ordinary income rates rather than the lower long-term capital gains rate. Federal taxes cost taxable investors in active funds approximately 1.2-1.5 percentage points per year, versus only 0.45 percentage points for index fund investors.</p>
+
+<p>After taxes (estimated federal only), the average actively managed equity fund earned a net annual return of 6.6% over 25 years, compared to 8.6% for the index fund. On a $10,000 initial investment, this produced after-tax profits of $39,700 for active fund investors versus $68,300 for index fund investors&mdash;an after-tax shortfall of nearly $29,000, or less than 60% of what was available through the index fund. The index fund's buy-and-hold strategy creates exceptional <b>tax efficiency</b>: annual portfolio turnover of only 3% means capital gains are deferred until shares are sold, and for investors who leave shares to heirs, the cost basis is stepped up and no capital gain is ever recognized.</p>
+
+<p>A paradox exists: the index fund's rock-bottom costs mean that virtually all dividend income flows directly to shareholders, making it slightly less tax-efficient for dividend income than active funds (which consume much of their dividend income in expenses). Yet overall, the combination of low costs, low turnover, and high dividend pass-through gives the index fund a decisive advantage for taxable investors.</p>
+
+<h2>Chapter Nine: When the Good Times No Longer Roll</h2>
+
+<p>The extraordinary stock market returns of the era since Vanguard's founding in 1974 are unlikely to repeat. From 1974 to 2017, the S&P 500 returned 11.7% annually. But investment return (dividends plus earnings growth) accounted for only 8.8% of this; a full 2.9 percentage points came from speculative return&mdash;the P/E multiple more than tripling from 7.5x to 23.7x. This speculative tailwind, which contributed 25% of the total return, cannot recur at the same magnitude.</p>
+
+<p>Rational return expectations for the decade ahead begin with the <b>sources of return</b>. Current dividend yield is 2.0% (versus the historical 4.4%), representing a 2.4-percentage-point headwind. Earnings growth is expected to continue at roughly 4-5% annually (below the historical 6% GDP growth). Together, these suggest an investment return of approximately 6%. If P/E ratios ease from 23.7x to around 20x, speculative return subtracts roughly 2 percentage points. A rational expectation for nominal stock returns over the coming decade: approximately 4%. For bonds, the current yield on a broadly diversified portfolio of ~3.1% is the best predictor of future bond returns. A 60/40 balanced portfolio would earn a gross nominal return of roughly 3.6%.</p>
+
+<p>In this lower-return environment, costs become even more punishing. Active management costs of 1.5% combined with 2% inflation would consume the entire 3.6% expected balanced portfolio return, leaving a real return of approximately zero for the average active fund investor. A low-cost index fund with costs of 0.1% would preserve roughly 1.5% in real annual return&mdash;not great, but positive, and vastly better than zero. Five options exist for investors: (1) invest in a very low-cost index fund, (2) select rock-bottom-cost funds&mdash;only these two have sound odds of success. Selecting funds based on past long-term performance, recent short-term performance, or professional advice are all strategies with poor odds.</p>
+
+<h2>Chapter Ten: Selecting Long-Term Winners&mdash;Don't Look for the Needle, Buy the Haystack</h2>
+
+<p>Identifying in advance the mutual funds that will outperform the market over the long term is extraordinarily difficult. Of the 355 equity funds in existence in 1970, fully 281 (79%) had gone out of business by 2016. Of the 74 survivors, only 10 outperformed the S&P 500 by more than one percentage point per year&mdash;and only two of those 355 funds (Fidelity Magellan and Fidelity Contrafund) delivered truly superior performance, exceeding the index by more than two percentage points annually. The odds of selecting one of these two funds were one-half of one percent. These are terrible odds.</p>
+
+<p>The Fidelity Magellan story illustrates the dynamics precisely. Under Peter Lynch (1977-1990), the fund dramatically outpaced the market, earning investors extraordinary returns on its then-tiny $7 million-to-$1 billion asset base. But as the fund grew to $105 billion, performance deteriorated. From 1994 to 1999, Magellan trailed the S&P 500 by 2.5 percentage points annually; from 2000 to 2016, it trailed by 1.8 points annually. Assets shrank by 85% from their peak as investors fled. This reflects Warren Buffett's insight: <i>"A fat wallet is the enemy of superior returns."</i> Fidelity Contrafund shows a similar arc: brilliant performance under Will Danoff has recently stalled as assets crossed $100 billion.</p>
+
+<p>The solution is to stop looking for the needle and instead buy the haystack. An S&P 500 Index fund would have roughly matched or exceeded the returns of 345 of the original 355 funds&mdash;both the 281 that failed and 64 of the 74 survivors. Over an investment lifetime, an investor in actively managed funds will likely own 30 to 40 different funds as managers change and funds merge or close. The index fund requires no such turnover: the same non-manager will track its index for a lifetime, at consistent low cost.</p>
+
+<h2>Chapter Eleven: "Reversion to the Mean"&mdash;Yesterday's Winners, Tomorrow's Losers</h2>
+
+<p><b>Reversion to the mean (RTM)</b> is one of the most powerful and most ignored forces in investing. In 2016, over 150% of net investor cash flows went to four- and five-star Morningstar-rated funds. But according to a 2014 Wall Street Journal study, only 14% of five-star funds in 2004 still held five stars a decade later; 50% dropped to three or fewer stars. Chasing star ratings is a systematically losing strategy.</p>
+
+<p>A comprehensive study of all actively managed U.S. equity funds over two consecutive nonoverlapping five-year periods (2006-2011 and 2011-2016) provides overwhelming evidence. Of the top-quintile performers in the first period, only 13% remained in the top quintile in the second period. More dramatically, 27% of the first-period winners fell to the bottom quintile&mdash;far worse than random chance would predict. An even earlier period (2001-2006 versus 2006-2011) shows identical patterns with remarkable precision. In both studies, subsequent returns are distributed nearly randomly across quintiles, demonstrating that first-period performance has almost no predictive value for the second period.</p>
+
+<p>The reason RTM dominates persistence is clear. To determine statistically whether a manager is skillful rather than lucky requires between 20 and 800 years of monitoring&mdash;and even 75% confidence requires tracking performance for 16 to 115 years. In practical terms, what investors perceive as skill is largely luck. As Daniel Kahneman observed, human minds are strongly biased toward causal explanations and resist "mere statistics"&mdash;we attribute past performance to skill even when it reflects random variation. The result: investors systematically buy yesterday's winners and are systematically disappointed.</p>
+
+<h2>Chapter Twelve: Seeking Advice to Select Funds?&mdash;Look Before You Leap</h2>
+
+<p>Financial advisers&mdash;whether registered investment advisers (RIAs), stockbrokers, or insurance agents&mdash;can provide valuable services: asset allocation guidance, tax planning, emotional coaching, and helping investors avoid costly mistakes like chasing past performance or market timing. For the 40 million American families who invest through intermediaries (roughly 70% of mutual fund investors), these services can genuinely improve outcomes. However, as a group, advisers have not demonstrated the ability to select funds that beat the market.</p>
+
+<p>The evidence against broker-assisted fund selection is stark. A Harvard Business School study of 1996-2002 found that broker-channel funds underperformed direct-channel funds by a margin that cost investors approximately $9 billion per year. Specifically, the weighted-average annual return of equity funds recommended by advisers was just 2.9% versus 6.6% for self-directed investors. In the Fidelity-sponsored study of 1994-2003, broker-managed fund families (Merrill Lynch, Goldman Sachs, Morgan Stanley, Wells Fargo, Smith Barney) all ranked at the bottom of the fund industry, with Merrill Lynch 18 percentage points below average. The structural reason: brokers must sell something every day, creating incentives to promote whatever product is currently popular rather than what best serves clients long-term.</p>
+
+<p>The Merrill Lynch debacle of March 2000 illustrates the pattern vividly. At the peak of the internet bubble, Merrill launched two funds&mdash;Focus Twenty and Internet Strategies&mdash;raising $2 billion from clients. Internet Strategies collapsed 86% within 18 months and was quietly buried. Focus Twenty fell 79% cumulatively and still exists under a different name with only $82 million remaining. Clients lost roughly 80% of their assets. Robo-advisers, charging roughly 0.25% annually and typically recommending index fund portfolios, represent a better-aligned alternative. The developing fiduciary standard&mdash;requiring advisers to put clients' interests first&mdash;represents the appropriate regulatory response to this structural conflict.</p>
+
+<h2>Chapter Thirteen: Profit from the Majesty of Simplicity and Parsimony</h2>
+
+<p>The lessons of previous chapters converge on a single conclusion: the <b>traditional index fund (TIF)</b> with rock-bottom costs is the optimal investment vehicle for the vast majority of investors. A Monte Carlo simulation confirms this with statistical rigor. Assuming index fund costs of 0.25% and active management costs of 2%, only 29% of active managers would be expected to beat the index over one year, 15% over five years, 9% over 10 years, 5% over 25 years, and just 2% over 50 years. The probability of sustained active outperformance approaches zero over a lifetime.</p>
+
+<p>Not all index funds are created equal. Among the 40+ S&P 500 index funds in 2016, annual expense ratios ranged from 0.04% (Vanguard 500 Admiral) to 0.66% (Invesco S&P 500 Index), with nearly a third carrying front-end sales loads of up to 5.75%. The impact compounds substantially: over 33 years (1984-2016), the Vanguard 500 Index Fund grew an initial $10,000 to $294,900, versus $232,100 for the Wells Fargo Equity Index Fund (with its 5.5% initial load and 0.80% expense ratio)&mdash;a 27% difference arising entirely from the cost differential. Even seemingly small differences between low-cost index funds matter: at 6% annual return over 25 years, the gap between a 0.04% and a 0.25% expense ratio produces a $2,058 difference on a $10,000 investment.</p>
+
+<p>Indexing works across all market segments. S&P reports show that international indexes outpaced 89% of actively managed international equity funds over 15 years, and emerging market indexes outpaced 90% of active emerging market funds. The argument that active management has an edge in "less efficient" markets is consistently refuted by the data. For sector investing, index funds are the most efficient vehicle&mdash;but betting on sectors is itself a loser's game, as investor emotions reliably cause them to chase past sector performance and underperform the very sectors they invest in.</p>
+
+<h2>Chapter Fourteen: Bond Funds&mdash;Where the Relentless Rules of Humble Arithmetic Also Prevail</h2>
+
+<p>The same arithmetic that defeats active equity fund managers applies even more directly to bond funds. Bond returns are dominated by a single factor: the <b>prevailing level of interest rates</b> at the time of purchase. The correlation between initial bond yield and subsequent 10-year return since 1900 is 0.95&mdash;almost perfectly predictive. At mid-2017, a broadly diversified 50% Treasury / 50% investment-grade corporate bond portfolio yields approximately 3.1%, making that the best estimate for bond returns over the coming decade. Historically, bonds have earned 5.3% since 1900 and 8.0% since 1974&mdash;a bull market tailwind that will not recur.</p>
+
+<p>Despite the dominance of interest rate levels in determining bond returns, bond fund managers still face the same cost disadvantage as equity managers. SPIVA data for 2001-2016 show that bond indexes outperformed an average of 85% of actively managed bond funds across six categories. In long-term government and investment-grade corporate bond categories, the index outpaced 97% of active funds. The cost advantage is decisive: average bond index fund expenses of 0.10% versus 0.75% for active bond funds produce an average annual performance gap of about 0.55 percentage points, closely matching the cost differential.</p>
+
+<p>Holding bonds serves three purposes despite their lower expected returns: (1) bonds outpace stocks in roughly one-third of years and in about one-quarter of five-year periods; (2) reducing portfolio volatility helps investors avoid counterproductive panic selling during equity bear markets; and (3) the current bond yield (3.1%) still exceeds the stock dividend yield (2.0%). The total bond market index fund&mdash;tracking the Bloomberg Barclays U.S. Aggregate Bond Index, holding 63% government-backed securities and no below-investment-grade bonds&mdash;is a high-quality, low-cost implementation of broad bond market exposure.</p>
+
+<h2>Chapter Fifteen: The Exchange-Traded Fund (ETF)&mdash;A Trader to the Cause?</h2>
+
+<p>The <b>exchange-traded fund (ETF)</b>, introduced in 1993 with the creation of the Spider (S&P 500 SPDR), is structurally an index fund designed to facilitate trading. The original concept of the traditional index fund&mdash;broad diversification, long time horizon, minimal cost, tax efficiency, and a reliable share of market returns&mdash;is subverted when the index fund format is used for active trading. By 2017, ETF assets had grown to $2.5 trillion (half of all index fund assets), with over 2,000 ETFs available. The Spider alone traded 26 billion shares in 2016 ($5.5 trillion in dollar volume), with an annual turnover rate of 2,900%. Institutional traders&mdash;banks, hedge funds, and professional traders holding about half of all ETF assets&mdash;turned over their ETF holdings at nearly 1,000% annually.</p>
+
+<p>For investors, ETF trading reliably produces worse results than the funds themselves. A study of the 20 best-performing ETFs during 2003-2006 found that 19 of the 20 delivered investor returns below the ETF's own reported return. The average shortfall was 5 percentage points annually, with one case showing a 14-percentage-point gap (iShares Austria reported 42% but investors earned 28%). This pattern mirrors the "grand illusion" of Chapter 7: performance-chasing investors buy after appreciation and sell after decline, systematically underperforming the vehicles they trade. The "double whammy"&mdash;counterproductive market timing plus heavy commissions and taxes from frequent trading&mdash;is wealth-depleting.</p>
+
+<p>Broad-market ETFs that track the entire U.S. or international stock market, bought and held for the long term, are equivalent to traditional index funds and can be appropriate investments. Narrow-sector ETFs, leveraged and inverse ETFs, and "smart beta" factor ETFs used as trading vehicles are another matter entirely. Only 32% of ETF assets reside in broadly diversified stock market funds (versus 62% for TIFs); 23% of ETF assets are in concentrated, speculative, inverse, and leveraged strategies. The ETF is, in the words of the creator of the first index fund, "a trader to the cause."</p>
+
+<h2>Chapter Sixteen: Index Funds That Promise to Beat the Market</h2>
+
+<p>The commercial success of traditional index funds has spawned a new breed of products: <b>smart beta</b> (also called "strategic beta" or "factor-based") ETFs that claim to systematically outperform cap-weighted indexes by weighting portfolios according to factors such as value, momentum, size, dividends, profitability, or fundamental measures (revenues, cash flows, etc.). Smart beta ETF assets grew from $100 billion in 2006 to over $750 billion by 2017. Their promoters describe themselves as "the new Copernicans"&mdash;a revolutionary paradigm shift in indexing.</p>
+
+<p>The historical record fails to support these claims. A 10-year comparison through 2016 of the two major smart beta strategies against the S&P 500 shows that the fundamental index fund earned slightly higher returns (7.6% vs. 6.9%) but with higher risk (17.7% vs. 15.3% standard deviation), while the dividend-weighted index earned slightly lower returns (6.6%) with lower risk (15.1%). When risk-adjusted via the Sharpe ratio, the S&P 500 index fund (0.40) equals or bests both alternatives (0.39 and 0.38). All three funds had a correlation of 0.97 or higher with the S&P 500. These smart beta ETFs are essentially high-priced closet index funds.</p>
+
+<p>The deeper problem is data mining. Factor strategies that are promoted historically outperformed traditional indexes in the past&mdash;no one would promote a strategy with a poor historical record. But past factor performance does not predict future factor performance. Today's winning factors are tomorrow's losing factors. Reversion to the mean strikes factor strategies just as it strikes individual fund managers. Carl von Clausewitz's maxim applies: <i>"The greatest enemy of a good plan is the dream of a perfect plan."</i> The traditional cap-weighted index fund guarantees your fair share of market returns. Smart beta ETFs offer uncertainty at higher cost.</p>
+
+<h2>Chapter Seventeen: What Would Benjamin Graham Have Thought about Indexing?</h2>
+
+<p>Benjamin Graham, whose 1949 masterpiece <i>The Intelligent Investor</i> established the foundations of security analysis and value investing, was in many respects the intellectual predecessor of index fund investing. Graham's central advice for <b>defensive investors</b>&mdash;the majority, who lack the time, determination, or expertise for security analysis&mdash;was to be "satisfied with the reasonably good return obtainable from a defensive portfolio" and to "stoutly resist the recurrent temptation to increase this return by deviating into other paths." This is precisely what the index fund delivers.</p>
+
+<p>Graham's views evolved over his career. In 1949, he found fund managers "competently managed, making fewer mistakes than the typical small investor." By 1965, he cautioned that "unsoundly managed funds can produce spectacular but largely illusionary profits for a while, followed inevitably by calamitous losses." In a 1976 interview, taken almost at the exact moment of the first index fund's public offering, Graham was asked directly: "Can the average manager obtain better results than the Standard & Poor's Index over the years?" His response: "No." When asked whether investors should be content with the market's return, he said: "Yes." He added: "I see no reason why they should be content with results inferior to those of an indexed fund or pay standard fees for such inferior results."</p>
+
+<p>Graham's late-career acknowledgment that detailed security analysis no longer generates sufficient excess returns to justify its cost is equally striking. In the same 1976 interview, he said: "I am no longer an advocate of elaborate techniques of security analysis in order to find superior value opportunities. This was a rewarding activity, say, 40 years ago, but the situation has changed a great deal since then." Warren Buffett, Graham's most famous protégé, confirmed in 2006 that Graham had explicitly endorsed the index fund, and added his own endorsement: <i>"A low-cost index fund is the most sensible equity investment for the great majority of investors. My mentor, Ben Graham, took this position many years ago, and everything I have seen since convinces me of its truth."</i></p>
+
+<h2>Chapter Eighteen: Asset Allocation I&mdash;Stocks and Bonds</h2>
+
+<p>The allocation of a portfolio between stocks and bonds is arguably the most important investment decision of a lifetime. A landmark 1986 academic study found that <b>asset allocation</b> accounted for 94% of the differences in total returns achieved by institutionally managed pension funds&mdash;far more than fund selection or market timing. Benjamin Graham's classic guidance established a range of 25% to 75% in stocks, with 50/50 as the sensible default. These proportions, while developed in 1949 when stocks yielded 6.9% versus bonds' 1.9%, remain a reasonable starting point despite the completely different yield environment of 2017 (stocks 2.0%, bonds 3.1%).</p>
+
+<p>Two fundamental factors determine the appropriate allocation: <b>ability to take risk</b> (financial position, future liabilities, time horizon) and <b>willingness to take risk</b> (emotional tolerance for volatility). Younger investors accumulating assets over long horizons can rationally accept more equity risk; older investors in or near retirement should give greater weight to portfolio stability and income reliability. Four key portfolio decisions face every investor: (1) strategic stock/bond ratio, (2) fixed ratio versus tactical adjustment (the evidence favors fixed ratios with periodic rebalancing), (3) domestic versus international exposure, and (4) active versus index funds (clear evidence favors index).</p>
+
+<p>A critical insight connects asset allocation to costs: a conservative 25/75 stock/bond portfolio using low-cost index funds (0.05% stocks, 0.10% bonds) can actually produce a higher net return (3.66%) than an aggressive 75/25 portfolio using high-cost active funds (2% stocks, 1% bonds, producing 3.50%). Costs can more than offset the equity risk premium. This does not mean investors should always reduce equity exposure, but it means that the cost dimension must be integrated into allocation decisions. At age 88, with a 50/50 stock/bond portfolio, the right balance remains genuinely uncertain&mdash;concern about holding too much in equities alternates with concern about holding too little.</p>
+
+<h2>Chapter Nineteen: Asset Allocation II&mdash;Retirement Investing</h2>
+
+<p>The 60/40 <b>balanced index fund</b> created by Vanguard in 1992 provides concrete evidence of the power of low-cost diversified allocation. Over its 25-year history through 2016, the fund earned an annual return of 8.0% versus 6.3% for the average balanced mutual fund peer&mdash;a 1.7-percentage-point annual advantage that compounded to 536% cumulative return versus 334% for peers. The entire advantage is explained by the 1.20-percentage-point lower expense ratio (0.14% vs. 1.34%). During the 2000-2002 bear market (S&P 500 -38%), the balanced index fund fell only 14%; during 2008 (-37% for S&P 500), it fell only 22%. Low-cost diversification provides meaningful downside protection without sacrificing long-term performance.</p>
+
+<p><b>Target-date funds (TDFs)</b>, which automatically shift from stocks to bonds as the target retirement date approaches, have grown to nearly $1 trillion in assets. They offer simplicity&mdash;"set it and forget it"&mdash;and can serve investors well. However, actively managed TDFs carry average expense ratios of 0.70%, versus 0.13% for index-based TDFs. The cost difference compounds significantly over decades of saving. Investors should examine TDF holdings carefully, and favor index-based TDFs.</p>
+
+<p><b>Social Security</b> must be incorporated into asset allocation decisions as a bond-like asset. Consider an investor with $1 million in mutual funds at age 62 whose Social Security benefit has an imputed value of approximately $200,000 (discounted for mortality). Total portfolio value is $1.2 million. To achieve a true 50/50 stock/bond allocation, the investor should hold $600,000 in stocks and $400,000 in bond funds&mdash;recognizing that the $200,000 Social Security provides the remaining bond-like exposure. Deferring Social Security from age 62 to 72 increases monthly payments by roughly 70% ($1,174 to $1,974), but requires approximately 14 years to recoup the foregone payments&mdash;a break-even calculation each investor must assess against their own health and longevity expectations. A 4% annual withdrawal rate (income plus capital) is a useful rule of thumb for sustainable retirement spending, but flexibility is essential: reduce withdrawals in down markets, maintain reserves in good ones.</p>
+
+<h2>Chapter Twenty: Investment Advice That Meets the Test of Time</h2>
+
+<p>Despite the inevitable uncertainty of investing, much is known with confidence. The traditional index fund remains the only investment that virtually guarantees earning a fair share of stock market returns, because it is the only investment strategy that cannot, by mathematical definition, fail to deliver the market's return minus minimal costs. The number of investment strategies that are worse is infinite. The core portfolio for most investors: an S&P 500 or total stock market index fund for equities, and a total bond market index fund for bonds. High-tax-bracket investors may substitute high-grade intermediate-term municipal bonds for the taxable bond allocation.</p>
+
+<p>The commonsense rules that govern successful long-term investing parallel the wisdom of Benjamin Franklin, whose maxims from three centuries ago apply with undiminished force. On saving: start investing at the earliest possible moment and continue regularly, for time is the investor's greatest ally. On costs: basic arithmetic works&mdash;net return equals gross return minus costs, so minimize all investment costs. On risk: not investing is the greatest long-term risk; short-term volatility must be accepted. On knowledge: information about costs and risks is priceless; information about short-term fund returns is close to meaningless. On markets: no individual knows more than the market; attempting to exploit such alleged knowledge is a loser's game. On diversification: hold a broadly diversified portfolio of stocks and bonds so that only market risk remains. On steadfastness: stay the course&mdash;patience and consistency are the most valuable assets for the long-term investor.</p>
+
+<p>The way to wealth is to capitalize on the magic of long-term compounding of returns while simultaneously avoiding the tyranny of long-term compounding of costs. Wall Street's interests are served by the maxim "Don't just stand there&mdash;do something!" Investors' interests are served by its opposite: <b>"Don't do something&mdash;just stand there."</b> Own the market through a low-cost index fund, reinvest all dividends, maintain an appropriate stock/bond allocation, and never waver. Common sense, not complexity, is the foundation of investment success.</p>
+
+</div><!-- .content -->
+
+</body>
+</html>

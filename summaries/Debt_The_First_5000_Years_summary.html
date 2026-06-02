@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Debt: The First 5,000 Years — Book Summary Pro</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      line-height: 1.7;
+      color: #222;
+      background: #fafafa;
+    }
+    .app-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #2c2c2c;
+      padding: 14px 24px;
+    }
+    .content {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 32px 20px 40px;
+    }
+    .app-nav .app-name {
+      font-size: 1.05em;
+      font-weight: bold;
+      color: #e8e0d0;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+    }
+    .app-nav .app-name:hover {
+      color: #d4a843;
+    }
+    .app-nav .back-link {
+      font-size: 0.9em;
+      color: #999;
+      text-decoration: none;
+    }
+    .app-nav .back-link:hover {
+      color: #d4a843;
+    }
+    h1 {
+      font-size: 1.8em;
+      border-bottom: 2px solid #333;
+      padding-bottom: 10px;
+      margin-bottom: 5px;
+    }
+    .subtitle {
+      font-size: 1.1em;
+      color: #444;
+      margin: 2px 0 0 0;
+      font-style: italic;
+    }
+    .author {
+      font-style: italic;
+      color: #777;
+      font-size: 0.95em;
+      margin-bottom: 40px;
+    }
+    h2 {
+      font-size: 1.3em;
+      margin-top: 48px;
+      color: #1a1a1a;
+      border-left: 4px solid #555;
+      padding-left: 12px;
+    }
+    p {
+      margin-bottom: 14px;
+      text-align: justify;
+    }
+    details.counter {
+      background: #f0ece4;
+      border-left: 4px solid #b8860b;
+      padding: 14px 18px;
+      margin: 20px 0 28px 0;
+      border-radius: 0 6px 6px 0;
+    }
+    details.counter summary {
+      font-weight: bold;
+      font-size: 0.95em;
+      color: #8b6914;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    details.counter summary::-webkit-details-marker {
+      display: none;
+    }
+    details.counter summary::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    details.counter[open] summary::before {
+      transform: rotate(90deg);
+    }
+    details.counter p {
+      margin-top: 12px;
+      margin-bottom: 10px;
+      color: #3a3a3a;
+    }
+    details.counter p:last-child {
+      margin-bottom: 0;
+    }
+    .quiz-wrapper {
+      margin-top: 48px;
+      background: #f5f5f0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 16px 20px;
+    }
+    .quiz-toggle {
+      font-weight: bold;
+      font-size: 1.05em;
+      cursor: pointer;
+      color: #2a5a2a;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .quiz-toggle::-webkit-details-marker { display: none; }
+    .quiz-toggle::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    .quiz-wrapper[open] .quiz-toggle::before {
+      transform: rotate(90deg);
+    }
+    .q-block {
+      margin: 24px 0;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    .q-block:last-of-type { border-bottom: none; }
+    .q-label {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .q-block label {
+      display: block;
+      padding: 6px 10px;
+      margin: 4px 0;
+      border-radius: 4px;
+      cursor: pointer;
+      line-height: 1.5;
+    }
+    .q-block label:hover { background: #e8e8e0; }
+    #score-btn {
+      display: block;
+      margin: 28px auto 0;
+      padding: 12px 32px;
+      font-family: Georgia, serif;
+      font-size: 1em;
+      background: #2a5a2a;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #score-btn:hover { background: #1e441e; }
+    #quiz-result {
+      margin-top: 24px;
+      padding: 18px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    #score-text {
+      font-size: 1.15em;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .review-item {
+      margin-bottom: 14px;
+      padding: 10px 12px;
+      border-radius: 4px;
+    }
+    .review-item.correct { background: #e6f4e6; }
+    .review-item.wrong { background: #fce8e8; }
+    .review-item .ri-q { font-weight: bold; margin-bottom: 4px; }
+    .review-item .ri-detail { font-size: 0.93em; color: #444; }
+  </style>
+</head>
+<body>
+
+<nav class="app-nav">
+  <a href="index.html" class="app-name">Book Summary Pro</a>
+  <a href="index.html" class="back-link">&larr; All Books</a>
+</nav>
+
+<div class="content">
+
+<h1>Debt</h1>
+<p class="subtitle">The First 5,000 Years</p>
+<p class="author">David Graeber</p>
+
+<h2>Chapter One: On the Experience of Moral Confusion</h2>
+
+<p>The maxim <i>&ldquo;surely one has to pay one&rsquo;s debts&rdquo;</i> feels self-evident, yet it is not, in fact, an economic statement at all&mdash;it is a <b>moral</b> one. Even orthodox economic theory contradicts it: a lender is supposed to accept risk, which is precisely why bankruptcy law exists. A bank that was guaranteed repayment no matter how reckless the loan would have no reason to lend wisely. The global debt system, embodied in the <b>International Monetary Fund</b>, behaves as if this risk did not exist, treating repayment as an absolute moral imperative regardless of consequence. When IMF-imposed austerity forced Madagascar to cut a mosquito-eradication program, ten thousand people died&mdash;an outcome that the logic of debt rendered unremarkable, because the money was owed.</p>
+
+<p>The peculiar power of debt is that it can make relations founded on violence appear moral, and can make the victim seem to be the party in the wrong. For thousands of years conquerors and gangsters alike have told their victims they <i>owe</i> them something. Third World debtor nations are overwhelmingly countries that were once conquered by the very powers they now owe; Haiti, founded by rebel slaves who defeated Napoleon, was saddled with an impossible 150-million-franc indemnity that made its name a synonym for poverty. By contrast, U.S. foreign debt&mdash;funneled into the Treasury by states that are effectively military protectorates&mdash;looks less like a loan than like <b>tribute</b>. The decisive variable, in the end, is the gun behind the transaction.</p>
+
+<p>Debt acquires its uniquely corrosive force because money allows a moral obligation to be <b>precisely quantified</b>, and thereby made impersonal and transferable. An obligation owed to a specific person carries human texture; a sum owed at interest does not require either party to consider the other&rsquo;s needs at all. This capacity to turn morality into cold arithmetic is what justifies outcomes that would otherwise seem obscene&mdash;and quantification and violence almost always travel together. For at least five thousand years the struggle between rich and poor has largely taken the form of conflicts between creditors and debtors, and popular insurrections have begun, again and again, with the ritual destruction of the debt records.</p>
+
+<p>The financial crisis that began in September 2008 briefly opened the possibility of a genuine public reckoning about the nature of money and debt, but the conversation never took place: banks were rescued, small debtors were not, and the United States began drifting back toward something resembling debtors&rsquo; prisons. History also punctures the assumption that today&rsquo;s &ldquo;virtual&rdquo; money is unprecedented. <b>Credit money came first</b>&mdash;credit systems, tabs, and accounts predate coinage by millennia&mdash;and history oscillates between ages dominated by bullion and ages dominated by virtual credit. Understanding debt therefore requires dismantling the founding myths of economics, beginning with the myth of barter.</p>
+
+<h2>Chapter Two: The Myth of Barter</h2>
+
+<p>What distinguishes a mere obligation from a <b>debt</b> is that a debt can be exactly quantified, and that requires money. Economics textbooks open with a standard sequence: first there was barter, then money was invented to overcome its inconveniences, and only later did credit develop. The story always begins in an imagined village where a butcher, a baker, and a brewer struggle with the <b>&ldquo;double coincidence of wants&rdquo;</b>&mdash;the problem that to trade directly, each party must want exactly what the other offers&mdash;until money arrives to make exchange efficient.</p>
+
+<p>This account, repeated in nearly every textbook, is presented as a thought experiment rather than history, and for good reason: no society organized around barter has ever been found. For roughly a century, anthropologists have observed that in real communities lacking cash, people do not barter; they run elaborate webs of <b>credit and debt</b>, with everyone owing everyone else in a dozen different ways. Barter, where it occurs, tends to happen between strangers or enemies, not neighbors.</p>
+
+<p>The myth nonetheless became foundational when <b>Adam Smith</b>, in <i>The Wealth of Nations</i> (1776), grounded economics in a supposed natural human <i>&ldquo;propensity to truck, barter, and exchange one thing for another.&rdquo;</i> From this propensity, in his telling, flow the division of labor, the gradual emergence of a convenient commodity to serve as currency, and finally precious-metal coinage&mdash;all arising spontaneously from trade, without any need for government. The three textbook functions of money (medium of exchange, unit of account, store of value) all presuppose this primacy of exchange. The historical record reverses the sequence: abstract systems of accounting and credit are older than any coin.</p>
+
+<h2>Chapter Three: Primordial Debts</h2>
+
+<p>The myth of barter survives not because evidence supports it but because it is indispensable to economics as a discipline. Smith aimed to establish economics as a <b>Newtonian science</b> with its own self-regulating laws&mdash;the <b>&ldquo;invisible hand&rdquo;</b> functioning as the agent of Divine Providence&mdash;which required imagining the market as a natural sphere independent of the state. The element this conveniently downplays is government policy: in Smith&rsquo;s own England, the market was being actively fostered by law, police, and deliberate monetary management.</p>
+
+<p>An older rival tradition offers a different account. The <b>Credit Theory of money</b> (associated with Mitchell-Innes) holds that money is not a commodity but a measure of debt&mdash;a coin is essentially an IOU, and a unit of currency measures one&rsquo;s trust in other people. The <b>State Theory</b>, or <b>Chartalism</b> (G.F. Knapp), holds that money is a creature of the state: by issuing coins, demanding them back as taxes, and accepting whatever it chooses in payment, a government can conjure markets into being&mdash;the most efficient way to provision a standing army being to pay soldiers in coin and then tax the population in that same coin. English <b>tally sticks</b> and the founding loan to the Bank of England (which has never been repaid, and cannot be without dissolving the currency) illustrate how money can simply be circulating government debt. <b>Keynes</b>, after his own immersion in Mesopotamian banking records, concluded that for at least four thousand years money has effectively been a creature of the state.</p>
+
+<p><b>Primordial-debt theory</b>, developed largely in France (Aglietta, Orl&eacute;ans, Th&eacute;ret), attempts to ground all of this in something deeper: the claim that every person owes an infinite, original <b>debt to society</b>&mdash;a debt first expressed through religion, then assumed by the state. Early Vedic texts furnish the imagery, treating human existence itself as a debt owed to the gods and repaid through sacrifice; the king, as guardian of this cosmic debt, thereby acquires the right to levy taxes.</p>
+
+<p>This theory does not withstand scrutiny. &ldquo;Society&rdquo; is a deceptive concept, generally a synonym for &ldquo;nation,&rdquo; and the whole complex of ideas&mdash;that society is a bounded entity to which we owe a debt the state can collect&mdash;actually emerged only around the time of the <b>French Revolution</b>, with thinkers like Comte and Durkheim; it is, in effect, the ultimate nationalist myth. In the ancient world, moreover, free citizens generally did not pay direct taxes at all&mdash;only conquered populations did&mdash;and Mesopotamian kings, far from imposing cosmic debts, periodically <i>cancelled</i> private ones in &ldquo;clean slate&rdquo; amnesties. The first recorded word for freedom, the Sumerian <b>amargi</b>, literally means <i>&ldquo;return to mother&rdquo;</i>&mdash;the homecoming of debt-pawns released from bondage. The supposed opposition between state and market is itself false: states created markets, and markets require states.</p>
+
+<h2>Chapter Four: Cruelty and Redemption</h2>
+
+<p>Money is neither purely a commodity nor purely an IOU but perpetually both&mdash;the two sides of a single coin, as one observation has it, the stamp of political authority on one face and the measure of exchange value on the other. Within a community almost anything can serve as money, from local lead tokens to Chinese gaming counters; for transactions with outsiders, universally acceptable precious metal is preferred. Money therefore hovers between a commodity and a debt-token, and which aspect prevails has always been a matter of <b>political contestation</b> rather than an inherent law.</p>
+
+<p>The myth of barter and the myth of primordial debt turn out to be two sides of the same coin: both presuppose that human life is fundamentally a matter of exchange. <b>Nietzsche</b>, in <i>On the Genealogy of Morals</i>, took Smith&rsquo;s premises to their logical extreme, deriving guilt and morality from the creditor-debtor relation&mdash;noting that the German <i>Schuld</i> means both &ldquo;debt&rdquo; and &ldquo;guilt&rdquo;&mdash;and culminating in Christianity, where God pays Himself back with His own son. The premise is deliberately monstrous, and that is the point: starting from the assumption that humans are calculating exchangers necessarily produces a universe of sin and debt. The retort to it is the response of an Inuit hunter who refused thanks for shared meat: <i>&ldquo;by gifts one makes slaves and by whips one makes dogs.&rdquo;</i></p>
+
+<p>The very vocabulary of salvation is financial. <b>Redemption</b> originally means buying something back, or recovering a pledge held against a loan&mdash;and the example uppermost in the minds of the Biblical prophets was the redemption of family members pledged as debt-pawns. The Hebrew kingdoms suffered Mesopotamian-style debt crises; Nehemiah responded with a clean-slate edict, and the <b>Law of Jubilee</b> institutionalized the periodic cancellation of debts and freeing of the bonded. In the New Testament, redemption becomes the wiping clean of all moral debt at the end of time, while the <b>Parable of the Unforgiving Servant</b>&mdash;in which a man forgiven an impossible debt is damned for refusing to forgive a trivial one&mdash;dramatizes the impossibility of true forgiveness within a world that frames morality as accounting.</p>
+
+<p>What gives debtors&rsquo; protests their distinctive moral force, in a way that protests against slavery or caste rarely achieved, is that <b>debt is premised on equality</b>. A slave or an untouchable is defined as intrinsically inferior; a debtor and a creditor begin as formal equals, parties to a contract. To watch a wealthy &ldquo;cousin&rdquo; seize one&rsquo;s vineyard and carry off one&rsquo;s children, justified by the claim that a contract is a contract, registers as a profound betrayal precisely because the two were supposed to be the same kind of person. For most of human history, money evoked not friendly swaps of potatoes for shoes but the selling of children, ransom, conquest, and the terror of families torn apart.</p>
+
+<h2>Chapter Five: A Brief Treatise on the Moral Grounds of Economic Relations</h2>
+
+<p>Economic life cannot be reduced to exchange, nor can all morality be reduced to reciprocity. The relation between a mother and child, for instance, is plainly moral yet not reciprocal, and a debt that could never be repaid is hardly a debt at all. Mapping the moral foundations of economic life requires recognizing <b>three distinct principles</b>, all of which operate in every human society and frequently pull against one another: <b>communism</b>, <b>exchange</b>, and <b>hierarchy</b>.</p>
+
+<p><b>Communism</b>, defined here not as a system of property but as any relation operating on the maxim <i>&ldquo;from each according to their abilities, to each according to their needs,&rdquo;</i> is the true foundation of all sociability. It is at work whenever someone hands a coworker a tool without demanding payment, whenever strangers help in an emergency, and in the ordinary courtesies of conversation. This <b>&ldquo;baseline communism&rdquo;</b> underlies even commercial life; its hallmark is that no accounts are kept, because the relationship is assumed to be permanent.</p>
+
+<p><b>Exchange</b> operates on an entirely different logic: <b>equivalence</b>. It is a back-and-forth tending toward balance, in which accounts <i>are</i> kept and the entire relationship can be cancelled and walked away from at any moment. Gift exchange, by contrast, often works in the opposite direction from commercial exchange, becoming a contest of generosity&mdash;but it still presupposes rough equality of status between the parties. <b>Hierarchy</b>, the third principle, does not work by reciprocity at all but by the logic of precedent and custom: a gift to a superior tends to fix a relationship rather than demand return, and goods moving up and down a ranked order follow habit, not exchange. These three principles are not stages of history but ever-present possibilities, and the moral confusion surrounding debt arises from the constant tension among them.</p>
+
+<h2>Chapter Six: Games with Sex and Death</h2>
+
+<p>Conventional economic history makes much of the human race disappear&mdash;especially women&mdash;and sanitizes the violence with which money was actually entangled. A more accurate category is the <b>human economy</b>: an economic system concerned not with accumulating wealth but with creating, destroying, and rearranging human beings. In such economies, <b>social currencies</b> (wampum, brass rods, raffia cloth, whale teeth, cattle) are rarely used to buy ordinary goods; they are used to arrange marriages, settle feuds, mark births and deaths, and rearrange relations between people.</p>
+
+<p>One influential account (Philippe Rospab&eacute;) holds that such money is not a means of payment at all but an <b>acknowledgment of a debt that cannot be paid</b>. <b>Bridewealth</b> is not the purchase of a woman&mdash;a husband cannot sell his wife&mdash;but recognition that the only true equivalent of a human life is another human life; among the Tiv, the proper marriage was an exchange of sisters, and brass rods could never fully discharge the obligation. The same logic governs <b>wergeld</b> or bloodwealth: cattle paid to a murder victim&rsquo;s family acknowledge a life owed while denying that any number of cattle could equal a life, so that among the Nuer a feud is placed permanently &ldquo;on hold&rdquo; rather than truly settled.</p>
+
+<p>The Lele of the Congo turned this principle into the organizing logic of their entire society through a system of <b>blood-debts</b>: every death was attributed to someone, who then owed the victim&rsquo;s kin a human life, payable only by transferring a young woman as a &ldquo;pawn.&rdquo; Crucially, the wall between human lives and mere objects could be breached only by <b>violence</b>: when a claimant sold his case to a village capable of force, a life suddenly became exchangeable for a fixed sum of cloth&mdash;the same price as a slave. This reveals the deeper mechanism: to make a person saleable, one must first rip them from the web of relationships that makes them who they are. <b>Slavery</b> is the extreme of this&mdash;people stolen from their context and stripped of kin&mdash;and the <b>Atlantic slave trade</b> operated as one vast chain of credit and debt, in which human beings were the ultimate commodity, with many enslaved precisely because of debts.</p>
+
+<h2>Chapter Seven: Honor and Degradation</h2>
+
+<p>A slave is, in a profound sense, socially <b>dead</b>: ripped from all context, alienated from kin and community, bound to a master by pure force rather than any moral relation, and reduced to utter degradation. Yet the master&rsquo;s ability to strip away another&rsquo;s dignity becomes the very foundation of his <b>honor</b>. Honor, in this sense, is <i>surplus dignity</i>&mdash;a heightened consciousness of power founded on the capacity to degrade others&mdash;which is why it is simultaneously a matter of integrity and notoriously fragile, demanding constant defense. The slave-girl money (<b>cumal</b>) of early medieval Ireland makes this explicit: a king&rsquo;s &ldquo;honor price&rdquo; was reckoned in slave women because the value of honor is ultimately the value of the power to turn others into nothing.</p>
+
+<p>The same intersection of money, debt, and honor produced <b>patriarchy</b>. In the earliest Sumerian records, around 3000&ndash;2500 BC, women appear as rulers, merchants, scribes, and officials; over the following millennium their freedoms eroded, culminating in seclusion, veiling, and loss of independent legal status. This decline tracked the spread of commerce and an explosion of <b>debt</b> that threatened to turn everything&mdash;including women&rsquo;s bodies&mdash;into commodities. Marriage payments began to resemble purchase; the poor, unable to sell their wives outright, could pledge them as debt-pawns; and the gravest crisis centered on prostitution, as women once associated with sacred temple roles were pushed into commercial sex through slavery and debt.</p>
+
+<p>Patriarchy originated as a reaction&mdash;a reassertion of paternal authority and the jealous protection of women&rsquo;s sexual reputations, framed as a revolt against the corrupt commercial city (Babylon as &ldquo;the great whore&rdquo;). The first known reference to obligatory veiling, in a Middle Assyrian law code, sharply separated &ldquo;respectable&rdquo; women&mdash;those who could never be bought or sold&mdash;from those who could. In ancient Greece the same word, <b>time</b>, came to mean both &ldquo;honor&rdquo; and &ldquo;price,&rdquo; capturing a moral crisis that was never resolved. As markets spread, money passed from being a <i>measure</i> of honor to a measure of everything honor was not; its very promiscuity&mdash;its acceptance by anyone&mdash;made it both universally desired and morally suspect, producing what might be called a <b>democratization of desire</b>.</p>
+
+<h2>Chapter Eight: Credit versus Bullion, and the Cycles of History</h2>
+
+<p>Slavery has been not merely abolished but effectively eliminated several times in history&mdash;in Europe, India, and China alike, in the centuries around 600 AD&mdash;which suggests that history moves in long, broadly synchronized <b>cycles</b>. The clearest way to see these cycles is to track money itself, which alternates between ages dominated by <b>virtual credit</b> and ages dominated by <b>bullion</b>. The decisive factor in this alternation is <b>war</b>. Coins can be stolen; debts cannot, since a debt is a record and a relation of trust. In periods of generalized violence, a heavily armed itinerant soldier is a poor credit risk but a ready holder of loot, so precious metal&mdash;an object without a history, accepted anywhere, no questions asked&mdash;comes to dominate. In times of relative peace, credit systems return.</p>
+
+<p>This yields a periodization of Eurasian history: the <b>Age of the First Agrarian Empires</b> (3500&ndash;800 BC), dominated by virtual credit money; the <b>Axial Age</b> (800 BC&ndash;600 AD), which brought coinage and bullion; the <b>Middle Ages</b> (600&ndash;1450 AD), a return to credit; and the <b>Age of Capitalist Empires</b> (1450&ndash;1971), which began with a planetary switch back to gold and silver and ended when the dollar was unpegged from gold&mdash;inaugurating a new age of virtual money whose shape is not yet clear.</p>
+
+<p>In Mesopotamia, the earliest urban civilization, money functioned chiefly as an accounting measure; clay tablets recording debts could circulate as negotiable instruments. Interest-bearing loans, probably born to finance the caravan trade, soon spread into ruinous consumer debt, periodically threatening to tear society apart&mdash;which is why kings repeatedly proclaimed <b>&ldquo;clean slates,&rdquo;</b> from Enmetena&rsquo;s amargi to Hammurabi&rsquo;s decrees that &ldquo;the strong might not oppress the weak.&rdquo; Egypt, by contrast, largely avoided interest-bearing debt for millennia, treating default as a quasi-criminal matter; even the Rosetta Stone records a debt-and-prisoner amnesty. Early China relied on a variety of social currencies and credit instruments, with legends crediting emperors with coining money to relieve the indebted.</p>
+
+<h2>Chapter Nine: The Axial Age (800 BC &ndash; 600 AD)</h2>
+
+<p>Around 600 BC, <b>coinage</b> was invented almost simultaneously and independently in three places&mdash;Lydia and the Aegean, the Ganges valley, and northern China&mdash;and these same three regions became the epicenters of the philosophical and religious creativity that Karl Jaspers named the <b>Axial Age</b>, the era of Pythagoras, the Buddha, Confucius, and the great world religions. The coincidence is not accidental.</p>
+
+<p>The link runs through war. The Axial Age saw the rise of large, trained, <b>professional armies</b> that had to be paid. Plunder put precious metal into soldiers&rsquo; hands; markets sprang up to provision them; and governments, able to mass-produce coins and demand them back as taxes, used coinage to overwhelm older social currencies and create uniform national markets. The resulting system can be called the <b>military-coinage-slavery complex</b>: money paid armies, armies captured slaves, slaves worked the mines that produced the metal for more money. Cash transactions between strangers, set against a background of war, also fostered a new way of thinking about human motivation&mdash;a radical simplification that gave rise to concepts like <b>profit</b> and <b>self-interest</b>, and to the assumption that people are essentially calculating creatures.</p>
+
+<p>The pattern repeats across the three regions. In the Mediterranean, debt crises in Athens and Rome were met not by institutionalized amnesties but by coinage minted from war spoils and by overseas military expansion; coinage maintained a free peasantry that could serve as soldiers. In India, the kingdom of Magadha&mdash;controlling the mines&mdash;built a monetized war machine, until the emperor <b>Asoka</b>, after appalling slaughter, embraced Buddhist nonviolence, demobilized much of the army, and channeled resources to monasteries, with the result that coinage declined and credit revived. In China, the chaos of the Warring States produced both professional armies paid in bronze cash and the &ldquo;hundred schools&rdquo; of philosophy, many of them outright social movements. Everywhere, impersonal markets born of violence made it possible to imagine human life as a matter of means-to-end calculation.</p>
+
+<h2>Chapter Ten: The Middle Ages (600 &ndash; 1450 AD)</h2>
+
+<p>The Middle Ages marked a worldwide return to <b>virtual credit money</b>: gold and silver largely retreated into temples, churches, and monasteries, coinage thinned, and overarching <b>moral and religious institutions</b> arose to regulate credit and, characteristically, to protect debtors. This was the inverse of the Axial Age dynamic, and it unfolded with striking parallels across the great civilizations.</p>
+
+<p>In India, debt and credit shaped the village system but could never become its basis, because the logic of <b>caste</b>&mdash;a fixed hierarchy of fundamentally different kinds of people&mdash;contradicted the equality implied by debt; later Hindu law nonetheless capped debt bondage at three generations. China became the great <b>anti-capitalist market state</b>: a Confucian bureaucracy that actively promoted markets while distrusting merchants, holding (in the distinction later drawn by Fernand Braudel) that markets exchange goods through money (C&ndash;M&ndash;C) whereas <b>capitalism</b> uses money to make more money (M&ndash;C&ndash;M&prime;), typically through monopoly. Confucian China was thus pro-market but anti-capitalist, repeatedly intervening against usury and concentrations of capital.</p>
+
+<p>Medieval Chinese <b>Buddhism</b> developed a remarkable theology of debt. Doctrines of <b>karmic debt</b> and the unpayable <b>&ldquo;milk-debt&rdquo;</b> owed to one&rsquo;s mother portrayed every person as an insolvent debtor; the remedy was donation to a monastery&rsquo;s <b>Inexhaustible Treasury</b>, which instantly cancelled the karmic debts of all past lives&mdash;a kind of salvation on the installment plan. These Treasuries became the world&rsquo;s first great concentrations of finance capital, lending at interest and compelled toward endless growth, until governments repeatedly repressed the monasteries to recover their copper for coinage. China also pioneered true <b>paper money</b>&mdash;&ldquo;Flying Cash&rdquo; and, by 1023, government-issued notes&mdash;an experiment usually misremembered as a failure though it accompanied the most economically dynamic centuries of Chinese history.</p>
+
+<p>In the West, the economic and intellectual center of the world was the <b>world of Islam</b>, which embraced commerce and law while keeping the violent, militaristic state at arm&rsquo;s length. By prohibiting <b>usury</b> and rendering enslavement of fellow believers (and debt peonage) effectively unenforceable, Islamic jurists allowed a sophisticated credit economy&mdash;checks (<i>sakk</i>), promissory notes, and profit-sharing partnerships&mdash;to flourish largely independent of the state. This represented a triumph of the old patriarchal, anti-urban ethos: the commercial classes, long the villains in the eyes of indebted farmers, effectively changed sides and became the leaders of a society defined against its own rulers.</p>
+
+<h2>Chapter Eleven: Age of the Great Capitalist Empires (1450 &ndash; 1971)</h2>
+
+<p>Around 1450 the cycle turned again, back toward <b>bullion</b>, accompanied by vast empires, professional armies, predatory warfare, untrammeled usury, and the return of chattel slavery. The pivotal story is not European but Chinese: having abandoned paper money, China adopted <b>silver</b> as its currency and developed an appetite for the metal so vast that it absorbed the staggering output of the American mines. Most of the gold and silver Europe extracted from the New World did not stay in Europe&mdash;it flowed to India and, above all, China&mdash;and without that Asian demand the American mines would have become unprofitable within decades.</p>
+
+<p>The conquest of the Americas displayed not cold calculation but greed raised to mythic proportions, intertwined with <b>debt</b>. Cort&eacute;s embarked on the conquest of Mexico already deep in debt, financed by merchant creditors; after seizing the Aztec treasure, his own soldiers found their shares immediately reclaimed by their officers as creditors, leaving many worse off than before. The psychology recurs throughout: the indebted adventurer, frantic to convert everything around him into money, enraged at being reduced to such a person. The structure of the joint-stock <b>corporation</b>&mdash;first embodied in the English and Dutch East India companies&mdash;institutionalized this, eliminating every moral imperative but profit. Under this new order, the <b>logic of money was granted autonomy</b>, and political and military power were reorganized around it; this is what distinguishes capitalism from the Axial Age, when money remained a tool of empire.</p>
+
+<p>The deeper transformation was the conversion of an <b>economy of credit into an economy of interest</b>. In Tudor and Stuart England, everyday life ran on personal credit and trust&mdash;neighbors perpetually slightly in debt to one another, settling accounts periodically&mdash;with &ldquo;credit&rdquo; meaning reputation, honor, and reliability. This world was destroyed not by &ldquo;the market&rdquo; as such but by the intrusion of the impersonal, often vindictive power of the <b>state</b>: the legalization and criminalization of debt, the use of courts and prisons, and the slow imposition of cash. The very concept of <b>&ldquo;self-interest&rdquo;</b> derives from <i>interesse</i>, the term for an interest payment, and carries within it the theological assumption&mdash;via Augustine&rsquo;s &ldquo;self-love&rdquo;&mdash;of insatiable, sinful desire. Hobbes built this into a theory of society; Locke insisted, against the Chartalists, that money <i>was</i> gold and silver, winning the argument that pushed Britain onto the gold standard.</p>
+
+<p>The era&rsquo;s new financial instruments&mdash;government bonds, central banks, paper money&mdash;were rooted in war: the <b>Bank of England</b> (1694) was founded on a loan to finance the king&rsquo;s war against France, and its banknotes were promissory notes for the king&rsquo;s war debt. Paper money was debt money, and debt money was war money. The entire apparatus of capitalism&mdash;bond markets, central banks, speculative bubbles, securitization&mdash;arose <i>before</i> the factory and wage labor. And capitalism, which enshrines the gambler at its heart, proves <b>incapable of conceiving its own eternity</b>: the most cautious regimes produced the wildest bubbles, because once credit is believed to be permanent there is no reason not to generate it infinitely. The system&rsquo;s secret scandal is that it has never been organized primarily around <b>free labor</b>&mdash;slavery, debt peonage, indenture, serfdom, and coerced labor were the rule, and the image of the free wage laborer began as a utopian vision that has never been the main way production was organized anywhere.</p>
+
+<h2>Chapter Twelve: (1971 &ndash; The Beginning of Something Yet to Be Determined)</h2>
+
+<p>On 15 August 1971, the United States ended the convertibility of dollars into gold, inaugurating the regime of free-floating currencies. This was driven by the cost of the <b>Vietnam War</b>, financed&mdash;like all capitalist wars&mdash;by deficit spending. The result was not a break with the old alliance of warriors and financiers but its <b>apotheosis</b>. Modern dollars are issued not by the government but by private banks under the Federal Reserve, which whisks money into existence by declaring it exists; the wizard&rsquo;s power to create money from nothing rests, ultimately, on the man with the gun behind him.</p>
+
+<p>U.S. debt remains, as since 1790, a <b>war debt</b>: American military spending exceeds that of all other nations combined, sustained by roughly 800 overseas bases and the unique capacity to bomb any point on earth. Because of trade deficits, dollars accumulate abroad, and foreign central banks have little to do with them but buy U.S. <b>Treasury bonds</b>&mdash;bonds that are rolled over indefinitely and never truly repaid, functioning as a form of <b>tribute</b> (politely, &ldquo;seigniorage&rdquo;). The principal buyers have been states under U.S. military protection&mdash;West Germany, then Japan, Taiwan, South Korea, the Gulf oil states&mdash;and the dollar&rsquo;s status is reinforced by its role as the sole currency for trading oil. China&rsquo;s entry as a major creditor inverts the dynamic: by showering a sovereign with credit, it begins, in time-honored Chinese fashion, the long process of reducing the United States to something like a tributary client.</p>
+
+<p>If history held true, an age of virtual money should bring a movement away from war and debt peonage and toward institutions that protect debtors. The opposite has occurred. The new global money is rooted in military power more firmly than the old, and the great global institutions&mdash;the IMF, World Bank, and WTO&mdash;were built to enforce the rights of <b>creditors</b>, on the universal principle that &ldquo;one has to pay one&rsquo;s debts.&rdquo; Domestically, the postwar bargain that had tied rising wages to rising productivity was torn up after the late 1970s under <b>neoliberalism</b>: productivity kept climbing while wages stagnated, and workers were invited instead to &ldquo;buy a piece of capitalism&rdquo; through 401(k)s, home-equity borrowing, and credit cards, even as federal usury caps were abolished in 1980, making once-criminal interest rates legal and enforceable by the courts.</p>
+
+<p>This produced a recurring <b>crisis of inclusion</b>: capitalism cannot extend its bargain to everyone, whether as unionized wage laborers or as micro-entrepreneurs, and when it reaches that limit the symptoms return&mdash;food riots, oil shocks, financial collapse, ecological warning. The 2008 crash exposed the principle as a lie: the financiers&rsquo; imaginary money was made real through bailouts, while ordinary debtors were left to a bankruptcy law made harsher the year before. Underlying it all is a vast <b>apparatus of hopelessness</b>&mdash;armies, prisons, police, and propaganda&mdash;built since the 1970s to ensure that no alternative to the existing order can be imagined to succeed, even at ruinous economic cost. The result is a peculiar historical juncture in which the present arrangements are visibly unsustainable, yet the collective imagination has hit a wall, able to picture only catastrophe.</p>
+
+<h2>Conclusion: Perhaps the World Really Does Owe You a Living</h2>
+
+<p>Mainstream defenses of the financial system rest on the <b>&ldquo;democratization of finance&rdquo;</b> argument&mdash;the claim, voiced by figures from Ludwig von Mises to Niall Ferguson, that ordinary people are now the real creditors, and that poverty is caused not by rapacious finance but by the <i>absence</i> of credit, so that the industrious poor need only access to respectable banks to escape it. The argument quietly concerns itself only with the <i>deserving</i> poor; the non-industrious are written off. This is precisely what is so pernicious about the morality of debt: it reduces everyone to the equivalent of pillagers, eyeing the world for what can be turned into money, and then declares that only those willing to see the world that way deserve the means to pursue anything beyond mere survival.</p>
+
+<p>The whole edifice depends on the assumption that work is virtuous because the measure of human success is increasing global output by at least five percent a year&mdash;an assumption now colliding with <b>ecological limits</b>. The historical record undermines the foundations of the conventional story at every point: markets originated as side effects of administrative systems and operated on credit; cash markets arose through war, tax, and tribute; impersonal commercial markets ultimately originate in <b>theft</b>, since the first person to assess a household only for what its objects could fetch was a thief or a marauding soldier. Any system that reduces the world to numbers can be held in place only by weapons, and it perpetually converts <b>love</b>&mdash;the everyday communism that is the real foundation of human relations&mdash;back into debt, transforming the very substance of human sociality into matters of fault, sin, and crime.</p>
+
+<p>Reframing the question as &ldquo;what do we owe society?&rdquo; or &ldquo;what is our debt to nature?&rdquo; is a false solution: it is the culmination of the same logic, presuming that we are so disentangled from the world that we could negotiate with the grounds of our own existence. When dealing with the Absolute&mdash;with anything outside human-scale time&mdash;there can be no such thing as debt. The concrete proposal that follows is a modern <b>Jubilee</b>: a cancellation of both international and consumer debt, valuable not only for relieving genuine suffering but for reminding everyone that money is a human arrangement, that paying one&rsquo;s debts is not the essence of morality, and that a democracy is free to arrange things differently. Empires from Athens and Rome onward have always legislated around the edges of debt crises while protecting the sacred principle of debt itself&mdash;and that principle has now been exposed as a lie, since it turns out that not all of us are required to pay. A <b>debt is the perversion of a promise</b>, a promise corrupted by mathematics and violence. Real freedom is the ability to make genuine promises&mdash;and just as no one has the right to tell us our true value, no one has the right to tell us what we truly owe.</p>
+
+</div><!-- .content -->
+
+</body>
+</html>

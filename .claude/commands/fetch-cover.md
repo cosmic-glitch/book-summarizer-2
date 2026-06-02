@@ -68,10 +68,15 @@ Also collect ISBNs from editions (prefer `9780`/`0` prefixes for English edition
 ### 3a: Download all candidates
 
 For each candidate cover ID or ISBN (up to ~10 total), download to a temp file:
-- For cover ID: `https://covers.openlibrary.org/b/id/<cover_id>-L.jpg` (use `-L` for large)
+- For cover ID: `https://covers.openlibrary.org/b/id/<cover_id>-L.jpg` (the `-L` suffix here means the **large** image size)
 - For ISBN: `https://covers.openlibrary.org/b/isbn/<isbn>-L.jpg`
 
-Skip any file under 5KB (placeholder). Add a `sleep 0.5` between downloads to be polite.
+**Always download with `curl -sL` (follow redirects).** The covers endpoint now responds with a `302 Found` redirect to the actual image; without `curl`'s `-L` flag you'll save a 9-byte `"302 Found"` body instead of the JPEG and wrongly conclude the cover is missing. A real-browser User-Agent also helps:
+```
+curl -sL -A "Mozilla/5.0" -o "c_<id>.jpg" "https://covers.openlibrary.org/b/id/<cover_id>-L.jpg"
+```
+
+Skip any file under 5KB (placeholder/redirect stub). Add a `sleep 0.5`–`1` between downloads to be polite; if you still get tiny responses, space the requests out further (the API rate-limits aggressively).
 
 ### 3b: Visually inspect all downloaded candidates
 

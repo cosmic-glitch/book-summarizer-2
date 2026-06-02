@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prisoners of Geography — Book Summary Pro</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      line-height: 1.7;
+      color: #222;
+      background: #fafafa;
+    }
+    .app-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #2c2c2c;
+      padding: 14px 24px;
+    }
+    .content {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 32px 20px 40px;
+    }
+    .app-nav .app-name {
+      font-size: 1.05em;
+      font-weight: bold;
+      color: #e8e0d0;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+    }
+    .app-nav .app-name:hover {
+      color: #d4a843;
+    }
+    .app-nav .back-link {
+      font-size: 0.9em;
+      color: #999;
+      text-decoration: none;
+    }
+    .app-nav .back-link:hover {
+      color: #d4a843;
+    }
+    h1 {
+      font-size: 1.8em;
+      border-bottom: 2px solid #333;
+      padding-bottom: 10px;
+      margin-bottom: 5px;
+    }
+    .subtitle {
+      font-size: 1.1em;
+      color: #444;
+      margin: 2px 0 0 0;
+      font-style: italic;
+    }
+    .author {
+      font-style: italic;
+      color: #777;
+      font-size: 0.95em;
+      margin-bottom: 40px;
+    }
+    h2 {
+      font-size: 1.3em;
+      margin-top: 48px;
+      color: #1a1a1a;
+      border-left: 4px solid #555;
+      padding-left: 12px;
+    }
+    p {
+      margin-bottom: 14px;
+      text-align: justify;
+    }
+    details.counter {
+      background: #f0ece4;
+      border-left: 4px solid #b8860b;
+      padding: 14px 18px;
+      margin: 20px 0 28px 0;
+      border-radius: 0 6px 6px 0;
+    }
+    details.counter summary {
+      font-weight: bold;
+      font-size: 0.95em;
+      color: #8b6914;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    details.counter summary::-webkit-details-marker {
+      display: none;
+    }
+    details.counter summary::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    details.counter[open] summary::before {
+      transform: rotate(90deg);
+    }
+    details.counter p {
+      margin-top: 12px;
+      margin-bottom: 10px;
+      color: #3a3a3a;
+    }
+    details.counter p:last-child {
+      margin-bottom: 0;
+    }
+    .quiz-wrapper {
+      margin-top: 48px;
+      background: #f5f5f0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 16px 20px;
+    }
+    .quiz-toggle {
+      font-weight: bold;
+      font-size: 1.05em;
+      cursor: pointer;
+      color: #2a5a2a;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .quiz-toggle::-webkit-details-marker { display: none; }
+    .quiz-toggle::before {
+      content: "\25B6";
+      font-size: 0.7em;
+      transition: transform 0.2s;
+    }
+    .quiz-wrapper[open] .quiz-toggle::before {
+      transform: rotate(90deg);
+    }
+    .q-block {
+      margin: 24px 0;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    .q-block:last-of-type { border-bottom: none; }
+    .q-label {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .q-block label {
+      display: block;
+      padding: 6px 10px;
+      margin: 4px 0;
+      border-radius: 4px;
+      cursor: pointer;
+      line-height: 1.5;
+    }
+    .q-block label:hover { background: #e8e8e0; }
+    #score-btn {
+      display: block;
+      margin: 28px auto 0;
+      padding: 12px 32px;
+      font-family: Georgia, serif;
+      font-size: 1em;
+      background: #2a5a2a;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #score-btn:hover { background: #1e441e; }
+    #quiz-result {
+      margin-top: 24px;
+      padding: 18px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    #score-text {
+      font-size: 1.15em;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .review-item {
+      margin-bottom: 14px;
+      padding: 10px 12px;
+      border-radius: 4px;
+    }
+    .review-item.correct { background: #e6f4e6; }
+    .review-item.wrong { background: #fce8e8; }
+    .review-item .ri-q { font-weight: bold; margin-bottom: 4px; }
+    .review-item .ri-detail { font-size: 0.93em; color: #444; }
+  </style>
+</head>
+<body>
+
+<nav class="app-nav">
+  <a href="index.html" class="app-name">Book Summary Pro</a>
+  <a href="index.html" class="back-link">&larr; All Books</a>
+</nav>
+
+<div class="content">
+
+<h1>Prisoners of Geography</h1>
+<p class="subtitle">Our World Explained in 12 Maps (Young Readers Edition)</p>
+<p class="author">Tim Marshall</p>
+
+<h2>What Does "Prisoner of Geography" Mean?</h2>
+
+<p>The land on which people live has always shaped them, affecting wars, politics, and societies everywhere. The choices available to governments and leaders are often limited by <b>rivers, mountains, deserts, and oceans</b>&mdash;so much so that nations can be understood as <i>prisoners of their geography</i>, bound by the location of mountain ranges or by their access to rivers for trade. It is not only the physical landscape that matters but also <b>climate and natural resources</b>, all of which have shaped how human cultures developed over time.</p>
+
+<p>Technology now overcomes some of these barriers&mdash;the internet keeps people connected, and air travel crosses mountains&mdash;but the physical landscape still sets the terms. Understanding the earth's geography is the starting point for understanding world events. The chapters that follow apply this single lens, region by region, to show how terrain, climate, and resources continue to constrain and empower the world's major powers.</p>
+
+<h2>Russia</h2>
+
+<p>Russia is the largest country on Earth&mdash;twice the size of the United States, spanning eleven time zones and bordering fourteen nations&mdash;yet it is defined by a vulnerability rather than its size. To its west lies the <b>North European Plain</b>, a flat corridor that narrows through Poland but widens into Russia like a slice of pizza, leaving the heartland around Moscow with <b>no mountains or deserts to defend it</b>. This open western flank explains a recurring strategy across Russian history: expansion outward as a form of defense. From the Kievan Rus through Ivan the Terrible's conquests and the push past the Urals into Siberia and south to the Caspian, Russia sought natural barriers and depth to absorb attacks.</p>
+
+<p>That depth, combined with brutal winters, repeatedly defeated invaders who could not sustain their supply lines&mdash;Sweden in 1708, Napoleon in 1812, and Germany in 1941 all reached deep into Russia only to be forced back. A second enduring problem is the lack of a reliable <b>warm-water port</b>: northern harbors such as Vladivostok freeze for months, trapping the navy in ice. Year-round ocean access is essential to projecting naval power and to cheap sea-borne trade, which is why control of <b>Sevastopol in Crimea</b>&mdash;a warm-water Black Sea port&mdash;mattered enough that Russia seized Crimea in 2014 when Ukraine moved toward the European Union.</p>
+
+<p>Geography also hands Russia leverage. It is one of the world's largest suppliers of <b>natural gas and oil</b>, providing more than a quarter of Europe's supply through long pipelines. Countries closer to Russia tend to depend more heavily on its energy&mdash;Latvia, Slovakia, Finland, and Estonia have been entirely reliant on Russian gas, and Germany about half&mdash;giving Russia a tool to reward friendly states with cheaper energy and to pressure others. The development of <b>liquefied natural gas (LNG)</b> ports lets Europe import gas from elsewhere, a case of technology loosening geography's grip. Even so, the fundamentals that troubled Ivan the Terrible&mdash;freezing ports and an undefended western plain&mdash;persist today.</p>
+
+<h2>China</h2>
+
+<p>China's borders are guarded by formidable natural defenses: the Gobi Desert to the north, the Himalayas to the west, and thick jungle to the southwest. Where nature left gaps, early China built human-made answers&mdash;the <b>Great Wall</b>, the longest structure on Earth, and the <b>Grand Canal</b>, the longest artificial waterway, which linked the Yellow and Yangtze rivers and helped unite north and south. Civilization began on the fertile <b>North China Plain</b>, the heartland of the Han people, and, much like Russia, China used attack as defense&mdash;expanding over millennia to reach protective barriers such as the Tibetan Plateau.</p>
+
+<p><b>Tibet</b> is therefore strategically vital. The Himalayas along the Tibetan border act as a natural Great Wall separating China from India, and Tibet is the source of China's great rivers&mdash;the Yellow, Yangtze, and Mekong. If India rather than China controlled Tibet, it would gain the high ground above the Chinese heartland and influence over those rivers; that risk alone makes Chinese control non-negotiable, reinforced by road and rail building and by the migration of Han settlers into the region.</p>
+
+<p>China's modern challenge has shifted to the sea. Historically it needed no strong navy, but as the world's largest manufacturer it now depends on global shipping lanes&mdash;both to export goods and to import the oil, gas, and metals it consumes. Those routes run through the <b>South China Sea</b>, which could be blockaded in wartime, so China asserts broad claims over the sea's islands and reefs and has built military facilities on features such as Fiery Cross Reef, turning a coral reef into a port and airstrip. A major shipbuilding program aims, over time, to rival the U.S. navy that currently patrols these lanes. Feeding 1.4 billion people adds pressure, since much of China's farmland suffers from poor soil or pollution, forcing a balance between manufacturing and food production.</p>
+
+<h2>The United States</h2>
+
+<p>The United States is, above all, blessed by location. It controls the continent from coast to coast, buffered by oceans to the east and west, the icy <b>Canadian Shield</b> to the north, and deserts to the south&mdash;a combination that makes it almost impossible to invade. This security was built quickly across 2,800 miles through expansion: thirteen colonies became a nation after the Revolutionary War, and the country then grew through the <b>Louisiana Purchase</b> of 1803 (which doubled its size for about $15 million), the acquisition of Florida and the Pacific Northwest, the annexation of Texas and the Mexican War, the purchase of Alaska in 1867, and the gains from war with Spain in 1898. Native American peoples, who had lived there for thousands of years, were killed by war and disease and dispossessed of vast lands in the process.</p>
+
+<p>The decisive geographic gift was the <b>Mississippi basin</b>, which holds more navigable inland waterway than the rest of the world combined. Its smooth-flowing rivers run all the way to the Gulf of Mexico, making transport cheap and binding the northern and southern parts of the country together through the port of New Orleans. Much of that river economy was tied to slavery, as enslaved people were forced to produce cotton and sugar shipped downriver to market.</p>
+
+<p>Once secure at home, the United States turned to the seas, building the navy and global reach that made it a <b>superpower</b>. Its power can be mapped not just as territory but as a network of roughly 800 overseas bases, ports, and runways. After the Second World War left Europe and Asia in ruins, the United States dominated the world's sea lanes, built bases across the Pacific, and led <b>NATO</b>, whose military commander is always American. To the north, Canada illustrates the same logic in reverse: much of its land is the inhospitable Canadian Shield, so half its population clusters near the U.S. border around cities like Toronto, Montreal, and Vancouver.</p>
+
+<h2>Western Europe</h2>
+
+<p>Western Europe is among the world's wealthiest regions, and much of that prosperity rests on geographic luck. The <b>Gulf Stream</b> gives the northwest a mild climate with enough sun and rain for abundant harvests and winters cold enough to kill many diseases; broad <b>coastal plains</b> are ideal for farming; long, flat, navigable <b>rivers</b> form natural borders and cheap trade routes; and the region is rich in wood, coal, and metals. These advantages gave northwestern Europe a head start in the <b>Industrial Revolution</b>: good harvests produced surplus food and free time, which fed new ideas, machines, and coal-powered factories, and drew people from farms into growing cities.</p>
+
+<p>Geography also explains why Europe is fragmented into many nations rather than one. Mountains and rivers&mdash;the Pyrenees, the Alps, the Rhine, the Danube&mdash;created natural barriers behind which distinct languages and cultures developed over thousands of years. The same terrain produced a <b>north-south divide</b>: southern and eastern areas with narrower coastal plains, poorer soil, water shortages, flood-prone basins, and rivers broken by waterfalls industrialized later and stayed less wealthy.</p>
+
+<p>Despite its advantages, Europe has a long and violent history, from the Hundred Years' War to two world wars, driven by many neighboring states competing for land and power&mdash;a danger sharpened when a unified Germany emerged in 1871 between France and Russia. The desire never to repeat that bloodshed produced the <b>European Union</b>, an experiment in cooperation that has delivered over seventy years of peace and the world's second-largest combined economy, while letting smaller nations compete with giants like China and the United States. Yet cracks remain: unequal wealth exposed by the 2008 crisis and Britain's 2016 vote to leave have left the EU's future uncertain. Some places remain especially exposed&mdash;Poland sits on the flat North European Plain with no mountains to protect it, and armies have swept across it for centuries.</p>
+
+<h2>Africa</h2>
+
+<p>Africa's geography is both a blessing and a curse, and the continent is far larger than standard maps suggest&mdash;about three times the size of the United States. Several geographic obstacles have hindered development. The interior was historically <b>isolated</b> by the Sahara, the Sahel, and the surrounding oceans, so ideas and technology shared across Europe and Asia did not easily spread south. <b>Farming is difficult</b> across much jungle, swamp, and desert with a harsh climate; native animals such as zebras and giraffes could not be tamed as beasts of burden; and the climate is ideal for the <b>mosquito</b>, which spreads malaria and yellow fever that kill hundreds of thousands each year. Most of Africa's rivers, like the Zambezi, plunge over waterfalls and rapids, making them poor for transport and trade.</p>
+
+<p>Africa was shaped not only by terrain but by foreigners. From the fifteenth to the nineteenth centuries the <b>slave trade</b> tore millions of people from the continent, and European colonial powers extracted its wealth&mdash;rubber from the Belgian-ruled Congo, for instance, taken with ruthless brutality and sent to Europe. At the end of the nineteenth century the European powers simply <b>divided the continent among themselves</b>, drawing borders on a map with no regard for the communities living there&mdash;splitting some groups apart and forcing hostile ones together. After independence those artificial borders mostly remained, leaving many Africans, in a sense, prisoners of a geography imposed from outside.</p>
+
+<p>The outlook today is improving. Cities such as Nairobi, Dar es Salaam, and Kinshasa are growing fast, drawing investment in roads and railways; health care and education have improved and poverty rates are falling. Most African nations now control their own mineral and oil wealth, and foreign powers&mdash;European, American, and increasingly Chinese&mdash;tend to invest rather than simply plunder, so the continent claims a share of the value. New transport links, air travel, and ports are connecting Africa both to the world and to itself.</p>
+
+<h2>The Middle East</h2>
+
+<p>The Middle East spans many countries and cultures across a varied landscape of mountains, river plains, swamps, and the vast Arabian Desert, and it holds enormous wealth in <b>oil and gas</b>&mdash;alongside persistent conflict. Two fault lines run through the region. Large <b>Kurdish</b> populations are spread across Iraq, Turkey, Syria, and Iran, and Kurdish desires for an independent state alarm all four governments. And the split within Islam between <b>Sunni and Shia</b>&mdash;Sunnis being the large majority worldwide&mdash;has repeatedly fueled conflict.</p>
+
+<p>Much of today's instability traces to borders drawn from outside. During the First World War, the British and French diplomats behind the <b>Sykes-Picot Agreement</b> (1916) sketched a line across the map to divide the Ottoman Middle East between them, and afterward they created new states&mdash;Syria, Lebanon, Jordan, Iraq, Saudi Arabia, Palestine&mdash;that had not existed before, ignoring the region's geography and existing communities. <b>Iraq</b> is the clearest example: the Ottomans had governed it as three areas reflecting the ancient regions of Assyria, Babylonia, and Sumer&mdash;Kurds in the mountainous north, Sunnis west of Baghdad, and Shia in the southern marshlands&mdash;but in 1921 Britain fused them into one fragile state, breeding resentment and instability. As with the colonial borders of Africa, artificial lines have produced lasting unrest.</p>
+
+<p>Oil compounds these tensions. It brings great wealth but also rivalry over who controls it&mdash;Iraq's reserves lie mostly in Kurdish and Shia areas rather than Sunni ones&mdash;and economies that depend too heavily on oil suffer when prices fall, which is why states such as Saudi Arabia and the UAE are trying to develop tourism and green energy. Competition also comes from outside producers like Russia and the United States. The artificial borders of Sykes-Picot continue to feed civil wars, such as Syria's, and may eventually reshape the map of the region.</p>
+
+<h2>India and Pakistan</h2>
+
+<p>India and Pakistan, the two largest countries of South Asia, are locked together by geography&mdash;framed by oceans to the south and mountains to the north&mdash;and by a dangerous rivalry, having fought four major wars since they split in 1947. Because both possess <b>nuclear weapons</b>, it matters to the entire world that they avoid serious conflict. The disputed territory of <b>Kashmir</b> sits at the heart of their tension: the Indus River runs through the Indian-controlled part before reaching Pakistan, giving India potential control over Pakistan's water supply, while the region also borders China (a key Pakistani partner) and offers a possible route toward Central Asia.</p>
+
+<p>The conflict was seeded under British rule, whose policy of <b>"Divide and Rule"</b> set religious groups against one another so they would not unite. When Britain withdrew after the Second World War, the 1947 <b>Partition</b> split the land into a mostly Hindu India and a mostly Muslim Pakistan, triggering one of history's largest migrations: millions fled in each direction, at least a million people died, and some fifteen million were forced from their homes. Pakistan was itself divided into western and eastern halves separated by 1,250 miles of India, and in 1971 East Pakistan broke away to become Bangladesh.</p>
+
+<p>The two states inherited very different starting positions. The unequal division left India with most of the region's industry and major cities&mdash;Mumbai, Kolkata, Delhi&mdash;and, with a growing economy and powerful military, it aspires to be a world power, though it still faces deep poverty. Pakistan began more precariously, divided in two and saddled with an unstable Afghan frontier; with five distinct regions sometimes more loyal to themselves than to the center, it continues to struggle with internal instability.</p>
+
+<h2>Korea and Japan</h2>
+
+<p>This corner of the world contains sharply contrasting countries: democratic, prosperous Japan and South Korea alongside the impoverished dictatorship of North Korea, whose unpredictability threatens its neighbors. The region is a flashpoint for the rivalry between the United States&mdash;allied with Japan and South Korea&mdash;and China, which backs North Korea. <b>Korea</b> sits caught between the much larger powers of China and Japan, with few natural defenses, and was invaded repeatedly through history by Mongols, the Qing, and the Japanese.</p>
+
+<p>That exposure produced today's division. In 1945 the United States and the Soviet Union split the peninsula, and by 1948 two states existed: a pro-American South and a Soviet- then Chinese-backed North. <b>North Korea</b> remains secretive, brutally governed, and impoverished, and its nuclear program keeps the peninsula on a knife-edge. The surrounding powers manage an uneasy peace: China props up North Korea's economy because it does not want a unified, U.S.-allied Korea on its border or a flood of refugees, while the United States keeps nearly 30,000 troops in South Korea to deter aggression and reassure its allies.</p>
+
+<p><b>Japan</b>, a chain of islands a couple hundred miles off the mainland, was close enough to absorb cultural and technological innovations yet far enough to avoid invasion. Its island position bred a strong navy but left it short of natural resources&mdash;a shortage that helped drive its annexation of Korea in 1910 for coal and iron ore, and its wider expansion into China and Southeast Asia in the 1930s and 1940s. Defeat in the Second World War, sealed by the atomic bombings of Hiroshima and Nagasaki, was followed by a rapid recovery aided by the United States, which wanted an ally against communist China. Shared anxiety about North Korea and a rising China keeps Japan and South Korea cooperating with the United States despite their own uneasy history.</p>
+
+<h2>Latin America</h2>
+
+<p>Latin America's varied landscape&mdash;deserts, rainforest, and towering mountains&mdash;tends to cut regions off from one another, hampering trade and farming, while much of South America lies far from major trade routes. It has fallen behind Europe, North America, and China in wealth, held back by the legacy of European colonization and by living in the shadow of the United States. A defining pattern is the <b>"hollow continent"</b>: European settlers stayed near the coasts to avoid the difficult, disease-ridden interior, and even today most major cities sit on a coastal <b>"population rim,"</b> leaving the interior underinvested and poorly connected.</p>
+
+<p>One piece of geography turned decisively to advantage is the <b>Panama Canal</b>, opened in 1914, which links the Atlantic and Pacific and spares ships the long, perilous voyage around Cape Horn through the Strait of Magellan or the Drake Passage&mdash;saving about two weeks. Around 14,000 ships use it yearly, and its 2016 widening for larger vessels makes it central to Panama's economy.</p>
+
+<p><b>Brazil</b> illustrates the region's struggle with terrain. Despite being nearly the size of the United States, its development is constrained: about 90 percent of its people live near the Atlantic coast, where the <b>Grand Escarpment</b>&mdash;a steep cliff wall dropping from the interior highlands&mdash;hems cities in and makes road-building expensive, limiting trade. Efforts to develop the interior, such as moving the capital to Brasília in the 1950s, have only partly succeeded. Meanwhile a third of Brazil is Amazon rainforest, steadily cleared for farming and ranching despite poor soils, and the southern savanna has become a soybean powerhouse at heavy environmental cost.</p>
+
+<h2>Australia</h2>
+
+<p>Australia is unique as the only country that is also a continent&mdash;a vast landmass surrounded by water. Its remote location kept it isolated for much of history, but in the modern era that same position lets it benefit from <b>trade links with Asia</b>. Its largest trading partner is China, so as China's economy grows, Australia stands to gain.</p>
+
+<p>That dependence, however, creates a delicate balancing act. China's expanding influence and its assertive claims in the <b>South China Sea</b> trouble its neighbors and its rival the United States&mdash;which is also Australia's closest military ally. Caught between its most important economic partner and its most important security partner, Australia must manage good relations with both, a balance that will only grow trickier as the two powers compete.</p>
+
+<h2>The Arctic</h2>
+
+<p>The Arctic, long valued for its beauty and explored at great cost, is becoming strategically central as its ice <b>shrinks</b> and its resources become reachable. The melting opens the <b>Northwest Passage</b>&mdash;first navigated by Roald Amundsen and now passable by cargo ships for several weeks each summer&mdash;offering an alternative to the Panama Canal that cuts at least a week off the Europe-to-Asia voyage. Beneath the ice may lie immense reserves: perhaps 50 trillion cubic meters of natural gas, 90 billion barrels of oil, and undiscovered gold, zinc, nickel, and iron.</p>
+
+<p>Eight nations claim parts of the Arctic and form the <b>Arctic Council</b>: Canada, Russia, the United States, Norway, Denmark, Iceland, Finland, and Sweden. International rules grant each country resources within 200 nautical miles of its shores, but some claims reach further&mdash;Russia argues that the underwater <b>Lomonosov Ridge</b> extends its territory toward the North Pole, and in 2007 it dramatically planted a titanium flag on the Arctic seabed to assert its stake. The region is hostile and the future may bring smuggling, difficult rescues, and environmental disasters such as oil spills, all of which will require cooperation. Because the changes here&mdash;driven by climate change&mdash;could affect the whole planet, it is in every Arctic nation's interest to work together rather than let a race for resources destroy one of the world's last unspoiled wildernesses.</p>
+
+<h2>The Future</h2>
+
+<p>With the top of the world reached, the next frontier is <b>space</b>. Advancing technology now lets humans explore it as never before, with thousands of satellites, crewed space stations, and flags already planted on the Moon. The United States, Russia, and China lead the race&mdash;but, as in the Arctic, working together may prove wiser than competing to claim new territory.</p>
+
+<p>Earth's old constraints, however, endure. The Himalayas will keep separating the rising powers of China and India; Russia will still face a potential weak spot across the flatlands of Europe; and Bangladesh must still brace for annual flooding. New challenges are arriving too: <b>climate change</b> could redraw the world's geography&mdash;raising sea levels that may submerge cities, shifting rainfall to worsen droughts and floods, and disturbing habitats&mdash;intensifying competition for the planet's resources. Whatever barriers arise, old or new, meeting them will require the world's leaders, and everyone else, to cooperate on the one planet all of humanity shares.</p>
+
+</div><!-- .content -->
+
+</body>
+</html>

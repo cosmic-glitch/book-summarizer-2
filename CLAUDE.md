@@ -8,6 +8,7 @@ A book summarizer that converts PDF and EPUB files into self-contained HTML summ
 
 ## Key Commands
 
+- `/onboard <book title> [author]` — End-to-end pipeline for a new book: searches Library Genesis for an EPUB (newest English edition), downloads it to `books/`, safety-scans it for malware/scripts, summarizes it with `/summarize-book-v2`, fetches the cover, regenerates the index, and commits & pushes — all in one run.
 - `/summarize-book <filename>` — Summarize a single book from `books/` into `summaries/`
 - `/summarize-all-pending [max_books]` — Find books in `books/` without summaries and process them sequentially (also fetches covers). Optional numeric argument caps the number of books processed in one session (e.g. `/summarize-all-pending 5`).
 - `/fetch-cover <stem>` — Fetch a cover image for a book from Open Library (e.g., `/fetch-cover The_Intelligent_Investor`). Pass `all` to fetch all missing covers. Uses visual inspection to ensure covers are English, high-quality, and actually book covers.

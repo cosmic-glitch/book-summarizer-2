@@ -324,6 +324,7 @@ Write the complete HTML file to `summaries/<output-filename>` (ending in `_summa
     .review-item .ri-q { font-weight: bold; margin-bottom: 4px; }
     .review-item .ri-detail { font-size: 0.93em; color: #444; }
   </style>
+  <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
 
